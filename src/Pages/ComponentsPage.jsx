@@ -20,7 +20,7 @@ const ComponentsPage = () => {
           />
         </div>
 
-        <div className="w-full min-h-screen p-12 bg-gradient-to-r from-[#71adc0] #acb26c to-[#fff]">
+        <div className="w-full min-h-screen p-12 bg-gradient-to-r from-[#71adc0] to-[#fff]">
           <SidebarContent startContent={startContent} />
         </div>
       </div>
