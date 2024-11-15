@@ -57,9 +57,9 @@ const Search = ({isSearchOpen}) => {
                                     {
                                         filteredComponentData?.map((component, index) => (
                                             <Link key={index} to={component.url}
-                                                  className='flex items-center gap-[7px] py-3 px-3 hover:bg-gray-50 rounded-md'>
-                                                <LuLayoutTemplate className='text-[1.4rem] text-gray-500'/>
-                                                <p className='text-[1rem] font-[500] text-gray-500 capitalize'>{component.title}</p>
+                                                  className='flex items-center gap-[7px] py-3 px-3 text-gray-500 hover:text-secondary hover:bg-primary rounded-md'>
+                                                <LuLayoutTemplate className='text-[1.4rem]'/>
+                                                <p className='text-[1rem] font-[500]  capitalize '>{component.title}</p>
                                             </Link>
                                         ))
                                     }
@@ -78,9 +78,9 @@ const Search = ({isSearchOpen}) => {
                                     {
                                         filteredBlocksData?.map((block, index) => (
                                             <Link key={index} to={block.url}
-                                                  className='flex items-center gap-[7px] py-3 px-3 hover:bg-gray-100 rounded-md'>
-                                                <RxSection className='text-[1.4rem] text-gray-600'/>
-                                                <p className='text-[1rem] font-[500] text-gray-600 capitalize'>{block.title}</p>
+                                                  className='flex items-center gap-[7px] py-3 px-3 text-gray-500 hover:text-secondary hover:bg-primary rounded-md'>
+                                                <RxSection className='text-[1.4rem]'/>
+                                                <p className='text-[1rem] font-[500] capitalize'>{block.title}</p>
                                             </Link>
                                         ))
                                     }

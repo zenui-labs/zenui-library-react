@@ -8,6 +8,9 @@ import {AiOutlineGlobal} from "react-icons/ai";
 import ZenUIHeroBadge from "../../SvgIcons/ZenUIHeroBadge.jsx";
 
 const Team = () => {
+
+    const sortedDevContributors = DevContributorsData.sort((a, b) => b.zenuiHero - a.zenuiHero);
+    
     return (
         <>
             <section>
@@ -79,7 +82,7 @@ const Team = () => {
 
                 <div className='mt-16 flex flex-wrap gap-[40px] justify-center'>
                     {
-                        DevContributorsData?.map((member, index) => (
+                        sortedDevContributors?.map((member, index) => (
                             <div className='flex flex-col justify-center items-center' key={index}>
 
                                 <div className='w-[200px] h-[200px] relative'>
