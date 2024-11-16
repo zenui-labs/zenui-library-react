@@ -3,7 +3,7 @@ export const DevContributorsData = [
         name: 'Raihan Uddin Tuhin\n',
         title: 'Web Developer',
         image: 'https://avatars.githubusercontent.com/u/98041657?v=4',
-        linkedinLink: '',
+        linkedinLink: 'https://www.linkedin.com/in/raihan-uddin-tuhin-7a200125a/',
         twitterLink: '',
         githubLink: 'https://github.com/Tuhin35',
         website: 'https://portfolio-final-gamma-six.vercel.app/',
