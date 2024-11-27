@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -57,7 +57,11 @@
 }
 
 .card-gradient {
-  background: linear-gradient(to top right, white 30%, rgba(15, 171, 202, 0.33) 100%);
+  background: linear-gradient(
+    to top right,
+    white 30%,
+    rgba(15, 171, 202, 0.33) 100%
+  );
 }
 
 /*.logos:before {*/
@@ -130,7 +134,7 @@
 .navUl li:hover span {
   opacity: 1;
   transform: translateY(0px);
-  color: #0FABCA;
+  color: #0fabca;
 }
 
 /* button hover effect */
@@ -187,7 +191,7 @@
 .footer li:hover span {
   opacity: 1;
   transform: translateY(0px);
-  color: #0FABCA;
+  color: #0fabca;
 }
 
 /* sidebar hover effect */
@@ -208,7 +212,6 @@ aside ul a:not(.getStarted a):hover {
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 
 /* sidebar component section header  */
 .sectionHeader {
@@ -268,7 +271,6 @@ aside ul a:not(.getStarted a):hover {
   }
 }
 
-
 /* all components section sliding animation */
 .allComponentSliderLeft {
   animation: animationSliderLeft 20s linear infinite;
@@ -276,10 +278,10 @@ aside ul a:not(.getStarted a):hover {
 
 @keyframes animationSliderLeft {
   from {
-    transform: translateX(0)
+    transform: translateX(0);
   }
   to {
-    transform: translateX(-100%)
+    transform: translateX(-100%);
   }
 }
 
@@ -289,10 +291,10 @@ aside ul a:not(.getStarted a):hover {
 
 @keyframes animationSliderRight {
   from {
-    transform: translateX(0)
+    transform: translateX(0);
   }
   to {
-    transform: translateX(100%)
+    transform: translateX(100%);
   }
 }
 
@@ -300,7 +302,7 @@ aside ul a:not(.getStarted a):hover {
 .gradient-border {
   position: relative;
   padding: 2px;
-  background: linear-gradient(90deg, #DB06F9 0%, rgba(0,204,255,1) 100%);
+  background: linear-gradient(90deg, #db06f9 0%, rgba(0, 204, 255, 1) 100%);
   border-radius: 9999px;
   display: inline-block;
   overflow: hidden;
@@ -314,7 +316,6 @@ aside ul a:not(.getStarted a):hover {
   display: flex;
   align-items: center;
 }
-
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
@@ -339,7 +340,8 @@ input[type="number"] {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -353,7 +355,8 @@ input[type="number"] {
 }
 
 @keyframes bounce1 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -367,7 +370,8 @@ input[type="number"] {
 }
 
 @keyframes bounce2 {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -386,7 +390,7 @@ input[type="number"] {
   bottom: 87px !important;
 }
 
-.customTable::-webkit-scrollbar{
+.customTable::-webkit-scrollbar {
   height: 5px;
 }
 
@@ -403,8 +407,8 @@ input[type="number"] {
 /* skeleton shimmer animation */
 @keyframes shimmer {
   100% {
-        transform: translateX(100%)
-      }
+    transform: translateX(100%);
+  }
 }
 
 /* bouncing animation for zenui hero badge*/
@@ -413,7 +417,8 @@ input[type="number"] {
 }
 
 @keyframes badgeBounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) rotate(-15deg);
   }
   50% {
