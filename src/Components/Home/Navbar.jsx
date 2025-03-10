@@ -10,7 +10,6 @@ import {FiGithub} from "react-icons/fi";
 import {RxDiscordLogo} from "react-icons/rx";
 
 import { motion, AnimatePresence } from "framer-motion";
-import NewBadge from "../../Shared/NewBadge.jsx";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 
@@ -176,8 +175,6 @@ const Navbar = () => {
                                 className={`${isActiveToolsMenu && 'text-[#0FABCA]'} cursor-pointer relative py-[23px] hover:text-[#0FABCA] dark:text-darkTextColor transition-all duration-200 flex items-center gap-[8px]`}
                             >
                                 Tools
-                                <NewBadge/>
-                                <div className='w-[8px] h-[8px] bg-green-500 rounded-full absolute top-5 right-6 animate-[ping_1.5s_linear_infinite]'></div>
                                 <IoIosArrowDown className={`${(isToolsHover || isActiveToolsMenu) ? 'rotate-[180deg]': 'rotate-0'} transition-all duration-300`}/>
 
                                 {(isToolsHover || isActiveToolsMenu) && (
@@ -234,7 +231,6 @@ const Navbar = () => {
                                                     <p className='cursor-pointer leading-[20px] dark:text-darkTextColor text-gray-600 transition-all duration-200'>
                                                         Semantic TagMaster
                                                     </p>
-                                                    <NewBadge/>
                                                 </div>
                                                 <span className='text-[0.8rem] font-[300] dark:text-darkSubTextColor text-gray-500'>A comprehensive guide about HTML semantic tags</span>
                                             </Link>

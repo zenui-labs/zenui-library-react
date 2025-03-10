@@ -154,7 +154,6 @@ const Content = () => {
                 title: "Comparison Card",
                 url: "/components/comparison-card",
                 parent: 'SURFACES',
-                  isNewComponent: true
               },
               {
                 title: "Cards",
@@ -164,6 +163,12 @@ const Content = () => {
                 title: "Animated Cards",
                 url: "/components/animated-cards",
                 parent: 'SURFACES'
+              },
+              {
+                title: "Image Cropper",
+                url: "/components/image-cropper",
+                parent: 'SURFACES',
+                  isNewComponent: true
               },
               {
                 title: "Accordion",
@@ -293,7 +298,6 @@ const Content = () => {
                 title: "Github Activity Graph",
                 url: "/components/github-activity-graph",
                 parent: 'DATA DISPLAY',
-                isNewComponent: true
               },
               {
                 title: "Tooltip",
@@ -309,7 +313,6 @@ const Content = () => {
                 title: "Timeline",
                 url: "/components/timeline",
                 parent: 'DATA DISPLAY',
-                  isUpdated: true,
               },
               {
                 label: "E-COMMERCE",
@@ -318,13 +321,11 @@ const Content = () => {
                 title: "Product Card",
                 url: "/components/product-card",
                 parent: 'E-COMMERCE',
-                isNewComponent: true,
               },
               {
                 title: "Ads Card",
                 url: "/components/ads-card",
                 parent: 'E-COMMERCE',
-                isNewComponent: true,
               },
               {
                 label: "RANDOMS",
@@ -410,19 +411,16 @@ const Content = () => {
                 title: "Offer Grid",
                 url: "/blocks/offer-grid",
                 parent: 'E-Commerce',
-                isNewComponent: true,
               },
               {
                 title: "Product Details Page",
                 url: "/blocks/product-details-page",
                 parent: 'E-Commerce',
-                isNewComponent: true,
               },
               {
                 title: "Checkout Page",
                 url: "/blocks/checkout-page",
                 parent: 'E-Commerce',
-                isNewComponent: true,
               },
               {
                 label: "Random",

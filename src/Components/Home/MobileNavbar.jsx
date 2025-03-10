@@ -10,7 +10,6 @@ import {FiGithub} from "react-icons/fi";
 import {Link, useNavigate} from "react-router-dom";
 import Search from "./Search";
 import {AnimatePresence, motion} from "framer-motion";
-import NewBadge from "../../Shared/NewBadge.jsx";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 import useZenuiStore from "../../Store/Index.js";
@@ -152,8 +151,6 @@ const MobileNavbar = () => {
                     <li onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                         className='cursor-pointer relative dark:text-darkSubTextColor flex items-center gap-[8px]'>
                         Tools
-                        <NewBadge/>
-                        <div className='w-[8px] h-[8px] bg-green-500 rounded-full absolute -top-1.5 right-6 animate-[ping_1.5s_linear_infinite]'></div>
                         <IoIosArrowDown className={`${toolsDropdownOpen ? 'rotate-[180deg]': 'rotate-0'} transition-all duration-300`}/>
                     </li>
 
@@ -210,7 +207,6 @@ const MobileNavbar = () => {
                                             <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                                 Semantic TagMaster
                                             </p>
-                                            <NewBadge/>
                                         </div>
                                         <span
                                             className='text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500'>A comprehensive guide about HTML semantic tags</span>

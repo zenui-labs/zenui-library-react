@@ -38,7 +38,7 @@ const ShowCode = ({ code }) => {
         <div className="code-block-wrapper border border-[#ffffff15] rounded overflow-hidden">
             {/* Tabs Section */}
             {isMultiTab && (
-                <div className="flex bg-[#282a36] border-b border-[#ffffff15] pl-2 pr-4 pt-1.5">
+                <div className="flex bg-[#282a36] flex-wrap gap-y-2 border-b border-[#ffffff15] pl-2 pr-4 pt-1.5">
                     {formattedCode.map((tab) => (
                         <button
                             key={tab.id}

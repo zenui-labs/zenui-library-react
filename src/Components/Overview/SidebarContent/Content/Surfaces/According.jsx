@@ -538,8 +538,8 @@ export default Accordion;
           </ComponentWrapper>
 
           <OverviewFooter
-            backUrl='/components/animated-cards'
-            backName='animated cards'
+            backUrl='/components/image-cropper'
+            backName='image cropper'
             forwardName='app bar'
             forwardUrl='/components/appbar'
           />

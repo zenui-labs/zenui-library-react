@@ -193,7 +193,7 @@ const Footer = () => {
 
               <div>
                 <h4 className='text-[1rem] font-[600] dark:text-darkTextColor text-gray-700'>Join Community</h4>
-                <p className='text-[0.9rem] font-[300] dark:text-darkSubTextColor text-gray-700'>123+ Members</p>
+                <p className='text-[0.9rem] font-[300] dark:text-darkSubTextColor text-gray-700'>126+ Members</p>
               </div>
             </a>
           </div>

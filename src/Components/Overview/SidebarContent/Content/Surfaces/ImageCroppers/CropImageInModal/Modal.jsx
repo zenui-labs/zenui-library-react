@@ -41,10 +41,10 @@ const Modal = ({image, setImage, setCroppedImage}) => {
                 handleImageLoad();
             } else {
                 // Wait for image to load
-                imageRef.current.addEventListener("load", handleImageLoad);
+                imageRef.current.addEventListener('load', handleImageLoad);
                 return () => {
                     if (imageRef.current) {
-                        imageRef.current.removeEventListener("load", handleImageLoad);
+                        imageRef.current.removeEventListener('load', handleImageLoad);
                     }
                 };
             }
@@ -63,10 +63,10 @@ const Modal = ({image, setImage, setCroppedImage}) => {
     const cropImage = () => {
         if (!imageRef.current) return;
 
-        const canvas = document.createElement("canvas");
+        const canvas = document.createElement('canvas');
         canvas.width = cropArea.width;
         canvas.height = cropArea.height;
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext('2d');
 
         const imageElement = imageRef.current;
         const scaleX = imageElement.naturalWidth / imageElement.clientWidth;
@@ -132,7 +132,7 @@ const Modal = ({image, setImage, setCroppedImage}) => {
     const saveAndClose = () => {
         const result = cropImage();
         setCroppedImage(result)
-        setImage("");
+        setImage('');
     };
 
     return (
@@ -146,13 +146,13 @@ const Modal = ({image, setImage, setCroppedImage}) => {
                     image
                         ? " scale-[1] opacity-100"
                         : " scale-[0] opacity-0"
-                } w-[90%] sm:w-[80%] md:w-[60%] dark:bg-slate-900 max-h-[80vh] bg-[#fff] rounded-lg p-4 transition-all duration-300 flex flex-col`}
+                } w-[90%] 400px:w-[80%] 1024px:w-[60%] dark:bg-slate-900 max-h-[80vh] bg-[#fff] rounded-lg p-4 transition-all duration-300 flex flex-col`}
             >
                 <div className="w-full flex items-center justify-between">
-                    <h4 className="text-[20px] font-[600] dark:text-[#d2e5f5] text-gray-800">Crop Image</h4>
+                    <h4 className='text-[20px] font-[600] dark:text-darkTextColor text-gray-800'>Crop Image</h4>
                     <RxCross1
-                        className="p-2 text-[2.3rem] dark:hover:bg-slate-800 dark:text-[#d2e5f5]/70 hover:bg-[#e7e7e7] rounded-full transition-all duration-300 cursor-pointer"
-                        onClick={()=> setImage("")}
+                        className="p-2 text-[2.3rem] dark:hover:bg-slate-800 dark:text-darkTextColor/70 hover:bg-[#e7e7e7] rounded-full transition-all duration-300 cursor-pointer"
+                        onClick={()=> setImage('')}
                     />
                 </div>
 
@@ -163,7 +163,7 @@ const Modal = ({image, setImage, setCroppedImage}) => {
                         onMouseUp={stopInteraction}
                         onMouseLeave={stopInteraction}
                         className="relative rounded-md overflow-hidden"
-                        style={{ maxWidth: "100%", maxHeight: "100%" }}
+                        style={{ maxWidth: '100%', maxHeight: '100%' }}
                     >
                         {image && (
                             <>
@@ -180,8 +180,8 @@ const Modal = ({image, setImage, setCroppedImage}) => {
                                         top: cropArea.y,
                                         width: cropArea.width,
                                         height: cropArea.height,
-                                        boxShadow: "0 0 0 9999px rgba(0,0,0,0.5)",
-                                        cursor: "move"
+                                        boxShadow: '0 0 0 9999px rgba(0,0,0,0.5)',
+                                        cursor: 'move'
                                     }}
                                     onMouseDown={startMove}
                                 >
@@ -197,8 +197,8 @@ const Modal = ({image, setImage, setCroppedImage}) => {
 
                 <div className="flex justify-end gap-2 mt-10">
                     <button
-                        className="px-4 py-2 dark:bg-slate-800 dark:text-[#abc2d3] dark:hover:bg-slate-800/80 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
-                        onClick={() => setImage("")}
+                        className="px-4 py-2 dark:bg-slate-800 dark:text-darkSubTextColor dark:hover:bg-slate-800/80 bg-gray-200 text-gray-800 rounded hover:bg-gray-300 transition-colors"
+                        onClick={() => setImage('')}
                     >
                         Cancel
                     </button>

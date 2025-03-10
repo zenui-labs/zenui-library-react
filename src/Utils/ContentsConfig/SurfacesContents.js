@@ -46,6 +46,15 @@ export const accordionContents = [
   },
 ];
 
+// Accordion contents
+export const ImageCropperContents = [
+  {
+    id: 1,
+    title: 'crop image in modal',
+    href: '#crop-image-in-modal',
+  },
+];
+
 // Animated Cards contents
 export const animatedCardsContents = [
   {

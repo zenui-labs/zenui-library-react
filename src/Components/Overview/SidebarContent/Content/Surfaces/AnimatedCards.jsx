@@ -1004,8 +1004,8 @@ export default AnimatedCard;
           <OverviewFooter
             backUrl='/components/cards'
             backName='cards'
-            forwardName='accordion'
-            forwardUrl='/components/according'
+            forwardName='image cropper'
+            forwardUrl='/components/image-cropper'
           />
         </div>
 

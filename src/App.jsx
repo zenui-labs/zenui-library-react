@@ -115,6 +115,8 @@ const CarouselPage = React.lazy(() => import("./Pages/Components/Surfaces/Carous
 
 const SemanticTagMasterPage = React.lazy(() => import("./Pages/SemanticTagMasterPage.jsx"));
 
+const ImageCropperPage = React.lazy(() => import("./Pages/Components/Surfaces/ImageCropperPage.jsx"));
+
 // become zenui hero docs
 import ZenUIHeroDocsPage from "./Pages/ZenUIHeroDocsPage.jsx";
 import TimerPage from "./Pages/Components/Navigation/TimerPage.jsx";
@@ -214,6 +216,7 @@ const App = () => {
                 <Route path="/components/cards" element={<CardPage/>}/>
                 <Route path="/components/drag-and-drop" element={<DragAndDropPage/>}/>
                 <Route path="/components/comparison-card" element={<ComparisonCardPage/>}/>
+                <Route path="/components/image-cropper" element={<ImageCropperPage/>}/>
                 <Route path="/components/animated-cards" element={<AnimatedCardsPage/>}/>
                 <Route
                     path="/components/image-gallery"
