@@ -11,11 +11,13 @@ import Sponsor from "../Components/Home/Sponsor.jsx";
 import Faq from "../Components/Home/Faq.jsx";
 import ZenUITools from "../Components/Home/ZenUITools.jsx";
 import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
+import NewsBoard from "../Components/Home/NewsBoard.jsx";
 
 
 const HomePage = () => {
     return (
         <div className='transition-all duration-500'>
+            <NewsBoard/>
             <Navbar/>
             <div className='overflow-x-hidden'>
                 <MobileNavbar/>

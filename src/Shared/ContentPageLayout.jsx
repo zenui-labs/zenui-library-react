@@ -6,6 +6,7 @@ import MobileNavbar from "../Components/Home/MobileNavbar.jsx";
 import Sidebar from "../Components/Overview/Sidebar/index.jsx";
 import { MenuContext } from "../Context/MenuContext.jsx";
 import useZenuiStore from "../Store/Index.js";
+import NewsBoard from "../Components/Home/NewsBoard.jsx";
 
 const ContentPageLayout = ({children}) => {
     const { scrollY } = useContext(MenuContext);
@@ -14,6 +15,7 @@ const ContentPageLayout = ({children}) => {
 
     return (
         <div className=''>
+            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <div className="flex w-full mx-auto max-w-[1700px]">

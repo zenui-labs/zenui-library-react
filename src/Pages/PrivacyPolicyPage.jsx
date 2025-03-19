@@ -6,6 +6,7 @@ import Footer from "../Components/Home/Footer.jsx";
 import PrivacyPolicy from "../Components/Home/PrivacyPolicy.jsx";
 import MobileNavbar from "../Components/Home/MobileNavbar.jsx";
 import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
+import NewsBoard from "../Components/Home/NewsBoard.jsx";
 
 
 const AboutUsPage = () => {
@@ -18,6 +19,7 @@ const AboutUsPage = () => {
 
     return (
         <div className='overflow-x-hidden'>
+            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <PrivacyPolicy/>
