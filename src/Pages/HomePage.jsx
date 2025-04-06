@@ -12,11 +12,13 @@ import Faq from "../Components/Home/Faq.jsx";
 import ZenUITools from "../Components/Home/ZenUITools.jsx";
 import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
 import NewsBoard from "../Components/Home/NewsBoard.jsx";
+import Gaza from "../Components/Home/Gaza.jsx";
 
 
 const HomePage = () => {
     return (
         <div className='transition-all duration-500'>
+            <Gaza/>
             <NewsBoard/>
             <Navbar/>
             <div className='overflow-x-hidden'>

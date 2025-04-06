@@ -160,7 +160,7 @@ const Navbar = () => {
                                 v2.2
                             </span>
                             <img
-                                src="/darklogo.png"
+                                src="/palestine-logo.svg"
                                 alt="logo"
                                 className="w-[70px] cursor-pointer z-10"
                                 onClick={() => navigate("/")}
