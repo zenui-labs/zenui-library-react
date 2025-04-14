@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 
 // react icons
-import {FaGithub, FaReact} from "react-icons/fa";
+import {FaGithub, FaReact, FaStar} from "react-icons/fa";
 
 // import aos animation
 import "aos/dist/aos.css";
@@ -32,8 +32,12 @@ import ChipCard from "../HomePageComponents/Chip.jsx";
 import StrongPasswordCard from "../HomePageComponents/StrongPasswordCard.jsx";
 import AnimatedProductCard from "../HomePageComponents/AnimatedProductCard.jsx";
 import {SiNpm} from "react-icons/si";
+import {CountUp} from "use-count-up";
+import {useGitHubStars} from "../../CustomHooks/useGithubStars.js";
 
 const Hero = () => {
+
+    const { stars, loading } = useGitHubStars("Asfak00", "zenui-library");
 
     const FADE_DOWN_ANIMATION_VARIANTS = {
         hidden: {opacity: 0, y: -10},
@@ -99,17 +103,17 @@ const Hero = () => {
                                 },
                             }}>
 
-                    <a href="https://github.com/Asfak00/zenui-library" target="_blank" className='flex items-center gap-[10px] bg-[#9A04F59E] hover:bg-[#9A04F5D2] transition-all duration-200 w-max py-[5px] pr-[18px] pl-[12px] text-white rounded-[6px] absolute top-[-10px] z-30 left-0 text-[1rem] cursor-pointer'>
+                    <a href="https://github.com/Asfak00/zenui-library" target="_blank" className='flex items-center gap-[10px] hover:bg-[#9A04F59E] bg-[#9A04F5D2] transition-all duration-200 w-max py-[5px] pr-[18px] pl-[12px] text-white rounded-[6px] absolute top-[-10px] z-30 left-0 text-[1rem] cursor-pointer'>
                       <div className='flex items-center gap-[8px]'>
                           <FaGithub/>
-                          Star us on Github
+                          Star on Github <FaStar className='text-yellow-300'/> <CountUp isCounting end={stars} duration={3.2} />
                       </div>
-                        <FaArrowRightLong
-                            className={`
-          ${isAnimating ? 'animate-bounce-custom' : ''}
-          transition-transform duration-300
-        `}
-                        />
+        {/*                <FaArrowRightLong*/}
+        {/*                    className={`*/}
+        {/*  ${isAnimating ? 'animate-bounce-custom' : ''}*/}
+        {/*  transition-transform duration-300*/}
+        {/*`}*/}
+        {/*                />*/}
                     </a>
 
                     <div

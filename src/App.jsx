@@ -117,6 +117,8 @@ const SemanticTagMasterPage = React.lazy(() => import("./Pages/SemanticTagMaster
 
 const ImageCropperPage = React.lazy(() => import("./Pages/Components/Surfaces/ImageCropperPage.jsx"));
 
+const MarqueePage = React.lazy(() => import("./Pages/Components/Navigation/MarqueePage.jsx"));
+
 // become zenui hero docs
 import ZenUIHeroDocsPage from "./Pages/ZenUIHeroDocsPage.jsx";
 import TimerPage from "./Pages/Components/Navigation/TimerPage.jsx";
@@ -194,6 +196,7 @@ const App = () => {
                 <Route path="/components/modal" element={<ModalPage/>}/>
                 <Route path="/components/progress-bar" element={<ProgressBarPage/>}/>
                 <Route path="/components/chip" element={<ChipPage/>}/>
+                <Route path="/components/marquee" element={<MarqueePage/>}/>
                 <Route path="/components/timer" element={<TimerPage/>}/>
                 <Route path="/components/breadcrumb" element={<BreadcrumbPage/>}/>
                 <Route path="/components/rating" element={<RatingPage/>}/>

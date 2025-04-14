@@ -442,8 +442,8 @@ export default Chip;
           <OverviewFooter
             backUrl='/components/progress-bar'
             backName='progress bar'
-            forwardName='breadcrumb'
-            forwardUrl='/components/breadcrumb'
+            forwardName='marquee'
+            forwardUrl='/components/marquee'
           />
         </div>
 

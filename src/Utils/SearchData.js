@@ -12,6 +12,12 @@ export const componentSearchData = [
         tags: ['form', 'text', 'multiline']
     },
     {
+        title: 'Marquee',
+        description: 'A marquee scrolls text or content in a chosen direction for a dynamic display effect.',
+        url: '/components/marquee',
+        tags: ['slider animation', 'marquee']
+    },
+    {
         title: 'Switch',
         description: 'Toggle switch for binary on/off selections',
         url: '/components/input-switch',

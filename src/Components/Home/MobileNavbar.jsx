@@ -196,6 +196,11 @@ const MobileNavbar = () => {
                                             <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                                 Config AI
                                             </p>
+
+                                            <div
+                                                className='bg-red-50 rounded-full py-0.5 px-2 text-[0.5rem] font-normal text-red-600 border border-red-600'>
+                                                For Tailwind v3
+                                            </div>
                                         </div>
                                         <span
                                             className='text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500'>Generate tailwind config file by AI.</span>

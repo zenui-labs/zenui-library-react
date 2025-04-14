@@ -168,7 +168,7 @@ const Content = () => {
                 title: "Image Cropper",
                 url: "/components/image-cropper",
                 parent: 'SURFACES',
-                  isNewComponent: true
+                isNewComponent: true
               },
               {
                 title: "Accordion",
@@ -207,6 +207,12 @@ const Content = () => {
                 title: "Chip",
                 url: "/components/chip",
                 parent: 'NAVIGATION'
+              },
+              {
+                title: "Marquee",
+                url: "/components/marquee",
+                parent: 'NAVIGATION',
+                isNewComponent: true
               },
               {
                 title: "Timer",

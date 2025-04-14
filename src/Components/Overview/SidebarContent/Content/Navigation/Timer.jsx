@@ -866,8 +866,8 @@ export default Timer;
                     </ComponentWrapper>
 
                     <OverviewFooter
-                        backUrl='/components/chip'
-                        backName='chip'
+                        backUrl='/components/marquee'
+                        backName='marquee'
                         forwardName='breadcrumb'
                         forwardUrl='/components/breadcrumb'
                     />

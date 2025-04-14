@@ -295,6 +295,11 @@ aside ul a:not(.getStarted a, .sectionHeader):hover {
   }
 }
 
+.slider-container:hover .allComponentSliderLeft,
+.slider-container:hover .allComponentSliderRight {
+  animation-play-state: paused;
+}
+
 /* 2.0 upcoming badge  */
 .gradient-border {
   position: relative;
@@ -469,4 +474,35 @@ input[type="number"] {
 
 .heart-beat-animation {
   animation: beat 1.2s infinite;
+}
+
+@keyframes scrollUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.allComponentSliderUp {
+  animation: scrollUp 45s linear infinite;
+}
+
+.allComponentSliderDown {
+  animation: scrollDown 45s linear infinite;
+}
+
+.slider-container:hover .allComponentSliderUp,
+.slider-container:hover .allComponentSliderDown {
+  animation-play-state: paused;
 }

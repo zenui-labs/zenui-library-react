@@ -18,7 +18,7 @@ import Gaza from "../Components/Home/Gaza.jsx";
 const HomePage = () => {
     return (
         <div className='transition-all duration-500'>
-            <Gaza/>
+            {/*<Gaza/>*/}
             <NewsBoard/>
             <Navbar/>
             <div className='overflow-x-hidden'>
