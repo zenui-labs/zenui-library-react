@@ -31,6 +31,25 @@ export const tableContents = [
   }
 ];
 
+// Redo Undo contents
+export const redoUndoContents = [
+  {
+    id: 1,
+    title: 'Redo Undo using button',
+    href: '#redo-undo-using-button'
+  },
+  {
+    id: 2,
+    title: 'Redo Undo using keyboard shortcut',
+    href: '#redo-undo-using-keyboard-shortcut'
+  },
+  {
+    id: 3,
+    title: 'redo undo using button and keyboard shortcut',
+    href: '#redo-undo-using-button-and-keyboard-shortcut'
+  }
+];
+
 // Badge contents 
 export const badgeContents = [
   {

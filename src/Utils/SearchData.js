@@ -24,6 +24,12 @@ export const componentSearchData = [
         tags: ['form', 'toggle', 'boolean']
     },
     {
+        title: 'Redo & Undo',
+        description: 'Implement redo and undo functionality for user actions.',
+        url: '/components/redo-undo',
+        tags: ['redo', 'undo', 'keyboard shortcut']
+    },
+    {
         title: 'Comparison Card',
         description: 'Compare items side-by-side for easy analysis.',
         url: '/components/comparison-card',

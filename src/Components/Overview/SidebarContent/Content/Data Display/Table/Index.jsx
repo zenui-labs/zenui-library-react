@@ -1096,8 +1096,8 @@ export default Table;
           <OverviewFooter
             backUrl='/components/badge'
             backName='badge'
-            forwardName='tooltip'
-            forwardUrl='/components/tooltip'
+            forwardName='redo & undo'
+            forwardUrl='/components/redo-undo'
           />
         </div>
 

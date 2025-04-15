@@ -301,6 +301,12 @@ const Content = () => {
                 parent: 'DATA DISPLAY'
               },
               {
+                title: "Redo & Undo",
+                url: "/components/redo-undo",
+                parent: 'DATA DISPLAY',
+                isNewComponent: true
+              },
+              {
                 title: "Github Activity Graph",
                 url: "/components/github-activity-graph",
                 parent: 'DATA DISPLAY',

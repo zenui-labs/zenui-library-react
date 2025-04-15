@@ -119,6 +119,8 @@ const ImageCropperPage = React.lazy(() => import("./Pages/Components/Surfaces/Im
 
 const MarqueePage = React.lazy(() => import("./Pages/Components/Navigation/MarqueePage.jsx"));
 
+const RedoUndoPage = React.lazy(() => import("./Pages/Components/Data Display/RedoUndoPage.jsx"));
+
 // become zenui hero docs
 import ZenUIHeroDocsPage from "./Pages/ZenUIHeroDocsPage.jsx";
 import TimerPage from "./Pages/Components/Navigation/TimerPage.jsx";
@@ -236,6 +238,7 @@ const App = () => {
                 <Route path="/components/github-activity-graph" element={<GithubActivityGraphPage/>}/>
                 <Route path="/components/pie-chart" element={<PieChartPage/>}/>
                 <Route path="/components/tooltip" element={<TooltipPage/>}/>
+                <Route path="/components/redo-undo" element={<RedoUndoPage/>}/>
                 <Route path="/components/timeline" element={<TimelinePage/>}/>
 
                 {/* e-commerce */}

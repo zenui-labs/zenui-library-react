@@ -1507,8 +1507,8 @@ const GithubActivityGraph = () => {
                 </BlockWrapper >
 
                     <BlocksFooter
-                        backUrl="/components/table"
-                        backName="table"
+                        backUrl="/components/redo-undo"
+                        backName="redo & undo"
                         forwardName="tooltip"
                         forwardUrl="/components/tooltip"
                     />

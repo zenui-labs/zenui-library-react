@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from "react";
+import {useState, useRef, useEffect} from 'react';
 
 // react icons
 import {LuRedo2, LuUndo2} from "react-icons/lu";
@@ -8,11 +8,11 @@ function RedoUndoUsingButtonAndKeyboard() {
     const SAVE_DELAY = 800;
 
     const editorRef = useRef(null);
-    const [history, setHistory] = useState(["Start typing here..."]);
+    const [history, setHistory] = useState(['Start typing here...']);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isUndoRedo, setIsUndoRedo] = useState(false);
     const timerRef = useRef(null);
-    const lastContentRef = useRef("Start typing here...");
+    const lastContentRef = useRef('Start typing here...');
 
     useEffect(() => {
         if (isUndoRedo && editorRef.current) {
@@ -117,35 +117,38 @@ function RedoUndoUsingButtonAndKeyboard() {
 
     useEffect(() => {
         const handleKeyDown = (event) => {
+
+            if (document.activeElement !== editorRef.current) return;
+
             if (event.ctrlKey || event.metaKey) {
-                if (event.key === "Z") {
+                if (event.key === 'Z') {
                     event.preventDefault();
                     handleUndo();
-                } else if (event.key === "Y") {
+                } else if (event.key === 'Y') {
                     event.preventDefault();
                     handleRedo();
                 }
             }
         };
 
-        document.addEventListener("keydown", handleKeyDown);
+        document.addEventListener('keydown', handleKeyDown);
 
         return () => {
-            document.removeEventListener("keydown", handleKeyDown);
+            document.removeEventListener('keydown', handleKeyDown);
         };
     }, []);
 
 
     return (
-        <div className="w-full">
+        <div className='w-full'>
             <div className="flex gap-2 mb-4">
                 <button
                     onClick={handleUndo}
                     disabled={currentIndex <= 0}
                     className={`px-3 py-2 rounded ${
                         currentIndex <= 0
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
+                            ? 'bg-gray-200 dark:bg-slate-700 text-gray-500 cursor-not-allowed'
+                            : 'bg-primary text-white hover:bg-blue-600'
                     }`}
                 >
                     <LuUndo2/>
@@ -156,8 +159,8 @@ function RedoUndoUsingButtonAndKeyboard() {
                     disabled={currentIndex >= history.length - 1}
                     className={`px-3 py-2 rounded ${
                         currentIndex >= history.length - 1
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
+                            ? 'bg-gray-200 dark:bg-slate-700 text-gray-500 cursor-not-allowed'
+                            : 'bg-primary text-white hover:bg-blue-600'
                     }`}
                 >
                     <LuRedo2 />
@@ -168,7 +171,7 @@ function RedoUndoUsingButtonAndKeyboard() {
                 ref={editorRef}
                 contentEditable={true}
                 onInput={handleChange}
-                className="min-h-64 p-4 cursor-text border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B9DF8] focus:border-transparent"
+                className="min-h-64 p-4 cursor-text dark:border-slate-600 dark:text-slate-300 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
             />
 
         </div>
