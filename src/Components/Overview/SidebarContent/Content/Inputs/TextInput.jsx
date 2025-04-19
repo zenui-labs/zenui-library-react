@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 // components
 import OverviewFooter from '../../../../../Shared/OverviewFooter';
@@ -25,6 +25,7 @@ import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
 import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
 import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
 import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
+import NumberDropdown from './NumberDropDown.jsx';
 
 const TextInput = () => {
   const sectionIds = textInputContents.map((item) => item.href.slice(1));
@@ -62,12 +63,22 @@ const TextInput = () => {
   const [joinInputPreview, setJoinInputPreview] = useState(true);
   const [joinInputCode, setJoinInputCode] = useState(false);
 
+  //international phone number
+  const [internationalNumberInputPreview, setInternationalNumberInputPreview] = useState(true);
+  const [internationalNumberInputCode, setInternationalNumberInputCode] = useState(false);
+
   // actions
   const [isEyeOpen, setIsEyeOpen] = useState(false);
 
   // price dropdown actions
   const [priceDropdownOpen, setPriceDropdownOpen] = useState(false);
   const [selectedCurrencyType, setSelectedCurrencyType] = useState('USD');
+
+    const [selectedCountry, setSelectedCountry] = useState({
+    name: "United States",
+    code: "+1",
+    flag: <span className="me-2">🇺🇸</span>,
+  });
 
   const allCurrencyTypes = ['USD', 'EUR', 'BDT'];
 
@@ -840,6 +851,141 @@ export default NewsletterSubscribeInput;
                 />
             )}
           </ComponentWrapper>
+
+          {/* international phone number input */}
+
+           <div className='mt-8'>
+            <ContentHeader text={'International number input'} id={'internation_number_input'}/>
+          </div>
+
+          <ComponentDescription text='This is an international number input field, where users select the national phone number format and enter their number.'/>
+
+          <ToggleTab preview={internationalNumberInputPreview} setPreview={setInternationalNumberInputPreview} code={internationalNumberInputCode}
+                     setCode={setInternationalNumberInputCode}/>
+
+          <ComponentWrapper>
+            {internationalNumberInputPreview && (
+                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                  <div className='w-full 1024px:w-[80%] relative inline-flex'>
+                    <NumberDropdown
+                        selectedCountry={selectedCountry}
+                        onSelect={setSelectedCountry}
+                    />
+                    <input
+                        type="text"
+                        name="phone"
+                        placeholder="Enter your phone number"
+                        className="border border-gray-300 dark:border-[#58667c] px-4 py-2 rounded-e-lg w-full focus:outline-none dark:bg-[rgb(2,6,23)] text-black dark:text-[#8a9daf]"
+                    />
+                  </div>
+                </div>
+            )}
+
+            {internationalNumberInputCode && (
+                <Showcode
+                    code='
+import { useState } from "react";
+const countries = [
+  {
+    name: "United States",
+    code: "+1",
+    flag: <span className="me-2">🇺🇸</span>,
+  },
+  {
+    name: "Bangladesh",
+    code: "+880",
+    flag: <span className="me-2">🇧🇩</span>,
+  },
+  {
+    name: "United Kingdom",
+    code: "+44",
+    flag: <span className="me-2">🇬🇧</span>,
+  },
+  {
+    name: "Canada",
+    code: "+1",
+    flag: <span className="me-2">🇨🇦</span>,
+  },
+  // add other country numbers if your need.
+];
+function PhoneDropdown({ selectedCountry, onSelect }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const handleSelect = (country) => {
+    onSelect(country);
+    setIsOpen(false);
+  };
+  return (
+    <div className="relative">
+      <button
+        type="button"
+        className="flex items-center py-2.5 px-4 text-sm font-medium text-gray-900 border-y border-l border-gray-300 rounded-s-lg"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {selectedCountry.flag}
+        {selectedCountry.code}
+        <svg className="w-2.5 h-2.5 ms-2.5" fill="none" viewBox="0 0 10 6">
+          <path
+            d="M1 1l4 4 4-4"
+            stroke="currentColor"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="2"
+          />
+        </svg>
+      </button>
+      {isOpen && (
+        <div className="absolute z-10 mt-1 bg-white divide-y divide-gray-100 rounded-lg shadow-lg w-60 ">
+          <ul className="py-2 text-sm text-gray-700 max-h-[400px] overflow-x-auto">
+            {countries.map((country, index) => (
+              <li key={index}>
+                <button
+                  type="button"
+                  className="inline-flex w-full px-4 py-2 text-sm text-gray-700"
+                  onClick={() => handleSelect(country)}
+                >
+                  <span className="inline-flex items-center">
+                    {country.flag}
+                    {country.name} ({country.code})
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+const PhoneNumber = () => {
+  const [selectedCountry, setSelectedCountry] = useState({
+    name: "United States",
+    code: "+1",
+    flag: <span className="me-2">🇺🇸</span>,
+  });
+  const [phoneNumber, setPhoneNumber] = useState("");
+  return (
+    <div className="inline-flex">
+      <PhoneDropdown
+        selectedCountry={selectedCountry}
+        onSelect={setSelectedCountry}
+      />
+      <input
+        type="text"
+        name="phone"
+        placeholder="Enter your phone number"
+        className="border border-gray-300 px-4 py-2 rounded-e-lg w-full focus:outline-none  text-black"
+        value={phoneNumber}
+        onChange={(e) => setPhoneNumber(e.target.value)}
+      />
+    </div>
+  );
+};
+export default PhoneNumber;
+                    '
+                />
+            )}
+          </ComponentWrapper>
+
 
           <OverviewFooter
               backName='all components'
