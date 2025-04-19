@@ -130,6 +130,7 @@ import { MenuProvider } from "./Context/MenuContext.jsx";
 import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActivityGraphPage.jsx";
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
+import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
 
 
 const App = () => {
@@ -269,6 +270,9 @@ const App = () => {
                 <Route path="/blocks/product-details-page" element={<ProductDetailsPage/>}/>
                 <Route path="/blocks/product-filter-page" element={<ProductFilterPage/>}/>
                 <Route path="/blocks/checkout-page" element={<CheckoutPage/>}/>
+
+                {/* animations route */}
+                <Route path="/animations/installation" element={<AnimationInstallationPage/>}/>
 
 
                 {/*  icons  */}

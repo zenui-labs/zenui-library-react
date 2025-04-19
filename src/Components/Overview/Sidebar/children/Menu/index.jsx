@@ -50,7 +50,7 @@ const DefaultMenu = ({ items }) => {
   );
 };
 
-const CollapseMenu = ({ title, items }) => {
+const CollapseMenu = ({ title, isNewComponent, items }) => {
   const [isOpen, setIsOpen] = useState(true);
 
 
@@ -62,10 +62,21 @@ const CollapseMenu = ({ title, items }) => {
         } flex items-center justify-between gap-1 text-[1rem]  font-[500] capitalize cursor-pointer`}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {title}
-        <MdKeyboardArrowRight
-          className={`${
-            isOpen && "rotate-[90deg] !text-[#0471d6]"
+          {
+              isNewComponent ? (
+                  <div className='flex items-center gap-2'>
+                      {title}
+                      <NewBadge/>
+                  </div>
+              ): (
+                  <>
+                      {title}
+                  </>
+              )
+          }
+          <MdKeyboardArrowRight
+              className={`${
+                  isOpen && "rotate-[90deg] !text-[#0471d6]"
           } text-[1.5rem] text-[#0471d6] transition-all duration-300`}
         />
       </h3>
