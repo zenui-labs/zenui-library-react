@@ -131,6 +131,7 @@ import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActiv
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
 import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
+import MagicCardsPage from "./Pages/Animations/Cards/MagicCardsPage.jsx";
 
 
 const App = () => {
@@ -273,6 +274,9 @@ const App = () => {
 
                 {/* animations route */}
                 <Route path="/animations/installation" element={<AnimationInstallationPage/>}/>
+
+                {/* animation cards */}
+                <Route path="/animations/magic-card" element={<MagicCardsPage/>}/>
 
 
                 {/*  icons  */}
