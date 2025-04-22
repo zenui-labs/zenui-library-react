@@ -1107,7 +1107,7 @@ export default Card;
                    '
                 />
             )}
-          </ComponentWrapper>]
+          </ComponentWrapper>
 
           <div className="mt-8">
             <ContentHeader id="Pricing_card_1" text={"Pricing card 1"}/>
