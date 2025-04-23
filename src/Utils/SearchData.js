@@ -18,6 +18,12 @@ export const componentSearchData = [
         tags: ['slider animation', 'marquee']
     },
     {
+        title: 'Carousel',
+        description: 'A carousel is a rotating set of images or content, often used on websites to showcase featured items or messages.',
+        url: 'components/carousel',
+        tags: ['carousel', 'animation', 'slider']
+    },
+    {
         title: 'Switch',
         description: 'Toggle switch for binary on/off selections',
         url: '/components/input-switch',
