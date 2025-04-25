@@ -132,6 +132,7 @@ import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.j
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
 import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
 import MagicCardsPage from "./Pages/Animations/Cards/MagicCardsPage.jsx";
+import RevealCardPage from "./Pages/Animations/Cards/RevealCardPage.jsx";
 
 
 const App = () => {
@@ -277,6 +278,7 @@ const App = () => {
 
                 {/* animation cards */}
                 <Route path="/animations/magic-card" element={<MagicCardsPage/>}/>
+                <Route path="/animations/reveal-card" element={<RevealCardPage/>}/>
 
 
                 {/*  icons  */}

@@ -1,5 +1,8 @@
 import {useRef, useState} from "react";
+
+// framer motion
 import {motion} from "framer-motion";
+
 import useZenuiStore from "../../../../../../Store/Index.js";
 
 const RotatingGlowCardExample = () => {
@@ -27,7 +30,7 @@ const RotatingGlowCardExample = () => {
 
     return (
         <div
-            className="relative w-64 h-64 perspective-1000"
+            className="relative w-64 h-[300px] perspective-1000"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
