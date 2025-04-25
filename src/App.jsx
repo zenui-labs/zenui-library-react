@@ -130,10 +130,13 @@ import { MenuProvider } from "./Context/MenuContext.jsx";
 import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActivityGraphPage.jsx";
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
+import usePageTracking from "./CustomHooks/usePageTracking.js";
 
 
 const App = () => {
     const [isCookie, setIsCookie] = useState(false)
+
+    usePageTracking()
 
     let Title = document.title;
     window.addEventListener('blur', () => {
