@@ -45,6 +45,11 @@ export const textInputContents = [
     title: 'Join Us Input',
     href: '#join_us_input',
   },
+  {
+    id:10,
+    title:'internation number input',
+    href:'#internation_number_input'
+  }
 ];
 
 export const textareaInputContents = [

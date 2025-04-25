@@ -133,10 +133,13 @@ import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPa
 import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
 import MagicCardsPage from "./Pages/Animations/Cards/MagicCardsPage.jsx";
 import RevealCardPage from "./Pages/Animations/Cards/RevealCardPage.jsx";
+import usePageTracking from "./CustomHooks/usePageTracking.js";
 
 
 const App = () => {
     const [isCookie, setIsCookie] = useState(false)
+
+    usePageTracking()
 
     let Title = document.title;
     window.addEventListener('blur', () => {
