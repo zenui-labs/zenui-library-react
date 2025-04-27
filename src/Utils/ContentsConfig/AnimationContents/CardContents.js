@@ -35,3 +35,17 @@ export const RevealCardContents = [
         href: '#rotate-swipe-reveal-card',
     },
 ];
+
+// magnet cards
+export const MagnetCardContents = [
+    {
+        id: 1,
+        title: 'Basic Magnet Card',
+        href: '#basic-magnet-card',
+    },
+    {
+        id: 2,
+        title: '3d Magnet Card',
+        href: '#3d-magnet-card',
+    },
+];

@@ -134,6 +134,9 @@ import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
 import MagicCardsPage from "./Pages/Animations/Cards/MagicCardsPage.jsx";
 import RevealCardPage from "./Pages/Animations/Cards/RevealCardPage.jsx";
 import usePageTracking from "./CustomHooks/usePageTracking.js";
+import MagnetCardPage from "./Pages/Animations/Cards/MagnetCardPage.jsx";
+import SortingAnimationPage from "./Pages/Animations/Layouts/SortingAnimationPage.jsx";
+import GridSwitcherPage from "./Pages/Animations/Layouts/GridSwitcherPage.jsx";
 
 
 const App = () => {
@@ -282,7 +285,11 @@ const App = () => {
                 {/* animation cards */}
                 <Route path="/animations/magic-card" element={<MagicCardsPage/>}/>
                 <Route path="/animations/reveal-card" element={<RevealCardPage/>}/>
+                <Route path="/animations/magnet-card" element={<MagnetCardPage/>}/>
 
+                {/* layouts animation */}
+                <Route path="/animations/sorting-animation" element={<SortingAnimationPage/>}/>
+                <Route path="/animations/grid-switcher" element={<GridSwitcherPage/>}/>
 
                 {/*  icons  */}
                 <Route path="/icons" element={<IconsPage/>}/>
