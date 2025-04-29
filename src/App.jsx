@@ -137,6 +137,7 @@ import usePageTracking from "./CustomHooks/usePageTracking.js";
 import MagnetCardPage from "./Pages/Animations/Cards/MagnetCardPage.jsx";
 import SortingAnimationPage from "./Pages/Animations/Layouts/SortingAnimationPage.jsx";
 import GridSwitcherPage from "./Pages/Animations/Layouts/GridSwitcherPage.jsx";
+import ReactionTrailPage from "./Pages/Animations/Buttons/ReactionTrailPage.jsx";
 
 
 const App = () => {
@@ -290,6 +291,9 @@ const App = () => {
                 {/* layouts animation */}
                 <Route path="/animations/sorting-animation" element={<SortingAnimationPage/>}/>
                 <Route path="/animations/grid-switcher" element={<GridSwitcherPage/>}/>
+
+                {/* buttons animation */}
+                <Route path="/animations/reaction-trail" element={<ReactionTrailPage/>}/>
 
                 {/*  icons  */}
                 <Route path="/icons" element={<IconsPage/>}/>

@@ -396,21 +396,11 @@ const Content = () => {
                         parent: 'LAYOUTS'
                     },
                     {
-                        title: "Expandable Grid",
-                        url: "/animations/expandable-grid",
-                        parent: 'LAYOUTS'
-                    },
-                    {
                         label: "BUTTONS",
                     },
                     {
                         title: "Reaction Trail",
                         url: "/animations/reaction-trail",
-                        parent: 'BUTTONS'
-                    },
-                    {
-                        title: "Pop Animation",
-                        url: "/animations/pop-animation",
                         parent: 'BUTTONS'
                     },
                 ]}
