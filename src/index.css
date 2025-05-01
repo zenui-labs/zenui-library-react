@@ -7,57 +7,57 @@
 @tailwind utilities;
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-  scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    scroll-behavior: smooth;
 }
 
 .codeSnippet {
-  font-family: "Inconsolata", monospace;
+    font-family: "Inconsolata", monospace;
 }
 
 *::selection {
-  background-color: #3b9df8;
-  color: #fff;
+    background-color: #3b9df8;
+    color: #fff;
 }
 
 *::-webkit-scrollbar {
-  background-color: #3b9df825;
-  width: 0.1rem;
+    background-color: #3b9df825;
+    width: 0.1rem;
 }
 
 *::-webkit-scrollbar-track {
-  background-color: #3b9df825;
+    background-color: #3b9df825;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #3b9df8;
-  border-radius: 30px;
+    background-color: #3b9df8;
+    border-radius: 30px;
 }
 
 .heroText {
-  font-family: "Unbounded", sans-serif;
+    font-family: "Unbounded", sans-serif;
 }
 
 /* button sliding animation */
 .logos {
-  white-space: nowrap;
+    white-space: nowrap;
 }
 
 .logos:before,
 .logos:after {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  height: 100%;
-  content: "";
-  z-index: 2;
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
 }
 
 .card-gradient {
-  background: linear-gradient(to top right, white 30%, rgba(15, 171, 202, 0.33) 100%);
+    background: linear-gradient(to top right, white 30%, rgba(15, 171, 202, 0.33) 100%);
 }
 
 /*.logos:before {*/
@@ -71,438 +71,432 @@
 /*}*/
 
 .logos:hover .logos-slide {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 .logos-slide {
-  animation: 25s slide infinite linear;
+    animation: 25s slide infinite linear;
 }
 
 .logos-slide a {
 }
 
 @keyframes slide {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .codeContainer::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .showCode::-webkit-scrollbar {
-  height: 3px;
+    height: 3px;
 }
 
 /* navbar hover effect */
 .navUl li {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .navUl li p {
-  transform: translateY(0px);
-  opacity: 1;
-  transition: all 0.4s ease-in-out;
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
 }
 
 .navUl li span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 0.4s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .navUl li:hover p {
-  opacity: 0;
-  transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .navUl li:hover span {
-  opacity: 1;
-  transform: translateY(0px);
-  color: #0FABCA;
+    opacity: 1;
+    transform: translateY(0px);
+    color: #0FABCA;
 }
 
 /* button hover effect */
 .buttonSecondary::after {
-  content: "";
-  background-color: #3b9df8;
-  top: 0;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  transform: translateX(-300px);
-  transition: all 0.3s ease-in-out;
+    content: "";
+    background-color: #3b9df8;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: translateX(-300px);
+    transition: all 0.3s ease-in-out;
 }
 
 .buttonSecondary:hover::after {
-  transform: translateY(0);
+    transform: translateY(0);
 }
 
 .buttonSecondary:hover {
-  color: #fff;
+    color: #fff;
 }
 
 /* footer p hover effect */
 .footer li {
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .footer li p {
-  transform: translateY(0px);
-  opacity: 1;
-  transition: all 0.4s ease-in-out;
+    transform: translateY(0px);
+    opacity: 1;
+    transition: all 0.4s ease-in-out;
 }
 
 .footer li span {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: all 0.4s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
 }
 
 .footer li:hover p {
-  opacity: 0;
-  transform: translateY(-20px);
+    opacity: 0;
+    transform: translateY(-20px);
 }
 
 .footer li:hover span {
-  opacity: 1;
-  transform: translateY(0px);
-  color: #0FABCA;
+    opacity: 1;
+    transform: translateY(0px);
+    color: #0FABCA;
 }
 
 /* sidebar hover effect */
 aside ul a:not(.getStarted a) {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  font-weight: 400;
-  transition: all 0.3s ease-in-out;
-  font-size: 0.9rem;
-  text-transform: capitalize;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+    font-size: 0.9rem;
+    text-transform: capitalize;
 }
 
 aside ul a:not(.getStarted a, .sectionHeader):hover {
-  background-color: #e5eaf2;
-  border-left: 1px solid #9caebc;
-  border-radius: 0.25rem;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+    background-color: #e5eaf2;
+    border-left: 1px solid #9caebc;
+    border-radius: 0.25rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
 
 
 /* sidebar component section header  */
 .sectionHeader {
-  color: #0471d6;
-  border-left: 1px solid #9caebc;
+    color: #0471d6;
+    border-left: 1px solid #9caebc;
 }
+
 .sectionHeader:hover {
-  background-color: transparent;
-  font-weight: 400;
-  border-left: 1px solid #9caebc;
+    background-color: transparent;
+    font-weight: 400;
+    border-left: 1px solid #9caebc;
 }
+
 .sectionHeader::after {
-  content: "";
-  background-color: #9caebc;
-  top: -1%;
-  left: -2.3%;
-  position: absolute;
-  width: 10px;
-  border-radius: 50%;
-  height: 10px;
-  transition: all 0.3s ease-in-out;
+    content: "";
+    background-color: #9caebc;
+    top: -1%;
+    left: -2.3%;
+    position: absolute;
+    width: 10px;
+    border-radius: 50%;
+    height: 10px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* home */
 .serviceCard {
-  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.3);
 }
 
 .boxShadow {
-  box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 10px 0px rgb(0, 0, 0, 0.1);
 }
 
 .toastshadow {
-  box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 3px 0px rgb(0, 0, 0, 0.1);
 }
 
 .notificationShadow {
-  box-shadow: 0px 0px 7px 0px #f2f2f2;
+    box-shadow: 0px 0px 7px 0px #f2f2f2;
 }
+
 .sponsorCard {
-  box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 20px 0px rgb(0, 0, 0, 0.2);
 }
 
 .heartIcon {
-  animation: zoomInZoomOut 1s ease-in-out infinite;
+    animation: zoomInZoomOut 1s ease-in-out infinite;
 }
 
 @keyframes zoomInZoomOut {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.1, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.1, 1.1);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
 }
 
 
 /* all components section sliding animation */
 .allComponentSliderLeft {
-  animation: animationSliderLeft 20s linear infinite;
+    animation: animationSliderLeft 20s linear infinite;
 }
 
 @keyframes animationSliderLeft {
-  from {
-    transform: translateX(0)
-  }
-  to {
-    transform: translateX(-100%)
-  }
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(-100%)
+    }
 }
 
 .allComponentSliderRight {
-  animation: animationSliderRight 20s linear infinite;
+    animation: animationSliderRight 20s linear infinite;
 }
 
 @keyframes animationSliderRight {
-  from {
-    transform: translateX(0)
-  }
-  to {
-    transform: translateX(100%)
-  }
+    from {
+        transform: translateX(0)
+    }
+    to {
+        transform: translateX(100%)
+    }
 }
 
 .slider-container:hover .allComponentSliderLeft,
 .slider-container:hover .allComponentSliderRight {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
 
 /* 2.0 upcoming badge  */
 .gradient-border {
-  position: relative;
-  padding: 2px;
-  background: linear-gradient(90deg, #DB06F9 0%, rgba(0,204,255,1) 100%);
-  border-radius: 9999px;
-  display: inline-block;
-  overflow: hidden;
-  color: rgba(117, 18, 1, 0.13);
+    position: relative;
+    padding: 2px;
+    background: linear-gradient(90deg, #DB06F9 0%, rgba(0, 204, 255, 1) 100%);
+    border-radius: 9999px;
+    display: inline-block;
+    overflow: hidden;
+    color: rgba(117, 18, 1, 0.13);
 }
 
 .gradient-border > div {
-  background: #fff;
-  border-radius: 9999px;
-  padding: 0.3rem 1rem;
-  display: flex;
-  align-items: center;
+    background: #fff;
+    border-radius: 9999px;
+    padding: 0.3rem 1rem;
+    display: flex;
+    align-items: center;
 }
 
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* Hide the number input spinner in Firefox */
 input[type="number"] {
-  -moz-appearance: textfield;
+    -moz-appearance: textfield;
 }
 
 /* icons */
 .iconContainer svg {
-  width: 26px;
-  height: 26px;
+    width: 26px;
+    height: 26px;
 }
 
 /* bouncing animation*/
 .animation-bounce {
-  animation: bounce 2s infinite ease-in-out;
+    animation: bounce 2s infinite ease-in-out;
 }
 
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
 }
 
 /* bouncing animation*/
 .animation-bounce1 {
-  animation: bounce1 2s infinite ease-in-out;
+    animation: bounce1 2s infinite ease-in-out;
 }
 
 @keyframes bounce1 {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
 /* bouncing animation*/
 .animation-bounce2 {
-  animation: bounce2 2.3s infinite ease-in-out;
+    animation: bounce2 2.3s infinite ease-in-out;
 }
 
 @keyframes bounce2 {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
 }
 
-#bmc-wbtn {
-  background-color: #2a8bff !important;
-  width: 58px !important;
-  height: 58px !important;
-}
-
-#bmc-iframe {
-  right: 80px !important;
-  bottom: 87px !important;
-}
-
-.customTable::-webkit-scrollbar{
-  height: 5px;
+.customTable::-webkit-scrollbar {
+    height: 5px;
 }
 
 .customTable::-webkit-scrollbar-track {
-  background-color: #f1f1f1;
-  border-radius: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
 .customTable::-webkit-scrollbar-thumb {
-  background: #a2a2a2;
-  border-radius: 10px;
+    background: #a2a2a2;
+    border-radius: 10px;
 }
 
 /* skeleton shimmer animation */
 @keyframes shimmer {
-  100% {
+    100% {
         transform: translateX(100%)
-      }
+    }
 }
 
 /* bouncing animation for zenui hero badge*/
 .animation-bounce-zenui-hero-badge {
-  animation: badgeBounce 2s infinite ease-in-out;
+    animation: badgeBounce 2s infinite ease-in-out;
 }
 
 @keyframes badgeBounce {
-  0%, 100% {
-    transform: translateY(0) rotate(-15deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(-15deg);
-  }
+    0%, 100% {
+        transform: translateY(0) rotate(-15deg);
+    }
+    50% {
+        transform: translateY(-10px) rotate(-15deg);
+    }
 }
 
 @keyframes spinZoom {
-  0% {
-    transform: scale(1) rotate(0deg);
-  }
-  50% {
-    transform: scale(1.2) rotate(180deg);
-  }
-  100% {
-    transform: scale(1) rotate(360deg);
-  }
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+    50% {
+        transform: scale(1.2) rotate(180deg);
+    }
+    100% {
+        transform: scale(1) rotate(360deg);
+    }
 }
+
 .animate-spin-zoom {
-  animation: spinZoom 1.5s infinite ease-in-out;
+    animation: spinZoom 1.5s infinite ease-in-out;
 }
+
 .scrollbar::-webkit-scrollbar {
-  height: 4px;
+    height: 4px;
 }
 
 .zenui_code_snippet::-webkit-scrollbar {
-  height: 8px;
+    height: 8px;
 }
 
 @keyframes bounce-custom {
-  0%, 100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  75% {
-    transform: translateX(5px);
-  }
+    0%, 100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
 }
 
 .animate-bounce-custom {
-  animation: bounce-custom 0.6s ease-in-out 2;
+    animation: bounce-custom 0.6s ease-in-out 2;
 }
 
 @keyframes beat {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
 }
 
 .heart-beat-animation {
-  animation: beat 1.2s infinite;
+    animation: beat 1.2s infinite;
 }
 
 @keyframes scrollUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-50%);
-  }
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
 }
 
 @keyframes scrollDown {
-  0% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0);
-  }
+    0% {
+        transform: translateY(-50%);
+    }
+    100% {
+        transform: translateY(0);
+    }
 }
 
 .allComponentSliderUp {
-  animation: scrollUp 45s linear infinite;
+    animation: scrollUp 45s linear infinite;
 }
 
 .allComponentSliderDown {
-  animation: scrollDown 45s linear infinite;
+    animation: scrollDown 45s linear infinite;
 }
 
 .slider-container:hover .allComponentSliderUp,
 .slider-container:hover .allComponentSliderDown {
-  animation-play-state: paused;
+    animation-play-state: paused;
 }
