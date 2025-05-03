@@ -11,7 +11,6 @@ import NewsBoard from "../Components/Home/NewsBoard.jsx";
 const ZenUIHeroDocsPage = () => {
     return (
         <div>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <TagMaster/>

@@ -500,3 +500,17 @@ input[type="number"] {
 .slider-container:hover .allComponentSliderDown {
     animation-play-state: paused;
 }
+
+.stretch-bg::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -6px;
+    width: 120%;
+    height: 120%;
+    background: #0FABCA;
+    z-index: -1;
+    border-radius: 40% 60% 50% 70% / 50% 60% 40% 50%;
+    transform: rotate(-2deg);
+    transition: all 0.3s ease;
+}

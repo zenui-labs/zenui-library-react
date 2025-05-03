@@ -12,18 +12,17 @@ import Faq from "../Components/Home/Faq.jsx";
 import ZenUITools from "../Components/Home/ZenUITools.jsx";
 import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
 import NewsBoard from "../Components/Home/NewsBoard.jsx";
-import Gaza from "../Components/Home/Gaza.jsx";
+import NewHero from "../Components/Home/NewHero.jsx";
+import NewNav from "../Components/Home/NewNav.jsx";
 
 
 const HomePage = () => {
     return (
         <div className='transition-all duration-500'>
-            {/*<Gaza/>*/}
-            <NewsBoard/>
-            <Navbar/>
+            <NewNav/>
             <div className='overflow-x-hidden'>
                 <MobileNavbar/>
-                <Hero/>
+                <NewHero/>
                 <ZenUITools/>
                 <Feedback/>
                 <TemplatesSlider/>

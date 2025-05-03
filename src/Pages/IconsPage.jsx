@@ -11,7 +11,6 @@ import NewsBoard from "../Components/Home/NewsBoard.jsx";
 const IconsPage = () => {
     return (
         <div>
-            <NewsBoard/>
             <MobileNavbar/>
             <Navbar/>
             <Icons/>

@@ -11,7 +11,6 @@ import NewsBoard from "../Components/Home/NewsBoard.jsx";
 const OpacityPalettePage = () => {
     return (
         <div>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <OpacityPalette/>

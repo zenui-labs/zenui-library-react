@@ -10,7 +10,6 @@ import NewsBoard from "../Components/Home/NewsBoard.jsx";
 const LazyImagePackagePlaygroundPage = () => {
     return (
         <div>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <LazyImageReact/>

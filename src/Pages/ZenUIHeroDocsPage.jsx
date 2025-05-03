@@ -11,7 +11,6 @@ import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
 const ZenUIHeroDocsPage = () => {
     return (
         <div>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <div className='overflow-x-hidden'>

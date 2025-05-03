@@ -19,7 +19,6 @@ const AboutUsPage = () => {
 
     return (
         <div className='overflow-x-hidden'>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <PrivacyPolicy/>
