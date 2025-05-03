@@ -139,6 +139,7 @@ import SortingAnimationPage from "./Pages/Animations/Layouts/SortingAnimationPag
 import GridSwitcherPage from "./Pages/Animations/Layouts/GridSwitcherPage.jsx";
 import ReactionTrailPage from "./Pages/Animations/Buttons/ReactionTrailPage.jsx";
 import QuickSurveyModal from "./Shared/QuickSurvey/QuickSurveyModal.jsx";
+import TextEffectsPage from "./Pages/Animations/Visuals/TextEffectsPage.jsx";
 
 
 const App = () => {
@@ -298,20 +299,23 @@ const App = () => {
                         <Route path="/blocks/product-filter-page" element={<ProductFilterPage/>}/>
                         <Route path="/blocks/checkout-page" element={<CheckoutPage/>}/>
 
-                {/* animations route */}
-                <Route path="/animations/installation" element={<AnimationInstallationPage/>}/>
+                        {/* animations route */}
+                        <Route path="/animations/installation" element={<AnimationInstallationPage/>}/>
 
-                {/* animation cards */}
-                <Route path="/animations/magic-card" element={<MagicCardsPage/>}/>
-                <Route path="/animations/reveal-card" element={<RevealCardPage/>}/>
-                <Route path="/animations/magnet-card" element={<MagnetCardPage/>}/>
+                        {/* animation cards */}
+                        <Route path="/animations/magic-card" element={<MagicCardsPage/>}/>
+                        <Route path="/animations/reveal-card" element={<RevealCardPage/>}/>
+                        <Route path="/animations/magnet-card" element={<MagnetCardPage/>}/>
 
-                {/* layouts animation */}
-                <Route path="/animations/sorting-animation" element={<SortingAnimationPage/>}/>
-                <Route path="/animations/grid-switcher" element={<GridSwitcherPage/>}/>
+                        {/* layouts animation */}
+                        <Route path="/animations/sorting-animation" element={<SortingAnimationPage/>}/>
+                        <Route path="/animations/grid-switcher" element={<GridSwitcherPage/>}/>
 
-                {/* buttons animation */}
-                <Route path="/animations/reaction-trail" element={<ReactionTrailPage/>}/>
+                        {/* buttons animation */}
+                        <Route path="/animations/reaction-trail" element={<ReactionTrailPage/>}/>
+
+                        {/* visuals animation */}
+                        <Route path="/animations/text-effects" element={<TextEffectsPage/>}/>
 
                         {/*  icons  */}
                         <Route path="/icons" element={<IconsPage/>}/>

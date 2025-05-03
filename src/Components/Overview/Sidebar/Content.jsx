@@ -403,6 +403,14 @@ const Content = () => {
                         url: "/animations/reaction-trail",
                         parent: 'BUTTONS'
                     },
+                    {
+                        label: "VISUALS",
+                    },
+                    {
+                        title: "Text Effects",
+                        url: "/animations/text-effects",
+                        parent: 'VISUALS'
+                    },
                 ]}
             />
             {/*  blocks  */}
