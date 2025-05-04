@@ -508,9 +508,9 @@ input[type="number"] {
     left: -6px;
     width: 120%;
     height: 120%;
-    background: #0FABCA;
-    z-index: -1;
+    background: rgba(154, 4, 245, 0.79);
+    z-index: 20;
     border-radius: 40% 60% 50% 70% / 50% 60% 40% 50%;
-    transform: rotate(-2deg);
+    transform: rotate(-3deg);
     transition: all 0.3s ease;
 }

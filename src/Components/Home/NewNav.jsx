@@ -27,6 +27,7 @@ const Navbar = () => {
     const navigate = useNavigate();
     const [isToolsHover, setIsToolsHover] = useState(false);
     const [isActiveToolsMenu, setIsActiveToolsMenu] = useState(false);
+    const [hasShadow, setHasShadow] = useState(false);
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
@@ -85,6 +86,21 @@ const Navbar = () => {
         return () => clearInterval(interval);
     }, []);
 
+    const handleScroll = () => {
+        if (window.scrollY > 10) {
+            setHasShadow(true);
+        } else {
+            setHasShadow(false);
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
 
     const handleActiveToolsMenu = () => {
         setIsActiveToolsMenu(!isActiveToolsMenu)
@@ -96,7 +112,7 @@ const Navbar = () => {
 
     return (<>
         <nav
-            className={`border-b dark:border-darkBorderColor border-gray-100 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500`}>
+            className={`${hasShadow ? 'border-gray-100' : 'border-transparent'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 

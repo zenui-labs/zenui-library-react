@@ -14,6 +14,9 @@ import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
 import NewsBoard from "../Components/Home/NewsBoard.jsx";
 import NewHero from "../Components/Home/NewHero.jsx";
 import NewNav from "../Components/Home/NewNav.jsx";
+import FeaturesCard from "../Components/Home/FeaturesCard.jsx";
+import ComponentsSlider from "../Components/Home/ComponentsSlider.jsx";
+import DarkModeSupport from "../Components/Home/DarkModeSupport.jsx";
 
 
 const HomePage = () => {
@@ -23,6 +26,9 @@ const HomePage = () => {
             <div className='overflow-x-hidden'>
                 <MobileNavbar/>
                 <NewHero/>
+                <FeaturesCard/>
+                <ComponentsSlider/>
+                <DarkModeSupport/>
                 <ZenUITools/>
                 <Feedback/>
                 <TemplatesSlider/>

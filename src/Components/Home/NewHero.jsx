@@ -11,7 +11,7 @@ import AOS from "aos";
 import {useNavigate} from "react-router-dom";
 
 import {BiLogoTailwindCss} from "react-icons/bi";
-import {TbBrandNextjs} from "react-icons/tb";
+import {TbBrandFramerMotion, TbBrandNextjs} from "react-icons/tb";
 import ComponentsSlider from "./ComponentsSlider.jsx";
 import FeaturesCard from "./FeaturesCard.jsx";
 
@@ -111,10 +111,14 @@ const Hero = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    return (<main className="w-full min-h-screen">
+    return (<main
+        className="w-full min-h-[calc(100vh-50px)] flex items-center justify-center bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)] bg-[size:30px_30px]">
+
+        {/*<img src='https://react.keepdesign.io/images/home/community.svg'*/}
+        {/*     className='absolute bottom-0 w-[900px] rotate-[40deg] -left-32'/>*/}
 
         <div
-            className="flex flex-col items-center justify-center gap-12 px-8 640px:px-12 640px:pl-12 mt-[3rem] 425px:mt-[4rem] max-w-[1700px] mx-auto">
+            className="px-8 640px:px-12 640px:pl-12 max-w-[1700px] mx-auto">
 
             <motion.div className="1024px:w-[65%] text-center mx-auto w-full relative" initial="hidden"
                         animate="show"
@@ -127,50 +131,19 @@ const Hero = () => {
                             },
                         }}>
 
-                {/*<div className='flex items-center absolute top-[-10px] z-30 left-0 gap-4'>*/}
-                {/*    <a href="https://github.com/Asfak00/zenui-library" target="_blank"*/}
-                {/*       className='flex items-center gap-[10px] hover:bg-[#9A04F59E] bg-[#9A04F5D2] transition-all duration-200 w-max py-[5px] pr-[18px] pl-[12px] text-white rounded-[6px] text-[1rem] cursor-pointer'>*/}
-                {/*        <div className='flex items-center gap-[8px]'>*/}
-                {/*            <FaGithub/>*/}
-                {/*            Star on Github <FaStar className='text-yellow-300'/> <CountUp isCounting end={stars}*/}
-                {/*                                                                          duration={3.2}/>*/}
-                {/*        </div>*/}
-                {/*    </a>*/}
-                {/*</div>*/}
-
-                {/*<div*/}
-                {/*    className='w-[100px] h-[400px] bg-[#96E8F8] dark:bg-[#0FABCA] absolute opacity-50 dark:animate-none dark:opacity-40 640px:opacity-100 bottom-[0px] 640px:bottom-[-150px] right-12 blur-[70px] rotate-[-60deg] animate-pulse'></div>*/}
-                {/*<div*/}
-                {/*    className='w-[100px] h-[300px] bg-[#9A04F5] absolute top-[-200px] animate-pulse opacity-30 left-8 blur-[70px] rotate-[-50deg]'></div>*/}
+                <button
+                    className='py-1.5 pl-5 cursor-text dark:border-slate-500 dark:text-darkTextColor backdrop-blur-md pr-6 text-[0.9rem] border mb-4 border-border rounded-full'>
+                    ✨ Introducing ZenUI v2.3
+                </button>
 
                 <motion.h1
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
-                    className="text-[2.4rem] font-bold 425px:text-[3rem] 640px:text-[4rem] leading-[3rem] 425px:leading-[4.5rem] mt-8 transition-all duration-700 640px:leading-[1.25] dark:text-darkTextColor">
-                        <span
-                            className='relative before:w-full stretch-bg before:h-full p-2 before:absolute before:top-0 before:left-0 before:rounded-high text-white before:z-[-1] mr-3'>Open-Source</span>
+                    className="text-[2.4rem] font-bold 425px:text-[3rem] 640px:text-[4rem] leading-[3rem] 425px:leading-[4.5rem] transition-all duration-700 640px:leading-[1.25] dark:text-darkTextColor">
+                    <span className='mr-3'>Open-Source</span>
                     UI Components
                     & Templates
                     Library
                 </motion.h1>
-
-                {/*<motion.div variants={FADE_DOWN_ANIMATION_VARIANTS} className='my-4 640px:my-6'>*/}
-                {/*    <div className='flex flex-wrap items-center gap-y-[10px] gap-x-[20px] 640px:gap-[20px]'>*/}
-                {/*        <h3 className='text-[1.1rem] text-gray-600 dark:text-darkTextColor font-[500]'>Compatible*/}
-                {/*            with:</h3>*/}
-                {/*        <div className='flex items-center gap-[5px]'>*/}
-                {/*            <FaReact className='text-[1.4rem] dark:text-darkSubTextColor text-gray-500'/>*/}
-                {/*            <p className='text-[1.1rem] dark:text-darkSubTextColor text-gray-500'>React</p>*/}
-                {/*        </div>*/}
-                {/*        <div className='flex items-center gap-[5px]'>*/}
-                {/*            <BiLogoTailwindCss className='text-[1.8rem] dark:text-darkSubTextColor text-gray-500'/>*/}
-                {/*            <p className='text-[1.1rem] dark:text-darkSubTextColor text-gray-500'>Tailwind CSS</p>*/}
-                {/*        </div>*/}
-                {/*        <div className='flex items-center gap-[5px]'>*/}
-                {/*            <TbBrandNextjs className='text-[1.5rem] dark:text-darkSubTextColor text-gray-500'/>*/}
-                {/*            <p className='text-[1.1rem] dark:text-darkSubTextColor text-gray-500'>Next JS</p>*/}
-                {/*        </div>*/}
-                {/*    </div>*/}
-                {/*</motion.div>*/}
 
                 <motion.p
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -198,65 +171,23 @@ const Hero = () => {
                     </button>
                 </motion.div>
 
-                {/*<motion.div*/}
-                {/*    variants={FADE_DOWN_ANIMATION_VARIANTS}*/}
-                {/*    className="flex items-center flex-wrap gap-x-[20px] 640px:gap-3 425px:gap-6 mt-5">*/}
-                {/*    <a href='https://www.npmjs.com/package/zenui-image-react' target='_blank'*/}
-                {/*       className='border flex items-center rounded-md hover:border-[#0FABCA] transition-all duration-500 hover:bg-[#0FABCA]/5 bg-gray-50 gap-[10px] dark:border-slate-700 dark:bg-slate-900 border-gray-200 py-3 px-3 cursor-pointer'>*/}
-                {/*        <SiNpm className='text-[2rem] text-red-600'/>*/}
-                {/*        <p className='text-[0.84rem] dark:text-[#abc2d3] 640px:text-[1rem] font-[600] text-gray-700'>Try*/}
-                {/*            Our Lazy Image React Package</p>*/}
-                {/*    </a>*/}
-                {/*</motion.div>*/}
-            </motion.div>
+                <div className='flex items-center gap-5 justify-center mt-6'>
+                    <a href='https://react.dev/learn' target='_blank'>
+                        <FaReact className='text-[1.8rem] dark:text-darkSubTextColor text-gray-500'/>
+                    </a>
+                    <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>
+                        <BiLogoTailwindCss className='text-[2.2rem] dark:text-darkSubTextColor text-gray-500'/>
+                    </a>
+                    <a href='https://motion.dev/docs' target='_blank'>
+                        <TbBrandFramerMotion className='text-[1.8rem] dark:text-darkSubTextColor text-gray-500'/>
+                    </a>
+                    <a href='https://nextjs.org/docs' target='_blank'>
+                        <TbBrandNextjs className='text-[1.8rem] dark:text-darkSubTextColor text-gray-500'/>
+                    </a>
+                </div>
 
-            {/*<div data-aos="fade-left"*/}
-            {/*     className='w-full relative hidden 1024px:block 1024px:w-[53.5%] 1360px:w-[50%] h-[200px] 640px:h-[500px] z-30'>*/}
-            {/*    <div className='animation-bounce1 absolute top-[-10px] left-[10px]'>*/}
-            {/*        <SwitchCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce2 absolute top-[85px] left-[30px]'>*/}
-            {/*        <RadioCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce1 absolute top-[35%] transform translate-y-[-50%] left-[-20px]'>*/}
-            {/*        <TooltipCard/>*/}
-            {/*    </div>*/}
-            {/*    <div*/}
-            {/*        className='animation-bounce2 absolute top-[55%] transform translate-y-[-50%] left-[0px] 1260px:left-[30px]'>*/}
-            {/*        <AnimatedButtonCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce1 absolute top-[70%] transform translate-y-[-50%] left-[-120px]'>*/}
-            {/*        <StrongPasswordCard/>*/}
-            {/*    </div>*/}
-            {/*    <div*/}
-            {/*        className='animation-bounce2 absolute top-[-20px] left-[17%] 1260px:left-[25%] transform translate-x-[-50%]'>*/}
-            {/*        <TabCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce2 absolute top-[-30px] right-[-20px] 1404px:right-5'>*/}
-            {/*        <BadgeCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce2 absolute top-[80px] left-[35%] transform translate-x-[-50%]'>*/}
-            {/*        <SelectCard/>*/}
-            {/*    </div>*/}
-            {/*    <div*/}
-            {/*        className='animation-bounce1 absolute top-[35%] left-[33%] transform translate-y-[-50%] translate-x-[-50%]'>*/}
-            {/*        <AnimatedProductCard/>*/}
-            {/*    </div>*/}
-            {/*    <div*/}
-            {/*        className='animation-bounce2 absolute top-[28%] right-[-20px] 1260px:right-12 transform translate-y-[-50%] translate-x-[-50%]'>*/}
-            {/*        <LoaderCard/>*/}
-            {/*    </div>*/}
-            {/*    <div*/}
-            {/*        className='animation-bounce absolute top-[65%] right-[-50px] 1260px:right-[-20px] 1404px:right-[10px] transform translate-y-[-50%] translate-x-[-50%]'>*/}
-            {/*        <ChipCard/>*/}
-            {/*    </div>*/}
-            {/*    <div className='animation-bounce1 absolute top-[70px] right-0'>*/}
-            {/*        <RatingCard/>*/}
-            {/*    </div>*/}
-            {/*</div>*/}
+            </motion.div>
         </div>
-        <FeaturesCard/>
-        <ComponentsSlider/>
     </main>);
 };
 
