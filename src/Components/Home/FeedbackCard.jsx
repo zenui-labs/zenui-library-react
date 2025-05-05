@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react';
+import React, {useState, useRef} from 'react';
 
-const FeedbackCard = ({ feedback }) => {
+const FeedbackCard = ({feedback}) => {
     const [isHovering, setIsHovering] = useState(false);
-    const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+    const [mousePosition, setMousePosition] = useState({x: 0, y: 0});
     const cardRef = useRef(null);
 
     const handleMouseMove = (e) => {
@@ -21,16 +21,16 @@ const FeedbackCard = ({ feedback }) => {
             onMouseEnter={() => setIsHovering(true)}
             onMouseLeave={() => setIsHovering(false)}
             ref={cardRef}
-            className="w-full h-max p-4 rounded-md border cursor-pointer dark:border-darkBorderColor/70 border-gray-200 relative overflow-hidden"
+            className="w-full h-max p-5 rounded-high border cursor-pointer dark:border-darkBorderColor/70 border-border relative overflow-hidden"
         >
             <div className='flex items-center justify-between w-full'>
-                <div className='flex items-center gap-[10px]'>
+                <div className='flex items-center gap-3'>
                     <img
                         src={feedback?.avatar}
                         alt='avatar/image'
                         className='w-[40px] h-[40px] outline dark:outline-slate-700 outline-gray-100 rounded-full object-cover'
                     />
-                    <h1 className='text-[1.1rem] font-[600] dark:text-darkTextColor/90 text-gray-600'>{feedback?.name}</h1>
+                    <h1 className='text-[1.1rem] font-[600] dark:text-darkTextColor/90'>{feedback?.name}</h1>
                 </div>
 
                 {feedback?.source === 'product_hunt' && (
@@ -56,7 +56,7 @@ const FeedbackCard = ({ feedback }) => {
                 )}
             </div>
 
-            <p className='text-[1rem] text-gray-600 dark:text-darkSubTextColor/90 mt-4'>{feedback?.review}</p>
+            <p className='text-[1rem] text-black/70 dark:text-darkSubTextColor/90 mt-4'>{feedback?.review}</p>
 
             {isHovering && (
                 <div

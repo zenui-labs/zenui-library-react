@@ -158,7 +158,7 @@ const Navbar = () => {
                                 initial={{opacity: 0, scale: 0.8}}
                                 animate={{opacity: 1, scale: 1}}
                                 exit={{opacity: 0, scale: 0.8}}
-                                className="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[68px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[-40px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
+                                className="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[68px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
                                 onMouseEnter={() => setIsToolsHover(true)}
                                 onMouseLeave={() => setIsToolsHover(false)}
                             >

@@ -46,7 +46,7 @@ const ComparisonCard = () => {
     return (
         <div
             ref={containerRef}
-            className="relative w-full aspect-video select-none bg-gray-100"
+            className="relative w-full aspect-video rounded-high select-none bg-gray-100"
         >
             {/* Before Image */}
             <img

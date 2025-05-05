@@ -23,7 +23,7 @@ const DarkModeSupport = () => {
             </div>
 
             <div
-                className='w-[70%] mx-auto mt-14 rounded-high overflow-hidden bg-white border border-gray-50 p-5 shadow-[2px_1px_20px_rgba(0,0,0,0.04)]'>
+                className='w-[70%] mx-auto mt-14 rounded-high dark:shadow-[2px_1px_35px_rgba(255,255,255,0.2)] dark:bg-slate-800 dark:border-slate-700 overflow-hidden bg-white border border-gray-50 p-5 shadow-[2px_1px_20px_rgba(0,0,0,0.04)]'>
                 <ComparisonCard/>
             </div>
 

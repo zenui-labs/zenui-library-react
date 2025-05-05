@@ -70,7 +70,7 @@ const FeaturesCard = () => {
                 {features.map((feature, index) => (
                     <div
                         key={index}
-                        className="p-8 rounded-high border shadow-[0px_80px_50px_-32px_rgba(107,110,148,.04)] dark:border-darkBorderColor transition-all duration-500 border-gray-100"
+                        className="p-8 rounded-high border dark:shadow-[0px_80px_50px_-32px_rgba(255,255,255,0.05)] shadow-[0px_80px_50px_-32px_rgba(107,110,148,.04)] dark:border-darkBorderColor transition-all duration-500 border-gray-100"
                     >
                         <div className="mb-3">
                             {feature.icon}

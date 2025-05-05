@@ -166,6 +166,9 @@ const App = () => {
       #feedbackWidget {
         z-index: 1000 !important;
       }
+      .eGjSGs {
+    background-color: #0FABCA !important;
+}
     `;
             shadowRoot.appendChild(style);
         }

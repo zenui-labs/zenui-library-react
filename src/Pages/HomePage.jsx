@@ -17,6 +17,7 @@ import NewNav from "../Components/Home/NewNav.jsx";
 import FeaturesCard from "../Components/Home/FeaturesCard.jsx";
 import ComponentsSlider from "../Components/Home/ComponentsSlider.jsx";
 import DarkModeSupport from "../Components/Home/DarkModeSupport.jsx";
+import MetricsCard from "../Components/Home/MetricsCard.jsx";
 
 
 const HomePage = () => {
@@ -31,9 +32,8 @@ const HomePage = () => {
                 <DarkModeSupport/>
                 <ZenUITools/>
                 <Feedback/>
-                <TemplatesSlider/>
                 <Faq/>
-                <Sponsor/>
+                <MetricsCard/>
                 <Footer/>
             </div>
 

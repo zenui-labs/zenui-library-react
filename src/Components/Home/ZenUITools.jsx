@@ -1,17 +1,9 @@
-import React, {useEffect} from 'react';
-
-// import aos animation
+import React, {useEffect, useState} from 'react';
+import {AnimatePresence, motion} from 'framer-motion'; // ✅ import framer motion
 import "aos/dist/aos.css";
-import AOS from "aos";
-import SingleToolCard from "./SingleToolCard.jsx";
 
 const ZenUITools = () => {
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
+    const [selectedImage, setSelectedImage] = useState(0);
 
     const cardData = [
         {
@@ -40,23 +32,69 @@ const ZenUITools = () => {
         }
     ];
 
+    const images = [
+        '/keyboard-shortcut-image.svg',
+        '/icons-image.svg',
+        '/config-ai-image.svg',
+        '/color-palette-image.svg',
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            if (selectedImage === 3) {
+                setSelectedImage(0)
+            } else {
+                setSelectedImage((prev) => prev + 1)
+            }
+        }, 2500)
+
+        return () => {
+            clearInterval(interval)
+        }
+    }, [selectedImage])
+
     return (
-        <section className='pb-5 max-w-[1700px] mx-auto mt-9 640px:mt-0'>
-            <div data-aos="fade-zoom-in">
-                <h1 className='text-[1.5rem] 425px:text-[2.2rem] dark:text-darkTextColor text-text font-[600] text-center px-8'>Introduce
-                    With <span
-                        className='heroText text-[#0FABCA] font-[500]'>ZenUI</span> Tools</h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center text-gray-500 px-8 w-full 1024px:w-[42%] mx-auto'>Streamline
-                    your workflow with a versatile color palette, an extensive icon library, and a dynamic keyboard
-                    shortcut generator.</p>
+        <section className='pb-5 max-w-[1300px] mx-auto mt-14'>
+            <div>
+                <h1 className='text-[1.5rem] 425px:text-[3rem] dark:text-darkTextColor font-[700] text-center px-8'>
+                    <span className='heroText text-[#0FABCA] font-[500]'>ZenUI</span> Useful Tools
+                </h1>
+                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center font-[400] text-black/60 px-8 w-full 1024px:w-[50%] mx-auto'>
+                    Streamline your workflow with a versatile color palette, an extensive icon library, and a dynamic
+                    keyboard shortcut generator.
+                </p>
             </div>
 
-            <div className='w-full px-8 425px:px-10 py-8 grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-4 gap-[20px] 1024px:mt-[1rem] mx-auto'>
-                {
-                    cardData.map((card, index) => (
-                        <SingleToolCard duration={card.duration} key={index} data={card}/>
-                    ))
-                }
+            <div className='grid grid-cols-2 mt-14 gap-[50px]'>
+                <div>
+                    {cardData.map((card, index) => (
+                        <div key={index}
+                             onClick={() => setSelectedImage(index)}
+                             className={`${index < cardData.length - 1 && 'border-b '} border-border dark:border-slate-700 py-3`}>
+                            <div
+                                className={`${index === selectedImage && 'bg-gray-50/70 dark:bg-slate-800'} hover:bg-gray-50/70 dark:hover:bg-slate-800 px-3 py-2 rounded-normal cursor-pointer`}>
+                                <h6 className='text-[1.5rem] dark:text-darkTextColor font-[600]'>{card.title}</h6>
+                                <p className='text-[1rem] mt-1.5 dark:text-darkSubTextColor font-[400] text-black/70'>{card.description}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                <div
+                    className='rounded-high overflow-hidden border dark:border-slate-700 h-max shadow-[2px_1px_25px_rgba(0,0,0,0.03)] p-2'>
+                    <AnimatePresence mode='wait'>
+                        <motion.img
+                            key={selectedImage}
+                            src={images[selectedImage]}
+                            initial={{opacity: 0, scale: 0.95}}
+                            animate={{opacity: 1, scale: 1, transition: {duration: 0.4}}}
+                            exit={{opacity: 0, scale: 0.95}}
+                            alt="image"
+                            className='w-full h-full rounded-normal'
+                        />
+                    </AnimatePresence>
+
+                </div>
             </div>
         </section>
     );
