@@ -6,6 +6,8 @@ import ExampleTemplateIcon from "../../SvgIcons/ExampleTemplateIcon.jsx";
 import DesignPartIcon from "../../SvgIcons/DesignPartIcon.jsx";
 import CodeBoxIcon from "../../SvgIcons/CodeBoxIcon.jsx";
 import TailwindCssIcon from "../../SvgIcons/TailwindCssIcon.jsx";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const features = [
     {
@@ -54,19 +56,13 @@ const features = [
 
 const FeaturesCard = () => {
     return (
-        <section className='mt-16'>
-            <div>
-                <h1 className='text-[1.5rem] 425px:text-[3rem] dark:text-darkTextColor font-[700] text-center px-8'>
-                    <span className='heroText text-[#0FABCA] font-[500]'>ZenUI</span> Features
-                </h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center font-[400] text-black/60 px-8 w-full 1024px:w-[50%] mx-auto'>
-                    Discover ZenUI’s powerful, customizable components built to speed up your React development with
-                    style and ease.
-                </p>
-            </div>
+        <SectionWrapper>
+            <SectionHead
+                description={'Discover ZenUI’s powerful, customizable components built to speed up your React development with\n' +
+                    '                    style and ease.'} title={'Features'} isSubjet={'ZenUI'}/>
 
             <div
-                className="grid grid-cols-1 425px:grid-cols-2 1024px:grid-cols-3 gap-8 px-8 425px:px-10 mt-14 relative max-w-[1300px] mx-auto">
+                className="grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-8 mt-14 relative max-w-[1300px] mx-auto">
                 {features.map((feature, index) => (
                     <div
                         key={index}
@@ -84,7 +80,7 @@ const FeaturesCard = () => {
                     </div>
                 ))}
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 

@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {AnimatePresence, motion} from 'framer-motion'; // ✅ import framer motion
-import "aos/dist/aos.css";
+import {AnimatePresence, motion} from 'framer-motion';
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const ZenUITools = () => {
     const [selectedImage, setSelectedImage] = useState(0);
@@ -54,18 +55,13 @@ const ZenUITools = () => {
     }, [selectedImage])
 
     return (
-        <section className='pb-5 max-w-[1300px] mx-auto mt-14'>
-            <div>
-                <h1 className='text-[1.5rem] 425px:text-[3rem] dark:text-darkTextColor font-[700] text-center px-8'>
-                    <span className='heroText text-[#0FABCA] font-[500]'>ZenUI</span> Useful Tools
-                </h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center font-[400] text-black/60 px-8 w-full 1024px:w-[50%] mx-auto'>
-                    Streamline your workflow with a versatile color palette, an extensive icon library, and a dynamic
-                    keyboard shortcut generator.
-                </p>
-            </div>
+        <SectionWrapper>
+            <SectionHead
+                description={'Streamline your workflow with a versatile color palette, an extensive icon library, and a dynamic\n' +
+                    '                    keyboard shortcut generator.'} title={'Useful Tools'} isSubjet={'ZenUI'}/>
 
-            <div className='grid grid-cols-2 mt-14 gap-[50px]'>
+
+            <div className='grid grid-cols-1 1024px:grid-cols-2 mt-14 gap-[50px]'>
                 <div>
                     {cardData.map((card, index) => (
                         <div key={index}
@@ -96,7 +92,7 @@ const ZenUITools = () => {
 
                 </div>
             </div>
-        </section>
+        </SectionWrapper>
     );
 };
 

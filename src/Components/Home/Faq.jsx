@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-// import aos animation
-import "aos/dist/aos.css";
-import AOS from "aos";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const Faq = () => {
 
     const [isAccording1, setIsAccording1] = useState(null);
     const [isAccording2, setIsAccording2] = useState(null);
 
-    // according data
     const accordingData1 = [
         {
             title: "What is ZenUI Library?",
@@ -74,26 +72,12 @@ const Faq = () => {
 
     const handleClick2 = (index) => setIsAccording2((prevIndex) => (prevIndex === index ? null : index));
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
-
     return (
-        <div className='max-w-[1300px] mx-auto mt-14'>
+        <SectionWrapper>
+            <SectionHead title={'FAQ'} description={'Find\n' +
+                '                    quick answers to common queries'}/>
 
-            <div>
-                <h1 className='text-[1.5rem] 425px:text-[3rem] dark:text-darkTextColor font-[700] text-center px-8'>
-                    FAQ
-                </h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center font-[400] text-black/60 px-8 w-full 1024px:w-[50%] mx-auto'>
-                    Find
-                    quick answers to common queries
-                </p>
-            </div>
-
-            <section className='mt-14 mb-16 grid grid-cols-1 640px:grid-cols-2 gap-[15px]'>
+            <section className='mt-14 mb-16 grid grid-cols-1 1024px:grid-cols-2 gap-[15px]'>
                 <div className='flex-col flex gap-[15px]'>
                     {accordingData1?.map((according, index) => (
                         <article key={index}
@@ -193,7 +177,7 @@ const Faq = () => {
                     }
                 </div>
             </section>
-        </div>
+        </SectionWrapper>
     );
 };
 

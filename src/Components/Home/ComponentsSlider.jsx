@@ -1,38 +1,27 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
 // component data
 import {allComponents} from "../../Utils/AllComponents.js";
 
-// import aos animation
-import "aos/dist/aos.css";
-import AOS from "aos";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const ComponentsSlider = () => {
 
     const [components, setComponents] = useState(() => [...allComponents, ...allComponents])
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
-
     return (
-        <div className='max-w-[1650px] mx-auto relative mt-24'>
-            <div>
-                <h1 className='text-[1.5rem] 425px:text-[3rem] dark:text-darkTextColor font-[700] text-center px-8'>
-                    <span className='heroText text-[#0FABCA] font-[500]'>600+</span> Essential UI Components
-                </h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-center font-[400] text-black/60 px-8 w-full 1024px:w-[50%] mx-auto'>
-                    Handcrafted, ready-to-use, and diverse collection of free UI components designed for rapid MVP
-                    development. Just Browse, copy-paste, and you're done!
-                </p>
-            </div>
+        <SectionWrapper className='relative'>
+            <SectionHead
+                description={'Handcrafted, ready-to-use, and diverse collection of free UI components designed for rapid MVP\n' +
+                    '                    development. Just Browse, copy-paste, and you\'re done!'}
+                title={'Essential UI Components'} isSubjet={'600+'}/>
 
             <div
                 className="h-[500px] mt-14 relative flex items-center justify-center w-full overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
 
-                <div className="allComponentSliderUp grid w-[80%] gap-8 grid-cols-4">
+                <div
+                    className="allComponentSliderUp grid w-full gap-8 grid-cols-2 640px:grid-cols-3 1024px:grid-cols-4">
                     {components.map((item, index) => (
                         <a href={item.url} className="border border-gray-100 dark:border-darkBorderColor rounded-high"
                            key={index}>
@@ -57,8 +46,7 @@ const ComponentsSlider = () => {
             >
                 All Components
             </button>
-
-        </div>
+        </SectionWrapper>
     );
 };
 

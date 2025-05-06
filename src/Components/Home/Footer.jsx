@@ -5,6 +5,7 @@ import {FaLinkedin, FaFacebook} from "react-icons/fa";
 import {FaXTwitter} from "react-icons/fa6";
 import {SiGmail} from "react-icons/si";
 import useZenuiStore from "../../Store/Index.js";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const Footer = () => {
     const date = new Date();
@@ -41,7 +42,7 @@ const Footer = () => {
     return (
         <footer
             className="w-full border-t border-gray-100 py-8 dark:bg-darkBgColor transition-all duration-500 dark:border-darkBorderColor bg-secondary mt-16">
-            <div className='max-w-[1700px] mx-auto px-8 425px:px-10'>
+            <SectionWrapper>
                 <div
                     className="w-full flex 640px:flex-row flex-col flex-wrap 1024px:gap-0 gap-8 justify-between items-start">
                     <div className="w-full 640px:w-[40%] 1024px:w-[28%]">
@@ -192,7 +193,8 @@ const Footer = () => {
                     </div>
                 </div>
 
-                <div className='mt-14 mx-auto flex items-center justify-center w-[800px] gap-8'>
+                <div
+                    className='mt-14 1024px:mx-auto flex w-[250px] flex-wrap 1024px:flex-nowrap 1024px:items-center 1024px:justify-center 1024px:w-[800px] gap-4 1024px:gap-8'>
                     <a href='https://web.facebook.com/share/g/D8DbMaprfWPksSGF/' target='_blank'
                        className='border border-blue-600 rounded-high flex w-full py-[5px] px-2.5 gap-3 items-center'>
                         <img src='https://i.ibb.co.com/vJynhGR/Facebook-Logo-2023.png'
@@ -244,7 +246,7 @@ const Footer = () => {
                         Copyright &copy; {date.getFullYear()} by ZenUI Library.
                     </p>
                 </div>
-            </div>
+            </SectionWrapper>
         </footer>
     );
 };
