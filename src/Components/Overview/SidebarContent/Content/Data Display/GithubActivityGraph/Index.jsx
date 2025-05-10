@@ -1,19 +1,19 @@
 import React, {useState} from "react";
 
 // react helmet
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
 // contents for scrollspy
-import ContentHeader from "../../../../../../Shared/ContentHeader.jsx";
+import ContentHeader from "@shared/ContentHeader.jsx";
 import GithubActivityGraphExample from "./GithubActivityGraphExample.jsx";
-import BlocksFooter from "../../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import GithubActivityGraphWithMonthExample from "./GithubActivityGraphWithMonthExample.jsx";
 import CalculatingTotalActivityExample from "./CalculatingTotalActivityExample.jsx";
-import BlocksShowCode from "../../../../../../Shared/Block/BlocksShowCode.jsx";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
-import BlockToggleTab from "../../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../../Shared/Block/BlockWrapper.jsx";
-import BlockDescription from "../../../../../../Shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
 
 const GithubActivityGraph = () => {
 
@@ -1440,13 +1440,15 @@ const GithubActivityGraph = () => {
         <>
             <aside className="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
 
-                    <div>
-                        <ContentHeader text={'github activity graph'} id={'github_activity_graph'}/>
-                    </div>
+                <div>
+                    <ContentHeader text={'github activity graph'} id={'github_activity_graph'}/>
+                </div>
 
-                    <BlockDescription text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
+                <BlockDescription
+                    text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
 
-                <BlockToggleTab code={activityGraphCode} setPreview={setActivityGraphPreview} setCode={setActivityGraphCode} preview={activityGraphPreview}/>
+                <BlockToggleTab code={activityGraphCode} setPreview={setActivityGraphPreview}
+                                setCode={setActivityGraphCode} preview={activityGraphPreview}/>
 
                 <BlockWrapper>
                     {activityGraphPreview && (
@@ -1462,13 +1464,15 @@ const GithubActivityGraph = () => {
                     )}
                 </BlockWrapper>
 
-                    <div className='mt-8'>
-                        <ContentHeader text={'github activity graph with month'} id={'github_activity_graph_with_month'}/>
-                    </div>
+                <div className='mt-8'>
+                    <ContentHeader text={'github activity graph with month'} id={'github_activity_graph_with_month'}/>
+                </div>
 
-                   <BlockDescription text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
+                <BlockDescription
+                    text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
 
-                <BlockToggleTab code={activityGraphWithMonthCode} preview={activityGraphWithMonthPreview} setCode={setActivityGraphWithMonthCode} setPreview={setActivityGraphWithMonthPreview}/>
+                <BlockToggleTab code={activityGraphWithMonthCode} preview={activityGraphWithMonthPreview}
+                                setCode={setActivityGraphWithMonthCode} setPreview={setActivityGraphWithMonthPreview}/>
 
                 <BlockWrapper>
                     {activityGraphWithMonthPreview && (
@@ -1484,13 +1488,15 @@ const GithubActivityGraph = () => {
                     )}
                 </BlockWrapper>
 
-                    <div className='mt-8'>
-                        <ContentHeader text={'calculating total activity'} id={'calculating_total_activity'}/>
-                    </div>
+                <div className='mt-8'>
+                    <ContentHeader text={'calculating total activity'} id={'calculating_total_activity'}/>
+                </div>
 
-                    <BlockDescription text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
+                <BlockDescription
+                    text='Track your daily activities with a GitHub-style activity graph, showcasing your progress and habits in a visual grid format.'/>
 
-                <BlockToggleTab code={calculatingTotalActivityCode} setPreview={setCalculatingTotalActivityPreview} setCode={setCalculatingTotalActivityCode} preview={calculatingTotalActivityPreview}/>
+                <BlockToggleTab code={calculatingTotalActivityCode} setPreview={setCalculatingTotalActivityPreview}
+                                setCode={setCalculatingTotalActivityCode} preview={calculatingTotalActivityPreview}/>
 
                 <BlockWrapper>
                     {calculatingTotalActivityPreview && (
@@ -1504,14 +1510,14 @@ const GithubActivityGraph = () => {
                             code={calculatingTotalContributionCodes}
                         />
                     )}
-                </BlockWrapper >
+                </BlockWrapper>
 
-                    <BlocksFooter
-                        backUrl="/components/redo-undo"
-                        backName="redo & undo"
-                        forwardName="tooltip"
-                        forwardUrl="/components/tooltip"
-                    />
+                <BlocksFooter
+                    backUrl="/components/redo-undo"
+                    backName="redo & undo"
+                    forwardName="tooltip"
+                    forwardUrl="/components/tooltip"
+                />
             </aside>
             <Helmet>
                 <title>Data Display - Github Activity Graph</title>

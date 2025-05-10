@@ -1,12 +1,11 @@
-
 // components
-import AuthButton from "../../../Components/Overview/SidebarContent/Content/Buttons/AuthButton.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import AuthButton from "@components/Buttons/AuthButton.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AuthButtonPage = () => {
     return (
         <ContentPageLayout>
-            <AuthButton />
+            <AuthButton/>
         </ContentPageLayout>
     );
 };

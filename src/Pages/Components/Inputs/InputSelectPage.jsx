@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Index from "../../../Components/Overview/SidebarContent/Content/Inputs/SelectInput/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Index from "@components/Inputs/SelectInput/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const InputSelectPage = () => {
-  return (
-    <ContentPageLayout>
-        <Index />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <Index/>
+        </ContentPageLayout>
+    );
 };
 
 export default InputSelectPage;

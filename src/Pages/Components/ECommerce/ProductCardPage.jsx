@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import ProductCard from "../../../Components/Overview/SidebarContent/Content/ECommerce/ProductCard.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ProductCard from "@components/ECommerce/ProductCard.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ProductCardPage = () => {
     return (
         <ContentPageLayout>
-            <ProductCard />
+            <ProductCard/>
         </ContentPageLayout>
     );
 };

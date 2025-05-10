@@ -1,11 +1,11 @@
 // components
-import ContactForm from "../../../Components/Overview/SidebarContent/Blocks/Forms/ContactForm.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ContactForm from "@blocks/Forms/ContactForm.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ContactFormPage = () => {
     return (
         <ContentPageLayout>
-            <ContactForm />
+            <ContactForm/>
         </ContentPageLayout>
     );
 };

@@ -2,11 +2,11 @@ import React, {useState, useEffect} from "react";
 import {Helmet} from "react-helmet";
 import {FaBookmark, FaRegBookmark} from "react-icons/fa";
 import {RxExternalLink} from "react-icons/rx";
-import {resourcesData} from "../../../../../Utils/ResourcesData.js"
+import {resourcesData} from "@utils/ResourcesData.js"
 import FilterByLanguages from "./FilterByLanguages.jsx";
 import FilterByPackage from "./FilterByPackage.jsx";
 import FilterByBookmarks from "./FilterByBookmarks.jsx";
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 const Resources = () => {
     const [selectedLanguage, setSelectedLanguage] = useState({slug: 'all'})

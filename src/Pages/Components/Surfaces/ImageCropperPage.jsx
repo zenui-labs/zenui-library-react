@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import ImageCropper from "../../../Components/Overview/SidebarContent/Content/Surfaces/ImageCroppers/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ImageCropper from "@components/Surfaces/ImageCroppers/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const CarouselPage = () => {
     return (
         <ContentPageLayout>
-            <ImageCropper />
+            <ImageCropper/>
         </ContentPageLayout>
     );
 };

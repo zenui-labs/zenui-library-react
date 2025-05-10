@@ -1,15 +1,15 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../../Shared/ContentHeader";
+import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
-import BlocksShowCode from "../../../../../../Shared/Block/BlocksShowCode.jsx";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 // toggle card view
-import {useToggleCardView} from "../../../../../../CustomHooks/ButtonToggle.js";
+import {useToggleCardView} from "@/CustomHooks/ButtonToggle.js";
 import ProductFilterExample1 from "./ProductFilterExample1.jsx";
 
 

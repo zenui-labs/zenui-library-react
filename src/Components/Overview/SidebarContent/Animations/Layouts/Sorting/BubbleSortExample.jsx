@@ -1,16 +1,15 @@
 import {useState, useEffect} from "react";
-import {useAnimation, motion} from "framer-motion";
+import {motion} from "framer-motion";
 import {FaPlay} from "react-icons/fa";
 import {VscDebugRestart} from "react-icons/vsc";
 
 const BubbleSortExample = () => {
-    const controls = useAnimation();
     const [items, setItems] = useState([]);
     const [isSorting, setIsSorting] = useState(false);
 
     useEffect(() => {
         // Generate initial items
-        const initialItems = Array.from({ length: 10 }, (_, i) => ({
+        const initialItems = Array.from({length: 10}, (_, i) => ({
             id: String(i + 1),
             height: Math.floor(Math.random() * 100) + 20,
         }));
@@ -30,20 +29,20 @@ const BubbleSortExample = () => {
                 // Highlight current comparison
                 setItems(prev => {
                     const newItems = [...prev];
-                    newItems[j] = { ...newItems[j], active: true };
-                    newItems[j+1] = { ...newItems[j+1], active: true };
+                    newItems[j] = {...newItems[j], active: true};
+                    newItems[j + 1] = {...newItems[j + 1], active: true};
                     return newItems;
                 });
 
                 // Wait a moment
                 await new Promise(resolve => setTimeout(resolve, 300));
 
-                if (arr[j].height > arr[j+1].height) {
+                if (arr[j].height > arr[j + 1].height) {
                     // Swap
-                    [arr[j], arr[j+1]] = [arr[j+1], arr[j]];
+                    [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
                     setItems([...arr.map((item, idx) => ({
                         ...item,
-                        active: idx === j || idx === j+1
+                        active: idx === j || idx === j + 1
                     }))]);
 
                     // Wait after swap
@@ -53,20 +52,20 @@ const BubbleSortExample = () => {
                 // Remove highlight
                 setItems(prev => {
                     const newItems = [...prev];
-                    newItems[j] = { ...newItems[j], active: false };
-                    newItems[j+1] = { ...newItems[j+1], active: false };
+                    newItems[j] = {...newItems[j], active: false};
+                    newItems[j + 1] = {...newItems[j + 1], active: false};
                     return newItems;
                 });
             }
         }
 
         // Final sorted state
-        setItems([...arr.map(item => ({ ...item, active: false }))]);
+        setItems([...arr.map(item => ({...item, active: false}))]);
         setIsSorting(false);
     };
 
     const resetSort = () => {
-        const newItems = Array.from({ length: 10 }, (_, i) => ({
+        const newItems = Array.from({length: 10}, (_, i) => ({
             id: String(i + 1),
             height: Math.floor(Math.random() * 100) + 20,
         }));
@@ -84,7 +83,7 @@ const BubbleSortExample = () => {
                     }`}
                 >
                     <FaPlay className={`${isSorting ? 'text-gray-400' : 'text-white'}`}/>
-                        {isSorting ? 'Sorting...' : 'Start Sorting'}
+                    {isSorting ? 'Sorting...' : 'Start Sorting'}
                 </button>
                 <button
                     onClick={resetSort}
@@ -102,7 +101,7 @@ const BubbleSortExample = () => {
                     <motion.div
                         key={item.id}
                         layout
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{opacity: 0, y: 20}}
                         animate={{
                             opacity: 1,
                             y: 0,

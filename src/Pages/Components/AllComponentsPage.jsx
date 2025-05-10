@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import AllComponents from "../../Components/Overview/SidebarContent/Content/AllComponents";
-import ContentPageLayout from "../../Shared/ContentPageLayout.jsx";
+import AllComponents from "@/Components/Overview/SidebarContent/Content/AllComponents";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AllComponentsPage = () => {
-  return (
-    <ContentPageLayout>
-        <AllComponents />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <AllComponents/>
+        </ContentPageLayout>
+    );
 };
 
 export default AllComponentsPage;

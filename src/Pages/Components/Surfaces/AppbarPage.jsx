@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Appbar from "../../../Components/Overview/SidebarContent/Content/Surfaces/Appbar";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Appbar from "@components/Surfaces/Appbar";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const CardPage = () => {
-  return (
-    <ContentPageLayout>
-        <Appbar />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <Appbar/>
+        </ContentPageLayout>
+    );
 };
 
 export default CardPage;

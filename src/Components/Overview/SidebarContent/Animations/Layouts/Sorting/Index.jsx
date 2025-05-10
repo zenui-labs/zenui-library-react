@@ -1,23 +1,23 @@
 import React, {useState} from "react";
 
 // components
-import OverviewFooter from "../../../../../../Shared/OverviewFooter";
-import ShowCode from "../../../../../../Shared/Component/ShowCode.jsx";
-import ContentHeader from "../../../../../../Shared/ContentHeader";
+import OverviewFooter from "@shared/OverviewFooter";
+import ShowCode from "@shared/Component/ShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
 
 // contents for scrollspy
-import {useScrollSpy} from '../../../../../../CustomHooks/useScrollSpy';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 import DragAndSortExample from "./DragAndSortExample.jsx";
 import FilterSortExample from "./FilterSortExample.jsx";
 import BubbleSortExample from "./BubbleSortExample.jsx";
 import ShuffleSortExample from "./ShuffleSortExample.jsx";
-import {SortingAnimationContents} from "../../../../../../Utils/ContentsConfig/AnimationContents/LayoutContents.js";
+import {SortingAnimationContents} from "@utils/ContentsConfig/AnimationContents/LayoutContents.js";
 
 const Index = () => {
     const sectionIds = SortingAnimationContents.map(item => item.href.slice(1));

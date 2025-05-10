@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import SwitchInput from "../../../Components/Overview/SidebarContent/Content/Inputs/SwitchInput";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import SwitchInput from "@components/Inputs/SwitchInput";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const InputSwitchPage = () => {
-  return (
-    <ContentPageLayout>
-        <SwitchInput />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <SwitchInput/>
+        </ContentPageLayout>
+    );
 };
 
 export default InputSwitchPage;

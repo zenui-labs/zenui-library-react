@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, {useState, useEffect} from 'react';
 
 // components
-import Showcode from '../../../../../Shared/Component/ShowCode.jsx';
-import OverviewFooter from '../../../../../Shared/OverviewFooter';
-import ContentHeader from '../../../../../Shared/ContentHeader';
-import { Helmet } from 'react-helmet';
+import Showcode from '@shared/Component/ShowCode.jsx';
+import OverviewFooter from '@shared/OverviewFooter';
+import ContentHeader from '@shared/ContentHeader';
+import {Helmet} from 'react-helmet';
 
 // contents for scrollspy
-import {timerContents} from '../../../../../Utils/ContentsConfig/NavigationContents';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {timerContents} from '@utils/ContentsConfig/NavigationContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const Timer = () => {
     // toggle actions
@@ -110,7 +110,7 @@ const Timer = () => {
         return () => clearInterval(timer);
     }, [targetDate]);
 
-    const CircleTimer = ({ value, type }) => {
+    const CircleTimer = ({value, type}) => {
         const strokeWidth = 7;
         const radius = (size - strokeWidth) / 2;
         const circumference = radius * 2 * Math.PI;
@@ -118,12 +118,12 @@ const Timer = () => {
         const strokeDashoffset = circumference - (progress / 100) * circumference;
 
         return (
-            <div className="relative" style={{ width: size, height: size }}>
+            <div className="relative" style={{width: size, height: size}}>
                 {/* Background Circle */}
                 <svg className="absolute top-0 left-0" width={size} height={size}>
                     <circle
-                        cx={size/2}
-                        cy={size/2}
+                        cx={size / 2}
+                        cy={size / 2}
                         r={radius}
                         fill="transparent"
                         stroke="#e5e5e5"
@@ -135,8 +135,8 @@ const Timer = () => {
                 {/* Progress Circle */}
                 <svg className="absolute top-0 left-0" width={size} height={size}>
                     <circle
-                        cx={size/2}
-                        cy={size/2}
+                        cx={size / 2}
+                        cy={size / 2}
                         r={radius}
                         fill="transparent"
                         stroke="#17b4d3"
@@ -170,9 +170,11 @@ const Timer = () => {
                         text={'timer style 1'}
                     />
 
-                   <ComponentDescription text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle1Code} setCode={setTimeStyle1Code} setPreview={setTimerStyle1Preview} preview={timerStyle1Preview}/>
+                    <ToggleTab code={timerStyle1Code} setCode={setTimeStyle1Code} setPreview={setTimerStyle1Preview}
+                               preview={timerStyle1Preview}/>
 
                     <ComponentWrapper>
                         {timerStyle1Preview && (
@@ -274,9 +276,11 @@ export default Timer;
                         />
                     </div>
 
-                    <ComponentDescription text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle2Code} setCode={setTimeStyle2Code} preview={timerStyle2Preview} setPreview={setTimerStyle2Preview}/>
+                    <ToggleTab code={timerStyle2Code} setCode={setTimeStyle2Code} preview={timerStyle2Preview}
+                               setPreview={setTimerStyle2Preview}/>
 
                     <ComponentWrapper>
                         {timerStyle2Preview && (
@@ -386,14 +390,17 @@ export default Timer;
                         />
                     </div>
 
-                    <ComponentDescription text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle3Code} setCode={setTimeStyle3Code} setPreview={setTimerStyle3Preview} preview={timerStyle3Preview}/>
+                    <ToggleTab code={timerStyle3Code} setCode={setTimeStyle3Code} setPreview={setTimerStyle3Preview}
+                               preview={timerStyle3Preview}/>
 
                     <ComponentWrapper>
                         {timerStyle3Preview && (
                             <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                                <div className='w-full bg-blue-50 dark:bg-slate-900 flex items-center justify-center py-12 rounded-md'>
+                                <div
+                                    className='w-full bg-blue-50 dark:bg-slate-900 flex items-center justify-center py-12 rounded-md'>
                                     <div className='grid grid-cols-4 gap-[15px] mt-2'>
                                         <div
                                             className='py-3 pt-2.5 rounded-md rounded-b-xl px-[15px] 640px:px-[23px] shadow-xl bg-blue-500 relative flex items-center justify-center flex-col'>
@@ -510,9 +517,11 @@ export default Timer;
                         />
                     </div>
 
-                    <ComponentDescription text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle4Code} setCode={setTimeStyle4Code} preview={timerStyle4Preview} setPreview={setTimerStyle4Preview}/>
+                    <ToggleTab code={timerStyle4Code} setCode={setTimeStyle4Code} preview={timerStyle4Preview}
+                               setPreview={setTimerStyle4Preview}/>
 
                     <ComponentWrapper>
                         {timerStyle4Preview && (
@@ -524,7 +533,8 @@ export default Timer;
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.hours).slice(0, 1)}</p>
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.hours).slice(1, timeLeft.hours.length)}</p>
                                             </div>
-                                            <span className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Hours</span>
+                                            <span
+                                                className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Hours</span>
                                         </div>
 
                                         <span className='text-[2.3rem] text-white 640px:mt-1'>:</span>
@@ -534,7 +544,8 @@ export default Timer;
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.minutes).slice(0, 1)}</p>
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.minutes).slice(1, timeLeft.minutes.length)}</p>
                                             </div>
-                                            <span className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Minutes</span>
+                                            <span
+                                                className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Minutes</span>
                                         </div>
 
                                         <span className='text-[2.3rem] text-white 640px:mt-1'>:</span>
@@ -544,7 +555,8 @@ export default Timer;
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.seconds).slice(0, 1)}</p>
                                                 <p className='bg-white 640px:px-4 py-3 w-[35px] 640px:w-[50px] text-center rounded-sm text-gray-900 font-normal text-[1rem] 640px:text-[2rem]'>{formatNumber(timeLeft.seconds).slice(1, timeLeft.seconds.length)}</p>
                                             </div>
-                                            <span className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Seconds</span>
+                                            <span
+                                                className='text-white font-normal text-[0.8rem] 640px:text-[0.9rem]'>Seconds</span>
                                         </div>
                                     </div>
                                 </div>
@@ -637,9 +649,11 @@ export default Timer;
                         />
                     </div>
 
-                    <ComponentDescription text=' A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text=' A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle5Code} setPreview={setTimerStyle5Preview} preview={timerStyle5Preview} setCode={setTimeStyle5Code}/>
+                    <ToggleTab code={timerStyle5Code} setPreview={setTimerStyle5Preview} preview={timerStyle5Preview}
+                               setCode={setTimeStyle5Code}/>
 
                     <ComponentWrapper>
                         {timerStyle5Preview && (
@@ -735,9 +749,11 @@ export default Timer;
                         />
                     </div>
 
-                    <ComponentDescription text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
+                    <ComponentDescription
+                        text='A timer lets you set a specific duration, and it counts down based on that duration, notifying you when the time is up.'/>
 
-                    <ToggleTab code={timerStyle6Code} setCode={setTimeStyle6Code} preview={timerStyle6Preview} setPreview={setTimerStyle6Preview}/>
+                    <ToggleTab code={timerStyle6Code} setCode={setTimeStyle6Code} preview={timerStyle6Preview}
+                               setPreview={setTimerStyle6Preview}/>
 
                     <ComponentWrapper>
                         {timerStyle6Preview && (

@@ -1,8 +1,5 @@
-"use client"
-
 import React from 'react';
 import {MdOutlineFileDownload} from "react-icons/md";
-import {LayoutGroup} from "framer-motion";
 import {BsFileText} from "react-icons/bs";
 import {FaStar} from "react-icons/fa";
 import {BiLayout} from "react-icons/bi";

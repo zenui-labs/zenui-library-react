@@ -1,6 +1,6 @@
 import React from 'react';
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
-import TextEffects from "../../../Components/Overview/SidebarContent/Animations/Visuals/TextEffects/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
+import TextEffects from "@animations/Visuals/TextEffects/Index.jsx";
 
 const TextEffectsPage = () => {
     return (

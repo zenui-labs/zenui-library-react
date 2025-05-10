@@ -1,11 +1,12 @@
 // components
-import ProductDetails from "../../../Components/Overview/SidebarContent/Blocks/E-Commerce/ProductDetailsComponents/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ProductDetails
+    from "@blocks/E-Commerce/ProductDetailsComponents/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ProductDetailsPage = () => {
     return (
         <ContentPageLayout>
-            <ProductDetails />
+            <ProductDetails/>
         </ContentPageLayout>
     );
 };

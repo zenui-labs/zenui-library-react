@@ -1,12 +1,12 @@
 import React, {useContext} from 'react';
 
-import MobileSidebar from "../Components/Overview/Sidebar/MobileSidebar.jsx";
-import Navbar from "../Components/Home/Navbar.jsx";
-import MobileNavbar from "../Components/Home/MobileNavbar.jsx";
-import Sidebar from "../Components/Overview/Sidebar/index.jsx";
+import MobileSidebar from "@/Components/Overview/Sidebar/MobileSidebar.jsx";
+import Navbar from "@/Components/Home/Navbar.jsx";
+import MobileNavbar from "@/Components/Home/MobileNavbar.jsx";
+import Sidebar from "@/Components/Overview/Sidebar/index.jsx";
 import {MenuContext} from "../Context/MenuContext.jsx";
 import useZenuiStore from "../Store/Index.js";
-import NewsBoard from "../Components/Home/NewsBoard.jsx";
+import NewsBoard from "@/Components/Home/NewsBoard.jsx";
 
 const ContentPageLayout = ({children}) => {
     const {scrollY} = useContext(MenuContext);

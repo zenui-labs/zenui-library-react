@@ -1,66 +1,68 @@
-import { useState } from "react";
+import {useState} from "react";
 
 // components
-import OverviewFooter from "../../../../../../Shared/OverviewFooter.jsx";
-import ContentHeader from "../../../../../../Shared/ContentHeader.jsx";
+import OverviewFooter from "@shared/OverviewFooter.jsx";
+import ContentHeader from "@shared/ContentHeader.jsx";
 
 // contents for scrollspy
-import { fileInputContents } from '../../../../../../Utils/ContentsConfig/InputContents.js';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy.js';
+import {fileInputContents} from '@utils/ContentsConfig/InputContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
 // react helmet
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
 // showing the code
-import Showcode from "../../../../../../Shared/Component/ShowCode.jsx";
+import Showcode from "@shared/Component/ShowCode.jsx";
 
-import ComponentDescription from '../../../../../../Shared/Component/ComponentDescription.jsx';
-import ComponentWrapper from '../../../../../../Shared/Component/ComponentWrapper.jsx';
-import ToggleTab from '../../../../../../Shared/Component/ToggleTab.jsx';
-import ContentNavbar from '../../../../../../Shared/Component/ContentNavbar.jsx';
+import ComponentDescription from '@shared/Component/ComponentDescription.jsx';
+import ComponentWrapper from '@shared/Component/ComponentWrapper.jsx';
+import ToggleTab from '@shared/Component/ToggleTab.jsx';
+import ContentNavbar from '@shared/Component/ContentNavbar.jsx';
 import UploadWithIcon from "./UploadWithIcon.jsx";
 import UploadWithButton from "./UploadWithButton.jsx";
 import UploadWithHeading from "./UploadWithHeading.jsx";
 import ProfileUpload from "./ProfileUpload.jsx";
 
 const Index = () => {
-  const sectionIds = fileInputContents.map(item => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = fileInputContents.map(item => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  // upload with icon
-  const [iconUploadPreview, setIconUploadPreview] = useState(true);
-  const [iconUploadCode, setIconUploadCode] = useState(false);
+    // upload with icon
+    const [iconUploadPreview, setIconUploadPreview] = useState(true);
+    const [iconUploadCode, setIconUploadCode] = useState(false);
 
-  // upload with button
-  const [buttonUploadPreview, setButtonUploadPreview] = useState(true);
-  const [buttonUploadCode, setButtonUploadCode] = useState(false);
+    // upload with button
+    const [buttonUploadPreview, setButtonUploadPreview] = useState(true);
+    const [buttonUploadCode, setButtonUploadCode] = useState(false);
 
-  // upload with heading
-  const [headingUploadPreview, setHeadingUploadPreview] = useState(true);
-  const [headingUploadCode, setHeadingUploadCode] = useState(false);
+    // upload with heading
+    const [headingUploadPreview, setHeadingUploadPreview] = useState(true);
+    const [headingUploadCode, setHeadingUploadCode] = useState(false);
 
-  // profile upload
-  const [profileUploadPreview, setProfileUploadPreview] = useState(true);
-  const [profileUploadCode, setProfileUploadCode] = useState(false);
+    // profile upload
+    const [profileUploadPreview, setProfileUploadPreview] = useState(true);
+    const [profileUploadCode, setProfileUploadCode] = useState(false);
 
-  return (
-    <>
-      <aside className="flex items-start justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10">
-        <div>
-          <ContentHeader text={"upload with icon"} id={"upload_with_icon"} />
+    return (
+        <>
+            <aside className="flex items-start justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10">
+                <div>
+                    <ContentHeader text={"upload with icon"} id={"upload_with_icon"}/>
 
-          <ComponentDescription text='This is a file upload with icon component. Upload files easily using intuitive icons for guidance.'/>
+                    <ComponentDescription
+                        text='This is a file upload with icon component. Upload files easily using intuitive icons for guidance.'/>
 
-          <ToggleTab code={iconUploadCode} setCode={setIconUploadCode} preview={iconUploadPreview} setPreview={setIconUploadPreview}/>
+                    <ToggleTab code={iconUploadCode} setCode={setIconUploadCode} preview={iconUploadPreview}
+                               setPreview={setIconUploadPreview}/>
 
-          <ComponentWrapper>
-            {iconUploadPreview && (
-                <UploadWithIcon/>
-            )}
+                    <ComponentWrapper>
+                        {iconUploadPreview && (
+                            <UploadWithIcon/>
+                        )}
 
-            {iconUploadCode && (
-                <Showcode
-                    code='
+                        {iconUploadCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -119,29 +121,31 @@ const FileInput = () => {
 
 export default FileInput;
             '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className="mt-8">
-            <ContentHeader
-                text={"upload with button"}
-                id={"upload_with_button"}
-            />
-          </div>
+                    <div className="mt-8">
+                        <ContentHeader
+                            text={"upload with button"}
+                            id={"upload_with_button"}
+                        />
+                    </div>
 
-          <ComponentDescription text='This is a file upload with button component. Easily upload files with a simple click of a button.'/>
+                    <ComponentDescription
+                        text='This is a file upload with button component. Easily upload files with a simple click of a button.'/>
 
-          <ToggleTab code={buttonUploadCode} setCode={setButtonUploadCode} setPreview={setButtonUploadPreview} preview={buttonUploadPreview}/>
+                    <ToggleTab code={buttonUploadCode} setCode={setButtonUploadCode} setPreview={setButtonUploadPreview}
+                               preview={buttonUploadPreview}/>
 
-          <ComponentWrapper>
-            {buttonUploadPreview && (
-                <UploadWithButton/>
-            )}
+                    <ComponentWrapper>
+                        {buttonUploadPreview && (
+                            <UploadWithButton/>
+                        )}
 
-            {buttonUploadCode && (
-                <Showcode
-                    code='
+                        {buttonUploadCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -206,29 +210,31 @@ const FileInput = () => {
 
 export default FileInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className="mt-8">
-            <ContentHeader
-                text={"upload with heading"}
-                id={"upload_with_heading"}
-            />
-          </div>
+                    <div className="mt-8">
+                        <ContentHeader
+                            text={"upload with heading"}
+                            id={"upload_with_heading"}
+                        />
+                    </div>
 
-          <ComponentDescription text='This is a file upload with heading text component. Upload files accompanied by clear heading instructions.'/>
+                    <ComponentDescription
+                        text='This is a file upload with heading text component. Upload files accompanied by clear heading instructions.'/>
 
-          <ToggleTab code={headingUploadCode} setCode={setHeadingUploadCode} preview={headingUploadPreview} setPreview={setHeadingUploadPreview}/>
+                    <ToggleTab code={headingUploadCode} setCode={setHeadingUploadCode} preview={headingUploadPreview}
+                               setPreview={setHeadingUploadPreview}/>
 
-          <ComponentWrapper>
-            {headingUploadPreview && (
-                <UploadWithHeading/>
-            )}
+                    <ComponentWrapper>
+                        {headingUploadPreview && (
+                            <UploadWithHeading/>
+                        )}
 
-            {headingUploadCode && (
-                <Showcode
-                    code='
+                        {headingUploadCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -295,26 +301,28 @@ const FileInput = () => {
 
 export default FileInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className="mt-8">
-            <ContentHeader text={"profile upload"} id={"profile_upload"}/>
-          </div>
+                    <div className="mt-8">
+                        <ContentHeader text={"profile upload"} id={"profile_upload"}/>
+                    </div>
 
-          <ComponentDescription text='This is a profile upload component. Easily update your profile picture with a simple upload feature.'/>
+                    <ComponentDescription
+                        text='This is a profile upload component. Easily update your profile picture with a simple upload feature.'/>
 
-          <ToggleTab code={profileUploadCode} setPreview={setProfileUploadPreview} preview={profileUploadPreview} setCode={setProfileUploadCode}/>
+                    <ToggleTab code={profileUploadCode} setPreview={setProfileUploadPreview}
+                               preview={profileUploadPreview} setCode={setProfileUploadCode}/>
 
-          <ComponentWrapper>
-            {profileUploadPreview && (
-                <ProfileUpload/>
-            )}
+                    <ComponentWrapper>
+                        {profileUploadPreview && (
+                            <ProfileUpload/>
+                        )}
 
-            {profileUploadCode && (
-                <Showcode
-                    code='
+                        {profileUploadCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -372,21 +380,22 @@ const FileInput = () => {
 
 export default FileInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter backUrl='/components/input-range' backName='range' forwardName='OTP input' forwardUrl='/components/otp-input'/>
-        </div>
+                    <OverviewFooter backUrl='/components/input-range' backName='range' forwardName='OTP input'
+                                    forwardUrl='/components/otp-input'/>
+                </div>
 
-        <ContentNavbar contents={fileInputContents} activeSection={activeSection}/>
+                <ContentNavbar contents={fileInputContents} activeSection={activeSection}/>
 
-      </aside>
-      <Helmet>
-        <title>Form - File Input</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+            <Helmet>
+                <title>Form - File Input</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default Index;

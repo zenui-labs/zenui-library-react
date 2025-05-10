@@ -1,11 +1,11 @@
 import React from 'react';
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
-import Index from "../../../Components/Overview/SidebarContent/Animations/Cards/MagnetCards/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
+import Index from "@animations/Cards/MagnetCards/Index.jsx";
 
 const MagicCardsPage = () => {
     return (
         <ContentPageLayout>
-            <Index />
+            <Index/>
         </ContentPageLayout>
     );
 };

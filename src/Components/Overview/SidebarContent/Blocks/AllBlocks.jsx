@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 
 // card component
 import {Helmet} from "react-helmet";
-import {AllBlocksData} from "../../../../Utils/AllBlocks.js";
-import BlocksFooter from "../../../../Shared/Block/BlocksFooter.jsx";
+import {AllBlocksData} from "@utils/AllBlocks.js";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 const AllBlocks = () => {
     const [sections, setSections] = useState([]);

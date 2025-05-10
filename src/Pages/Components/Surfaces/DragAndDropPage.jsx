@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import DragAndDrop from "../../../Components/Overview/SidebarContent/Content/Surfaces/DragAndDrop.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import DragAndDrop from "@components/Surfaces/DragAndDrop.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const CardPage = () => {
     return (
         <ContentPageLayout>
-            <DragAndDrop />
+            <DragAndDrop/>
         </ContentPageLayout>
     );
 };

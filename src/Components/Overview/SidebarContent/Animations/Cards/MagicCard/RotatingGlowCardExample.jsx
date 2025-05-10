@@ -3,11 +3,11 @@ import {useRef, useState} from "react";
 // framer motion
 import {motion} from "framer-motion";
 
-import useZenuiStore from "../../../../../../Store/Index.js";
+import useZenuiStore from "@/Store/Index.js";
 
 const RotatingGlowCardExample = () => {
     const [isHovered, setIsHovered] = useState(false);
-    const [mousePosition, setMousePosition] = useState({ x: 0.5, y: 0.5 });
+    const [mousePosition, setMousePosition] = useState({x: 0.5, y: 0.5});
     const cardRef = useRef(null);
 
     const {theme} = useZenuiStore()
@@ -53,16 +53,17 @@ const RotatingGlowCardExample = () => {
             >
                 <div className="flex flex-col items-center justify-center h-full p-4 z-10">
                     <h3 className="mb-2 text-lg font-bold text-white">Rotating Glow Card</h3>
-                    <p className="text-sm text-center text-gray-300">Move your mouse over the card to see the 3D effect.</p>
+                    <p className="text-sm text-center text-gray-300">Move your mouse over the card to see the 3D
+                        effect.</p>
                 </div>
 
                 {isHovered && (
                     <motion.div
                         className="absolute inset-0 pointer-events-none"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 0.15 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 0.15}}
                         style={{
-                            background: `radial-gradient(circle at ${spotlightX} ${spotlightY}, ${theme ==='dark' ? 'rgba(255, 255, 255, 1)' : 'rgb(152, 0, 255, 3)'} 0%, transparent 70%)`
+                            background: `radial-gradient(circle at ${spotlightX} ${spotlightY}, ${theme === 'dark' ? 'rgba(255, 255, 255, 1)' : 'rgb(152, 0, 255, 3)'} 0%, transparent 70%)`
                         }}
                     />
                 )}
@@ -70,8 +71,8 @@ const RotatingGlowCardExample = () => {
                 {isHovered && (
                     <motion.div
                         className="absolute inset-0 border-2 border-[rgb(152,0,255,0.6)] dark:border-blue-400 rounded-lg pointer-events-none"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
                         style={{
                             boxShadow: '0 0 15px rgba(66, 153, 225, 0.5)'
                         }}

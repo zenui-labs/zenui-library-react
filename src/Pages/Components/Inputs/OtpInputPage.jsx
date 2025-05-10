@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import OtpInput from "../../../Components/Overview/SidebarContent/Content/Inputs/OtpInput.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import OtpInput from "@components/Inputs/OtpInput.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const OtpInputPage = () => {
     return (
         <ContentPageLayout>
-            <OtpInput />
+            <OtpInput/>
         </ContentPageLayout>
     );
 };

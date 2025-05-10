@@ -1,11 +1,11 @@
 // components
-import MultipageForm from "../../../Components/Overview/SidebarContent/Blocks/Forms/MultipageForm.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import MultipageForm from "@blocks/Forms/MultipageForm.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const MultipageFormPage = () => {
     return (
         <ContentPageLayout>
-            <MultipageForm />
+            <MultipageForm/>
         </ContentPageLayout>
     );
 };

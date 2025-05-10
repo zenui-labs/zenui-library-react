@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import Index from "../../../Components/Overview/SidebarContent/Content/Data Display/Table/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Index from "@components/Data Display/Table/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const TablePage = () => {
     return (
         <ContentPageLayout>
-            <Index />
+            <Index/>
         </ContentPageLayout>
     );
 };

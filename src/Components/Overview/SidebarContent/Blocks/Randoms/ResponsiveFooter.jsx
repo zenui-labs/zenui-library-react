@@ -1,40 +1,40 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {CgFacebook} from "react-icons/cg";
 import {BsInstagram, BsLinkedin, BsTwitter} from "react-icons/bs";
 import {IoLocationOutline} from "react-icons/io5";
 import {MdOutlineEmail, MdOutlineLocalPhone} from "react-icons/md";
 import {SlArrowUp} from "react-icons/sl";
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 const ResponsiveFooter = () => {
 
-    const[responsiveFooter1Preview, setResponsiveFooter1Preview] = useState(true)
-    const[responsiveFooter1Code , setResponsiveFooter1Code] = useState(false)
+    const [responsiveFooter1Preview, setResponsiveFooter1Preview] = useState(true)
+    const [responsiveFooter1Code, setResponsiveFooter1Code] = useState(false)
 
-    const[responsiveFooter2Preview, setResponsiveFooter2Preview] = useState(true)
-    const[responsiveFooter2Code , setResponsiveFooter2Code] = useState(false)
+    const [responsiveFooter2Preview, setResponsiveFooter2Preview] = useState(true)
+    const [responsiveFooter2Code, setResponsiveFooter2Code] = useState(false)
 
-    const[responsiveFooter3Preview, setResponsiveFooter3Preview] = useState(true)
-    const[responsiveFooter3Code , setResponsiveFooter3Code] = useState(false)
+    const [responsiveFooter3Preview, setResponsiveFooter3Preview] = useState(true)
+    const [responsiveFooter3Code, setResponsiveFooter3Code] = useState(false)
 
-    const[responsiveFooter4Preview, setResponsiveFooter4Preview] = useState(true)
-    const[responsiveFooter4Code , setResponsiveFooter4Code] = useState(false)
+    const [responsiveFooter4Preview, setResponsiveFooter4Preview] = useState(true)
+    const [responsiveFooter4Code, setResponsiveFooter4Code] = useState(false)
 
-    const[responsiveFooter5Preview, setResponsiveFooter5Preview] = useState(true)
-    const[responsiveFooter5Code , setResponsiveFooter5Code] = useState(false)
+    const [responsiveFooter5Preview, setResponsiveFooter5Preview] = useState(true)
+    const [responsiveFooter5Code, setResponsiveFooter5Code] = useState(false)
 
-    const[responsiveFooter6Preview, setResponsiveFooter6Preview] = useState(true)
-    const[responsiveFooter6Code , setResponsiveFooter6Code] = useState(false)
+    const [responsiveFooter6Preview, setResponsiveFooter6Preview] = useState(true)
+    const [responsiveFooter6Code, setResponsiveFooter6Code] = useState(false)
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -44,7 +44,8 @@ const ResponsiveFooter = () => {
                 <BlockDescription text='A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter1Preview} setPreview={setResponsiveFooter1Preview} code={responsiveFooter1Code} setCode={setResponsiveFooter1Code}/>
+                <BlockToggleTab preview={responsiveFooter1Preview} setPreview={setResponsiveFooter1Preview}
+                                code={responsiveFooter1Code} setCode={setResponsiveFooter1Code}/>
 
                 <BlockWrapper>
                     {responsiveFooter1Preview && (
@@ -221,7 +222,8 @@ export default ResponsiveFooter;
                 <BlockDescription text='A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter2Preview} code={responsiveFooter2Code} setCode={setResponsiveFooter2Code} setPreview={setResponsiveFooter2Preview}/>
+                <BlockToggleTab preview={responsiveFooter2Preview} code={responsiveFooter2Code}
+                                setCode={setResponsiveFooter2Code} setPreview={setResponsiveFooter2Preview}/>
 
                 <BlockWrapper>
                     {responsiveFooter2Preview && (
@@ -283,7 +285,8 @@ export default ResponsiveFooter;
 
 
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Our Social Media</h3>
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Our
+                                            Social Media</h3>
                                         <div className='flex text-black flex-col gap-[10px]'>
                                             <p className='text-[0.9rem] dark:text-slate-400 text-text hover:text-primary cursor-pointer transition-all duration-200'>Dribbble</p>
                                             <p className='text-[0.9rem] dark:text-slate-400 text-text hover:text-primary cursor-pointer transition-all duration-200'>Behance</p>
@@ -295,9 +298,11 @@ export default ResponsiveFooter;
                                     </div>
 
                                     <div className='w-full'>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Join a
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Join
+                                            a
                                             Newsletter</h3>
-                                        <div className='flex gap-[2px] w-full 640px:w-[40%] flex-col text-text relative'>
+                                        <div
+                                            className='flex gap-[2px] w-full 640px:w-[40%] flex-col text-text relative'>
                                             <label className='text-[0.9rem] dark:text-slate-400'>Your Email</label>
                                             <input type='email'
                                                    className='py-3 px-4 dark:bg-slate-900 dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-[#abc2d3] pr-[90px] w-full rounded-md border border-primary outline-none'
@@ -420,7 +425,8 @@ export default ResponsiveFooter;
                 <BlockDescription text=' A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter3Preview} setPreview={setResponsiveFooter3Preview} code={responsiveFooter3Code} setCode={setResponsiveFooter3Code}/>
+                <BlockToggleTab preview={responsiveFooter3Preview} setPreview={setResponsiveFooter3Preview}
+                                code={responsiveFooter3Code} setCode={setResponsiveFooter3Code}/>
 
                 <BlockWrapper>
                     {responsiveFooter3Preview && (
@@ -460,7 +466,8 @@ export default ResponsiveFooter;
 
 
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Our Social Media</h3>
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Our
+                                            Social Media</h3>
                                         <div className='flex text-black flex-col gap-[10px]'>
                                             <p className='text-[0.9rem] dark:text-slate-400 text-text hover:text-primary cursor-pointer transition-all duration-200'>Dribbble</p>
                                             <p className='text-[0.9rem] dark:text-slate-400 text-text hover:text-primary cursor-pointer transition-all duration-200'>Behance</p>
@@ -472,7 +479,8 @@ export default ResponsiveFooter;
                                     </div>
 
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Join a
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Join
+                                            a
                                             Newsletter</h3>
                                         <div className='flex gap-[2px] flex-col text-text relative'>
                                             <label className='text-[0.9rem] dark:text-slate-400'>Your Email</label>
@@ -492,7 +500,8 @@ export default ResponsiveFooter;
                                     <img src='https://i.ibb.co/ZHYQ04D/footer-logo.png' alt='logo'
                                          className='w-[130px]'/>
 
-                                    <p className='text-[0.9rem] text-gray-600 dark:text-slate-500'>© 2024 ZenUI Library. All Rights
+                                    <p className='text-[0.9rem] text-gray-600 dark:text-slate-500'>© 2024 ZenUI Library.
+                                        All Rights
                                         Reserved. </p>
 
                                     <div className='flex items-center gap-[10px] text-text'>
@@ -623,7 +632,8 @@ export default ResponsiveFooter;
                 <BlockDescription text='A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter4Preview} code={responsiveFooter4Code} setCode={setResponsiveFooter4Code} setPreview={setResponsiveFooter4Preview}/>
+                <BlockToggleTab preview={responsiveFooter4Preview} code={responsiveFooter4Code}
+                                setCode={setResponsiveFooter4Code} setPreview={setResponsiveFooter4Preview}/>
 
                 <BlockWrapper>
                     {responsiveFooter4Preview && (
@@ -661,7 +671,8 @@ export default ResponsiveFooter;
 
                                     <div
                                         className='border-t dark:border-slate-700 border-gray-200 pt-[20px] flex items-center w-full flex-wrap gap-[20px] justify-center'>
-                                        <p className='text-[0.8rem] dark:text-slate-500 640px:text-[0.9rem] text-gray-600'>© 2024 ZenUI
+                                        <p className='text-[0.8rem] dark:text-slate-500 640px:text-[0.9rem] text-gray-600'>©
+                                            2024 ZenUI
                                             Library. All Rights
                                             Reserved. </p>
                                     </div>
@@ -732,7 +743,8 @@ export default ResponsiveFooter;
                 <BlockDescription text='A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter5Preview} code={responsiveFooter5Code} setPreview={setResponsiveFooter5Preview} setCode={setResponsiveFooter5Code}/>
+                <BlockToggleTab preview={responsiveFooter5Preview} code={responsiveFooter5Code}
+                                setPreview={setResponsiveFooter5Preview} setCode={setResponsiveFooter5Code}/>
 
                 <BlockWrapper>
                     {responsiveFooter5Preview && (
@@ -740,21 +752,27 @@ export default ResponsiveFooter;
                             <footer className='bg-white dark:bg-slate-900 boxShadow rounded-xl w-full p-6 1024px:p-9'>
                                 <div className='flex justify-between gap-[30px] flex-wrap w-full'>
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>About The Store</h3>
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>About
+                                            The Store</h3>
                                         <div className='flex flex-col gap-[8px] text-black'>
                                             <span><a
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Home</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Become a customer</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>About us</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Become a customer</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>About us</a></span>
                                             <span><a
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>FAQ</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Return policy</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Contact us</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Return policy</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Contact us</a></span>
                                         </div>
                                     </div>
 
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Use Cases</h3>
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Use
+                                            Cases</h3>
                                         <div className='flex flex-col gap-[8px] text-black'>
                                             <span><a
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Use Cases</a></span>
@@ -764,7 +782,8 @@ export default ResponsiveFooter;
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Marketers</a></span>
                                             <span><a
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Small Business</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Website Builder</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Website Builder</a></span>
                                         </div>
                                     </div>
 
@@ -800,12 +819,14 @@ export default ResponsiveFooter;
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>FAQs</a></span>
                                             <span><a
                                                 className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Teams</a></span>
-                                            <span><a className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Contact Us</a></span>
+                                            <span><a
+                                                className='text-[0.9rem] dark:text-slate-400 hover:text-blue-400 cursor-pointer'>Contact Us</a></span>
                                         </div>
                                     </div>
 
                                     <div className=''>
-                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Get in touch</h3>
+                                        <h3 className='text-[1.2rem] dark:text-[#abc2d3] font-semibold text-text mb-2'>Get
+                                            in touch</h3>
                                         <div className='flex gap-[7px] text-black'>
                                             <a className='text-[1.3rem] p-1.5 cursor-pointer hover:text-white transition-all duration-300 dark:text-slate-400 rounded-full hover:bg-blue-400'>
                                                 <CgFacebook/>
@@ -840,7 +861,8 @@ export default ResponsiveFooter;
                                             className='text-[0.9rem] dark:text-slate-500 hover:text-blue-400 cursor-pointer'>Site Map</a></span>
                                     </div>
 
-                                    <p className='text-gray-400 dark:text-slate-500 cursor-pointer text-[0.8rem]'>© 2024 All Rights
+                                    <p className='text-gray-400 dark:text-slate-500 cursor-pointer text-[0.8rem]'>© 2024
+                                        All Rights
                                         Reserved.</p>
                                 </div>
                             </footer>
@@ -980,19 +1002,22 @@ export default ResponsiveFooter;
                 <BlockDescription text='A flexible footer that adapts to different screen sizes, displaying links, contact info, and social
                     icons.'/>
 
-                <BlockToggleTab preview={responsiveFooter6Preview} code={responsiveFooter6Code} setCode={setResponsiveFooter6Code} setPreview={setResponsiveFooter6Preview}/>
+                <BlockToggleTab preview={responsiveFooter6Preview} code={responsiveFooter6Code}
+                                setCode={setResponsiveFooter6Code} setPreview={setResponsiveFooter6Preview}/>
 
                 <BlockWrapper>
                     {responsiveFooter6Preview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
-                            <footer className='bg-white dark:bg-slate-900 boxShadow rounded-xl w-full p-3 1024px:p-4 relative'>
+                            <footer
+                                className='bg-white dark:bg-slate-900 boxShadow rounded-xl w-full p-3 1024px:p-4 relative'>
 
                                 <div
                                     className='w-full flex items-center justify-center pt-[30px] flex-col gap-[20px] pb-[130px]'>
                                     <img src='https://i.ibb.co/ZHYQ04D/footer-logo.png' alt='logo'
                                          className='w-[150px]'/>
 
-                                    <p className='text-[0.9rem] dark:text-[#abc2d3] text-center 640px:text-start text-gray-600'>High level
+                                    <p className='text-[0.9rem] dark:text-[#abc2d3] text-center 640px:text-start text-gray-600'>High
+                                        level
                                         experience in web design and development knowledge, producing quality work.
                                     </p>
 
@@ -1092,7 +1117,8 @@ export default ResponsiveFooter;
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/pricing-section' backName='pricing section' forwardName='contact form' forwardUrl='/blocks/contact-form'/>
+                <BlocksFooter backUrl='/blocks/pricing-section' backName='pricing section' forwardName='contact form'
+                              forwardUrl='/blocks/contact-form'/>
             </div>
 
 

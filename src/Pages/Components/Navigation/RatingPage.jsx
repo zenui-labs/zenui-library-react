@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import Rating from "../../../Components/Overview/SidebarContent/Content/Navigation/Rating.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Rating from "@components/Navigation/Rating.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const RatingPage = () => {
     return (
         <ContentPageLayout>
-            <Rating />
+            <Rating/>
         </ContentPageLayout>
     );
 };

@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Pagination from "../../../Components/Overview/SidebarContent/Content/Navigation/Pagination";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Pagination from "@components/Navigation/Pagination";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const PaginationPage = () => {
-  return (
-    <ContentPageLayout>
-        <Pagination />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <Pagination/>
+        </ContentPageLayout>
+    );
 };
 
 export default PaginationPage;

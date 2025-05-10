@@ -10,7 +10,7 @@ import {Helmet} from "react-helmet";
 import Tilt from 'react-parallax-tilt';
 
 // templates data
-import {templatesData} from "../../../../Utils/TemplatesData";
+import {templatesData} from "@utils/TemplatesData";
 
 const Templete = () => {
 

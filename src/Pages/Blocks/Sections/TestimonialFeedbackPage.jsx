@@ -1,11 +1,11 @@
 // components
-import Testimonial from "../../../Components/Overview/SidebarContent/Blocks/Sections/TestimonialFeedback.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Testimonial from "@blocks/Sections/TestimonialFeedback.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const TestimonialFeedbackPage = () => {
     return (
         <ContentPageLayout>
-            <Testimonial />
+            <Testimonial/>
         </ContentPageLayout>
     );
 };

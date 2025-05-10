@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // icons
-import { FaGithub } from "react-icons/fa";
-import { BiSolidLike, BiSolidDislike } from "react-icons/bi";
-import { FaHand } from "react-icons/fa6";
+import {FaGithub} from "react-icons/fa";
+import {BiSolidLike, BiSolidDislike} from "react-icons/bi";
+import {FaHand} from "react-icons/fa6";
 
 // utils style
-import utils from "../../Utils/index.jsx";
+import utils from "@utils/index.jsx";
 import {Link} from "react-router-dom";
 import {IoChevronBack} from "react-icons/io5";
 
-const OverviewFooter = ({width = '820px',backUrl, forwardUrl, backName, forwardName, isBackButton = true, isForwardButton = true}) => {
+const OverviewFooter = ({
+                            width = '820px',
+                            backUrl,
+                            forwardUrl,
+                            backName,
+                            forwardName,
+                            isBackButton = true,
+                            isForwardButton = true
+                        }) => {
 
     return (
         <footer className={`w-full max-w-[${width}] mt-8`}>
@@ -41,8 +49,9 @@ const OverviewFooter = ({width = '820px',backUrl, forwardUrl, backName, forwardN
                 )
             }
 
-            <div className="flex items-center gap-5 dark:border-slate-700 justify-between w-full border-t border-border pt-5">
-                <img src="/footer_logo.png" alt="logo-image" className="w-[120px] 640px:w-[120px]" />
+            <div
+                className="flex items-center gap-5 dark:border-slate-700 justify-between w-full border-t border-border pt-5">
+                <img src="/footer_logo.png" alt="logo-image" className="w-[120px] 640px:w-[120px]"/>
 
                 <div className="flex items-center gap-3">
                     <p className=" font-[600] text-[1rem] text-text dark:text-darkSubTextColor/90">Support:</p>

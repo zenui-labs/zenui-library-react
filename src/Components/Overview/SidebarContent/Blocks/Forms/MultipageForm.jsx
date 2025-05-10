@@ -1,36 +1,36 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader.jsx";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader.jsx";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {IoSearchOutline} from "react-icons/io5";
 import {MdDone} from "react-icons/md";
 import {BsCashStack} from "react-icons/bs";
 import {HiOutlineUpload} from "react-icons/hi";
 import {SlLocationPin} from "react-icons/sl";
 
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 
 const MultipageForm = () => {
 
-    const[multiStepForm1Preview, setMultiStepForm1Preview] = useState(true);
-    const[multiStepForm1Code, setMultiStepForm1Code] = useState(false);
+    const [multiStepForm1Preview, setMultiStepForm1Preview] = useState(true);
+    const [multiStepForm1Code, setMultiStepForm1Code] = useState(false);
 
-    const[multiStepForm2Preview, setMultiStepForm2Preview] = useState(true);
-    const[multiStepForm2Code, setMultiStepForm2Code] = useState(false);
+    const [multiStepForm2Preview, setMultiStepForm2Preview] = useState(true);
+    const [multiStepForm2Code, setMultiStepForm2Code] = useState(false);
 
     // actions
     const [step, setStep] = useState(1)
 
     const nextStep = () => {
-        if(step < 3) {
+        if (step < 3) {
             setStep(step + 1)
         }
     };
@@ -54,7 +54,7 @@ const MultipageForm = () => {
     const [step1, setStep1] = useState(1)
 
     const nextStep1 = () => {
-        if(step1 < 4) {
+        if (step1 < 4) {
             setStep1(step1 + 1)
         }
     };
@@ -519,19 +519,22 @@ const MultipageForm = () => {
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"multi step form 1"} id={"multi_step_form_1"} />
+                <ContentHeader text={"multi step form 1"} id={"multi_step_form_1"}/>
 
-                <BlockDescription text='A form divided into multiple steps, guiding users through sections one at a time for a more streamlined data entry process.'/>
+                <BlockDescription
+                    text='A form divided into multiple steps, guiding users through sections one at a time for a more streamlined data entry process.'/>
 
-                <BlockToggleTab preview={multiStepForm1Preview} code={multiStepForm1Code} setCode={setMultiStepForm1Code} setPreview={setMultiStepForm1Preview}/>
+                <BlockToggleTab preview={multiStepForm1Preview} code={multiStepForm1Code}
+                                setCode={setMultiStepForm1Code} setPreview={setMultiStepForm1Preview}/>
 
                 <BlockWrapper>
                     {multiStepForm1Preview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <div className='w-full 640px:w-[90%] max-w-[700px] mx-auto'>
-                                <div className='w-full 640px:flex-row flex-col flex items-center gap-[20px] 640px:gap-[10px]'>
+                                <div
+                                    className='w-full 640px:flex-row flex-col flex items-center gap-[20px] 640px:gap-[10px]'>
                                     {
-                                        steps1?.map((stepItem, index)=> (
+                                        steps1?.map((stepItem, index) => (
                                             <p key={index} className='flex items-center w-full gap-[10px]'>
                                                 {
                                                     step1 <= stepItem.id && (
@@ -541,7 +544,8 @@ const MultipageForm = () => {
 
                                                 {
                                                     step1 >= (stepItem.id + 1) && (
-                                                        <div className='p-[10px] h-[40px] w-[40px] rounded-full bg-blue-500 text-white flex items-center justify-center'>
+                                                        <div
+                                                            className='p-[10px] h-[40px] w-[40px] rounded-full bg-blue-500 text-white flex items-center justify-center'>
                                                             <MdDone className='text-[3rem]'/>
                                                         </div>
                                                     )
@@ -566,10 +570,13 @@ const MultipageForm = () => {
                                         step1 === 1 && (
                                             <div className='flex flex-col w-full'>
                                                 <div className='w-full relative'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Location</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Location</label>
+                                                    <br/>
                                                     <input type='text' placeholder='City, area...'
                                                            className='py-2.5 pl-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 pr-[40px] border border-gray-300 mt-1 w-full rounded-md outline-none'/>
-                                                    <SlLocationPin className='absolute dark:text-slate-500 top-[42px] right-3 text-gray-500'/>
+                                                    <SlLocationPin
+                                                        className='absolute dark:text-slate-500 top-[42px] right-3 text-gray-500'/>
                                                 </div>
 
                                                 <p className='text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-500 mt-8'>Suggestions</p>
@@ -587,7 +594,9 @@ const MultipageForm = () => {
                                         step1 === 2 && (
                                             <div className='flex flex-col gap-[20px] w-full'>
                                                 <div className='w-full relative'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Roles</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Roles</label>
+                                                    <br/>
                                                     <input type='text' placeholder='Job title, position'
                                                            className='py-2.5 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 pl-4 pr-[40px] border border-gray-300 mt-1 w-full rounded-md outline-none'/>
                                                     <IoSearchOutline
@@ -598,7 +607,7 @@ const MultipageForm = () => {
 
                                                 <div className='grid grid-cols-1 640px:grid-cols-2 gap-[10px]'>
                                                     {
-                                                        positionCards?.map((card,index)=> (
+                                                        positionCards?.map((card, index) => (
                                                             <div key={index}
                                                                  onClick={() => setSelectedPositionCardId(card?.id)}
                                                                  className={`${selectedPostionCardId === card?.id ? 'border-primary' : 'border-gray-300 dark:border-slate-700'} border cursor-pointer rounded-md p-[15px]`}>
@@ -629,29 +638,38 @@ const MultipageForm = () => {
                                         step1 === 3 && (
                                             <div className='flex flex-col gap-[20px] w-full'>
                                                 <div className='w-full'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Location</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Location</label>
+                                                    <br/>
                                                     <input type='text' placeholder='e.g. Juri, Moulvibazar'
                                                            className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-gray-300 mt-1 w-full rounded-md outline-none'/>
                                                 </div>
                                                 <div className='w-full'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Roles</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Roles</label>
+                                                    <br/>
                                                     <input type='text' placeholder='e.g. 360 operator, steel fixer'
                                                            className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-gray-300 mt-1 w-full rounded-md outline-none'/>
                                                 </div>
                                                 <div className='w-full'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Name</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Name</label>
+                                                    <br/>
                                                     <input type='text' placeholder='e.g. Jhon Deo'
                                                            className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-gray-300 mt-1 w-full rounded-md outline-none'/>
                                                 </div>
 
                                                 <div className='w-full'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Phone</label> <br/>
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Phone</label>
+                                                    <br/>
                                                     <input type='number' placeholder='e.g. +8801305282768'
                                                            className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-gray-300 mt-1 w-full rounded-md outline-none'/>
                                                 </div>
 
                                                 <div className='w-full'>
-                                                    <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Certification <span
+                                                    <label
+                                                        className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Certification <span
                                                         className='text-gray-300 dark:text-slate-500 font-[400] text-[0.9rem]'>(optional)</span></label>
                                                     <br/>
                                                     <label
@@ -673,10 +691,14 @@ const MultipageForm = () => {
                                     {
                                         step1 === 4 && (
                                             <div className='flex items-center justify-center w-full flex-col'>
-                                                <img src='https://i.ibb.co/LC1yhZG/Prize-cup-for-the-first-place-removebg-preview.png' alt='vector' className='w-[200px]'/>
+                                                <img
+                                                    src='https://i.ibb.co/LC1yhZG/Prize-cup-for-the-first-place-removebg-preview.png'
+                                                    alt='vector' className='w-[200px]'/>
 
-                                                <h1 className='text-[1.4rem] dark:text-[#abc2d3] font-[600] mt-4'>We've receive your application!</h1>
-                                                <p className='text-gray-500 dark:text-slate-400 text-[1rem] font-[400] mt-1'>We will process it and reach out to you in a days.</p>
+                                                <h1 className='text-[1.4rem] dark:text-[#abc2d3] font-[600] mt-4'>We've
+                                                    receive your application!</h1>
+                                                <p className='text-gray-500 dark:text-slate-400 text-[1rem] font-[400] mt-1'>We
+                                                    will process it and reach out to you in a days.</p>
                                             </div>
                                         )
                                     }
@@ -704,15 +726,18 @@ const MultipageForm = () => {
                 </div>
 
 
-                <BlockDescription text='A form divided into multiple steps, guiding users through sections one at a time for a more streamlined data entry process.'/>
+                <BlockDescription
+                    text='A form divided into multiple steps, guiding users through sections one at a time for a more streamlined data entry process.'/>
 
-                <BlockToggleTab preview={multiStepForm2Preview} setPreview={setMultiStepForm2Preview} code={multiStepForm2Code} setCode={setMultiStepForm2Code}/>
+                <BlockToggleTab preview={multiStepForm2Preview} setPreview={setMultiStepForm2Preview}
+                                code={multiStepForm2Code} setCode={setMultiStepForm2Code}/>
 
                 <BlockWrapper>
                     {multiStepForm2Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <div className='w-full 640px:w-[70%] mx-auto'>
-                                <div className='w-full 640px:flex-row flex-col flex items-center gap-[20px] 640px:gap-[10px]'>
+                                <div
+                                    className='w-full 640px:flex-row flex-col flex items-center gap-[20px] 640px:gap-[10px]'>
                                     {
                                         steps?.map((stepItem, index) => (
                                             <p key={index} className='flex items-center gap-[10px] w-full'>
@@ -735,23 +760,28 @@ const MultipageForm = () => {
                                     {
                                         step === 1 && (
                                             <>
-                                                <p className='text-[0.9rem] dark:text-[#abc2d3] text-gray-500'>Choose your account type</p>
+                                                <p className='text-[0.9rem] dark:text-[#abc2d3] text-gray-500'>Choose your
+                                                    account type</p>
 
-                                                <div className='mt-6 flex 640px:flex-row flex-col 640px:items-center gap-[20px]'>
+                                                <div
+                                                    className='mt-6 flex 640px:flex-row flex-col 640px:items-center gap-[20px]'>
                                                     <img src='https://i.ibb.co/tzxHppd/Group-11.png' alt='vector'
                                                          className='w-[60px]'/>
                                                     <div>
-                                                        <h1 className='text-[15px] dark:text-[#abc2d3] font-[600]'>Personal Account</h1>
+                                                        <h1 className='text-[15px] dark:text-[#abc2d3] font-[600]'>Personal
+                                                            Account</h1>
                                                         <p className='text-[0.9rem] dark:text-slate-400 font-[300] text-gray-400 w-full 640px:w-[80%] mt-1'>Lorem
                                                             ipsum dolor sit amet consectetur adipisicing elit.</p>
                                                     </div>
                                                 </div>
 
-                                                <div className='mt-6 640px:flex-row flex-col flex 640px:items-center gap-[20px]'>
+                                                <div
+                                                    className='mt-6 640px:flex-row flex-col flex 640px:items-center gap-[20px]'>
                                                     <img src='https://i.ibb.co/RBtVH0D/Group-11-1.png' alt='vector'
                                                          className='w-[60px]'/>
                                                     <div>
-                                                        <h1 className='text-[15px] dark:text-[#abc2d3] font-[600]'>Business Account</h1>
+                                                        <h1 className='text-[15px] dark:text-[#abc2d3] font-[600]'>Business
+                                                            Account</h1>
                                                         <p className='text-[0.9rem] dark:text-slate-400 font-[300] text-gray-400 w-full 640px:w-[80%] mt-1'>Lorem
                                                             ipsum dolor sit amet consectetur adipisicing elit.</p>
                                                     </div>
@@ -765,16 +795,25 @@ const MultipageForm = () => {
                                             <>
                                                 <div className='flex flex-col gap-[25px] w-full'>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Name</label> <br/>
-                                                        <input type='text' placeholder='Jhon Deo' className='py-2.5 px-4 bg-gray-50 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border mt-1 w-full rounded-md outline-none'/>
+                                                        <label
+                                                            className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Name</label>
+                                                        <br/>
+                                                        <input type='text' placeholder='Jhon Deo'
+                                                               className='py-2.5 px-4 bg-gray-50 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border mt-1 w-full rounded-md outline-none'/>
                                                     </div>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Email</label> <br/>
-                                                        <input type='email' placeholder='example@gmail.com' className='py-2.5 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border px-4 bg-gray-50 mt-1 w-full rounded-md outline-none'/>
+                                                        <label
+                                                            className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Email</label>
+                                                        <br/>
+                                                        <input type='email' placeholder='example@gmail.com'
+                                                               className='py-2.5 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border px-4 bg-gray-50 mt-1 w-full rounded-md outline-none'/>
                                                     </div>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Password</label> <br/>
-                                                        <input type='password' placeholder='*********' className='py-2.5 px-4 bg-gray-50 mt-1 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border w-full rounded-md outline-none'/>
+                                                        <label
+                                                            className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Password</label>
+                                                        <br/>
+                                                        <input type='password' placeholder='*********'
+                                                               className='py-2.5 px-4 bg-gray-50 mt-1 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border w-full rounded-md outline-none'/>
                                                     </div>
                                                 </div>
                                             </>
@@ -786,16 +825,23 @@ const MultipageForm = () => {
                                             <>
                                                 <div className='flex flex-col gap-[25px]'>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Age</label> <br/>
-                                                        <input type='number' placeholder='20' className='py-2.5 px-4 bg-gray-50 mt-1 w-full dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border rounded-md outline-none'/>
+                                                        <label
+                                                            className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Age</label>
+                                                        <br/>
+                                                        <input type='number' placeholder='20'
+                                                               className='py-2.5 px-4 bg-gray-50 mt-1 w-full dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border rounded-md outline-none'/>
                                                     </div>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Area of interest</label> <br/>
-                                                        <input type='text' placeholder='Frontend' className='py-2.5 px-4 bg-gray-50 mt-1 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border w-full rounded-md outline-none'/>
+                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Area
+                                                            of interest</label> <br/>
+                                                        <input type='text' placeholder='Frontend'
+                                                               className='py-2.5 px-4 bg-gray-50 mt-1 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border w-full rounded-md outline-none'/>
                                                     </div>
                                                     <div className='w-full'>
-                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Bio / Description</label> <br/>
-                                                        <input type='password' placeholder='Lorem ipsum' className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border bg-gray-50 mt-1 w-full rounded-md outline-none'/>
+                                                        <label className='text-[1rem] dark:text-[#abc2d3] text-gray-600'>Bio
+                                                            / Description</label> <br/>
+                                                        <input type='password' placeholder='Lorem ipsum'
+                                                               className='py-2.5 px-4 dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 dark:border bg-gray-50 mt-1 w-full rounded-md outline-none'/>
                                                     </div>
                                                 </div>
                                             </>
@@ -820,7 +866,8 @@ const MultipageForm = () => {
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/contact-form' backName='contact form' forwardName='newsletter form' forwardUrl='/blocks/newsletter-form'/>
+                <BlocksFooter backUrl='/blocks/contact-form' backName='contact form' forwardName='newsletter form'
+                              forwardUrl='/blocks/newsletter-form'/>
             </div>
 
 

@@ -8,9 +8,9 @@ export default defineConfig({
     resolve: {
         alias: {
             '@': path.resolve(__dirname, 'src'),
-            '@components': path.resolve(__dirname, 'src/Components/Overview/Content'),
-            '@blocks': path.resolve(__dirname, 'src/Components/Overview/Blocks'),
-            '@animations': path.resolve(__dirname, 'src/Components/Overview/Animations'),
+            '@components': path.resolve(__dirname, 'src/Components/Overview/SidebarContent/Content'),
+            '@blocks': path.resolve(__dirname, 'src/Components/Overview/SidebarContent/Blocks'),
+            '@animations': path.resolve(__dirname, 'src/Components/Overview/SidebarContent/Animations'),
             '@pages': path.resolve(__dirname, 'src/Pages'),
             '@utils': path.resolve(__dirname, 'src/Utils'),
             '@store': path.resolve(__dirname, 'src/Store'),

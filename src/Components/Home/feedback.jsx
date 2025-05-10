@@ -1,11 +1,5 @@
-import React, {useEffect} from 'react';
-
 // data
-import {feedbackData} from "../../Utils/FeedbackData.js";
-
-// import aos animation
-import "aos/dist/aos.css";
-import AOS from "aos";
+import {feedbackData} from "@utils/FeedbackData.js";
 
 // component
 import FeedbackCard from "./FeedbackCard.jsx"
@@ -13,12 +7,6 @@ import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
 
 const Feedback = () => {
-
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
 
     return (
         <SectionWrapper className='relative'>

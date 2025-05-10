@@ -4,8 +4,8 @@ import React, {useState, useEffect} from 'react';
 import {FaRegCopy} from "react-icons/fa";
 import {IoMdColorFill, IoMdDoneAll} from "react-icons/io";
 import {FiMinus, FiPlus} from "react-icons/fi";
-import PngFileIcon from "../SvgIcons/PngFileIcon.jsx";
-import SvgFileIcon from "../SvgIcons/SvgFileIcon.jsx";
+import PngFileIcon from "@/PngFileIcon.jsx";
+import SvgFileIcon from "@/SvgFileIcon.jsx";
 import {MdOutlineRefresh} from "react-icons/md";
 import {IoColorFillOutline} from "react-icons/io5";
 import {RxCross1} from "react-icons/rx";
@@ -283,7 +283,8 @@ const IconSidebar = ({sidebarOpen, setSidebarOpen, iconData, setSelectedIconData
 
 
                     <div className='flex flex-col gap-2'>
-                        <span className='text-text dark:text-darkSubTextColor flex items-center justify-between w-[80%] gap-[5px]'>
+                        <span
+                            className='text-text dark:text-darkSubTextColor flex items-center justify-between w-[80%] gap-[5px]'>
                             Fill Color:
                             <div className='group relative'>
                                         <IoColorFillOutline className='text-[1.2rem] cursor-pointer'
@@ -317,17 +318,20 @@ const IconSidebar = ({sidebarOpen, setSidebarOpen, iconData, setSelectedIconData
 
                     <label className='flex flex-col gap-2'>
                         <span className='text-text dark:text-darkSubTextColor'>Size:</span>
-                        <div className='flex items-center w-max border dark:border-darkBorderColor border-gray-200 rounded-md'>
-                            <button className='bg-gray-100 p-[11px] dark:bg-slate-900 dark:text-darkSubTextColor rounded-l-md text-gray-700 text-[1.1rem]'
-                                    onClick={handleMiniDecrement}><FiMinus/></button>
+                        <div
+                            className='flex items-center w-max border dark:border-darkBorderColor border-gray-200 rounded-md'>
+                            <button
+                                className='bg-gray-100 p-[11px] dark:bg-slate-900 dark:text-darkSubTextColor rounded-l-md text-gray-700 text-[1.1rem]'
+                                onClick={handleMiniDecrement}><FiMinus/></button>
                             <input type='number'
                                    value={size}
                                    max='100'
                                    min='0'
                                    className='w-[60px] dark:bg-transparent dark:text-darkSubTextColor py-[6px] outline-none focus:ring-0 border-none text-center text-[1.1rem]'
                                    onInput={handleMiniInputValueChange}/>
-                            <button className='bg-gray-100 p-[11px] dark:bg-slate-900 dark:text-darkSubTextColor rounded-r-md text-gray-700 text-[1.1rem]'
-                                    onClick={handleMiniIncrement}><FiPlus/></button>
+                            <button
+                                className='bg-gray-100 p-[11px] dark:bg-slate-900 dark:text-darkSubTextColor rounded-r-md text-gray-700 text-[1.1rem]'
+                                onClick={handleMiniIncrement}><FiPlus/></button>
                         </div>
                     </label>
                 </div>
@@ -340,13 +344,13 @@ const IconSidebar = ({sidebarOpen, setSidebarOpen, iconData, setSelectedIconData
                         className='w-full py-2.5 px-2 border dark:border-darkBorderColor dark:text-darkSubTextColor border-border text-text rounded-md dark:hover:bg-slate-900/30 flex items-center gap-[8px] justify-center hover:bg-gray-50 active:scale-[0.9] transition-all duration-200'
                         onClick={handleDownloadSvg}
                     >
-                        <SvgFileIcon /> Download Svg
+                        <SvgFileIcon/> Download Svg
                     </button>
 
                     <button
                         onClick={handleDownloadPng}
                         className='w-full py-2.5 px-2 border dark:border-darkBorderColor dark:text-darkSubTextColor border-border text-text rounded-md dark:hover:bg-slate-900/30 flex items-center gap-[8px] justify-center hover:bg-gray-50 active:scale-[0.9] transition-all duration-200'>
-                        <PngFileIcon /> Download Png
+                        <PngFileIcon/> Download Png
                     </button>
                 </div>
 

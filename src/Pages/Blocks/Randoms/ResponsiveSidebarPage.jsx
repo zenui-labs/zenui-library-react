@@ -1,11 +1,11 @@
 // components
-import Index from "../../../Components/Overview/SidebarContent/Blocks/Randoms/ResponsiveSidebars/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Index from "@blocks/Randoms/ResponsiveSidebars/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ResponsiveSearchbarPage = () => {
     return (
         <ContentPageLayout>
-            <Index />
+            <Index/>
         </ContentPageLayout>
     );
 };

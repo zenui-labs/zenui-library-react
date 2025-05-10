@@ -1,19 +1,19 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../../Shared/ContentHeader";
+import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
-import BlocksShowCode from "../../../../../../Shared/Block/BlocksShowCode.jsx";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 // toggle card view
 import CheckoutPageExample1 from "./CheckoutPageExample1.jsx";
 import CheckoutPageExample2 from "./CheckoutPageExample2.jsx";
-import BlockDescription from "../../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 const Index = () => {
 

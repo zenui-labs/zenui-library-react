@@ -6,7 +6,7 @@ import {BiSolidLike, BiSolidDislike} from "react-icons/bi";
 import {FaHand} from "react-icons/fa6";
 
 // utils style
-import utils from "../Utils";
+import utils from "@utils";
 
 import emailjs from '@emailjs/browser';
 import {IoChevronBack} from "react-icons/io5";
@@ -43,7 +43,8 @@ const OverviewFooter = ({backUrl, forwardUrl, backName, forwardName, isBackButto
                 )
             }
 
-            <div className="flex items-center gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5">
+            <div
+                className="flex items-center gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5">
                 <img src="/footer_logo.png" alt="logo-image" className="w-[100px] 640px:w-[120px]"/>
 
                 <div className="flex items-center gap-3">

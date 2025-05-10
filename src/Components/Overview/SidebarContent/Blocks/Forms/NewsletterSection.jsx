@@ -1,44 +1,44 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {AiOutlineMail} from "react-icons/ai";
 import {MdOutlineMail} from "react-icons/md";
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 
 const NewsletterSection = () => {
 
-    const[newsletter1Preview, setNewsletter1Preview] = useState(true);
-    const[newsletter1Code, setNewsletter1Code] = useState(false);
+    const [newsletter1Preview, setNewsletter1Preview] = useState(true);
+    const [newsletter1Code, setNewsletter1Code] = useState(false);
 
-    const[newsletter2Preview, setNewsletter2Preview] = useState(true);
-    const[newsletter2Code, setNewsletter2Code] = useState(false);
+    const [newsletter2Preview, setNewsletter2Preview] = useState(true);
+    const [newsletter2Code, setNewsletter2Code] = useState(false);
 
-    const[newsletter3Preview, setNewsletter3Preview] = useState(true);
-    const[newsletter3Code, setNewsletter3Code] = useState(false);
+    const [newsletter3Preview, setNewsletter3Preview] = useState(true);
+    const [newsletter3Code, setNewsletter3Code] = useState(false);
 
-    const[newsletter4Preview, setNewsletter4Preview] = useState(true);
-    const[newsletter4Code, setNewsletter4Code] = useState(false);
+    const [newsletter4Preview, setNewsletter4Preview] = useState(true);
+    const [newsletter4Code, setNewsletter4Code] = useState(false);
 
-    const[newsletter5Preview, setNewsletter5Preview] = useState(true);
-    const[newsletter5Code, setNewsletter5Code] = useState(false);
+    const [newsletter5Preview, setNewsletter5Preview] = useState(true);
+    const [newsletter5Code, setNewsletter5Code] = useState(false);
 
-    const[newsletter6Preview, setNewsletter6Preview] = useState(true);
-    const[newsletter6Code, setNewsletter6Code] = useState(false);
+    const [newsletter6Preview, setNewsletter6Preview] = useState(true);
+    const [newsletter6Code, setNewsletter6Code] = useState(false);
 
-    const[newsletter7Preview, setNewsletter7Preview] = useState(true);
-    const[newsletter7Code, setNewsletter7Code] = useState(false);
+    const [newsletter7Preview, setNewsletter7Preview] = useState(true);
+    const [newsletter7Code, setNewsletter7Code] = useState(false);
 
-    const[newsletter8Preview, setNewsletter8Preview] = useState(true);
-    const[newsletter8Code, setNewsletter8Code] = useState(false);
+    const [newsletter8Preview, setNewsletter8Preview] = useState(true);
+    const [newsletter8Code, setNewsletter8Code] = useState(false);
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -48,7 +48,8 @@ const NewsletterSection = () => {
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter1Code} setCode={setNewsletter1Code} setPreview={setNewsletter1Preview} preview={newsletter1Preview}/>
+                <BlockToggleTab code={newsletter1Code} setCode={setNewsletter1Code} setPreview={setNewsletter1Preview}
+                                preview={newsletter1Preview}/>
 
                 <BlockWrapper>
                     {newsletter1Preview && (
@@ -62,9 +63,11 @@ const NewsletterSection = () => {
                                     </div>
 
                                     <div className='w-full 1260px:w-[45%]'>
-                                        <b className='text-[1.3rem] dark:text-[#abc2d3] 640px:text-[2rem]'>Get our weekly</b>
+                                        <b className='text-[1.3rem] dark:text-[#abc2d3] 640px:text-[2rem]'>Get our
+                                            weekly</b>
                                         <h1 className='text-[2.1rem] 640px:text-[3.2rem] font-[800] uppercase text-[#FF354D] leading-[50px]'>newsletter</h1>
-                                        <p className='text-[1rem] dark:text-[#abc2d3] 640px:text-[1.3rem] mt-5 640px:mt-8'>Get weekly
+                                        <p className='text-[1rem] dark:text-[#abc2d3] 640px:text-[1.3rem] mt-5 640px:mt-8'>Get
+                                            weekly
                                             updates on the newest design
                                             stories, case studies and tips right
                                             in your mailbox. <b>Subscribe now!</b></p>
@@ -128,7 +131,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter2Code} setCode={setNewsletter2Code} setPreview={setNewsletter2Preview} preview={newsletter2Preview}/>
+                <BlockToggleTab code={newsletter2Code} setCode={setNewsletter2Code} setPreview={setNewsletter2Preview}
+                                preview={newsletter2Preview}/>
 
                 <BlockWrapper>
                     {newsletter2Preview && (
@@ -218,7 +222,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter3Code} setCode={setNewsletter3Code} setPreview={setNewsletter3Preview} preview={newsletter3Preview}/>
+                <BlockToggleTab code={newsletter3Code} setCode={setNewsletter3Code} setPreview={setNewsletter3Preview}
+                                preview={newsletter3Preview}/>
 
                 <BlockWrapper>
                     {newsletter3Preview && (
@@ -274,7 +279,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter4Code} setCode={setNewsletter4Code} setPreview={setNewsletter4Preview} preview={newsletter4Preview}/>
+                <BlockToggleTab code={newsletter4Code} setCode={setNewsletter4Code} setPreview={setNewsletter4Preview}
+                                preview={newsletter4Preview}/>
 
                 <BlockWrapper>
                     {newsletter4Preview && (
@@ -288,9 +294,11 @@ export default NewsletterForm;
                                     </div>
 
                                     <div className='w-full 1260px:w-[50%]'>
-                                        <b className='text-[1rem] dark:text-[#abc2d3] 640px:text-[1.8rem] text-text'>Subscribe to our</b>
+                                        <b className='text-[1rem] dark:text-[#abc2d3] 640px:text-[1.8rem] text-text'>Subscribe
+                                            to our</b>
                                         <h1 className='text-[2rem] dark:text-[#abc2d3] 640px:text-[3rem] font-[800] capitalize text-text leading-[50px]'>newsletter</h1>
-                                        <p className='text-[1.1rem] dark:text-[#abc2d3] mt-3'>Get weekly updates on the newest design
+                                        <p className='text-[1.1rem] dark:text-[#abc2d3] mt-3'>Get weekly updates on the
+                                            newest design
                                             stories, case studies and tips right
                                             in your mailbox. <b>Subscribe now!</b></p>
 
@@ -365,7 +373,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter5Code} setCode={setNewsletter5Code} setPreview={setNewsletter5Preview} preview={newsletter5Preview}/>
+                <BlockToggleTab code={newsletter5Code} setCode={setNewsletter5Code} setPreview={setNewsletter5Preview}
+                                preview={newsletter5Preview}/>
 
                 <BlockWrapper>
                     {newsletter5Preview && (
@@ -396,7 +405,8 @@ export default NewsletterForm;
                                         </button>
                                     </form>
 
-                                    <p className='text-[0.9rem] dark:text-slate-400 text-gray-500 text-center mt-8'>Your email is safe with
+                                    <p className='text-[0.9rem] dark:text-slate-400 text-gray-500 text-center mt-8'>Your
+                                        email is safe with
                                         us, we don't spam</p>
                                 </div>
                             </section>
@@ -456,7 +466,8 @@ export default NewsletterForm;
                 <BlockDescription text=' A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter6Code} setCode={setNewsletter6Code} setPreview={setNewsletter6Preview} preview={newsletter6Preview}/>
+                <BlockToggleTab code={newsletter6Code} setCode={setNewsletter6Code} setPreview={setNewsletter6Preview}
+                                preview={newsletter6Preview}/>
 
                 <BlockWrapper>
                     {newsletter6Preview && (
@@ -473,7 +484,8 @@ export default NewsletterForm;
                                     <div className='w-full 1260px:w-[50%]'>
                                         <h1 className='text-[2rem] dark:text-[#abc2d3] 640px:text-[3rem] font-[500] capitalize text-text leading-[50px]'>Join
                                             Us!</h1>
-                                        <p className='text-[1.1rem] dark:text-slate-400 mt-3'>Subscribe to our weekly newsletter and be a
+                                        <p className='text-[1.1rem] dark:text-slate-400 mt-3'>Subscribe to our weekly
+                                            newsletter and be a
                                             part of our journey to self discovery and love.</p>
 
                                         <form className=' mt-12 relative'>
@@ -536,7 +548,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter7Code} setCode={setNewsletter7Code} setPreview={setNewsletter7Preview} preview={newsletter7Preview}/>
+                <BlockToggleTab code={newsletter7Code} setCode={setNewsletter7Code} setPreview={setNewsletter7Preview}
+                                preview={newsletter7Preview}/>
 
                 <BlockWrapper>
                     {newsletter7Preview && (
@@ -621,7 +634,8 @@ export default NewsletterForm;
                 <BlockDescription text='A section on a website inviting users to subscribe to updates or a newsletter, typically with an
                     email input field and a call-to-action button.'/>
 
-                <BlockToggleTab code={newsletter8Code} setCode={setNewsletter8Code} setPreview={setNewsletter8Preview} preview={newsletter8Preview}/>
+                <BlockToggleTab code={newsletter8Code} setCode={setNewsletter8Code} setPreview={setNewsletter8Preview}
+                                preview={newsletter8Preview}/>
 
                 <BlockWrapper>
                     {newsletter8Preview && (
@@ -635,13 +649,15 @@ export default NewsletterForm;
 
                                 <div
                                     className='w-full 1260px:flex-row flex-col flex items-start mt-12 justify-between gap-[30px]'>
-                                    <p className='text-[0.9rem] dark:text-slate-400 text-[#555555]'>Get weekly update about our
+                                    <p className='text-[0.9rem] dark:text-slate-400 text-[#555555]'>Get weekly update
+                                        about our
                                         product
                                         on your email, no spam guaranteed we promise ✌️</p>
 
                                     <div className='relative mb-6 w-full 640px:w-[80%]'>
-                                        <input className='py-3 dark:bg-slate-800 dark:placeholder:text-slate-500 dark:text-[#abc2d3] pr-4 pl-12 w-full outline-none'
-                                               placeholder='Email Address'/>
+                                        <input
+                                            className='py-3 dark:bg-slate-800 dark:placeholder:text-slate-500 dark:text-[#abc2d3] pr-4 pl-12 w-full outline-none'
+                                            placeholder='Email Address'/>
                                         <MdOutlineMail
                                             className='p-1.5 bg-[#F8F8F8] dark:bg-slate-900 dark:text-slate-300 text-[#6C777C] text-[2rem] absolute top-[50%] left-2 transform translate-y-[-50%]'/>
 
@@ -695,7 +711,8 @@ export default NewsletterForm;
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/multi-step-form' backName='multi step form' forwardName='404 page' forwardUrl='/blocks/404-page'/>
+                <BlocksFooter backUrl='/blocks/multi-step-form' backName='multi step form' forwardName='404 page'
+                              forwardUrl='/blocks/404-page'/>
             </div>
 
 

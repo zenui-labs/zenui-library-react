@@ -1,6 +1,6 @@
 import {FaRegEye} from "react-icons/fa";
 import {HiOutlineTemplate} from "react-icons/hi";
-import {HomeTemplatesData1, HomeTemplatesData2} from "../../Utils/HomeTemplatesData.js";
+import {HomeTemplatesData1, HomeTemplatesData2} from "@utils/HomeTemplatesData.js";
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
 import React from "react";

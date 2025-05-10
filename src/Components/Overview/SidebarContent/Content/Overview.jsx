@@ -1,12 +1,12 @@
 import React from "react";
 
 // shared components
-import OverviewFooter from "../../../../Shared/OverviewFooter";
-import ContentHeader from "../../../../Shared/ContentHeader";
+import OverviewFooter from "@shared/OverviewFooter";
+import ContentHeader from "@shared/ContentHeader";
 
 // react helmet
 import {Helmet} from "react-helmet";
-import BlocksFooter from "../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 const Overview = () => {
     return (

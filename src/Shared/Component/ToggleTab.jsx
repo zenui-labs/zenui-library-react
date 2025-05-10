@@ -3,7 +3,7 @@ import {useToggleCardView} from "../../CustomHooks/ButtonToggle.js";
 import {LuSettings2} from "react-icons/lu";
 
 // store
-import useZenuiStore from "../../Store/Index.js";
+import useZenuiStore from "@/Store/Index.js";
 
 const ToggleTab = ({preview, code, setPreview, setCode}) => {
 

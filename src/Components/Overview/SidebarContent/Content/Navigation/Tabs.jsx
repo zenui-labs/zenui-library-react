@@ -1,117 +1,118 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // components
-import Showcode from '../../../../../Shared/Component/ShowCode.jsx';
-import OverviewFooter from '../../../../../Shared/OverviewFooter';
-import ContentHeader from '../../../../../Shared/ContentHeader';
-import { Helmet } from 'react-helmet';
+import Showcode from '@shared/Component/ShowCode.jsx';
+import OverviewFooter from '@shared/OverviewFooter';
+import ContentHeader from '@shared/ContentHeader';
+import {Helmet} from 'react-helmet';
 
 // contents for scrollspy
-import { tabsContents } from '../../../../../Utils/ContentsConfig/NavigationContents';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {tabsContents} from '@utils/ContentsConfig/NavigationContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const Tabs = () => {
-  // normal button
-  const [fullBorderTabPreview, setFullBorderTabPreview] = useState(true);
-  const [fullBorderTabCode, setFullBorderTabCode] = useState(false);
+    // normal button
+    const [fullBorderTabPreview, setFullBorderTabPreview] = useState(true);
+    const [fullBorderTabCode, setFullBorderTabCode] = useState(false);
 
-  const sectionIds = tabsContents.map((item) => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = tabsContents.map((item) => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  // background animated button
-  const [bottomBorderPreview, setBottomBorderPreview] = useState(true);
-  const [bottomBorderCode, setBottomBorderCode] = useState(false);
+    // background animated button
+    const [bottomBorderPreview, setBottomBorderPreview] = useState(true);
+    const [bottomBorderCode, setBottomBorderCode] = useState(false);
 
-  // top border button
-  const [topBorderButtonPreview, setTopBorderButtonPreview] = useState(true);
-  const [topBorderButtonCode, setTopBorderButtonCode] = useState(false);
+    // top border button
+    const [topBorderButtonPreview, setTopBorderButtonPreview] = useState(true);
+    const [topBorderButtonCode, setTopBorderButtonCode] = useState(false);
 
-  // rounded border button
-  const [roundedBorderButtonPreview, setRoundedBorderButtonPreview] =
-    useState(true);
-  const [roudnedBorderButtonCode, setRoundedBorderButtonCode] = useState(false);
+    // rounded border button
+    const [roundedBorderButtonPreview, setRoundedBorderButtonPreview] =
+        useState(true);
+    const [roudnedBorderButtonCode, setRoundedBorderButtonCode] = useState(false);
 
-  // box button
-  const [boxButtonPreview, setBoxButtonPreview] = useState(true);
-  const [boxButtonCode, setBoxButtonCode] = useState(false);
+    // box button
+    const [boxButtonPreview, setBoxButtonPreview] = useState(true);
+    const [boxButtonCode, setBoxButtonCode] = useState(false);
 
-  // animated button
-  const [animatedTabPreview, setAnimatedTabPreview] = useState(true);
-  const [animatedTabCode, setAnimatedTabCode] = useState(false);
+    // animated button
+    const [animatedTabPreview, setAnimatedTabPreview] = useState(true);
+    const [animatedTabCode, setAnimatedTabCode] = useState(false);
 
-  // toggle button
-  const [toggleButtonPreview, setToggleButtonPreview] = useState(true);
-  const [toggleButtonCode, setToggleButtonCode] = useState(false);
+    // toggle button
+    const [toggleButtonPreview, setToggleButtonPreview] = useState(true);
+    const [toggleButtonCode, setToggleButtonCode] = useState(false);
 
-  // state for full border tab
-  const [isActive, setIsActive] = useState(1);
+    // state for full border tab
+    const [isActive, setIsActive] = useState(1);
 
-  // bottom border tab
-  const [bottomBorderActive, setBottomBorderActive] = useState(1);
+    // bottom border tab
+    const [bottomBorderActive, setBottomBorderActive] = useState(1);
 
-  // top border tab
-  const [topBorderButtonActive, setTopBorderButtonActive] = useState(1);
+    // top border tab
+    const [topBorderButtonActive, setTopBorderButtonActive] = useState(1);
 
-  // rounded border tab
-  const [roundedBorderButtonAcitve, setRoundedBorderButtonActive] = useState(1);
+    // rounded border tab
+    const [roundedBorderButtonAcitve, setRoundedBorderButtonActive] = useState(1);
 
-  // box tab
-  const [boxButtonActive, setBoxButtonActive] = useState(1);
+    // box tab
+    const [boxButtonActive, setBoxButtonActive] = useState(1);
 
-  return (
-    <>
-      <aside className='flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-        <div>
-          <ContentHeader
-            id='Border_navigation'
-            text={'Border navigation tab'}
-          />
+    return (
+        <>
+            <aside className='flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
+                <div>
+                    <ContentHeader
+                        id='Border_navigation'
+                        text={'Border navigation tab'}
+                    />
 
-          <ComponentDescription text='We see navigation tabs with borders on all sides like this on almost
+                    <ComponentDescription text='We see navigation tabs with borders on all sides like this on almost
             all websites. They are very simple.'/>
 
-          <ToggleTab code={fullBorderTabCode} preview={fullBorderTabPreview} setCode={setFullBorderTabCode} setPreview={setFullBorderTabPreview}/>
+                    <ToggleTab code={fullBorderTabCode} preview={fullBorderTabPreview} setCode={setFullBorderTabCode}
+                               setPreview={setFullBorderTabPreview}/>
 
-          <ComponentWrapper>
-            {fullBorderTabPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex items-center gap-5'>
-                    <li
-                        className={`${
-                            isActive === 1 && 'bg-primary text-secondary'
-                        } px-6 py-2 border  text-primary transition duration-300 border-primary cursor-pointer`}
-                        onClick={() => setIsActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            isActive === 2 && 'bg-primary text-secondary'
-                        } px-6 py-2 border text-primary transition duration-300 border-primary cursor-pointer`}
-                        onClick={() => setIsActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            isActive === 3 && 'bg-primary text-secondary'
-                        } px-6 py-2 border hidden 425px:block text-primary transition duration-300 border-primary cursor-pointer`}
-                        onClick={() => setIsActive(3)}
-                    >
-                      Support
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {fullBorderTabPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex items-center gap-5'>
+                                    <li
+                                        className={`${
+                                            isActive === 1 && 'bg-primary text-secondary'
+                                        } px-6 py-2 border  text-primary transition duration-300 border-primary cursor-pointer`}
+                                        onClick={() => setIsActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            isActive === 2 && 'bg-primary text-secondary'
+                                        } px-6 py-2 border text-primary transition duration-300 border-primary cursor-pointer`}
+                                        onClick={() => setIsActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            isActive === 3 && 'bg-primary text-secondary'
+                                        } px-6 py-2 border hidden 425px:block text-primary transition duration-300 border-primary cursor-pointer`}
+                                        onClick={() => setIsActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {fullBorderTabCode && (
-                <Showcode
-                    code="
+                        {fullBorderTabCode && (
+                            <Showcode
+                                code="
 import React, { useState } from 'react';
 
 const BorderTab = () => {
@@ -144,72 +145,73 @@ const BorderTab = () => {
 
 export default BorderTab;
 "
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader id='animated_tab' text={'animated tab'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader id='animated_tab' text={'animated tab'}/>
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with sliding animation for smooth and
+                    <ComponentDescription text='This is navigation tabs with sliding animation for smooth and
             interactive navigation.'/>
 
-          <ToggleTab code={animatedTabCode} setPreview={setAnimatedTabPreview} setCode={setAnimatedTabCode} preview={animatedTabPreview}/>
+                    <ToggleTab code={animatedTabCode} setPreview={setAnimatedTabPreview} setCode={setAnimatedTabCode}
+                               preview={animatedTabPreview}/>
 
-          <ComponentWrapper>
-            {animatedTabPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1 relative'>
-                    <div
-                        className={`${
-                            (boxButtonActive === 1 && 'translate-x-[0px]') ||
-                            (boxButtonActive === 2 && 'translate-x-[90px]') ||
-                            (boxButtonActive === 3 &&
-                                'translate-x-[179px] !w-[108px] 425px:!w-[95px] 425px:translate-x-[192px]') ||
-                            (boxButtonActive === 4 &&
-                                '!w-[105px] translate-x-[290px] 640px:translate-x-[295px]')
-                        } !bg-primary absolute !text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full border-transparent cursor-pointer`}
-                    ></div>
-                    <li
-                        className={`${
-                            boxButtonActive === 1 && ' !text-[#fff]'
-                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 2 && ' !text-[#fff]'
-                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 3 && ' !text-[#fff]'
-                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(3)}
-                    >
-                      Support
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 4 && ' !text-[#fff]'
-                        } px-6 py-2 dark:text-[#abc2d3] hidden 425px:block text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(4)}
-                    >
-                      Contact
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {animatedTabPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1 relative'>
+                                    <div
+                                        className={`${
+                                            (boxButtonActive === 1 && 'translate-x-[0px]') ||
+                                            (boxButtonActive === 2 && 'translate-x-[90px]') ||
+                                            (boxButtonActive === 3 &&
+                                                'translate-x-[179px] !w-[108px] 425px:!w-[95px] 425px:translate-x-[192px]') ||
+                                            (boxButtonActive === 4 &&
+                                                '!w-[105px] translate-x-[290px] 640px:translate-x-[295px]')
+                                        } !bg-primary absolute !text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full border-transparent cursor-pointer`}
+                                    ></div>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 1 && ' !text-[#fff]'
+                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 2 && ' !text-[#fff]'
+                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 3 && ' !text-[#fff]'
+                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 4 && ' !text-[#fff]'
+                                        } px-6 py-2 dark:text-[#abc2d3] hidden 425px:block text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(4)}
+                                    >
+                                        Contact
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {animatedTabCode && (
-                <Showcode
-                    code='
+                        {animatedTabCode && (
+                            <Showcode
+                                code='
 import { useState } from "react";
 
 const AnimatedTab = () => {
@@ -263,60 +265,61 @@ const AnimatedTab = () => {
 
 export default AnimatedTab;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              id='bottom_border_navigation'
-              text={'bottom border navigation tab'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            id='bottom_border_navigation'
+                            text={'bottom border navigation tab'}
+                        />
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with active tab indication using bottom
+                    <ComponentDescription text='This is navigation tabs with active tab indication using bottom
             borders for clarity.'/>
 
-          <ToggleTab code={bottomBorderCode} preview={bottomBorderPreview} setCode={setBottomBorderCode} setPreview={setBottomBorderPreview}/>
+                    <ToggleTab code={bottomBorderCode} preview={bottomBorderPreview} setCode={setBottomBorderCode}
+                               setPreview={setBottomBorderPreview}/>
 
-          <ComponentWrapper>
-            {bottomBorderPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex flex-wrap items-center gap-5'>
-                    <li
-                        className={`${
-                            bottomBorderActive === 1 &&
-                            '!border-primary !text-primary'
-                        } px-6 py-2 border-b dark:text-[#abc2d3] text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setBottomBorderActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            bottomBorderActive === 2 &&
-                            '!border-primary !text-primary'
-                        } px-6 py-2 border-b dark:text-[#abc2d3] text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setBottomBorderActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            bottomBorderActive === 3 &&
-                            '!border-primary !text-primary'
-                        } px-6 py-2 border-b hidden dark:text-[#abc2d3] 425px:block text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setBottomBorderActive(3)}
-                    >
-                      Support
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {bottomBorderPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex flex-wrap items-center gap-5'>
+                                    <li
+                                        className={`${
+                                            bottomBorderActive === 1 &&
+                                            '!border-primary !text-primary'
+                                        } px-6 py-2 border-b dark:text-[#abc2d3] text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setBottomBorderActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            bottomBorderActive === 2 &&
+                                            '!border-primary !text-primary'
+                                        } px-6 py-2 border-b dark:text-[#abc2d3] text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setBottomBorderActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            bottomBorderActive === 3 &&
+                                            '!border-primary !text-primary'
+                                        } px-6 py-2 border-b hidden dark:text-[#abc2d3] 425px:block text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setBottomBorderActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {bottomBorderCode && (
-                <Showcode
-                    code="
+                        {bottomBorderCode && (
+                            <Showcode
+                                code="
 import React from 'react';
 
 const BottomBorderTab = () => {
@@ -348,69 +351,70 @@ const BottomBorderTab = () => {
 };
 
 export default BottomBorderTab; "
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              id='top_border_navigation'
-              text={'top border navigation tab'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            id='top_border_navigation'
+                            text={'top border navigation tab'}
+                        />
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with active tab indication using top borders
+                    <ComponentDescription text='This is navigation tabs with active tab indication using top borders
             for clarity and focus.'/>
 
-          <ToggleTab code={topBorderButtonCode} setPreview={setTopBorderButtonPreview} setCode={setTopBorderButtonCode} preview={topBorderButtonPreview}/>
+                    <ToggleTab code={topBorderButtonCode} setPreview={setTopBorderButtonPreview}
+                               setCode={setTopBorderButtonCode} preview={topBorderButtonPreview}/>
 
-          <ComponentWrapper>
-            {topBorderButtonPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex flex-wrap items-center'>
-                    <li
-                        className={`${
-                            topBorderButtonActive === 1 &&
-                            '!border-primary !text-primary !bg-transparent'
-                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1] text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setTopBorderButtonActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            topBorderButtonActive === 2 &&
-                            '!border-primary !text-primary !bg-transparent'
-                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1]  text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setTopBorderButtonActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            topBorderButtonActive === 3 &&
-                            '!border-primary !text-primary !bg-transparent'
-                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1]  text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setTopBorderButtonActive(3)}
-                    >
-                      Support
-                    </li>
-                    <li
-                        className={`${
-                            topBorderButtonActive === 4 &&
-                            '!border-primary !text-primary !bg-transparent'
-                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1] hidden 425px:block text-text transition duration-300 border-transparent cursor-pointer`}
-                        onClick={() => setTopBorderButtonActive(4)}
-                    >
-                      Contact
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {topBorderButtonPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex flex-wrap items-center'>
+                                    <li
+                                        className={`${
+                                            topBorderButtonActive === 1 &&
+                                            '!border-primary !text-primary !bg-transparent'
+                                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1] text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setTopBorderButtonActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            topBorderButtonActive === 2 &&
+                                            '!border-primary !text-primary !bg-transparent'
+                                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1]  text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setTopBorderButtonActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            topBorderButtonActive === 3 &&
+                                            '!border-primary !text-primary !bg-transparent'
+                                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1]  text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setTopBorderButtonActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                    <li
+                                        className={`${
+                                            topBorderButtonActive === 4 &&
+                                            '!border-primary !text-primary !bg-transparent'
+                                        } px-6 py-2 border-t dark:bg-slate-800 dark:text-[#abc2d3] bg-[#d1d1d1] hidden 425px:block text-text transition duration-300 border-transparent cursor-pointer`}
+                                        onClick={() => setTopBorderButtonActive(4)}
+                                    >
+                                        Contact
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {topBorderButtonCode && (
-                <Showcode
-                    code='
+                        {topBorderButtonCode && (
+                            <Showcode
+                                code='
 import React, { useState } from "react";
 
 const Tab = () => {
@@ -463,69 +467,70 @@ const Tab = () => {
 
 export default Tab;
           '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              id='Squre_border_navigation'
-              text={'Squre border navigation tab'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            id='Squre_border_navigation'
+                            text={'Squre border navigation tab'}
+                        />
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with active tab indication using square
+                    <ComponentDescription text='This is navigation tabs with active tab indication using square
             borders for clear active state visibility.'/>
 
-          <ToggleTab code={roudnedBorderButtonCode} preview={roundedBorderButtonPreview} setCode={setRoundedBorderButtonCode} setPreview={setRoundedBorderButtonPreview}/>
+                    <ToggleTab code={roudnedBorderButtonCode} preview={roundedBorderButtonPreview}
+                               setCode={setRoundedBorderButtonCode} setPreview={setRoundedBorderButtonPreview}/>
 
-          <ComponentWrapper>
-            {roundedBorderButtonPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex flex-wrap items-center'>
-                    <li
-                        className={`${
-                            roundedBorderButtonAcitve === 1 ?
-                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
-                        } px-6 py-2 border-[#d1d1d1] text-text dark:text-[#abc2d3] transition duration-300 cursor-pointer`}
-                        onClick={() => setRoundedBorderButtonActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            roundedBorderButtonAcitve === 2 ?
-                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
-                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
-                        onClick={() => setRoundedBorderButtonActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            roundedBorderButtonAcitve === 3 ?
-                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
-                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
-                        onClick={() => setRoundedBorderButtonActive(3)}
-                    >
-                      Support
-                    </li>
-                    <li
-                        className={`${
-                            roundedBorderButtonAcitve === 4 ?
-                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
-                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
-                        onClick={() => setRoundedBorderButtonActive(4)}
-                    >
-                      Contact
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {roundedBorderButtonPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex flex-wrap items-center'>
+                                    <li
+                                        className={`${
+                                            roundedBorderButtonAcitve === 1 ?
+                                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
+                                        } px-6 py-2 border-[#d1d1d1] text-text dark:text-[#abc2d3] transition duration-300 cursor-pointer`}
+                                        onClick={() => setRoundedBorderButtonActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            roundedBorderButtonAcitve === 2 ?
+                                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
+                                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
+                                        onClick={() => setRoundedBorderButtonActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            roundedBorderButtonAcitve === 3 ?
+                                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
+                                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
+                                        onClick={() => setRoundedBorderButtonActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                    <li
+                                        className={`${
+                                            roundedBorderButtonAcitve === 4 ?
+                                                'border border-b-transparent dark:border-slate-700 dark:border-b-transparent rounded-tr rounded-tl' : 'border-b dark:border-slate-700'
+                                        } px-6 py-2 border-[#d1d1d1] text-text transition dark:text-[#abc2d3] duration-300 cursor-pointer`}
+                                        onClick={() => setRoundedBorderButtonActive(4)}
+                                    >
+                                        Contact
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {roudnedBorderButtonCode && (
-                <Showcode
-                    code='
+                        {roudnedBorderButtonCode && (
+                            <Showcode
+                                code='
 import React, { useState } from "react";
 
 const Tab = () => {
@@ -579,62 +584,63 @@ const Tab = () => {
 
 export default Tab;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader id='box_navigation' text={'box navigation tab'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader id='box_navigation' text={'box navigation tab'}/>
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with active tab indication using rounded
+                    <ComponentDescription text='This is navigation tabs with active tab indication using rounded
             background color for clear active state visibility.'/>
 
-          <ToggleTab code={boxButtonCode} setPreview={setBoxButtonPreview} setCode={setBoxButtonCode} preview={boxButtonPreview}/>
+                    <ToggleTab code={boxButtonCode} setPreview={setBoxButtonPreview} setCode={setBoxButtonCode}
+                               preview={boxButtonPreview}/>
 
-          <ComponentWrapper>
-            {boxButtonPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <ul className='flex flex-wrap items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1'>
-                    <li
-                        className={`${
-                            boxButtonActive === 1 && '!bg-primary !text-[#fff]'
-                        } px-6 py-2  text-text dark:text-[#abc2d3] transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(1)}
-                    >
-                      Home
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 2 && '!bg-primary !text-[#fff]'
-                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(2)}
-                    >
-                      About
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 3 && '!bg-primary !text-[#fff]'
-                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(3)}
-                    >
-                      Support
-                    </li>
-                    <li
-                        className={`${
-                            boxButtonActive === 4 && '!bg-primary !text-[#fff]'
-                        } px-6 py-2  text-text hidden dark:text-[#abc2d3] 425px:block transition duration-300 rounded-full border-transparent cursor-pointer`}
-                        onClick={() => setBoxButtonActive(4)}
-                    >
-                      Contact
-                    </li>
-                  </ul>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {boxButtonPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <ul className='flex flex-wrap items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1'>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 1 && '!bg-primary !text-[#fff]'
+                                        } px-6 py-2  text-text dark:text-[#abc2d3] transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(1)}
+                                    >
+                                        Home
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 2 && '!bg-primary !text-[#fff]'
+                                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(2)}
+                                    >
+                                        About
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 3 && '!bg-primary !text-[#fff]'
+                                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(3)}
+                                    >
+                                        Support
+                                    </li>
+                                    <li
+                                        className={`${
+                                            boxButtonActive === 4 && '!bg-primary !text-[#fff]'
+                                        } px-6 py-2  text-text hidden dark:text-[#abc2d3] 425px:block transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        onClick={() => setBoxButtonActive(4)}
+                                    >
+                                        Contact
+                                    </li>
+                                </ul>
+                            </div>
+                        )}
 
-            {boxButtonCode && (
-                <Showcode
-                    code='
+                        {boxButtonCode && (
+                            <Showcode
+                                code='
 import React, { useState } from "react";
 
 const DropDown = () => {
@@ -684,36 +690,39 @@ const DropDown = () => {
 
 export default DropDown;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader id='toggle_button' text={'Toggle tab'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader id='toggle_button' text={'Toggle tab'}/>
+                    </div>
 
-          <ComponentDescription text='This is navigation tabs with active tab indication using rounded
+                    <ComponentDescription text='This is navigation tabs with active tab indication using rounded
             background color for clear active state visibility.'/>
 
-          <ToggleTab code={toggleButtonCode} preview={toggleButtonPreview} setCode={setToggleButtonCode} setPreview={setTopBorderButtonPreview}/>
+                    <ToggleTab code={toggleButtonCode} preview={toggleButtonPreview} setCode={setToggleButtonCode}
+                               setPreview={setTopBorderButtonPreview}/>
 
-          <ComponentWrapper>
-            {toggleButtonPreview && (
-                <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                  <div class='flex flex-wrap flex-col items-center justify-center'>
-                    <div class='z-10 w-full'>
-                      <div class='mx-auto mt-6 flex items-center justify-center gap-4'>
-                        <label for='transactions'>
-                          <div class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                            <div class='flex items-center overflow-hidden'>
-                              <input
-                                  type='radio'
-                                  name='radio'
-                                  id='transactions'
-                                  class='peer appearance-none'
-                              />
+                    <ComponentWrapper>
+                        {toggleButtonPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <div class='flex flex-wrap flex-col items-center justify-center'>
+                                    <div class='z-10 w-full'>
+                                        <div class='mx-auto mt-6 flex items-center justify-center gap-4'>
+                                            <label for='transactions'>
+                                                <div
+                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div class='flex items-center overflow-hidden'>
+                                                        <input
+                                                            type='radio'
+                                                            name='radio'
+                                                            id='transactions'
+                                                            class='peer appearance-none'
+                                                        />
 
-                              <span class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                        <span
+                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
                                   class='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
@@ -740,23 +749,26 @@ export default DropDown;
                                 />
                               </svg>
                             </span>
-                              <span class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                        <span
+                                                            class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Transactions
                             </span>
-                            </div>
-                          </div>
-                        </label>
-                        <label for='updates'>
-                          <div class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2 pl-3.5 pt-3.5 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                            <div class='flex items-center overflow-hidden'>
-                              <input
-                                  type='radio'
-                                  name='radio'
-                                  id='updates'
-                                  class='peer appearance-none'
-                              />
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label for='updates'>
+                                                <div
+                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2 pl-3.5 pt-3.5 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div class='flex items-center overflow-hidden'>
+                                                        <input
+                                                            type='radio'
+                                                            name='radio'
+                                                            id='updates'
+                                                            class='peer appearance-none'
+                                                        />
 
-                              <span class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                        <span
+                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
                                   className='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
@@ -765,8 +777,10 @@ export default DropDown;
                                   viewBox='0 0 16 16'
                               >
                                 <g fill='currentColor'>
-                                  <path d='M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333L6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z' />
-                                  <path d='M5 6a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0' />
+                                  <path
+                                      d='M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333L6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z'/>
+                                  <path
+                                      d='M5 6a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0m4 0a1 1 0 1 1-2 0a1 1 0 0 1 2 0'/>
                                 </g>
                               </svg>
 
@@ -783,23 +797,26 @@ export default DropDown;
                                 />
                               </svg>
                             </span>
-                              <span class='opacity-0 text-white transition-all mb-1 peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                        <span
+                                                            class='opacity-0 text-white transition-all mb-1 peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Updates
                             </span>
-                            </div>
-                          </div>
-                        </label>
-                        <label for='promotions'>
-                          <div class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 border-transparent dark:bg-slate-800 dark:text-[#abc2d3] bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                            <div class='flex items-center overflow-hidden'>
-                              <input
-                                  type='radio'
-                                  name='radio'
-                                  id='promotions'
-                                  class='peer appearance-none'
-                              />
+                                                    </div>
+                                                </div>
+                                            </label>
+                                            <label for='promotions'>
+                                                <div
+                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 border-transparent dark:bg-slate-800 dark:text-[#abc2d3] bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div class='flex items-center overflow-hidden'>
+                                                        <input
+                                                            type='radio'
+                                                            name='radio'
+                                                            id='promotions'
+                                                            class='peer appearance-none'
+                                                        />
 
-                              <span class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                        <span
+                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
                                   className='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
@@ -826,21 +843,22 @@ export default DropDown;
                                 />
                               </svg>
                             </span>
-                              <span class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                        <span
+                                                            class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Promotions
                             </span>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                          </div>
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            )}
+                        )}
 
-            {toggleButtonCode && (
-                <Showcode
-                    code='
+                        {toggleButtonCode && (
+                            <Showcode
+                                code='
 import React from "react";
 
 const ToggleTab = () => {
@@ -915,27 +933,27 @@ const ToggleTab = () => {
 };
 export default ToggleTab;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter
-            backUrl='/components/modal'
-            backName='modal'
-            forwardName='skeleton'
-            forwardUrl='/components/skeleton'
-          />
-        </div>
+                    <OverviewFooter
+                        backUrl='/components/modal'
+                        backName='modal'
+                        forwardName='skeleton'
+                        forwardUrl='/components/skeleton'
+                    />
+                </div>
 
-        <ContentNavbar activeSection={activeSection} contents={tabsContents}/>
-        
-      </aside>
+                <ContentNavbar activeSection={activeSection} contents={tabsContents}/>
 
-      <Helmet>
-        <title>Navigation - Tabs</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+
+            <Helmet>
+                <title>Navigation - Tabs</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default Tabs;

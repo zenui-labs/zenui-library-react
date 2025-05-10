@@ -1,17 +1,17 @@
 import React, {useEffect, useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
+import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 import {HiArrowRight} from "react-icons/hi";
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 
 const OfferGrid = () => {
@@ -66,20 +66,24 @@ const OfferGrid = () => {
             <div>
                 <ContentHeader text={"Offer grid 1"} id={"offer_grid_1"}/>
 
-                <BlockDescription text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                <BlockDescription
+                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
 
-                <BlockToggleTab preview={offerGrid1Preview} setPreview={setOfferGrid1Preview} code={offerGrid1Code} setCode={setOfferGrid1Code}/>
+                <BlockToggleTab preview={offerGrid1Preview} setPreview={setOfferGrid1Preview} code={offerGrid1Code}
+                                setCode={setOfferGrid1Code}/>
 
                 <BlockWrapper>
                     {offerGrid1Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
-                            <div className='grid grid-cols-1 1024px:grid-cols-2 gap-[15px] w-full 640px:w-[80%] min-h-[550px]'>
+                            <div
+                                className='grid grid-cols-1 1024px:grid-cols-2 gap-[15px] w-full 640px:w-[80%] min-h-[550px]'>
 
                                 <div
                                     className='col-span-1 dark:bg-slate-900 overflow-hidden flex justify-between flex-col rounded-sm row-span-2 bg-[#f2f4f6] h-full py-8'>
                                     <div className='px-8'>
-                                        <h4 className='text-[1.5rem] dark:text-[#abc2d3] font-medium text-gray-900'>Living Room</h4>
+                                        <h4 className='text-[1.5rem] dark:text-[#abc2d3] font-medium text-gray-900'>Living
+                                            Room</h4>
                                         <button
                                             className='flex w-max items-center hover:text-[#0FABCA] hover:border-[#0FABCA] dark:text-[#abc2d3] transition-all duration-300 gap-[10px] border-gray-900 text-[0.9rem] mt-2 group border-b'>
                                             Shop Now
@@ -87,7 +91,8 @@ const OfferGrid = () => {
                                         </button>
                                     </div>
 
-                                    <img alt='product/image' src='https://i.ibb.co.com/F7MBZqh/Paste-image-removebg-preview.png'
+                                    <img alt='product/image'
+                                         src='https://i.ibb.co.com/F7MBZqh/Paste-image-removebg-preview.png'
                                          className='w-[500px]'/>
                                 </div>
 
@@ -103,7 +108,8 @@ const OfferGrid = () => {
                                         </button>
                                     </div>
 
-                                    <img alt='product/image' src='https://i.ibb.co.com/PCw23Vs/Paste-image-1-removebg-preview.png'
+                                    <img alt='product/image'
+                                         src='https://i.ibb.co.com/PCw23Vs/Paste-image-1-removebg-preview.png'
                                          className='w-[200px] h-[200px]'/>
 
                                 </div>
@@ -120,7 +126,8 @@ const OfferGrid = () => {
                                         </button>
                                     </div>
 
-                                    <img alt='product/image' src='https://i.ibb.co.com/4FjR02m/Paste-image-2-removebg-preview.png'
+                                    <img alt='product/image'
+                                         src='https://i.ibb.co.com/4FjR02m/Paste-image-2-removebg-preview.png'
                                          className='w-[200px] h-max'/>
 
                                 </div>
@@ -205,29 +212,34 @@ export default OfferGrid;
                     <ContentHeader text={"offer grid 2"} id={"offer_grid_2"}/>
                 </div>
 
-                <BlockDescription text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                <BlockDescription
+                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
 
-                <BlockToggleTab preview={offerGrid2Preview} setPreview={setOfferGrid2Preview} code={offerGrid2Code} setCode={setOfferGrid2Code}/>
+                <BlockToggleTab preview={offerGrid2Preview} setPreview={setOfferGrid2Preview} code={offerGrid2Code}
+                                setCode={setOfferGrid2Code}/>
 
                 <BlockWrapper>
                     {offerGrid2Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
-                            <div className='grid grid-cols-1 1024px:grid-cols-4 gap-[15px] w-full 640px:w-[80%] min-h-[400px]'>
+                            <div
+                                className='grid grid-cols-1 1024px:grid-cols-4 gap-[15px] w-full 640px:w-[80%] min-h-[400px]'>
 
                                 <div
                                     className='col-span-1 1024px:col-span-2 overflow-hidden flex justify-between flex-col rounded-sm row-span-1 1024px:row-span-2 h-[170px] bg-black 1024px:h-full py-8 relative'>
 
                                     <div className='px-8 absolute bottom-8 z-20 w-full 1024px:w-[70%]'>
                                         <h4 className='text-[1.1rem] font-medium text-white'>PlayStation 5</h4>
-                                        <p className='text-[0.8rem] mt-3 text-[#FAFAFA] font-[300]'>Black and White version of the PS5 coming out on sale.</p>
+                                        <p className='text-[0.8rem] mt-3 text-[#FAFAFA] font-[300]'>Black and White
+                                            version of the PS5 coming out on sale.</p>
                                         <button
                                             className='w-max text-[#FAFAFA] font-[300] hover:text-[#0FABCA] hover:border-[#0FABCA] mt-3 transition-all duration-300 border-[#FAFAFA] text-[0.8rem] group border-b'>
                                             Shop Now
                                         </button>
                                     </div>
 
-                                    <img alt='product/image' src='https://i.ibb.co.com/g9qmJxg/ps5-slim-goedkope-playstation-large-1.png'
+                                    <img alt='product/image'
+                                         src='https://i.ibb.co.com/g9qmJxg/ps5-slim-goedkope-playstation-large-1.png'
                                          className='w-[350px] absolute bottom-0 left-[50%] transform translate-x-[-50%]'/>
                                 </div>
 
@@ -236,7 +248,8 @@ export default OfferGrid;
 
                                     <div className='absolute bottom-6 left-6 z-20 w-[70%] 1024px:w-[50%]'>
                                         <h4 className='text-[1.1rem] font-medium text-white'>Women’s Collections</h4>
-                                        <p className='text-[0.8rem] mt-3 text-[#FAFAFA] font-[300]'>Featured woman collections that give you another vibe.</p>
+                                        <p className='text-[0.8rem] mt-3 text-[#FAFAFA] font-[300]'>Featured woman
+                                            collections that give you another vibe.</p>
                                         <button
                                             className='w-max text-[#FAFAFA] font-[300] hover:text-[#0FABCA] hover:border-[#0FABCA] mt-3 transition-all duration-300 border-[#FAFAFA] text-[0.8rem] group border-b'>
                                             Shop Now
@@ -254,7 +267,8 @@ export default OfferGrid;
 
                                     <div className='absolute bottom-4 z-20 w-[90%]'>
                                         <h4 className='text-[1.1rem] font-medium text-white'>Speakers</h4>
-                                        <p className='text-[0.8rem] mt-0.5 text-[#FAFAFA] font-[300]'>Amazon wireless speakers</p>
+                                        <p className='text-[0.8rem] mt-0.5 text-[#FAFAFA] font-[300]'>Amazon wireless
+                                            speakers</p>
                                         <button
                                             className='w-max text-[#FAFAFA] font-[300] hover:text-[#0FABCA] hover:border-[#0FABCA] mt-2 transition-all duration-300 border-[#FAFAFA] text-[0.8rem] group border-b'>
                                             Shop Now
@@ -272,7 +286,8 @@ export default OfferGrid;
 
                                     <div className='absolute bottom-4 z-20 w-[90%]'>
                                         <h4 className='text-[1.1rem] font-medium text-white'>Perfume</h4>
-                                        <p className='text-[0.8rem] mt-0.5 text-[#FAFAFA] font-[300]'>GUCCI INTENSE OUD EDP</p>
+                                        <p className='text-[0.8rem] mt-0.5 text-[#FAFAFA] font-[300]'>GUCCI INTENSE OUD
+                                            EDP</p>
                                         <button
                                             className='w-max text-[#FAFAFA] font-[300] hover:text-[#0FABCA] hover:border-[#0FABCA] mt-2 transition-all duration-300 border-[#FAFAFA] text-[0.8rem] group border-b'>
                                             Shop Now
@@ -383,9 +398,11 @@ export default OfferGrid;
                     <ContentHeader text={"offer grid 3"} id={"offer_grid-3"}/>
                 </div>
 
-                <BlockDescription text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                <BlockDescription
+                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
 
-                <BlockToggleTab preview={offerGrid3Preview} setPreview={setOfferGrid3Preview} code={offerGrid3Code} setCode={setOfferGrid3Code}/>
+                <BlockToggleTab preview={offerGrid3Preview} setPreview={setOfferGrid3Preview} code={offerGrid3Code}
+                                setCode={setOfferGrid3Code}/>
 
                 <BlockWrapper>
                     {offerGrid3Preview && (
@@ -396,9 +413,13 @@ export default OfferGrid;
                                 <div
                                     className='col-span-1 1024px:col-span-2 overflow-hidden flex justify-between flex-col rounded-sm dark:bg-slate-900 dark:border-r dark:border-slate-700 dark:border-b row-span-1 1024px:row-span-2 bg-white h-[180px] 1024px:h-full py-8 relative'>
 
-                                    <div className='px-8 absolute top-[50%] translate-y-[-50%] 1024px:right-7 z-20 w-full 1024px:w-[60%]'>
-                                        <h4 className='text-[1.5rem] font-medium text-white 1024px:text-gray-900 dark:text-[#abc2d3]'>PlayStation 5</h4>
-                                        <p className='text-[0.8rem] dark:text-slate-400 mt-1 text-[#909090] font-[300]'>Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation experience.</p>
+                                    <div
+                                        className='px-8 absolute top-[50%] translate-y-[-50%] 1024px:right-7 z-20 w-full 1024px:w-[60%]'>
+                                        <h4 className='text-[1.5rem] font-medium text-white 1024px:text-gray-900 dark:text-[#abc2d3]'>PlayStation
+                                            5</h4>
+                                        <p className='text-[0.8rem] dark:text-slate-400 mt-1 text-[#909090] font-[300]'>Incredibly
+                                            powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your
+                                            PlayStation experience.</p>
                                     </div>
 
                                     <img alt='product/image'
@@ -410,8 +431,11 @@ export default OfferGrid;
                                     className='bg-[#EDEDED] dark:bg-slate-900 rounded-sm col-span-1 1024px:col-span-2 flex justify-between items-center px-4 overflow-hidden h-full row-span-3 relative'>
 
                                     <div className='p-4 1024px:pl-5 z-30 w-full 1024px:w-[60%]'>
-                                        <h4 className='text-[2rem] font-[300] dark:text-[#abc2d3] text-gray-900'>Macbook <b className='text-gray-900 dark:text-[#abc2d3] font-semibold'>Air</b></h4>
-                                        <p className='text-[0.8rem] dark:text-slate-400 mt-1 text-[#909090] font-[300]'>The new 15‑inch MacBook Air makes room for more of what you love with a spacious Liquid Retina display.</p>
+                                        <h4 className='text-[2rem] font-[300] dark:text-[#abc2d3] text-gray-900'>Macbook <b
+                                            className='text-gray-900 dark:text-[#abc2d3] font-semibold'>Air</b></h4>
+                                        <p className='text-[0.8rem] dark:text-slate-400 mt-1 text-[#909090] font-[300]'>The
+                                            new 15‑inch MacBook Air makes room for more of what you love with a spacious
+                                            Liquid Retina display.</p>
                                         <button
                                             className='w-max py-2 px-6 rounded-md border border-gray-900 text-gray-900 text-[0.9rem] hover:bg-gray-900 dark:text-[#abc2d3] dark:border-slate-700 transition-all duration-300 hover:text-white mt-5'>
                                             Shop Now
@@ -427,10 +451,12 @@ export default OfferGrid;
                                 <div
                                     className='overflow-hidden flex dark:bg-slate-900 justify-between flex-col rounded-sm bg-[#EDEDED] py-8 relative min-h-[140px]'>
 
-                                    <div className='absolute top-[50%] transform translate-y-[-50%] right-6 z-200 w-[70%] 1024px:w-[50%] z-30'>
+                                    <div
+                                        className='absolute top-[50%] transform translate-y-[-50%] right-6 z-200 w-[70%] 1024px:w-[50%] z-30'>
                                         <h4 className='text-[1.3rem] font-[300] dark:text-[#abc2d3] text-gray-900'>Apple <br/>
                                             AirPods <b className='font-semibold'>Max</b></h4>
-                                        <p className='text-[0.8rem] mt-1 dark:text-slate-400 text-[#909090] font-[300]'>Computational audio. Listen, it's powerful</p>
+                                        <p className='text-[0.8rem] mt-1 dark:text-slate-400 text-[#909090] font-[300]'>Computational
+                                            audio. Listen, it's powerful</p>
                                     </div>
 
                                     <img alt='product/image'
@@ -441,10 +467,12 @@ export default OfferGrid;
                                 <div
                                     className='overflow-hidden flex justify-between flex-col rounded-sm bg-[#353535] py-8 relative min-h-[140px] h-full'>
 
-                                    <div className='absolute top-[50%] translate-y-[-50%] right-6 z-20 w-[70%] 1024px:w-[50%]'>
+                                    <div
+                                        className='absolute top-[50%] translate-y-[-50%] right-6 z-20 w-[70%] 1024px:w-[50%]'>
                                         <h4 className='text-[1.1rem] font-[300] text-white'>Apple <br/>
                                             Vision <b className='font-semibold'>Pro</b></h4>
-                                        <p className='text-[0.8rem] mt-1 text-[#909090] font-[300]'>An immersive way to experience entertainment</p>
+                                        <p className='text-[0.8rem] mt-1 text-[#909090] font-[300]'>An immersive way to
+                                            experience entertainment</p>
                                     </div>
 
                                     <img alt='product/image'
@@ -547,9 +575,11 @@ export default OfferGrid;
                     <ContentHeader text={"offer grid 4"} id={"offer_grid_4"}/>
                 </div>
 
-                <BlockDescription text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                <BlockDescription
+                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
 
-                <BlockToggleTab preview={offerGrid4Preview} setPreview={setOfferGrid4Preview} code={offerGrid4Code} setCode={setOfferGrid4Code}/>
+                <BlockToggleTab preview={offerGrid4Preview} setPreview={setOfferGrid4Preview} code={offerGrid4Code}
+                                setCode={setOfferGrid4Code}/>
 
                 <BlockWrapper>
                     {offerGrid4Preview && (
@@ -562,7 +592,8 @@ export default OfferGrid;
 
                                 <div className='bg-[#ffd37c] rounded-b-md 1024px:rounded-r-md p-5 1024px:p-12'>
                                     <span className='text-[0.9rem] font-semibold text-blue-600'>PROMOTION</span>
-                                    <h4 className='text-[1.5rem] 1024px:text-[1.8rem] font-medium mt-2'>Hurry up! 40% OFF</h4>
+                                    <h4 className='text-[1.5rem] 1024px:text-[1.8rem] font-medium mt-2'>Hurry up! 40%
+                                        OFF</h4>
                                     <p className='text-[0.9rem] font-normal text-gray-900 mt-2'>Thousands of high tech
                                         are waiting for you</p>
 
@@ -588,7 +619,9 @@ export default OfferGrid;
                                         </div>
                                     </div>
 
-                                    <button className='py-2 px-6 rounded-md bg-black text-white mt-5 text-[1rem]'>Shop Now</button>
+                                    <button className='py-2 px-6 rounded-md bg-black text-white mt-5 text-[1rem]'>Shop
+                                        Now
+                                    </button>
                                 </div>
 
                             </div>
@@ -681,23 +714,29 @@ export default OfferGrid;
                     <ContentHeader text={"offer grid 5"} id={"offer_grid_5"}/>
                 </div>
 
-                <BlockDescription text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                <BlockDescription
+                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
 
-                <BlockToggleTab preview={offerGrid5Preview} setPreview={setOfferGrid5Preview} code={offerGrid5Code} setCode={setOfferGrid5Code}/>
+                <BlockToggleTab preview={offerGrid5Preview} setPreview={setOfferGrid5Preview} code={offerGrid5Code}
+                                setCode={setOfferGrid5Code}/>
 
                 <BlockWrapper>
                     {offerGrid5Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
-                            <div className='flex flex-col 1024px:flex-row justify-between items-center w-full 1024px:py-4 py-6 px-6 1024px:px-8 gap-[20px] 1024px:gap-0 rounded-md bg-[#FFE7D6]'>
+                            <div
+                                className='flex flex-col 1024px:flex-row justify-between items-center w-full 1024px:py-4 py-6 px-6 1024px:px-8 gap-[20px] 1024px:gap-0 rounded-md bg-[#FFE7D6]'>
 
                                 <div className='w-full 1024px:w-[30%] 1024px:pl-6'>
 
-                                    <span className='bg-[#2DA5F3] rounded-sm py-1.5 px-3 text-[0.8rem] font-normal text-white'>SAVE UP TO $200.00</span>
+                                    <span
+                                        className='bg-[#2DA5F3] rounded-sm py-1.5 px-3 text-[0.8rem] font-normal text-white'>SAVE UP TO $200.00</span>
 
-                                    <h4 className='text-[1.7rem] 1024px:text-[2rem] mt-2 font-semibold text-gray-800'>Macbook Pro</h4>
+                                    <h4 className='text-[1.7rem] 1024px:text-[2rem] mt-2 font-semibold text-gray-800'>Macbook
+                                        Pro</h4>
 
-                                    <p className='text-[1rem] mt-2 1024px:mt-3 text-gray-700'>Apple M1 Max Chip. 32GB Unified Memory, 1TB SSD Storage</p>
+                                    <p className='text-[1rem] mt-2 1024px:mt-3 text-gray-700'>Apple M1 Max Chip. 32GB
+                                        Unified Memory, 1TB SSD Storage</p>
 
                                     <button
                                         className='bg-[#FA8232] flex items-center gap-[10px] py-2 px-4 rounded-sm text-white text-[0.9rem] mt-3 uppercase group'>

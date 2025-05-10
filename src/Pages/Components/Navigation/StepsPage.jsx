@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import Steps from "../../../Components/Overview/SidebarContent/Content/Navigation/Steps.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Steps from "@components/Navigation/Steps.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const StepsPage = () => {
     return (
         <ContentPageLayout>
-            <Steps />
+            <Steps/>
         </ContentPageLayout>
     );
 };

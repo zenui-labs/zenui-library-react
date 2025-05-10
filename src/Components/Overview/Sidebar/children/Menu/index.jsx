@@ -2,9 +2,9 @@ import PropTypes, {string} from "prop-types";
 import {useState} from "react";
 import {MdKeyboardArrowRight} from "react-icons/md";
 import {Link, NavLink} from "react-router-dom";
-import {cn} from "../../../../../Utils/Style";
-import NewBadge from "../../../../../Shared/NewBadge";
-import UpdateBadge from "../../../../../Shared/UpdateBadge.jsx";
+import {cn} from "@utils/Style.js";
+import NewBadge from "@shared/NewBadge.jsx";
+import UpdateBadge from "@shared/UpdateBadge.jsx";
 
 const prefix = 'sidebar'
 const DefaultMenu = ({items}) => {

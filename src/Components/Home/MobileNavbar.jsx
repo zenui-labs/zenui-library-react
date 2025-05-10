@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 
 // icons
 import {CiMenuFries, CiSearch} from "react-icons/ci";
-import {IoIosArrowDown, IoIosSearch} from "react-icons/io";
+import {IoIosArrowDown} from "react-icons/io";
 import {RxCross2, RxDiscordLogo} from "react-icons/rx";
 import {FiGithub} from "react-icons/fi";
 
@@ -12,15 +12,13 @@ import Search from "./Search";
 import {AnimatePresence, motion} from "framer-motion";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
-import useZenuiStore from "../../Store/Index.js";
-import CommandIcon from "../../SvgIcons/CommandIcon.jsx";
+import useZenuiStore from "@/Store/Index.js";
+import CommandIcon from "@/SvgIcons/CommandIcon.jsx";
 
 const NewMobileNavbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [developerKitDropdownOpen, setDeveloperKitDropdownOpen] = useState(false);
     const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
-    const [eCommerceDropdownOpen, setECommerceDropdownOpen] = useState(false)
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 

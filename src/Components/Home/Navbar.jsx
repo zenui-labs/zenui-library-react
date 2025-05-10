@@ -13,13 +13,13 @@ import {motion, AnimatePresence} from "framer-motion";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 
-import useZenuiStore from "../../Store/Index.js";
-import CommandIcon from "../../SvgIcons/CommandIcon.jsx";
+import useZenuiStore from "@/Store/Index.js";
+import CommandIcon from "@/SvgIcons/CommandIcon.jsx";
 import {CiSearch} from "react-icons/ci";
 import {FaRegKeyboard} from "react-icons/fa";
 import {TbIcons} from "react-icons/tb";
 import {LiaPaletteSolid} from "react-icons/lia";
-import ConfigAiIcon from "../../SvgIcons/ConfigAiIcon.jsx";
+import ConfigAiIcon from "@/SvgIcons/ConfigAiIcon.jsx";
 import {ImHtmlFive2} from "react-icons/im";
 
 const Navbar = ({className}) => {

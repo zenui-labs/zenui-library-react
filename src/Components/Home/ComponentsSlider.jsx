@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 // component data
-import {allComponents} from "../../Utils/AllComponents.js";
+import {allComponents} from "@utils/AllComponents.js";
 
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";

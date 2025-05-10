@@ -4,7 +4,7 @@ import React, {useState} from "react";
 import {FaLinkedin, FaFacebook} from "react-icons/fa";
 import {FaXTwitter} from "react-icons/fa6";
 import {SiGmail} from "react-icons/si";
-import useZenuiStore from "../../Store/Index.js";
+import useZenuiStore from "@/Store/Index.js";
 import SectionWrapper from "./SectionWrapper.jsx";
 
 const Footer = () => {

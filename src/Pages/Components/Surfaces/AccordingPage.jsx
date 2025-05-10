@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import According from "../../../Components/Overview/SidebarContent/Content/Surfaces/According";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import According from "@components/Surfaces/According";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AccordingPage = () => {
-  return (
-    <ContentPageLayout>
-        <According />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <According/>
+        </ContentPageLayout>
+    );
 };
 
 export default AccordingPage;

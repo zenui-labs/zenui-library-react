@@ -1,12 +1,11 @@
-
 // components
-import DropdownButton from "../../../Components/Overview/SidebarContent/Content/Buttons/DropdownButton.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import DropdownButton from "@components/Buttons/DropdownButton.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AnimatedButtonPage = () => {
     return (
         <ContentPageLayout>
-            <DropdownButton />
+            <DropdownButton/>
         </ContentPageLayout>
     );
 };

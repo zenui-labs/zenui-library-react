@@ -4,141 +4,141 @@ import React, {useState, useEffect, Suspense} from "react";
 import {Route, Routes} from "react-router-dom";
 
 // home page
-const HomePage = React.lazy(() => import("./Pages/HomePage"));
+const HomePage = React.lazy(() => import("@pages/HomePage"));
 
 // documentation page
-const OverviewPage = React.lazy(() => import("./Pages/OverviewPage"));
-const FaqPage = React.lazy(() => import("./Pages/FaqPage"));
-const TempletePage = React.lazy(() => import("./Pages/TempletePage"));
+const OverviewPage = React.lazy(() => import("@pages/OverviewPage"));
+const TempletePage = React.lazy(() => import("@pages/TempletePage"));
 
 // inputs
-const InputTextPage = React.lazy(() => import("./Pages/Components/Inputs/InputTextPage"));
-const InputTextareaPage = React.lazy(() => import("./Pages/Components/Inputs/InputTextareaPage"));
-const InputRadioPage = React.lazy(() => import("./Pages/Components/Inputs/InputRadioPage"));
-const InputSwitchPage = React.lazy(() => import("./Pages/Components/Inputs/InputSwitchPage"));
-const InputSelectPage = React.lazy(() => import("./Pages/Components/Inputs/InputSelectPage"));
-const InputFilePage = React.lazy(() => import("./Pages/Components/Inputs/InputFilePage"));
+const InputTextPage = React.lazy(() => import("@pages/Components/Inputs/InputTextPage"));
+const InputTextareaPage = React.lazy(() => import("@pages/Components/Inputs/InputTextareaPage"));
+const InputRadioPage = React.lazy(() => import("@pages/Components/Inputs/InputRadioPage"));
+const InputSwitchPage = React.lazy(() => import("@pages/Components/Inputs/InputSwitchPage"));
+const InputSelectPage = React.lazy(() => import("@pages/Components/Inputs/InputSelectPage"));
+const InputFilePage = React.lazy(() => import("@pages/Components/Inputs/InputFilePage"));
 
 // buttons pages
-const NormalPage = React.lazy(() => import("./Pages/Components/Buttons/NormalPage"));
-const AnimatedButtonPage = React.lazy(() => import("./Pages/Components/Buttons/AnimatedButtonPage"));
+const NormalPage = React.lazy(() => import("@pages/Components/Buttons/NormalPage"));
+const AnimatedButtonPage = React.lazy(() => import("@pages/Components/Buttons/AnimatedButtonPage"));
 
 // all components
-const AllComponentsPage = React.lazy(() => import("./Pages/Components/AllComponentsPage"));
+const AllComponentsPage = React.lazy(() => import("@pages/Components/AllComponentsPage"));
 
 // navigation pages
-const PaginationPage = React.lazy(() => import("./Pages/Components/Navigation/PaginationPage"));
-const TabsPage = React.lazy(() => import("./Pages/Components/Navigation/TabsPage"));
-const ModalPage = React.lazy(() => import("./Pages/Components/Navigation/ModalPage"));
-const ChipPage = React.lazy(() => import("./Pages/Components/Navigation/ChipPage"));
+const PaginationPage = React.lazy(() => import("@pages/Components/Navigation/PaginationPage"));
+const TabsPage = React.lazy(() => import("@pages/Components/Navigation/TabsPage"));
+const ModalPage = React.lazy(() => import("@pages/Components/Navigation/ModalPage"));
+const ChipPage = React.lazy(() => import("@pages/Components/Navigation/ChipPage"));
 
 // feedback pages
-const SkeletonPage = React.lazy(() => import("./Pages/Components/Feedback/SkeletonPage"));
-const AlertMessagePage = React.lazy(() => import("./Pages/Components/Feedback/AlertMessagePage"));
-const DialogPage = React.lazy(() => import("./Pages/Components/Feedback/DialogPage"));
-const TestimonialPage = React.lazy(() => import("./Pages/Components/Feedback/TestimonialPage"));
-const NotificationPage = React.lazy(() => import("./Pages/Components/Feedback/NotificationPage"));
-const LoaderPage = React.lazy(() => import("./Pages/Components/Feedback/LoaderPage"));
+const SkeletonPage = React.lazy(() => import("@pages/Components/Feedback/SkeletonPage"));
+const AlertMessagePage = React.lazy(() => import("@pages/Components/Feedback/AlertMessagePage"));
+const DialogPage = React.lazy(() => import("@pages/Components/Feedback/DialogPage"));
+const TestimonialPage = React.lazy(() => import("@pages/Components/Feedback/TestimonialPage"));
+const NotificationPage = React.lazy(() => import("@pages/Components/Feedback/NotificationPage"));
+const LoaderPage = React.lazy(() => import("@pages/Components/Feedback/LoaderPage"));
 
 // data display
-const BadgePage = React.lazy(() => import("./Pages/Components/Data Display/BadgePage"));
-const TooltipPage = React.lazy(() => import("./Pages/Components/Data Display/TooltipPage"));
+const BadgePage = React.lazy(() => import("@pages/Components/Data Display/BadgePage"));
+const TooltipPage = React.lazy(() => import("@pages/Components/Data Display/TooltipPage"));
 
 // surface pages
-const CardPage = React.lazy(() => import("./Pages/Components/Surfaces/CardPage"));
-const AnimatedCardsPage = React.lazy(() => import("./Pages/Components/Surfaces/AnimatedCardsPage.jsx"));
-const ImageGalleryPage = React.lazy(() => import("./Pages/Components/Surfaces/ImageGalleryPage"));
-const AccordingPage = React.lazy(() => import("./Pages/Components/Surfaces/AccordingPage"));
-const AppbarPage = React.lazy(() => import("./Pages/Components/Surfaces/AppbarPage"));
+const CardPage = React.lazy(() => import("@pages/Components/Surfaces/CardPage"));
+const AnimatedCardsPage = React.lazy(() => import("@pages/Components/Surfaces/AnimatedCardsPage.jsx"));
+const ImageGalleryPage = React.lazy(() => import("@pages/Components/Surfaces/ImageGalleryPage"));
+const AccordingPage = React.lazy(() => import("@pages/Components/Surfaces/AccordingPage"));
+const AppbarPage = React.lazy(() => import("@pages/Components/Surfaces/AppbarPage"));
 
 // e-commerce
-import ProductCardPage from "./Pages/Components/ECommerce/ProductCardPage.jsx";
-import AdsCardPage from "./Pages/Components/ECommerce/AdsCardPage.jsx";
+import ProductCardPage from "@pages/Components/ECommerce/ProductCardPage.jsx";
+import AdsCardPage from "@pages/Components/ECommerce/AdsCardPage.jsx";
 
 // randoms
-const CodeSnippetPage = React.lazy(() => import("./Pages/Components/Randoms/CodeSnippetPage"));
-const SnippetPage = React.lazy(() => import("./Pages/Components/Randoms/SnippetPage"));
-const AboutUsPage = React.lazy(() => import("./Pages/AboutUsPage.jsx"));
-const PrivacyPolicyPage = React.lazy(() => import("./Pages/PrivacyPolicyPage.jsx"));
+const CodeSnippetPage = React.lazy(() => import("@pages/Components/Randoms/CodeSnippetPage"));
+const SnippetPage = React.lazy(() => import("@pages/Components/Randoms/SnippetPage"));
+const AboutUsPage = React.lazy(() => import("@pages/AboutUsPage.jsx"));
+const PrivacyPolicyPage = React.lazy(() => import("@pages/PrivacyPolicyPage.jsx"));
 const CookieModal = React.lazy(() => import("./Shared/CookieModal.jsx"));
-const DropdownButtonPage = React.lazy(() => import("./Pages/Components/Buttons/DropdownButtonPage.jsx"));
-const ResizableLayoutPage = React.lazy(() => import("./Pages/Components/Surfaces/ResizableLayoutPage.jsx"));
-const OtpInputPage = React.lazy(() => import("./Pages/Components/Inputs/OtpInputPage.jsx"));
+const DropdownButtonPage = React.lazy(() => import("@pages/Components/Buttons/DropdownButtonPage.jsx"));
+const ResizableLayoutPage = React.lazy(() => import("@pages/Components/Surfaces/ResizableLayoutPage.jsx"));
+const OtpInputPage = React.lazy(() => import("@pages/Components/Inputs/OtpInputPage.jsx"));
 
 // blocks
-const ResponsiveNavbarPage = React.lazy(() => import("./Pages/Blocks/Sections/ResponsiveNavbarPage.jsx"));
-const AllBlocksPage = React.lazy(() => import("./Pages/Blocks/AllBlocksPage.jsx"));
-const HeroSectionPage = React.lazy(() => import("./Pages/Blocks/Sections/HeroSectionPage.jsx"));
-const ProgressBarPage = React.lazy(() => import("./Pages/Components/Navigation/ProgressBarPage.jsx"));
-const ContactFormPage = React.lazy(() => import("./Pages/Blocks/Forms/ContactFormPage.jsx"));
-const ResponsiveSearchbarPage = React.lazy(() => import("./Pages/Blocks/Randoms/ResponsiveSearchbarPage.jsx"));
-const BreadcrumbPage = React.lazy(() => import("./Pages/Components/Navigation/BreadcrumbPage.jsx"));
-const RatingPage = React.lazy(() => import("./Pages/Components/Navigation/RatingPage.jsx"));
-const TimelinePage = React.lazy(() => import("./Pages/Components/Data Display/TimelinePage.jsx"));
-const NumberInputPage = React.lazy(() => import("./Pages/Components/Inputs/NumberInputPage.jsx"));
-const StrongPasswordPage = React.lazy(() => import("./Pages/Components/Inputs/StrongPasswordPage.jsx"));
-const CheckboxInputPage = React.lazy(() => import("./Pages/Components/Inputs/CheckboxInputPage.jsx"));
-const EmptyPage = React.lazy(() => import("./Pages/EmptyPage.jsx"))
-const StepsPage = React.lazy(() => import("./Pages/Components/Navigation/StepsPage.jsx"));
+const ResponsiveNavbarPage = React.lazy(() => import("@pages/Blocks/Sections/ResponsiveNavbarPage.jsx"));
+const AllBlocksPage = React.lazy(() => import("@pages/Blocks/AllBlocksPage.jsx"));
+const HeroSectionPage = React.lazy(() => import("@pages/Blocks/Sections/HeroSectionPage.jsx"));
+const ProgressBarPage = React.lazy(() => import("@pages/Components/Navigation/ProgressBarPage.jsx"));
+const ContactFormPage = React.lazy(() => import("@pages/Blocks/Forms/ContactFormPage.jsx"));
+const ResponsiveSearchbarPage = React.lazy(() => import("@pages/Blocks/Randoms/ResponsiveSearchbarPage.jsx"));
+const BreadcrumbPage = React.lazy(() => import("@pages/Components/Navigation/BreadcrumbPage.jsx"));
+const RatingPage = React.lazy(() => import("@pages/Components/Navigation/RatingPage.jsx"));
+const TimelinePage = React.lazy(() => import("@pages/Components/Data Display/TimelinePage.jsx"));
+const NumberInputPage = React.lazy(() => import("@pages/Components/Inputs/NumberInputPage.jsx"));
+const StrongPasswordPage = React.lazy(() => import("@pages/Components/Inputs/StrongPasswordPage.jsx"));
+const CheckboxInputPage = React.lazy(() => import("@pages/Components/Inputs/CheckboxInputPage.jsx"));
+const EmptyPage = React.lazy(() => import("@pages/EmptyPage.jsx"))
+const StepsPage = React.lazy(() => import("@pages/Components/Navigation/StepsPage.jsx"));
 
 // icons page
-const IconsPage = React.lazy(() => import('./Pages/IconsPage.jsx'))
-const ResponsiveFooterPage = React.lazy(() => import("./Pages/Blocks/Randoms/ResponsiveFooterPage.jsx"));
-const AuthButtonPage = React.lazy(() => import("./Pages/Components/Buttons/AuthButtonPage.jsx"));
+const IconsPage = React.lazy(() => import('@pages/IconsPage.jsx'))
+const ResponsiveFooterPage = React.lazy(() => import("@pages/Blocks/Randoms/ResponsiveFooterPage.jsx"));
+const AuthButtonPage = React.lazy(() => import("@pages/Components/Buttons/AuthButtonPage.jsx"));
 
-const OpacityPalettePage = React.lazy(() => import("./Pages/OpacityPalettePage.jsx"))
-const WrongUrlErrorPage = React.lazy(() => import("./Pages/Blocks/EmptyPages/WrongRoutePage.jsx"));
-const WrongRoutePage = React.lazy(() => import("./Pages/Blocks/EmptyPages/EmptyPage.jsx"));
-const PricingSectionPage = React.lazy(() => import("./Pages/Blocks/Sections/PricingSectionPage.jsx"));
-const NewsletterSectionPage = React.lazy(() => import("./Pages/Blocks/Forms/NewsletterSectionPage.jsx"));
-const MultipageFormPage = React.lazy(() => import("./Pages/Blocks/Forms/MultipageFormPage.jsx"));
-const ResponsiveSidebarPage = React.lazy(() => import("./Pages/Blocks/Randoms/ResponsiveSidebarPage.jsx"));
-const InputSliderPage = React.lazy(() => import("./Pages/Components/Inputs/InputSliderPage.jsx"));
+const OpacityPalettePage = React.lazy(() => import("@pages/OpacityPalettePage.jsx"))
+const WrongUrlErrorPage = React.lazy(() => import("@pages/Blocks/EmptyPages/WrongRoutePage.jsx"));
+const WrongRoutePage = React.lazy(() => import("@pages/Blocks/EmptyPages/EmptyPage.jsx"));
+const PricingSectionPage = React.lazy(() => import("@pages/Blocks/Sections/PricingSectionPage.jsx"));
+const NewsletterSectionPage = React.lazy(() => import("@pages/Blocks/Forms/NewsletterSectionPage.jsx"));
+const MultipageFormPage = React.lazy(() => import("@pages/Blocks/Forms/MultipageFormPage.jsx"));
+const ResponsiveSidebarPage = React.lazy(() => import("@pages/Blocks/Randoms/ResponsiveSidebarPage.jsx"));
+const InputSliderPage = React.lazy(() => import("@pages/Components/Inputs/InputSliderPage.jsx"));
 
 // e-commerce blocks
-import OfferGridPage from "./Pages/Blocks/E-Commerce/OfferGridPage.jsx";
-import ProductDetailsPage from "./Pages/Blocks/E-Commerce/ProductDetailsPage.jsx";
-import ProductFilterPage from "./Pages/Blocks/E-Commerce/ProductFilterPage.jsx";
-import CheckoutPage from "./Pages/Blocks/E-Commerce/CheckoutPage.jsx";
+import OfferGridPage from "@pages/Blocks/E-Commerce/OfferGridPage.jsx";
+import ProductDetailsPage from "@pages/Blocks/E-Commerce/ProductDetailsPage.jsx";
+import ProductFilterPage from "@pages/Blocks/E-Commerce/ProductFilterPage.jsx";
+import CheckoutPage from "@pages/Blocks/E-Commerce/CheckoutPage.jsx";
 
 // layout playground page
-const LayoutPlaygroundPage = React.lazy(() => import("./Pages/LayoutPlaygroundPage.jsx"));
-const TreeDropdownPage = React.lazy(() => import("./Pages/Components/Feedback/TreeDropdownPage.jsx"));
-const InstallationPage = React.lazy(() => import("./Pages/InstallationPage.jsx"));
-const DragAndDropPage = React.lazy(() => import("./Pages/Components/Surfaces/DragAndDropPage.jsx"));
-const ResourcesPage = React.lazy(() => import("./Pages/ResourcesPage.jsx"));
-const ContextMenuPage = React.lazy(() => import("./Pages/Components/Feedback/ContextMenuPage.jsx"));
-const ReactCustomHooksPage = React.lazy(() => import("./Pages/ReactCustomHooksPage.jsx"));
-const TablePage = React.lazy(() => import("./Pages/Components/Data Display/TablePage.jsx"));
-const PieChartPage = React.lazy(() => import("./Pages/Components/Data Display/PieChartPage.jsx"));
-const CarouselPage = React.lazy(() => import("./Pages/Components/Surfaces/CarouselPage.jsx"));
+const LayoutPlaygroundPage = React.lazy(() => import("@pages/LayoutPlaygroundPage.jsx"));
+const TreeDropdownPage = React.lazy(() => import("@pages/Components/Feedback/TreeDropdownPage.jsx"));
+const InstallationPage = React.lazy(() => import("@pages/InstallationPage.jsx"));
+const DragAndDropPage = React.lazy(() => import("@pages/Components/Surfaces/DragAndDropPage.jsx"));
+const ResourcesPage = React.lazy(() => import("@pages/ResourcesPage.jsx"));
+const ContextMenuPage = React.lazy(() => import("@pages/Components/Feedback/ContextMenuPage.jsx"));
+const ReactCustomHooksPage = React.lazy(() => import("@pages/ReactCustomHooksPage.jsx"));
+const TablePage = React.lazy(() => import("@pages/Components/Data Display/TablePage.jsx"));
+const PieChartPage = React.lazy(() => import("@pages/Components/Data Display/PieChartPage.jsx"));
+const CarouselPage = React.lazy(() => import("@pages/Components/Surfaces/CarouselPage.jsx"));
 
-const SemanticTagMasterPage = React.lazy(() => import("./Pages/SemanticTagMasterPage.jsx"));
+const SemanticTagMasterPage = React.lazy(() => import("@pages/SemanticTagMasterPage.jsx"));
 
-const ImageCropperPage = React.lazy(() => import("./Pages/Components/Surfaces/ImageCropperPage.jsx"));
+const ImageCropperPage = React.lazy(() => import("@pages/Components/Surfaces/ImageCropperPage.jsx"));
 
-const MarqueePage = React.lazy(() => import("./Pages/Components/Navigation/MarqueePage.jsx"));
+const MarqueePage = React.lazy(() => import("@pages/Components/Navigation/MarqueePage.jsx"));
 
-const RedoUndoPage = React.lazy(() => import("./Pages/Components/Data Display/RedoUndoPage.jsx"));
+const RedoUndoPage = React.lazy(() => import("@pages/Components/Data Display/RedoUndoPage.jsx"));
 
 // become zenui hero docs
-import ZenUIHeroDocsPage from "./Pages/ZenUIHeroDocsPage.jsx";
-import TimerPage from "./Pages/Components/Navigation/TimerPage.jsx";
-import ShortcutGeneratorPage from "./Pages/ShortcutGeneratorPage.jsx";
-import AIGeneratorPage from "./Pages/AIGeneratorPage.jsx";
+import ZenUIHeroDocsPage from "@pages/ZenUIHeroDocsPage.jsx";
+import TimerPage from "@pages/Components/Navigation/TimerPage.jsx";
+import ShortcutGeneratorPage from "@pages/ShortcutGeneratorPage.jsx";
+import AIGeneratorPage from "@pages/AIGeneratorPage.jsx";
 import {MenuProvider} from "./Context/MenuContext.jsx";
-import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActivityGraphPage.jsx";
-import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
-import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
-import AnimationInstallationPage from "./Pages/Animations/InstallationPage.jsx";
-import MagicCardsPage from "./Pages/Animations/Cards/MagicCardsPage.jsx";
-import RevealCardPage from "./Pages/Animations/Cards/RevealCardPage.jsx";
+import GithubActivityGraphPage from "@pages/Components/Data Display/GithubActivityGraphPage.jsx";
+import ComparisonCardPage from "@pages/Components/Surfaces/ComparisonCardPage.jsx";
+import LazyImagePackagePlaygroundPage from "@pages/LazyImagePackagePlaygroundPage.jsx";
+import AnimationInstallationPage from "@pages/Animations/InstallationPage.jsx";
+import MagicCardsPage from "@pages/Animations/Cards/MagicCardsPage.jsx";
+import RevealCardPage from "@pages/Animations/Cards/RevealCardPage.jsx";
 import usePageTracking from "./CustomHooks/usePageTracking.js";
-import MagnetCardPage from "./Pages/Animations/Cards/MagnetCardPage.jsx";
-import SortingAnimationPage from "./Pages/Animations/Layouts/SortingAnimationPage.jsx";
-import GridSwitcherPage from "./Pages/Animations/Layouts/GridSwitcherPage.jsx";
-import ReactionTrailPage from "./Pages/Animations/Buttons/ReactionTrailPage.jsx";
-import TextEffectsPage from "./Pages/Animations/Visuals/TextEffectsPage.jsx";
+import MagnetCardPage from "@pages/Animations/Cards/MagnetCardPage.jsx";
+import SortingAnimationPage from "@pages/Animations/Layouts/SortingAnimationPage.jsx";
+import GridSwitcherPage from "@pages/Animations/Layouts/GridSwitcherPage.jsx";
+import ReactionTrailPage from "@pages/Animations/Buttons/ReactionTrailPage.jsx";
+import TextEffectsPage from "@pages/Animations/Visuals/TextEffectsPage.jsx";
+import BackgroundAniamtionsPage from "@pages/Animations/Visuals/BackgroundAniamtionsPage.jsx";
 
 
 const App = () => {
@@ -317,6 +317,7 @@ const App = () => {
 
                         {/* visuals animation */}
                         <Route path="/animations/text-effects" element={<TextEffectsPage/>}/>
+                        <Route path="/animations/background-animations" element={<BackgroundAniamtionsPage/>}/>
 
                         {/*  icons  */}
                         <Route path="/icons" element={<IconsPage/>}/>

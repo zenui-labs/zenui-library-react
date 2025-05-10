@@ -1,114 +1,116 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // components
-import OverviewFooter from '../../../../../Shared/OverviewFooter';
-import ContentHeader from '../../../../../Shared/ContentHeader';
+import OverviewFooter from '@shared/OverviewFooter';
+import ContentHeader from '@shared/ContentHeader';
 
 // contents for scrollspy
-import { numberInputContents } from '../../../../../Utils/ContentsConfig/InputContents';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {numberInputContents} from '@utils/ContentsConfig/InputContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // showing the code
-import Showcode from '../../../../../Shared/Component/ShowCode.jsx';
-import { FiMinus, FiPlus } from 'react-icons/fi';
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import Showcode from '@shared/Component/ShowCode.jsx';
+import {FiMinus, FiPlus} from 'react-icons/fi';
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const OtpInput = () => {
-  const sectionIds = numberInputContents.map((item) => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = numberInputContents.map((item) => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  // mini input
-  const [miniInputPreview, setMiniInputPreview] = useState(true);
-  const [miniInputCode, setMiniInputCode] = useState(false);
+    // mini input
+    const [miniInputPreview, setMiniInputPreview] = useState(true);
+    const [miniInputCode, setMiniInputCode] = useState(false);
 
-  // rounded button
-  const [roundedButtonPreview, setRoundedButtonPreview] = useState(true);
-  const [roundedButtonCode, setRoundedButtonCode] = useState(false);
+    // rounded button
+    const [roundedButtonPreview, setRoundedButtonPreview] = useState(true);
+    const [roundedButtonCode, setRoundedButtonCode] = useState(false);
 
-  // rounded button position
-  const [roundedButtonPositionPreview, setRoundedButtonPositionPreview] =
-    useState(true);
-  const [roundedButtonPositionCode, setRoundedButtonPositionCode] =
-    useState(false);
+    // rounded button position
+    const [roundedButtonPositionPreview, setRoundedButtonPositionPreview] =
+        useState(true);
+    const [roundedButtonPositionCode, setRoundedButtonPositionCode] =
+        useState(false);
 
-  // actions
+    // actions
 
-  // mini input
-  const [miniInputValue, setMiniInputValue] = useState(0);
+    // mini input
+    const [miniInputValue, setMiniInputValue] = useState(0);
 
-  const handleMiniIncrement = () => {
-    setMiniInputValue((prevValue) => prevValue + 1);
-  };
+    const handleMiniIncrement = () => {
+        setMiniInputValue((prevValue) => prevValue + 1);
+    };
 
-  const handleMiniDecrement = () => {
-    setMiniInputValue((prevValue) => prevValue - 1);
-  };
+    const handleMiniDecrement = () => {
+        setMiniInputValue((prevValue) => prevValue - 1);
+    };
 
-  const handleMiniInputValueChange = (e) => {
-    setMiniInputValue(Number(e.target.value));
-  };
+    const handleMiniInputValueChange = (e) => {
+        setMiniInputValue(Number(e.target.value));
+    };
 
-  // rounded button input
-  const [roundedInputValue, setRoundedInputValue] = useState(0);
+    // rounded button input
+    const [roundedInputValue, setRoundedInputValue] = useState(0);
 
-  const handleRoundedIncrement = () => {
-    setRoundedInputValue((prevValue) => prevValue + 1);
-  };
+    const handleRoundedIncrement = () => {
+        setRoundedInputValue((prevValue) => prevValue + 1);
+    };
 
-  const handleRoundedDecrement = () => {
-    setRoundedInputValue((prevValue) => prevValue - 1);
-  };
+    const handleRoundedDecrement = () => {
+        setRoundedInputValue((prevValue) => prevValue - 1);
+    };
 
-  const handleRoundedInputValueChange = (e) => {
-    setRoundedInputValue(Number(e.target.value));
-  };
+    const handleRoundedInputValueChange = (e) => {
+        setRoundedInputValue(Number(e.target.value));
+    };
 
-  return (
-    <>
-      <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-        <div>
-          <ContentHeader text={'mini number input'} id={'mini_number_input'} />
+    return (
+        <>
+            <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
+                <div>
+                    <ContentHeader text={'mini number input'} id={'mini_number_input'}/>
 
-          <ComponentDescription text='This is a mini number input field designed for entering small
+                    <ComponentDescription text='This is a mini number input field designed for entering small
             numerical values. It ensures precise input with a compact design.'/>
 
-          <ToggleTab setCode={setMiniInputCode} code={miniInputCode} setPreview={setMiniInputPreview} preview={miniInputPreview}/>
+                    <ToggleTab setCode={setMiniInputCode} code={miniInputCode} setPreview={setMiniInputPreview}
+                               preview={miniInputPreview}/>
 
-          <ComponentWrapper>
-            {miniInputPreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div className='flex items-center mx-auto border dark:border-slate-700 border-gray-200 rounded-md'>
-                    <button
-                        className='bg-gray-100 p-[15px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-l-md text-gray-700 text-[1.1rem]'
-                        onClick={handleMiniDecrement}
-                    >
-                      <FiMinus />
-                    </button>
-                    <input
-                        type='number'
-                        value={miniInputValue}
-                        className='w-[70px] py-2.5 dark:bg-transparent dark:text-[#abc2d3] outline-none focus:ring-0 border-none text-center text-[1.1rem]'
-                        onInput={handleMiniInputValueChange}
-                    />
-                    <button
-                        className='bg-gray-100 p-[15px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-r-md text-gray-700 text-[1.1rem]'
-                        onClick={handleMiniIncrement}
-                    >
-                      <FiPlus />
-                    </button>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {miniInputPreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div
+                                    className='flex items-center mx-auto border dark:border-slate-700 border-gray-200 rounded-md'>
+                                    <button
+                                        className='bg-gray-100 p-[15px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-l-md text-gray-700 text-[1.1rem]'
+                                        onClick={handleMiniDecrement}
+                                    >
+                                        <FiMinus/>
+                                    </button>
+                                    <input
+                                        type='number'
+                                        value={miniInputValue}
+                                        className='w-[70px] py-2.5 dark:bg-transparent dark:text-[#abc2d3] outline-none focus:ring-0 border-none text-center text-[1.1rem]'
+                                        onInput={handleMiniInputValueChange}
+                                    />
+                                    <button
+                                        className='bg-gray-100 p-[15px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-r-md text-gray-700 text-[1.1rem]'
+                                        onClick={handleMiniIncrement}
+                                    >
+                                        <FiPlus/>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
 
-            {miniInputCode && (
-                <Showcode
-                    code='
+                        {miniInputCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -156,50 +158,52 @@ const NumberInput = () => {
 
 export default NumberInput;
                     '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader text={'rounded button'} id={'rounded_button'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader text={'rounded button'} id={'rounded_button'}/>
+                    </div>
 
-          <ComponentDescription text='This is a rounded button number input that allows you to increment
+                    <ComponentDescription text='This is a rounded button number input that allows you to increment
             or decrement numerical values using buttons with smooth, curved
             edges. It provides a user-friendly and stylish way to adjust
             numbers.'/>
 
-            <ToggleTab setCode={setRoundedButtonCode} code={roundedButtonCode} setPreview={setRoundedButtonPreview} preview={roundedButtonPreview}/>
+                    <ToggleTab setCode={setRoundedButtonCode} code={roundedButtonCode}
+                               setPreview={setRoundedButtonPreview} preview={roundedButtonPreview}/>
 
-          <ComponentWrapper>
-            {roundedButtonPreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
-                    <button
-                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] rounded-full text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedDecrement}
-                    >
-                      <FiMinus />
-                    </button>
-                    <input
-                        type='number'
-                        value={roundedInputValue}
-                        className='w-[70px] py-2.5 outline-none dark:bg-transparent dark:text-[#abc2d3] focus:ring-0 border-none text-center text-[1.1rem]'
-                        onInput={handleRoundedInputValueChange}
-                    />
-                    <button
-                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedIncrement}
-                    >
-                      <FiPlus />
-                    </button>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {roundedButtonPreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div
+                                    className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
+                                    <button
+                                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] rounded-full text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedDecrement}
+                                    >
+                                        <FiMinus/>
+                                    </button>
+                                    <input
+                                        type='number'
+                                        value={roundedInputValue}
+                                        className='w-[70px] py-2.5 outline-none dark:bg-transparent dark:text-[#abc2d3] focus:ring-0 border-none text-center text-[1.1rem]'
+                                        onInput={handleRoundedInputValueChange}
+                                    />
+                                    <button
+                                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedIncrement}
+                                    >
+                                        <FiPlus/>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
 
-            {roundedButtonCode && (
-                <Showcode
-                    code='
+                        {roundedButtonCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -247,73 +251,76 @@ const NumberInput = () => {
 
 export default NumberInput;
                     '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'rounded button position'}
-              id={'rounded_button_position'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'rounded button position'}
+                            id={'rounded_button_position'}
+                        />
+                    </div>
 
-          <ComponentDescription text='Rounded button number input with flexible button positioning for
+                    <ComponentDescription text='Rounded button number input with flexible button positioning for
             customizable numerical adjustments.'/>
 
-          <ToggleTab setCode={setRoundedButtonPositionCode} code={roundedButtonPositionCode} setPreview={setRoundedButtonPositionPreview} preview={roundedButtonPositionPreview}/>
+                    <ToggleTab setCode={setRoundedButtonPositionCode} code={roundedButtonPositionCode}
+                               setPreview={setRoundedButtonPositionPreview} preview={roundedButtonPositionPreview}/>
 
-          <ComponentWrapper>
-            {roundedButtonPositionPreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
-                    <button
-                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] mr-2 rounded-full text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedDecrement}
-                    >
-                      <FiMinus />
-                    </button>
-                    <button
-                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] rounded-full text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedIncrement}
-                    >
-                      <FiPlus />
-                    </button>
+                    <ComponentWrapper>
+                        {roundedButtonPositionPreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div
+                                    className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
+                                    <button
+                                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] mr-2 rounded-full text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedDecrement}
+                                    >
+                                        <FiMinus/>
+                                    </button>
+                                    <button
+                                        className='bg-gray-100 dark:bg-slate-800 dark:text-[#abc2d3] p-[10px] rounded-full text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedIncrement}
+                                    >
+                                        <FiPlus/>
+                                    </button>
 
-                    <input
-                        type='number'
-                        value={roundedInputValue}
-                        className='w-[70px] px-2 py-2.5 outline-none dark:bg-transparent dark:text-[#abc2d3] focus:ring-0 border-none text-center text-[1.1rem]'
-                        onInput={handleRoundedInputValueChange}
-                    />
-                  </div>
+                                    <input
+                                        type='number'
+                                        value={roundedInputValue}
+                                        className='w-[70px] px-2 py-2.5 outline-none dark:bg-transparent dark:text-[#abc2d3] focus:ring-0 border-none text-center text-[1.1rem]'
+                                        onInput={handleRoundedInputValueChange}
+                                    />
+                                </div>
 
-                  <div className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
-                    <input
-                        type='number'
-                        value={roundedInputValue}
-                        className='w-[70px] px-2 py-2.5 dark:bg-transparent dark:text-[#abc2d3] outline-none focus:ring-0 border-none text-center text-[1.1rem]'
-                        onInput={handleRoundedInputValueChange}
-                    />
-                    <button
-                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedDecrement}
-                    >
-                      <FiMinus />
-                    </button>
-                    <button
-                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full ml-2 text-gray-700 text-[1.1rem]'
-                        onClick={handleRoundedIncrement}
-                    >
-                      <FiPlus />
-                    </button>
-                  </div>
-                </div>
-            )}
+                                <div
+                                    className='flex px-2 py-0.5 items-center dark:border-slate-700 mx-auto border border-gray-200 rounded-md'>
+                                    <input
+                                        type='number'
+                                        value={roundedInputValue}
+                                        className='w-[70px] px-2 py-2.5 dark:bg-transparent dark:text-[#abc2d3] outline-none focus:ring-0 border-none text-center text-[1.1rem]'
+                                        onInput={handleRoundedInputValueChange}
+                                    />
+                                    <button
+                                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedDecrement}
+                                    >
+                                        <FiMinus/>
+                                    </button>
+                                    <button
+                                        className='bg-gray-100 p-[10px] dark:bg-slate-800 dark:text-[#abc2d3] rounded-full ml-2 text-gray-700 text-[1.1rem]'
+                                        onClick={handleRoundedIncrement}
+                                    >
+                                        <FiPlus/>
+                                    </button>
+                                </div>
+                            </div>
+                        )}
 
-            {roundedButtonPositionCode && (
-                <Showcode
-                    code='
+                        {roundedButtonPositionCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -387,26 +394,26 @@ const NumberInput = () => {
 
 export default NumberInput;
                     '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter
-            backUrl='/components/input-textarea'
-            backName='textarea'
-            forwardUrl='/components/input-checkbox'
-            forwardName='checkbox'
-          />
-        </div>
+                    <OverviewFooter
+                        backUrl='/components/input-textarea'
+                        backName='textarea'
+                        forwardUrl='/components/input-checkbox'
+                        forwardName='checkbox'
+                    />
+                </div>
 
-        <ContentNavbar contents={numberInputContents} width='55%' activeSection={activeSection}/>
+                <ContentNavbar contents={numberInputContents} width='55%' activeSection={activeSection}/>
 
-      </aside>
-      <Helmet>
-        <title>Form - Number</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+            <Helmet>
+                <title>Form - Number</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default OtpInput;

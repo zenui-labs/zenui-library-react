@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import ProgressBar from "../../../Components/Overview/SidebarContent/Content/Navigation/ProgressBar.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ProgressBar from "@components/Navigation/ProgressBar.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ProgressBarPage = () => {
     return (
         <ContentPageLayout>
-            <ProgressBar />
+            <ProgressBar/>
         </ContentPageLayout>
     );
 };

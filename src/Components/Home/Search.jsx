@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Fuse from 'fuse.js';
 import {CiSearch} from "react-icons/ci";
-import {blocksSearchData, componentSearchData} from "../../Utils/SearchData.js";
+import {blocksSearchData, componentSearchData} from "@utils/SearchData.js";
 import {LuLayoutTemplate} from "react-icons/lu";
 import {RxSection} from "react-icons/rx";
 import {Link, useNavigate} from "react-router-dom";

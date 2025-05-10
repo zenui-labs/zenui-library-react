@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import PieChart from "../../../Components/Overview/SidebarContent/Content/Data Display/PieChart.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import PieChart from "@components/Data Display/PieChart.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const PieChartPage = () => {
     return (
         <ContentPageLayout>
-            <PieChart />
+            <PieChart/>
         </ContentPageLayout>
     );
 };

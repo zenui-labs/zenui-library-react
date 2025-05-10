@@ -1,23 +1,23 @@
-import { useState, useRef } from "react";
+import {useState, useRef} from "react";
 
 // components
-import OverviewFooter from "../../../../../Shared/OverviewFooter";
-import ContentHeader from "../../../../../Shared/ContentHeader";
+import OverviewFooter from "@shared/OverviewFooter";
+import ContentHeader from "@shared/ContentHeader";
 
 // react helmet
-import { Helmet } from "react-helmet";
+import {Helmet} from "react-helmet";
 
 // showing the code
-import Showcode from "../../../../../Shared/Component/ShowCode.jsx";
+import Showcode from "@shared/Component/ShowCode.jsx";
 
 // contents for scrollspy
-import { otpInputContents } from '../../../../../Utils/ContentsConfig/InputContents';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {otpInputContents} from '@utils/ContentsConfig/InputContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from '../../../../../Shared/Component/ComponentDescription.jsx';
-import ComponentWrapper from '../../../../../Shared/Component/ComponentWrapper.jsx';
-import ToggleTab from '../../../../../Shared/Component/ToggleTab.jsx';
-import ContentNavbar from '../../../../../Shared/Component/ContentNavbar.jsx';
+import ComponentDescription from '@shared/Component/ComponentDescription.jsx';
+import ComponentWrapper from '@shared/Component/ComponentWrapper.jsx';
+import ToggleTab from '@shared/Component/ToggleTab.jsx';
+import ContentNavbar from '@shared/Component/ContentNavbar.jsx';
 
 const OtpInput = () => {
     const sectionIds = otpInputContents.map((item) => item.href.slice(1));
@@ -42,7 +42,7 @@ const OtpInput = () => {
     const autoNavigationInputs = useRef([])
 
     const handleAutoNavigationInputChange = (e, index) => {
-        const { value } = e.target;
+        const {value} = e.target;
         const newOtp = [...autoNavigationInputs.current.map(input => input.value)];
 
         // Ensure only a single digit is entered per box
@@ -78,7 +78,7 @@ const OtpInput = () => {
 
     // for custom navigation
     const handleCustomNavigationInputChange = (e, index) => {
-        const { value } = e.target;
+        const {value} = e.target;
         const newOtp = [...autoNavigationInputs.current.map(input => input.value)];
 
         if (/^[0-9]$/.test(value) && value.length === 1) {
@@ -104,9 +104,11 @@ const OtpInput = () => {
                 <div>
                     <ContentHeader text={"custom navigation"} id={"custom_navigation"}/>
 
-                    <ComponentDescription text='Custom OTP input field with navigation controls, allowing users to easily move between digits for seamless entry.'/>
+                    <ComponentDescription
+                        text='Custom OTP input field with navigation controls, allowing users to easily move between digits for seamless entry.'/>
 
-                    <ToggleTab code={customNavigationCode} setCode={setCustomNavigationCode} preview={customNavigatePreview} setPreview={setCustomNavigationPreview}/>
+                    <ToggleTab code={customNavigationCode} setCode={setCustomNavigationCode}
+                               preview={customNavigatePreview} setPreview={setCustomNavigationPreview}/>
 
                     <ComponentWrapper>
                         {customNavigatePreview && (
@@ -188,9 +190,11 @@ export default OtpInput;
                         <ContentHeader text={"Keyboard navigation"} id={"keyboard_navigation"}/>
                     </div>
 
-                    <ComponentDescription text='OTP input field with keyboard navigation, enabling users to move between digits using arrow keys and paste numeric codes (extracting only numbers) for quick and efficient entry.'/>
+                    <ComponentDescription
+                        text='OTP input field with keyboard navigation, enabling users to move between digits using arrow keys and paste numeric codes (extracting only numbers) for quick and efficient entry.'/>
 
-                    <ToggleTab code={autoNavigationCode} setCode={setAutoNavigationCode} setPreview={setAutoNavigationPreview} preview={autoNavigationPreview}/>
+                    <ToggleTab code={autoNavigationCode} setCode={setAutoNavigationCode}
+                               setPreview={setAutoNavigationPreview} preview={autoNavigationPreview}/>
 
                     <ComponentWrapper>
                         {autoNavigationPreview && (

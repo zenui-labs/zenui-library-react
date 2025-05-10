@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dracula } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import React, {useState} from 'react';
+import {motion, AnimatePresence} from 'framer-motion';
+import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import SelectInput from "./SelectInput";
-import { semanticElements } from "../Utils/HTMLTagsDetailsData.js";
+import {semanticElements} from "@utils/HTMLTagsDetailsData.js";
 import AnimatedText from "./AnimatedText.jsx"
 import AnimatedSection from "./AnimatedSection.jsx"
 
@@ -24,9 +24,9 @@ const Index = () => {
                 return (
                     <motion.span
                         key={index}
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: delay + index * 0.02 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        transition={{delay: delay + index * 0.02}}
                         className="bg-gray-100 text-gray-700 dark:bg-slate-900 dark:border-slate-700 dark:text-slate-300 mr-1 px-1.5 py-0.5 rounded border border-gray-200 font-mono text-sm"
                     >
                         {parts[index + 1]}
@@ -35,7 +35,7 @@ const Index = () => {
             }
             if (part === '</code>') return null;
             if (!part.includes('<') && !part.includes('>')) {
-                return <AnimatedText key={index} text={part} delay={delay} />;
+                return <AnimatedText key={index} text={part} delay={delay}/>;
             }
             return null;
         }).filter(Boolean);
@@ -50,7 +50,8 @@ const Index = () => {
                     <div>
                         <h1 className='text-[1.9rem] 425px:text-[2.5rem] 1024px:text-[3rem] leading-[40px] 425px:leading-[60px] font-[600] bg-clip-text mb-1 text-transparent bg-gradient-to-r from-[#0FABCA] to-[#CD00F1]'>Semantic
                             TagMaster</h1>
-                        <p className='text-[1rem] dark:text-darkSubTextColor text-text w-full 425px:w-[90%]'>Understanding when and how to use
+                        <p className='text-[1rem] dark:text-darkSubTextColor text-text w-full 425px:w-[90%]'>Understanding
+                            when and how to use
                             semantic
                             HTML elements not only improves the usability and accessibility of your site but also aligns
                             your content for optimal performance in search engine rankings.</p>
@@ -78,7 +79,8 @@ const Index = () => {
                                     </AnimatedSection>
 
                                     <AnimatedSection delay={3.5}>
-                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">✅ Best
+                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">✅
+                                            Best
                                             Practices:</h3>
                                         <ul className="list-disc pl-10 space-y-2">
                                             {semanticElements[selectedElement].bestPractice.map((text, index) => (
@@ -90,7 +92,8 @@ const Index = () => {
                                     </AnimatedSection>
 
                                     <AnimatedSection delay={4.5}>
-                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">⚠️ Common
+                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">⚠️
+                                            Common
                                             Mistakes:</h3>
                                         <ul className="list-disc pl-10 space-y-2">
                                             {semanticElements[selectedElement].commonMistake.map((text, index) => (
@@ -102,7 +105,8 @@ const Index = () => {
                                     </AnimatedSection>
 
                                     <AnimatedSection delay={5}>
-                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">🔍 SEO Benefits:</h3>
+                                        <h3 className="text-base font-semibold dark:text-darkTextColor text-gray-900 mb-2">🔍
+                                            SEO Benefits:</h3>
                                         <ul className="list-disc pl-10 space-y-2">
                                             {semanticElements[selectedElement].seoBenefits.map((text, index) => (
                                                 <li className='dark:text-darkSubTextColor text-gray-800' key={index}>
@@ -159,7 +163,8 @@ const Index = () => {
                 </div>
             </div>
 
-            <p className='text-center mt-10 dark:text-red-500 text-red-600 text-[0.9rem]'>That doesn't mean we can't use Div.<br/> We often have to use Div, but that doesn't mean we'll build the
+            <p className='text-center mt-10 dark:text-red-500 text-red-600 text-[0.9rem]'>That doesn't mean we can't use
+                Div.<br/> We often have to use Div, but that doesn't mean we'll build the
                 entire website with Div.</p>
 
         </section>

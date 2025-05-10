@@ -1,9 +1,8 @@
-// react router dom
-import OverviewIcon from "../../../SvgIcons/OverviewIcon.jsx";
-import InstallationIcon from "../../../SvgIcons/InstallationIcon.jsx";
-import ResourceIcon from "../../../SvgIcons/ResourceIcon.jsx";
-import TemplatesIcon from "../../../SvgIcons/TemplatesIcon.jsx";
-import HookIcon from "../../../SvgIcons/HookIcon.jsx";
+import OverviewIcon from "@/SvgIcons/OverviewIcon.jsx";
+import InstallationIcon from "@/SvgIcons/InstallationIcon.jsx";
+import ResourceIcon from "@/SvgIcons/ResourceIcon.jsx";
+import TemplatesIcon from "@/SvgIcons/TemplatesIcon.jsx";
+import HookIcon from "@/SvgIcons/HookIcon.jsx";
 import {CollapseMenu, DefaultMenu} from "./children/Menu/index.jsx";
 
 const Content = () => {
@@ -409,6 +408,11 @@ const Content = () => {
                     {
                         title: "Text Effects",
                         url: "/animations/text-effects",
+                        parent: 'VISUALS'
+                    },
+                    {
+                        title: "Background Animations",
+                        url: "/animations/background-animations",
                         parent: 'VISUALS'
                     },
                 ]}

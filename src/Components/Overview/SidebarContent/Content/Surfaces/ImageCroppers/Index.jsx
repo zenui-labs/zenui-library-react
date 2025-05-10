@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // components
-import ContentHeader from '../../../../../../Shared/ContentHeader';
-import OverviewFooter from '../../../../../../Shared/OverviewFooter';
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import ContentHeader from '@shared/ContentHeader';
+import OverviewFooter from '@shared/OverviewFooter';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
 // contents for scrollspy
-import {ImageCropperContents} from '../../../../../../Utils/ContentsConfig/SurfacesContents';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy';
+import {ImageCropperContents} from '@utils/ContentsConfig/SurfacesContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 import CropImageInModal from "./CropImageInModal/Index.jsx"
 
 const Appbar = () => {
@@ -345,9 +345,11 @@ const Appbar = () => {
                         text={'crop image in modal'}
                     />
 
-                    <ComponentDescription text='Crop images easily in a modal popup, allowing quick resizing and adjustments before saving.'/>
+                    <ComponentDescription
+                        text='Crop images easily in a modal popup, allowing quick resizing and adjustments before saving.'/>
 
-                    <ToggleTab code={basicAppCode} preview={basicAppPreview} setCode={setBasicAppCode} setPreview={setBasicAppPreview}/>
+                    <ToggleTab code={basicAppCode} preview={basicAppPreview} setCode={setBasicAppCode}
+                               setPreview={setBasicAppPreview}/>
 
                     <ComponentWrapper>
                         {basicAppPreview && (

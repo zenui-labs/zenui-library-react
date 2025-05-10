@@ -1,11 +1,11 @@
 // components
-import ResponsiveSearchbar from "../../../Components/Overview/SidebarContent/Blocks/Randoms/ResponsiveSearchbar.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ResponsiveSearchbar from "@blocks/Randoms/ResponsiveSearchbar.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ResponsiveSearchbarPage = () => {
     return (
         <ContentPageLayout>
-            <ResponsiveSearchbar />
+            <ResponsiveSearchbar/>
         </ContentPageLayout>
     );
 };

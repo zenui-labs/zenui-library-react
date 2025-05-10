@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react";
 
 // card component
 import {Helmet} from "react-helmet";
-import {allComponents} from "../../../../Utils/AllComponents";
-import BlocksFooter from "../../../../Shared/Block/BlocksFooter.jsx";
+import {allComponents} from "@utils/AllComponents";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 const AllComponents = () => {
     const [buttonsData, setButtonsData] = useState([]);

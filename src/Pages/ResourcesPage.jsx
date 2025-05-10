@@ -1,14 +1,14 @@
 import React from "react";
 
 // Components
-import Resources from "../Components/Overview/SidebarContent/Content/Resources/Resouces.jsx";
-import ContentPageLayout from "../Shared/ContentPageLayout.jsx";
+import Resources from "@/Components/Overview/SidebarContent/Content/Resources/Resouces.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const OverviewPage = () => {
     return (
-       <ContentPageLayout>
-           <Resources />
-       </ContentPageLayout>
+        <ContentPageLayout>
+            <Resources/>
+        </ContentPageLayout>
     );
 };
 

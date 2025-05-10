@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from "react-helmet";
-import BlocksFooter from "../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 const Installation = () => {
     return (

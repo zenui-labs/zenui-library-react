@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Tabs from "../../../Components/Overview/SidebarContent/Content/Navigation/Tabs";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Tabs from "@components/Navigation/Tabs";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const TabsPage = () => {
-  return (
-    <ContentPageLayout>
-        <Tabs />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <Tabs/>
+        </ContentPageLayout>
+    );
 };
 
 export default TabsPage;

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import BlocksFooter from "../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {Helmet} from "react-helmet";
 import {GoCopy} from "react-icons/go";
 import {IoCheckmarkDone} from "react-icons/io5";
