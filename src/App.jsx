@@ -138,7 +138,6 @@ import MagnetCardPage from "./Pages/Animations/Cards/MagnetCardPage.jsx";
 import SortingAnimationPage from "./Pages/Animations/Layouts/SortingAnimationPage.jsx";
 import GridSwitcherPage from "./Pages/Animations/Layouts/GridSwitcherPage.jsx";
 import ReactionTrailPage from "./Pages/Animations/Buttons/ReactionTrailPage.jsx";
-import QuickSurveyModal from "./Shared/QuickSurvey/QuickSurveyModal.jsx";
 import TextEffectsPage from "./Pages/Animations/Visuals/TextEffectsPage.jsx";
 
 
@@ -176,7 +175,6 @@ const App = () => {
 
     return (
         <>
-            <QuickSurveyModal/>
             <Suspense>
                 <MenuProvider>
                     {/* all routes */}
