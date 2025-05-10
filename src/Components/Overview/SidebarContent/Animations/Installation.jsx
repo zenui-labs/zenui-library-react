@@ -17,7 +17,7 @@ const Installation = () => {
 
     return (
         <div className='w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-            <h1 className='text-[2rem] 425px:text-[2.7rem] font-[600] bg-clip-text text-transparent bg-gradient-to-r from-[#3B9DF8] to-[#1A1674]'>Animation
+            <h1 className='text-[2rem] 425px:text-[2.7rem] font-[600] text-brandColor'>Animation
                 Installation</h1>
             <div className='mt-3 w-full 1024px:w-[80%]'>
                 <p className='text-[1rem] text-gray-900 dark:text-darkSubTextColor'>
@@ -26,14 +26,16 @@ const Installation = () => {
                     <br/>
                     In this version, we've added animation support to several components. These animations are handled
                     internally using <a href='https://motion.dev/docs/react-quick-start' target='_blank'
-                                        className='text-blue-600 font-medium hover:underline'>Framer Motion</a>, giving
+                                        className='text-brandColor font-medium hover:underline'>Framer Motion</a>,
+                    giving
                     you a more polished and delightful user experience out of the box. You don’t need to manually write
                     animation logic – just use the components, and they’ll animate beautifully by default.
                 </p>
             </div>
 
             <div className='w-full 1024px:w-[80%] mt-6'>
-                <h3 className='text-[1.5rem] font-[600] dark:text-darkTextColor'>Install Framer-Motion</h3>
+                <h3 className='text-[1.5rem] font-[600] text-brandColor dark:text-darkTextColor'>Install
+                    Framer-Motion</h3>
                 <p className='mt-3 text-[1rem] text-gray-900 dark:text-darkSubTextColor'>
                     Framer Motion is a popular and production-ready animation library for React, known for its
                     performance, ease of use, and powerful animation API.
@@ -75,7 +77,8 @@ const Installation = () => {
             </div>
 
             <div className='w-full 1024px:w-[80%] mt-8'>
-                <h3 className='text-[1.5rem] font-[600] dark:text-darkTextColor'>✅ That’s It — No Extra Setup!</h3>
+                <h3 className='text-[1.5rem] font-[600] text-brandColor dark:text-darkTextColor'>✅ That’s It — No Extra
+                    Setup!</h3>
                 <p className='mt-3 text-[1rem] text-gray-900 dark:text-darkSubTextColor'>
                     There’s no additional configuration needed. Just start using the animated components directly.
                 </p>

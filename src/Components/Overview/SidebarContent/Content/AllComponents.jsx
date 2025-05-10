@@ -48,7 +48,7 @@ const AllComponents = () => {
     return (
         <>
             <aside className="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
-                <h2 className="font-[600] text-[#0471d6] uppercase text-[2rem] 425px:text-[2.5rem]">
+                <h2 className="font-[600] text-brandColor uppercase text-[2rem] 425px:text-[2.5rem]">
                     ZenUI components
                 </h2>
                 <p className="text-text dark:text-darkSubTextColor text-[1rem]">
@@ -64,7 +64,7 @@ const AllComponents = () => {
                     confidence.
                 </p>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] text-[#0471d6]">Input</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Input</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
                     {inputsData?.map((button, index) => (
                         <a href={button.url}
@@ -84,7 +84,7 @@ const AllComponents = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] text-[#0471d6]">Navigation</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Navigation</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
                     {navigationsData?.map((button, index) => (
                         <a href={button.url}
@@ -104,7 +104,7 @@ const AllComponents = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-[#0471d6]">Buttons</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Buttons</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 gap-8">
                     {buttonsData?.map((button, index) => (
                         <a href={button.url}
@@ -124,7 +124,7 @@ const AllComponents = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] text-[#0471d6]">Feedback</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Feedback</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 mt-4 gap-8">
                     {feedbackData?.map((button, index) => (
                         <a href={button.url}
@@ -144,7 +144,7 @@ const AllComponents = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-[#0471d6]">Surface</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Surface</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 gap-8">
                     {surfaceData?.map((button, index) => (
                         <a href={button.url}
@@ -164,7 +164,7 @@ const AllComponents = () => {
                     ))}
                 </div>
 
-                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-[#0471d6] ">Data Display</h2>
+                <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Data Display</h2>
                 <div className="grid grid-cols-2 425px:grid-cols-3 gap-8">
                     {displayData?.map((button, index) => (
                         <a href={button.url}

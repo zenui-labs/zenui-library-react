@@ -33,7 +33,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         <div key={item.id} className="relative group">
                             <div
                                 className={`
-                                absolute inset-y-0 left-0 bg-primary/5 dark:bg-slate-900 
+                                absolute inset-y-0 left-0 bg-brandColor/5 dark:bg-slate-900 
                                 transition-all duration-[400ms] ease-linear
                                 ${activeSection === item.href.slice(1)
                                     ? 'w-full opacity-100'
@@ -47,7 +47,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                                 dark:text-darkSubTextColor/90 transition-width duration-300 
                                 text-text border-l-2 border-transparent pl-4
                                 ${activeSection === item.href.slice(1)
-                                    ? 'text-primary !border-primary'
+                                    ? 'text-brandColor !border-brandColor'
                                     : ''}
                             `}
                             >
@@ -72,7 +72,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         onClick={() => handleCreateIssue("feature")}
                         className='flex text-text hover:text-[#0FABCA] transition-all duration-200 cursor-pointer dark:text-darkSubTextColor/90 items-center gap-1.5'
                     >
-                        <GoLightBulb />
+                        <GoLightBulb/>
                         <span className='text-[0.94rem]'>Request a feature</span>
                     </p>
                 </div>

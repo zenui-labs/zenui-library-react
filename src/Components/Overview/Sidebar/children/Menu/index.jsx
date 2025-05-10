@@ -58,7 +58,7 @@ const CollapseMenu = ({title, isNewComponent, items}) => {
         <div>
             <h3
                 className={`${
-                    isOpen ? "text-[#0471d6]" : "text-gray-500 dark:text-darkSubTextColor"
+                    isOpen ? "text-[#049ab7]" : "text-gray-500 dark:text-darkSubTextColor"
                 } flex items-center justify-between gap-1 text-[1rem] font-[500] capitalize cursor-pointer`}
                 onClick={() => setIsOpen(!isOpen)}
             >
@@ -76,7 +76,7 @@ const CollapseMenu = ({title, isNewComponent, items}) => {
                 }
                 <MdKeyboardArrowRight
                     className={`${
-                        isOpen && "rotate-[90deg] !text-[#0471d6]"
+                        isOpen && "rotate-[90deg] !text-[#049ab7]"
                     } text-[1.5rem] text-gray-500 transition-all duration-300`}
                 />
             </h3>
@@ -115,9 +115,9 @@ const Item = ({title, url, label, isNewComponent = false, isUpdated = false}) =>
                     id={prefix + url}
                     className={({isActive}) =>
                         cn(
-                            isActive &&
-                            "hover:!bg-primary bg-[#3B9DF8] hover:!rounded-normal !text-secondary font-[500]",
-                            "dark:hover:!bg-slate-800 dark:hover:!border-darkBorderColor dark:border-darkBorderColor flex items-center dark:text-darkSubTextColor !border-none hover:!rounded-normal rounded-normal gap-[10px] ml-2"
+                            isActive ?
+                                "hover:!bg-brandColor bg-brandColor dark:hover:!bg-brandColor hover:!rounded-normal !text-secondary font-[500]" : "dark:hover:!bg-slate-800",
+                            "dark:hover:!border-darkBorderColor dark:border-darkBorderColor flex items-center dark:text-darkSubTextColor !border-none hover:!rounded-normal rounded-normal gap-[10px] ml-2"
                         )
                     }
                 >

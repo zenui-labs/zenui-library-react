@@ -33,7 +33,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #3b9df8;
+    background-color: #0FABCA;
     border-radius: 30px;
 }
 
@@ -198,12 +198,12 @@ aside ul a:not(.getStarted a, .sectionHeader):hover {
 
 /* sidebar component section header  */
 .sectionHeader {
-    color: #0471d6;
+    color: #0FABCA;
 }
 
 .sectionHeader::after {
     content: "";
-    background-color: rgba(4, 113, 214, 0.81);
+    background-color: #0FABCA;
     top: 31%;
     left: -5px;
     position: absolute;

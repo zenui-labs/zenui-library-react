@@ -84,7 +84,7 @@ const Resources = () => {
 
     return (
         <aside className='w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-            <h1 className="text-[2rem] 425px:text-[2.7rem] font-[600] bg-clip-text text-transparent bg-gradient-to-r from-[#3B9DF8] to-[#1A1674]">
+            <h1 className="text-[2rem] 425px:text-[2.7rem] font-[600] text-brandColor">
                 Resources
             </h1>
             <p className="w-full text-text text-[1rem] dark:text-darkSubTextColor mb-5">
@@ -136,7 +136,7 @@ const Resources = () => {
 
                         <div className='flex items-center gap-[10px] justify-end mt-4'>
                             <a href={resource.websiteUrl} target='_blank'
-                               className='py-2 px-3 bg-primary hover:bg-blue-500 transition-all duration-200 active:scale-[0.9] text-white rounded-md text-[0.9rem] flex items-center gap-[5px]'>
+                               className='py-2 px-3 bg-brandColor hover:bg-blue-500 transition-all duration-200 active:scale-[0.9] text-white rounded-md text-[0.9rem] flex items-center gap-[5px]'>
                                 Visit website
                                 <RxExternalLink className='text-[1.2rem] font-[500]'/>
                             </a>

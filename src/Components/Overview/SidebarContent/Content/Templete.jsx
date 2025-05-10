@@ -23,7 +23,7 @@ const Templete = () => {
 
     return (
         <aside className="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
-            <h1 className="font-[600] text-[#0471d6] text-[2rem] 425px:text-[2.5rem] 1024px:text-[3rem] capitalize">
+            <h1 className="font-[600] text-brandColor text-[2rem] 425px:text-[2.5rem] 1024px:text-[3rem] capitalize">
                 ZenUI Templates
             </h1>
             <p className="w-full 425px:w-[70%] dark:text-darkSubTextColor text-text text-[1rem]">
@@ -75,7 +75,7 @@ const Templete = () => {
 
                         <div className="p-4 w-full">
                             <button
-                                className={`px-4 uppercase w-full flex items-center justify-center mx-auto py-3 bg-gray-300 rounded-md dark:bg-slate-700 hover:bg-blue-400 group transition-all duration-300`}
+                                className={`px-4 uppercase w-full flex items-center justify-center mx-auto py-3 bg-gray-300 rounded-md dark:bg-slate-700 hover:bg-brandColor group transition-all duration-300`}
                             >
                                 <a href={template.githubLink} target="_blank"
                                    className='dark:text-darkSubTextColor text-gray-700 group-hover:text-white transition-all duration-300'>

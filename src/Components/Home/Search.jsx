@@ -130,7 +130,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
 
     return (
         <main
-            className='w-full h-screen fixed top-0 left-0 bg-black/70 z-[1000] flex items-center justify-center'>
+            className='w-full h-screen fixed top-0 left-0 bg-black/70 z-[1000000000] flex items-center justify-center'>
             <div
                 className={`${
                     isSearchOpen
@@ -147,7 +147,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        className='px-4 pl-12 dark:bg-slate-800 dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-darkTextColor py-3 w-full border rounded-normal border-gray-200 focus:border-primary text-text focus:outline-none'
+                        className='px-4 pl-12 dark:bg-slate-800 dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-darkTextColor py-3 w-full border rounded-normal border-gray-200 focus:border-brandColor text-text focus:outline-none'
                         placeholder='Search Component'
                         type='text'
                         autoFocus={isSearchOpen}

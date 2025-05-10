@@ -69,11 +69,11 @@ const BlockToggleTab = ({preview, code, setPreview, setCode}) => {
                     onClick={(e) => e.stopPropagation()}
                     className={`${settingOpen ? 'opacity-100 visible z-30 translate-y-0' : 'z-[-1] opacity-0 invisible translate-y-[10px]'} theme_setting_dropdown absolute w-max dark:bg-slate-800 rounded-normal p-2 transition-all duration-300 bg-white border border-gray-200/70 bottom-[115%] dark:shadow-[2px_-3px_30px_#000] dark:border-slate-700/50 shadow-[2px_1px_15px_rgba(0,0,0,0.1)] shadow-gray-200 dark:shadow-primary/30 right-0 flex items-center justify-between gap-[25px]`}>
                     <p className='text-[14px] dark:text-darkSubTextColor'>Copy to clipboard with <br/> <span
-                        className='text-primary'>dark:</span> classes</p>
+                        className='text-brandColor'>dark:</span> classes</p>
 
                     <div
                         className={`${
-                            store.withDarkClasses ? "bg-[#3B9DF8]" : "bg-[#f0f0f0] dark:bg-slate-600"
+                            store.withDarkClasses ? "bg-brandColor" : "bg-[#f0f0f0] dark:bg-slate-600"
                         } w-[50px] h-[26px] px-[0.150rem] py-[0.160rem] cursor-pointer dark:border-darkBorderColor border transition-colors duration-500 border-[#e5eaf2] rounded-full relative`}
                         onClick={() => store.handleToggle()}
                     >

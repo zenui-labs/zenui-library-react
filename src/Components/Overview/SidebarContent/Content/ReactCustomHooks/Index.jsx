@@ -35,7 +35,7 @@ const ReactCustomHooks = () => {
 
     return (
         <aside className='w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-            <h1 className="text-[2rem] 425px:text-[2.7rem] font-[600] bg-clip-text text-transparent bg-gradient-to-r from-[#3B9DF8] to-[#1A1674]">
+            <h1 className="text-[2rem] 425px:text-[2.7rem] font-[600] text-brandColor">
                 Custom Hooks
             </h1>
             <p className="w-full text-text text-[1rem] dark:text-darkSubTextColor mb-5">
@@ -83,7 +83,7 @@ const ReactCustomHooks = () => {
                                     </p>
                                 </div>
                                 <button onClick={() => handleGetCodeClick(customHook)}
-                                        className='py-3 px-4 bg-gray-300 dark:bg-slate-600 dark:text-darkSubTextColor hover:bg-[#0FABCA] transition-all duration-200 rounded-high w-full mt-8 uppercase text-[0.9rem] text-gray-600 hover:text-white font-[500]'>Get
+                                        className='py-3 px-4 bg-gray-300 dark:bg-slate-600 dark:text-darkSubTextColor hover:bg-[#0FABCA] transition-all duration-200 rounded-normal w-full mt-8 uppercase text-[0.9rem] text-gray-600 hover:text-white font-[500]'>Get
                                     Code
                                 </button>
                             </div>
