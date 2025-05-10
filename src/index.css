@@ -60,16 +60,6 @@
     background: linear-gradient(to top right, white 30%, rgba(15, 171, 202, 0.33) 100%);
 }
 
-/*.logos:before {*/
-/*  left: 0;*/
-/*  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);*/
-/*}*/
-
-/*.logos:after {*/
-/*  right: 0;*/
-/*  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);*/
-/*}*/
-
 .logos:hover .logos-slide {
     animation-play-state: paused;
 }
@@ -201,31 +191,21 @@ aside ul a:not(.getStarted a) {
 }
 
 aside ul a:not(.getStarted a, .sectionHeader):hover {
-    background-color: #e5eaf2;
+    background-color: rgba(229, 234, 242, 0.75);
     border-left: 1px solid #9caebc;
-    border-radius: 0.25rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 
 /* sidebar component section header  */
 .sectionHeader {
     color: #0471d6;
-    border-left: 1px solid #9caebc;
-}
-
-.sectionHeader:hover {
-    background-color: transparent;
-    font-weight: 400;
-    border-left: 1px solid #9caebc;
 }
 
 .sectionHeader::after {
     content: "";
-    background-color: #9caebc;
-    top: -1%;
-    left: -2.3%;
+    background-color: rgba(4, 113, 214, 0.81);
+    top: 31%;
+    left: -5px;
     position: absolute;
     width: 10px;
     border-radius: 50%;

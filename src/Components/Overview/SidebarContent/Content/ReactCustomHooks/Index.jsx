@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
+import React, {useState, useEffect} from "react";
+import {Helmet} from "react-helmet";
 import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
 import {CustomHooksData} from "../../../../../Utils/CustomHooksData.js";
 import HookCodeModal from "./HookCodeModal.jsx";
 
 const ReactCustomHooks = () => {
-    const[open, setOpen] = useState(false);
-    const[hookObj, setHookObj] = useState({});
-    const[searchedvalue, setSearchedvalue] = useState(null);
-    const[filteredHooksData, setFilteredHooksData] = useState(CustomHooksData);
+    const [open, setOpen] = useState(false);
+    const [hookObj, setHookObj] = useState({});
+    const [searchedvalue, setSearchedvalue] = useState(null);
+    const [filteredHooksData, setFilteredHooksData] = useState(CustomHooksData);
 
     const handleGetCodeClick = (hook) => {
         setHookObj(hook)
@@ -47,14 +47,14 @@ const ReactCustomHooks = () => {
             {/*  search area  */}
             <div>
                 <input type='text' placeholder='Search hook...' onChange={handleOnChange}
-                       className='py-3 px-4 dark:bg-slate-900 dark:border-darkBorderColor dark:text-darkSubTextColor border border-gray-200 mt-4 rounded-md focus:border-[#0FABCA] outline-none w-full 640px:w-[50%]'/>
+                       className='py-3 px-4 dark:bg-slate-900 dark:border-darkBorderColor dark:text-darkSubTextColor border border-gray-200 mt-4 rounded-normal focus:border-[#0FABCA] outline-none w-full 640px:w-[50%]'/>
             </div>
 
             <div className='grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-[20px] mt-10'>
                 {
                     filteredHooksData?.map((customHook, index) => (
                         <div key={index}
-                             className='rounded-md z-0 overflow-hidden relative dark:border-darkBorderColor border border-gray-200 flex flex-col h-full'>
+                             className='rounded-high z-0 overflow-hidden relative dark:border-darkBorderColor border border-border flex flex-col h-full'>
                             <div
                                 className='relative bg-white dark:bg-darkBgColor px-4 text-center min-h-[160px] flex items-center capitalize justify-center'>
                                 {/*  top blur  */}
@@ -71,16 +71,19 @@ const ReactCustomHooks = () => {
                             <div className='p-[20px] bg-white dark:bg-slate-900 flex flex-col flex-grow'>
                                 <div className='flex-grow'>
                                     <p className='text-[0.9rem] dark:text-darkSubTextColor/90 text-gray-600 mt-1'><b
-                                        className='text-gray-700 dark:text-darkSubTextColor'>Description:</b> {customHook?.description}</p>
+                                        className='text-gray-700 dark:text-darkSubTextColor'>Description:</b> {customHook?.description}
+                                    </p>
 
-                                    <p className='text-[0.9rem] text-gray-600 mt-3 dark:text-darkSubTextColor/90'><b className='text-gray-700 dark:text-darkSubTextColor'>Usage
+                                    <p className='text-[0.9rem] text-gray-600 mt-3 dark:text-darkSubTextColor/90'><b
+                                        className='text-gray-700 dark:text-darkSubTextColor'>Usage
                                         Scenario:</b> {customHook?.usages}</p>
 
                                     <p className='text-[0.9rem] text-gray-600 mt-3 dark:text-darkSubTextColor/90'><b
-                                        className='text-gray-700 dark:text-darkSubTextColor'>Behavior:</b> {customHook?.behavior}</p>
+                                        className='text-gray-700 dark:text-darkSubTextColor'>Behavior:</b> {customHook?.behavior}
+                                    </p>
                                 </div>
                                 <button onClick={() => handleGetCodeClick(customHook)}
-                                        className='py-3 px-4 bg-gray-300 dark:bg-slate-600 dark:text-darkSubTextColor hover:bg-[#0FABCA] transition-all duration-200 rounded-md w-full mt-4 uppercase text-[0.9rem] text-gray-600 hover:text-white font-[500]'>Get
+                                        className='py-3 px-4 bg-gray-300 dark:bg-slate-600 dark:text-darkSubTextColor hover:bg-[#0FABCA] transition-all duration-200 rounded-high w-full mt-8 uppercase text-[0.9rem] text-gray-600 hover:text-white font-[500]'>Get
                                     Code
                                 </button>
                             </div>

@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet";
-import { FaBookmark, FaRegBookmark } from "react-icons/fa";
-import { RxExternalLink } from "react-icons/rx";
-import { resourcesData } from "../../../../../Utils/ResourcesData.js"
+import React, {useState, useEffect} from "react";
+import {Helmet} from "react-helmet";
+import {FaBookmark, FaRegBookmark} from "react-icons/fa";
+import {RxExternalLink} from "react-icons/rx";
+import {resourcesData} from "../../../../../Utils/ResourcesData.js"
 import FilterByLanguages from "./FilterByLanguages.jsx";
 import FilterByPackage from "./FilterByPackage.jsx";
 import FilterByBookmarks from "./FilterByBookmarks.jsx";
 import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
 
 const Resources = () => {
-    const [selectedLanguage, setSelectedLanguage] = useState({ slug: 'all' })
-    const [selectedPackage, setSelectedPackage] = useState({ slug: 'all' })
-    const [bookmark, setBookmark] = useState({ slug: 'all' })
+    const [selectedLanguage, setSelectedLanguage] = useState({slug: 'all'})
+    const [selectedPackage, setSelectedPackage] = useState({slug: 'all'})
+    const [bookmark, setBookmark] = useState({slug: 'all'})
     const [searchValue, setSearchValue] = useState('')
     const [bookmarkedItems, setBookmarkedItems] = useState([]);
     const [filteredResources, setFilteredResources] = useState(resourcesData);
@@ -103,7 +103,7 @@ const Resources = () => {
                         value={searchValue}
                         onChange={(e) => setSearchValue(e.target.value)}
                         placeholder='Search resource'
-                        className='border-border dark:bg-slate-900 dark:border-darkBorderColor dark:text-darkSubTextColor border w-full 640px:w-[250px] rounded-md outline-none px-4 py-2.5 focus:border-primary transition-colors duration-300'
+                        className='border-border dark:bg-slate-900 dark:border-darkBorderColor dark:text-darkSubTextColor border w-full 640px:w-[250px] rounded-normal outline-none px-4 py-2.5 focus:border-primary transition-colors duration-300'
                     />
                 </div>
                 <div className='w-full 1024px:w-fit'>
@@ -123,7 +123,7 @@ const Resources = () => {
 
             <div className='grid grid-cols-1 640px:grid-cols-2 gap-[15px] mt-8'>
                 {filteredResources.map((resource) => (
-                    <div key={resource.id} className='bg-gray-50 dark:bg-slate-900 p-[15px] rounded-md'>
+                    <div key={resource.id} className='bg-gray-50 dark:bg-slate-900 p-[15px] rounded-high'>
                         <div className='flex items-start gap-[15px]'>
                             <img alt={resource.name} src={resource.logo}
                                  className='w-[40px] h-[40px] object-cover rounded-md mt-[7px]'/>

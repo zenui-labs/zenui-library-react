@@ -13,6 +13,7 @@ import ComponentsSlider from "../Components/Home/ComponentsSlider.jsx";
 import DarkModeSupport from "../Components/Home/DarkModeSupport.jsx";
 import MetricsCard from "../Components/Home/MetricsCard.jsx";
 import Navbar from "../Components/Home/Navbar.jsx";
+import TemplatesSlider from "../Components/Home/TemplatesSlider.jsx";
 
 
 const HomePage = () => {
@@ -27,6 +28,7 @@ const HomePage = () => {
                 <DarkModeSupport/>
                 <ZenUITools/>
                 <Feedback/>
+                <TemplatesSlider/>
                 <Faq/>
                 <MetricsCard/>
                 <Footer/>

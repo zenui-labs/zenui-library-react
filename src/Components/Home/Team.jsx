@@ -6,18 +6,18 @@ import {TeamData} from "../../Utils/TeamData.js";
 import {DevContributorsData} from "../../Utils/DevContributorsData.js";
 import {AiOutlineGlobal} from "react-icons/ai";
 import ZenUIHeroBadge from "../../SvgIcons/ZenUIHeroBadge.jsx";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const Team = () => {
     return (
         <>
-            <section>
-                <div className='flex flex-col items-center justify-center mt-16 640px:mt-24'>
-                    <h3 className='text-[1.9rem] mb-3 400px:mb-0 640px:text-[2.4rem] text-center 640px:text-start font-[600] text-gray-800 dark:text-darkTextColor'><span
-                        className='text-[#9A04F5]'>Design</span> Contributors</h3>
-                    <p className='w-full dark:text-darkSubTextColor 1404px:w-[60%] mx-auto text-center text-[1rem] text-gray-600'>Our design
-                        contributors provide the creative foundation for our components and blocks, helping us innovate
-                        and expand ZenUI’s offerings with their unique insights and designs.</p>
-                </div>
+            <SectionWrapper>
+                <SectionHead description={'Our design\n' +
+                    '                        contributors provide the creative foundation for our components and blocks, helping us innovate\n' +
+                    '                        and expand ZenUI’s offerings with their unique insights and designs.'}
+                             isSubjet={'Design'} title={'Contributors'}/>
+
 
                 <div className='mt-16 flex flex-wrap gap-[40px] justify-center'>
                     {
@@ -69,13 +69,13 @@ const Team = () => {
                         ))
                     }
                 </div>
-            </section>
-            <section>
-                <div className='flex flex-col items-center justify-center mt-16 640px:mt-24'>
-                    <h3 className='text-[1.9rem] dark:text-darkTextColor mb-3 400px:mb-0 640px:text-[2.4rem] font-[600] text-gray-800'><span
-                        className='text-[#9A04F5]'>Dev</span> Contributors</h3>
-                    <p className='w-full 1404px:w-[60%] dark:text-darkSubTextColor mx-auto text-center text-[1rem] text-gray-600'>Our development contributors lay the technical groundwork for ZenUI, bringing our components and blocks to life with their expertise and innovation. Their work is essential to our platform's growth and stability.</p>
-                </div>
+            </SectionWrapper>
+            <SectionWrapper className='mt-24'>
+                <SectionHead description={'Our\n' +
+                    '                        development contributors lay the technical groundwork for ZenUI, bringing our components and\n' +
+                    '                        blocks to life with their expertise and innovation. Their work is essential to our platform\'s\n' +
+                    '                        growth and stability.'} isSubjet={'Dev'} title={'Contributors'}/>
+
 
                 <div className='mt-16 flex flex-wrap gap-[40px] justify-center'>
                     {
@@ -148,7 +148,7 @@ const Team = () => {
                         ))
                     }
                 </div>
-            </section>
+            </SectionWrapper>
         </>
     );
 };

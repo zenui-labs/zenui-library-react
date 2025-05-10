@@ -7,7 +7,7 @@ import useZenuiStore from "../../Store/Index.js";
 
 const ToggleTab = ({preview, code, setPreview, setCode}) => {
 
-    const[settingOpen, setSettingOpen] = useState(false);
+    const [settingOpen, setSettingOpen] = useState(false);
 
     const store = useZenuiStore(state => state);
 
@@ -34,9 +34,9 @@ const ToggleTab = ({preview, code, setPreview, setCode}) => {
         <div className={`flex mt-8 mb-2 relative items-end justify-between w-full 1024px:w-[90%]`}>
 
             <div
-                className='relative backdrop-blur-md overflow-hidden bg-gray-200/80 dark:bg-slate-800 w-max rounded'>
+                className='relative backdrop-blur-md overflow-hidden bg-gray-200/80 dark:bg-slate-800 w-max rounded-normal'>
                 <div
-                    className={`absolute top-[50%] translate-y-[-50%] dark:bg-darkBgColor shadow-sm shadow-gray-300 dark:shadow-slate-900 transform left-0 w-[50%] h-[85%] z-[1] bg-white transition-all rounded duration-500 ${
+                    className={`absolute top-[50%] translate-y-[-50%] dark:bg-darkBgColor shadow-sm shadow-gray-300 dark:shadow-slate-900 transform left-0 w-[50%] h-[85%] z-[1] bg-white transition-all rounded-normal duration-500 ${
                         preview
                             ? 'translate-x-[3%] w-[53%]'
                             : 'translate-x-[128%] !w-[43%]'
@@ -54,7 +54,7 @@ const ToggleTab = ({preview, code, setPreview, setCode}) => {
                     className={`${
                         code && ' text-tabTextColor dark:text-darkTextColor/90'
                     } px-6 py-2.5 z-[2] relative dark:text-darkSubTextColor transition-all dark:text-darkSubTextColor/90 duration-500 text-text`}
-                    onClick={()=> isDarkCardView(setPreview, setCode, false)}
+                    onClick={() => isDarkCardView(setPreview, setCode, false)}
                 >
                     Code
                 </button>
@@ -63,11 +63,11 @@ const ToggleTab = ({preview, code, setPreview, setCode}) => {
             <div
                 data-id={uniqueId}
                 onClick={() => setSettingOpen(!settingOpen)}
-                className='relative border dark:border-darkBorderColor px-[11px] cursor-pointer theme_setting_btn dark:hover:bg-slate-900 hover:bg-gray-50 transition-all duration-500 py-[9px] rounded'
+                className='relative border dark:border-darkBorderColor px-[11px] cursor-pointer theme_setting_btn dark:hover:bg-slate-900 hover:bg-gray-50 transition-all duration-500 py-[9px] rounded-normal'
             >
                 <div
                     onClick={(e) => e.stopPropagation()}
-                    className={`${settingOpen ? 'opacity-100 visible z-30 translate-y-0' : 'z-[-1] opacity-0 invisible translate-y-[10px]'} theme_setting_dropdown absolute w-max dark:bg-slate-800 rounded-md p-2 transition-all duration-300 bg-white border border-gray-200/70 bottom-[115%] dark:shadow-[2px_-3px_30px_#000] dark:border-slate-700/50 shadow-[2px_1px_15px_rgba(0,0,0,0.1)] shadow-gray-200 dark:shadow-primary/30 right-0 flex items-center justify-between gap-[25px]`}>
+                    className={`${settingOpen ? 'opacity-100 visible z-30 translate-y-0' : 'z-[-1] opacity-0 invisible translate-y-[10px]'} theme_setting_dropdown absolute w-max dark:bg-slate-800 rounded-normal p-2 transition-all duration-300 bg-white border border-gray-200/70 bottom-[115%] dark:shadow-[2px_-3px_30px_#000] dark:border-slate-700/50 shadow-[2px_1px_15px_rgba(0,0,0,0.1)] shadow-gray-200 dark:shadow-primary/30 right-0 flex items-center justify-between gap-[25px]`}>
                     <p className='text-[14px] dark:text-darkSubTextColor'>Copy to clipboard with <br/> <span
                         className='text-primary'>dark:</span> classes</p>
 

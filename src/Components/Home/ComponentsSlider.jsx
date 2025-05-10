@@ -5,10 +5,13 @@ import {allComponents} from "../../Utils/AllComponents.js";
 
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
+import {useNavigate} from "react-router-dom";
 
 const ComponentsSlider = () => {
 
     const [components, setComponents] = useState(() => [...allComponents, ...allComponents])
+
+    const navigate = useNavigate();
 
     return (
         <SectionWrapper className='relative'>
@@ -42,6 +45,7 @@ const ComponentsSlider = () => {
             </div>
 
             <button
+                onClick={() => navigate("/components/all-components")}
                 className='py-3 px-6 640px:px-8 bg-[#0FABCA] text-white rounded-normal absolute -bottom-12 z-20 left-[50%] translate-x-[-50%] hover:bg-[#1cbedb] transition-all flex items-center justify-center gap-3 duration-300 group'
             >
                 All Components

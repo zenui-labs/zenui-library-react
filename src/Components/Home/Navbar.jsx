@@ -22,11 +22,10 @@ import {LiaPaletteSolid} from "react-icons/lia";
 import ConfigAiIcon from "../../SvgIcons/ConfigAiIcon.jsx";
 import {ImHtmlFive2} from "react-icons/im";
 
-const Navbar = () => {
+const Navbar = ({className}) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const navigate = useNavigate();
     const [isToolsHover, setIsToolsHover] = useState(false);
-    const [isActiveToolsMenu, setIsActiveToolsMenu] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
@@ -34,10 +33,6 @@ const Navbar = () => {
     const handleSearchClick = () => {
         setIsSearchOpen(true);
     };
-
-    const getTheRouteName = () => {
-        return window.location.pathname
-    }
 
     useEffect(() => {
         const handleClickedOutside = (event) => {
@@ -102,17 +97,13 @@ const Navbar = () => {
     }, []);
 
 
-    const handleActiveToolsMenu = () => {
-        setIsActiveToolsMenu(!isActiveToolsMenu)
-    }
-
     const handleToolsMouseHover = () => {
         setIsToolsHover(true)
     }
 
     return (<>
         <nav
-            className={`${hasShadow ? 'border-gray-100' : 'border-transparent'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500`}>
+            className={`${hasShadow ? 'border-gray-100' : 'border-transparent'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[9999] hidden transition-all duration-500 ${className}`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 
@@ -134,12 +125,12 @@ const Navbar = () => {
                             About Us
                         </Link>
 
-                        <Link to='/about-us'
+                        <Link to='/docs/overview'
                               className='dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200'>
                             Documentation
                         </Link>
 
-                        <Link to='/about-us'
+                        <Link to='/components/all-components'
                               className='dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200'>
                             Components
                         </Link>
@@ -147,18 +138,17 @@ const Navbar = () => {
                         <li
                             onMouseEnter={handleToolsMouseHover}
                             onMouseLeave={() => setIsToolsHover(false)}
-                            onClick={handleActiveToolsMenu}
-                            className={`${isActiveToolsMenu && 'text-[#0FABCA]'} cursor-pointer relative py-[23px] hover:text-[#0FABCA] dark:text-darkTextColor transition-all duration-200 flex items-center gap-[8px]`}
+                            className={`${isToolsHover && 'text-[#0FABCA]'} cursor-pointer relative py-[23px] hover:text-[#0FABCA] dark:text-darkTextColor transition-all duration-200 flex items-center gap-[8px]`}
                         >
                             Tools
                             <IoIosArrowDown
-                                className={`${(isToolsHover || isActiveToolsMenu) ? 'rotate-[180deg]' : 'rotate-0'} transition-all duration-300`}/>
+                                className={`${isToolsHover ? 'rotate-[180deg]' : 'rotate-0'} transition-all duration-300`}/>
 
-                            {(isToolsHover || isActiveToolsMenu) && (<motion.div
+                            {isToolsHover && (<motion.div
                                 initial={{opacity: 0, scale: 0.8}}
                                 animate={{opacity: 1, scale: 1}}
                                 exit={{opacity: 0, scale: 0.8}}
-                                className="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[68px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
+                                className="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
                                 onMouseEnter={() => setIsToolsHover(true)}
                                 onMouseLeave={() => setIsToolsHover(false)}
                             >
@@ -181,7 +171,7 @@ const Navbar = () => {
 
                                     </Link>
 
-                                    <Link to='/shortcut-generator'
+                                    <Link to='/color-palette'
                                           className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3 rounded-normal text-[1.8rem]'>
@@ -202,7 +192,7 @@ const Navbar = () => {
 
                                 <div className='flex flex-col gap-3'>
 
-                                    <Link to='/shortcut-generator'
+                                    <Link to='/icons'
                                           className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]'>
@@ -219,7 +209,7 @@ const Navbar = () => {
 
                                     </Link>
 
-                                    <Link to='/shortcut-generator'
+                                    <Link to='/config-generator'
                                           className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-[14px] rounded-normal'>
@@ -240,7 +230,7 @@ const Navbar = () => {
 
                                 <div className='flex flex-col'>
 
-                                    <Link to='/shortcut-generator'
+                                    <Link to='/semantic-tag-master'
                                           className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]'>

@@ -41,8 +41,8 @@ const Footer = () => {
 
     return (
         <footer
-            className="w-full border-t border-gray-100 py-8 dark:bg-darkBgColor transition-all duration-500 dark:border-darkBorderColor bg-secondary mt-16">
-            <SectionWrapper>
+            className="w-full border-t border-gray-100 pb-8 dark:bg-darkBgColor transition-all duration-500 dark:border-darkBorderColor bg-secondary mt-16">
+            <SectionWrapper className='mt-8'>
                 <div
                     className="w-full flex 640px:flex-row flex-col flex-wrap 1024px:gap-0 gap-8 justify-between items-start">
                     <div className="w-full 640px:w-[40%] 1024px:w-[28%]">

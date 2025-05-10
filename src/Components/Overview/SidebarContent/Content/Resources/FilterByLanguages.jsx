@@ -35,7 +35,7 @@ const FilterByLanguages = ({setSelectedLanguage, selectedLanguage}) => {
         {
             name: 'CSS',
             slug: 'css',
-            image: 'https://wisetrolley.com/wp-content/uploads/2023/03/CSS-T-shirt-Black-2.jpg'
+            image: 'https://i.ibb.co.com/xPG7SLT/CSS3-logo-svg.png'
         },
         {
             name: 'VueJS',
@@ -64,7 +64,7 @@ const FilterByLanguages = ({setSelectedLanguage, selectedLanguage}) => {
                 handleBlur();
             }
         };
-        
+
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -76,7 +76,7 @@ const FilterByLanguages = ({setSelectedLanguage, selectedLanguage}) => {
             {/* Selected image and name */}
             <div
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-full bg-white dark:bg-slate-900 dark:border-darkBorderColor cursor-pointer relative border border-gray-200 rounded-md px-10 py-2.5 text-gray-600 text-[0.9rem] flex items-center ${!selectedOption?.image && '!pl-4'} ${selectedOption ? 'pl-[44px]' : 'pl-4'}`}
+                className={`w-full bg-white dark:bg-slate-900 dark:border-darkBorderColor cursor-pointer relative border border-border rounded-normal px-10 py-2.5 text-gray-600 text-[0.9rem] flex items-center ${!selectedOption?.image && '!pl-4'} ${selectedOption ? 'pl-[44px]' : 'pl-4'}`}
             >
                 {selectedOption && (
                     selectedOption?.image && (
@@ -102,7 +102,8 @@ const FilterByLanguages = ({setSelectedLanguage, selectedLanguage}) => {
 
             {/* Dropdown menu */}
             {isOpen && (
-                <div className="absolute left-0 w-full mt-1 border dark:border-darkBorderColor dark:bg-slate-900 border-gray-200 rounded-md bg-white shadow-lg z-20">
+                <div
+                    className="absolute left-0 w-full mt-1 border dark:border-darkBorderColor dark:bg-slate-900 border-border rounded-normal bg-white shadow-lg z-20">
                     <div className="w-full overflow-auto py-1">
                         {platforms.map((item) => (
                             <p
