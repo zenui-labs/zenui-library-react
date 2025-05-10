@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 
 // components
 import OverviewFooter from "../../../../../Shared/OverviewFooter";
@@ -61,6 +61,21 @@ const OtpInput = () => {
         }
     };
 
+    const handleAutoNavigationPaste = (e, index) => {
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData('text').replace(/[^0-9]/g, '').slice(0, length);
+        const newOtp = [...autoNavigationInputs.current.map(input => input.value)];
+
+        for (let i = 0; i < pastedData.length && i < length; i++) {
+            newOtp[i] = pastedData[i];
+            autoNavigationInputs.current[i].value = pastedData[i];
+        }
+        onChange(newOtp.join(''));
+
+        const focusIndex = Math.min(pastedData.length, length - 1);
+        autoNavigationInputs.current[focusIndex].focus();
+    };
+
     // for custom navigation
     const handleCustomNavigationInputChange = (e, index) => {
         const { value } = e.target;
@@ -83,7 +98,6 @@ const OtpInput = () => {
         }
     }
 
-
     return (
         <>
             <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -105,7 +119,7 @@ const OtpInput = () => {
                                                 ref={(el) => (autoNavigationInputs.current[index] = el)}
                                                 className='p-3 text-center dark:bg-transparent dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-[#bcbcbc] rounded-md outline-none focus:border-primary'
                                                 placeholder='0'
-                                                max="1"
+                                                onWheel={(e) => e.target.blur()}
                                                 onChange={(e) => handleCustomNavigationInputChange(e, index)}
                                                 type='number'
                                             />
@@ -154,7 +168,7 @@ const OtpInput = () => {
                         ref={(el) => (navigationInputs.current[index] = el)}
                         className="p-3 text-center dark:bg-transparent dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-[#bcbcbc] rounded-md outline-none focus:border-[#3B9DF8]"
                         placeholder="0"
-                        max="1"
+                        onWheel={(e) => e.target.blur()}
                         onChange={(e) => handleInputChange(e, index)}
                         type="number"
                     />
@@ -174,8 +188,7 @@ export default OtpInput;
                         <ContentHeader text={"Keyboard navigation"} id={"keyboard_navigation"}/>
                     </div>
 
-                    <ComponentDescription text='OTP input field with keyboard navigation, enabling users to move between digits using arrow keys
-                        for quick and efficient entry.'/>
+                    <ComponentDescription text='OTP input field with keyboard navigation, enabling users to move between digits using arrow keys and paste numeric codes (extracting only numbers) for quick and efficient entry.'/>
 
                     <ToggleTab code={autoNavigationCode} setCode={setAutoNavigationCode} setPreview={setAutoNavigationPreview} preview={autoNavigationPreview}/>
 
@@ -190,9 +203,10 @@ export default OtpInput;
                                                 ref={(el) => (autoNavigationInputs.current[index] = el)}
                                                 className='p-3 text-center dark:bg-transparent dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-[#bcbcbc] rounded-md outline-none focus:border-primary'
                                                 placeholder='0'
-                                                max="1"
+                                                onWheel={(e) => e.target.blur()}
                                                 onChange={(e) => handleAutoNavigationInputChange(e, index)}
                                                 onKeyDown={(e) => handleAutoNavigationKeydown(e, index)}
+                                                onPaste={(e) => handleAutoNavigationPaste(e, index)}
                                                 type='number'
                                             />
                                         ))
@@ -236,6 +250,21 @@ const OtpInput = () => {
         }
     };
 
+    const handlePaste = (e, index) => {
+        e.preventDefault();
+        const pastedData = e.clipboardData.getData("text").replace(/[^0-9]/g, "").slice(0, length);
+        const newOtp = [...navigationInputs.current.map(input => input.value)];
+
+        for (let i = 0; i < pastedData.length && i < length; i++) {
+            newOtp[i] = pastedData[i];
+            navigationInputs.current[i].value = pastedData[i];
+        }
+        onChange(newOtp.join(""));
+
+        const focusIndex = Math.min(pastedData.length, length - 1);
+        navigationInputs.current[focusIndex].focus();
+    };
+
     const handleKeydown = (e, index) => {
         if (e.key === "Backspace" && !navigationInputs.current[index].value && index > 0) {
             navigationInputs.current[index - 1].focus()
@@ -251,9 +280,10 @@ const OtpInput = () => {
                         ref={(el) => (navigationInputs.current[index] = el)}
                         className="p-3 text-center dark:bg-transparent dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border border-[#bcbcbc] rounded-md outline-none focus:border-[#3B9DF8]"
                         placeholder="0"
-                        max="1"
+                        onWheel={(e) => e.target.blur()}
                         onChange={(e) => handleInputChange(e, index)}
                         onKeyDown={(e) => handleKeydown(e, index)}
+                        onPaste={(e) => handlePaste(e, index)}
                         type="number"
                     />
                 ))
