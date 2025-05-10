@@ -131,7 +131,6 @@ import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActiv
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
 import usePageTracking from "./CustomHooks/usePageTracking.js";
-import QuickSurveyModal from "./Shared/QuickSurvey/QuickSurveyModal.jsx";
 
 
 const App = () => {
@@ -165,7 +164,6 @@ const App = () => {
 
     return (
         <>
-            <QuickSurveyModal/>
             <Suspense>
                 <MenuProvider>
                     {/* all routes */}
