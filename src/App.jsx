@@ -130,6 +130,7 @@ import { MenuProvider } from "./Context/MenuContext.jsx";
 import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActivityGraphPage.jsx";
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
+import Loading from "./Components/Common/Loading.jsx";
 
 
 const App = () => {
@@ -145,7 +146,7 @@ const App = () => {
     })
 
     return (
-        <Suspense>
+        <Suspense fallback={<Loading />}>
             <MenuProvider>
             {/* all routes */}
             <Routes>
