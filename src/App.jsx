@@ -126,15 +126,16 @@ import ZenUIHeroDocsPage from "./Pages/ZenUIHeroDocsPage.jsx";
 import TimerPage from "./Pages/Components/Navigation/TimerPage.jsx";
 import ShortcutGeneratorPage from "./Pages/ShortcutGeneratorPage.jsx";
 import AIGeneratorPage from "./Pages/AIGeneratorPage.jsx";
-import { MenuProvider } from "./Context/MenuContext.jsx";
+import {MenuProvider} from "./Context/MenuContext.jsx";
 import GithubActivityGraphPage from "./Pages/Components/Data Display/GithubActivityGraphPage.jsx";
 import ComparisonCardPage from "./Pages/Components/Surfaces/ComparisonCardPage.jsx";
 import LazyImagePackagePlaygroundPage from "./Pages/LazyImagePackagePlaygroundPage.jsx";
+import usePageTracking from "./CustomHooks/usePageTracking.js";
 import Loading from "./Components/Common/Loading.jsx";
-
-
 const App = () => {
     const [isCookie, setIsCookie] = useState(false)
+
+    usePageTracking()
 
     let Title = document.title;
     window.addEventListener('blur', () => {
@@ -145,165 +146,181 @@ const App = () => {
         document.title = Title;
     })
 
+    useEffect(() => {
+        const widget = document.querySelector('#replicate-widget-container');
+
+        if (widget && widget.shadowRoot) {
+            const shadowRoot = widget.shadowRoot;
+            const style = document.createElement('style');
+            style.textContent = `
+      #feedbackWidget {
+        z-index: 1000 !important;
+      }
+    `;
+            shadowRoot.appendChild(style);
+        }
+    }, []);
     return (
-        <Suspense fallback={<Loading />}>
-            <MenuProvider>
-            {/* all routes */}
-            <Routes>
-                <Route path="/" element={<HomePage/>}/>
-                <Route path="/about-us" element={<AboutUsPage/>}/>
-                <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
+        <>
+            <Suspense fallback={<Loading />}>
+                <MenuProvider>
+                    {/* all routes */}
+                    <Routes>
+                        <Route path="/" element={<HomePage/>}/>
+                        <Route path="/about-us" element={<AboutUsPage/>}/>
+                        <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
 
-                {/* documentation */}
-                <Route path="/docs/overview" element={<OverviewPage/>}/>
-                <Route path="/docs/resources" element={<ResourcesPage/>}/>
-                <Route path="/custom-hooks" element={<ReactCustomHooksPage/>}/>
-                <Route path="/docs/installation" element={<InstallationPage/>}/>
-                <Route path="/templates" element={<TempletePage/>}/>
+                        {/* documentation */}
+                        <Route path="/docs/overview" element={<OverviewPage/>}/>
+                        <Route path="/docs/resources" element={<ResourcesPage/>}/>
+                        <Route path="/custom-hooks" element={<ReactCustomHooksPage/>}/>
+                        <Route path="/docs/installation" element={<InstallationPage/>}/>
+                        <Route path="/templates" element={<TempletePage/>}/>
 
-                {/* components */}
+                        {/* components */}
 
-                <Route
-                    path="/components/all-components"
-                    element={<AllComponentsPage/>}
-                />
+                        <Route
+                            path="/components/all-components"
+                            element={<AllComponentsPage/>}
+                        />
 
-                {/* inputs */}
-                <Route path="/components/input-text" element={<InputTextPage/>}/>
-                <Route
-                    path="/components/input-textarea"
-                    element={<InputTextareaPage/>}
-                />
-                <Route path="/components/input-switch" element={<InputSwitchPage/>}/>
-                <Route path="/components/otp-input" element={<OtpInputPage/>}/>
-                <Route path="/components/input-select" element={<InputSelectPage/>}/>
-                <Route path="/components/input-radio" element={<InputRadioPage/>}/>
-                <Route path="/components/input-file" element={<InputFilePage/>}/>
-                <Route path="/components/input-number" element={<NumberInputPage/>}/>
-                <Route path="/components/strong-password" element={<StrongPasswordPage/>}/>
-                <Route path="/components/input-checkbox" element={<CheckboxInputPage/>}/>
-                <Route path="/components/input-range" element={<InputSliderPage/>}/>
+                        {/* inputs */}
+                        <Route path="/components/input-text" element={<InputTextPage/>}/>
+                        <Route
+                            path="/components/input-textarea"
+                            element={<InputTextareaPage/>}
+                        />
+                        <Route path="/components/input-switch" element={<InputSwitchPage/>}/>
+                        <Route path="/components/otp-input" element={<OtpInputPage/>}/>
+                        <Route path="/components/input-select" element={<InputSelectPage/>}/>
+                        <Route path="/components/input-radio" element={<InputRadioPage/>}/>
+                        <Route path="/components/input-file" element={<InputFilePage/>}/>
+                        <Route path="/components/input-number" element={<NumberInputPage/>}/>
+                        <Route path="/components/strong-password" element={<StrongPasswordPage/>}/>
+                        <Route path="/components/input-checkbox" element={<CheckboxInputPage/>}/>
+                        <Route path="/components/input-range" element={<InputSliderPage/>}/>
 
-                {/* buttons */}
-                <Route path="/components/normal-button" element={<NormalPage/>}/>
-                <Route path="/components/login-buttons" element={<AuthButtonPage/>}/>
-                <Route path="/components/dropdown-button" element={<DropdownButtonPage/>}/>
-                <Route
-                    path="/components/animated-button"
-                    element={<AnimatedButtonPage/>}
-                />
+                        {/* buttons */}
+                        <Route path="/components/normal-button" element={<NormalPage/>}/>
+                        <Route path="/components/login-buttons" element={<AuthButtonPage/>}/>
+                        <Route path="/components/dropdown-button" element={<DropdownButtonPage/>}/>
+                        <Route
+                            path="/components/animated-button"
+                            element={<AnimatedButtonPage/>}
+                        />
 
-                {/* navigation */}
-                <Route path="/components/pagination" element={<PaginationPage/>}/>
-                <Route path="/components/tabs" element={<TabsPage/>}/>
-                <Route path="/components/modal" element={<ModalPage/>}/>
-                <Route path="/components/progress-bar" element={<ProgressBarPage/>}/>
-                <Route path="/components/chip" element={<ChipPage/>}/>
-                <Route path="/components/marquee" element={<MarqueePage/>}/>
-                <Route path="/components/timer" element={<TimerPage/>}/>
-                <Route path="/components/breadcrumb" element={<BreadcrumbPage/>}/>
-                <Route path="/components/rating" element={<RatingPage/>}/>
-                <Route path="/components/stepper" element={<StepsPage/>}/>
+                        {/* navigation */}
+                        <Route path="/components/pagination" element={<PaginationPage/>}/>
+                        <Route path="/components/tabs" element={<TabsPage/>}/>
+                        <Route path="/components/modal" element={<ModalPage/>}/>
+                        <Route path="/components/progress-bar" element={<ProgressBarPage/>}/>
+                        <Route path="/components/chip" element={<ChipPage/>}/>
+                        <Route path="/components/marquee" element={<MarqueePage/>}/>
+                        <Route path="/components/timer" element={<TimerPage/>}/>
+                        <Route path="/components/breadcrumb" element={<BreadcrumbPage/>}/>
+                        <Route path="/components/rating" element={<RatingPage/>}/>
+                        <Route path="/components/stepper" element={<StepsPage/>}/>
 
-                {/* feedback */}
-                <Route path="/components/context-menu" element={<ContextMenuPage/>}/>
-                <Route path="/components/skeleton" element={<SkeletonPage/>}/>
-                <Route
-                    path="/components/alert-message"
-                    element={<AlertMessagePage/>}
-                />
-                <Route path="/components/dialog-message" element={<DialogPage/>}/>
-                <Route path="/components/tree-dropdown" element={<TreeDropdownPage/>}/>
-                <Route path="/components/loader" element={<LoaderPage/>}/>
-                <Route path="/components/testimonials" element={<TestimonialPage/>}/>
-                <Route path="/components/notification" element={<NotificationPage/>}/>
+                        {/* feedback */}
+                        <Route path="/components/context-menu" element={<ContextMenuPage/>}/>
+                        <Route path="/components/skeleton" element={<SkeletonPage/>}/>
+                        <Route
+                            path="/components/alert-message"
+                            element={<AlertMessagePage/>}
+                        />
+                        <Route path="/components/dialog-message" element={<DialogPage/>}/>
+                        <Route path="/components/tree-dropdown" element={<TreeDropdownPage/>}/>
+                        <Route path="/components/loader" element={<LoaderPage/>}/>
+                        <Route path="/components/testimonials" element={<TestimonialPage/>}/>
+                        <Route path="/components/notification" element={<NotificationPage/>}/>
 
-                {/* surface */}
-                <Route path="/components/cards" element={<CardPage/>}/>
-                <Route path="/components/drag-and-drop" element={<DragAndDropPage/>}/>
-                <Route path="/components/comparison-card" element={<ComparisonCardPage/>}/>
-                <Route path="/components/image-cropper" element={<ImageCropperPage/>}/>
-                <Route path="/components/animated-cards" element={<AnimatedCardsPage/>}/>
-                <Route
-                    path="/components/image-gallery"
-                    element={<ImageGalleryPage/>}
-                />
-                <Route path="/components/carousel" element={<CarouselPage />}/>
-                <Route path="/components/according" element={<AccordingPage/>}/>
-                <Route path="/components/appbar" element={<AppbarPage/>}/>
-                <Route path="/components/resizable-layout" element={<ResizableLayoutPage/>}/>
+                        {/* surface */}
+                        <Route path="/components/cards" element={<CardPage/>}/>
+                        <Route path="/components/drag-and-drop" element={<DragAndDropPage/>}/>
+                        <Route path="/components/comparison-card" element={<ComparisonCardPage/>}/>
+                        <Route path="/components/image-cropper" element={<ImageCropperPage/>}/>
+                        <Route path="/components/animated-cards" element={<AnimatedCardsPage/>}/>
+                        <Route
+                            path="/components/image-gallery"
+                            element={<ImageGalleryPage/>}
+                        />
+                        <Route path="/components/carousel" element={<CarouselPage/>}/>
+                        <Route path="/components/according" element={<AccordingPage/>}/>
+                        <Route path="/components/appbar" element={<AppbarPage/>}/>
+                        <Route path="/components/resizable-layout" element={<ResizableLayoutPage/>}/>
 
-                {/* data display */}
-                <Route path="/components/badge" element={<BadgePage/>}/>
-                <Route path="/components/table" element={<TablePage/>}/>
-                <Route path="/components/github-activity-graph" element={<GithubActivityGraphPage/>}/>
-                <Route path="/components/pie-chart" element={<PieChartPage/>}/>
-                <Route path="/components/tooltip" element={<TooltipPage/>}/>
-                <Route path="/components/redo-undo" element={<RedoUndoPage/>}/>
-                <Route path="/components/timeline" element={<TimelinePage/>}/>
+                        {/* data display */}
+                        <Route path="/components/badge" element={<BadgePage/>}/>
+                        <Route path="/components/table" element={<TablePage/>}/>
+                        <Route path="/components/github-activity-graph" element={<GithubActivityGraphPage/>}/>
+                        <Route path="/components/pie-chart" element={<PieChartPage/>}/>
+                        <Route path="/components/tooltip" element={<TooltipPage/>}/>
+                        <Route path="/components/redo-undo" element={<RedoUndoPage/>}/>
+                        <Route path="/components/timeline" element={<TimelinePage/>}/>
 
-                {/* e-commerce */}
-                <Route path="/components/product-card" element={<ProductCardPage/>}/>
-                <Route path="/components/ads-card" element={<AdsCardPage/>}/>
+                        {/* e-commerce */}
+                        <Route path="/components/product-card" element={<ProductCardPage/>}/>
+                        <Route path="/components/ads-card" element={<AdsCardPage/>}/>
 
-                {/* randoms */}
-                <Route path="/components/code" element={<CodeSnippetPage/>}/>
-                <Route path="/components/snippet" element={<SnippetPage/>}/>
-
-
-                {/*  all blocks route  */}
-                <Route path="/blocks/all-blocks" element={<AllBlocksPage/>}/>
-                <Route path="/blocks/responsive-navbar" element={<ResponsiveNavbarPage/>}/>
-                <Route path="/blocks/hero-section" element={<HeroSectionPage/>}/>
-                <Route path="/blocks/contact-form" element={<ContactFormPage/>}/>
-                <Route path="/blocks/responsive-search-bar" element={<ResponsiveSearchbarPage/>}/>
-                <Route path="/blocks/responsive-footer" element={<ResponsiveFooterPage/>}/>
-                <Route path="/blocks/404-page" element={<WrongUrlErrorPage/>}/>
-                <Route path="/blocks/pricing-section" element={<PricingSectionPage/>}/>
-                <Route path="/blocks/newsletter-form" element={<NewsletterSectionPage/>}/>
-                <Route path="/blocks/multi-step-form" element={<MultipageFormPage/>}/>
-                <Route path="/blocks/responsive-sidebar" element={<ResponsiveSidebarPage/>}/>
-                <Route path="/blocks/empty-page" element={<WrongRoutePage/>}/>
-
-                {/* e-commerce blocks */}
-                <Route path="/blocks/offer-grid" element={<OfferGridPage/>}/>
-                <Route path="/blocks/product-details-page" element={<ProductDetailsPage/>}/>
-                <Route path="/blocks/product-filter-page" element={<ProductFilterPage/>}/>
-                <Route path="/blocks/checkout-page" element={<CheckoutPage/>}/>
+                        {/* randoms */}
+                        <Route path="/components/code" element={<CodeSnippetPage/>}/>
+                        <Route path="/components/snippet" element={<SnippetPage/>}/>
 
 
-                {/*  icons  */}
-                <Route path="/icons" element={<IconsPage/>}/>
+                        {/*  all blocks route  */}
+                        <Route path="/blocks/all-blocks" element={<AllBlocksPage/>}/>
+                        <Route path="/blocks/responsive-navbar" element={<ResponsiveNavbarPage/>}/>
+                        <Route path="/blocks/hero-section" element={<HeroSectionPage/>}/>
+                        <Route path="/blocks/contact-form" element={<ContactFormPage/>}/>
+                        <Route path="/blocks/responsive-search-bar" element={<ResponsiveSearchbarPage/>}/>
+                        <Route path="/blocks/responsive-footer" element={<ResponsiveFooterPage/>}/>
+                        <Route path="/blocks/404-page" element={<WrongUrlErrorPage/>}/>
+                        <Route path="/blocks/pricing-section" element={<PricingSectionPage/>}/>
+                        <Route path="/blocks/newsletter-form" element={<NewsletterSectionPage/>}/>
+                        <Route path="/blocks/multi-step-form" element={<MultipageFormPage/>}/>
+                        <Route path="/blocks/responsive-sidebar" element={<ResponsiveSidebarPage/>}/>
+                        <Route path="/blocks/empty-page" element={<WrongRoutePage/>}/>
 
-                {/* opacity palette */}
-                <Route path='/color-palette' element={<OpacityPalettePage/>}/>
+                        {/* e-commerce blocks */}
+                        <Route path="/blocks/offer-grid" element={<OfferGridPage/>}/>
+                        <Route path="/blocks/product-details-page" element={<ProductDetailsPage/>}/>
+                        <Route path="/blocks/product-filter-page" element={<ProductFilterPage/>}/>
+                        <Route path="/blocks/checkout-page" element={<CheckoutPage/>}/>
 
-                {/* layout playground */}
-                <Route path='/layout-playground' element={<LayoutPlaygroundPage/>}/>
 
-                {/* layout playground */}
-                <Route path='/shortcut-generator' element={<ShortcutGeneratorPage/>}/>
-                
-                {/* AI Generator */}
-                <Route path="/config-generator" element={<AIGeneratorPage/>}/>
+                        {/*  icons  */}
+                        <Route path="/icons" element={<IconsPage/>}/>
 
-                {/* become ZenUI Hero */}
-                <Route path='/zenui-hero-docs' element={<ZenUIHeroDocsPage/>}/>
+                        {/* opacity palette */}
+                        <Route path='/color-palette' element={<OpacityPalettePage/>}/>
 
-                {/* zenui lazy image package */}
-                <Route path='/zenui-image-react-playground' element={<LazyImagePackagePlaygroundPage/>}/>
+                        {/* layout playground */}
+                        <Route path='/layout-playground' element={<LayoutPlaygroundPage/>}/>
 
-                {/* Tag master */}
-                <Route path='/semantic-tag-master' element={<SemanticTagMasterPage/>}/>
+                        {/* layout playground */}
+                        <Route path='/shortcut-generator' element={<ShortcutGeneratorPage/>}/>
 
-                {/*  empty route  */}
-                <Route path="*" element={<EmptyPage/>}/>
+                        {/* AI Generator */}
+                        <Route path="/config-generator" element={<AIGeneratorPage/>}/>
 
-            </Routes>
+                        {/* become ZenUI Hero */}
+                        <Route path='/zenui-hero-docs' element={<ZenUIHeroDocsPage/>}/>
 
-            <CookieModal isModalOpen={isCookie} setisModalOpen={setIsCookie}/>
-            </MenuProvider>
-        </Suspense>
+                        {/* zenui lazy image package */}
+                        <Route path='/zenui-image-react-playground' element={<LazyImagePackagePlaygroundPage/>}/>
+
+                        {/* Tag master */}
+                        <Route path='/semantic-tag-master' element={<SemanticTagMasterPage/>}/>
+
+                        {/*  empty route  */}
+                        <Route path="*" element={<EmptyPage/>}/>
+
+                    </Routes>
+
+                    <CookieModal isModalOpen={isCookie} setisModalOpen={setIsCookie}/>
+                </MenuProvider>
+            </Suspense>
+        </>
     );
 };
 
