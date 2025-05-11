@@ -93,7 +93,7 @@ const ProgressBar = () => {
 
                     <ComponentWrapper>
                         {basicProgressBarPreview && (
-                            <div className='p-8 mb-4 flex flex-wrap items-center gap-5 justify-center'>
+                            <div className='p-8 mb-4 flex flex-col pt-12 flex-wrap items-center gap-5 justify-center'>
                                 <div className='relative dark:bg-slate-700 bg-gray-200 w-[80%] h-[15px] rounded-full'>
                                     <div
                                         className='absolute top-0 left-0 bg-primary h-full rounded-full'
@@ -164,7 +164,8 @@ export default ProgressBar;
 
                     <ComponentWrapper>
                         {progressBarWithTooltipPreview && (
-                            <div className='p-8 mb-4 mt-8 flex flex-wrap items-start gap-5 justify-center'>
+                            <div
+                                className='p-8 mb-4 mt-8 flex flex-col flex-wrap items-center gap-5 justify-center'>
                                 <div className='relative dark:bg-slate-700 bg-gray-200 w-[80%] h-[15px] rounded-full'>
                                     {progress !== 0 && (
                                         <div

@@ -415,6 +415,11 @@ const Content = () => {
                         url: "/animations/background-animations",
                         parent: 'VISUALS'
                     },
+                    {
+                        title: "Scroll Animations",
+                        url: "/animations/scroll-animations",
+                        parent: 'VISUALS'
+                    },
                 ]}
             />
             {/*  blocks  */}
