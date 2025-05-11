@@ -6,7 +6,7 @@ import {MdOutlineDone} from "react-icons/md";
 
 // store
 import useZenuiStore from "@/Store/Index.js";
-import toggleThemeBaseClasses from "../../Supports/Index.js";
+import toggleThemeBaseClasses from "../../Helpers/Index.js";
 import {IoLogoCss3} from "react-icons/io";
 
 const ShowCode = ({code}) => {

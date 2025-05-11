@@ -421,6 +421,10 @@ input[type="number"] {
     height: 8px;
 }
 
+.zenui_code_snippet {
+    border-radius: 8px !important;
+}
+
 @keyframes bounce-custom {
     0%, 100% {
         transform: translateX(0);

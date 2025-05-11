@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import {dracula} from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import SelectInput from "./SelectInput";
+import SelectInput from "./SelectInput.jsx";
 import {semanticElements} from "@utils/HTMLTagsDetailsData.js";
 import AnimatedText from "./AnimatedText.jsx"
 import AnimatedSection from "./AnimatedSection.jsx"

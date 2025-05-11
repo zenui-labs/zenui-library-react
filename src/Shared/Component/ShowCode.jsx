@@ -6,7 +6,7 @@ import {MdOutlineDone} from "react-icons/md";
 
 // store
 import useZenuiStore from "@/Store/Index.js";
-import toggleThemeBaseClasses from "../../Supports/Index.js";
+import toggleThemeBaseClasses from "../../Helpers/Index.js";
 import {IoLogoCss3} from "react-icons/io";
 
 const ShowCode = ({code}) => {
@@ -35,7 +35,7 @@ const ShowCode = ({code}) => {
     };
 
     return (
-        <div className="code-block-wrapper border border-[#ffffff15] rounded overflow-hidden">
+        <div className="code-block-wrapper border border-[#ffffff15] rounded-normal overflow-hidden">
             {/* Tabs Section */}
             {isMultiTab && (
                 <div className="flex bg-[#282a36] border-b border-[#ffffff15] pl-2 pr-4 pt-1.5">

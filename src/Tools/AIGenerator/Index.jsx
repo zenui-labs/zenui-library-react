@@ -1,11 +1,10 @@
-import {useEffect, useState, useCallback} from 'react';
+import {useEffect, useState} from 'react';
 
 // component
-import Generator from "./Generator";
-// import {FiEye} from "react-icons/fi";
+import Generator from "./Generator.jsx";
 
 const Index = () => {
-    const[isContentLoaded, setIsContentLoaded] = useState(false);
+    const [isContentLoaded, setIsContentLoaded] = useState(false);
 
 
     useEffect(() => {
@@ -24,10 +23,13 @@ const Index = () => {
             <div
                 className={`${isContentLoaded ? 'w-[150px] 1024px:w-[300px] h-[150px] 1024px:h-[300px]' : 'w-0 h-0'} bg-[#0FABCA] transition-all duration-[1000ms] blur-[150px] 1024px:blur-[300px] absolute left-0 top-0`}></div>
 
-            <h4 className="text-[2rem] 1024px:text-[2.5rem] mt-8 1024px:mt-12 text-center 1024px:text-start leading-[40px] 425px:leading-[48px] font-[600] bg-clip-text mb-1 text-transparent bg-gradient-to-r from-[#0FABCA] to-[#CD00F1]">Config AI
+            <h4 className="text-[2rem] 1024px:text-[2.5rem] mt-8 1024px:mt-12 text-center 1024px:text-start leading-[40px] 425px:leading-[48px] font-[600] bg-clip-text mb-1 text-transparent bg-gradient-to-r from-[#0FABCA] to-[#CD00F1]">Config
+                AI
                 - <span>TailwindCSS Config Generator</span></h4>
             <p className='w-full 640px:w-[90%] 1024px:w-[55%] 1024px:mt-0 text-center text-[0.9rem] 1024px:text-[1rem] font-normal text-gray-600 dark:text-darkSubTextColor'>
-             Config AI will provide you with a ready-to-use configuration by generating a <span className='bg-primary/10 text-primary px-2 py-0.5 rounded'>tailwind.config.js</span> file with custom colors, fonts, and other settings tailored to your project needs.
+                Config AI will provide you with a ready-to-use configuration by generating a <span
+                className='bg-primary/10 text-primary px-2 py-0.5 rounded'>tailwind.config.js</span> file with custom
+                colors, fonts, and other settings tailored to your project needs.
             </p>
 
             <div
