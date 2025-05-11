@@ -160,6 +160,17 @@ const OtpInput = () => {
     };
 
     return (
+        <>
+        <style>{`
+                input[type="number"]::-webkit-inner-spin-button,
+                input[type="number"]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                input[type="number"] {
+                    -moz-appearance: textfield;
+                }
+        `}</style>
         <div className="grid grid-cols-4 gap-[10px] w-full md:w-[50%]">
             {
                 Array.from({length}).map((_, index) => (
@@ -175,6 +186,7 @@ const OtpInput = () => {
                 ))
             }
         </div>
+        </>
     );
 };
 
@@ -272,6 +284,17 @@ const OtpInput = () => {
     }
 
     return (
+        <>
+        <style>{`
+                input[type="number"]::-webkit-inner-spin-button,
+                input[type="number"]::-webkit-outer-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+                input[type="number"] {
+                    -moz-appearance: textfield;
+                }
+        `}</style>
         <div className="grid grid-cols-4 gap-[10px] w-full md:w-[50%]">
             {
                 Array.from({length}).map((_, index) => (
@@ -289,6 +312,7 @@ const OtpInput = () => {
                 ))
             }
         </div>
+        </>
     );
 };
 
