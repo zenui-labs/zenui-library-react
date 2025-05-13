@@ -37,15 +37,15 @@ export const GridSwitcherContents = [
 ];
 
 // magnet cards
-export const MagnetCardContents = [
+export const DragAnimationContents = [
     {
         id: 1,
-        title: 'Basic Magnet Card',
-        href: '#basic-magnet-card',
+        title: 'drag position lock',
+        href: '#drag-position-lock',
     },
     {
         id: 2,
-        title: '3d Magnet Card',
-        href: '#3d-magnet-card',
+        title: '3d drag stack',
+        href: '#3d-drag-stack',
     },
 ];

@@ -157,6 +157,22 @@ const AnimationRoutes = [
         path: "/animations/background-animations",
         component: lazy(() => import("@pages/Animations/Visuals/BackgroundAniamtionsPage"))
     },
+    {
+        path: "/animations/dropdown-animations",
+        component: lazy(() => import("@pages/Animations/Visuals/DropdownAnimationsPage"))
+    },
+    {
+        path: "/animations/drag-animations",
+        component: lazy(() => import("@pages/Animations/Layouts/DragAnimationsPage"))
+    },
+    {
+        path: "/animations/gallery-view",
+        component: lazy(() => import("@pages/Animations/Visuals/GalleryViewPage"))
+    },
+    {
+        path: "/animations/hover-effects",
+        component: lazy(() => import("@pages/Animations/Buttons/HoverEffectsPage"))
+    },
 ];
 
 // Misc Routes

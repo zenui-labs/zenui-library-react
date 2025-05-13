@@ -395,11 +395,21 @@ const Content = () => {
                         parent: 'LAYOUTS'
                     },
                     {
+                        title: "Drag Animations",
+                        url: "/animations/drag-animations",
+                        parent: 'LAYOUTS'
+                    },
+                    {
                         label: "BUTTONS",
                     },
                     {
                         title: "Reaction Trail",
                         url: "/animations/reaction-trail",
+                        parent: 'BUTTONS'
+                    },
+                    {
+                        title: "Hover Effects",
+                        url: "/animations/hover-effects",
                         parent: 'BUTTONS'
                     },
                     {
@@ -416,8 +426,13 @@ const Content = () => {
                         parent: 'VISUALS'
                     },
                     {
-                        title: "Scroll Animations",
-                        url: "/animations/scroll-animations",
+                        title: "Dropdown Animations",
+                        url: "/animations/dropdown-animations",
+                        parent: 'VISUALS'
+                    },
+                    {
+                        title: "Gallery View",
+                        url: "/animations/gallery-view",
                         parent: 'VISUALS'
                     },
                 ]}

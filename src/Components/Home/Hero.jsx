@@ -8,12 +8,30 @@ import {BiLogoTailwindCss} from "react-icons/bi";
 import {TbBrandFramerMotion, TbBrandNextjs} from "react-icons/tb";
 import {IoChevronForward} from "react-icons/io5";
 
+import {motion} from "framer-motion";
+import useZenuiStore from "@store";
+
 const Hero = () => {
 
     const navigate = useNavigate();
 
+    const {theme} = useZenuiStore()
+
     return (<main
-        className="w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)] bg-[size:30px_30px]">
+        className="w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)] bg-[size:30px_30px] relative">
+
+        {
+            theme === "dark" && (
+                <>
+                    <div
+                        className={`absolute rotate-[-45deg] 640px:rotate-[-60deg] -top-12 640px:-top-[220px] left-0 blur-[43px] 640px:blur-[55px] w-[70px] h-[200px] 640px:h-[500px] rounded-full bg-white/30`}
+                    ></div>
+                    <div
+                        className={`absolute rotate-[45deg] 640px:rotate-[60deg] -top-12 640px:-top-[220px] right-0 blur-[43px] 640px:blur-[55px] w-[70px] h-[200px] 640px:h-[500px] rounded-full bg-white/30`}
+                    ></div>
+                </>
+            )
+        }
 
         <div
             className="px-8 max-w-[1700px] mx-auto">
