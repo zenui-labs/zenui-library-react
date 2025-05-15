@@ -21,44 +21,62 @@ Elevate your projects with ZenUI, a free, lightweight, customizable UI component
 
 ## Features
 
-- Customizable 500+ Icons
-- 600+ Components
-- color Opacity Palette
-- E-Commerce kits
-- 100+ Programming Resources
-- Extract Color From Uploaded Image (Color Picker)
-- Website Templates
+> Components
+
+- 700+ Components
+- 20+ pre-built templates
 - Website Blocks
-- Copy the Code And Use It On Your Project
+- E-commerce kits
+
+> Animations
+
+- 100+ Animated Components
+
+> Tools
+
+- Customizable 500+ Icons
+- color Opacity Palette
+- Extract Color From Uploaded Image (Color Picker)
+- HTML Semantic tagmaster
+- Keyboard shortcut key's ready function generator (shortKey)
+- Tailwind config generator (for v3)
+
+> Resources
+
+- 118+ Programming Resources
+- 32+ React reusable custom hooks
 
 <br/>
 
-## Be A Sponsor
+## Your Support = More UI Magic 😍
 
-<p><a href="https://www.buymeacoffee.com/zenuilibrary"> <img align="left" src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="50" width="210" alt="asfak00" /></a></p>
+<p><a href="https://ko-fi.com/zenuilibrary"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="asfak00" /></a></p>
 
 <br/>
 <br/>
-
 
 ## Installation
 
 Clone the repository:
+
 ```bash
 git clone https://github.com/Asfak00/zenui-library.git
 ```
 
 Go to the project directory:
+
 ```bash
 cd zenui-library
 ```
 
 Install the all dependencies:
+
 ```bash
 npm install
 ```
 
 Run the project:
+
 ```bash
 npm run dev
 ```
@@ -67,7 +85,8 @@ npm run dev
 
 ## Documentation
 
-ZenUI is a plug-and-play component library using by **Tailwind CSS** styling. Just **copy** the code and **paste** it into your project, no installation or configuration needed!
+ZenUI is a plug-and-play component library using by **Tailwind CSS** styling. Just **copy** the code and **paste** it
+into your project, no installation or configuration needed!
 
 ### Getting Started
 
@@ -84,8 +103,9 @@ ZenUI components are designed for quick and easy use. To get started, simply:
 Each component in ZenUI is built with Tailwind CSS classes. For example:
 
 ```html
+
 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-  Click Me
+    Click Me
 </button>
 ```
 
@@ -102,16 +122,17 @@ To adjust colors, sizes, or other styling attributes, modify the Tailwind classe
 ```html
 <!-- Original Button -->
 <button class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-  Click Me
+    Click Me
 </button>
 
 <!-- Customized Button -->
 <button class="px-6 py-3 bg-green-500 text-white rounded-lg hover:bg-green-600">
-  Customized Button
+    Customized Button
 </button>
 ```
 
 #### Changes:
+
 - `bg-green-500` changes the background color.
 - `px-6 py-3` adjusts padding for larger button size.
 - `rounded-lg` increases the border radius for a more rounded button.
@@ -121,13 +142,15 @@ To adjust colors, sizes, or other styling attributes, modify the Tailwind classe
 Feel free to add any Tailwind CSS class to further style components, for example, adding shadow effects or animations.
 
 ```html
+
 <div class="p-4 bg-white shadow-lg rounded-lg hover:shadow-xl transition-shadow">
-  <h2 class="text-lg font-semibold">ZenUI Card</h2>
-  <p class="text-gray-700">This is a customizable card component.</p>
+    <h2 class="text-lg font-semibold">ZenUI Card</h2>
+    <p class="text-gray-700">This is a customizable card component.</p>
 </div>
 ```
 
 #### Changes:
+
 - `shadow-lg` adds a shadow for depth.
 - `hover:shadow-xl` increases the shadow on hover.
 - `transition-shadow` adds smooth transitions for better UX.
@@ -135,26 +158,33 @@ Feel free to add any Tailwind CSS class to further style components, for example
 ### Best Practices
 
 1. **Start with Defaults**: Use ZenUI components as provided before customizing, so you know how they behave.
-2. **Use Tailwind’s Utility-First Approach**: Tailwind CSS is optimized for utility classes, so apply additional classes as needed instead of rewriting CSS.
+2. **Use Tailwind’s Utility-First Approach**: Tailwind CSS is optimized for utility classes, so apply additional classes
+   as needed instead of rewriting CSS.
 3. **Document Customizations**: Keep notes on any modifications to standard ZenUI components for easy maintenance.
-<br/>
+   <br/>
 
 ## Sell Your Template Through ZenUI Library
 
-We're excited to offer the opportunity for creators to sell their templates on the ZenUI Library! Contribute and earn by sharing your React, Next.js, or Tailwind CSS templates with our community.
+We're excited to offer the opportunity for creators to sell their templates on the ZenUI Library! Contribute and earn by
+sharing your React, Next.js, or Tailwind CSS templates with our community.
 
-For more details on how to submit and sell your templates, including guidelines, submission steps, and earnings information, please read the [TEMPLATE_SUBMISSION_GUIDE.md](https://github.com/Asfak00/zenui-library/blob/production/TEMPLATE_SUBMISSION_GUIDE.md) file.
+For more details on how to submit and sell your templates, including guidelines, submission steps, and earnings
+information, please read
+the [TEMPLATE_SUBMISSION_GUIDE.md](https://github.com/Asfak00/zenui-library/blob/production/TEMPLATE_SUBMISSION_GUIDE.md)
+file.
 
 Earn 80% commission on each sale, and help empower other developers with your creative solutions! 🚀
 
 ## Contribution
 
-We welcome contributions from the community! Please refer to the [CONTRIBUTING.md](https://github.com/Asfak00/zenui-library/blob/production/CONTRIBUTING.md) file for more details on how to contribute.
+We welcome contributions from the community! Please refer to
+the [CONTRIBUTING.md](https://github.com/Asfak00/zenui-library/blob/production/CONTRIBUTING.md) file for more details on
+how to contribute.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Asfak00/zenui-library/blob/production/LICENSE.md) file for details.
-
+This project is licensed under the MIT License - see
+the [LICENSE](https://github.com/Asfak00/zenui-library/blob/production/LICENSE.md) file for details.
 
 ## Connect With ZenUI
 
