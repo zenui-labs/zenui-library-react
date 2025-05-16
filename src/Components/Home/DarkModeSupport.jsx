@@ -7,7 +7,7 @@ import SectionWrapper from "./SectionWrapper.jsx";
 const DarkModeSupport = () => {
 
     return (
-        <SectionWrapper className='!mt-36'>
+        <SectionWrapper className='!mt-24'>
             <SectionHead
                 description={'All components and templates effortlessly support dark mode. Click on the dark mode button, explore\n' +
                     '                    components, and copy the code hassle-free.'} isSubjet={'Dark Mode'}

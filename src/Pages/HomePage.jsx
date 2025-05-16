@@ -14,6 +14,7 @@ import DarkModeSupport from "@/Components/Home/DarkModeSupport.jsx";
 import MetricsCard from "@/Components/Home/MetricsCard.jsx";
 import Navbar from "@/Components/Home/Navbar.jsx";
 import TemplatesSlider from "@/Components/Home/TemplatesSlider.jsx";
+import AnimationsBentoGrid from "@/Components/Home/AnimatonsBentoGrid.jsx";
 
 
 const HomePage = () => {
@@ -25,6 +26,7 @@ const HomePage = () => {
                 <Hero/>
                 <FeaturesCard/>
                 <ComponentsSlider/>
+                <AnimationsBentoGrid/>
                 <DarkModeSupport/>
                 <ZenUITools/>
                 <Feedback/>

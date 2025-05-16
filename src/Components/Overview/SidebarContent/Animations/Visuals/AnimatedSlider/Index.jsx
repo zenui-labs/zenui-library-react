@@ -13,12 +13,11 @@ import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
 import ToggleTab from "@shared/Component/ToggleTab.jsx";
 import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
 import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
-import {ReactionTrailContents} from "@utils/ContentsConfig/AnimationContents/ButtonContent.js";
-import LinkPreviewExample from "@animations/Buttons/HoverEffects/LinkPreviewExample.jsx";
-import AnimatedTooltipExample from "@animations/Buttons/HoverEffects/AnimatedTooltipExample.jsx";
+import {SortingAnimationContents} from "@utils/ContentsConfig/AnimationContents/LayoutContents.js";
+import ThreedCubeSliderExample from "@animations/Visuals/AnimatedSlider/ThreedCubeSliderExample.jsx";
 
 const Index = () => {
-    const sectionIds = ReactionTrailContents.map(item => item.href.slice(1));
+    const sectionIds = SortingAnimationContents.map(item => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
 
     const [googleLoginButtonPreview, setGoogleLoginButtonPreview] = useState(true);
@@ -27,7 +26,7 @@ const Index = () => {
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"animated tooltip"} id={"animated-tooltip"}/>
+                <ContentHeader text={"drag & drop sorting"} id={"drag-&-drop-sorting"}/>
 
                 <ComponentDescription
                     text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
@@ -37,30 +36,8 @@ const Index = () => {
 
                 <ComponentWrapper>
                     {googleLoginButtonPreview && (
-                        <div className="px-8 py-16 flex flex-col flex-wrap items-center gap-5 justify-center">
-                            <AnimatedTooltipExample/>
-                        </div>
-                    )}
-
-                    {googleLoginButtonCode &&
-                        <ShowCode code=''
-                        />}
-                </ComponentWrapper>
-
-                <div className='mt-8'>
-                    <ContentHeader text={"link preview"} id={"link-preview"}/>
-                </div>
-
-                <ComponentDescription
-                    text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
-
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
-
-                <ComponentWrapper>
-                    {googleLoginButtonPreview && (
-                        <div className="px-8 py-16 flex flex-col flex-wrap items-center gap-5 justify-center">
-                            <LinkPreviewExample/>
+                        <div className="p-8 flex flex-col flex-wrap items-center gap-5 justify-center">
+                            <ThreedCubeSliderExample/>
                         </div>
                     )}
 
@@ -73,7 +50,7 @@ const Index = () => {
                                 forwardUrl='/components/dropdown-button' forwardName='dropdown button'/>
             </div>
 
-            <ContentNavbar contents={ReactionTrailContents} activeSection={activeSection}/>
+            <ContentNavbar contents={SortingAnimationContents} activeSection={activeSection}/>
 
             <Helmet>
                 <title>Cards - Magnet Card</title>

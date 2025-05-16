@@ -173,6 +173,10 @@ const AnimationRoutes = [
         path: "/animations/hover-effects",
         component: lazy(() => import("@pages/Animations/Buttons/HoverEffectsPage"))
     },
+    {
+        path: "/animations/animated-slider",
+        component: lazy(() => import("@pages/Animations/Visuals/AnimatedSliderPage"))
+    },
 ];
 
 // Misc Routes

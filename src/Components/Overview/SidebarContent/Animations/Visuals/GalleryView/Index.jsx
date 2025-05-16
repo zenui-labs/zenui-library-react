@@ -14,8 +14,6 @@ import ToggleTab from "@shared/Component/ToggleTab.jsx";
 import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
 import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 import {SortingAnimationContents} from "@utils/ContentsConfig/AnimationContents/LayoutContents.js";
-import {DragPositionLockExample} from "@animations/Layouts/DragAnimations/DragPositionLockExample.jsx";
-import {ThreedDragStackExample} from "@animations/Layouts/DragAnimations/ThreedDragStackExample.jsx";
 import ImageScaleExample from "@animations/Visuals/GalleryView/ImageScaleExample.jsx";
 
 const Index = () => {

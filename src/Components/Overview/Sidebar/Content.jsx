@@ -426,6 +426,11 @@ const Content = () => {
                         parent: 'VISUALS'
                     },
                     {
+                        title: "Animated Slider",
+                        url: "/animations/animated-slider",
+                        parent: 'VISUALS'
+                    },
+                    {
                         title: "Dropdown Animations",
                         url: "/animations/dropdown-animations",
                         parent: 'VISUALS'
