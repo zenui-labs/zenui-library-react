@@ -50,16 +50,16 @@ const ComparisonCard = () => {
         >
             {/* Before Image */}
             <img
-                src="https://i.ibb.co.com/zHVTPm0J/Screenshot-3.png"
+                src="/lightcontainer.svg"
                 alt="Before"
-                className="absolute inset-0 w-full h-full rounded-normal object-fill"
+                className="absolute inset-0 w-full h-full rounded-normal object-cover"
             />
 
             {/* After Image */}
             <img
-                src="https://i.ibb.co.com/pjbwMqgP/Screenshot-4.png"
+                src="/darkcontainer.svg"
                 alt="After"
-                className="absolute inset-0 w-full h-full rounded-normal object-fill"
+                className="absolute inset-0 w-full h-full rounded-normal object-cover"
                 style={{
                     clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
                 }}

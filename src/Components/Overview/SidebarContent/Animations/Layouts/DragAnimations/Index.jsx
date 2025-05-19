@@ -18,6 +18,7 @@ import {
 } from "@utils/ContentsConfig/AnimationContents/LayoutContents.js";
 import {DragPositionLockExample} from "@animations/Layouts/DragAnimations/DragPositionLockExample.jsx";
 import {ThreedDragStackExample} from "@animations/Layouts/DragAnimations/ThreedDragStackExample.jsx";
+import DragAndDropExample from "@animations/Layouts/DragAnimations/DragAndDropExample.jsx";
 
 const Index = () => {
     const sectionIds = DragAnimationContents.map(item => item.href.slice(1));
@@ -30,6 +31,28 @@ const Index = () => {
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
                 <ContentHeader text={"drag position lock"} id={"drag-position-lock"}/>
+
+                <ComponentDescription
+                    text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
+
+                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
+                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+
+                <ComponentWrapper>
+                    {googleLoginButtonPreview && (
+                        <div className="p-8 flex flex-col flex-wrap items-center gap-5 justify-center">
+                            <DragAndDropExample/>
+                        </div>
+                    )}
+
+                    {googleLoginButtonCode &&
+                        <ShowCode code=''
+                        />}
+                </ComponentWrapper>
+
+                <div className='mt-8'>
+                    <ContentHeader text={"drag position lock"} id={"drag-position-lock"}/>
+                </div>
 
                 <ComponentDescription
                     text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>

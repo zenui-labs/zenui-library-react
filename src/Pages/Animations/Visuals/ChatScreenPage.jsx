@@ -1,9 +1,9 @@
 import React from 'react';
 import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 import SparklesText
-    from "@animations/Visuals/AnimatedSlider/Index.jsx";
+    from "@animations/Visuals/ChatScreen/Index.jsx";
 
-const AnimatedSliderPage = () => {
+const ChatScreenPage = () => {
     return (
         <ContentPageLayout>
             <SparklesText/>
@@ -11,4 +11,4 @@ const AnimatedSliderPage = () => {
     );
 };
 
-export default AnimatedSliderPage;
+export default ChatScreenPage;

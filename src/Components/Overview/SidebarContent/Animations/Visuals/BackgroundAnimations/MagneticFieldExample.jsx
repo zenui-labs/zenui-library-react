@@ -1,4 +1,5 @@
 import {useRef, useEffect, useState} from "react"
+import {IoChevronForward} from "react-icons/io5";
 
 const MagneticFieldExample = () => {
     const canvasRef = useRef(null)
@@ -125,11 +126,42 @@ const MagneticFieldExample = () => {
     }, [mousePosition])
 
     return (
-        <div className="relative w-full h-[500px] overflow-hidden rounded-high bg-gray-900">
+        <div
+            className="relative w-full min-h-[500px] flex items-center justify-center flex-col overflow-hidden rounded-high bg-gray-900">
             <canvas ref={canvasRef} className="absolute inset-0 w-full h-full"/>
-            <div className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center">
-                <h1 className="text-4xl font-bold text-white md:text-6xl">Magnetic Field</h1>
-                <p className="mt-4 text-lg text-white/70">Move your mouse to distort the field lines</p>
+            <div
+                className="relative z-10 flex text-white flex-col items-center justify-center w-full h-full text-center max-w-[700px] mx-auto">
+                <button
+                    className='py-1.5 pl-5 backdrop-blur-md pr-6 border-gray-600 rounded-full text-[0.9rem] border mb-4'>
+                    ✨ Introducing ZenUI v2.3
+                </button>
+
+                <h1
+                    className="text-[3rem] font-bold leading-[50px]">
+                    Open-Source UI Components & Templates Library
+                </h1>
+
+                <p
+                    className="text-white/80 max-w-[700px] mt-3">
+                    ZenUI Library is an Tailwind CSS components library for any needs. Comes with UI examples &
+                    blocks,
+                    templates, Icons, Color Palette and more.
+                </p>
+
+                <div
+                    className="flex items-center flex-col 640px:flex-row gap-3 justify-center 425px:gap-6 mt-10 640px:mt-12">
+                    <button
+                        className='bg-brandColor pl-5 pr-4 border border-brandColor rounded-lg py-3 flex items-center gap-2 text-[1rem] group'
+                    >
+                        Browse Components
+                        <IoChevronForward className='group-hover:ml-1 transition-all duration-200'/>
+                    </button>
+                    <button
+                        className='border-2 border-brandColor pl-5 pr-4 rounded-lg py-3 flex items-center gap-2 text-[1rem] group'>
+                        Browse Templates
+                        <IoChevronForward className='group-hover:ml-1 transition-all duration-200'/>
+                    </button>
+                </div>
             </div>
         </div>
     )

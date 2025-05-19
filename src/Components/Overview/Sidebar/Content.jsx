@@ -400,6 +400,11 @@ const Content = () => {
                         parent: 'LAYOUTS'
                     },
                     {
+                        title: "Animated Accordion",
+                        url: "/animations/animated-accordion",
+                        parent: 'LAYOUTS'
+                    },
+                    {
                         label: "BUTTONS",
                     },
                     {
@@ -426,8 +431,8 @@ const Content = () => {
                         parent: 'VISUALS'
                     },
                     {
-                        title: "Animated Slider",
-                        url: "/animations/animated-slider",
+                        title: "Chat Screen",
+                        url: "/animations/chat-screen",
                         parent: 'VISUALS'
                     },
                     {

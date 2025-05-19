@@ -21,6 +21,7 @@ import {TbIcons} from "react-icons/tb";
 import {LiaPaletteSolid} from "react-icons/lia";
 import ConfigAiIcon from "@/SvgIcons/ConfigAiIcon.jsx";
 import {ImHtmlFive2} from "react-icons/im";
+import VersionSelectBox from "@/Components/Home/VersionSelectBox.jsx";
 
 const Navbar = ({className}) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -107,11 +108,8 @@ const Navbar = ({className}) => {
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 
-                    <div className='relative mr-6 h-[52px]'>
-                            <span
-                                className='px-2.5 dark:bg-slate-800 transition-all duration-500 dark:text-slate-400 absolute right-[-40px] text-[#a4a4a8] top-0 py-0.5 bg-[#f0f0f1] rounded-full text-[12px]'>
-                                v2.3
-                            </span>
+                    <div className='relative mr-10 h-[52px]'>
+                        <VersionSelectBox/>
                         <img
                             src="/logo.png"
                             alt="logo"

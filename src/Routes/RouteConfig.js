@@ -174,8 +174,12 @@ const AnimationRoutes = [
         component: lazy(() => import("@pages/Animations/Buttons/HoverEffectsPage"))
     },
     {
-        path: "/animations/animated-slider",
-        component: lazy(() => import("@pages/Animations/Visuals/AnimatedSliderPage"))
+        path: "/animations/chat-screen",
+        component: lazy(() => import("@pages/Animations/Visuals/ChatScreenPage"))
+    },
+    {
+        path: "/animations/animated-accordion",
+        component: lazy(() => import("@pages/Animations/Layouts/AnimatedAccordionPage"))
     },
 ];
 

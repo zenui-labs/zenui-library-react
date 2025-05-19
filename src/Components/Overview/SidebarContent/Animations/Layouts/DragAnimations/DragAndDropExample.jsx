@@ -1,7 +1,7 @@
 import React, {useState, useRef} from 'react';
 import {motion, useMotionValue, AnimatePresence} from 'framer-motion';
 
-export default function DragAndSortExample() {
+export default function DragAndDropExample() {
     const [items, setItems] = useState([
         {id: '1', title: 'Complete report', category: 'Work', priority: 3, color: 'bg-blue-400'},
         {id: '2', title: 'Buy groceries', category: 'Personal', priority: 2, color: 'bg-green-400'},
@@ -89,7 +89,7 @@ const Item = ({id, item, color, moveItem, findPosition, sensors}) => {
             data-id={id}
             drag
             dragConstraints={{left: 0, right: 0, top: 0, bottom: 0}}
-            dragElastic={0.6}
+            dragElastic={0.4}
             dragOriginX={dragOriginX}
             dragOriginY={dragOriginY}
             whileDrag={{
@@ -112,7 +112,7 @@ const Item = ({id, item, color, moveItem, findPosition, sensors}) => {
             exit={{opacity: 0, scale: 0.8}}
             transition={{
                 type: "spring",
-                stiffness: 400,
+                stiffness: 200,
                 damping: 17,
             }}
         >
