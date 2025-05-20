@@ -304,7 +304,7 @@ const Navbar = ({className}) => {
         </nav>
 
         <div className={`${isSearchOpen ? 'visible z-[100]' : 'invisible z-[-1]'} transition-all duration-500`}>
-            <Search isSearchOpen={isSearchOpen}/>
+            <Search isSearchOpen={isSearchOpen} setIsSearchOpen={setIsSearchOpen}/>
         </div>
     </>);
 };

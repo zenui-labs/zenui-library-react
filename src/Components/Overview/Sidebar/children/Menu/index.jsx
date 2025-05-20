@@ -53,7 +53,6 @@ const DefaultMenu = ({items}) => {
 const CollapseMenu = ({title, isNewComponent, items}) => {
     const [isOpen, setIsOpen] = useState(true);
 
-
     return (
         <div>
             <h3

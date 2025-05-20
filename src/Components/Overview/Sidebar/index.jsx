@@ -8,7 +8,6 @@ const Sidebar = () => {
     useEffect(() => {
         const ele = sidebarRef.current;
         const scrollHandler = () => {
-            console.log(ele.scrollTop);
             setScrollY(ele.scrollTop)
         };
         ele.addEventListener("scroll", scrollHandler);

@@ -4,13 +4,41 @@ import {routes} from "./Routes/RouteConfig.js";
 import {MenuProvider} from "./Context/MenuContext.jsx";
 import usePageTracking from "./CustomHooks/usePageTracking.js";
 import FallbackLoader from "@shared/FallbackLoader.jsx";
+import ShortcutCheatsheetModal from "@shared/ShortcutCheatsheetModal.jsx";
+import {useZenUIShortcuts} from "@/CustomHooks/useZenUIShortcut.js";
 
 const CookieModal = React.lazy(() => import("./Shared/CookieModal.jsx"));
 
 const App = () => {
     const [isCookie, setIsCookie] = useState(false);
+    const [isShortcutCheatsheetOpen, setIsShortcutCheatsheetOpen] = useState(false);
 
     usePageTracking();
+    useZenUIShortcuts()
+
+    useEffect(() => {
+        const handleKeydown = (e) => {
+            const isOnlySpace =
+                e.code === "Space" &&
+                !e.altKey &&
+                !e.ctrlKey &&
+                !e.metaKey &&
+                !e.shiftKey;
+
+            if (isOnlySpace) {
+                e.preventDefault();
+                setIsShortcutCheatsheetOpen(true);
+                document.querySelector('body').style.overflow = "hidden";
+            }
+
+            if (e.key === "Escape") {
+                setIsShortcutCheatsheetOpen(false);
+            }
+        };
+
+        document.addEventListener("keydown", handleKeydown);
+        return () => document.removeEventListener("keydown", handleKeydown);
+    }, []);
 
     useEffect(() => {
         const originalTitle = document.title;
@@ -64,6 +92,7 @@ const App = () => {
                 </Routes>
 
                 <CookieModal isModalOpen={isCookie} setisModalOpen={setIsCookie}/>
+                <ShortcutCheatsheetModal isOpen={isShortcutCheatsheetOpen} setIsOpen={setIsShortcutCheatsheetOpen}/>
             </MenuProvider>
         </Suspense>
     );

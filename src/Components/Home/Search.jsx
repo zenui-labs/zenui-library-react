@@ -136,9 +136,9 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                     isSearchOpen
                         ? 'scale-[1] opacity-100 z-[100]'
                         : 'scale-[0.7] opacity-0 z-[-1]'
-                } transition-all duration-500 zenuiSearchComponent dark:bg-slate-900 bg-secondary w-[90%] 425px:w-[70%] 1024px:w-[40%] h-[80vh] p-6 rounded-high`}
+                } transition-all duration-500 zenuiSearchComponent dark:bg-slate-800 bg-secondary w-[90%] 425px:w-[70%] 1260px:w-[40%] h-[80vh] p-6 rounded-high`}
             >
-                <div className='relative bg-white dark:bg-slate-900 pb-[10px]'>
+                <div className='relative bg-white dark:bg-slate-800 pb-[10px]'>
                     <CiSearch
                         className='absolute top-[25px] transform -translate-y-1/2 left-4 text-[1.5rem] text-[#9da4b0]'/>
                     <input
@@ -147,7 +147,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                         onKeyDown={handleKeyDown}
-                        className='px-4 pl-12 dark:bg-slate-800 dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-darkTextColor py-3 w-full border rounded-normal border-gray-200 focus:border-brandColor text-text focus:outline-none'
+                        className='px-4 pl-12 dark:bg-slate-900 dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-darkTextColor py-3 w-full border rounded-normal border-gray-200 focus:border-brandColor text-text focus:outline-none'
                         placeholder='Search Component'
                         type='text'
                         autoFocus={isSearchOpen}
@@ -156,7 +156,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
 
                 <div className='h-[65vh] overflow-y-auto' style={{scrollbarWidth: 'none'}}>
                     {filteredComponentData?.length > 0 && (
-                        <div className='sticky top-0 dark:bg-slate-900 bg-white z-10'>
+                        <div className='sticky top-0 dark:bg-slate-800 bg-white z-10'>
                             <h3 className='font-bold dark:text-darkTextColor pb-[10px]'>Components</h3>
                         </div>
                     )}
@@ -170,9 +170,9 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                                 className={`flex group items-start gap-[10px] py-3 px-3 text-gray-500 
                   ${isKeyboardActive
                                     ? focusedIndex === index
-                                        ? 'bg-gray-50 dark:bg-slate-800/50'
+                                        ? 'bg-gray-50 dark:bg-slate-900'
                                         : 'text-gray-500'
-                                    : 'hover:bg-gray-50 dark:hover:bg-slate-800/50'
+                                    : 'hover:bg-gray-50 dark:hover:bg-slate-900'
                                 } rounded-md transition-colors`}
                             >
                                 <LuLayoutTemplate
@@ -200,7 +200,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                                                     className={`text-xs group-hover:bg-gray-200 dark:group-hover:bg-slate-800 dark:group-hover:text-darkSubTextColor px-2 py-0.5 rounded-full ${
                                                         focusedIndex === index
                                                             ? 'bg-gray-200 dark:bg-slate-800 dark:text-darkSubTextColor'
-                                                            : 'bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-darkSubTextColor'
+                                                            : 'bg-gray-100 text-gray-600 dark:bg-slate-900/40 dark:text-darkSubTextColor'
                                                     }`}
                                                 >
                           {tag}
@@ -213,7 +213,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                         ))}
                     </div>
                     {filteredBlocksData?.length > 0 && (
-                        <div className='sticky top-0 bg-white dark:bg-slate-900 z-10 mt-5'>
+                        <div className='sticky top-0 bg-white dark:bg-slate-800 z-10 mt-5'>
                             <h3 className='dark:text-darkTextColor font-bold pb-[10px]'>Blocks</h3>
                         </div>
                     )}
@@ -229,9 +229,9 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                                     className={`flex items-start group gap-[10px] py-3 px-3 text-gray-500 
                     ${isKeyboardActive
                                         ? focusedIndex === blockIndex
-                                            ? 'bg-gray-50 dark:bg-slate-800/50'
+                                            ? 'bg-gray-50 dark:bg-slate-900'
                                             : 'text-gray-500'
-                                        : 'hover:bg-gray-50 dark:hover:bg-slate-800/50'
+                                        : 'hover:bg-gray-50 dark:hover:bg-slate-900'
                                     } rounded-md transition-colors`}
                                 >
                                     <RxSection className='text-[1.4rem] dark:text-darkSubTextColor flex-shrink-0 mt-1'/>
@@ -258,7 +258,7 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                                                         className={`text-xs px-2 group-hover:bg-gray-200 dark:group-hover:bg-slate-800 dark:group-hover:text-darkSubTextColor py-0.5 rounded-full ${
                                                             focusedIndex === blockIndex
                                                                 ? 'bg-gray-200 dark:bg-slate-800 dark:text-darkSubTextColor'
-                                                                : 'bg-gray-100 text-gray-600 dark:bg-slate-800 dark:text-darkSubTextColor'
+                                                                : 'bg-gray-100 text-gray-600 dark:bg-slate-900/40 dark:text-darkSubTextColor'
                                                         }`}
                                                     >
                             {tag}
