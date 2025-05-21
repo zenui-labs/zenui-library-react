@@ -6,12 +6,14 @@ import usePageTracking from "./CustomHooks/usePageTracking.js";
 import FallbackLoader from "@shared/FallbackLoader.jsx";
 import ShortcutCheatsheetModal from "@shared/ShortcutCheatsheetModal.jsx";
 import {useZenUIShortcuts} from "@/CustomHooks/useZenUIShortcut.js";
+import ShortcutHintModal from "@shared/ShortcutHintModal.jsx";
 
 const CookieModal = React.lazy(() => import("./Shared/CookieModal.jsx"));
 
 const App = () => {
     const [isCookie, setIsCookie] = useState(false);
     const [isShortcutCheatsheetOpen, setIsShortcutCheatsheetOpen] = useState(false);
+    const [isHintModalOpen, setIsHintModalOpen] = useState(false)
 
     usePageTracking();
     useZenUIShortcuts()
@@ -57,6 +59,7 @@ const App = () => {
 
     useEffect(() => {
         const widget = document.querySelector('#replicate-widget-container');
+        setIsHintModalOpen(true)
 
         if (widget && widget.shadowRoot) {
             const shadowRoot = widget.shadowRoot;
@@ -91,6 +94,9 @@ const App = () => {
                     })}
                 </Routes>
 
+                {
+                    isHintModalOpen && <ShortcutHintModal setIsOpen={setIsHintModalOpen}/>
+                }
                 <CookieModal isModalOpen={isCookie} setisModalOpen={setIsCookie}/>
                 <ShortcutCheatsheetModal isOpen={isShortcutCheatsheetOpen} setIsOpen={setIsShortcutCheatsheetOpen}/>
             </MenuProvider>

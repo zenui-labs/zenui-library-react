@@ -1,4 +1,5 @@
 import React from 'react';
+import MetricsCard from "@/Components/Home/MetricsCard.jsx";
 
 const BecomeZenUIHero = () => {
     return (
@@ -168,6 +169,8 @@ const BecomeZenUIHero = () => {
                 <b className='text-center flex items-center dark:text-darkSubTextColor justify-center 640px:justify-start text-[1rem] text-gray-700'>Start
                     contributing today and make a difference!</b>
             </div>
+
+            <MetricsCard/>
         </section>
     );
 };

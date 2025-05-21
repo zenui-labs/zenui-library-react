@@ -8,7 +8,6 @@ import {BiLogoTailwindCss} from "react-icons/bi";
 import {TbBrandFramerMotion, TbBrandNextjs} from "react-icons/tb";
 import {IoChevronForward} from "react-icons/io5";
 
-import {motion} from "framer-motion";
 import useZenuiStore from "@store";
 
 const Hero = () => {

@@ -4,7 +4,7 @@ import React, {useEffect, useState} from "react";
 import {IoIosArrowDown} from "react-icons/io";
 
 // react router dom
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import Search from "./Search";
 import {FiGithub} from "react-icons/fi";
 import {RxDiscordLogo} from "react-icons/rx";
@@ -28,6 +28,8 @@ const Navbar = ({className}) => {
     const navigate = useNavigate();
     const [isToolsHover, setIsToolsHover] = useState(false);
     const [hasShadow, setHasShadow] = useState(false);
+
+    const location = useLocation()
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
@@ -104,7 +106,7 @@ const Navbar = ({className}) => {
 
     return (<>
         <nav
-            className={`${hasShadow ? 'border-gray-100' : 'border-transparent'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[9999] hidden transition-all duration-500 ${className}`}>
+            className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[9999] hidden transition-all duration-500 ${className}`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 

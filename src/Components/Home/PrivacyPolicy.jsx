@@ -1,17 +1,22 @@
 import React from 'react';
+import MetricsCard from "@/Components/Home/MetricsCard.jsx";
 
 const PrivacyPolicy = () => {
 
     const date = new Date();
 
     return (
-        <section className="w-full max-w-[1700px] 640px:px-10 px-5 1024px:px-12 pt-[2.5rem] pb-[4rem] mx-auto p-6 min-h-screen relative">
+        <section
+            className="max-w-[1300px] mx-auto mt-8 px-6 640px:px-8 1024px:px-10 1404px:px-0 w-full pt-[2.5rem] p-6 min-h-screen relative">
 
-            <div className='w-[50px] bg-[#96E8F8] h-[600px] absolute top-[-100px] opacity-50 640px:opacity-100 640px:top-[-150px] right-[250px] rotate-[70deg] dark:blur-[120px] blur-[60px]'></div>
+            <div
+                className='w-[50px] bg-[#96E8F8] h-[600px] absolute top-[-100px] opacity-50 640px:opacity-100 640px:top-[-150px] right-[250px] rotate-[70deg] dark:blur-[120px] blur-[60px]'></div>
 
             <div className='max-w-[800px] text-gray-800'>
-                <h1 className="text-3xl font-bold mb-4 text-[#0FABCA]">Privacy Policy for Zenui Library</h1>
-                <p className="mb-4 text-gray-500 dark:text-darkTextColor">Effective Date: January 1, {date.getFullYear()}</p>
+                <h1 className="text-3xl 1024px:text-4xl font-bold mb-4 text-[#0FABCA]">Privacy Policy for Zenui
+                    Library</h1>
+                <p className="mb-4 text-gray-500 dark:text-darkTextColor">Effective Date: January
+                    1, {date.getFullYear()}</p>
 
                 <p className="mb-4 dark:text-darkSubTextColor text-gray-500">
                     Welcome to Zenui Library. Your privacy is important to us. This Privacy Policy outlines how we
@@ -33,7 +38,8 @@ const PrivacyPolicy = () => {
                     services, including IP address, browser type, and operating system.
                 </p>
 
-                <h2 className="text-2xl font-semibold dark:text-darkTextColor mb-2 mt-10">2. How We Use Your Information</h2>
+                <h2 className="text-2xl font-semibold dark:text-darkTextColor mb-2 mt-10">2. How We Use Your
+                    Information</h2>
                 <p className="mb-4 dark:text-darkSubTextColor text-gray-500">
                     <strong>To Provide and Improve Services:</strong> We use your information to deliver, maintain, and
                     improve our services, including customizing your experience and responding to your inquiries.
@@ -47,7 +53,8 @@ const PrivacyPolicy = () => {
                     services and comply with legal obligations.
                 </p>
 
-                <h2 className="text-2xl font-semibold dark:text-darkTextColor mb-2 mt-10">3. Sharing Your Information</h2>
+                <h2 className="text-2xl font-semibold dark:text-darkTextColor mb-2 mt-10">3. Sharing Your
+                    Information</h2>
                 <p className="mb-4 dark:text-darkSubTextColor text-gray-500">
                     We do not sell or rent your personal information to third parties. We may share your information
                     with:
@@ -81,7 +88,8 @@ const PrivacyPolicy = () => {
                     websites you visit.
                 </p>
 
-                <h2 className="text-2xl font-semibold mb-2 dark:text-darkTextColor mt-10">7. Changes to This Privacy Policy</h2>
+                <h2 className="text-2xl font-semibold mb-2 dark:text-darkTextColor mt-10">7. Changes to This Privacy
+                    Policy</h2>
                 <p className="mb-4 dark:text-darkSubTextColor text-gray-500">
                     We may update this Privacy Policy from time to time. We will notify you of any significant changes
                     by posting the new Privacy Policy on our website. Your continued use of our services after any
@@ -97,10 +105,13 @@ const PrivacyPolicy = () => {
                     Email: <a href='mailto:zenuilibrary@gmail.com' className='!text-primary'>zenuilibrary@gmail.com</a>
                 </p>
 
-                <p className='dark:text-darkSubTextColor '>By using Zenui Library, you agree to the terms outlined in this Privacy Policy. Thank you for
+                <p className='dark:text-darkSubTextColor '>By using Zenui Library, you agree to the terms outlined in
+                    this Privacy Policy. Thank you for
                     trusting Zenui with your personal information.</p>
 
             </div>
+
+            <MetricsCard/>
         </section>
     );
 }

@@ -15,7 +15,7 @@ const ContentPageLayout = ({children}) => {
 
     return (
         <div className=''>
-            <Navbar className='!border-border dark:!border-slate-700 !border-b'/>
+            <Navbar/>
             <MobileNavbar/>
             <div className="flex w-full mx-auto max-w-[1700px]">
                 <div className="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem]">
