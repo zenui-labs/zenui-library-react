@@ -16,7 +16,6 @@ import ComponentsSlider from "./ComponentsSlider.jsx";
 import FeaturesCard from "./FeaturesCard.jsx";
 
 import {motion} from "framer-motion";
-import {FaArrowRightLong} from "react-icons/fa6";
 
 // components
 import SwitchCard from "../HomePageComponents/Switch.jsx";
@@ -53,7 +52,6 @@ const Hero = () => {
     const navigate = useNavigate();
 
     const [isAnimating, setIsAnimating] = useState(true);
-    const [showChip, setShowChip] = useState(false);
 
     useEffect(() => {
         const animationCycle = () => {
@@ -85,45 +83,6 @@ const Hero = () => {
         };
     }, []);
 
-    const electricityVariants = {
-        hidden: { opacity: 0, scale: 0.8, x: -50 },
-        visible: {
-            opacity: 1,
-            scale: 1,
-            x: 0,
-            transition: {
-                duration: 0.5,
-                type: "spring",
-                stiffness: 300,
-                damping: 15
-            }
-        }
-    };
-
-    const glowVariants = {
-        initial: { boxShadow: "0 0 0px rgba(239, 68, 68, 0)" },
-        glow: {
-            boxShadow: [
-                "0 0 2px rgba(239, 68, 68, 0.3)",
-                "0 0 8px rgba(239, 68, 68, 0.6)",
-                "0 0 15px rgba(239, 68, 68, 0.8)",
-                "0 0 8px rgba(239, 68, 68, 0.6)",
-                "0 0 2px rgba(239, 68, 68, 0.3)"
-            ],
-            transition: {
-                duration: 1.5,
-            }
-        }
-    };
-
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setShowChip(true);
-        }, 3000);
-
-        return () => clearTimeout(timer);
-    }, []);
-
     return (
         <main className="w-full min-h-screen">
 
@@ -152,107 +111,12 @@ const Hero = () => {
                                                                                               duration={3.2}/>
                             </div>
                         </a>
-
-                        {showChip && (
-                            <motion.div
-                                initial="hidden"
-                                animate="visible"
-                                variants={electricityVariants}
-                                className="relative"
-                            >
-                                <motion.div
-                                    initial="initial"
-                                    animate="glow"
-                                    variants={glowVariants}
-                                    className="px-4 py-1.5 bg-red-100 text-red-700 rounded-full text-[0.9rem] font-[500] flex items-center gap-1 relative overflow-hidden"
-                                >
-                                    {/* Electric sparks */}
-                                    <motion.span
-                                        className="absolute inset-0 z-0 opacity-50"
-                                        initial={{background: "linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,0,0,0) 100%)"}}
-                                        animate={{
-                                            background: [
-                                                "linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,0,0,0) 100%)",
-                                                "linear-gradient(90deg, rgba(255,0,0,0.2) 0%, rgba(255,150,0,0.3) 100%)",
-                                                "linear-gradient(90deg, rgba(255,100,0,0.3) 0%, rgba(255,0,0,0.2) 100%)",
-                                                "linear-gradient(90deg, rgba(255,0,0,0) 0%, rgba(255,0,0,0) 100%)"
-                                            ]
-                                        }}
-                                        transition={{
-                                            duration: 1.2,
-                                            repeat: 2,
-                                            repeatType: "reverse"
-                                        }}
-                                    />
-
-                                    {/* Zap effect */}
-                                    {[...Array(8)].map((_, i) => (
-                                        <motion.span
-                                            key={i}
-                                            className="absolute bg-yellow-300"
-                                            style={{
-                                                height: Math.random() * 8 + 2 + "px",
-                                                width: Math.random() * 3 + 1 + "px",
-                                                left: Math.random() * 100 + "%",
-                                                top: Math.random() * 100 + "%",
-                                                zIndex: -1,
-                                                borderRadius: "50%"
-                                            }}
-                                            animate={{
-                                                opacity: [0, 0.8, 0],
-                                                scale: [0.2, 1, 0.2],
-                                            }}
-                                            transition={{
-                                                duration: 0.8,
-                                                repeat: 4,
-                                                delay: i * 0.1,
-                                                repeatType: "reverse"
-                                            }}
-                                        />
-                                    ))}
-
-                                    <motion.div
-                                        className="flex items-center gap-1 relative z-10"
-                                        initial={{opacity: 0}}
-                                        animate={{opacity: 1}}
-                                        transition={{delay: 0.3, duration: 0.5}}
-                                    >
-                                        <motion.div
-                                            animate={{
-                                                rotate: [0, 10, -10, 0],
-                                                scale: [1, 1.2, 1],
-                                            }}
-                                            transition={{
-                                                duration: 0.8,
-                                                repeat: 2,
-                                                repeatType: "reverse",
-                                                delay: 0.5
-                                            }}
-                                        >
-                                            <FaFire className="text-[1rem] text-red-700"/>
-                                        </motion.div>
-                                        ZenUI 2.3 coming
-                                    </motion.div>
-                                </motion.div>
-                            </motion.div>
-                        )}
                     </div>
 
                     <div
                         className='w-[100px] h-[400px] bg-[#96E8F8] dark:bg-[#0FABCA] absolute opacity-50 dark:animate-none dark:opacity-40 640px:opacity-100 bottom-[0px] 640px:bottom-[-150px] right-12 blur-[70px] rotate-[-60deg] animate-pulse'></div>
                     <div
                         className='w-[100px] h-[300px] bg-[#9A04F5] absolute top-[-200px] animate-pulse opacity-30 left-8 blur-[70px] rotate-[-50deg]'></div>
-
-                    {/*<div className="gradient-border" data-aos="fade-zoom-in"*/}
-                    {/*     data-aos-easing="ease-in-back"*/}
-                    {/*     data-aos-delay="800"*/}
-                    {/*     data-aos-offset="0">*/}
-                    {/*  <div*/}
-                    {/*      className="px-4 w-fit mx-auto text-[0.6rem] 1024px:py-1.5 backdrop-blur-md rounded-full 1024px:text-[0.9rem] font-[500] flex items-center gap-2">*/}
-                    {/*    <FaFire className="text-[0.8rem] 1024px:text-[1.3rem] text-red-500"/>*/}
-                    {/*    <p className='bg-gradient-to-r from-[#FF0096FF] to-[#00CCFFFF] bg-clip-text text-transparent'>ZenUI 2.0 is released</p>*/}
-                    {/*  </div>*/}
-                    {/*</div>*/}
 
                     <motion.h1
                         variants={FADE_DOWN_ANIMATION_VARIANTS}
@@ -308,24 +172,6 @@ const Hero = () => {
                     <motion.div
                         variants={FADE_DOWN_ANIMATION_VARIANTS}
                         className="flex items-center flex-wrap gap-x-[20px] 640px:gap-3 425px:gap-6 mt-5">
-                        {/*<div title='Components'*/}
-                        {/*     className='flex items-center gap-[1px] text-[2.4rem] 640px:text-[2.5rem] font-[600] bg-gradient-to-r from-[#0FABCA] to-[#DB06F9] bg-clip-text text-transparent'>*/}
-                        {/*    <LuLayoutTemplate className='text-[2rem] 640px:text-[2.2rem] text-[#0FABCA] mr-1.5'/>*/}
-                        {/*    <CountUp start={0} end={600} duration={5} ></CountUp>*/}
-                        {/*    <p className='mb-1'>+</p>*/}
-                        {/*</div>*/}
-                        {/*<div title='Icons'*/}
-                        {/*     className='flex items-center gap-[1px] text-[2.4rem] 640px:text-[2.5rem] font-[600] bg-gradient-to-r from-[#0FABCA] to-[#DB06F9] bg-clip-text text-transparent'>*/}
-                        {/*    <TbIcons className='text-[2rem] 640px:text-[2.2rem] text-[#0FABCA] mr-1.5'/>*/}
-                        {/*    <CountUp start={0} end={500} duration={5} ></CountUp>*/}
-                        {/*    <p className='mb-1'>+</p>*/}
-                        {/*</div>*/}
-                        {/*<div title='Templates'*/}
-                        {/*     className='flex items-center gap-[1px] text-[2.4rem] 640px:text-[2.5rem] font-[600] bg-gradient-to-r from-[#0FABCA] to-[#DB06F9] bg-clip-text text-transparent'>*/}
-                        {/*    <CgTemplate className='text-[2rem] 640px:text-[2.4rem] text-[#0FABCA] mr-1.5'/>*/}
-                        {/*    <CountUp start={0} end={20} duration={5} ></CountUp>*/}
-                        {/*    <p className='mb-1'>+</p>*/}
-                        {/*</div>*/}
                         <a href='https://www.npmjs.com/package/zenui-image-react' target='_blank'
                            className='border flex items-center rounded-md hover:border-[#0FABCA] transition-all duration-500 hover:bg-[#0FABCA]/5 bg-gray-50 gap-[10px] dark:border-slate-700 dark:bg-slate-900 border-gray-200 py-3 px-3 cursor-pointer'>
                             <SiNpm className='text-[2rem] text-red-600'/>
