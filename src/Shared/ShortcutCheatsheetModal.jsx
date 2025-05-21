@@ -46,6 +46,11 @@ export default function ShortcutCheatsheetModal({isOpen, setIsOpen}) {
         return navigator.platform.toUpperCase().indexOf("MAC") >= 0;
     }
 
+    function handleModalClose() {
+        document.querySelector('body').style.overflow = "auto";
+        setIsOpen(false)
+    }
+
     return (
         <AnimatePresence>
             {isOpen && (
@@ -66,7 +71,7 @@ export default function ShortcutCheatsheetModal({isOpen, setIsOpen}) {
                     >
                         <button
                             className="absolute top-4 right-4 text-xl font-bold text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
-                            onClick={() => setIsOpen(false)}
+                            onClick={handleModalClose}
                         >
                             <RxCross1 className="text-[1rem]"/>
                         </button>

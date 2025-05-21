@@ -35,6 +35,7 @@ const App = () => {
 
             if (e.key === "Escape") {
                 setIsShortcutCheatsheetOpen(false);
+                document.querySelector('body').style.overflow = "auto";
             }
         };
 
