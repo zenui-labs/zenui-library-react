@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { useRef, useState } from "react";
+import {motion} from "framer-motion";
+import {useRef, useState} from "react";
 
 const ThreedMagnetCardExample = () => {
     const cardRef = useRef(null);
-    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [position, setPosition] = useState({x: 0, y: 0});
     const [isHovered, setIsHovered] = useState(false);
 
     const magnetStrength = 35;
@@ -13,8 +13,8 @@ const ThreedMagnetCardExample = () => {
     const handleMouseMove = (e) => {
         if (!cardRef.current) return;
 
-        const { clientX, clientY } = e;
-        const { left, top, width, height } = cardRef.current.getBoundingClientRect();
+        const {clientX, clientY} = e;
+        const {left, top, width, height} = cardRef.current.getBoundingClientRect();
 
         const centerX = left + width / 2;
         const centerY = top + height / 2;
@@ -30,7 +30,7 @@ const ThreedMagnetCardExample = () => {
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-        setPosition({ x: 0, y: 0 });
+        setPosition({x: 0, y: 0});
     };
 
     const handleMouseEnter = () => {
@@ -40,7 +40,7 @@ const ThreedMagnetCardExample = () => {
     return (
         <motion.div
             ref={cardRef}
-            className="relative w-96 cursor-pointer dark:bg-slate-900 dark:border-slate-700 rounded-md bg-white shadow-[2px_1px_15px_rgba(0,0,0,0.04)] overflow-hidden border border-gray-200"
+            className="relative w-full 640px:w-96 cursor-pointer dark:bg-slate-900 dark:border-slate-700 rounded-md bg-white shadow-[2px_1px_15px_rgba(0,0,0,0.04)] overflow-hidden border border-gray-200"
             animate={{
                 x: position.x,
                 y: position.y,
@@ -75,10 +75,12 @@ const ThreedMagnetCardExample = () => {
                         A UI library for React with modern components and elegant animations.
                     </p>
                     <div className="mt-auto pt-4 flex gap-3">
-                        <button className="flex-1 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition">
+                        <button
+                            className="flex-1 py-2 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 transition">
                             Explore
                         </button>
-                        <button className="flex-1 py-2 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-100 transition">
+                        <button
+                            className="flex-1 py-2 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-100 transition">
                             Docs
                         </button>
                     </div>

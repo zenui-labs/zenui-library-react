@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
+import {useRef, useState} from "react";
 
 // framer motion
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 // react icons
 import {FaRegStar, FaStar} from "react-icons/fa";
@@ -9,7 +9,7 @@ import {FaRegStar, FaStar} from "react-icons/fa";
 const ParallaxCardExample = () => {
     const cardRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
-    const [mousePos, setMousePos] = useState({ x: 0.5, y: 0.5 });
+    const [mousePos, setMousePos] = useState({x: 0.5, y: 0.5});
     const [selectedSize, setSelectedSize] = useState(7);
     const [selectedColor, setSelectedColor] = useState("bg-red-600");
 
@@ -30,7 +30,7 @@ const ParallaxCardExample = () => {
         };
     };
 
-    const parallax = isHovered ? getOffset(1) : { x: 0, y: 0 };
+    const parallax = isHovered ? getOffset(1) : {x: 0, y: 0};
     const imageZoom = isHovered ? 1.2 : 1;
 
     return (
@@ -39,14 +39,14 @@ const ParallaxCardExample = () => {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
             onMouseMove={handleMouseMove}
-            className="w-80 rounded-[12px] bg-white dark:bg-slate-900 p-5 relative shadow-[0px_0px_10px_0px_rgba(0,0,0,0.07)]"
+            className="w-full 640px:w-80 rounded-[12px] bg-white dark:bg-slate-900 p-5 relative shadow-[0px_0px_10px_0px_rgba(0,0,0,0.07)]"
         >
             <motion.div
                 animate={{
                     x: parallax.x,
                     y: parallax.y,
                 }}
-                transition={{ type: "spring", stiffness: 120, damping: 12 }}
+                transition={{type: "spring", stiffness: 120, damping: 12}}
                 className="relative z-10"
             >
                 <motion.img
@@ -58,7 +58,7 @@ const ParallaxCardExample = () => {
                         x: parallax.x,
                         y: parallax.y,
                     }}
-                    transition={{ type: "spring", stiffness: 250, damping: 18 }}
+                    transition={{type: "spring", stiffness: 250, damping: 18}}
                 />
 
                 <div className="relative z-20 pt-32">
@@ -96,7 +96,7 @@ const ParallaxCardExample = () => {
                             (color, i) => (
                                 <div
                                     key={i}
-                                    onClick={()=> setSelectedColor(color)}
+                                    onClick={() => setSelectedColor(color)}
                                     className={`w-5 h-5 outline cursor-pointer outline-offset-1 rounded-full ${selectedColor === color ? 'outline-[#0FABCA]' : 'outline-transparent'} border-2 border-white dark:border-slate-900 ${color}`}
                                 />
                             )
@@ -108,7 +108,8 @@ const ParallaxCardExample = () => {
                             <p className="text-[#0FABCA] font-bold text-lg">$127</p>
                             <p className="text-[1rem] dark:text-darkTextColor/80 text-gray-500">USD</p>
                         </div>
-                        <button className="bg-[#0FABCA] text-white px-4 py-2 rounded-[8px] text-sm hover:bg-[#0FABCA]/90 transition">
+                        <button
+                            className="bg-[#0FABCA] text-white px-4 py-2 rounded-[8px] text-sm hover:bg-[#0FABCA]/90 transition">
                             More Details
                         </button>
                     </div>

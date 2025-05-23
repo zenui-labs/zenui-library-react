@@ -1,7 +1,7 @@
 import {motion} from "framer-motion";
 import {useRef, useState} from "react";
 
-const PortfolioProjectCard = () => {
+const BasicMagnetCardExample = () => {
     const cardRef = useRef(null);
     const [position, setPosition] = useState({x: 0, y: 0});
     const [isHovered, setIsHovered] = useState(false);
@@ -40,7 +40,7 @@ const PortfolioProjectCard = () => {
     return (
         <motion.div
             ref={cardRef}
-            className="relative w-[70%] p-5 rounded-xl border border-border dark:border-white/20 bg-white dark:bg-white/10 backdrop-blur-lg shadow-[2px_1px_10px_rgba(0,0,0,0.1)] cursor-pointer overflow-hidden transition-colors"
+            className="relative w-full 640px:w-[70%] p-5 rounded-xl border border-border dark:border-white/20 bg-white dark:bg-white/10 backdrop-blur-lg shadow-[2px_1px_10px_rgba(0,0,0,0.1)] cursor-pointer overflow-hidden transition-colors"
             animate={{
                 x: position.x,
                 y: position.y,
@@ -119,4 +119,4 @@ const PortfolioProjectCard = () => {
     );
 };
 
-export default PortfolioProjectCard;
+export default BasicMagnetCardExample;

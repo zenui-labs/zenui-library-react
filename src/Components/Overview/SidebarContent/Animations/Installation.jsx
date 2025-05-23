@@ -85,7 +85,7 @@ const Installation = () => {
             </div>
 
             <div className='w-full 1024px:w-[80%]'>
-                <BlocksFooter isBackButton={false} forwardUrl='/docs/resources' forwardName='resources'/>
+                <BlocksFooter isBackButton={false} forwardUrl='/animations/magic-card' forwardName='magic card'/>
             </div>
 
             <Helmet>

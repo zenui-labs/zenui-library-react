@@ -1,178 +1,93 @@
-import {useState, useRef, useEffect} from "react";
+import {useRef, useState} from "react";
+import {motion} from "framer-motion";
 
-// react icons
-import {LuRedo2, LuUndo2} from "react-icons/lu";
+const ThreedMagnetCardExample = () => {
+    const cardRef = useRef(null);
+    const [position, setPosition] = useState({x: 0, y: 0});
+    const [isHovered, setIsHovered] = useState(false);
 
-function RedoUndoUsingButtonAndKeyboard() {
-    const MAX_HISTORY_LENGTH = 30;
-    const SAVE_DELAY = 800;
+    const magnetStrength = 35;
+    const rotationFactor = 1;
+    const scaleFactor = 1.05;
 
-    const editorRef = useRef(null);
-    const [history, setHistory] = useState(["Start typing here..."]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isUndoRedo, setIsUndoRedo] = useState(false);
-    const timerRef = useRef(null);
-    const lastContentRef = useRef("Start typing here...");
+    const handleMouseMove = (e) => {
+        if (!cardRef.current) return;
 
-    useEffect(() => {
-        if (isUndoRedo && editorRef.current) {
-            editorRef.current.innerHTML = history[currentIndex];
-            lastContentRef.current = history[currentIndex];
-            setIsUndoRedo(false);
+        const {clientX, clientY} = e;
+        const {left, top, width, height} = cardRef.current.getBoundingClientRect();
 
-            if (document.hasFocus()) {
-                try {
-                    const range = document.createRange();
-                    const sel = window.getSelection();
-                    range.selectNodeContents(editorRef.current);
-                    range.collapse(false);
-                    sel.removeAllRanges();
-                    sel.addRange(range);
-                    editorRef.current.focus();
-                } catch (e) {
-                    console.log("Selection error handled");
-                }
-            }
-        }
-    }, [currentIndex, isUndoRedo, history]);
+        const centerX = left + width / 2;
+        const centerY = top + height / 2;
 
-    useEffect(() => {
-        if (editorRef.current) {
-            editorRef.current.innerHTML = history[0];
-            lastContentRef.current = history[0];
-        }
+        const x = (clientX - centerX) / (width / 2);
+        const y = (clientY - centerY) / (height / 2);
 
-        return () => {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-                timerRef.current = null;
-            }
-        };
-    }, []);
-
-    const saveToHistory = (newContent) => {
-        if (newContent !== lastContentRef.current) {
-            let newHistory = history.slice(0, currentIndex + 1);
-            newHistory.push(newContent);
-
-            if (newHistory.length > MAX_HISTORY_LENGTH) {
-                const itemsToRemove = newHistory.length - MAX_HISTORY_LENGTH;
-                if (itemsToRemove > 0) {
-                    const firstItem = newHistory[0];
-                    newHistory = [firstItem, ...newHistory.slice(itemsToRemove + 1)];
-                    const newIndex = Math.max(0, currentIndex - itemsToRemove);
-                    setCurrentIndex(newIndex);
-                }
-            } else {
-                setCurrentIndex(newHistory.length - 1);
-            }
-
-            setHistory(newHistory);
-            lastContentRef.current = newContent;
-        }
+        setPosition({
+            x: x * magnetStrength,
+            y: y * magnetStrength,
+        });
     };
 
-    const handleChange = () => {
-        if (!editorRef.current) return;
-
-        const newContent = editorRef.current.innerHTML;
-
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-        }
-
-        timerRef.current = setTimeout(() => {
-            saveToHistory(newContent);
-            timerRef.current = null;
-        }, SAVE_DELAY);
+    const handleMouseLeave = () => {
+        setIsHovered(false);
+        setPosition({x: 0, y: 0});
     };
 
-    const handleUndo = () => {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-            timerRef.current = null;
-
-            if (editorRef.current && editorRef.current.innerHTML !== lastContentRef.current) {
-                saveToHistory(editorRef.current.innerHTML);
-            }
-        }
-
-        if (currentIndex > 0) {
-            setIsUndoRedo(true);
-            setCurrentIndex(currentIndex - 1);
-        }
+    const handleMouseEnter = () => {
+        setIsHovered(true);
     };
-
-    const handleRedo = () => {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-            timerRef.current = null;
-        }
-
-        if (currentIndex < history.length - 1) {
-            setIsUndoRedo(true);
-            setCurrentIndex(currentIndex + 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.ctrlKey || event.metaKey) {
-                if (event.key === "Z") {
-                    event.preventDefault();
-                    handleUndo();
-                } else if (event.key === "Y") {
-                    event.preventDefault();
-                    handleRedo();
-                }
-            }
-        };
-
-        document.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
-
 
     return (
-        <div className="w-full">
-            <div className="flex gap-2 mb-4">
-                <button
-                    onClick={handleUndo}
-                    disabled={currentIndex <= 0}
-                    className={`px-3 py-2 rounded ${
-                        currentIndex <= 0
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
-                    }`}
-                >
-                    <LuUndo2/>
-                </button>
+        <motion.div
+            ref={cardRef}
+            className="relative w-full md:w-96 cursor-pointer dark:bg-slate-900 dark:border-slate-700 rounded-md bg-white shadow-[2px_1px_15px_rgba(0,0,0,0.04)] overflow-hidden border border-gray-200"
+            animate={{
+                x: position.x,
+                y: position.y,
+                rotateX: position.y * rotationFactor,
+                rotateY: position.x * -rotationFactor,
+                scale: isHovered ? scaleFactor : 1,
+            }}
+            transition={{
+                type: "spring",
+                stiffness: 250,
+                damping: 20,
+                mass: 1,
+            }}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            onMouseEnter={handleMouseEnter}
+        >
+            <div className="flex flex-col justify-between h-full">
+                {/* Image */}
+                <div className="w-full overflow-hidden">
+                    <img
+                        src="https://camo.githubusercontent.com/9e8ab41e42e1b9eaba15f4f947fcd3e1ae7bfac3cf6fc1f3f784b7f84c26da36/68747470733a2f2f692e6962622e636f2e636f6d2f435774645231392f706f73742e706e67"
+                        alt="Product Preview"
+                        className="object-cover w-full h-full"
+                    />
+                </div>
 
-                <button
-                    onClick={handleRedo}
-                    disabled={currentIndex >= history.length - 1}
-                    className={`px-3 py-2 rounded ${
-                        currentIndex >= history.length - 1
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
-                    }`}
-                >
-                    <LuRedo2 />
-                </button>
+                {/* Content */}
+                <div className="flex flex-col p-5 space-y-2 flex-grow">
+                    <h3 className="text-xl font-semibold dark:text-[#abc2d3] text-gray-800">ZenUI Library</h3>
+                    <p className="text-sm dark:text-[#abc2d3]/80 text-gray-500">
+                        A UI library for React with modern components and elegant animations.
+                    </p>
+                    <div className="mt-auto pt-4 flex gap-3">
+                        <button
+                            className="flex-1 py-2 rounded-lg bg-[#3B9DF8] text-white text-sm font-medium hover:bg-[#3B9DF8]/90 transition">
+                            Explore
+                        </button>
+                        <button
+                            className="flex-1 py-2 dark:border-slate-700 dark:text-[#abc2d3] dark:hover:bg-slate-800 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-100 transition">
+                            Docs
+                        </button>
+                    </div>
+                </div>
             </div>
-
-            <div
-                ref={editorRef}
-                contentEditable={true}
-                onInput={handleChange}
-                className="min-h-64 p-4 cursor-text border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B9DF8] focus:border-transparent"
-            />
-
-        </div>
+        </motion.div>
     );
-}
+};
 
-export default RedoUndoUsingButtonAndKeyboard;
+export default ThreedMagnetCardExample;
