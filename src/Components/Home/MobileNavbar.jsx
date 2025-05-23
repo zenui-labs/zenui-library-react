@@ -13,6 +13,7 @@ import {AnimatePresence, motion} from "framer-motion";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 import useZenuiStore from "../../Store/Index.js";
+import VersionSelectBox from "./VersionSelectBox.jsx";
 
 const MobileNavbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -40,7 +41,7 @@ const MobileNavbar = () => {
             if (!event.target.closest('.zenuiSearchComponent') && !event.target.closest('.zenuiSearchInput')) {
                 setIsSearchOpen(false)
             }
-    
+
             if (!event.target.closest('.mobileSidebar') && !event.target.closest('.mobileSidebarButton')) {
                 setSidebarOpen(false)
             }
@@ -72,10 +73,7 @@ const MobileNavbar = () => {
                         className='w-[100px] h-[300px] bg-[#9A04F5] absolute top-[-150px] opacity-30 left-0 blur-[70px] rotate-[-50deg]'></div>
 
                     <div className='relative'>
-                        <span
-                            className='px-2 absolute dark:bg-slate-800 dark:text-slate-400 right-[-33px] text-[#a4a4a8] top-1 py-[1px] bg-[#f0f0f1] rounded-full text-[10px]'>
-                            v2.2
-                        </span>
+                        <VersionSelectBox/>
                         <img
                             src="/darklogo.png"
                             alt="logo"
@@ -115,7 +113,9 @@ const MobileNavbar = () => {
             <aside
                 className={`${sidebarOpen ? 'translate-x-0 opacity-100 z-[999]' : 'translate-x-[200px] opacity-0 z-[-1]'} fixed top-0 mobileSidebar dark:bg-slate-900 right-0 py-5 px-[1.3rem] w-[90%] block 1024px:hidden 640px:w-[50%] h-screen transition-all duration-500 bg-white toastshadow overflow-y-auto`}>
 
-                <RxCross2 className='text-[1.3rem] dark:text-darkSubTextColor text-gray-700 mb-[20px] absolute left-[15px]' onClick={()=> setSidebarOpen(false)}/>
+                <RxCross2
+                    className='text-[1.3rem] dark:text-darkSubTextColor text-gray-700 mb-[20px] absolute left-[15px]'
+                    onClick={() => setSidebarOpen(false)}/>
 
                 <div className="zenuiSearchInput mt-[45px] relative w-full" onClick={handleSearchClick}>
                     <IoIosSearch
@@ -147,11 +147,13 @@ const MobileNavbar = () => {
             </span>
                 </div>
                 <ul className='text-gray-600 flex flex-col mt-5 items-start gap-4 font-[500] capitalize text-[1rem]'>
-                    <Link to='/about-us' className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>About Us</Link>
+                    <Link to='/about-us' className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>About
+                        Us</Link>
                     <li onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                         className='cursor-pointer relative dark:text-darkSubTextColor flex items-center gap-[8px]'>
                         Tools
-                        <IoIosArrowDown className={`${toolsDropdownOpen ? 'rotate-[180deg]': 'rotate-0'} transition-all duration-300`}/>
+                        <IoIosArrowDown
+                            className={`${toolsDropdownOpen ? 'rotate-[180deg]' : 'rotate-0'} transition-all duration-300`}/>
                     </li>
 
                     {
@@ -223,7 +225,8 @@ const MobileNavbar = () => {
                     <li onClick={() => setDeveloperKitDropdownOpen(!developerKitDropdownOpen)}
                         className='cursor-pointer dark:text-darkSubTextColor flex items-center gap-[8px] mt-1.5'>
                         Components
-                        <IoIosArrowDown className={`${developerKitDropdownOpen ? 'rotate-[180deg]': 'rotate-0'} transition-all duration-300`}/>
+                        <IoIosArrowDown
+                            className={`${developerKitDropdownOpen ? 'rotate-[180deg]' : 'rotate-0'} transition-all duration-300`}/>
                     </li>
 
                     {
@@ -279,7 +282,8 @@ const MobileNavbar = () => {
                     <li onClick={() => setECommerceDropdownOpen(!eCommerceDropdownOpen)}
                         className='cursor-pointer relative dark:text-darkSubTextColor flex items-center gap-[8px] mt-1.5'>
                         E-Commerce
-                        <IoIosArrowDown className={`${eCommerceDropdownOpen ? 'rotate-[180deg]': 'rotate-0'} transition-all duration-300`}/>
+                        <IoIosArrowDown
+                            className={`${eCommerceDropdownOpen ? 'rotate-[180deg]' : 'rotate-0'} transition-all duration-300`}/>
                     </li>
 
                     {
