@@ -14,6 +14,7 @@ import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 import useZenuiStore from "@/Store/Index.js";
 import CommandIcon from "@/SvgIcons/CommandIcon.jsx";
+import VersionSelectBox from "@/Components/Home/VersionSelectBox.jsx";
 
 const NewMobileNavbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -68,10 +69,7 @@ const NewMobileNavbar = () => {
                 className="flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50">
                 <div className="flex items-center gap-8 relative">
                     <div className='relative'>
-                        <span
-                            className='px-2 absolute dark:bg-slate-800 dark:text-slate-400 right-[-33px] text-[#a4a4a8] top-1 py-[1px] bg-[#f0f0f1] rounded-full text-[10px]'>
-                            v2.3
-                        </span>
+                        <VersionSelectBox/>
                         <img
                             src="/darklogo.png"
                             alt="logo"
