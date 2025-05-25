@@ -168,7 +168,6 @@ const Content = () => {
                         title: "Image Cropper",
                         url: "/components/image-cropper",
                         parent: 'SURFACES',
-                        isNewComponent: true
                     },
                     {
                         title: "Accordion",
@@ -212,7 +211,6 @@ const Content = () => {
                         title: "Marquee",
                         url: "/components/marquee",
                         parent: 'NAVIGATION',
-                        isNewComponent: true
                     },
                     {
                         title: "Timer",
@@ -304,7 +302,6 @@ const Content = () => {
                         title: "Redo & Undo",
                         url: "/components/redo-undo",
                         parent: 'DATA DISPLAY',
-                        isNewComponent: true
                     },
                     {
                         title: "Github Activity Graph",
@@ -390,8 +387,8 @@ const Content = () => {
                         parent: 'LAYOUTS'
                     },
                     {
-                        title: "Grid Switcher",
-                        url: "/animations/grid-switcher",
+                        title: "Layout Switcher",
+                        url: "/animations/layout-switcher",
                         parent: 'LAYOUTS'
                     },
                     {

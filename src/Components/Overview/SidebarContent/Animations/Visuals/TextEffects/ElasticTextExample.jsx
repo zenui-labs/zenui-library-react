@@ -37,7 +37,7 @@ const ElasticTextExample = () => {
                 key={key}
                 initial="hidden"
                 animate="visible"
-                className="text-3xl font-bold overflow-hidden"
+                className="text-3xl font-bold text-center dark:text-darkTextColor overflow-hidden"
             >
                 {text.split("").map((char, i) => (
                     <motion.span

@@ -1454,7 +1454,7 @@ export default Modal;
                                                 modal9Open
                                                     ? ' translate-x-[0px] opacity-100'
                                                     : ' translate-x-[-200px] opacity-0'
-                                            } overflow-y-scroll zenUIRightModal w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300`}
+                                            } overflow-y-scroll zenUIRightModal w-full 640px:w-[80%] 1024px:w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300`}
                                         >
                                             <div className='w-full flex items-end p-4 justify-end'>
                                                 <RxCross1
@@ -1463,7 +1463,8 @@ export default Modal;
                                                 />
                                             </div>
 
-                                            <div className='flex items-start flex-col p-12 justify-between gap-8'>
+                                            <div
+                                                className='flex items-start flex-col p-6 640px:p-12 justify-between gap-8'>
                                                 <div
                                                     className='bg-[#fff] dark:bg-slate-900 min-h-screen rounded-md p-6 w-full'>
                                                     {/* steps */}
@@ -1645,7 +1646,7 @@ export default Modal;
                                                 modal8Open
                                                     ? ' translate-x-[0px] opacity-100'
                                                     : ' translate-x-[200px] opacity-0'
-                                            } overflow-y-scroll zenUIRightModal w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300 float-right`}
+                                            } overflow-y-scroll zenUIRightModal w-full 640px:w-[80%] 1024px:w-[40%]  dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300 float-right`}
                                         >
                                             <div className='w-full flex items-end p-4 justify-end'>
                                                 <RxCross1
@@ -1654,7 +1655,8 @@ export default Modal;
                                                 />
                                             </div>
 
-                                            <div className='flex items-start flex-col p-12 justify-between gap-8'>
+                                            <div
+                                                className='flex items-start flex-col p-6 640px:p-12 justify-between gap-8'>
                                                 <div
                                                     className='bg-[#fff] dark:bg-slate-900 min-h-screen rounded-md p-6 w-full'>
                                                     {/* steps */}
@@ -1869,7 +1871,7 @@ const Modal = () => {
                         isModalOpen
                             ? " translate-x-[0px] opacity-100"
                             : " translate-x-[-200px] opacity-0"
-                    } overflow-y-scroll zenUIModal w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300`}
+                    } overflow-y-scroll zenUIModal w-full md:w-[80%] lg:w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300`}
                 >
                     <div className="w-full flex items-end p-4 justify-end">
                         <RxCross1
@@ -1878,7 +1880,7 @@ const Modal = () => {
                         />
                     </div>
 
-                    <div className="flex items-start flex-col p-12 justify-between gap-8">
+                    <div className="flex items-start flex-col p-6 md:p-12 justify-between gap-8">
                         <div className="bg-[#fff] dark:bg-slate-900 min-h-screen rounded-md p-6 w-full">
                             {/* steps */}
                             <div className="flex items-center md:flex-row flex-col justify-between w-full border-b border-[#d1d1d1] dark:border-slate-700 flex-wrap gap-y-6">
@@ -2049,7 +2051,7 @@ const Modal = () => {
                         isModalOpen
                             ? " translate-x-[0px] opacity-100"
                             : " translate-x-[200px] opacity-0"
-                    } overflow-y-scroll zenUIModal w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300 float-right`}
+                    } overflow-y-scroll zenUIModal w-full md:w-[80%] lg:w-[40%] dark:bg-slate-800 h-screen bg-[#eceef6] transition-all duration-300 float-right`}
                 >
                     <div className="w-full flex items-end p-4 justify-end">
                         <RxCross1
@@ -2058,7 +2060,7 @@ const Modal = () => {
                         />
                     </div>
 
-                    <div className="flex items-start flex-col p-12 justify-between gap-8">
+                    <div className="flex items-start flex-col p-6 md:p-12 justify-between gap-8">
                         <div className="bg-[#fff] dark:bg-slate-900 min-h-screen rounded-md p-6 w-full">
                             {/* steps */}
                             <div className="flex items-center md:flex-row flex-col justify-between w-full border-b border-[#d1d1d1] dark:border-slate-700 flex-wrap gap-y-6">

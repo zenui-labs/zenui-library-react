@@ -150,7 +150,10 @@ const AnimationRoutes = [
         path: "/animations/sorting-animation",
         component: lazy(() => import("@pages/Animations/Layouts/SortingAnimationPage"))
     },
-    {path: "/animations/grid-switcher", component: lazy(() => import("@pages/Animations/Layouts/GridSwitcherPage"))},
+    {
+        path: "/animations/layout-switcher",
+        component: lazy(() => import("@pages/Animations/Layouts/LayoutSwitcherPage"))
+    },
     {path: "/animations/reaction-trail", component: lazy(() => import("@pages/Animations/Buttons/ReactionTrailPage"))},
     {path: "/animations/text-effects", component: lazy(() => import("@pages/Animations/Visuals/TextEffectsPage"))},
     {

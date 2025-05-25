@@ -1,7 +1,7 @@
-// AnimatedTooltipExample.tsx
 import React, {useState, useRef} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 
+// data
 const users = [
     {
         name: 'Alice Johnson',
@@ -55,7 +55,7 @@ const AnimatedTooltipExample = () => {
                     <img
                         src={user.image}
                         alt={user.name}
-                        className="w-14 h-14 rounded-full object-cover border-2 border-white shadow-md hover:scale-105 transition-all duration-200 cursor-pointer"
+                        className="w-14 h-14 rounded-full object-cover border-2 dark:border-slate-700 border-white shadow-md hover:scale-105 transition-all duration-200 cursor-pointer"
                     />
                 </div>
             ))}
@@ -76,17 +76,17 @@ const AnimatedTooltipExample = () => {
                             stiffness: 400,
                             damping: 20,
                         }}
-                        className="absolute w-max bg-white border text-center shadow-lg px-5 rounded-lg py-2.5 pointer-events-none z-0"
+                        className="absolute w-max dark:bg-slate-800 dark:border-slate-700 bg-white border text-center shadow-lg px-5 rounded-lg py-2.5 pointer-events-none z-0"
                         style={{bottom: 0, left: 0}}
                     >
-                        <h4 className="text-[1rem] font-semibold text-gray-800">
+                        <h4 className="text-[1rem] font-semibold dark:text-darkTextColor text-gray-800">
                             {users[hoveredIndex].name}
                         </h4>
-                        <p className="text-xs text-gray-500">{users[hoveredIndex].profession}</p>
+                        <p className="text-xs text-gray-500 dark:text-darkSubTextColor">{users[hoveredIndex].profession}</p>
 
-                        {/* Tooltip Tail */}
+                        {/* Tooltip */}
                         <div
-                            className="absolute left-1/2 translate-x-[-50%] top-full z-[-1] w-4 h-4 bg-white rotate-45 border-gray-200 border-r border-b -mt-2"></div>
+                            className="absolute left-1/2 translate-x-[-50%] top-full z-[-1] w-4 h-4 bg-white rotate-45 border-gray-200 border-r dark:border-slate-700 dark:bg-slate-800 border-b -mt-2"></div>
 
                     </motion.div>
                 )}

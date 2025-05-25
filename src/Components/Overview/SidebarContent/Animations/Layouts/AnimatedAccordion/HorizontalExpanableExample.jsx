@@ -39,7 +39,7 @@ const HorizontalExpanableExample = () => {
     const [expandedIndex, setExpandedIndex] = useState(0);
 
     return (
-        <div className="w-full h-[450px]">
+        <div className="w-full h-[380px] 640px:h-[450px]">
             <LayoutGroup>
                 <div className="flex w-full h-full gap-2">
                     {accordionData.map((item, index) => {

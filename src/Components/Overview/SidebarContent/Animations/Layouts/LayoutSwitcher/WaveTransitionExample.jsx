@@ -62,22 +62,24 @@ const WaveTransitionExample = () => {
                                     delay: waveDelay,
                                 }
                             }}
-                            className={`rounded-md bg-gray-100 overflow-hidden`}
+                            className={`rounded-md dark:bg-slate-800 bg-gray-100 overflow-hidden`}
                         >
                             <motion.div
                                 layout
                                 className={`${isGrid ? 'p-5' : 'p-4 flex items-center'}`}
-                                transition={{ type: "spring", stiffness: 300, damping: 25, delay: waveDelay + 0.3 }}
+                                transition={{type: "spring", stiffness: 300, damping: 25, delay: waveDelay + 0.3}}
                             >
                                 <motion.img
                                     layout
                                     src={item.image}
                                     alt={item.title}
-                                    className={`rounded-lg ${isGrid ? 'w-full h-[280px] mb-5' : 'w-24 h-24 mr-4 flex-shrink-0 object-cover'}`}
+                                    className={`rounded-lg ${isGrid ? 'w-full h-[200px] 640px:h-[280px] mb-5' : 'w-24 h-24 mr-4 flex-shrink-0 object-cover'}`}
                                 />
                                 <div>
-                                    <motion.h3 layout className={`${isGrid ? 'text-[1.4rem]' : 'text-[1.1rem]' } font-bold text-gray-800`}>{item.title}</motion.h3>
-                                    <motion.p layout className="text-gray-500 mt-1">{item.description}</motion.p>
+                                    <motion.h3 layout
+                                               className={`${isGrid ? 'text-[1.4rem]' : 'text-[1.1rem]'} font-bold text-gray-800 dark:text-darkTextColor`}>{item.title}</motion.h3>
+                                    <motion.p layout
+                                              className="text-gray-500 dark:text-darkSubTextColor/80 mt-1">{item.description}</motion.p>
                                 </div>
                             </motion.div>
                         </motion.div>

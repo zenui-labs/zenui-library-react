@@ -28,9 +28,32 @@ const Index = () => {
     const sectionIds = TextEffectContents.map(item => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
 
-    const [googleLoginButtonPreview, setGoogleLoginButtonPreview] = useState(true);
-    const [googleLoginButtonCode, setGoogleLoginButtonCode] = useState(false);
+    const [textRevealPreview, setTextRevealPreview] = useState(true);
+    const [textRevealCode, setTextRevealCode] = useState(false);
 
+    const [threeDTransformPreview, setThreeDTransformPreview] = useState(true);
+    const [threeDTransformCode, setThreeDTransformCode] = useState(false);
+
+    const [scrambleTextPreview, setScrambleTextPreview] = useState(true);
+    const [scrambleTextCode, setScrambleTextCode] = useState(false);
+
+    const [waveTextPreview, setWaveTextPreview] = useState(true);
+    const [waveTextCode, setWaveTextCode] = useState(false);
+
+    const [threeDRotationPreview, setThreeDRotationPreview] = useState(true);
+    const [threeDRotationCode, setThreeDRotationCode] = useState(false);
+
+    const [magneticTextPreview, setMagneticTextPreview] = useState(true);
+    const [magneticTextCode, setMagneticTextCode] = useState(false);
+
+    const [typewritterPreview, setTypewritterPreview] = useState(true);
+    const [typewritterCode, setTypewritterCode] = useState(false);
+
+    const [floatingTextPreview, setFloatingTextPreview] = useState(true);
+    const [floatingTextCode, setFloatingTextCode] = useState(false);
+
+    const [elasticTextPreview, setElasticTextPreview] = useState(true);
+    const [elasticTextCode, setElasticTextCode] = useState(false);
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -38,19 +61,19 @@ const Index = () => {
                 <ContentHeader text={"text reveal animation"} id={"text-reveal-animation"}/>
 
                 <ComponentDescription
-                    text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
+                    text='Text reveal animation shows text with smooth transitions like slide adding a dynamic touch to content display.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setTextRevealCode} code={textRevealCode}
+                           setPreview={setTextRevealPreview} preview={textRevealPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {textRevealPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <TextRevealExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {textRevealCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -60,19 +83,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='3D text reveal animation uses 3D transforms like rotateX and translateZ to create dynamic depth and movement while unveiling text.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setThreeDTransformCode} code={threeDTransformCode}
+                           setPreview={setThreeDTransformPreview} preview={threeDTransformPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {threeDTransformPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <ThreeDTransformTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {threeDTransformCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -82,19 +105,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='Text scramble animation rapidly cycles through random characters before settling on the final text, creating a glitchy, dynamic reveal effect.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setScrambleTextCode} code={scrambleTextCode}
+                           setPreview={setScrambleTextPreview} preview={scrambleTextPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {scrambleTextPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <ScrambleTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {scrambleTextCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -104,19 +127,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='Text wave animation makes characters move up and down in a wave-like motion, adding a flowing, rhythmic effect to the text.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setWaveTextCode} code={waveTextCode}
+                           setPreview={setWaveTextPreview} preview={waveTextPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {waveTextPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <WaveTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {waveTextCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -126,19 +149,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='3D rotation animation spins elements around the X, Y, or Z axis to create realistic three-dimensional movement and depth.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setThreeDRotationCode} code={threeDRotationCode}
+                           setPreview={setThreeDRotationPreview} preview={threeDRotationPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {threeDRotationPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <ThreeDRotationExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {threeDRotationCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -148,19 +171,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text="Magnetic text animation makes text smoothly move toward the cursor like it's being attracted, creating an interactive, magnetic effect."/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setMagneticTextCode} code={magneticTextCode}
+                           setPreview={setMagneticTextPreview} preview={magneticTextPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {magneticTextPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <MagneticTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {magneticTextCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -170,19 +193,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='Typewriter animation simulates text being typed out letter by letter, mimicking the look and feel of a classic typewriter.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setTypewritterCode} code={typewritterCode}
+                           setPreview={setTypewritterPreview} preview={typewritterPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {typewritterPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <TypewritterExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {typewritterCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -192,19 +215,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='Text floating animation makes text gently move up and down or side to side, creating a smooth, airy, and dynamic effect.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setFloatingTextCode} code={floatingTextCode}
+                           setPreview={setFloatingTextPreview} preview={floatingTextPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {floatingTextPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <FloatingTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {floatingTextCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>
@@ -214,19 +237,19 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A 3D interactive magnet card that tilts and reacts to cursor movement for a dynamic visual experience.'/>
+                    text='Text elastic animation makes letters stretch and bounce back like elastic when appearing or interacting, adding a playful, springy effect.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setElasticTextCode} code={elasticTextCode}
+                           setPreview={setElasticTextPreview} preview={elasticTextPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {elasticTextPreview && (
                         <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <ElasticTextExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
+                    {elasticTextCode &&
                         <ShowCode code=''
                         />}
                 </ComponentWrapper>

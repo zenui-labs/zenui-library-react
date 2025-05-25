@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {motion, AnimatePresence, useAnimation, useMotionValue, useTransform} from 'framer-motion';
+import {motion, AnimatePresence, useAnimation} from 'framer-motion';
 
 // Enhanced sample data for the accordions with more detailed content
 const accordionData = [

@@ -71,7 +71,7 @@ const ThreeDTransformTextExample = () => {
                 initial="hidden"
                 animate={controls}
                 exit="exit"
-                className="text-3xl font-bold perspective-1000"
+                className="text-3xl text-center font-bold dark:text-darkTextColor perspective-1000"
                 style={{perspective: "1000px", transformStyle: "preserve-3d"}}
             >
                 {text.split("").map((char, i) => (

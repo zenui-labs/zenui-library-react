@@ -1,4 +1,3 @@
-// LinkPreviewExample.tsx
 import React, {useState, useRef} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 
@@ -29,7 +28,7 @@ const LinkPreviewExample = () => {
                 href="https://zenui.net"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-medium underline"
+                className="font-medium dark:text-darkTextColor underline"
             >
                 Hover to see ZenUI link preview
             </a>
@@ -46,11 +45,11 @@ const LinkPreviewExample = () => {
                         }}
                         exit={{opacity: 0, scale: 0.95}}
                         transition={{type: 'spring', stiffness: 300, damping: 20}}
-                        className="absolute z-50 w-64 rounded-lg border bg-white p-3 shadow-lg pointer-events-none"
+                        className="absolute z-50 w-64 rounded-lg border dark:bg-slate-800 dark:border-slate-700 bg-white p-3 shadow-lg pointer-events-none"
                         style={{bottom: 0, left: 0}}
                     >
-                        <h4 className="text-lg font-semibold">ZenUI</h4>
-                        <p className="text-xs text-gray-500 mt-1">
+                        <h4 className="text-lg font-semibold dark:text-[#d2e5f5]">ZenUI</h4>
+                        <p className="text-xs text-gray-500 dark:text-[#abc2d3] mt-1">
                             A beautiful and modern React UI component library.
                         </p>
                         <img

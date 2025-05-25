@@ -50,7 +50,7 @@ const MagneticTextExample = () => {
                 variants={magneticText}
                 initial="hidden"
                 animate={controls}
-                className="text-3xl font-bold overflow-hidden"
+                className="text-3xl font-bold text-center dark:text-darkTextColor overflow-hidden"
             >
                 {text.split("").map((char, i) => (
                     <motion.span

@@ -97,7 +97,7 @@ const ScrambleTextExample = () => {
                 variants={scrambleText}
                 initial="hidden"
                 animate="visible"
-                className="font-mono text-3xl font-bold"
+                className="font-mono text-3xl text-center dark:text-darkTextColor font-bold"
             >
                 {scrambledText.map((char, index) => (
                     <motion.span

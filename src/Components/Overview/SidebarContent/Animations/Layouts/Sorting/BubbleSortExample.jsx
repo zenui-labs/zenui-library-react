@@ -79,7 +79,7 @@ const BubbleSortExample = () => {
                     onClick={bubbleSort}
                     disabled={isSorting}
                     className={`px-4 py-2 flex items-center gap-2 rounded-lg font-medium transition-colors ${
-                        isSorting ? 'bg-gray-200 text-gray-400 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'
+                        isSorting ? 'bg-gray-200 text-gray-400 dark:bg-slate-700 cursor-not-allowed' : 'bg-blue-500 hover:bg-blue-600 text-white'
                     }`}
                 >
                     <FaPlay className={`${isSorting ? 'text-gray-400' : 'text-white'}`}/>
@@ -89,7 +89,7 @@ const BubbleSortExample = () => {
                     onClick={resetSort}
                     disabled={isSorting}
                     className={`px-4 py-2 rounded-lg font-medium transition-colors ${
-                        isSorting ? 'bg-gray-200 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white'
+                        isSorting ? 'bg-gray-200 dark:bg-slate-700 cursor-not-allowed' : 'bg-red-500 hover:bg-red-600 text-white'
                     }`}
                 >
                     <VscDebugRestart className={`text-[1.3rem] ${isSorting ? 'text-gray-400' : 'text-white'}`}/>
@@ -112,7 +112,7 @@ const BubbleSortExample = () => {
                             stiffness: 500,
                             damping: 30,
                         }}
-                        className="mx-2 w-8 md:w-8 rounded-t-md"
+                        className="mx-2 w-4 640px:w-8 rounded-t-md"
                         style={{
                             height: `${item.height}%`,
                             backgroundColor: item.active ? '#d908d5' : '#0FABCA'

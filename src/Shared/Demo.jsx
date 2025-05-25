@@ -1,93 +1,67 @@
-import {useRef, useState} from "react";
-import {motion} from "framer-motion";
+import React, {useState, useRef} from "react";
+import {motion, AnimatePresence} from "framer-motion";
 
-const ThreedMagnetCardExample = () => {
-    const cardRef = useRef(null);
+const LinkPreviewExample = () => {
+    const [hovered, setHovered] = useState(false);
     const [position, setPosition] = useState({x: 0, y: 0});
-    const [isHovered, setIsHovered] = useState(false);
-
-    const magnetStrength = 35;
-    const rotationFactor = 1;
-    const scaleFactor = 1.05;
+    const containerRef = useRef(null);
 
     const handleMouseMove = (e) => {
-        if (!cardRef.current) return;
-
-        const {clientX, clientY} = e;
-        const {left, top, width, height} = cardRef.current.getBoundingClientRect();
-
-        const centerX = left + width / 2;
-        const centerY = top + height / 2;
-
-        const x = (clientX - centerX) / (width / 2);
-        const y = (clientY - centerY) / (height / 2);
-
-        setPosition({
-            x: x * magnetStrength,
-            y: y * magnetStrength,
-        });
-    };
-
-    const handleMouseLeave = () => {
-        setIsHovered(false);
-        setPosition({x: 0, y: 0});
-    };
-
-    const handleMouseEnter = () => {
-        setIsHovered(true);
+        const container = containerRef.current;
+        if (container) {
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            setPosition({x, y});
+        }
     };
 
     return (
-        <motion.div
-            ref={cardRef}
-            className="relative w-full md:w-96 cursor-pointer dark:bg-slate-900 dark:border-slate-700 rounded-md bg-white shadow-[2px_1px_15px_rgba(0,0,0,0.04)] overflow-hidden border border-gray-200"
-            animate={{
-                x: position.x,
-                y: position.y,
-                rotateX: position.y * rotationFactor,
-                rotateY: position.x * -rotationFactor,
-                scale: isHovered ? scaleFactor : 1,
-            }}
-            transition={{
-                type: "spring",
-                stiffness: 250,
-                damping: 20,
-                mass: 1,
-            }}
+        <div
+            ref={containerRef}
+            className="relative inline-block"
+            onMouseEnter={() => setHovered(true)}
+            onMouseLeave={() => setHovered(false)}
             onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-            onMouseEnter={handleMouseEnter}
         >
-            <div className="flex flex-col justify-between h-full">
-                {/* Image */}
-                <div className="w-full overflow-hidden">
-                    <img
-                        src="https://camo.githubusercontent.com/9e8ab41e42e1b9eaba15f4f947fcd3e1ae7bfac3cf6fc1f3f784b7f84c26da36/68747470733a2f2f692e6962622e636f2e636f6d2f435774645231392f706f73742e706e67"
-                        alt="Product Preview"
-                        className="object-cover w-full h-full"
-                    />
-                </div>
+            <a
+                href="https://zenui.net"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium dark:text-darkTextColor underline"
+            >
+                Hover to see ZenUI link preview
+            </a>
 
-                {/* Content */}
-                <div className="flex flex-col p-5 space-y-2 flex-grow">
-                    <h3 className="text-xl font-semibold dark:text-[#abc2d3] text-gray-800">ZenUI Library</h3>
-                    <p className="text-sm dark:text-[#abc2d3]/80 text-gray-500">
-                        A UI library for React with modern components and elegant animations.
-                    </p>
-                    <div className="mt-auto pt-4 flex gap-3">
-                        <button
-                            className="flex-1 py-2 rounded-lg bg-[#3B9DF8] text-white text-sm font-medium hover:bg-[#3B9DF8]/90 transition">
-                            Explore
-                        </button>
-                        <button
-                            className="flex-1 py-2 dark:border-slate-700 dark:text-[#abc2d3] dark:hover:bg-slate-800 rounded-lg border border-gray-300 text-sm text-gray-700 hover:bg-gray-100 transition">
-                            Docs
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </motion.div>
+            <AnimatePresence>
+                {hovered && (
+                    <motion.div
+                        initial={{opacity: 0, scale: 0.95}}
+                        animate={{
+                            opacity: 1,
+                            scale: 1,
+                            x: position.x - 100,
+                            y: position.y - 40,
+                        }}
+                        exit={{opacity: 0, scale: 0.95}}
+                        transition={{type: "spring", stiffness: 300, damping: 20}}
+                        className="absolute z-50 w-64 rounded-lg border dark:bg-slate-800 dark:border-slate-700 bg-white p-3 shadow-lg pointer-events-none"
+                        style={{bottom: 0, left: 0}}
+                    >
+                        <h4 className="text-lg font-semibold dark:text-[#d2e5f5]">ZenUI</h4>
+                        <p className="text-xs text-gray-500 dark:text-[#abc2d3] mt-1">
+                            A beautiful and modern React UI component library.
+                        </p>
+                        <img
+                            src="https://camo.githubusercontent.com/9e8ab41e42e1b9eaba15f4f947fcd3e1ae7bfac3cf6fc1f3f784b7f84c26da36/68747470733a2f2f692e6962622e636f2e636f6d2f435774645231392f706f73742e706e67"
+                            alt="ZenUI Preview"
+                            className="mt-2 w-full rounded"
+                        />
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </div>
     );
 };
 
-export default ThreedMagnetCardExample;
+export default LinkPreviewExample;

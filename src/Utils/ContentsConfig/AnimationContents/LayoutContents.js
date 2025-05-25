@@ -1,11 +1,6 @@
 // sorting
 export const SortingAnimationContents = [
     {
-        id: 1,
-        title: 'drag & drop sorting',
-        href: '#drag-&-drop-sorting',
-    },
-    {
         id: 2,
         title: 'shuffle sorting',
         href: '#shuffle-sorting',
@@ -40,11 +35,16 @@ export const GridSwitcherContents = [
 export const DragAnimationContents = [
     {
         id: 1,
+        title: 'drag & drop animation',
+        href: '#drag-&-drop-animation',
+    },
+    {
+        id: 2,
         title: 'drag position lock',
         href: '#drag-position-lock',
     },
     {
-        id: 2,
+        id: 3,
         title: '3d drag stack',
         href: '#3d-drag-stack',
     },

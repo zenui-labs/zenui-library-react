@@ -41,7 +41,7 @@ const TextAccordionWithProgressbarExample = () => {
             {accordionItems.map((item, index) => (
                 <motion.div
                     key={item.id}
-                    className="rounded-lg bg-gray-50 border border-gray-200 overflow-hidden"
+                    className="rounded-lg dark:bg-slate-800 dark:border-slate-700 bg-gray-50 border border-gray-200 overflow-hidden"
                     initial={{opacity: 0, y: 50}}
                     animate={{opacity: 1, y: 0}}
                     transition={{delay: index * 0.1, duration: 0.5}}
@@ -51,7 +51,7 @@ const TextAccordionWithProgressbarExample = () => {
                         className="w-full"
                     >
                         <motion.button
-                            className={`${activeId === item.id ? 'text-gray-800' : 'text-gray-600'} w-full p-4 text-left font-medium text-lg flex justify-between items-center`}
+                            className={`${activeId === item.id ? 'text-gray-800 dark:text-darkTextColor' : 'text-gray-600 dark:text-darkTextColor/60'} w-full p-4 text-left font-medium text-lg flex justify-between items-center`}
                             onClick={() => toggleAccordion(item.id)}
                         >
                             <motion.span
@@ -78,13 +78,13 @@ const TextAccordionWithProgressbarExample = () => {
                     <AnimatePresence>
                         {activeId === item.id && (
                             <motion.div
-                                className="overflow-hidden bg-gray-50"
+                                className="overflow-hidden dark:bg-slate-800 bg-gray-50"
                                 initial={{height: 0}}
                                 animate={{height: "auto"}}
                                 exit={{height: 0}}
                                 transition={{duration: 0.3}}
                             >
-                                <div className="px-3 pb-6 text-gray-800 relative">
+                                <div className="px-3 pb-6 dark:text-darkTextColor text-gray-800 relative">
                                     {item.content.split(' ').map((word, wordIndex) => (
                                         <motion.span
                                             key={wordIndex}

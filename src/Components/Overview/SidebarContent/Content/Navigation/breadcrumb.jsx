@@ -128,7 +128,7 @@ const Breadcrumb = () => {
                     <ComponentWrapper>
                         {nonClickablePreview && (
                             <div className='p-8 mb-4 flex flex-wrap items-center gap-5 justify-center'>
-                                <ol className='flex items-center gap-[5px]'>
+                                <ol className='flex items-center flex-wrap gap-[5px]'>
                                     {nonClickableItems?.map((item, index) => (
                                         <>
                                             <li
@@ -221,7 +221,7 @@ export default Breadcrumb;
                     <ComponentWrapper>
                         {clickablePreview && (
                             <div className='p-8 mb-4 flex flex-wrap items-center gap-5 justify-center'>
-                                <div className='flex items-center gap-[5px]'>
+                                <div className='flex items-center flex-wrap gap-[5px]'>
                                     {nonClickableItems?.map((item, index) => (
                                         <>
                                             <a
@@ -353,7 +353,7 @@ export default Breadcrumb;
                                                 dropdownOpen
                                                     ? 'translate-y-0 opacity-100 z-30'
                                                     : 'translate-y-[-20px] opacity-0 z-[-1]'
-                                            } flex flex-col text-[0.8rem] dark:bg-slate-800 dark:text-[#abc2d3] bg-white boxShadow dropdownModal transition-all duration-300 rounded-md py-1 absolute top-[25px] left-[-20px] w-max`}
+                                            } flex flex-col text-[0.8rem] dark:bg-slate-800 dark:text-[#abc2d3] bg-white boxShadow dropdownModal transition-all duration-300 rounded-md py-1 absolute top-[25px] right-0 640px:left-[-20px] w-max`}
                                         >
                                             {dropdownBreadcrumbArray
                                                 ?.slice(3, dropdownBreadcrumbArray.length)
@@ -440,7 +440,7 @@ const Breadcrumb = () => {
                 <p className="dropdownButton cursor-pointer" onClick={() => setDropdownOpen(!dropdownOpen)}>....</p>
 
                 <div
-                    className={`${dropdownOpen ? "translate-y-0 opacity-100 z-30" : "translate-y-[-20px] opacity-0 z-[-1]"} flex flex-col text-[0.8rem] dark:bg-slate-800 dark:text-[#abc2d3] bg-white boxShadow dropdownModal transition-all duration-300 rounded-md py-1 absolute top-[25px] left-[-20px] w-max`}>
+                    className={`${dropdownOpen ? "translate-y-0 opacity-100 z-30" : "translate-y-[-20px] opacity-0 z-[-1]"} flex flex-col text-[0.8rem] dark:bg-slate-800 dark:text-[#abc2d3] bg-white boxShadow dropdownModal transition-all duration-300 rounded-md py-1 absolute top-[25px] right-0 md:left-[-20px] w-max`}>
                     {
                         breadcrumbItems?.slice(3, breadcrumbItems.length).map((item, index) => (
                             <a href={item.path} key={index}
@@ -480,7 +480,7 @@ export default Breadcrumb;
                                 } p-8 flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}
                             >
                                 <div className='flex flex-col gap-[10px]'>
-                                    <ol className='flex items-center gap-[5px] dark:bg-blue-800/20 bg-blue-50 py-2.5 px-3 rounded-md'>
+                                    <ol className='flex items-center flex-wrap gap-[5px] dark:bg-blue-800/20 bg-blue-50 py-2.5 px-3 rounded-md'>
                                         {nonClickableItems?.map((item, index) => (
                                             <>
                                                 <li
@@ -500,7 +500,7 @@ export default Breadcrumb;
                                         ))}
                                     </ol>
 
-                                    <ol className='flex items-center gap-[5px] dark:bg-orange-800/20 bg-orange-50 py-2.5 px-3 rounded-md'>
+                                    <ol className='flex items-center flex-wrap gap-[5px] dark:bg-orange-800/20 bg-orange-50 py-2.5 px-3 rounded-md'>
                                         {nonClickableItems?.map((item, index) => (
                                             <>
                                                 <li
@@ -520,7 +520,7 @@ export default Breadcrumb;
                                         ))}
                                     </ol>
 
-                                    <ol className='flex items-center gap-[5px] dark:bg-green-800/20 bg-green-50 py-2.5 px-3 rounded-md'>
+                                    <ol className='flex items-center flex-wrap gap-[5px] dark:bg-green-800/20 bg-green-50 py-2.5 px-3 rounded-md'>
                                         {nonClickableItems?.map((item, index) => (
                                             <>
                                                 <li

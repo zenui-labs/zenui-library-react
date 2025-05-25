@@ -37,24 +37,24 @@ const ShuffleSortExample = () => {
 
     return (
         <div className='w-full'>
-            <div className="flex space-x-3 flex-wrap mb-10">
+            <div className="flex gap-3 flex-wrap mb-10">
                 <button
                     onClick={shuffle}
-                    className="border-primary flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
+                    className="border-primary dark:bg-slate-900 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
                 >
                     <IoShuffle className='text-[1.3rem]'/>
                     Shuffle
                 </button>
                 <button
                     onClick={sortAscending}
-                    className="border-primary flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
+                    className="border-primary dark:bg-slate-900 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
                 >
                     <TbSortAscendingNumbers className='text-[1.2rem]'/>
                     Ascending
                 </button>
                 <button
                     onClick={sortDescending}
-                    className="border-primary flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
+                    className="border-primary dark:bg-slate-900 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 flex items-center gap-2 border bg-primary/20 hover:bg-primary/50 px-4 py-2 rounded-lg font-medium transition-colors"
                 >
                     <TbSortDescendingNumbers className='text-[1.2rem]'/>
                     Descending

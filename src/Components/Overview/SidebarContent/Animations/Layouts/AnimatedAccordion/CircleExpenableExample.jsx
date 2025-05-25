@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {motion, AnimatePresence} from 'framer-motion';
 
+// data
 const accordionData = [
     {
         id: 1,
@@ -44,7 +45,7 @@ const CircleExpenableExample = () => {
     const [expandedIndex, setExpandedIndex] = useState(0);
 
     return (
-        <div className="relative flex gap-4 py-4">
+        <div className="relative flex flex-wrap gap-4 py-4">
             {accordionData.map((item, index) => {
                 const isExpanded = index === expandedIndex;
 

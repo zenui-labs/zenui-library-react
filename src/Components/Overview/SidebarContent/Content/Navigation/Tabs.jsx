@@ -81,7 +81,7 @@ const Tabs = () => {
                     <ComponentWrapper>
                         {fullBorderTabPreview && (
                             <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                                <ul className='flex items-center gap-5'>
+                                <ul className='flex items-center flex-wrap gap-5'>
                                     <li
                                         className={`${
                                             isActive === 1 && 'bg-primary text-secondary'
@@ -165,18 +165,18 @@ export default BorderTab;
                                 <ul className='flex items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1 relative'>
                                     <div
                                         className={`${
-                                            (boxButtonActive === 1 && 'translate-x-[0px]') ||
-                                            (boxButtonActive === 2 && 'translate-x-[90px]') ||
+                                            (boxButtonActive === 1 && 'w-[75px] 640px:w-[95px] translate-x-[0px]') ||
+                                            (boxButtonActive === 2 && 'w-[80px] translate-x-[70px] 640px:translate-x-[90px] 640px:w-[95px]') ||
                                             (boxButtonActive === 3 &&
-                                                'translate-x-[179px] !w-[108px] 425px:!w-[95px] 425px:translate-x-[192px]') ||
+                                                'translate-x-[143px] w-[90px] 640px:w-[95px] 640px:translate-x-[192px]') ||
                                             (boxButtonActive === 4 &&
-                                                '!w-[105px] translate-x-[290px] 640px:translate-x-[295px]')
-                                        } !bg-primary absolute !text-[#fff] h-[85%] w-[95px] transition duration-700 rounded-full border-transparent cursor-pointer`}
+                                                'translate-x-[232px] w-[85px] 640px:w-[105px] 640px:translate-x-[295px]')
+                                        } !bg-primary absolute !text-[#fff] h-[85%] transition duration-700 rounded-full border-transparent cursor-pointer`}
                                     ></div>
                                     <li
                                         className={`${
                                             boxButtonActive === 1 && ' !text-[#fff]'
-                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 py-2 dark:text-[#abc2d3] text-[0.9rem] 640px:text-[1rem] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(1)}
                                     >
                                         Home
@@ -184,7 +184,7 @@ export default BorderTab;
                                     <li
                                         className={`${
                                             boxButtonActive === 2 && ' !text-[#fff]'
-                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 py-2 dark:text-[#abc2d3] text-[0.9rem] 640px:text-[1rem] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(2)}
                                     >
                                         About
@@ -192,7 +192,7 @@ export default BorderTab;
                                     <li
                                         className={`${
                                             boxButtonActive === 3 && ' !text-[#fff]'
-                                        } px-6 py-2  dark:text-[#abc2d3] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 py-2 dark:text-[#abc2d3] text-[0.9rem] 640px:text-[1rem] text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(3)}
                                     >
                                         Support
@@ -200,7 +200,7 @@ export default BorderTab;
                                     <li
                                         className={`${
                                             boxButtonActive === 4 && ' !text-[#fff]'
-                                        } px-6 py-2 dark:text-[#abc2d3] hidden 425px:block text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 py-2 dark:text-[#abc2d3] text-[0.9rem] 640px:text-[1rem] hidden 425px:block text-text z-20 transition duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(4)}
                                     >
                                         Contact
@@ -600,12 +600,12 @@ export default Tab;
 
                     <ComponentWrapper>
                         {boxButtonPreview && (
-                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                            <div className='p-4 640px:p-8 mb-4 flex items-center gap-5 justify-center'>
                                 <ul className='flex flex-wrap items-center dark:bg-slate-800 bg-[#59bdf738] rounded-full p-1'>
                                     <li
                                         className={`${
                                             boxButtonActive === 1 && '!bg-primary !text-[#fff]'
-                                        } px-6 py-2  text-text dark:text-[#abc2d3] transition duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 text-[0.9rem] 640px:text-[1rem] py-2  text-text dark:text-[#abc2d3] transition duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(1)}
                                     >
                                         Home
@@ -613,7 +613,7 @@ export default Tab;
                                     <li
                                         className={`${
                                             boxButtonActive === 2 && '!bg-primary !text-[#fff]'
-                                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 text-[0.9rem] 640px:text-[1rem] py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(2)}
                                     >
                                         About
@@ -621,7 +621,7 @@ export default Tab;
                                     <li
                                         className={`${
                                             boxButtonActive === 3 && '!bg-primary !text-[#fff]'
-                                        } px-6 py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
+                                        } px-4 640px:px-6 text-[0.9rem] 640px:text-[1rem] py-2  text-text transition dark:text-[#abc2d3] duration-300 rounded-full border-transparent cursor-pointer`}
                                         onClick={() => setBoxButtonActive(3)}
                                     >
                                         Support

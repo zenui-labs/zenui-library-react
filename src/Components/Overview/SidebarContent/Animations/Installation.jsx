@@ -21,7 +21,7 @@ const Installation = () => {
                 Installation</h1>
             <div className='mt-3 w-full 1024px:w-[80%]'>
                 <p className='text-[1rem] text-gray-900 dark:text-darkSubTextColor'>
-                    Welcome to <b>ZenUI v2.3</b> – now with smooth, built-in animations powered by Framer Motion! 🎉
+                    Welcome to <b>ZenUI v3</b> – now with smooth, built-in animations powered by Framer Motion! 🎉
                     <br/>
                     <br/>
                     In this version, we've added animation support to several components. These animations are handled

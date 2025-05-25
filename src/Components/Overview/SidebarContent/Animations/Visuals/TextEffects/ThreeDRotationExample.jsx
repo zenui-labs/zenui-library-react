@@ -45,7 +45,7 @@ const ThreeDRotationExample = () => {
     return (
         <div className="w-full flex items-center gap-12 justify-center flex-col">
             <motion.div
-                className="text-3xl font-bold dark:text-darkTextColor"
+                className="text-3xl font-bold text-center dark:text-darkTextColor"
                 style={{perspective: "1000px", transformStyle: "preserve-3d"}}
                 initial="hidden"
                 animate={controls}

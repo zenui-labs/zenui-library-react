@@ -39,7 +39,7 @@ const Hero = () => {
 
                 <button
                     className='py-1.5 pl-5 cursor-text dark:border-slate-500 dark:text-darkTextColor backdrop-blur-md pr-6 text-[0.8rem] 640px:text-[0.9rem] border mb-4 border-border rounded-full'>
-                    ✨ Introducing ZenUI v2.3
+                    ✨ Introducing ZenUI v3
                 </button>
 
                 <h1

@@ -6,6 +6,8 @@ import {FaXTwitter} from "react-icons/fa6";
 import {SiGmail} from "react-icons/si";
 import useZenuiStore from "@/Store/Index.js";
 import SectionWrapper from "./SectionWrapper.jsx";
+import {GrNewWindow} from "react-icons/gr";
+import {GoArrowUpRight} from "react-icons/go";
 
 const Footer = () => {
     const date = new Date();
@@ -143,10 +145,6 @@ const Footer = () => {
                                 <p><a href='/about-us'>About Us</a></p>
                                 <span><a href='/about-us'>About Us</a></span>
                             </li>
-                            {/*<li>*/}
-                            {/*  <p>Support</p>*/}
-                            {/*  <span>Support</span>*/}
-                            {/*</li>*/}
                             <li>
                                 <p><a href='/privacy-policy'>Privacy policy</a></p>
                                 <span><a href='/privacy-policy'>Privacy policy</a></span>
@@ -159,6 +157,18 @@ const Footer = () => {
                                     <span><a href='/zenui-hero-docs'>Become ZenUI Hero</a></span>
                                 </li>
                             </div>
+                            <li>
+                                <p><a href='https://github.com/Asfak00/zenui-library/releases' target='_blank'
+                                      className='flex items-center
+                                 gap-1'>Changelog
+                                    <GoArrowUpRight className='text-[1.1rem] mt-0.5'/>
+                                </a></p>
+                                <span><a href='https://github.com/Asfak00/zenui-library/releases' target='_blank'
+                                         className='flex items-center
+                                 gap-1'>Changelog
+                                <GoArrowUpRight className='text-[1.1rem] mt-0.5'/>
+                                </a></span>
+                            </li>
                         </ul>
                     </div>
                     <div className="flex gap-2 flex-col mt-4">

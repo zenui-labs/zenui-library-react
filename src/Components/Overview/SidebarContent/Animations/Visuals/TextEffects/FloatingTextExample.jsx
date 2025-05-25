@@ -51,7 +51,7 @@ const FloatingTextExample = () => {
                 variants={floatingText}
                 initial="hidden"
                 animate={controls}
-                className="text-3xl font-bold"
+                className="text-3xl text-center dark:text-darkTextColor font-bold"
             >
                 {text.split("").map((char, i) => (
                     <motion.span

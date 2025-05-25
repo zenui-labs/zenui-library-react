@@ -7,14 +7,14 @@ const FilterSortExample = () => {
     const [sortBy, setSortBy] = useState('priority');
 
     const [items, setItems] = useState([
-        { id: '1', title: 'Complete report', category: 'Work', priority: 3, color: 'bg-blue-400' },
-        { id: '2', title: 'Buy groceries', category: 'Personal', priority: 2, color: 'bg-green-400' },
-        { id: '3', title: 'Call client', category: 'Work', priority: 4, color: 'bg-yellow-400' },
-        { id: '4', title: 'Fix bug in code', category: 'Work', priority: 5, color: 'bg-pink-400' },
-        { id: '5', title: 'Doctor appointment', category: 'Personal', priority: 4, color: 'bg-purple-400' },
-        { id: '6', title: 'Submit proposal', category: 'Urgent', priority: 5, color: 'bg-red-400' },
-        { id: '7', title: 'Gym workout', category: 'Personal', priority: 1, color: 'bg-indigo-400' },
-        { id: '8', title: 'Team meeting', category: 'Work', priority: 3, color: 'bg-teal-400' }
+        {id: '1', title: 'Complete report', category: 'Work', priority: 3, color: 'bg-blue-400'},
+        {id: '2', title: 'Buy groceries', category: 'Personal', priority: 2, color: 'bg-green-400'},
+        {id: '3', title: 'Call client', category: 'Work', priority: 4, color: 'bg-yellow-400'},
+        {id: '4', title: 'Fix bug in code', category: 'Work', priority: 5, color: 'bg-pink-400'},
+        {id: '5', title: 'Doctor appointment', category: 'Personal', priority: 4, color: 'bg-purple-400'},
+        {id: '6', title: 'Submit proposal', category: 'Urgent', priority: 5, color: 'bg-red-400'},
+        {id: '7', title: 'Gym workout', category: 'Personal', priority: 1, color: 'bg-indigo-400'},
+        {id: '8', title: 'Team meeting', category: 'Work', priority: 3, color: 'bg-teal-400'}
     ]);
 
     const filteredItems = activeCategory === 'All'
@@ -33,7 +33,7 @@ const FilterSortExample = () => {
         <div className='w-full'>
 
             <div className='flex items-center flex-wrap gap-y-4 justify-between w-full mb-10'>
-                <div className="flex gap-2">
+                <div className="flex flex-wrap gap-2">
                     {categories.map(category => (
                         <button
                             key={category}
@@ -41,7 +41,7 @@ const FilterSortExample = () => {
                             className={`px-6 py-2 rounded-md text-sm font-medium ${
                                 activeCategory === category
                                     ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 border border-gray-200 text-gray-700 hover:bg-gray-200'
+                                    : 'bg-gray-100 border dark:bg-slate-900 dark:border-slate-700 dark:text-darkSubTextColor dark:hover:bg-slate-800 border-gray-200 text-gray-700 hover:bg-gray-200'
                             }`}
                         >
                             {category}
@@ -53,7 +53,7 @@ const FilterSortExample = () => {
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="px-3 py-2 border border-gray-300 rounded-lg text-sm"
+                        className="px-3 py-2 border border-gray-300 dark:border-slate-700 dark:bg-slate-900 dark:text-darkSubTextColor rounded-lg text-sm"
                     >
                         <option value="priority">Sort by Priority</option>
                         <option value="name">Sort by Name</option>
