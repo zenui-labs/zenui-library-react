@@ -18,33 +18,56 @@ import GridDistortionExample
     from "@/Components/Overview/SidebarContent/Animations/Visuals/BackgroundAnimations/GridDistortionExample.jsx";
 import StarfieldWarpExample
     from "@/Components/Overview/SidebarContent/Animations/Visuals/BackgroundAnimations/StarfieldWarpExample.jsx";
+import {
+    CircuitBoardCodes,
+    GridDistroyCodes,
+    MagneticFieldCodes,
+    StarFieldWrapCodes, StringArtCodes
+} from "@animations/Visuals/BackgroundAnimations/PreviewCodes.js";
+import WarningMessageCard from "@shared/Component/WarningMessageCard.jsx";
 
 const Index = () => {
-    const [googleLoginButtonPreview, setGoogleLoginButtonPreview] = useState(true);
-    const [googleLoginButtonCode, setGoogleLoginButtonCode] = useState(false);
 
+    const [gridDistortionPreview, setGridDistortionPreview] = useState(true);
+    const [gridDistortionCode, setGridDistortionCode] = useState(false);
+
+    const [starFieldWrapPreview, setStarFieldWarpPreview] = useState(true);
+    const [starFieldWarpCode, setStarFieldWarpCode] = useState(false);
+
+    const [magneticFieldPreview, setMagneticFieldPreview] = useState(true);
+    const [magneticFieldCode, setMagneticFieldCode] = useState(false);
+
+    const [circuitBoardPreview, setCircuitBoardPreview] = useState(true);
+    const [circuitBoardCode, setCircuitBoardCode] = useState(false);
+
+    const [stringArtPreview, setStringArtPreview] = useState(true);
+    const [stringArtCode, setStringArtCode] = useState(false);
 
     return (
         <aside className="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
+
+            <WarningMessageCard
+                text="Reminder: Don’t forget to set a z-index on your child wrapper element. We recommend using a minimum value of 10 to ensure proper layering and avoid stacking issues."
+                width={100}/>
+
             <div>
                 <ContentHeader text={"Grid Distortion"} id={"grid-distortion"}/>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Grid distortion animation with smooth, dynamic waves creating a futuristic digital mesh effect.'/>
 
-                <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
-                                code={googleLoginButtonCode}
-                                setCode={setGoogleLoginButtonCode}/>
+                <BlockToggleTab preview={gridDistortionPreview} setPreview={setGridDistortionPreview}
+                                code={gridDistortionCode}
+                                setCode={setGridDistortionCode}/>
 
                 <BlockWrapper>
-                    {googleLoginButtonPreview && (
+                    {gridDistortionPreview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <GridDistortionExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {gridDistortionCode && <BlocksShowCode code={GridDistroyCodes}/>
                     }
                 </BlockWrapper>
 
@@ -53,21 +76,20 @@ const Index = () => {
                 </div>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Starfield warp animation simulating stars streaking by at lightspeed for a deep space travel effect.'/>
 
-                <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
-                                code={googleLoginButtonCode}
-                                setCode={setGoogleLoginButtonCode}/>
+                <BlockToggleTab preview={starFieldWrapPreview} setPreview={setStarFieldWarpPreview}
+                                code={starFieldWarpCode}
+                                setCode={setStarFieldWarpCode}/>
 
                 <BlockWrapper>
-                    {googleLoginButtonPreview && (
+                    {starFieldWrapPreview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <StarfieldWarpExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {starFieldWarpCode && <BlocksShowCode code={StarFieldWrapCodes}/>
                     }
                 </BlockWrapper>
 
@@ -76,21 +98,20 @@ const Index = () => {
                 </div>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Magnetic field animation with flowing lines and pulses mimicking electromagnetic waves in motion.'/>
 
-                <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
-                                code={googleLoginButtonCode}
-                                setCode={setGoogleLoginButtonCode}/>
+                <BlockToggleTab preview={magneticFieldPreview} setPreview={setMagneticFieldPreview}
+                                code={magneticFieldCode}
+                                setCode={setMagneticFieldCode}/>
 
                 <BlockWrapper>
-                    {googleLoginButtonPreview && (
+                    {magneticFieldPreview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <MagneticFieldExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {magneticFieldCode && <BlocksShowCode code={MagneticFieldCodes}/>
                     }
                 </BlockWrapper>
 
@@ -99,21 +120,20 @@ const Index = () => {
                 </div>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Circuit board animation with glowing paths and pulses simulating data flow through electronic circuits.'/>
 
-                <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
-                                code={googleLoginButtonCode}
-                                setCode={setGoogleLoginButtonCode}/>
+                <BlockToggleTab preview={circuitBoardPreview} setPreview={setCircuitBoardPreview}
+                                code={circuitBoardCode}
+                                setCode={setCircuitBoardCode}/>
 
                 <BlockWrapper>
-                    {googleLoginButtonPreview && (
+                    {circuitBoardPreview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <CircuitBoardExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {circuitBoardCode && <BlocksShowCode code={CircuitBoardCodes}/>
                     }
                 </BlockWrapper>
 
@@ -122,26 +142,25 @@ const Index = () => {
                 </div>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='String art animation with dynamic threads forming geometric patterns in a mesmerizing loop.'/>
 
-                <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
-                                code={googleLoginButtonCode}
-                                setCode={setGoogleLoginButtonCode}/>
+                <BlockToggleTab preview={stringArtPreview} setPreview={setStringArtPreview}
+                                code={stringArtCode}
+                                setCode={setStringArtCode}/>
 
                 <BlockWrapper>
-                    {googleLoginButtonPreview && (
+                    {stringArtPreview && (
                         <div className={`p-8 flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <StringArtExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {stringArtCode && <BlocksShowCode code={StringArtCodes}/>
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/empty-page' backName='empty page'
-                              forwardUrl='/blocks/product-details-page' forwardName='product details page'/>
+                <BlocksFooter backUrl='/animations/text-effects' backName='text effects'
+                              forwardUrl='/animations/chat-screen' forwardName='chat screen'/>
             </div>
 
             <Helmet>

@@ -19,22 +19,20 @@ import AnimationsBentoGrid from "@/Components/Home/AnimatonsBentoGrid.jsx";
 
 const HomePage = () => {
     return (
-        <div className='transition-all duration-500'>
+        <div className='transition-all duration-500 overflow-clip'>
             <Navbar/>
-            <div className='overflow-x-hidden'>
-                <MobileNavbar/>
-                <Hero/>
-                <FeaturesCard/>
-                <ComponentsSlider/>
-                <AnimationsBentoGrid/>
-                <DarkModeSupport/>
-                <ZenUITools/>
-                <Feedback/>
-                <TemplatesSlider/>
-                <Faq/>
-                <MetricsCard/>
-                <Footer/>
-            </div>
+            <MobileNavbar/>
+            <Hero/>
+            <FeaturesCard/>
+            <ComponentsSlider/>
+            <AnimationsBentoGrid/>
+            <DarkModeSupport/>
+            <ZenUITools/>
+            <Feedback/>
+            <TemplatesSlider/>
+            <Faq/>
+            <MetricsCard/>
+            <Footer/>
 
             <AnimatedDarkBg/>
         </div>

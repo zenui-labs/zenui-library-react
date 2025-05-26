@@ -18,7 +18,7 @@ const AboutUsPage = () => {
     console.log(getTheRouteName())
 
     return (
-        <div className='overflow-x-hidden'>
+        <div className='overflow-clip'>
             <Navbar/>
             <MobileNavbar/>
             <PrivacyPolicy/>

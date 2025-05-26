@@ -106,7 +106,7 @@ const Navbar = ({className}) => {
 
     return (<>
         <nav
-            className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100'} border-b dark:border-darkBorderColor 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[9999] hidden transition-all duration-500 ${className}`}>
+            className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100 dark:border-darkBorderColor'} border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999999999] hidden transition-all duration-500 ${className}`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 
@@ -148,14 +148,14 @@ const Navbar = ({className}) => {
                                 initial={{opacity: 0, scale: 0.8}}
                                 animate={{opacity: 1, scale: 1}}
                                 exit={{opacity: 0, scale: 0.8}}
-                                className="absolute dark:bg-slate-900 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
+                                className="absolute dark:bg-slate-800 dark:border-darkBorderColor top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5 mt-2"
                                 onMouseEnter={() => setIsToolsHover(true)}
                                 onMouseLeave={() => setIsToolsHover(false)}
                             >
                                 <div className='flex flex-col gap-3'>
 
                                     <Link to='/shortcut-generator'
-                                          className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
+                                          className='p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-[14px] rounded-normal text-[1.6rem]'>
                                             <FaRegKeyboard/>
@@ -172,7 +172,7 @@ const Navbar = ({className}) => {
                                     </Link>
 
                                     <Link to='/color-palette'
-                                          className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
+                                          className='p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3 rounded-normal text-[1.8rem]'>
                                             <LiaPaletteSolid/>
@@ -193,7 +193,7 @@ const Navbar = ({className}) => {
                                 <div className='flex flex-col gap-3'>
 
                                     <Link to='/icons'
-                                          className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
+                                          className='p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]'>
                                             <TbIcons/>
@@ -210,7 +210,7 @@ const Navbar = ({className}) => {
                                     </Link>
 
                                     <Link to='/config-generator'
-                                          className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
+                                          className='p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-[14px] rounded-normal'>
                                             <ConfigAiIcon/>
@@ -231,7 +231,7 @@ const Navbar = ({className}) => {
                                 <div className='flex flex-col'>
 
                                     <Link to='/semantic-tag-master'
-                                          className='p-[8px] transition-all duration-200 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
+                                          className='p-[8px] transition-all duration-200 dark:hover:bg-brandColor/10 hover:bg-brandColor/5 dark:hover:bg-slate-800 rounded-normal flex items-center gap-[10px]'>
 
                                         <div className='bg-brandColor/5 p-3.5 rounded-normal text-[1.5rem]'>
                                             <ImHtmlFive2/>

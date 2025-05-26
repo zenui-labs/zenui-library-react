@@ -140,15 +140,16 @@ const StringArtExample = () => {
             className="relative w-full min-h-[500px] flex items-center justify-center flex-col overflow-hidden rounded-high bg-gray-900">
             <canvas ref={canvasRef}
                     className="absolute left-[50%] translate-x-[-50%] top-[50%] translate-y-[-50%] w-[50%] h-[50%]"/>
+
             <div
-                className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center pointer-events-none max-w-[700px] mx-auto text-white">
+                className="relative z-10 flex flex-col items-center justify-center w-full h-full text-center max-w-[700px] mx-auto px-5 py-10 640px:py-0 1024px:1024px:px-0 text-white">
                 <button
                     className='py-1.5 pl-5 backdrop-blur-md pr-6 border-gray-600 rounded-full text-[0.9rem] border mb-4'>
                     ✨ Introducing ZenUI v2.3
                 </button>
 
                 <h1
-                    className="text-[3rem] font-bold leading-[50px]">
+                    className="text-[2rem] 1024px:text-[3rem] font-bold leading-[40px] 1024px:leading-[50px]">
                     Open-Source UI Components & Templates Library
                 </h1>
 

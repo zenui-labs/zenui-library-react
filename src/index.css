@@ -422,7 +422,7 @@ input[type="number"] {
 }
 
 .zenui_code_snippet {
-    border-radius: 8px !important;
+    bottom-border-radius: 8px !important;
 }
 
 @keyframes bounce-custom {

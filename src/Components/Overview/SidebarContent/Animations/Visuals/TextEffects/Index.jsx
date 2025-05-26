@@ -23,6 +23,13 @@ import ElasticTextExample from "./ElasticTextExample.jsx";
 import ScrambleTextExample from "./ScrambleTextExample.jsx";
 import ThreeDTransformTextExample from "./ThreeDTransformTextExample.jsx";
 import {TextEffectContents} from "@utils/ContentsConfig/AnimationContents/VisualsContents.js";
+import {
+    ElasticTextAnimationCodes,
+    MagneticTextCodes,
+    ScrambleTextCodes, TextFloatingAnimationCodes,
+    TextRevealCodes, TextTypeWriterCodes, ThreeDRotationCodes,
+    ThreeDTransformCodes, WaveTextAnimationCodes
+} from "@animations/Visuals/TextEffects/PreivewCodes.js";
 
 const Index = () => {
     const sectionIds = TextEffectContents.map(item => item.href.slice(1));
@@ -74,7 +81,7 @@ const Index = () => {
                     )}
 
                     {textRevealCode &&
-                        <ShowCode code=''
+                        <ShowCode code={TextRevealCodes}
                         />}
                 </ComponentWrapper>
 
@@ -96,7 +103,7 @@ const Index = () => {
                     )}
 
                     {threeDTransformCode &&
-                        <ShowCode code=''
+                        <ShowCode code={ThreeDTransformCodes}
                         />}
                 </ComponentWrapper>
 
@@ -118,7 +125,7 @@ const Index = () => {
                     )}
 
                     {scrambleTextCode &&
-                        <ShowCode code=''
+                        <ShowCode code={ScrambleTextCodes}
                         />}
                 </ComponentWrapper>
 
@@ -140,7 +147,7 @@ const Index = () => {
                     )}
 
                     {waveTextCode &&
-                        <ShowCode code=''
+                        <ShowCode code={WaveTextAnimationCodes}
                         />}
                 </ComponentWrapper>
 
@@ -162,7 +169,7 @@ const Index = () => {
                     )}
 
                     {threeDRotationCode &&
-                        <ShowCode code=''
+                        <ShowCode code={ThreeDRotationCodes}
                         />}
                 </ComponentWrapper>
 
@@ -184,7 +191,7 @@ const Index = () => {
                     )}
 
                     {magneticTextCode &&
-                        <ShowCode code=''
+                        <ShowCode code={MagneticTextCodes}
                         />}
                 </ComponentWrapper>
 
@@ -206,7 +213,7 @@ const Index = () => {
                     )}
 
                     {typewritterCode &&
-                        <ShowCode code=''
+                        <ShowCode code={TextTypeWriterCodes}
                         />}
                 </ComponentWrapper>
 
@@ -228,7 +235,7 @@ const Index = () => {
                     )}
 
                     {floatingTextCode &&
-                        <ShowCode code=''
+                        <ShowCode code={TextFloatingAnimationCodes}
                         />}
                 </ComponentWrapper>
 
@@ -250,12 +257,12 @@ const Index = () => {
                     )}
 
                     {elasticTextCode &&
-                        <ShowCode code=''
+                        <ShowCode code={ElasticTextAnimationCodes}
                         />}
                 </ComponentWrapper>
 
-                <OverviewFooter backUrl='/components/normal-button' backName='normal button'
-                                forwardUrl='/components/dropdown-button' forwardName='dropdown button'/>
+                <OverviewFooter backUrl='/animations/hover-effects' backName='hover effects'
+                                forwardUrl='/animations/background-animations' forwardName='background animations'/>
             </div>
 
             <ContentNavbar contents={TextEffectContents} activeSection={activeSection}/>

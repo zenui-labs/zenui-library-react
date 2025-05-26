@@ -14,7 +14,7 @@ const ContentPageLayout = ({children}) => {
     const {theme} = useZenuiStore();
 
     return (
-        <div className=''>
+        <>
             <Navbar/>
             <MobileNavbar/>
             <div className="flex w-full mx-auto max-w-[1700px]">
@@ -44,7 +44,7 @@ const ContentPageLayout = ({children}) => {
                     ${theme == 'dark' ? 'scale-100' : 'scale-0'}
                 `}
             />
-        </div>
+        </>
     );
 };
 
