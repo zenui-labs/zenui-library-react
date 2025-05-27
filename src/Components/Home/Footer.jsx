@@ -57,17 +57,17 @@ const Footer = () => {
                         </p>
 
                         <div className="flex items-center gap-4 mt-5">
-                            <a href="https://web.facebook.com/zenuilibrary" target='_blank'>
+                            <a href="https://web.facebook.com/zenuilibrary" target='_blank' rel="noreferrer">
                                 <FaFacebook
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
 
-                            <a href="https://www.linkedin.com/company/zenui/" target='_blank'>
+                            <a href="https://www.linkedin.com/company/zenui/" target='_blank' rel="noreferrer">
                                 <FaLinkedin
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
 
-                            <a href="https://x.com/zenuilibrary" target='_blank'>
+                            <a href="https://x.com/zenuilibrary" target='_blank' rel="noreferrer">
                                 <FaXTwitter
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
@@ -160,12 +160,12 @@ const Footer = () => {
                             <li>
                                 <p><a href='https://github.com/Asfak00/zenui-library/releases' target='_blank'
                                       className='flex items-center
-                                 gap-1'>Changelog
+                                 gap-1' rel="noreferrer">Changelog
                                     <GoArrowUpRight className='text-[1.1rem] mt-0.5'/>
                                 </a></p>
                                 <span><a href='https://github.com/Asfak00/zenui-library/releases' target='_blank'
                                          className='flex items-center
-                                 gap-1'>Changelog
+                                 gap-1' rel="noreferrer">Changelog
                                 <GoArrowUpRight className='text-[1.1rem] mt-0.5'/>
                                 </a></span>
                             </li>
@@ -206,7 +206,7 @@ const Footer = () => {
                 <div
                     className='mt-14 1024px:mx-auto flex w-[250px] flex-wrap 1024px:flex-nowrap 1024px:items-center 1024px:justify-center 1024px:w-[800px] gap-4 1024px:gap-8'>
                     <a href='https://web.facebook.com/share/g/D8DbMaprfWPksSGF/' target='_blank'
-                       className='border border-blue-600 rounded-high flex w-full py-[5px] px-2.5 gap-3 items-center'>
+                       className='border border-blue-600 rounded-high flex w-full py-[5px] px-2.5 gap-3 items-center' rel="noreferrer">
                         <img src='https://i.ibb.co.com/vJynhGR/Facebook-Logo-2023.png'
                              alt='facebook' className='w-[28px]'/>
 
@@ -222,13 +222,13 @@ const Footer = () => {
                         theme === 'dark' ? (
                             <a href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"
                                className='cursor-pointer w-full rounded-md flex items-center gap-[14px]'
-                               target="_blank"><img
+                               target="_blank" rel="noreferrer"><img
                                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=dark&t=1746465887663"
                                 alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"/></a>
                         ) : (
                             <a href="https://www.producthunt.com/posts/zenui-library-2?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-zenui&#0045;library&#0045;2"
                                className='cursor-pointer w-full rounded-md flex items-center gap-[14px]'
-                               target="_blank"><img
+                               target="_blank" rel="noreferrer"><img
                                 src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=490875&theme=light&t=1746458743385"
                                 alt="ZENUI&#0032;LIBRARY - Free&#0032;Templates&#0044;&#0032;Components&#0032;&#0038;&#0032;Icons&#0032;for&#0032;Developers | Product Hunt"/></a>
                         )
@@ -236,7 +236,7 @@ const Footer = () => {
 
 
                     <a href='https://discord.gg/ysqmqNapZW' target='_blank'
-                       className='border border-blue-400 rounded-high flex w-full py-[5px] px-2.5 gap-2 items-center'>
+                       className='border border-blue-400 rounded-high flex w-full py-[5px] px-2.5 gap-2 items-center' rel="noreferrer">
                         <img src='https://i.ibb.co.com/V07rXpTJ/download.png'
                              alt='facebook' className='w-[30px] rounded-full'/>
 

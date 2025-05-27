@@ -91,14 +91,14 @@ const BasicMagnetCardExample = () => {
                 <a
                     href="https://yourliveproject.com"
                     target="_blank"
-                    className="flex-1 py-2 text-center bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition"
+                    className="flex-1 py-2 text-center bg-primary hover:bg-primary/90 text-white rounded-lg text-sm font-medium transition" rel="noreferrer"
                 >
                     Live Preview
                 </a>
                 <a
                     href="https://github.com/your-repo"
                     target="_blank"
-                    className="flex-1 py-2 text-center border border-primary hover:bg-indigo-50 text-primary dark:hover:bg-white/10 dark:text-white dark:border-white/30 rounded-lg text-sm font-medium transition"
+                    className="flex-1 py-2 text-center border border-primary hover:bg-indigo-50 text-primary dark:hover:bg-white/10 dark:text-white dark:border-white/30 rounded-lg text-sm font-medium transition" rel="noreferrer"
                 >
                     Code
                 </a>

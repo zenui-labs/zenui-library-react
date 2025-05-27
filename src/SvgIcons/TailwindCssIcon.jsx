@@ -3,7 +3,7 @@ import React from 'react';
 const TailwindCssIcon = () => {
     return (
         <svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd"
+            <path fillRule="evenodd" clipRule="evenodd"
                   d="M12.9998 25.5288C6.60015 25.5288 2.59991 28.7538 1 35.2039C3.40033 31.9789 6.2004 30.7697 9.39928 31.5755C11.2259 32.0351 12.5314 33.3701 13.9751 34.8482C16.3284 37.255 19.0514 40.0404 25.0005 40.0404C31.4001 40.0404 35.4004 36.8164 37.0003 30.3663C34.5999 33.5914 31.7999 34.8005 28.6 33.9947C26.7744 33.5341 25.4689 32.1991 24.0251 30.722C21.6718 28.3152 18.9479 25.5288 12.9998 25.5288Z"
                   fill="#0FABCA"></path>
             <path opacity="0.5"

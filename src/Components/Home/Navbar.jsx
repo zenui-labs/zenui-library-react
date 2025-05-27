@@ -283,12 +283,12 @@ const Navbar = ({className}) => {
                             </span>
                     </div>
                     <div className='flex items-center gap-2'>
-                        <a href='https://discord.gg/qbwytm4WUG' target='_blank'>
+                        <a href='https://discord.gg/qbwytm4WUG' target='_blank' rel="noreferrer">
                             <RxDiscordLogo
                                 className={`text-[2.7rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-500 dark:text-slate-400 text-gray-400 rounded-normal p-[9px] border border-gray-200 cursor-pointer`}/>
                         </a>
 
-                        <a href='https://github.com/Asfak00/zenui-library' target='_blank'>
+                        <a href='https://github.com/Asfak00/zenui-library' target='_blank' rel="noreferrer">
                             <FiGithub
                                 className={`text-[2.7rem] hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-500 dark:text-slate-400 text-gray-400 rounded-normal p-[9px] border border-gray-200 cursor-pointer`}/>
                         </a>

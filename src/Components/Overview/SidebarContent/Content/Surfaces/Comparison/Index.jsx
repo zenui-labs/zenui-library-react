@@ -29,7 +29,7 @@ const Index = () => {
 
     const [horizontalComparisonPreview, setHorizontalComparisonPreview] = useState(true);
     const [horizontalComparisonCode, setHorizontalComparisonCode] = useState(false);
-    ;
+    
 
     return (
         <>

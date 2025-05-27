@@ -707,24 +707,24 @@ export default DropDown;
                     <ComponentWrapper>
                         {toggleButtonPreview && (
                             <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
-                                <div class='flex flex-wrap flex-col items-center justify-center'>
-                                    <div class='z-10 w-full'>
-                                        <div class='mx-auto mt-6 flex items-center justify-center gap-4'>
-                                            <label for='transactions'>
+                                <div className='flex flex-wrap flex-col items-center justify-center'>
+                                    <div className='z-10 w-full'>
+                                        <div className='mx-auto mt-6 flex items-center justify-center gap-4'>
+                                            <label htmlFor='transactions'>
                                                 <div
-                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                                                    <div class='flex items-center overflow-hidden'>
+                                                    className='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div className='flex items-center overflow-hidden'>
                                                         <input
                                                             type='radio'
                                                             name='radio'
                                                             id='transactions'
-                                                            class='peer appearance-none'
+                                                            className='peer appearance-none'
                                                         />
 
                                                         <span
-                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                            className='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
-                                  class='default absolute inset-0 transition-opacity'
+                                  className='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
                                   width='25'
                                   height='25'
@@ -737,7 +737,7 @@ export default DropDown;
                               </svg>
 
                               <svg
-                                  class='active absolute inset-0 opacity-0 transition-opacity'
+                                  className='active absolute inset-0 opacity-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
                                   width='25'
                                   height='25'
@@ -750,25 +750,25 @@ export default DropDown;
                               </svg>
                             </span>
                                                         <span
-                                                            class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                            className='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Transactions
                             </span>
                                                     </div>
                                                 </div>
                                             </label>
-                                            <label for='updates'>
+                                            <label htmlFor='updates'>
                                                 <div
-                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2 pl-3.5 pt-3.5 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                                                    <div class='flex items-center overflow-hidden'>
+                                                    className='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 dark:bg-slate-800 dark:text-[#abc2d3] border-transparent bg-gray-200 py-2 pl-3.5 pt-3.5 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div className='flex items-center overflow-hidden'>
                                                         <input
                                                             type='radio'
                                                             name='radio'
                                                             id='updates'
-                                                            class='peer appearance-none'
+                                                            className='peer appearance-none'
                                                         />
 
                                                         <span
-                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                            className='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
                                   className='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
@@ -798,25 +798,25 @@ export default DropDown;
                               </svg>
                             </span>
                                                         <span
-                                                            class='opacity-0 text-white transition-all mb-1 peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                            className='opacity-0 text-white transition-all mb-1 peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Updates
                             </span>
                                                     </div>
                                                 </div>
                                             </label>
-                                            <label for='promotions'>
+                                            <label htmlFor='promotions'>
                                                 <div
-                                                    class='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 border-transparent dark:bg-slate-800 dark:text-[#abc2d3] bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
-                                                    <div class='flex items-center overflow-hidden'>
+                                                    className='flex w-14 items-center justify-center cursor-pointer overflow-hidden rounded-[1.6rem] border-2 border-transparent dark:bg-slate-800 dark:text-[#abc2d3] bg-gray-200 py-2.5 pl-3 shadow transition-all ease-in-out duration-300 has-[:checked]:w-40 has-[:checked]:justify-center has-[:checked]:pl-0 has-[:checked]:bg-primary has-[:checked]:text-white text-gray-500'>
+                                                    <div className='flex items-center overflow-hidden'>
                                                         <input
                                                             type='radio'
                                                             name='radio'
                                                             id='promotions'
-                                                            class='peer appearance-none'
+                                                            className='peer appearance-none'
                                                         />
 
                                                         <span
-                                                            class='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
+                                                            className='relative h-7 w-8 peer-checked:[&_.active]:opacity-100 peer-checked:[&_.default]:opacity-0 shrink-0'>
                               <svg
                                   className='default absolute inset-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
@@ -831,7 +831,7 @@ export default DropDown;
                               </svg>
 
                               <svg
-                                  class='active absolute inset-0 opacity-0 transition-opacity'
+                                  className='active absolute inset-0 opacity-0 transition-opacity'
                                   xmlns='http://www.w3.org/2000/svg'
                                   width='25'
                                   height='25'
@@ -844,7 +844,7 @@ export default DropDown;
                               </svg>
                             </span>
                                                         <span
-                                                            class='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
+                                                            className='opacity-0 text-white transition-all peer-checked:opacity-100 ml-1 text-[0.9rem] font-normal tracking-wide'>
                               Promotions
                             </span>
                                                     </div>

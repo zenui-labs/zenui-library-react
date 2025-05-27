@@ -26,7 +26,7 @@ const Installation = () => {
                     <br/>
                     In this version, we've added animation support to several components. These animations are handled
                     internally using <a href='https://motion.dev/docs/react-quick-start' target='_blank'
-                                        className='text-brandColor font-medium hover:underline'>Framer Motion</a>,
+                                        className='text-brandColor font-medium hover:underline' rel="noreferrer">Framer Motion</a>,
                     giving
                     you a more polished and delightful user experience out of the box. You don’t need to manually write
                     animation logic – just use the components, and they’ll animate beautifully by default.

@@ -17,7 +17,7 @@ const AnimationsBentoGrid = () => {
         <SectionWrapper className='!mt-36'>
             <SectionHead
                 description={'Reusable UI components with smooth animations — built to speed up development and enhance user experience.'}
-                isSubjet={'100+'}
+                isSubjet={'50+'}
                 title={'Animated Components'}/>
 
             <div className='grid grid-cols-12 mt-14 min-h-[500px] gap-3'>

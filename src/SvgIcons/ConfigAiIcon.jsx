@@ -3,7 +3,7 @@ import React from 'react';
 const ConfigAiIcon = () => {
     return (
         <svg xmlns="http://www.w3.org/2000/svg" width="26" height="25" viewBox="0 0 24 24">
-            <g fill="none" stroke="#0FABCA" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            <g fill="none" stroke="#0FABCA" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"
                color="#0FABCA">
                 <path d="M15.5 11.5a3.5 3.5 0 1 1-7 0a3.5 3.5 0 0 1 7 0"/>
                 <path

@@ -213,7 +213,7 @@ export default Snippet;
                         )}
                     </ComponentWrapper>
 
-                    <div class='mt-8'>
+                    <div className='mt-8'>
                         <ContentHeader text={'Bordered Snippet'} id={'bordered_snippet'}/>
                     </div>
 

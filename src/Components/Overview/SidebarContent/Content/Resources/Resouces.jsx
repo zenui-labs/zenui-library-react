@@ -136,7 +136,7 @@ const Resources = () => {
 
                         <div className='flex items-center gap-[10px] justify-end mt-4'>
                             <a href={resource.websiteUrl} target='_blank'
-                               className='py-2 px-3 bg-brandColor hover:bg-blue-500 transition-all duration-200 active:scale-[0.9] text-white rounded-md text-[0.9rem] flex items-center gap-[5px]'>
+                               className='py-2 px-3 bg-brandColor hover:bg-blue-500 transition-all duration-200 active:scale-[0.9] text-white rounded-md text-[0.9rem] flex items-center gap-[5px]' rel="noreferrer">
                                 Visit website
                                 <RxExternalLink className='text-[1.2rem] font-[500]'/>
                             </a>

@@ -50,7 +50,7 @@ const Templete = () => {
                                     className="w-full absolute hidden top-0 left-0 h-full gap-3 flex-col  group-hover:flex items-center backdrop-blur-sm justify-center">
                                     <FaEye className="text-primary text-[1.5rem]"/>
                                     <h4 className=" capitalize underline text-text">
-                                        <a href={template.liveLink} target="_blank">
+                                        <a href={template.liveLink} target="_blank" rel="noreferrer">
                                             view preview
                                         </a>
                                     </h4>
@@ -78,7 +78,7 @@ const Templete = () => {
                                 className={`px-4 uppercase w-full flex items-center justify-center mx-auto py-3 bg-gray-300 rounded-md dark:bg-slate-700 hover:bg-brandColor group transition-all duration-300`}
                             >
                                 <a href={template.githubLink} target="_blank"
-                                   className='dark:text-darkSubTextColor text-gray-700 group-hover:text-white transition-all duration-300'>
+                                   className='dark:text-darkSubTextColor text-gray-700 group-hover:text-white transition-all duration-300' rel="noreferrer">
                                     Get Template
                                 </a>
                             </button>

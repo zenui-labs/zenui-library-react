@@ -14,7 +14,7 @@ const PremiumTooltip = ({isPremiumModalOpen, setIsPremiumModalOpen, url}) => {
                         className='py-1.5 px-5 dark:border-slate-500 dark:text-darkSubTextColor border text-[0.9rem] active:scale-[0.9] transition-all duration-200 border-gray-300 text-gray-600 rounded-md'>No
                 </button>
                 <a href={url} target='_blank'
-                   className='py-1.5 px-5 text-white active:scale-[0.9] transition-all duration-200 text-[0.9rem] bg-[#0FABCA] rounded-md'>Yes</a>
+                   className='py-1.5 px-5 text-white active:scale-[0.9] transition-all duration-200 text-[0.9rem] bg-[#0FABCA] rounded-md' rel="noreferrer">Yes</a>
             </div>
         </div>
     );

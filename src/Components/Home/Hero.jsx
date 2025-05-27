@@ -90,19 +90,19 @@ const Hero = () => {
                 </div>
 
                 <div className='flex items-center gap-5 justify-center mt-6'>
-                    <a href='https://react.dev/learn' target='_blank'>
+                    <a href='https://react.dev/learn' target='_blank' rel="noreferrer">
                         <FaReact
                             className='text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500'/>
                     </a>
-                    <a href='https://v3.tailwindcss.com/docs/installation' target='_blank'>
+                    <a href='https://v3.tailwindcss.com/docs/installation' target='_blank' rel="noreferrer">
                         <BiLogoTailwindCss
                             className='text-[2.2rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500'/>
                     </a>
-                    <a href='https://motion.dev/docs' target='_blank'>
+                    <a href='https://motion.dev/docs' target='_blank' rel="noreferrer">
                         <TbBrandFramerMotion
                             className='text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500'/>
                     </a>
-                    <a href='https://nextjs.org/docs' target='_blank'>
+                    <a href='https://nextjs.org/docs' target='_blank' rel="noreferrer">
                         <TbBrandNextjs
                             className='text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500'/>
                     </a>

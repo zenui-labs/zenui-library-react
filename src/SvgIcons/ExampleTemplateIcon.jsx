@@ -3,7 +3,7 @@ import React from 'react';
 const ExampleTemplateIcon = () => {
     return (
         <svg width="50" height="51" viewBox="0 0 50 51" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path opacity="0.5" fill-rule="evenodd" clip-rule="evenodd"
+            <path opacity="0.5" fillRule="evenodd" clipRule="evenodd"
                   d="M6.60753 9.21953C4.16675 11.6603 4.16675 15.5887 4.16675 23.4454V27.6121C4.16675 35.4688 4.16675 39.3972 6.60753 41.838C9.0483 44.2787 12.9767 44.2787 20.8334 44.2787H29.1667C29.3423 44.2787 31.0784 44.2788 31.2501 44.2788L31.2501 6.77881C31.0784 6.77879 29.3423 6.77875 29.1667 6.77875H20.8334C12.9767 6.77875 9.0483 6.77875 6.60753 9.21953Z"
                   fill="#0FABCA"></path>
             <path

@@ -80,17 +80,17 @@ const Hero = () => {
 
                     <div className="flex items-center gap-4 mt-5">
 
-                        <a href="https://web.facebook.com/asfak00" target='_blank'>
+                        <a href="https://web.facebook.com/asfak00" target='_blank' rel="noreferrer">
                             <FaFacebook
                                 className="text-black/60 text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                         </a>
 
-                        <a href="https://www.linkedin.com/in/asfakahmed/" target='_blank'>
+                        <a href="https://www.linkedin.com/in/asfakahmed/" target='_blank' rel="noreferrer">
                             <FaLinkedin
                                 className="text-black/60 text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                         </a>
 
-                        <a href="https://x.com/asfak00" target='_blank'>
+                        <a href="https://x.com/asfak00" target='_blank' rel="noreferrer">
                             <FaXTwitter
                                 className="text-black/60 text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                         </a>

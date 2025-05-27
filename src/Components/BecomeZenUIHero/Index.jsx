@@ -84,14 +84,14 @@ const BecomeZenUIHero = () => {
                     <ul className='list-disc ml-14 mb-5 mt-2 text-gray-700 dark:text-darkSubTextColor flex flex-col gap-[8px]'>
                         <li>You must follow ZenUI’s <b className='underline'><a
                             href='https://github.com/Asfak00/zenui-library/blob/production/CODE_OF_CONDUCT.md'
-                            target='_blank'>code of conduct</a></b> and respect the community guidelines.
+                            target='_blank' rel="noreferrer">code of conduct</a></b> and respect the community guidelines.
                         </li>
                         <li>All contributions should align with the ZenUI Library’s <b>mission</b> to provide
                             high-quality UI
                             components and templates.
                         </li>
                         <li>Contributions should be made via the ZenUI Library's official <b className='underline'><a
-                            href='https://github.com/Asfak00/zenui-library' target='_blank'>GitHub repository.</a></b>
+                            href='https://github.com/Asfak00/zenui-library' target='_blank' rel="noreferrer">GitHub repository.</a></b>
                         </li>
                     </ul>
                 </div>
@@ -107,7 +107,7 @@ const BecomeZenUIHero = () => {
 
                     <ul className='list-disc ml-14 mb-5 mt-2 dark:text-darkSubTextColor text-gray-700 flex flex-col gap-[8px]'>
                         <li>Your name and profile will be featured on the <b className='underline'><a
-                            href='https://zenui.net/about-us' target='_blank'>ZenUI Heroes Wall of Fame</a></b> on the
+                            href='https://zenui.net/about-us' target='_blank' rel="noreferrer">ZenUI Heroes Wall of Fame</a></b> on the
                             official
                             ZenUI Library website.
                         </li>
