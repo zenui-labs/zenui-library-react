@@ -125,7 +125,7 @@ const ChatScreenWithReact = () => {
     return (
         <div className="flex flex-col w-full">
             {/* Messages Container */}
-            <div className="flex-1 p-4 overflow-y-auto">
+            <div className="flex-1 p-2 640px:p-4 overflow-y-auto">
                 <AnimatePresence>
                     {messages.map((message) => (
                         <motion.div
@@ -148,16 +148,16 @@ const ChatScreenWithReact = () => {
                                 )}
                                 <div>
                                     <div
-                                        className={`px-4 py-2 rounded-high text-black text-sm ${
+                                        className={`px-4 py-2 rounded-high text-black dark:text-darkTextColor text-sm ${
                                             message.sender === 'me'
-                                                ? 'bg-blue-50 rounded-br-none'
-                                                : 'bg-gray-50 rounded-bl-none'
+                                                ? 'bg-blue-50 dark:bg-blue-900/90 rounded-br-none'
+                                                : 'bg-gray-50 dark:bg-slate-800 rounded-bl-none'
                                         }`}
                                     >
                                         {message.text}
                                     </div>
                                     <div
-                                        className={`${message.sender === 'me' ? 'text-right' : 'text-left'} mt-1 text-xs text-gray-500 mt`}>
+                                        className={`${message.sender === 'me' ? 'text-right' : 'text-left'} mt-1 text-xs text-gray-500 dark:text-darkSubTextColor/80 mt`}>
                                         {message.timestamp}
                                     </div>
                                 </div>
@@ -174,7 +174,7 @@ const ChatScreenWithReact = () => {
                                     <span
                                         title={message.reaction}
                                         onClick={() => toggleReactionMenu(message.id)}
-                                        className="bg-white absolute -right-2 bottom-2 rounded-full min-h-[25px] min-w-[25px] flex items-center cursor-pointer justify-center shadow-md shadow-gray-100"
+                                        className="bg-white absolute dark:bg-slate-800 dark:shadow-slate-900 -right-2 bottom-2 rounded-full min-h-[25px] min-w-[25px] flex items-center cursor-pointer justify-center shadow-md shadow-gray-100"
                                     >
                                         {message.reaction === 'love' ?
                                             <LuHeart size={12} fill="red" color="red"/> : null}
@@ -190,7 +190,7 @@ const ChatScreenWithReact = () => {
                                     <button
                                         onClick={() => toggleReactionMenu(message.id)}
                                         title="add reaction"
-                                        className="absolute bottom-2 -right-2 bg-gray-100 rounded-full p-1 shadow-sm hover:bg-gray-200 transition-colors"
+                                        className="absolute bottom-2 -right-2 bg-gray-100 rounded-full p-1 shadow-sm hover:bg-gray-200 dark:bg-slate-700 dark:text-darkTextColor dark:hover:bg-slate-800 transition-colors"
                                     >
                                         <FaRegSmile size={14}/>
                                     </button>
@@ -204,28 +204,31 @@ const ChatScreenWithReact = () => {
                                             initial="hidden"
                                             animate="visible"
                                             exit="exit"
-                                            className="absolute z-30 -bottom-6 right-0 bg-white rounded-full p-1 flex border border-border shadow-lg"
+                                            className="absolute z-30 dark:bg-slate-800 dark:border-slate-700 -bottom-6 right-0 bg-white rounded-full p-1 flex border border-border shadow-lg"
                                         >
                                             <button
                                                 onClick={() => handleReaction(message.id, 'love')}
-                                                className="min-w-[25px] min-h-[25px] flex items-center justify-center hover:bg-gray-100 rounded-full"
+                                                className="min-w-[25px] min-h-[25px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <LuHeart size={15}
-                                                         color={message.reaction === 'love' ? 'red' : 'gray'}/>
+                                                         color={message.reaction === 'love' ? 'red' : 'gray'}
+                                                         className='dark:!text-darkTextColor'/>
                                             </button>
                                             <button
                                                 onClick={() => handleReaction(message.id, 'like')}
-                                                className="p-1 hover:bg-gray-100 rounded-full"
+                                                className="p-1 hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <LuThumbsUp size={15}
-                                                            color={message.reaction === 'like' ? 'blue' : 'gray'}/>
+                                                            color={message.reaction === 'like' ? 'blue' : 'gray'}
+                                                            className='dark:!text-darkTextColor'/>
                                             </button>
                                             <button
                                                 onClick={() => handleReaction(message.id, 'smile')}
-                                                className="p-1 hover:bg-gray-100 rounded-full"
+                                                className="p-1 hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <FaRegSmile size={16}
-                                                            color={message.reaction === 'smile' ? 'gold' : 'gray'}/>
+                                                            color={message.reaction === 'smile' ? 'gold' : 'gray'}
+                                                            className='dark:!text-darkTextColor'/>
                                             </button>
                                         </motion.div>
                                     )}
@@ -238,7 +241,7 @@ const ChatScreenWithReact = () => {
             </div>
 
             {/* Message Input */}
-            <div className="bg-white p-4">
+            <div className="bg-white dark:bg-darkBgColor p-0 640px:p-4">
                 <div className="flex gap-2">
                     <input
                         ref={inputRef}
@@ -247,7 +250,7 @@ const ChatScreenWithReact = () => {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={handleKeyPress}
                         placeholder="Type a message..."
-                        className="flex-1 px-4 py-3 border rounded-full focus:outline-none focus:ring-2 focus:ring-brandColor"
+                        className="flex-1 px-4 py-3 border dark:bg-slate-900 dark:border-slate-700 dark:text-darkTextColor rounded-full focus:outline-none focus:ring-2 focus:ring-brandColor"
                     />
                     <motion.button
                         whileTap={{scale: 0.95}}

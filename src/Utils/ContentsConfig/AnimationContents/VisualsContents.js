@@ -46,3 +46,24 @@ export const TextEffectContents = [
         href: '#text-elastic-animation',
     },
 ];
+
+export const DropdownAnimationContents = [
+    {
+        id: 1,
+        title: 'blur staggered animation',
+        href: '#blur-staggered-animation'
+    },
+    {
+        id: 2,
+        title: 'y axis staggered animation',
+        href: '#y-axis-staggered-animation'
+    },
+]
+
+export const ImageGalleryContents = [
+    {
+        id: 1,
+        title: 'hover effect & image scale',
+        href: '#hover-effect-&-image-scale'
+    },
+]

@@ -44,14 +44,14 @@ const ImageScaleExample = () => {
 
     return (
         <>
-            <div className="grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 640px:grid-cols-5 gap-4">
                 {images.map((image, index) => {
                     const isOtherImageHovered = hoveredImageId !== null && hoveredImageId !== image.id;
 
                     return (
                         <motion.div
                             key={image.id}
-                            className={`${index === 0 ? 'col-span-3' : index === 1 ? 'col-span-2' : index === 2 ? 'col-span-2' : 'col-span-3'} relative cursor-pointer transition-all duration-300 ${
+                            className={`${index === 0 ? '640px:col-span-3' : index === 1 ? '640px:col-span-2' : index === 2 ? '640px:col-span-2' : '640px:col-span-3'} relative cursor-pointer transition-all duration-300 ${
                                 isOtherImageHovered ? "blur-sm" : "blur-0"
                             }`}
                             onClick={() => handleCardClick(image)}
@@ -71,14 +71,14 @@ const ImageScaleExample = () => {
             <AnimatePresence>
                 {selectedImage && (
                     <motion.div
-                        className="fixed inset-0 z-[9999] bg-black/50 flex items-center justify-center"
+                        className="fixed inset-0 z-[999999999] bg-black/50 dark:bg-black/70 flex items-center justify-center"
                         onClick={handleClose}
                         initial={{opacity: 0}}
                         animate={{opacity: 1}}
                         exit={{opacity: 0}}
                     >
                         <motion.div
-                            className="bg-white rounded-high w-[50%] p-5"
+                            className="bg-white dark:bg-slate-800 rounded-high w-[95%] 640px:w-[80%] 1024px:w-[50%] p-5"
                             initial={{opacity: 0, scale: 0.5}}
                             animate={{opacity: 1, scale: 1}}
                             exit={{opacity: 0, scale: 0.5}}
@@ -89,8 +89,8 @@ const ImageScaleExample = () => {
                                 alt={selectedImage.title}
                                 className="w-full h-[400px] object-cover rounded-lg"
                             />
-                            <h3 className="mt-5 text-2xl font-semibold">{selectedImage.title}</h3>
-                            <p className="text-gray-700 mt-2">{selectedImage.description}</p>
+                            <h3 className="mt-5 dark:text-darkTextColor text-2xl font-semibold">{selectedImage.title}</h3>
+                            <p className="text-gray-700 dark:text-darkTextColor/70 mt-2">{selectedImage.description}</p>
                         </motion.div>
                     </motion.div>
                 )}

@@ -10,6 +10,7 @@ import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import ChatScreenWithReact from "@animations/Visuals/ChatScreen/ChatScreenWithReact.jsx";
 import ChatScreenWithFileAttachment from "@animations/Visuals/ChatScreen/ChatScreenWithFileAttachment.jsx";
+import {ChatWithReactionAndFileCodes, ChatWithReactionCodes} from "@animations/Visuals/ChatScreen/PreviewCodes.js";
 
 const Index = () => {
     const [googleLoginButtonPreview, setGoogleLoginButtonPreview] = useState(true);
@@ -19,10 +20,10 @@ const Index = () => {
     return (
         <aside className="w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"Grid Distortion"} id={"grid-distortion"}/>
+                <ContentHeader text={"chat screen with reaction system"} id={"chat-screen-with-reaction-system"}/>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Real-time chat screen with emoji reaction system for interactive and expressive messaging.'/>
 
                 <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
                                 code={googleLoginButtonCode}
@@ -35,17 +36,17 @@ const Index = () => {
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {googleLoginButtonCode && <BlocksShowCode code={ChatWithReactionCodes}/>
                     }
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Grid Distortion"} id={"grid-distortion"}/>
+                    <ContentHeader text={"chat screen with file select and batch processing"}
+                                   id={"chat-screen-with-file-select-and-batch-processing"}/>
                 </div>
 
                 <BlockDescription
-                    text='Explore exclusive e-commerce offers in a sleek grid layout—top deals, big savings, and premium brands, all at your fingertips!'/>
+                    text='Chat screen with file selection and batch processing support for efficient multi-file sharing and handling.'/>
 
                 <BlockToggleTab preview={googleLoginButtonPreview} setPreview={setGoogleLoginButtonPreview}
                                 code={googleLoginButtonCode}
@@ -58,17 +59,16 @@ const Index = () => {
                         </div>
                     )}
 
-                    {googleLoginButtonCode && <BlocksShowCode code='
-                    '/>
+                    {googleLoginButtonCode && <BlocksShowCode code={ChatWithReactionAndFileCodes}/>
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/empty-page' backName='empty page'
-                              forwardUrl='/blocks/product-details-page' forwardName='product details page'/>
+                <BlocksFooter backUrl='/animations/background-animations' backName='background animations'
+                              forwardUrl='/animations/dropdown-animations' forwardName='dropdown animations'/>
             </div>
 
             <Helmet>
-                <title>Visuals - Background Animations</title>
+                <title>Visuals - Chat Screen</title>
             </Helmet>
         </aside>
     );

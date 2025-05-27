@@ -13,18 +13,23 @@ import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
 import ToggleTab from "@shared/Component/ToggleTab.jsx";
 import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
 import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
-import {
-    DragAnimationContents
-} from "@utils/ContentsConfig/AnimationContents/LayoutContents.js";
 import BlurStaggeredExample from "@animations/Visuals/DropdownAnimations/BlurStaggeredExample.jsx";
-import SideMenu from "@animations/Visuals/DropdownAnimations/YaxisStaggeredExample.jsx";
+import {DropdownAnimationContents} from "@utils/ContentsConfig/AnimationContents/VisualsContents.js";
+import {
+    BlurStaggeredDropdownCodes,
+    YAxisStaggeredDropdownCodes
+} from "@animations/Visuals/DropdownAnimations/PreviewCodes.js";
+import YaxisStaggeredExample from "@animations/Visuals/DropdownAnimations/YaxisStaggeredExample.jsx";
 
 const Index = () => {
-    const sectionIds = DragAnimationContents.map(item => item.href.slice(1));
+    const sectionIds = DropdownAnimationContents.map(item => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
 
-    const [googleLoginButtonPreview, setGoogleLoginButtonPreview] = useState(true);
-    const [googleLoginButtonCode, setGoogleLoginButtonCode] = useState(false);
+    const [blurStaggeredAnimationPreview, setBlurStaggeredAnimationPreview] = useState(true);
+    const [blurStaggeredAnimationCode, setBlurStaggeredAnimationCode] = useState(false);
+
+    const [yAxisStaggeredAnimationPreview, setYAxisStaggeredAnimationPreview] = useState(true);
+    const [yAxisStaggeredAnimationCode, setYAxisStaggeredAnimationCode] = useState(false);
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -32,20 +37,20 @@ const Index = () => {
                 <ContentHeader text={"blur staggered animation"} id={"blur-staggered-animation"}/>
 
                 <ComponentDescription
-                    text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
+                    text='Smooth blur staggered animation for elements, creating a sequential fade and focus visual effect.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setBlurStaggeredAnimationCode} code={blurStaggeredAnimationCode}
+                           setPreview={setBlurStaggeredAnimationPreview} preview={blurStaggeredAnimationPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {blurStaggeredAnimationPreview && (
                         <div className="px-8 py-16 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <BlurStaggeredExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
-                        <ShowCode code=''
+                    {blurStaggeredAnimationCode &&
+                        <ShowCode code={BlurStaggeredDropdownCodes}
                         />}
                 </ComponentWrapper>
 
@@ -54,31 +59,31 @@ const Index = () => {
                 </div>
 
                 <ComponentDescription
-                    text='A simple magnetic effect card that reacts subtly on hover to enhance user interaction.'/>
+                    text='Elements animate in a staggered sequence along the Y-axis, creating a smooth vertical entrance effect.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
-                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setYAxisStaggeredAnimationCode} code={yAxisStaggeredAnimationCode}
+                           setPreview={setYAxisStaggeredAnimationPreview} preview={yAxisStaggeredAnimationPreview}/>
 
                 <ComponentWrapper>
-                    {googleLoginButtonPreview && (
+                    {yAxisStaggeredAnimationPreview && (
                         <div className="px-8 py-16 relative flex flex-col flex-wrap items-center gap-5 justify-center">
-                            <SideMenu/>
+                            <YaxisStaggeredExample/>
                         </div>
                     )}
 
-                    {googleLoginButtonCode &&
-                        <ShowCode code=''
+                    {yAxisStaggeredAnimationCode &&
+                        <ShowCode code={YAxisStaggeredDropdownCodes}
                         />}
                 </ComponentWrapper>
 
-                <OverviewFooter backUrl='/components/normal-button' backName='normal button'
-                                forwardUrl='/components/dropdown-button' forwardName='dropdown button'/>
+                <OverviewFooter backUrl='/animations/chat-screen' backName='chat screen'
+                                forwardUrl='/animations/gallery-view' forwardName='gallery view'/>
             </div>
 
-            <ContentNavbar contents={DragAnimationContents} activeSection={activeSection}/>
+            <ContentNavbar contents={DropdownAnimationContents} activeSection={activeSection}/>
 
             <Helmet>
-                <title>Cards - Magnet Card</title>
+                <title>Visuals - Dropdown Animations</title>
             </Helmet>
         </aside>
     );

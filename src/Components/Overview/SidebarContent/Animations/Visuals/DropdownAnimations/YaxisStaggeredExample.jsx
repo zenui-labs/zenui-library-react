@@ -20,7 +20,7 @@ const itemVariants = {
     }
 };
 
-export default function SideMenu() {
+export default function YaxisStaggeredExample() {
     const [isOpen, setIsOpen] = useState(false);
 
     const options = [
@@ -36,12 +36,12 @@ export default function SideMenu() {
 
     return (
         <div
-            className='w-[70%] mx-auto'
+            className='w-full 640px:w-[70%] mx-auto'
         >
             <motion.button
                 whileTap={{scale: 0.97}}
                 onClick={() => setIsOpen(!isOpen)}
-                className='border bg-white border-border px-6 py-2 w-full rounded-normal flex items-center gap-2 justify-between'
+                className='border dark:bg-slate-900 dark:text-darkTextColor dark:border-slate-700 bg-white border-border px-6 py-2 w-full rounded-normal flex items-center gap-2 justify-between'
             >
                 Menu
                 <motion.div
@@ -81,14 +81,14 @@ export default function SideMenu() {
                             }
                         }}
                         style={{overflow: "hidden"}}
-                        className="bg-white rounded-normal flex mt-2 flex-col gap-1 shadow-[2px_1px_20px_rgba(0,0,0,0.03)] w-full p-2"
+                        className="bg-white dark:bg-slate-900 rounded-normal flex mt-2 flex-col gap-1 shadow-[2px_1px_20px_rgba(0,0,0,0.03)] w-full p-2"
                     >
                         {options.map((item, index) => (
                             <motion.li
                                 key={index}
                                 custom={index}
                                 variants={itemVariants}
-                                className="text-[1rem] font-normal py-2 px-3 rounded-normal cursor-pointer hover:bg-gray-50"
+                                className="text-[1rem] font-normal py-2 px-3 rounded-normal cursor-pointer hover:bg-gray-50 dark:text-darkTextColor dark:hover:bg-slate-800"
                             >
                                 {item}
                             </motion.li>

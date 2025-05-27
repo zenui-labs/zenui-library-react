@@ -179,7 +179,7 @@ const ChatScreenWithFileAttachment = () => {
     return (
         <div className="flex flex-col w-full h-full">
             {/* Messages Container */}
-            <div className="flex-1 p-4 overflow-y-auto">
+            <div className="flex-1 p-2 640px:p-4 overflow-y-auto">
                 <AnimatePresence>
                     {messages.map((message) => (
                         <motion.div
@@ -202,10 +202,10 @@ const ChatScreenWithFileAttachment = () => {
                                 )}
                                 <div>
                                     <div
-                                        className={`p-3 rounded-high text-black text-sm ${
+                                        className={`p-3 rounded-high text-black dark:text-darkTextColor text-sm ${
                                             message.sender === 'me'
-                                                ? 'bg-blue-50 rounded-br-none'
-                                                : 'bg-gray-50 rounded-bl-none'
+                                                ? 'bg-blue-50 dark:bg-blue-900/90 rounded-br-none'
+                                                : 'bg-gray-50 dark:bg-slate-800 rounded-bl-none'
                                         }`}
                                     >
                                         {/* File attachments in message */}
@@ -214,16 +214,16 @@ const ChatScreenWithFileAttachment = () => {
                                                 {message.attachments.map((attachment) => (
                                                     <div
                                                         key={attachment.id}
-                                                        className="flex items-center p-2 mb-2 bg-white rounded-md border border-gray-200"
+                                                        className="flex items-center p-2 mb-2 bg-white rounded-md border border-gray-200 dark:bg-slate-800 dark:border-slate-700"
                                                     >
-                                                        <div className="p-2 bg-gray-100 rounded-md">
+                                                        <div className="p-2 bg-gray-100 dark:bg-slate-900 rounded-md">
                                                             {attachment.type.includes("image/") ? <FiImage size={16}/> :
                                                                 <LuFile size={16}/>}
                                                         </div>
                                                         <div className="ml-2 flex-1 max-w-[330px]">
                                                             <span
                                                                 className="text-xs break-words  font-medium">{attachment.name}</span>
-                                                            <p className="text-xs text-gray-500">{formatFileSize(attachment.size)}</p>
+                                                            <p className="text-xs dark:text-darkTextColor/70 text-gray-500">{formatFileSize(attachment.size)}</p>
                                                         </div>
                                                     </div>
                                                 ))}
@@ -232,7 +232,7 @@ const ChatScreenWithFileAttachment = () => {
                                         {message.text}
                                     </div>
                                     <div
-                                        className={`${message.sender === 'me' ? 'text-right' : 'text-left'} mt-1 text-xs text-gray-500 mt`}>
+                                        className={`${message.sender === 'me' ? 'text-right' : 'text-left'} mt-1 text-xs text-gray-500 dark:text-darkSubTextColor/70 mt`}>
                                         {message.timestamp}
                                     </div>
                                 </div>
@@ -249,7 +249,7 @@ const ChatScreenWithFileAttachment = () => {
                                     <span
                                         title={message.reaction}
                                         onClick={() => toggleReactionMenu(message.id)}
-                                        className="bg-white absolute -right-2 bottom-2 rounded-full min-h-[25px] min-w-[25px] flex items-center cursor-pointer justify-center shadow-md shadow-gray-100"
+                                        className="bg-white absolute -right-2 bottom-2 rounded-full min-h-[25px] min-w-[25px] flex items-center cursor-pointer justify-center shadow-md shadow-gray-100 dark:bg-slate-700 dark:shadow-slate-800"
                                     >
                                         {message.reaction === 'love' ?
                                             <LuHeart size={12} fill="red" color="red"/> : null}
@@ -265,7 +265,7 @@ const ChatScreenWithFileAttachment = () => {
                                     <button
                                         onClick={() => toggleReactionMenu(message.id)}
                                         title="add reaction"
-                                        className="absolute bottom-2 -right-2 bg-gray-100 rounded-full p-1 shadow-sm hover:bg-gray-200 transition-colors"
+                                        className="absolute bottom-2 -right-2 bg-gray-100 rounded-full p-1 shadow-sm hover:bg-gray-200 dark:bg-slate-700 dark:text-darkTextColor dark:hover:bg-slate-800 transition-colors"
                                     >
                                         <FaRegSmile size={14}/>
                                     </button>
@@ -279,28 +279,31 @@ const ChatScreenWithFileAttachment = () => {
                                             initial="hidden"
                                             animate="visible"
                                             exit="exit"
-                                            className="absolute z-30 -bottom-6 right-0 bg-white rounded-full p-1 flex border border-border shadow-lg"
+                                            className="absolute z-30 -bottom-6 right-0 bg-white rounded-full p-1 flex border border-border dark:bg-slate-800 dark:border-slate-700 shadow-lg"
                                         >
                                             <button
                                                 onClick={() => handleReaction(message.id, 'love')}
-                                                className="min-w-[25px] min-h-[25px] flex items-center justify-center hover:bg-gray-100 rounded-full"
+                                                className="min-w-[25px] min-h-[25px] flex items-center justify-center hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <LuHeart size={15}
-                                                         color={message.reaction === 'love' ? 'red' : 'gray'}/>
+                                                         color={message.reaction === 'love' ? 'red' : 'gray'}
+                                                         className='dark:!text-darkTextColor'/>
                                             </button>
                                             <button
                                                 onClick={() => handleReaction(message.id, 'like')}
-                                                className="p-1 hover:bg-gray-100 rounded-full"
+                                                className="p-1 hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <LuThumbsUp size={15}
-                                                            color={message.reaction === 'like' ? 'blue' : 'gray'}/>
+                                                            color={message.reaction === 'like' ? 'blue' : 'gray'}
+                                                            className='dark:!text-darkTextColor'/>
                                             </button>
                                             <button
                                                 onClick={() => handleReaction(message.id, 'smile')}
-                                                className="p-1 hover:bg-gray-100 rounded-full"
+                                                className="p-1 hover:bg-gray-100 dark:hover:bg-slate-900 rounded-full"
                                             >
                                                 <FaRegSmile size={16}
-                                                            color={message.reaction === 'smile' ? 'gold' : 'gray'}/>
+                                                            color={message.reaction === 'smile' ? 'gold' : 'gray'}
+                                                            className='dark:!text-darkTextColor'/>
                                             </button>
                                         </motion.div>
                                     )}
@@ -313,15 +316,15 @@ const ChatScreenWithFileAttachment = () => {
             </div>
 
             {/* Message Input */}
-            <div className="bg-white p-4 pb-3 border border-border rounded-lg">
+            <div className="bg-white dark:bg-slate-900 dark:border-slate-700 p-4 pb-3 border border-border rounded-lg">
                 {/* Attachments preview */}
-                {(attachments.length > 0 || isUploading) && (
+                {(attachments.length || isUploading) && (
                     <div className="mb-2 flex flex-wrap gap-2">
                         {isUploading && (
                             Array.from({length: totalAttachments}).map((_, index) => (
                                 <div
                                     key={index}
-                                    className="bg-gray-50 p-2 rounded-md border border-gray-200 flex items-center gap-2">
+                                    className="bg-gray-50 dark:bg-slate-800 dark:border-slate-700 dark:text-darkTextColor p-2 rounded-md border border-gray-200 flex items-center gap-2">
                                     <LuLoader2 className="animate-spin" size={16}/>
                                     <span className="text-sm">Uploading...</span>
                                 </div>
@@ -333,27 +336,27 @@ const ChatScreenWithFileAttachment = () => {
                             file.type.startsWith('image/') ? (
                                 <div key={file.id} className='relative group'>
                                     <img src={file.url} alt={file.name}
-                                         className='w-[80px] object-cover h-[60px] border border-border p-1 rounded-lg'/>
+                                         className='w-[80px] object-cover h-[60px] dark:border-slate-700 border border-border p-1 rounded-lg'/>
 
                                     <button
                                         onClick={() => handleRemoveAttachment(file.id)}
-                                        className="p-1 invisible group-hover:visible absolute top-0 right-0 bg-gray-100 hover:bg-gray-200 rounded-full scale-[0.8] group-hover:scale-100 transition-all duration-200 ease-in"
+                                        className="p-1 invisible dark:bg-slate-700 dark:text-darkTextColor group-hover:visible absolute top-0 right-0 bg-gray-100 hover:bg-gray-200 rounded-full scale-[0.8] group-hover:scale-100 transition-all duration-200 ease-in"
                                     >
                                         <LuX size={14}/>
                                     </button>
                                 </div>
                             ) : (
                                 <div key={file.id}
-                                     className="pl-2 pr-3.5 py-2 rounded-lg border border-border flex items-center gap-2 group relative">
-                                    <LuFile className='text-[2.2rem] text-gray-600'/>
+                                     className="pl-2 pr-3.5 py-2 dark:border-slate-700 rounded-lg border border-border flex items-center gap-2 group relative">
+                                    <LuFile className='text-[2.2rem] text-gray-600 dark:text-darkTextColor/70'/>
                                     <div>
-                                        <p className="text-sm max-w-xs truncate">{file.name}</p>
+                                        <p className="text-sm dark:text-darkTextColor max-w-xs truncate">{file.name}</p>
                                         <p
-                                            className="text-xs mt-0.5 text-gray-500">{formatFileSize(file.size)}</p>
+                                            className="text-xs mt-0.5 dark:text-darkTextColor/70 text-gray-500">{formatFileSize(file.size)}</p>
                                     </div>
                                     <button
                                         onClick={() => handleRemoveAttachment(file.id)}
-                                        className="p-1 invisible group-hover:visible scale-[0.8] group-hover:scale-100 transition-all duration-200 absolute top-0 right-0 bg-gray-100 hover:bg-gray-200 rounded-full ease-in"
+                                        className="p-1 invisible dark:bg-slate-700 dark:text-darkTextColor group-hover:visible scale-[0.8] group-hover:scale-100 transition-all duration-200 absolute top-0 right-0 bg-gray-100 hover:bg-gray-200 rounded-full ease-in"
                                     >
                                         <LuX size={14}/>
                                     </button>
@@ -372,7 +375,7 @@ const ChatScreenWithFileAttachment = () => {
                         onChange={(e) => setNewMessage(e.target.value)}
                         onKeyPress={handleKeyPress}
                         placeholder="Type a message..."
-                        className="flex-1 pr-4 py-1 border-none focus:outline-none focus:ring-0"
+                        className="w-[70%] 640px:flex-1 pr-4 py-1 border-none dark:bg-transparent dark:text-darkTextColor focus:outline-none focus:ring-0"
                     />
 
                     {/* Hidden file input */}
@@ -388,7 +391,7 @@ const ChatScreenWithFileAttachment = () => {
                     <motion.button
                         whileTap={{scale: 0.95}}
                         onClick={handleAttachmentClick}
-                        className="bg-gray-100 text-gray-600 min-w-[30px] p-2.5 rounded-full hover:bg-gray-200 flex items-center justify-center focus:outline-none"
+                        className="bg-gray-100 text-gray-600 dark:bg-slate-700 dark:text-darkTextColor dark:hover:bg-slate-600/50 min-w-[30px] p-2.5 rounded-full hover:bg-gray-200 flex items-center justify-center focus:outline-none"
                         disabled={isUploading}
                     >
                         <LuPaperclip size={18}/>
