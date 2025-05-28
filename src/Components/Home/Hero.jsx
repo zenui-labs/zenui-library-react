@@ -285,7 +285,7 @@ const Hero = () => {
                         className="dark:text-darkSubTextColor text-gray-500 w-full 425px:w-[80%] 640px:w-[91%] font-[400] text-[1.1rem]">
                         ZenUI Library is an Tailwind CSS components library for any needs. Comes with UI examples &
                         blocks,
-                        templates, Icons, Color Palettes and more.
+                        templates, Icons, Color Palette and more.
                     </motion.p>
 
                     <motion.div
