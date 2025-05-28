@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 // react icons
 import {FaRegCopy} from "react-icons/fa";

@@ -1,4 +1,4 @@
-import React, {useState, useEffect, Suspense} from "react";
+import React, {Suspense, useEffect, useState} from "react";
 import {Route, Routes} from "react-router-dom";
 import {routes} from "./Routes/RouteConfig.js";
 import {MenuProvider} from "./Context/MenuContext.jsx";

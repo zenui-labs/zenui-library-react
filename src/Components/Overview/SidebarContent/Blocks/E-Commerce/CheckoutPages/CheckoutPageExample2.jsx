@@ -18,7 +18,8 @@ const CheckoutPageExample2 = () => {
                     <h2 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-700 font-semibold mb-6">Your order</h2>
                     <div className="border dark:border-slate-700 border-gray-200 rounded-md">
                         <div className="flex flex-col 1024px:flex-row 1024px:items-center gap-4 p-4">
-                            <div className='border relative border-gray-200 dark:border-slate-700 dark:bg-slate-800 w-max rounded-md bg-white'>
+                            <div
+                                className='border relative border-gray-200 dark:border-slate-700 dark:bg-slate-800 w-max rounded-md bg-white'>
                                 <img src="https://i.ibb.co.com/x6fq6nC/Rectangle-516.png" alt="Nike Air Zoom Pegasus 39"
                                      className="w-20 h-20 object-cover rounded"/>
 
@@ -28,15 +29,19 @@ const CheckoutPageExample2 = () => {
                             <div className="flex-1">
                                 <h3 className="font-medium dark:text-[#abc2d3]">Nike Air Zoom Pegasus 39</h3>
                                 <div className='flex items-center gap-[30px] mt-2'>
-                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Size: <b className='text-gray-800 dark:text-slate-400'>XL</b></p>
-                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Color: <b className='text-gray-800 dark:text-slate-400'>Blue</b>
+                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Size: <b
+                                        className='text-gray-800 dark:text-slate-400'>XL</b></p>
+                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Color: <b
+                                        className='text-gray-800 dark:text-slate-400'>Blue</b>
                                     </p>
                                 </div>
                             </div>
                             <span className="font-medium dark:text-[#abc2d3]">$28.00</span>
                         </div>
-                        <div className="flex flex-col 1024px:flex-row 1024px:items-center dark:border-slate-700 gap-4 border-t p-4 border-gray-200">
-                            <div className='border relative dark:border-slate-700 dark:bg-slate-800 border-gray-200 w-max rounded-md bg-white'>
+                        <div
+                            className="flex flex-col 1024px:flex-row 1024px:items-center dark:border-slate-700 gap-4 border-t p-4 border-gray-200">
+                            <div
+                                className='border relative dark:border-slate-700 dark:bg-slate-800 border-gray-200 w-max rounded-md bg-white'>
                                 <img src="https://i.ibb.co.com/VJKrBt5/Rectangle-519.png"
                                      alt="Nike React Pegasus Trail 4"
                                      className="w-20 h-20 object-cover rounded"/>
@@ -47,8 +52,10 @@ const CheckoutPageExample2 = () => {
                             <div className="flex-1">
                                 <h3 className="font-medium dark:text-[#abc2d3]">Nike Air Zoom Pegasus 39</h3>
                                 <div className='flex items-center gap-[30px] mt-2'>
-                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Size: <b className='text-gray-800 dark:text-slate-400'>XL</b></p>
-                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Color: <b className='text-gray-800 dark:text-slate-400'>Blue</b>
+                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Size: <b
+                                        className='text-gray-800 dark:text-slate-400'>XL</b></p>
+                                    <p className="text-sm text-gray-500 dark:text-[#abc2d3]">Color: <b
+                                        className='text-gray-800 dark:text-slate-400'>Blue</b>
                                     </p>
                                 </div>
                             </div>
@@ -56,7 +63,8 @@ const CheckoutPageExample2 = () => {
                         </div>
                     </div>
                     <div className="mt-6">
-                        <h3 className="font-medium mb-2 text-[1rem] dark:text-[#abc2d3] text-gray-800">Discount Code</h3>
+                        <h3 className="font-medium mb-2 text-[1rem] dark:text-[#abc2d3] text-gray-800">Discount
+                            Code</h3>
                         <div className="flex gap-2 relative">
                             <img alt='discount/png' src='https://i.ibb.co.com/r7rF8xK/ticket-discount.png'
                                  className='w-[25px] absolute transform top-[50%] translate-y-[-50%] left-2'/>
@@ -80,7 +88,8 @@ const CheckoutPageExample2 = () => {
                             <span className="text-[1rem] dark:text-[#abc2d3] text-gray-500">Discount (10%)</span>
                             <span className='text-[1rem] dark:text-[#abc2d3] font-medium text-gray-800'>-$13.00</span>
                         </div>
-                        <div className="flex justify-between border-t dark:text-[#abc2d3] dark:border-slate-700 border-gray-200 pt-5 font-medium">
+                        <div
+                            className="flex justify-between border-t dark:text-[#abc2d3] dark:border-slate-700 border-gray-200 pt-5 font-medium">
                             <span>Total</span>
                             <span className='text-[1rem] font-medium dark:text-[#abc2d3] text-gray-800'>$51.00</span>
                         </div>
@@ -98,7 +107,8 @@ const CheckoutPageExample2 = () => {
                                className={inputStyles}/>
                     </div>
                     <div>
-                        <label htmlFor="phone" className="text-[1rem] dark:text-[#abc2d3] font-medium text-gray-800 mb-1">Phone
+                        <label htmlFor="phone"
+                               className="text-[1rem] dark:text-[#abc2d3] font-medium text-gray-800 mb-1">Phone
                             number</label>
                         <div className="flex gap-2">
                             <select
@@ -120,8 +130,10 @@ const CheckoutPageExample2 = () => {
                     </div>
                     <div>
                         <div className='flex items-center justify-between mb-2'>
-                            <label className="text-[1rem] font-medium dark:text-[#abc2d3] text-gray-800">Payment method</label>
-                            <button type="button" className="text-blue-600 text-right flex text-[0.9rem] items-center gap-[5px]">
+                            <label className="text-[1rem] font-medium dark:text-[#abc2d3] text-gray-800">Payment
+                                method</label>
+                            <button type="button"
+                                    className="text-blue-600 text-right flex text-[0.9rem] items-center gap-[5px]">
                                 <AiOutlinePlus/>
                                 Add new
                             </button>
@@ -153,7 +165,7 @@ const CheckoutPageExample2 = () => {
                                     </div>
 
                                     <div className='flex items-center gap-[5px] pl-5 mt-0.5'>
-                                    <p className='text-[0.9rem] dark:text-slate-400 text-gray-500'>Paypal •</p>
+                                        <p className='text-[0.9rem] dark:text-slate-400 text-gray-500'>Paypal •</p>
                                         <p className='text-[0.9rem] dark:text-slate-400 text-gray-500 hover:text-[#0FABCA] cursor-pointer'> Edit</p>
                                     </div>
                                 </div>
@@ -163,14 +175,16 @@ const CheckoutPageExample2 = () => {
                         </div>
                     </div>
                     <div>
-                    <label htmlFor="cardHolder" className="text-[1rem] font-medium dark:text-[#abc2d3] text-gray-800 mb-1">Card
+                        <label htmlFor="cardHolder"
+                               className="text-[1rem] font-medium dark:text-[#abc2d3] text-gray-800 mb-1">Card
                             holder name</label>
                         <input type="text" id="cardHolder" placeholder="Ex. Jane Cooper"
                                className={inputStyles}/>
                     </div>
                     <div>
                         <label htmlFor="billingAddress"
-                               className="text-[1rem] font-medium text-gray-800 dark:text-[#abc2d3] mb-1">Billing address</label>
+                               className="text-[1rem] font-medium text-gray-800 dark:text-[#abc2d3] mb-1">Billing
+                            address</label>
                         <select id="billingAddress"
                                 className="w-full border rounded dark:border-slate-700 dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] px-3 py-2 border-gray-200 outline-none focus:border-[#0FABCA] mt-0.5">
                             <option>United States</option>
@@ -187,7 +201,8 @@ const CheckoutPageExample2 = () => {
                     </div>
                     <div className="grid grid-cols-1 1024px:grid-cols-2 gap-4">
                         <div>
-                            <label htmlFor="zipCode" className="text-[1rem] dark:text-[#abc2d3] font-medium text-gray-800 mb-1">Zip
+                            <label htmlFor="zipCode"
+                                   className="text-[1rem] dark:text-[#abc2d3] font-medium text-gray-800 mb-1">Zip
                                 code</label>
                             <input type="text" id="zipCode" placeholder="Ex. 73923"
                                    className={inputStyles}/>
@@ -201,7 +216,8 @@ const CheckoutPageExample2 = () => {
                     </div>
                     <div className="flex items-center gap-2">
                         <input type="checkbox" id="sameAsShipping" className="form-checkbox"/>
-                        <label htmlFor="sameAsShipping" className="text-sm dark:text-[#abc2d3] text-gray-600">Billing address is
+                        <label htmlFor="sameAsShipping" className="text-sm dark:text-[#abc2d3] text-gray-600">Billing
+                            address is
                             same as shipping</label>
                     </div>
                     <button type="submit"

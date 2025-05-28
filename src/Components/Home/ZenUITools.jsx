@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {AnimatePresence, motion} from 'framer-motion';
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
-
+ 
 const ZenUITools = () => {
     const [selectedImage, setSelectedImage] = useState(0);
 

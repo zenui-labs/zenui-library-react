@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import {useEffect, useState} from 'react';
 
 // react icons
 import {RiShiningFill} from "react-icons/ri";

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
 // react icons
 import {FaStar} from 'react-icons/fa6'
@@ -137,7 +137,8 @@ const ProductDetailsExample2 = () => {
                         <span className="text-sm dark:text-slate-400 text-gray-600">11 Reviews</span>
                     </div>
 
-                    <h1 className="text-[1.6rem] 1024px:text-[1.9rem] dark:text-[#abc2d3] text-gray-800 font-semibold">Tray Table</h1>
+                    <h1 className="text-[1.6rem] 1024px:text-[1.9rem] dark:text-[#abc2d3] text-gray-800 font-semibold">Tray
+                        Table</h1>
 
                     <p className="text-gray-600 dark:text-slate-400 text-[0.9rem]">
                         Buy one or buy a few and make every space where you sit more convenient. Light and easy to
@@ -216,7 +217,7 @@ const ProductDetailsExample2 = () => {
                             </button>
                         </div>
                         <button
-                            onClick={()=> setIsFavorite(!isFavorite)}
+                            onClick={() => setIsFavorite(!isFavorite)}
                             className="py-3 border border-gray-200 rounded-md dark:border-slate-700 dark:text-[#abc2d3] dark:hover:bg-slate-900 flex items-center justify-center gap-[10px] grow hover:bg-gray-50">
                             {
                                 isFavorite ? (

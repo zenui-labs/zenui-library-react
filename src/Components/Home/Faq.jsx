@@ -7,7 +7,7 @@ const Faq = () => {
 
     const [isAccording1, setIsAccording1] = useState(null);
     const [isAccording2, setIsAccording2] = useState(null);
-
+ 
     const accordingData1 = [
         {
             title: "What is ZenUI Library?",

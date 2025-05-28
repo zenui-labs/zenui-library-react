@@ -9,7 +9,7 @@ import Search from "./Search";
 import {FiGithub} from "react-icons/fi";
 import {RxDiscordLogo} from "react-icons/rx";
 
-import {motion, AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import {LuSun} from "react-icons/lu";
 import {RiMoonClearLine} from "react-icons/ri";
 

@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-
+ 
 const CookieModal = ({isModalOpen, setisModalOpen}) => {
 
     useEffect(() => {

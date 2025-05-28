@@ -4,7 +4,7 @@ import ResourceIcon from "@/SvgIcons/ResourceIcon.jsx";
 import TemplatesIcon from "@/SvgIcons/TemplatesIcon.jsx";
 import HookIcon from "@/SvgIcons/HookIcon.jsx";
 import {CollapseMenu, DefaultMenu} from "./children/Menu/index.jsx";
-
+ 
 const Content = () => {
     return (
         <>

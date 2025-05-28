@@ -1,12 +1,11 @@
 import React, {useState} from "react";
 
 // icons
-import {FaLinkedin, FaFacebook} from "react-icons/fa";
+import {FaFacebook, FaLinkedin} from "react-icons/fa";
 import {FaXTwitter} from "react-icons/fa6";
 import {SiGmail} from "react-icons/si";
 import useZenuiStore from "@/Store/Index.js";
 import SectionWrapper from "./SectionWrapper.jsx";
-import {GrNewWindow} from "react-icons/gr";
 import {GoArrowUpRight} from "react-icons/go";
 
 const Footer = () => {
@@ -206,7 +205,8 @@ const Footer = () => {
                 <div
                     className='mt-14 1024px:mx-auto flex w-[250px] flex-wrap 1024px:flex-nowrap 1024px:items-center 1024px:justify-center 1024px:w-[800px] gap-4 1024px:gap-8'>
                     <a href='https://web.facebook.com/share/g/D8DbMaprfWPksSGF/' target='_blank'
-                       className='border border-blue-600 rounded-high flex w-full py-[5px] px-2.5 gap-3 items-center' rel="noreferrer">
+                       className='border border-blue-600 rounded-high flex w-full py-[5px] px-2.5 gap-3 items-center'
+                       rel="noreferrer">
                         <img src='https://i.ibb.co.com/vJynhGR/Facebook-Logo-2023.png'
                              alt='facebook' className='w-[28px]'/>
 
@@ -236,7 +236,8 @@ const Footer = () => {
 
 
                     <a href='https://discord.gg/ysqmqNapZW' target='_blank'
-                       className='border border-blue-400 rounded-high flex w-full py-[5px] px-2.5 gap-2 items-center' rel="noreferrer">
+                       className='border border-blue-400 rounded-high flex w-full py-[5px] px-2.5 gap-2 items-center'
+                       rel="noreferrer">
                         <img src='https://i.ibb.co.com/V07rXpTJ/download.png'
                              alt='facebook' className='w-[30px] rounded-full'/>
 

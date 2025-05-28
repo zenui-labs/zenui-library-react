@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { IoIosArrowDown } from "react-icons/io";
+import React, {useEffect, useState} from "react";
+import {IoIosArrowDown} from "react-icons/io";
 
-const Select = ({ value, label, options, onChange }) => {
+const Select = ({value, label, options, onChange}) => {
     const [search, setSearch] = useState(""); // For search input
     const [isOpen, setIsOpen] = useState(false); // For dropdown visibility
     const [selectedOptions, setSelectedOptions] = useState(null); // For tracking selected option
@@ -61,7 +61,8 @@ const Select = ({ value, label, options, onChange }) => {
 
                 {/* Dropdown menu */}
                 {isOpen && (
-                    <div className="absolute left-0 dark:bg-slate-900 dark:border-slate-700 w-full mt-1 border border-gray-200 rounded-md bg-white shadow-lg z-20">
+                    <div
+                        className="absolute left-0 dark:bg-slate-900 dark:border-slate-700 w-full mt-1 border border-gray-200 rounded-md bg-white shadow-lg z-20">
                         <div className="w-full overflow-auto">
                             {filteredItems.map((item) => (
                                 <p

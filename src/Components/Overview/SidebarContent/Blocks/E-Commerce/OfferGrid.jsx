@@ -5,7 +5,7 @@ import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
 import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
-// icons
+// icons 
 import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 import {HiArrowRight} from "react-icons/hi";

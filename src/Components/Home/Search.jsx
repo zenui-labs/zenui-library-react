@@ -5,7 +5,7 @@ import {blocksSearchData, componentSearchData} from "@utils/SearchData.js";
 import {LuLayoutTemplate} from "react-icons/lu";
 import {RxSection} from "react-icons/rx";
 import {Link, useNavigate} from "react-router-dom";
-
+ 
 const Search = ({isSearchOpen, setIsSearchOpen}) => {
     const [inputText, setInputText] = useState("");
     const [focusedIndex, setFocusedIndex] = useState(-1);

@@ -11,8 +11,13 @@ import {IoIosArrowDown, IoIosArrowUp, IoIosSearch} from "react-icons/io";
 import {TbBrandGithubFilled, TbLogout2, TbUsersGroup} from "react-icons/tb";
 import {CiMenuFries} from "react-icons/ci";
 import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
-import {MdKeyboardArrowDown, MdLaptopMac, MdOutlineArrowRightAlt, MdOutlineKeyboardArrowRight} from "react-icons/md";
-import {MdDashboardCustomize} from "react-icons/md";
+import {
+    MdDashboardCustomize,
+    MdKeyboardArrowDown,
+    MdLaptopMac,
+    MdOutlineArrowRightAlt,
+    MdOutlineKeyboardArrowRight
+} from "react-icons/md";
 import {CgIfDesign} from "react-icons/cg";
 import {FaCubesStacked} from "react-icons/fa6";
 import {BsArrowRight, BsBuildings, BsCalendar2Date} from "react-icons/bs";

@@ -4,7 +4,7 @@ import MetricsCard from "@/Components/Home/MetricsCard.jsx";
 const PrivacyPolicy = () => {
 
     const date = new Date();
-
+ 
     return (
         <section
             className="max-w-[1300px] mx-auto mt-8 px-6 640px:px-8 1024px:px-10 1404px:px-0 w-full pt-[2.5rem] p-6 min-h-screen relative">

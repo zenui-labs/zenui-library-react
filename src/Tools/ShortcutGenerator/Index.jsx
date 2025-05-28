@@ -1,11 +1,10 @@
-import React, {useEffect, useState, useCallback} from 'react';
+import React, {useEffect, useState} from 'react';
 
 // component
 import Generator from "./Generator.jsx";
-import {FiEye} from "react-icons/fi";
 
 const Index = () => {
-    const[isContentLoaded, setIsContentLoaded] = useState(false);
+    const [isContentLoaded, setIsContentLoaded] = useState(false);
 
 
     useEffect(() => {

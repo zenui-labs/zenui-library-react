@@ -10,7 +10,7 @@ import ShuffleSortExample from "@/Components/Home/AnimatedCards/ShuffleSortExamp
 import {useNavigate} from "react-router-dom";
 
 const AnimationsBentoGrid = () => {
-
+ 
     const navigate = useNavigate()
 
     return (

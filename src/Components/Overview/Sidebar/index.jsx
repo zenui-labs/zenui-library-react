@@ -1,7 +1,7 @@
 import {useContext, useEffect, useRef} from "react";
 import Content from "./Content";
 import {MenuContext} from "@/Context/MenuContext.jsx";
-
+ 
 const Sidebar = () => {
     const sidebarRef = useRef(null);
     const {scrollY, setScrollY} = useContext(MenuContext)

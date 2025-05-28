@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react';
 import {HiChevronDown} from "react-icons/hi";
-import {motion, AnimatePresence} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 
 const VersionSelectBox = () => {
     const [selectedVersion, setSelectedVersion] = React.useState('v3');

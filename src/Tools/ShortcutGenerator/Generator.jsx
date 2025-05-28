@@ -64,7 +64,7 @@ const Generator = () => {
     }, [handleKeyDown])
 
     const generateCode = () => {
-        if(!detectedKeys.length && !shortcut){
+        if (!detectedKeys.length && !shortcut) {
             setInputError('Please enter or detect keys');
             return;
         }
@@ -119,7 +119,8 @@ document.removeEventListener('keydown', ${functionName});
         <>
             <div className='w-full'>
                 <div>
-                    <label htmlFor="manual-input" className='text-[1rem] dark:text-darkSubTextColor font-semibold text-gray-700 '>Type
+                    <label htmlFor="manual-input"
+                           className='text-[1rem] dark:text-darkSubTextColor font-semibold text-gray-700 '>Type
                         Shortcut</label> <br/>
                     <input
                         id="manual-input"
@@ -138,10 +139,12 @@ document.removeEventListener('keydown', ${functionName});
                 </div>
 
                 <div className='mt-5'>
-                    <label className='text-[1rem] dark:text-darkSubTextColor font-semibold text-gray-700 flex items-center gap-[5px]'>
+                    <label
+                        className='text-[1rem] dark:text-darkSubTextColor font-semibold text-gray-700 flex items-center gap-[5px]'>
                         Auto Detected Keys
                         <div className='relative group'>
-                            <IoIosInformationCircleOutline className='text-[1.2rem] dark:text-darkSubTextColor cursor-pointer text-gray-600'/>
+                            <IoIosInformationCircleOutline
+                                className='text-[1.2rem] dark:text-darkSubTextColor cursor-pointer text-gray-600'/>
                             <div
                                 className="px-3 py-2 w-[330px] rounded text-secondary bg-gray-900 absolute top-[-60px] left-[50%] translate-x-[-50%] dark:bg-slate-800 translate-y-[10px] opacity-0 z-[-1] text-center group-hover:opacity-100 dark:text-darkTextColor group-hover:z-30 group-hover:translate-y-0 transition-all duration-200 text-[0.8rem]">
 
@@ -169,7 +172,7 @@ document.removeEventListener('keydown', ${functionName});
                 <div className='flex items-center gap-[15px] mt-7'>
                     <button onClick={generateCode}
                             className='code_generate_btn bg-gradient-to-r from-[#0FABCA] hover:from-[#0FABCA]/80 to-[#CD00F1] hover:to-[#CD00F1]/80 flex items-center gap-[6px] text-white py-2.5 px-6 rounded-md'>
-                        <RiShiningFill className={isGenerating ? "animate-spin-zoom" : ""} />
+                        <RiShiningFill className={isGenerating ? "animate-spin-zoom" : ""}/>
                         {isGenerating ? 'Generating...' : 'Generate Code'}
                     </button>
 
@@ -184,7 +187,8 @@ document.removeEventListener('keydown', ${functionName});
             </div>
             <CodesSidebar sidebarOpen={sidebarOpen} isGenerating={isGenerating} setSidebarOpen={setSidebarOpen}
                           codes={generatedCode}/>
-            <ShortcutCheatsheetModal isOpen={cheatsheetOpen} setIsOpen={setCheatsheetOpen} VALID_KEYS={VALID_KEYS} VALID_MODIFIERS={VALID_MODIFIERS}/>
+            <ShortcutCheatsheetModal isOpen={cheatsheetOpen} setIsOpen={setCheatsheetOpen} VALID_KEYS={VALID_KEYS}
+                                     VALID_MODIFIERS={VALID_MODIFIERS}/>
         </>
     );
 };

@@ -1,4 +1,4 @@
-import React, {useRef, useEffect, useState} from 'react';
+import React, {useEffect, useRef} from 'react';
 
 const ShortcutCheatsheetModal = ({VALID_MODIFIERS, VALID_KEYS, isOpen, setIsOpen}) => {
 
@@ -38,7 +38,8 @@ const ShortcutCheatsheetModal = ({VALID_MODIFIERS, VALID_KEYS, isOpen, setIsOpen
                     } w-[90%] 1024px:w-[50%] dark:bg-slate-900 bg-[#ffffff] max-h-[90vh] overflow-y-auto rounded-lg p-6 transition-all duration-300`}
                 >
                     <div className="flex justify-between items-start 640px:items-center mb-8">
-                        <h2 className="text-[1.3rem] 640px:text-[1.7rem] dark:text-darkTextColor font-semibold text-gray-800">Keyboard Shortcut Cheatsheet</h2>
+                        <h2 className="text-[1.3rem] 640px:text-[1.7rem] dark:text-darkTextColor font-semibold text-gray-800">Keyboard
+                            Shortcut Cheatsheet</h2>
                         <button
                             onClick={() => setIsOpen(false)}
                             className="text-gray-500 dark:text-darkSubTextColor dark:hover:text-darkTextColor hover:text-gray-700 focus:outline-none"
@@ -53,7 +54,8 @@ const ShortcutCheatsheetModal = ({VALID_MODIFIERS, VALID_KEYS, isOpen, setIsOpen
 
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-[1rem] dark:text-darkSubTextColor 640px:text-[1.2rem] text-gray-600 font-semibold mb-2">Valid Modifiers</h3>
+                            <h3 className="text-[1rem] dark:text-darkSubTextColor 640px:text-[1.2rem] text-gray-600 font-semibold mb-2">Valid
+                                Modifiers</h3>
                             <div className="flex flex-wrap gap-2">
                                 {VALID_MODIFIERS.map((modifier) => (
                                     <span key={modifier}
@@ -65,7 +67,8 @@ const ShortcutCheatsheetModal = ({VALID_MODIFIERS, VALID_KEYS, isOpen, setIsOpen
                         </div>
 
                         <div>
-                            <h3 className="text-[1rem] dark:text-darkSubTextColor 640px:text-[1.2rem] text-gray-600 font-semibold mb-2 mt-10">Valid Keys</h3>
+                            <h3 className="text-[1rem] dark:text-darkSubTextColor 640px:text-[1.2rem] text-gray-600 font-semibold mb-2 mt-10">Valid
+                                Keys</h3>
                             <div className="grid grid-cols-2 425px:grid-cols-3 640px:grid-cols-6 gap-2">
                                 {VALID_KEYS.map((key) => (
                                     <span key={key}

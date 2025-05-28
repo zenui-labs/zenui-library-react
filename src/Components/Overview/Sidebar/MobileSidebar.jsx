@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 
 import {CiMenuFries} from "react-icons/ci";
 import Content from "./Content.jsx";
-
+ 
 const MobileSidebar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 

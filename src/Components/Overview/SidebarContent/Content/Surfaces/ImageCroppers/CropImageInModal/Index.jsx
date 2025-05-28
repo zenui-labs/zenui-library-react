@@ -43,9 +43,11 @@ const Index = () => {
 
                         <IoIosImages className="text-[3rem] dark:text-darkSubTextColor text-gray-400"/>
 
-                        <p className="mt-4 dark:text-darkTextColor text-black font-[500] text-center 1024px:text-start leading-[30px]">Choose a file or Drag and drop it here</p>
+                        <p className="mt-4 dark:text-darkTextColor text-black font-[500] text-center 1024px:text-start leading-[30px]">Choose
+                            a file or Drag and drop it here</p>
 
-                        <p className="text-gray-400 dark:text-slate-400 font-[300] text-center 1024px:text-start text-[0.8rem]">JPG, PNG, JPEG formats, maximum size
+                        <p className="text-gray-400 dark:text-slate-400 font-[300] text-center 1024px:text-start text-[0.8rem]">JPG,
+                            PNG, JPEG formats, maximum size
                             300x200 pixels</p>
 
                         <input

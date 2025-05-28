@@ -3,5 +3,5 @@ const toggleThemeBaseClasses = (classString, isDark) => {
 
     return classString.replace(/\s+dark:[^\s"]+/g, '');
 };
-
+ 
 export default toggleThemeBaseClasses;

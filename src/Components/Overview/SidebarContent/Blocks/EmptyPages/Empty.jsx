@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-// components
+// components 
 import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
 import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";

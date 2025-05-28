@@ -9,7 +9,7 @@ import {useNavigate} from "react-router-dom";
 const TemplatesSlider = () => {
 
     const navigate = useNavigate();
-
+ 
     return (
         <SectionWrapper className='mb-28'>
             <SectionHead

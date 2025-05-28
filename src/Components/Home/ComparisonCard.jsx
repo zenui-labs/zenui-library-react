@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from "react";
+import {useEffect, useRef, useState} from "react";
 
 const ComparisonCard = () => {
     const [sliderPosition, setSliderPosition] = useState(80);

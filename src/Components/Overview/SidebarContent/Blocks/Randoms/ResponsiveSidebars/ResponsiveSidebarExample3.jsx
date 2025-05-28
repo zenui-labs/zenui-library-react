@@ -232,9 +232,11 @@ const ResponsiveSidebarExample3 = () => {
                     <div className={`${isDark ? 'translate-x-[21px]' : 'translate-x-0'} transition-all duration-300`}>
                         {
                             isDark ? (
-                                <IoMoonOutline className='text-[1.6rem] cursor-pointer dark:bg-slate-800/70 dark:text-[#abc2d3] bg-white rounded-full p-[5px]'/>
+                                <IoMoonOutline
+                                    className='text-[1.6rem] cursor-pointer dark:bg-slate-800/70 dark:text-[#abc2d3] bg-white rounded-full p-[5px]'/>
                             ) : (
-                                <IoSunnyOutline className='text-[1.6rem] cursor-pointer dark:bg-slate-800/70 dark:text-[#abc2d3] bg-white rounded-full p-[5px]'/>
+                                <IoSunnyOutline
+                                    className='text-[1.6rem] cursor-pointer dark:bg-slate-800/70 dark:text-[#abc2d3] bg-white rounded-full p-[5px]'/>
                             )
                         }
                     </div>

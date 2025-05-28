@@ -1,4 +1,4 @@
-import React, {lazy} from 'react';
+import {lazy} from 'react';
 
 // Documentation Routes
 const DocsRoutes = [
@@ -194,7 +194,6 @@ const MiscRoutes = [
     {path: "/components/all-components", component: lazy(() => import("@pages/Components/AllComponentsPage"))},
     {path: "/icons", component: lazy(() => import("@pages/IconsPage"))},
     {path: "/color-palette", component: lazy(() => import("@pages/OpacityPalettePage"))},
-    {path: "/layout-playground", component: lazy(() => import("@pages/LayoutPlaygroundPage"))},
     {path: "/shortcut-generator", component: lazy(() => import("@pages/ShortcutGeneratorPage"))},
     {path: "/config-generator", component: lazy(() => import("@pages/AIGeneratorPage"))},
     {path: "/zenui-hero-docs", component: lazy(() => import("@pages/ZenUIHeroDocsPage"))},
