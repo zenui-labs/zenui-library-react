@@ -1,0 +1,3 @@
+[build]
+  command = "npm install --ignore-scripts=false && npm run build"
+  publish = "dist"
