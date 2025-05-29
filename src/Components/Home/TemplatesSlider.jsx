@@ -9,9 +9,9 @@ import {useNavigate} from "react-router-dom";
 const TemplatesSlider = () => {
 
     const navigate = useNavigate();
- 
+
     return (
-        <SectionWrapper className='mb-28'>
+        <SectionWrapper className='my-28'>
             <SectionHead
                 description={'Free, ready-to-use templates to build your projects at lightning speed, perfect for anyone looking to save time without sacrificing quality.'}
                 isSubjet={'20+'} title={'Pre-built Templates'}/>

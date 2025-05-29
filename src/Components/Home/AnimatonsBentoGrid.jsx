@@ -10,11 +10,11 @@ import ShuffleSortExample from "@/Components/Home/AnimatedCards/ShuffleSortExamp
 import {useNavigate} from "react-router-dom";
 
 const AnimationsBentoGrid = () => {
- 
+
     const navigate = useNavigate()
 
     return (
-        <SectionWrapper className='!mt-36'>
+        <SectionWrapper className='mt-36 640px:mt-40'>
             <SectionHead
                 description={'Reusable UI components with smooth animations — built to speed up development and enhance user experience.'}
                 isSubjet={'50+'}

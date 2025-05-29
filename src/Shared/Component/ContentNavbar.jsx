@@ -76,6 +76,11 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         <span className='text-[0.94rem]'>Request a feature</span>
                     </p>
                 </div>
+
+                <div className='p-2 mt-5'>
+                    <div
+                        className='bg-gray-100 cursor-pointer rotate-[5deg] transition-all duration-200 rounded-high w-full max-w-[200px] h-[150px]'></div>
+                </div>
             </div>
         </div>
     );

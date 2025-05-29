@@ -9,7 +9,7 @@ import SectionWrapper from "./SectionWrapper.jsx";
 const Feedback = () => {
 
     return (
-        <SectionWrapper className='relative'>
+        <SectionWrapper className='relative mt-28'>
             <SectionHead isSubjet={'Wall Of'} title={'Love'} description={'Thoughts\n' +
                 '                    from those who\'ve\n' +
                 '                    experienced ZenUI in action.'}/>

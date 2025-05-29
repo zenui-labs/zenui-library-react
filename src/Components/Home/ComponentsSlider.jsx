@@ -14,7 +14,7 @@ const ComponentsSlider = () => {
     const navigate = useNavigate();
 
     return (
-        <SectionWrapper className='relative'>
+        <SectionWrapper className='relative mt-28'>
             <SectionHead
                 description={'Handcrafted, ready-to-use, and diverse collection of free UI components designed for rapid MVP\n' +
                     '                    development. Just Browse, copy-paste, and you\'re done!'}

@@ -1,7 +1,7 @@
 {
-  "name": "tailwind-ui",
+  "name": "zenui-library",
   "private": true,
-  "version": "0.0.0",
+  "version": "3.0",
   "type": "module",
   "scripts": {
     "dev": "vite",

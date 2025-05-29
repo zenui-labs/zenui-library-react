@@ -37,7 +37,7 @@ const MetricsCard = () => {
     return (
         <SectionWrapper className='!mt-24 relative'>
             <div
-                className='rounded-3xl bg-gradient-to-r overflow-hidden relative dark:from-blue-800 from-blue-100 dark:via-slate-800 via-white to-cyan-100 z-0 dark:to-cyan-600/90 640px:pt-16 p-8 640px:p-20 1024px:p-24'>
+                className='rounded-3xl bg-gradient-to-r overflow-hidden relative dark:from-blue-900 from-blue-100 dark:via-[#A576E3]/60 via-white to-cyan-100 z-0 dark:to-cyan-600/80 640px:pt-16 p-8 640px:p-20 1024px:p-24'>
 
                 <img src='https://react.keepdesign.io/images/home/community.svg'
                      alt='shape-image'
