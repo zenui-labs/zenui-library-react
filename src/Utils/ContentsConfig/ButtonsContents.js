@@ -127,4 +127,7 @@ export const animatedButtonContents = [
     title: '2 Part Marge Animation',
     href: '#2_part_marge_animation',
   },
+  { title: "Day Night Toggle Animation", 
+    href: "#day_night_toggle_animation" 
+  },
 ];
