@@ -16,7 +16,6 @@ import ComponentsSlider from "./ComponentsSlider.jsx";
 import FeaturesCard from "./FeaturesCard.jsx";
 
 import {motion} from "framer-motion";
-import {FaArrowRightLong} from "react-icons/fa6";
 
 // components
 import SwitchCard from "../HomePageComponents/Switch.jsx";
@@ -86,7 +85,7 @@ const Hero = () => {
     }, []);
 
     const electricityVariants = {
-        hidden: { opacity: 0, scale: 0.8, x: -50 },
+        hidden: {opacity: 0, scale: 0.8, x: -50},
         visible: {
             opacity: 1,
             scale: 1,
@@ -101,7 +100,7 @@ const Hero = () => {
     };
 
     const glowVariants = {
-        initial: { boxShadow: "0 0 0px rgba(239, 68, 68, 0)" },
+        initial: {boxShadow: "0 0 0px rgba(239, 68, 68, 0)"},
         glow: {
             boxShadow: [
                 "0 0 2px rgba(239, 68, 68, 0.3)",
@@ -286,7 +285,7 @@ const Hero = () => {
                         className="dark:text-darkSubTextColor text-gray-500 w-full 425px:w-[80%] 640px:w-[91%] font-[400] text-[1.1rem]">
                         ZenUI Library is an Tailwind CSS components library for any needs. Comes with UI examples &
                         blocks,
-                        templates, Icons, Color Palette and more.
+                        templates, Icons, Color Palettes and more.
                     </motion.p>
 
                     <motion.div
