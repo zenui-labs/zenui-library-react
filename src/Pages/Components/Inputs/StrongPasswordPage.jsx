@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import StrongPassword from "../../../Components/Overview/SidebarContent/Content/Inputs/StrongPassword.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import StrongPassword from "@components/Inputs/StrongPassword.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const StrongPasswordPage = () => {
     return (
         <ContentPageLayout>
-            <StrongPassword />
+            <StrongPassword/>
         </ContentPageLayout>
     );
 };

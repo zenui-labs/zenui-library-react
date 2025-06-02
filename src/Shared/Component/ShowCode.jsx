@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/esm/styles/prism";
+import React, {useState} from "react";
+import {Prism as SyntaxHighlighter} from "react-syntax-highlighter";
+import {dracula} from "react-syntax-highlighter/dist/esm/styles/prism";
 import {FaJsSquare, FaReact, FaRegCopy} from "react-icons/fa";
-import { MdOutlineDone } from "react-icons/md";
+import {MdOutlineDone} from "react-icons/md";
 
 // store
-import useZenuiStore from "../../Store/Index.js";
-import toggleThemeBaseClasses from "../../Supports/Index.js";
+import useZenuiStore from "@/Store/Index.js";
+import toggleThemeBaseClasses from "../../Helpers/Index.js";
 import {IoLogoCss3} from "react-icons/io";
 
-const ShowCode = ({ code }) => {
+const ShowCode = ({code}) => {
     const [isCopy, setIsCopy] = useState(false);
     const isMultiTab = Array.isArray(code);
     const [activeTab, setActiveTab] = useState(
@@ -21,7 +21,7 @@ const ShowCode = ({ code }) => {
     // Format code properly whether it's a single code string or multiple
     const formattedCode = isMultiTab
         ? code
-        : [{ id: "default", displayText: "", language: "jsx", code: code }];
+        : [{id: "default", displayText: "", language: "jsx", code: code}];
 
     // copy to clipboard
     const copyToClipboard = () => {
@@ -35,7 +35,7 @@ const ShowCode = ({ code }) => {
     };
 
     return (
-        <div className="code-block-wrapper border border-[#ffffff15] rounded overflow-hidden">
+        <div className="code-block-wrapper border border-[#ffffff15] rounded-normal overflow-hidden">
             {/* Tabs Section */}
             {isMultiTab && (
                 <div className="flex bg-[#282a36] border-b border-[#ffffff15] pl-2 pr-4 pt-1.5">
@@ -78,9 +78,9 @@ const ShowCode = ({ code }) => {
                     className="absolute right-4 top-4 z-10 w-[40px] h-[40px] flex items-center justify-center bg-[#000000d7] rounded-md transition-all duration-300 hover:bg-[#00000080]"
                 >
                     {isCopy ? (
-                        <MdOutlineDone className="text-[1.3rem] text-green-500" />
+                        <MdOutlineDone className="text-[1.3rem] text-green-500"/>
                     ) : (
-                        <FaRegCopy className="text-[1.2rem] text-gray-400" />
+                        <FaRegCopy className="text-[1.2rem] text-gray-400"/>
                     )}
                 </button>
 

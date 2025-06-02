@@ -1,23 +1,23 @@
 import React, {useState} from 'react';
 
 // components
-import OverviewFooter from '../../../../../../Shared/OverviewFooter';
-import ContentHeader from '../../../../../../Shared/ContentHeader';
+import OverviewFooter from '@shared/OverviewFooter';
+import ContentHeader from '@shared/ContentHeader';
 
 // contents for scrollspy
-import {marqueeContents} from '../../../../../../Utils/ContentsConfig/NavigationContents';
-import {useScrollSpy} from '../../../../../../CustomHooks/useScrollSpy';
+import {marqueeContents} from '@utils/ContentsConfig/NavigationContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
 // react helmet
 import {Helmet} from 'react-helmet';
 
 // showing the code
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 import HorizontalMarquee from "./HorizontalMarquee.jsx";
 import VerticalMarquee from "./VerticalMarquee.jsx";
 

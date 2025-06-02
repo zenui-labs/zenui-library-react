@@ -188,7 +188,7 @@ const ProductFilterExample1 = () => {
     const [filters, setFilters] = useState({
         search: '',
         categories: [],
-        priceRange: { min: 0, max: Infinity },
+        priceRange: {min: 0, max: Infinity},
         brands: [],
         tags: []
     });
@@ -204,7 +204,7 @@ const ProductFilterExample1 = () => {
     };
 
     const handleCheckboxChange = (event, data) => {
-        if(event.target.checked){
+        if (event.target.checked) {
             setActivebrand(data.id)
         }
     }
@@ -317,11 +317,11 @@ const ProductFilterExample1 = () => {
     ]
 
     const items = [
-        { id: 1, name: "Option 1" },
-        { id: 2, name: "Option 2" },
-        { id: 3, name: "Option 3" },
-        { id: 4, name: "Option 4" },
-        { id: 5, name: "Option 5" },
+        {id: 1, name: "Option 1"},
+        {id: 2, name: "Option 2"},
+        {id: 3, name: "Option 3"},
+        {id: 4, name: "Option 4"},
+        {id: 5, name: "Option 5"},
     ];
 
     const priceRanges = [
@@ -657,7 +657,7 @@ const ProductFilterExample1 = () => {
                 <div className='flex items-center justify-between gap-[50px] w-full'>
                     <div className='w-full relative'>
                         <input type='text' placeholder='Search...'
-                               onInput={(e)=> updateFilter('search', e.target.value)}
+                               onInput={(e) => updateFilter('search', e.target.value)}
                                className='border border-[#e5eaf2] py-2 pl-4 pr-[65px] outline-none w-full rounded-md'/>
 
                         <IoSearch
@@ -715,8 +715,9 @@ const ProductFilterExample1 = () => {
 
                 <div className='grid grid-cols-3 gap-[16px] w-full mt-[20px]'>
                     {
-                        allProducts?.map((product)=> (
-                            <div key={product?.id} className='border border-gray-200 w-full relative rounded-md overflow-hidden'>
+                        allProducts?.map((product) => (
+                            <div key={product?.id}
+                                 className='border border-gray-200 w-full relative rounded-md overflow-hidden'>
 
                                 {/* product image */}
                                 <div className='group relative overflow-hidden cursor-pointer'>

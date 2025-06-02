@@ -1,5 +1,5 @@
 import React from 'react';
-
+ 
 const Switch = ({label, checked, onChange}) => {
     return (
         <div className='flex items-center my-3 gap-[10px]'>

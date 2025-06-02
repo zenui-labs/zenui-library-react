@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import {useState, useEffect, useRef} from 'react';
 import {IoIosArrowDown} from "react-icons/io";
 
 const CustomSelect = ({setBookmark}) => {
@@ -38,7 +38,7 @@ const CustomSelect = ({setBookmark}) => {
                 handleBlur();
             }
         };
-        
+
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
@@ -50,7 +50,7 @@ const CustomSelect = ({setBookmark}) => {
             {/* Selected name */}
             <div
                 onClick={() => setIsOpen(!isOpen)}
-                className={`w-full bg-white cursor-pointer border-gray-200 relative border rounded-md px-10 py-2.5 text-gray-600 text-[0.9rem] dark:bg-slate-900 dark:border-darkBorderColor flex items-center pl-4`}
+                className={`w-full bg-white cursor-pointer border-border relative border rounded-normal px-10 py-2.5 text-gray-600 text-[0.9rem] dark:bg-slate-900 dark:border-darkBorderColor flex items-center pl-4`}
             >
                 <p className={`${selectedOption ? 'text-gray-600 dark:text-darkSubTextColor' : 'text-gray-400'} text-[1rem] font-[400]`}>
                     {selectedOption ? selectedOption.name : 'Filter by bookmark'}
@@ -67,7 +67,8 @@ const CustomSelect = ({setBookmark}) => {
 
             {/* Dropdown menu */}
             {isOpen && (
-                <div className="absolute left-0 w-full mt-1 dark:border-darkBorderColor dark:bg-slate-900 border border-gray-200 rounded-md bg-white shadow-lg z-20">
+                <div
+                    className="absolute left-0 w-full mt-1 dark:border-darkBorderColor dark:bg-slate-900 border border-border rounded-normal bg-white shadow-lg z-20">
                     <div className="w-full overflow-auto py-1">
                         {platforms.map((item) => (
                             <p

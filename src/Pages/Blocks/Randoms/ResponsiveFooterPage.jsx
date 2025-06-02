@@ -1,5 +1,5 @@
-import ResponsiveFooter from "../../../Components/Overview/SidebarContent/Blocks/Randoms/ResponsiveFooter.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ResponsiveFooter from "@blocks/Randoms/ResponsiveFooter.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ResponsiveFooterPage = () => {
     return (

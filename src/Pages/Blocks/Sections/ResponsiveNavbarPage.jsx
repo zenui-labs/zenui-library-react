@@ -1,11 +1,11 @@
 // components
-import ResponsiveNavbar from "../../../Components/Overview/SidebarContent/Blocks/Sections/ResponsiveNavbar.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import ResponsiveNavbar from "@blocks/Sections/ResponsiveNavbar.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ResponsiveNavbarPage = () => {
     return (
         <ContentPageLayout>
-            <ResponsiveNavbar />
+            <ResponsiveNavbar/>
         </ContentPageLayout>
     );
 };

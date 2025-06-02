@@ -4,18 +4,18 @@ import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 
 // components
-import ContentHeader from '../../../../../Shared/ContentHeader';
-import OverviewFooter from '../../../../../Shared/OverviewFooter';
-import Showcode from '../../../../../Shared/Component/ShowCode.jsx';
+import ContentHeader from '@shared/ContentHeader';
+import OverviewFooter from '@shared/OverviewFooter';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 // contents for scrollspy
-import {skeletonContents} from '../../../../../Utils/ContentsConfig/FeedbackContents';
-import {useScrollSpy} from '../../../../../CustomHooks/useScrollSpy';
+import {skeletonContents} from '@utils/ContentsConfig/FeedbackContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
 const Skeleton = () => {
     const sectionIds = skeletonContents.map((item) => item.href.slice(1));
@@ -111,10 +111,11 @@ const Skeleton = () => {
                 <div className='w-full 425px:w-[80%]'>
                     <ContentHeader text={'Card Skeleton'} id={'card_skeleton'}/>
 
-                   <ComponentDescription text='This is a card skeleton component. Display placeholder content while
+                    <ComponentDescription text='This is a card skeleton component. Display placeholder content while
                         the actual content is loading.'/>
 
-                    <ToggleTab code={cardSkeletonCode} setPreview={setCardSkeletonPreview} setCode={setCardSkeletonCode} preview={cardSkeletonPreview}/>
+                    <ToggleTab code={cardSkeletonCode} setPreview={setCardSkeletonPreview} setCode={setCardSkeletonCode}
+                               preview={cardSkeletonPreview}/>
 
                     <ComponentWrapper>
                         {cardSkeletonPreview && (
@@ -209,7 +210,8 @@ export default Skeleton;
                     <ComponentDescription text='This is a grid image gallery skeleton component. Display
                         placeholders for images while loading content.'/>
 
-                    <ToggleTab code={imageGellaryCode} setCode={setImageGellaryCode} preview={imageGellaryPreview} setPreview={setImageGellaryPreview}/>
+                    <ToggleTab code={imageGellaryCode} setCode={setImageGellaryCode} preview={imageGellaryPreview}
+                               setPreview={setImageGellaryPreview}/>
 
                     <ComponentWrapper>
                         {imageGellaryPreview && (
@@ -270,7 +272,8 @@ export default Skeleton;
                     <ComponentDescription text='This is a social card skeleton component. Show placeholders for
                         social media content while it loads.'/>
 
-                    <ToggleTab code={socialPostCode} setCode={setSocialPostCode} setPreview={setSocialPostPreview} preview={socialPostPreview}/>
+                    <ToggleTab code={socialPostCode} setCode={setSocialPostCode} setPreview={setSocialPostPreview}
+                               preview={socialPostPreview}/>
 
                     <ComponentWrapper>
                         {socialPostPreview && (
@@ -279,7 +282,8 @@ export default Skeleton;
                                     className='w-full 425px:w-[450px] dark:bg-slate-900 dark:border-slate-700 bg-secondary p-6 border border-border rounded animate-pulse'>
                                     <div className='flex items-center'>
                                         <div className='w-[40%] 425px:w-[20%]'>
-                                            <div className='w-[60px] h-[60px] rounded-full dark:bg-slate-800 bg-border'></div>
+                                            <div
+                                                className='w-[60px] h-[60px] rounded-full dark:bg-slate-800 bg-border'></div>
                                         </div>
 
                                         <div className='flex flex-col gap-3 w-[80%]'>
@@ -342,7 +346,8 @@ export default Skeleton;
                         skeleton on the product details page of any of your e-commerce
                         websites. Each section is marked with comments within the code.'/>
 
-                    <ToggleTab code={productDetailsCode} setCode={setProductDetailsCode} preview={productDetailsPreview} setPreview={setProductDetailsPreview}/>
+                    <ToggleTab code={productDetailsCode} setCode={setProductDetailsCode} preview={productDetailsPreview}
+                               setPreview={setProductDetailsPreview}/>
 
                     <ComponentWrapper>
                         {productDetailsPreview && (
@@ -420,7 +425,8 @@ export default Skeleton;
                         such as rectangles and lines, mimicking the structure of the content
                         while it loads.'/>
 
-                    <ToggleTab code={socialPostPreview} setPreview={setSocialPostPreview} preview={socialPostPreview} setCode={setSocialPostCode}/>
+                    <ToggleTab code={socialPostPreview} setPreview={setSocialPostPreview} preview={socialPostPreview}
+                               setCode={setSocialPostCode}/>
 
                     <ComponentWrapper>
                         {socialPostPreview && (
@@ -430,7 +436,8 @@ export default Skeleton;
                                         className='w-full mx-auto dark:bg-slate-900 dark:border-slate-700 bg-secondary p-3 rounded-md border border-border boxShadow animate-pulse'>
                                         <div className='flex items-center gap-[20px]'>
                                             <div className='w-[40%] 425px:w-[20%]'>
-                                                <div className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
+                                                <div
+                                                    className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
                                             </div>
 
                                             <div className='flex flex-col gap-[10px] w-[80%]'>
@@ -448,7 +455,8 @@ export default Skeleton;
                                         className='w-full mx-auto dark:bg-slate-900 dark:border-slate-700 bg-secondary p-3 rounded-md border border-border boxShadow animate-pulse'>
                                         <div className='flex items-center gap-[20px]'>
                                             <div className='w-[40%] 425px:w-[20%]'>
-                                                <div className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
+                                                <div
+                                                    className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
                                             </div>
 
                                             <div className='flex flex-col gap-[10px] w-[80%]'>
@@ -466,7 +474,8 @@ export default Skeleton;
                                         className='w-full mx-auto dark:bg-slate-900 dark:border-slate-700 bg-secondary p-3 rounded-md border border-border boxShadow animate-pulse'>
                                         <div className='flex items-center gap-[20px]'>
                                             <div className='w-[40%] 425px:w-[20%]'>
-                                                <div className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
+                                                <div
+                                                    className='w-[80px] h-[80px] rounded-full dark:bg-slate-800 bg-border'></div>
                                             </div>
 
                                             <div className='flex flex-col gap-[10px] w-[80%]'>
@@ -569,7 +578,7 @@ export default Skeleton;
                         content is loading.'/>
 
                     <ToggleTab code={blogSkeletonCode} setCode={setBlogSkeletonCode}
-                    setPreview={setBlogSkeletonPreview} preview={blogSkeletonPreview}/>
+                               setPreview={setBlogSkeletonPreview} preview={blogSkeletonPreview}/>
 
                     <ComponentWrapper>
                         {blogSkeletonPreview && (
@@ -586,17 +595,20 @@ export default Skeleton;
                                                 </div>
 
                                                 <div className='flex items-center gap-[10px] w-full'>
-                                                    <div className='w-[40px] h-[40px] rounded-full dark:bg-slate-700 bg-border'></div>
+                                                    <div
+                                                        className='w-[40px] h-[40px] rounded-full dark:bg-slate-700 bg-border'></div>
 
                                                     <div className='flex flex-col gap-2 w-[80%]'>
                                                         <p className='w-[60%] h-[7px] dark:bg-slate-700 bg-border rounded-md'></p>
-                                                        <span className='w-[50%] h-[7px] dark:bg-slate-700 bg-border rounded-md'></span>
+                                                        <span
+                                                            className='w-[50%] h-[7px] dark:bg-slate-700 bg-border rounded-md'></span>
                                                     </div>
                                                 </div>
                                             </div>
 
                                             <div className='w-[40%] 425px:w-[35%]'>
-                                                <div className='w-[120px] h-[120px] rounded-md dark:bg-slate-700 bg-border'></div>
+                                                <div
+                                                    className='w-[120px] h-[120px] rounded-md dark:bg-slate-700 bg-border'></div>
                                             </div>
                                         </div>
                                     </div>
@@ -655,20 +667,25 @@ export default Skeleton;
                     <ComponentDescription text='This is a card skeleton component. Display placeholder content while
                         the actual content is loading.'/>
 
-                    <ToggleTab code={shineSkeletonCode} setCode={setShineSkeletonCode} preview={shineSkeletonPreview} setPreview={setShineSkeletonPreview}/>
+                    <ToggleTab code={shineSkeletonCode} setCode={setShineSkeletonCode} preview={shineSkeletonPreview}
+                               setPreview={setShineSkeletonPreview}/>
 
                     <ComponentWrapper>
                         {shineSkeletonPreview && (
                             <div className="flex py-8 items-center justify-center">
-                                <div className="grid w-full px-4 grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-6">
+                                <div
+                                    className="grid w-full px-4 grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-6">
 
                                     <div
                                         className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">
                                         <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>
                                         <div className="space-y-3">
-                                            <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
-                                            <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
-                                            <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
+                                            <div
+                                                className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
                                         </div>
                                     </div>
 
@@ -676,9 +693,12 @@ export default Skeleton;
                                         className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">
                                         <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>
                                         <div className="space-y-3">
-                                            <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
-                                            <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
-                                            <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
+                                            <div
+                                                className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
                                         </div>
                                     </div>
 
@@ -686,9 +706,12 @@ export default Skeleton;
                                         className="relative space-y-5 border border-slate-100 dark:border-slate-700 overflow-hidden rounded-2xl bg-white/5 p-4 shadow-xl shadow-black/5 before:absolute before:inset-0 before:-translate-x-full before:animate-[shimmer_2s_infinite] before:border-t before:border-slate-100/10 before:bg-gradient-to-r before:from-transparent before:via-slate-100/70 dark:before:via-slate-100/10 before:to-transparent">
                                         <div className="h-24 rounded-lg dark:bg-slate-700 bg-slate-100/80"></div>
                                         <div className="space-y-3">
-                                            <div className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
-                                            <div className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
-                                            <div className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-3/5 rounded-lg dark:bg-slate-700 bg-slate-100/50"></div>
+                                            <div
+                                                className="h-3 w-4/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
+                                            <div
+                                                className="h-3 w-2/5 rounded-lg dark:bg-slate-700 bg-slate-100/60"></div>
                                         </div>
                                     </div>
 
@@ -712,7 +735,7 @@ export default Skeleton;
                     />
                 </div>
 
-                <ContentNavbar activeSection={activeSection} contents={skeletonContents} />
+                <ContentNavbar activeSection={activeSection} contents={skeletonContents}/>
 
             </aside>
             <Helmet>

@@ -1,11 +1,11 @@
 // components
-import NewsletterSection from "../../../Components/Overview/SidebarContent/Blocks/Forms/NewsletterSection.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import NewsletterSection from "@blocks/Forms/NewsletterSection.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const NewsletterSectionPage = () => {
     return (
         <ContentPageLayout>
-            <NewsletterSection />
+            <NewsletterSection/>
         </ContentPageLayout>
     );
 };

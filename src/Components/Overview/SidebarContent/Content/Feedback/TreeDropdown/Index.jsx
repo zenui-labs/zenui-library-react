@@ -1,84 +1,85 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // components
-import OverviewFooter from '../../../../../../Shared/OverviewFooter.jsx';
-import ContentHeader from '../../../../../../Shared/ContentHeader.jsx';
+import OverviewFooter from '@shared/OverviewFooter.jsx';
+import ContentHeader from '@shared/ContentHeader.jsx';
 
 // contents for scrollspy
-import { treeDropdownContents } from '../../../../../../Utils/ContentsConfig/FeedbackContents.js';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy.js';
+import {treeDropdownContents} from '@utils/ContentsConfig/FeedbackContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // showing the code
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
-import WarningMessageCard from "../../../../../../Shared/Component/WarningMessageCard.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
+import WarningMessageCard from "@shared/Component/WarningMessageCard.jsx";
 import ControlledTreeExample from "./ControlledTreeExample.jsx";
 import DirectoryTreeExample from "./DirectoryTreeExample.jsx";
 import SimpleTreeDropdownExmaple from "./SimpleTreeDropdownExmaple.jsx";
 import TreeWithLineExample from "./TreeWithLineExample.jsx";
 
 const Index = () => {
-  const sectionIds = treeDropdownContents.map((item) => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = treeDropdownContents.map((item) => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  const [dataTreePreview, setDataTreePreview] = useState(true);
-  const [dataTreeCode, setDataTreeCode] = useState(false);
+    const [dataTreePreview, setDataTreePreview] = useState(true);
+    const [dataTreeCode, setDataTreeCode] = useState(false);
 
-  const [treeWithLinePreview, setTreeWithLinePreview] = useState(true);
-  const [treeWithLineCode, setTreeWithLineCode] = useState(false);
+    const [treeWithLinePreview, setTreeWithLinePreview] = useState(true);
+    const [treeWithLineCode, setTreeWithLineCode] = useState(false);
 
-  const [directoryTreePreview, setDirectoryTreePreview] = useState(true);
-  const [directoryTreeCode, setDirectoryTreeCode] = useState(false);
+    const [directoryTreePreview, setDirectoryTreePreview] = useState(true);
+    const [directoryTreeCode, setDirectoryTreeCode] = useState(false);
 
-  const [controlledTreePreview, setControlledTreePreview] = useState(true);
-  const [controlledTreeCode, setControlledTreeCode] = useState(false);
+    const [controlledTreePreview, setControlledTreePreview] = useState(true);
+    const [controlledTreeCode, setControlledTreeCode] = useState(false);
 
-  return (
-    <>
-      <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-        <div className='w-full 425px:w-[80%]'>
-          <WarningMessageCard>
-            <p className='text-[#d18e00] text-[0.9rem]'>
-              This component may include some features or patterns that might be
-              more advanced for beginner developers. However, we’ve made sure to
-              include detailed comments throughout the code to help you
-              understand how everything works and guide you in customizing it to
-              suit your needs.
-              <p className='mt-4'>
-                If you're new to React or component-based libraries, don’t
-                worry! Just follow the comments, and you’ll find it easier to
-                understand the logic and flow of the component.
-              </p>
-            </p>
-          </WarningMessageCard>
+    return (
+        <>
+            <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
+                <div className='w-full 425px:w-[80%]'>
+                    <WarningMessageCard>
+                        <p className='text-[#d18e00] text-[0.9rem]'>
+                            This component may include some features or patterns that might be
+                            more advanced for beginner developers. However, we’ve made sure to
+                            include detailed comments throughout the code to help you
+                            understand how everything works and guide you in customizing it to
+                            suit your needs.
+                            <p className='mt-4'>
+                                If you're new to React or component-based libraries, don’t
+                                worry! Just follow the comments, and you’ll find it easier to
+                                understand the logic and flow of the component.
+                            </p>
+                        </p>
+                    </WarningMessageCard>
 
-          <ContentHeader text={'data tree'} id={'data_tree'}/>
+                    <ContentHeader text={'data tree'} id={'data_tree'}/>
 
-          <ComponentDescription text='A data tree is a hierarchical structure of nodes used to organize
+                    <ComponentDescription text='A data tree is a hierarchical structure of nodes used to organize
             and navigate data efficiently, with a root node and branches of
             connected child nodes.'/>
 
-          <ToggleTab code={dataTreeCode} setCode={setDataTreeCode} setPreview={setDataTreePreview} preview={dataTreePreview}/>
+                    <ToggleTab code={dataTreeCode} setCode={setDataTreeCode} setPreview={setDataTreePreview}
+                               preview={dataTreePreview}/>
 
-          <ComponentWrapper>
-            {dataTreePreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div>
-                    <SimpleTreeDropdownExmaple/>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {dataTreePreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div>
+                                    <SimpleTreeDropdownExmaple/>
+                                </div>
+                            </div>
+                        )}
 
-            {dataTreeCode && (
-                <Showcode
-                    code='
+                        {dataTreeCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -210,34 +211,35 @@ const SimpleTreeDropdown = () => {
 
 export default SimpleTreeDropdown;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'tree with line'}
-              id={'tree_with_line'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'tree with line'}
+                            id={'tree_with_line'}
+                        />
+                    </div>
 
-          <ComponentDescription text='A tree with lines shows hierarchical data, with nodes connected by
+                    <ComponentDescription text='A tree with lines shows hierarchical data, with nodes connected by
             lines to represent relationships.'/>
 
-          <ToggleTab code={treeWithLineCode} setCode={setTreeWithLineCode} setPreview={setTreeWithLinePreview} preview={treeWithLinePreview}/>
+                    <ToggleTab code={treeWithLineCode} setCode={setTreeWithLineCode} setPreview={setTreeWithLinePreview}
+                               preview={treeWithLinePreview}/>
 
-          <ComponentWrapper>
-            {treeWithLinePreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div>
-                    <TreeWithLineExample/>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {treeWithLinePreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div>
+                                    <TreeWithLineExample/>
+                                </div>
+                            </div>
+                        )}
 
-            {treeWithLineCode && (
-                <Showcode
-                    code='
+                        {treeWithLineCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -390,31 +392,32 @@ const TreeWithLineDropdown = () => {
 
 export default TreeWithLineDropdown;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader text={'directory tree'} id={'directory_tree'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader text={'directory tree'} id={'directory_tree'}/>
+                    </div>
 
-          <ComponentDescription text='A directory tree is a hierarchical structure that displays folders
+                    <ComponentDescription text='A directory tree is a hierarchical structure that displays folders
             and files in a system, organized by directories and subdirectories.'/>
 
-          <ToggleTab code={directoryTreeCode} preview={directoryTreePreview} setPreview={setDirectoryTreePreview} setCode={setDirectoryTreeCode}/>
+                    <ToggleTab code={directoryTreeCode} preview={directoryTreePreview}
+                               setPreview={setDirectoryTreePreview} setCode={setDirectoryTreeCode}/>
 
-          <ComponentWrapper>
-            {directoryTreePreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div>
-                    <DirectoryTreeExample/>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {directoryTreePreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div>
+                                    <DirectoryTreeExample/>
+                                </div>
+                            </div>
+                        )}
 
-            {directoryTreeCode && (
-                <Showcode
-                    code='
+                        {directoryTreeCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -556,35 +559,36 @@ const DirectoryTreeDropdown = () => {
 
 export default DirectoryTreeDropdown;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'Controlled Tree'}
-              id={'controlled_tree'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'Controlled Tree'}
+                            id={'controlled_tree'}
+                        />
+                    </div>
 
-          <ComponentDescription text='A controlled tree checkbox is a tree structure with checkboxes for
+                    <ComponentDescription text='A controlled tree checkbox is a tree structure with checkboxes for
             each node, where the checked state is programmatically managed for
             dynamic updates.'/>
 
-          <ToggleTab code={controlledTreeCode} preview={controlledTreePreview} setCode={setControlledTreeCode} setPreview={setControlledTreePreview}/>
+                    <ToggleTab code={controlledTreeCode} preview={controlledTreePreview} setCode={setControlledTreeCode}
+                               setPreview={setControlledTreePreview}/>
 
-          <ComponentWrapper>
-            {controlledTreePreview && (
-                <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
-                  <div>
-                    <ControlledTreeExample/>
-                  </div>
-                </div>
-            )}
+                    <ComponentWrapper>
+                        {controlledTreePreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div>
+                                    <ControlledTreeExample/>
+                                </div>
+                            </div>
+                        )}
 
-            {controlledTreeCode && (
-                <Showcode
-                    code='
+                        {controlledTreeCode && (
+                            <Showcode
+                                code='
 import React, {useState} from "react";
 
 // react icons
@@ -824,26 +828,26 @@ const ControlledTreeDropdown = () => {
 
 export default ControlledTreeDropdown;
               '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter
-            backUrl='/components/skeleton'
-            backName='skeleton'
-            forwardName='alert message'
-            forwardUrl='/components/alert-message'
-          />
-        </div>
+                    <OverviewFooter
+                        backUrl='/components/skeleton'
+                        backName='skeleton'
+                        forwardName='alert message'
+                        forwardUrl='/components/alert-message'
+                    />
+                </div>
 
-        <ContentNavbar contents={treeDropdownContents} activeSection={activeSection}/>
+                <ContentNavbar contents={treeDropdownContents} activeSection={activeSection}/>
 
-      </aside>
-      <Helmet>
-        <title>Feedback - Tree Dropdown</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+            <Helmet>
+                <title>Feedback - Tree Dropdown</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default Index;

@@ -1,178 +1,80 @@
-import {useState, useRef, useEffect} from "react";
+import {useState} from "react";
 
-// react icons
-import {LuRedo2, LuUndo2} from "react-icons/lu";
+// framer motion
+import {AnimatePresence, motion} from "framer-motion";
 
-function RedoUndoUsingButtonAndKeyboard() {
-    const MAX_HISTORY_LENGTH = 30;
-    const SAVE_DELAY = 800;
+// data
+import CardData from "./CardData.js"
 
-    const editorRef = useRef(null);
-    const [history, setHistory] = useState(["Start typing here..."]);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isUndoRedo, setIsUndoRedo] = useState(false);
-    const timerRef = useRef(null);
-    const lastContentRef = useRef("Start typing here...");
+const App = () => {
+    const [selectedImage, setSelectedImage] = useState(null);
+    const [hoveredImageId, setHoveredImageId] = useState(null);
 
-    useEffect(() => {
-        if (isUndoRedo && editorRef.current) {
-            editorRef.current.innerHTML = history[currentIndex];
-            lastContentRef.current = history[currentIndex];
-            setIsUndoRedo(false);
-
-            if (document.hasFocus()) {
-                try {
-                    const range = document.createRange();
-                    const sel = window.getSelection();
-                    range.selectNodeContents(editorRef.current);
-                    range.collapse(false);
-                    sel.removeAllRanges();
-                    sel.addRange(range);
-                    editorRef.current.focus();
-                } catch (e) {
-                    console.log("Selection error handled");
-                }
-            }
-        }
-    }, [currentIndex, isUndoRedo, history]);
-
-    useEffect(() => {
-        if (editorRef.current) {
-            editorRef.current.innerHTML = history[0];
-            lastContentRef.current = history[0];
-        }
-
-        return () => {
-            if (timerRef.current) {
-                clearTimeout(timerRef.current);
-                timerRef.current = null;
-            }
-        };
-    }, []);
-
-    const saveToHistory = (newContent) => {
-        if (newContent !== lastContentRef.current) {
-            let newHistory = history.slice(0, currentIndex + 1);
-            newHistory.push(newContent);
-
-            if (newHistory.length > MAX_HISTORY_LENGTH) {
-                const itemsToRemove = newHistory.length - MAX_HISTORY_LENGTH;
-                if (itemsToRemove > 0) {
-                    const firstItem = newHistory[0];
-                    newHistory = [firstItem, ...newHistory.slice(itemsToRemove + 1)];
-                    const newIndex = Math.max(0, currentIndex - itemsToRemove);
-                    setCurrentIndex(newIndex);
-                }
-            } else {
-                setCurrentIndex(newHistory.length - 1);
-            }
-
-            setHistory(newHistory);
-            lastContentRef.current = newContent;
-        }
+    const handleCardClick = (image) => {
+        setSelectedImage(image);
     };
 
-    const handleChange = () => {
-        if (!editorRef.current) return;
-
-        const newContent = editorRef.current.innerHTML;
-
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-        }
-
-        timerRef.current = setTimeout(() => {
-            saveToHistory(newContent);
-            timerRef.current = null;
-        }, SAVE_DELAY);
-    };
-
-    const handleUndo = () => {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-            timerRef.current = null;
-
-            if (editorRef.current && editorRef.current.innerHTML !== lastContentRef.current) {
-                saveToHistory(editorRef.current.innerHTML);
-            }
-        }
-
-        if (currentIndex > 0) {
-            setIsUndoRedo(true);
-            setCurrentIndex(currentIndex - 1);
+    const handleClose = (e) => {
+        if (e.target === e.currentTarget) {
+            setSelectedImage(null);
         }
     };
-
-    const handleRedo = () => {
-        if (timerRef.current) {
-            clearTimeout(timerRef.current);
-            timerRef.current = null;
-        }
-
-        if (currentIndex < history.length - 1) {
-            setIsUndoRedo(true);
-            setCurrentIndex(currentIndex + 1);
-        }
-    };
-
-    useEffect(() => {
-        const handleKeyDown = (event) => {
-            if (event.ctrlKey || event.metaKey) {
-                if (event.key === "Z") {
-                    event.preventDefault();
-                    handleUndo();
-                } else if (event.key === "Y") {
-                    event.preventDefault();
-                    handleRedo();
-                }
-            }
-        };
-
-        document.addEventListener("keydown", handleKeyDown);
-
-        return () => {
-            document.removeEventListener("keydown", handleKeyDown);
-        };
-    }, []);
-
 
     return (
-        <div className="w-full">
-            <div className="flex gap-2 mb-4">
-                <button
-                    onClick={handleUndo}
-                    disabled={currentIndex <= 0}
-                    className={`px-3 py-2 rounded ${
-                        currentIndex <= 0
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
-                    }`}
-                >
-                    <LuUndo2/>
-                </button>
+        <>
+            <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
+                {CardData.map((image, index) => {
+                    const isOtherImageHovered = hoveredImageId !== null && hoveredImageId !== image.id;
 
-                <button
-                    onClick={handleRedo}
-                    disabled={currentIndex >= history.length - 1}
-                    className={`px-3 py-2 rounded ${
-                        currentIndex >= history.length - 1
-                            ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                            : "bg-[#3B9DF8] text-white hover:bg-blue-600"
-                    }`}
-                >
-                    <LuRedo2 />
-                </button>
+                    return (
+                        <motion.div
+                            key={image.id}
+                            className={`${index === 0 ? "md:col-span-3" : index === 1 ? "md:col-span-2" : index === 2 ? "md:col-span-2" : "md:col-span-3"} relative cursor-pointer transition-all duration-300 ${
+                                isOtherImageHovered ? "blur-sm" : "blur-0"
+                            }`}
+                            onClick={() => handleCardClick(image)}
+                            onMouseEnter={() => setHoveredImageId(image.id)}
+                            onMouseLeave={() => setHoveredImageId(null)}
+                        >
+                            <img
+                                src={image.src}
+                                alt={image.title}
+                                className="w-full h-[250px] object-cover rounded-lg"
+                            />
+                        </motion.div>
+                    );
+                })}
             </div>
 
-            <div
-                ref={editorRef}
-                contentEditable={true}
-                onInput={handleChange}
-                className="min-h-64 p-4 cursor-text border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3B9DF8] focus:border-transparent"
-            />
-
-        </div>
+            <AnimatePresence>
+                {selectedImage && (
+                    <motion.div
+                        className="fixed inset-0 z-[999999999] bg-black/50 dark:bg-black/70 flex items-center justify-center"
+                        onClick={handleClose}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
+                    >
+                        <motion.div
+                            className="bg-white dark:bg-slate-800 rounded-lg w-[95%] md:w-[80%] 1024px:w-[50%] p-5"
+                            initial={{opacity: 0, scale: 0.5}}
+                            animate={{opacity: 1, scale: 1}}
+                            exit={{opacity: 0, scale: 0.5}}
+                            transition={{duration: 0.3, type: "spring", stiffness: 400, damping: 22}}
+                        >
+                            <motion.img
+                                src={selectedImage.src}
+                                alt={selectedImage.title}
+                                className="w-full h-[400px] object-cover rounded-lg"
+                            />
+                            <h3 className="mt-5 dark:text-[#d2e5f5] text-2xl font-semibold">{selectedImage.title}</h3>
+                            <p className="text-gray-700 dark:text-[#d2e5f5]/70 mt-2">{selectedImage.description}</p>
+                        </motion.div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </>
     );
-}
+};
 
-export default RedoUndoUsingButtonAndKeyboard;
+export default App;

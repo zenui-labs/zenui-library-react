@@ -1,11 +1,11 @@
 // components
-import Empty from "../../../Components/Overview/SidebarContent/Blocks/EmptyPages/Empty.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Empty from "@blocks/EmptyPages/Empty.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const NoDataEmptyPage = () => {
     return (
         <ContentPageLayout>
-            <Empty />
+            <Empty/>
         </ContentPageLayout>
     );
 };

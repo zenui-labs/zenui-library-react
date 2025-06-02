@@ -1,42 +1,45 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../../Shared/ContentHeader.jsx";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader.jsx";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
-import BlocksFooter from "../../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
-import BlockDescription from "../../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 import ResponsiveSidebarExample1 from "./ResponsiveSidebarExample1.jsx";
 import ResponsiveSidebarExample2 from "./ResponsiveSidebarExample2.jsx";
 import ResponsiveSidebarExample3 from "./ResponsiveSidebarExample3.jsx";
 
 
 const Index = () => {
-    const[sidebar1Preview, setSidebar1Preview] = useState(true)
-    const[sidebar1Code, setSidebar1Code] = useState(false)
+    const [sidebar1Preview, setSidebar1Preview] = useState(true)
+    const [sidebar1Code, setSidebar1Code] = useState(false)
 
-    const[sidebar2Preview, setSidebar2Preview] = useState(true)
-    const[sidebar2Code, setSidebar2Code] = useState(false)
+    const [sidebar2Preview, setSidebar2Preview] = useState(true)
+    const [sidebar2Code, setSidebar2Code] = useState(false)
 
-    const[sidebar3Preview, setSidebar3Preview] = useState(true)
-    const[sidebar3Code, setSidebar3Code] = useState(false)
+    const [sidebar3Preview, setSidebar3Preview] = useState(true)
+    const [sidebar3Code, setSidebar3Code] = useState(false)
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"responsive sidebar 1"} id={"responsive_sidebar_1"} />
+                <ContentHeader text={"responsive sidebar 1"} id={"responsive_sidebar_1"}/>
 
-                <BlockDescription text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
+                <BlockDescription
+                    text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
 
-                <BlockToggleTab preview={sidebar1Preview} setPreview={setSidebar1Preview} code={sidebar1Code} setCode={setSidebar1Code}/>
+                <BlockToggleTab preview={sidebar1Preview} setPreview={setSidebar1Preview} code={sidebar1Code}
+                                setCode={setSidebar1Code}/>
 
                 <BlockWrapper>
                     {sidebar1Preview && (
-                        <div className={` p-8 transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
+                        <div
+                            className={` p-8 transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
 
                             <ResponsiveSidebarExample1/>
 
@@ -326,16 +329,19 @@ export default ResponsiveSidebar;
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"responsive sidebar 2"} id={"responsive_sidebar_2"} />
+                    <ContentHeader text={"responsive sidebar 2"} id={"responsive_sidebar_2"}/>
                 </div>
 
-                <BlockDescription text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
+                <BlockDescription
+                    text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
 
-                <BlockToggleTab setPreview={setSidebar2Preview} setCode={setSidebar2Code} preview={sidebar2Preview} code={sidebar2Code} />
+                <BlockToggleTab setPreview={setSidebar2Preview} setCode={setSidebar2Code} preview={sidebar2Preview}
+                                code={sidebar2Code}/>
 
                 <BlockWrapper>
                     {sidebar2Preview && (
-                        <div className={` p-8 pb-[80px] transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
+                        <div
+                            className={` p-8 pb-[80px] transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
 
                             <ResponsiveSidebarExample2/>
 
@@ -593,16 +599,19 @@ export default ResponsiveSidebar;
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"responsive sidebar 3"} id={"responsive_sidebar_3"} />
+                    <ContentHeader text={"responsive sidebar 3"} id={"responsive_sidebar_3"}/>
                 </div>
 
-                <BlockDescription text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
+                <BlockDescription
+                    text='A sidebar that adjusts its layout based on screen size, collapsing or expanding to maintain usability on both mobile and desktop devices.'/>
 
-                <BlockToggleTab setCode={setSidebar3Code} setPreview={setSidebar3Preview} code={sidebar3Code} preview={sidebar3Preview} />
+                <BlockToggleTab setCode={setSidebar3Code} setPreview={setSidebar3Preview} code={sidebar3Code}
+                                preview={sidebar3Preview}/>
 
                 <BlockWrapper>
                     {sidebar3Preview && (
-                        <div className={` p-8 pb-[80px] transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
+                        <div
+                            className={` p-8 pb-[80px] transition-all duration-300 flex flex-wrap items-center gap-5 overflow-hidden`}>
 
                             <ResponsiveSidebarExample3/>
 
@@ -861,7 +870,8 @@ export default ResponsiveSidebar;
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/responsive-search-bar' backName='responsive search bar' isForwardButton={false}/>
+                <BlocksFooter backUrl='/blocks/responsive-search-bar' backName='responsive search bar'
+                              isForwardButton={false}/>
             </div>
 
 

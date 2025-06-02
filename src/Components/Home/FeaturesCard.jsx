@@ -1,69 +1,86 @@
 import React from 'react';
+import ComponentIcon from "@/SvgIcons/ComponentIcon.jsx";
+import CopyToUseIcon from "@/SvgIcons/CopyToUseIcon.jsx";
+import ResponsiveIcon from "@/SvgIcons/ResponsiveIcon.jsx";
+import ExampleTemplateIcon from "@/SvgIcons/ExampleTemplateIcon.jsx";
+import DesignPartIcon from "@/SvgIcons/DesignPartIcon.jsx";
+import CodeBoxIcon from "@/SvgIcons/CodeBoxIcon.jsx";
+import TailwindCssIcon from "@/SvgIcons/TailwindCssIcon.jsx";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
+
+const features = [
+    {
+        icon: <ComponentIcon/>,
+        title: "500+ Components",
+        description: "Access a massive library of 500+ pre-built, production-ready React components designed for scalability, flexibility, and real-world use cases.",
+        delay: 700
+    },
+    {
+        icon: <CopyToUseIcon/>,
+        title: "Easy To Use",
+        description: "ZenUI is built with simplicity in mind—drop components into your project with minimal setup and start building instantly.",
+        delay: 1000
+    },
+    {
+        icon: <ResponsiveIcon/>,
+        title: "Responsive Design",
+        description: "Every component is fully responsive and mobile-first, ensuring your UI looks great across phones, tablets, and desktops.",
+        delay: 1300
+    },
+    {
+        icon: <ExampleTemplateIcon/>,
+        title: "20+ Free Templates",
+        description: "Speed up development with 20+ modern templates for dashboards, landing pages, and more—ready to customize.",
+        delay: 1600
+    },
+    {
+        icon: <CodeBoxIcon/>,
+        title: "Developer Friendly",
+        description: "Built with clean, modular, and well-commented code, ZenUI makes it easy to customize, extend, and maintain your components.",
+        delay: 1600
+    },
+    {
+        icon: <DesignPartIcon/>,
+        title: "Modern Design",
+        description: "ZenUI components follow the latest design trends—clean, minimal, and user-friendly—enhancing the overall UI/UX of your app.",
+        delay: 1600
+    },
+    {
+        icon: <TailwindCssIcon/>,
+        title: "Tailwind CSS",
+        description: "Designed 100% with Tailwind CSS, ZenUI gives you full styling control directly in your markup—faster dev, consistent design.",
+        delay: 1600
+    },
+];
 
 const FeaturesCard = () => {
     return (
-        <>
+        <SectionWrapper>
+            <SectionHead
+                description={'Discover ZenUI’s powerful, customizable components built to speed up your React development with\n' +
+                    '                    style and ease.'} title={'Features'} isSubjet={'ZenUI'}/>
+
             <div
-                className="grid grid-cols-1 425px:grid-cols-2 1024px:grid-cols-4 gap-5 px-8 425px:px-10 pt-[5rem] 425px:pt-[5rem] 1024px:pt-[6rem] pb-10 425px:pb-20 relative max-w-[1700px] mx-auto">
-
-                <div className='absolute top-[60px] right-8 opacity-40 rotate-[-40deg] w-[550px]'>
-                    <img src='https://i.ibb.co/VxXFnSz/abstract-wavy-line-removebg-preview.png' alt='vector' className='animation-bounce'/>
-                </div>
-
-                <div data-aos="fade-up" data-aos-duration="700" className="p-5 rounded-md border dark:border-darkBorderColor hover:border-[#0FABCA] hover:shadow-md transition-all duration-500 cursor-pointer border-gray-200">
-                    <div className="flex items-center gap-3 mb-3">
-                        <div className='w-[42px] h-[42px] dark:bg-slate-800 bg-[#e7f6fa] rounded-full flex items-center justify-center'>
-                            <img src="https://i.ibb.co/N9qLnWJ/Dashboard-Layout.png" alt="Verified-Account" border="0" className='w-[65%]'/>
+                className="grid grid-cols-1 640px:grid-cols-2 1024px:grid-cols-3 gap-8 mt-14 relative max-w-[1300px] mx-auto">
+                {features.map((feature, index) => (
+                    <div
+                        key={index}
+                        className="p-8 rounded-high border dark:shadow-[0px_80px_50px_-32px_rgba(255,255,255,0.02)] shadow-[0px_80px_50px_-32px_rgba(107,110,148,.04)] dark:border-darkBorderColor transition-all duration-500 border-gray-100"
+                    >
+                        <div className="mb-3">
+                            {feature.icon}
+                            <h4 className="text-text mt-6 dark:text-darkTextColor font-[600] text-[1.4rem]">
+                                {feature.title}
+                            </h4>
                         </div>
-                        <h4 className="text-text dark:text-darkTextColor font-[600] text-[1.2rem] ">
-                            Full Customized
-                        </h4>
+                        <p className="text-[1rem] dark:text-darkSubTextColor text-black/60">
+                            {feature.description}
+                        </p>
                     </div>
-                    <p className="text-[0.9rem] dark:text-darkSubTextColor text-gray-500 pt-1">
-                        ZenUI offers fully customizable components that can seamlessly adapt to any project. With just a basic understanding of React and Tailwind CSS, you can easily modify and integrate these components to match your specific requirements.
-                    </p>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="1000" className="p-5 rounded-md border dark:border-darkBorderColor border-gray-200 hover:border-[#0FABCA] hover:shadow-md transition-all cursor-pointer duration-500">
-                    <div className="flex items-center gap-3 mb-3">
-                        <div className='w-[42px] h-[42px] dark:bg-slate-800 bg-[#e7f6fa] rounded-full flex items-center justify-center'>
-                            <img src="https://i.ibb.co/V2W3Wqm/Windows-10-Personalization.png" alt="Verified-Account" border="0"/>
-                        </div>
-                        <h4 className="text-text dark:text-darkTextColor font-[600] text-[1.2rem] ">
-                            Modern Design
-                        </h4>
-                    </div>
-                    <p className="text-[0.9rem] dark:text-darkSubTextColor text-gray-500">
-                        All ZenUI components are designed following modern design principles, ensuring they meet the latest industry standards. With a sleek, responsive, and customizable structure, they can easily adapt to any project.
-                    </p>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="1300" className="p-5 rounded-md border dark:border-darkBorderColor border-gray-200 hover:border-[#0FABCA] hover:shadow-md transition-all cursor-pointer duration-500">
-                    <div className="flex items-center gap-3 mb-3">
-                        <div className='w-[42px] h-[42px] dark:bg-slate-800 bg-[#e7f6fa] rounded-full flex items-center justify-center'>
-                            <img src="https://i.ibb.co/K0phtxs/Stack.png" alt="Verified-Account" border="0"/>
-                        </div>
-                        <h4 className="text-text dark:text-darkTextColor font-[600] text-[1.2rem] ">
-                            Structured Code
-                        </h4>
-                    </div>
-                    <p className="text-[0.9rem] dark:text-darkSubTextColor text-gray-500">
-                        All ZenUI components feature highly structured code, designed with beginners in mind. The clean, well-organized code includes helpful comments, making it easy to understand and implement.
-                    </p>
-                </div>
-                <div data-aos="fade-up" data-aos-duration="1600" className="p-5 rounded-md border dark:border-darkBorderColor border-gray-200 hover:border-[#0FABCA] hover:shadow-md transition-all cursor-pointer duration-500">
-                    <div className="flex items-center gap-3 mb-3">
-                        <div className='w-[42px] h-[42px] dark:bg-slate-800 bg-[#e7f6fa] rounded-full flex items-center justify-center'>
-                            <img src="https://i.ibb.co/kDyDhB6/Verified-Account.png" alt="Verified-Account" border="0"/>
-                        </div>
-                        <h4 className="text-text dark:text-darkTextColor font-[600] text-[1.2rem] ">
-                        Easy To Use
-                        </h4>
-                    </div>
-                    <p className="text-[0.9rem] dark:text-darkSubTextColor text-gray-500">
-                        ZenUI is incredibly easy to use. You don’t need to install any dependencies, just copy the code and integrate it directly into your project. This hassle-free approach allows you to start using ZenUI components instantly, without any additional setup.
-                    </p>
-                </div>
+                ))}
             </div>
-        </>
+        </SectionWrapper>
     );
 };
 

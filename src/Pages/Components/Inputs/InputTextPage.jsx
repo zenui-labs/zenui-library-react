@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import TextInput from "../../../Components/Overview/SidebarContent/Content/Inputs/TextInput";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import TextInput from "@components/Inputs/TextInput";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const InputTextPage = () => {
-  return (
-    <ContentPageLayout>
-        <TextInput />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <TextInput/>
+        </ContentPageLayout>
+    );
 };
 
 export default InputTextPage;

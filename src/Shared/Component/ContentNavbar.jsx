@@ -33,7 +33,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         <div key={item.id} className="relative group">
                             <div
                                 className={`
-                                absolute inset-y-0 left-0 bg-primary/5 dark:bg-slate-900 
+                                absolute inset-y-0 left-0 bg-brandColor/5 dark:bg-slate-900 
                                 transition-all duration-[400ms] ease-linear
                                 ${activeSection === item.href.slice(1)
                                     ? 'w-full opacity-100'
@@ -47,7 +47,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                                 dark:text-darkSubTextColor/90 transition-width duration-300 
                                 text-text border-l-2 border-transparent pl-4
                                 ${activeSection === item.href.slice(1)
-                                    ? 'text-primary !border-primary'
+                                    ? 'text-brandColor !border-brandColor'
                                     : ''}
                             `}
                             >
@@ -72,9 +72,32 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         onClick={() => handleCreateIssue("feature")}
                         className='flex text-text hover:text-[#0FABCA] transition-all duration-200 cursor-pointer dark:text-darkSubTextColor/90 items-center gap-1.5'
                     >
-                        <GoLightBulb />
+                        <GoLightBulb/>
                         <span className='text-[0.94rem]'>Request a feature</span>
                     </p>
+                </div>
+
+                <div className='p-3 my-5 max-w-[273px]'>
+                    <div
+                        className="relative origin-center -translate-x-3 rotate-6 p-6 duration-300 hover:rotate-0"
+                    >
+                        <div
+                            className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_right,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
+                        ></div>
+                        <div
+                            className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
+                        ></div>
+                        <a href='https://www.softollyo.com/' target='_blank' rel='noreferrer'>
+                            <img alt='softollyo.com' src='/sponsor-image.png'
+                                 className='rounded-high max-w-[200px]'/>
+                        </a>
+                        <div
+                            className="absolute top-0 right-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.1)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
+                        ></div>
+                        <div
+                            className="absolute bottom-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.1)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_right,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
+                        ></div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 // components
-import HeroSection from "../../../Components/Overview/SidebarContent/Blocks/Sections/HeroSection.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import HeroSection from "@blocks/Sections/HeroSection.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ResponsiveNavbarPage = () => {
     return (
         <ContentPageLayout>
-            <HeroSection />
+            <HeroSection/>
         </ContentPageLayout>
     );
 };

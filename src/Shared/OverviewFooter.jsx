@@ -6,7 +6,7 @@ import {BiSolidLike, BiSolidDislike} from "react-icons/bi";
 import {FaHand} from "react-icons/fa6";
 
 // utils style
-import utils from "../Utils";
+import utils from "@utils";
 
 import emailjs from '@emailjs/browser';
 import {IoChevronBack} from "react-icons/io5";
@@ -43,17 +43,20 @@ const OverviewFooter = ({backUrl, forwardUrl, backName, forwardName, isBackButto
                 )
             }
 
-            <div className="flex items-center gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5">
+            <div
+                className="flex items-center flex-col 640px:flex-row gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5">
                 <img src="/footer_logo.png" alt="logo-image" className="w-[100px] 640px:w-[120px]"/>
 
                 <div className="flex items-center gap-3">
                     <p className=" font-[600] text-[1rem] dark:text-darkSubTextColor/90 text-text">Support:</p>
-                    <a href="https://buymeacoffee.com/zenuilibrary" target="_blank">
+                    <a href="https://ko-fi.com/zenuilibrary" target="_blank"
+                       className='bg-[#FFDD00] flex items-center gap-2 py-1.5 px-3 rounded-normal text-[0.9rem] font-medium' rel="noreferrer">
                         <img
-                            src="https://www.codehim.com/wp-content/uploads/2022/09/bmc-button-640x180.png.webp"
+                            src="https://i.ibb.co/SXWbR1v5/670f5a01229bf8a18f97a3c1-favion.png"
                             alt="sponser-image"
-                            className="w-[120px]"
+                            className="w-[25px]"
                         />
+                        Keep ZenUI Brewing
                     </a>
                 </div>
             </div>

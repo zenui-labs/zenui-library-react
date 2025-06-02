@@ -1,7 +1,7 @@
 import React from 'react';
 
-import Installation from "../Components/Overview/SidebarContent/Content/Installation.jsx";
-import ContentPageLayout from "../Shared/ContentPageLayout.jsx";
+import Installation from "@/Components/Overview/SidebarContent/Content/Installation.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const InstallationPage = () => {
     return (

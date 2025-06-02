@@ -1,13 +1,14 @@
 import React from "react";
 
 // components
-import GithubActivityGraph from "../../../Components/Overview/SidebarContent/Content/Data Display/GithubActivityGraph/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import GithubActivityGraph
+    from "@components/Data Display/GithubActivityGraph/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const GithubActivityGraphPage = () => {
     return (
         <ContentPageLayout>
-            <GithubActivityGraph />
+            <GithubActivityGraph/>
         </ContentPageLayout>
     );
 };

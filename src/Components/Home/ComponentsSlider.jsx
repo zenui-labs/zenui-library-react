@@ -1,80 +1,56 @@
-import React, {useEffect} from 'react';
+import React, {useState} from 'react';
 
 // component data
-import {allComponents} from "../../Utils/AllComponents.js";
+import {allComponents} from "@utils/AllComponents.js";
 
-// import aos animation
-import "aos/dist/aos.css";
-import AOS from "aos";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
+import {useNavigate} from "react-router-dom";
 
 const ComponentsSlider = () => {
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
+    const [components, setComponents] = useState(() => [...allComponents, ...allComponents])
+
+    const navigate = useNavigate();
 
     return (
-        <div className='max-w-[1650px] mx-auto'>
-            <div data-aos="fade-zoom-in" className='w-full items-center justify-center mt-6 1024px:mt-12 text-center mb-8 640px:mb-[3rem] '>
+        <SectionWrapper className='relative mt-28'>
+            <SectionHead
+                description={'Handcrafted, ready-to-use, and diverse collection of free UI components designed for rapid MVP\n' +
+                    '                    development. Just Browse, copy-paste, and you\'re done!'}
+                title={'Essential UI Components'} isSubjet={'600+'}/>
 
-                <div className='gradient-border !rounded-md hover:rotate-0 transition-all duration-300 rotate-[10deg]'>
-                    <div className='dark:!bg-darkBgColor bg-white h-full !rounded-md'>
-                        <p className='bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent text-[1.5rem]'>600+</p>
-                    </div>
+            <div
+                className="h-[500px] mt-14 relative flex items-center justify-center w-full overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
+
+                <div
+                    className="allComponentSliderUp grid w-full gap-8 grid-cols-2 640px:grid-cols-3 1024px:grid-cols-4">
+                    {components.map((item, index) => (
+                        <a href={item.url} className="border border-gray-100 dark:border-darkBorderColor rounded-high"
+                           key={index}>
+                            <img
+                                src={item.image}
+                                alt="component/image"
+                                className="w-full h-[150px] rounded-t object-contain"
+                            />
+                            <div className="border-t dark:border-darkBorderColor border-border p-4">
+                                <h2 className="font-[500] text-[1rem] dark:text-darkSubTextColor capitalize">
+                                    {item.title}
+                                </h2>
+                            </div>
+                        </a>
+                    ))}
                 </div>
 
-                <h1 className='text-[1.5rem] 425px:text-[2.2rem] text-text font-[600] dark:text-darkTextColor px-8'>Try <span
-                    className='heroText text-[#0FABCA] font-[500]'>ZenUI</span> Components</h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-gray-500 px-8 w-full 1024px:w-[35%] mx-auto'>Streamline Your Development with Ready-to-Use
-                    UI Components from ZenUI Library</p>
             </div>
 
-            <div
-                x-data="{}"
-                x-init="$nextTick(() => {
-                        let ul = $refs.logos;
-                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                        ul.nextSibling.setAttribute('aria-hidden', 'true');
-                    })"
-                className="slider-container w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_300px,_black_calc(100%-300px),transparent_100%)] mb-5 "
+            <button
+                onClick={() => navigate("/components/all-components")}
+                className='py-3 px-6 640px:px-8 bg-[#0FABCA] text-white rounded-normal absolute -bottom-12 z-20 left-[50%] translate-x-[-50%] hover:bg-[#1cbedb] transition-all flex items-center justify-center gap-3 duration-300 group'
             >
-                <ul x-ref="logos"
-                    className="flex items-center gap-5 w-[50%] 1404px:w-[20%] mx-auto justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none allComponentSliderLeft">
-                    {
-                        allComponents?.map((item, index) => (
-                            <a href={item.url}
-                               className={`py-2 px-6 dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-[#fff] rounded font-[500] min-w-fit`}
-                               key={index}>{item.title}</a>
-                        ))
-                    }
-
-                </ul>
-            </div>
-
-            <div
-                x-data="{}"
-                x-init="$nextTick(() => {
-                        let ul = $refs.logos;
-                        ul.insertAdjacentHTML('afterend', ul.outerHTML);
-                        ul.nextSibling.setAttribute('aria-hidden', 'true');
-                    })"
-                className="slider-container w-full inline-flex flex-nowrap overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_300px,_black_calc(100%-300px),transparent_100%)] mb-10 640px:mb-20"
-            >
-                <ul x-ref="logos"
-                    className="flex items-center gap-5 w-[50%] 1404px:w-[20%] mx-auto justify-center md:justify-start [&_li]:mx-8 [&_img]:max-w-none allComponentSliderRight">
-                    {
-                        allComponents?.map((item, index) => (
-                            <a href={item.url}
-                               className={`py-2 px-6 dark:bg-[#0FABCA]/90 bg-[#0FABCA] capitalize border dark:border-[#0FABCA]/90 border-[#0FABCA] text-[#fff] rounded font-[500] min-w-fit`}
-                               key={index}>{item.title}</a>
-                        ))
-                    }
-
-                </ul>
-            </div>
-        </div>
+                All Components
+            </button>
+        </SectionWrapper>
     );
 };
 

@@ -1,30 +1,35 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
 import {FaDiscord, FaTasks} from "react-icons/fa";
 import {IoIosArrowDown, IoIosArrowUp, IoIosSearch} from "react-icons/io";
 import {TbBrandGithubFilled, TbLogout2, TbUsersGroup} from "react-icons/tb";
-import { CiMenuFries } from "react-icons/ci";
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
-import {MdKeyboardArrowDown, MdLaptopMac, MdOutlineArrowRightAlt, MdOutlineKeyboardArrowRight} from "react-icons/md";
-import { MdDashboardCustomize } from "react-icons/md";
-import { CgIfDesign } from "react-icons/cg";
-import { FaCubesStacked } from "react-icons/fa6";
+import {CiMenuFries} from "react-icons/ci";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
+import {
+    MdDashboardCustomize,
+    MdKeyboardArrowDown,
+    MdLaptopMac,
+    MdOutlineArrowRightAlt,
+    MdOutlineKeyboardArrowRight
+} from "react-icons/md";
+import {CgIfDesign} from "react-icons/cg";
+import {FaCubesStacked} from "react-icons/fa6";
 import {BsArrowRight, BsBuildings, BsCalendar2Date} from "react-icons/bs";
 import {AiOutlineFire} from "react-icons/ai";
 import {BiSupport} from "react-icons/bi";
 import {FiUser} from "react-icons/fi";
 import {IoSettingsOutline} from "react-icons/io5";
 
-import WarningMessageCard from "../../../../../Shared/Component/WarningMessageCard.jsx";
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import WarningMessageCard from "@shared/Component/WarningMessageCard.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 const ResponsiveNavbar = () => {
 
@@ -65,14 +70,16 @@ const ResponsiveNavbar = () => {
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <WarningMessageCard width={100} text="In this implementation, the navbar and sidebar are positioned using position: absolute for demonstration purposes in the mobile view. However, when using this in your project, it's recommended to use position: fixed to ensure better performance and consistent behavior, especially when scrolling the page. Using position: fixed will keep the navbar and sidebar visible even as the user scrolls through the content."/>
+                <WarningMessageCard width={100}
+                                    text="In this implementation, the navbar and sidebar are positioned using position: absolute for demonstration purposes in the mobile view. However, when using this in your project, it's recommended to use position: fixed to ensure better performance and consistent behavior, especially when scrolling the page. Using position: fixed will keep the navbar and sidebar visible even as the user scrolls through the content."/>
 
                 <ContentHeader text={"basic navbar"} id={"basic_navbar"}/>
 
                 <BlockDescription text='A simple navigation bar with links to different sections or pages, typically placed at the top of a
                     website for easy navigation.'/>
 
-                <BlockToggleTab preview={basicNavbarPreview} code={basicNavbarCode} setCode={setBasicNavbarCode} setPreview={setBasicNavbarPreview}/>
+                <BlockToggleTab preview={basicNavbarPreview} code={basicNavbarCode} setCode={setBasicNavbarCode}
+                                setPreview={setBasicNavbarPreview}/>
 
                 <BlockWrapper>
                     {basicNavbarPreview && (
@@ -93,7 +100,8 @@ const ResponsiveNavbar = () => {
                                         <input
                                             className='py-1.5 dark:bg-transparent dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-[#abc2d3] pr-4 border border-text pl-10 rounded-full outline-none focus:border-primary'
                                             placeholder='Search...'/>
-                                        <IoIosSearch className='absolute top-[9px] dark:text-slate-500 left-3 text-[#424242] text-[1.3rem]'/>
+                                        <IoIosSearch
+                                            className='absolute top-[9px] dark:text-slate-500 left-3 text-[#424242] text-[1.3rem]'/>
                                     </div>
 
                                     <FaDiscord
@@ -101,8 +109,9 @@ const ResponsiveNavbar = () => {
                                     <TbBrandGithubFilled
                                         className='text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer hover:text-primary transition-all duration-500'/>
 
-                                    <CiMenuFries className='text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer 1024px:hidden flex'
-                                                 onClick={() => setBasicNavbarOpen(!basicNavbarOpen)}/>
+                                    <CiMenuFries
+                                        className='text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer 1024px:hidden flex'
+                                        onClick={() => setBasicNavbarOpen(!basicNavbarOpen)}/>
                                 </div>
 
                                 <aside
@@ -111,7 +120,8 @@ const ResponsiveNavbar = () => {
                                         <input
                                             className='py-1.5 pr-4 dark:bg-slate-800 dark:text-[#abc2d3] pl-12 w-full rounded-full outline-none focus:border-primary'
                                             placeholder='Search...'/>
-                                        <IoIosSearch className='absolute top-[9px] dark:text-slate-400 left-5 text-[#424242] text-[1.3rem]'/>
+                                        <IoIosSearch
+                                            className='absolute top-[9px] dark:text-slate-400 left-5 text-[#424242] text-[1.3rem]'/>
                                     </div>
                                     <ul className='items-center gap-[20px] text-[1rem] text-white flex flex-col'>
                                         <li className='hover:border-b-primary dark:text-[#abc2d3] border-b-[2px] border-transparent transition-all duration-500 cursor-pointer capitalize'>home</li>
@@ -211,7 +221,8 @@ export default ResponsiveNavbar;
                 <BlockDescription text=' A mega menu navbar featuring large dropdown menus with multiple sections, alongside an account
                     dropdown for user profile management and settings.'/>
 
-                <BlockToggleTab preview={megaMenuNavbarPreview} code={megaMenuNavbarCode} setCode={setMegaMenuNavbarCode} setPreview={setMegaMenuNavbarPreview}/>
+                <BlockToggleTab preview={megaMenuNavbarPreview} code={megaMenuNavbarCode}
+                                setCode={setMegaMenuNavbarCode} setPreview={setMegaMenuNavbarPreview}/>
 
                 <BlockWrapper>
                     {megaMenuNavbarPreview && (
@@ -297,7 +308,8 @@ export default ResponsiveNavbar;
                                                     <h3 className='text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]'>Ecosystem</h3>
 
                                                     <div className='flex float-start gap-[10px]'>
-                                                        <BsBuildings className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
+                                                        <BsBuildings
+                                                            className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
 
                                                         <div>
                                                             <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]'>Directory</h1>
@@ -306,7 +318,8 @@ export default ResponsiveNavbar;
                                                         </div>
                                                     </div>
                                                     <div className='flex float-start gap-[10px]'>
-                                                        <BsCalendar2Date className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
+                                                        <BsCalendar2Date
+                                                            className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
 
                                                         <div>
                                                             <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500] '>Bookings</h1>
@@ -315,7 +328,8 @@ export default ResponsiveNavbar;
                                                         </div>
                                                     </div>
                                                     <div className='flex float-start gap-[10px]'>
-                                                        <TbUsersGroup className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
+                                                        <TbUsersGroup
+                                                            className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
 
                                                         <div>
                                                             <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]'>User
@@ -325,7 +339,8 @@ export default ResponsiveNavbar;
                                                         </div>
                                                     </div>
                                                     <div className='flex float-start gap-[10px]'>
-                                                        <FaTasks className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
+                                                        <FaTasks
+                                                            className='text-[1.4rem] dark:text-[#abc2d3] text-gray-600'/>
 
                                                         <div>
                                                             <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]'>Task
@@ -367,7 +382,8 @@ export default ResponsiveNavbar;
                                                          alt='image' className='w-[100px]'/>
 
                                                     <div>
-                                                        <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]'>Check our
+                                                        <h1 className='text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]'>Check
+                                                            our
                                                             newsletter</h1>
                                                         <p className='text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]'>Lorem
                                                             ipsum dolor sit amet, consect adipiscing elit</p>
@@ -385,11 +401,13 @@ export default ResponsiveNavbar;
                                     </li>
 
                                     <li className='flex items-center dark:text-[#abc2d3] hover:text-primary group gap-[5px] cursor-pointer'>
-                                        <AiOutlineFire className='text-[1.1rem] group-hover:text-primary dark:text-[#abc2d3] text-gray-600'/>
+                                        <AiOutlineFire
+                                            className='text-[1.1rem] group-hover:text-primary dark:text-[#abc2d3] text-gray-600'/>
                                         Features
                                     </li>
                                     <li className='flex items-center dark:text-[#abc2d3] hover:text-primary group gap-[5px] cursor-pointer'>
-                                        <BiSupport className='text-[1.1rem] group-hover:text-primary dark:text-[#abc2d3] text-gray-600'/>
+                                        <BiSupport
+                                            className='text-[1.1rem] group-hover:text-primary dark:text-[#abc2d3] text-gray-600'/>
                                         Support
                                     </li>
 
@@ -424,7 +442,8 @@ export default ResponsiveNavbar;
                                                 View Profile
                                             </p>
 
-                                            <div className='mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]'>
+                                            <div
+                                                className='mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]'>
                                                 <p className='flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50'>
                                                     <TbLogout2/>
                                                     Logout
@@ -438,7 +457,7 @@ export default ResponsiveNavbar;
 
                                     </div>
 
-                                    <CiMenuFries onClick={()=> setMegaMenuOpen(!megaMenuOpen)}
+                                    <CiMenuFries onClick={() => setMegaMenuOpen(!megaMenuOpen)}
                                                  className='text-[1.8rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer 1024px:hidden flex'/>
                                 </div>
 
@@ -453,20 +472,24 @@ export default ResponsiveNavbar;
                                         </li>
 
                                         {/* product mega menu */}
-                                        <div onClick={()=> setMegaMenuSubItemsOpen('more_product')} className={`${isMegaMenuCollapse ? 'hidden' : 'block'} group font-[500] ml-6`}>
+                                        <div onClick={() => setMegaMenuSubItemsOpen('more_product')}
+                                             className={`${isMegaMenuCollapse ? 'hidden' : 'block'} group font-[500] ml-6`}>
                                             <h4 className='text-left flex dark:text-[#abc2d3] items-center gap-[5px]'>
                                                 More Products
                                                 <MdOutlineKeyboardArrowRight className='text-[1.2rem]'/>
                                             </h4>
 
                                             <ul className={`${megaMenuSubItemsOpen === 'more_product' ? 'flex' : 'hidden'} pl-6 mt-3 font-[400] items-start flex-col gap-[10px] text-gray-600`}>
-                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Demo App</li>
+                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Demo
+                                                    App
+                                                </li>
                                                 <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>CRM</li>
                                                 <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>CMS</li>
                                             </ul>
                                         </div>
 
-                                        <div onClick={()=> setMegaMenuSubItemsOpen('ecosystem')} className={`${isMegaMenuCollapse ? 'hidden' : 'block'} font-[500] ml-6`}>
+                                        <div onClick={() => setMegaMenuSubItemsOpen('ecosystem')}
+                                             className={`${isMegaMenuCollapse ? 'hidden' : 'block'} font-[500] ml-6`}>
                                             <h4 className='text-left flex dark:text-[#abc2d3] items-center gap-[5px]'>
                                                 Ecosystem
                                                 <MdOutlineKeyboardArrowRight className='text-[1.2rem]'/>
@@ -475,8 +498,12 @@ export default ResponsiveNavbar;
                                             <ul className={`${megaMenuSubItemsOpen === 'ecosystem' ? 'flex' : 'hidden'} pl-6 mt-3 font-[400] items-start flex-col gap-[10px] text-gray-600`}>
                                                 <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Directory</li>
                                                 <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Bookings</li>
-                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>User feedback</li>
-                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Task Manager</li>
+                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>User
+                                                    feedback
+                                                </li>
+                                                <li className='hover:text-primary transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize'>Task
+                                                    Manager
+                                                </li>
                                             </ul>
                                         </div>
 
@@ -813,7 +840,8 @@ export default ResponsiveNavbar;
                 <BlockDescription text='A navigation bar with a mega menu, providing large dropdowns that display multiple links,
                     categories, or content sections in an organized layout.'/>
 
-                <BlockToggleTab preview={megamenuWithAccountPreview} code={megamenuWithAccountCode} setCode={setMegamenuWithAccountCode} setPreview={setMegamenuWithAccountPreview}/>
+                <BlockToggleTab preview={megamenuWithAccountPreview} code={megamenuWithAccountCode}
+                                setCode={setMegamenuWithAccountCode} setPreview={setMegamenuWithAccountPreview}/>
 
                 <BlockWrapper>
                     {megamenuWithAccountPreview && (
@@ -836,36 +864,45 @@ export default ResponsiveNavbar;
                                             <div className='grid grid-cols-2'>
                                                 <ul className='flex flex-col gap-[7px] text-[#424242]'>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
                                                         Details
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
                                                         Location
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team Members
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team
+                                                        Members
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office Tour
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office
+                                                        Tour
                                                     </li>
                                                 </ul>
 
                                                 <div
                                                     className='flex flex-col gap-[10px] dark:border-slate-700 border-l border-[#e5eaf2] pl-[30px]'>
-                                                    <div className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
                                                         <MdDashboardCustomize
                                                             className='bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]'/>
                                                         Full Customize
                                                     </div>
 
-                                                    <div className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
                                                         <CgIfDesign
                                                             className='bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]'/>
                                                         Modern Design
                                                     </div>
 
-                                                    <div className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center gap-[10px] dark:text-[#abc2d3] text-[1rem] text-[#424242]'>
                                                         <FaCubesStacked
                                                             className='bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]'/>
                                                         Well Stacktured
@@ -891,36 +928,45 @@ export default ResponsiveNavbar;
                                             <div className='grid grid-cols-2'>
                                                 <ul className='flex flex-col gap-[7px] text-[#424242]'>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
                                                         Details
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
                                                         Location
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team Members
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team
+                                                        Members
                                                     </li>
                                                     <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                        <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office Tour
+                                                        <BsArrowRight
+                                                            className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office
+                                                        Tour
                                                     </li>
                                                 </ul>
 
                                                 <div
                                                     className='flex flex-col gap-[10px] dark:border-slate-700 border-l border-[#e5eaf2] pl-[30px]'>
-                                                    <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                         <MdDashboardCustomize
                                                             className='bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]'/>
                                                         Full Customize
                                                     </div>
 
-                                                    <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                         <CgIfDesign
                                                             className='bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]'/>
                                                         Modern Design
                                                     </div>
 
-                                                    <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                    <div
+                                                        className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                         <FaCubesStacked
                                                             className='bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]'/>
                                                         Well Stacktured
@@ -939,7 +985,8 @@ export default ResponsiveNavbar;
                                         <input
                                             className='py-1.5 pr-4 dark:bg-transparent dark:border-slate-700 dark:placeholder:text-slate-500 dark:text-[#abc2d3] border border-text pl-10 rounded-full outline-none focus:border-primary'
                                             placeholder='Search...'/>
-                                        <IoIosSearch className='absolute top-[9px] dark:text-slate-500 left-3 text-[#424242] text-[1.3rem]'/>
+                                        <IoIosSearch
+                                            className='absolute top-[9px] dark:text-slate-500 left-3 text-[#424242] text-[1.3rem]'/>
                                     </div>
 
                                     <FaDiscord
@@ -947,8 +994,9 @@ export default ResponsiveNavbar;
                                     <TbBrandGithubFilled
                                         className='text-[1.6rem] text-[#424242] dark:text-[#abc2d3] cursor-pointer hover:text-primary transition-all duration-500'/>
 
-                                    <CiMenuFries className='text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer 1024px:hidden flex'
-                                                 onClick={() => setMegamenuNavbarOpen(!megamenuNavbarOpen)}/>
+                                    <CiMenuFries
+                                        className='text-[1.6rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer 1024px:hidden flex'
+                                        onClick={() => setMegamenuNavbarOpen(!megamenuNavbarOpen)}/>
                                 </div>
 
                                 <aside
@@ -967,40 +1015,50 @@ export default ResponsiveNavbar;
                                         </li>
 
                                         {/* about us mega menu */}
-                                        <div className={`${mobileAboutUsOpen ? 'block' : 'hidden'} group font-[500] ml-6`}>
+                                        <div
+                                            className={`${mobileAboutUsOpen ? 'block' : 'hidden'} group font-[500] ml-6`}>
 
                                             <ul className='flex flex-col gap-[7px] text-[#424242]'>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
                                                     Details
                                                 </li>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
                                                     Location
                                                 </li>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team Members
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team
+                                                    Members
                                                 </li>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office Tour
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office
+                                                    Tour
                                                 </li>
                                             </ul>
 
                                             <div
                                                 className='flex flex-col gap-[10px] mt-4'>
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <MdDashboardCustomize
                                                         className='bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]'/>
                                                     Full Customize
                                                 </div>
 
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <CgIfDesign
                                                         className='bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]'/>
                                                     Modern Design
                                                 </div>
 
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <FaCubesStacked
                                                         className='bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]'/>
                                                     Well Stacktured
@@ -1021,36 +1079,45 @@ export default ResponsiveNavbar;
 
                                             <ul className='flex flex-col gap-[7px] text-[#424242]'>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Company
                                                     Details
                                                 </li>
                                                 <li className='flex items-center dark:text-[#abc2d3] gap-[7px] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Company
                                                     Location
                                                 </li>
                                                 <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team Members
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/>Team
+                                                    Members
                                                 </li>
                                                 <li className='flex items-center gap-[7px] dark:text-[#abc2d3] hover:text-primary transition-all duration-300'>
-                                                    <BsArrowRight className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office Tour
+                                                    <BsArrowRight
+                                                        className='text-[#424242] dark:text-[#abc2d3] text-[0.9rem]'/> Office
+                                                    Tour
                                                 </li>
                                             </ul>
 
                                             <div
                                                 className='flex flex-col gap-[10px] mt-4'>
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <MdDashboardCustomize
                                                         className='bg-blue-200 text-blue-900 p-1.5 rounded-full text-[2rem]'/>
                                                     Full Customize
                                                 </div>
 
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <CgIfDesign
                                                         className='bg-orange-200 text-orange-800 p-1.5 rounded-full text-[2rem]'/>
                                                     Modern Design
                                                 </div>
 
-                                                <div className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
+                                                <div
+                                                    className='flex items-center dark:text-[#abc2d3] gap-[10px] text-[1rem] text-[#424242]'>
                                                     <FaCubesStacked
                                                         className='bg-yellow-200 text-yellow-800 p-1.5 rounded-full text-[2rem]'/>
                                                     Well Stacktured
@@ -1363,7 +1430,8 @@ export default ResponsiveNavbar;
                 <BlockDescription text='A clean and simple navigation bar with minimal styling, containing standard links for basic website
                     navigation.'/>
 
-                <BlockToggleTab preview={standerNavbarPreview} code={standerNavbarCode} setPreview={setStanderNavbarPreview} setCode={setStanderNavbarCode}/>
+                <BlockToggleTab preview={standerNavbarPreview} code={standerNavbarCode}
+                                setPreview={setStanderNavbarPreview} setCode={setStanderNavbarCode}/>
 
                 <BlockWrapper>
                     {standerNavbarPreview && (
@@ -1394,8 +1462,9 @@ export default ResponsiveNavbar;
                                         up
                                     </button>
 
-                                    <CiMenuFries className='text-[1.8rem] dark:text-[#abc2d3] mr-1 text-[#424242]c cursor-pointer 1024px:hidden flex'
-                                                 onClick={() => setBasicNavbarOpen(!basicNavbarOpen)}/>
+                                    <CiMenuFries
+                                        className='text-[1.8rem] dark:text-[#abc2d3] mr-1 text-[#424242]c cursor-pointer 1024px:hidden flex'
+                                        onClick={() => setBasicNavbarOpen(!basicNavbarOpen)}/>
                                 </div>
 
                                 <aside
@@ -1404,7 +1473,8 @@ export default ResponsiveNavbar;
                                         <input
                                             className='py-1.5 pr-4 dark:bg-slate-800 dark:text-[#abc2d3] dark:border-slate-900/50 w-full pl-10 rounded-full border border-gray-200 outline-none focus:border-primary'
                                             placeholder='Search...'/>
-                                        <IoIosSearch className='absolute dark:text-slate-400 top-[8px] left-3 text-gray-500 text-[1.3rem]'/>
+                                        <IoIosSearch
+                                            className='absolute dark:text-slate-400 top-[8px] left-3 text-gray-500 text-[1.3rem]'/>
                                     </div>
                                     <ul className='items-center gap-[20px] text-[1rem] text-gray-600 flex flex-col'>
 
@@ -1496,7 +1566,8 @@ export default ResponsiveNavbar;
           '/>}
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/all-blocks' backName='all blocks' forwardName='hero section' forwardUrl='/blocks/hero-section'/>
+                <BlocksFooter backUrl='/blocks/all-blocks' backName='all blocks' forwardName='hero section'
+                              forwardUrl='/blocks/hero-section'/>
             </div>
 
 

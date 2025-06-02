@@ -61,7 +61,8 @@ const ProductDetailsExample1 = () => {
                     </div>
 
                     {/* Main image */}
-                    <div className="w-full 1024px:w-[80%] dark:bg-slate-900 bg-gray-100 rounded-sm h-[280px] 1024px:h-[400px] relative flex items-center justify-center">
+                    <div
+                        className="w-full 1024px:w-[80%] dark:bg-slate-900 bg-gray-100 rounded-sm h-[280px] 1024px:h-[400px] relative flex items-center justify-center">
                         <img
                             src={images[selectedImage]}
                             alt="Product main image"
@@ -73,7 +74,8 @@ const ProductDetailsExample1 = () => {
                 {/* Right side - Product details */}
                 <div className="flex flex-col gap-6">
                     <div>
-                        <h1 className="text-[1.6rem] dark:text-[#abc2d3] 1024px:text-[1.9rem] font-bold text-gray-800">Apple iPhone 14 Pro Max</h1>
+                        <h1 className="text-[1.6rem] dark:text-[#abc2d3] 1024px:text-[1.9rem] font-bold text-gray-800">Apple
+                            iPhone 14 Pro Max</h1>
                         <div className="flex items-center gap-2 mt-2 1024px:mt-5">
                             <span className="text-3xl dark:text-[#abc2d3] font-medium">$1399</span>
                             <span className="text-xl dark:text-slate-400 text-gray-500 line-through">$1499</span>
@@ -129,14 +131,16 @@ const ProductDetailsExample1 = () => {
                             <FiCpu className="w-5 h-5 dark:text-[#abc2d3] text-gray-700"/>
                             <div>
                                 <p className="text-sm dark:text-[#abc2d3] text-gray-500">CPU</p>
-                                <p className="font-medium text-gray-700 dark:text-slate-400 text-[0.9rem]">Apple A16 Bionic</p>
+                                <p className="font-medium text-gray-700 dark:text-slate-400 text-[0.9rem]">Apple A16
+                                    Bionic</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-2 dark:bg-slate-900 bg-gray-50 p-3 rounded-lg">
                             <IoMdCamera className="w-5 h-5 dark:text-[#abc2d3] text-gray-700"/>
                             <div>
                                 <p className="text-sm dark:text-[#abc2d3] text-gray-500">Camera</p>
-                                <p className="font-medium text-gray-700 dark:text-slate-400 text-[0.9rem]">48-12-12 MP</p>
+                                <p className="font-medium text-gray-700 dark:text-slate-400 text-[0.9rem]">48-12-12
+                                    MP</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-2 dark:bg-slate-900 bg-gray-50 p-3 rounded-lg">
@@ -180,21 +184,24 @@ const ProductDetailsExample1 = () => {
                     {/* Delivery info */}
                     <div className="flex flex-col 1024px:flex-row gap-4 1024px:gap-0 justify-between mt-2">
                         <div className="flex items-center gap-3">
-                            <CiDeliveryTruck className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
+                            <CiDeliveryTruck
+                                className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
                             <div>
                                 <p className="text-sm dark:text-[#abc2d3] text-gray-500">Free Delivery</p>
                                 <p className="font-medium text-[0.9rem] dark:text-slate-500 text-gray-800">1-2 day</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <IoStorefrontOutline className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
+                            <IoStorefrontOutline
+                                className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
                             <div>
                                 <p className="text-sm dark:text-[#abc2d3] text-gray-500">In Stock</p>
                                 <p className="font-medium text-[0.9rem] dark:text-slate-500 text-gray-800">Today</p>
                             </div>
                         </div>
                         <div className="flex items-center gap-3">
-                            <GoVerified className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
+                            <GoVerified
+                                className="text-[3rem] dark:bg-slate-900 dark:text-[#abc2d3] text-gray-500 p-3 bg-gray-100 rounded-md"/>
                             <div>
                                 <p className="text-sm dark:text-[#abc2d3] text-gray-500">Guaranteed</p>
                                 <p className="font-medium text-[0.9rem] dark:text-slate-500 text-gray-800">1 year</p>

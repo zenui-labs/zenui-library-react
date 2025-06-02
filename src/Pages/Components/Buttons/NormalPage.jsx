@@ -1,13 +1,13 @@
 // components
-import Normal from "../../../Components/Overview/SidebarContent/Content/Buttons/Normal";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Normal from "@components/Buttons/Normal";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const NormalPage = () => {
-  return (
-    <ContentPageLayout>
-        <Normal />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <Normal/>
+        </ContentPageLayout>
+    );
 };
 
 export default NormalPage;

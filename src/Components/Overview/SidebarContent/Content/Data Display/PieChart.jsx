@@ -4,18 +4,18 @@ import React, {useState, useEffect} from "react";
 import {Helmet} from "react-helmet";
 
 // components
-import OverviewFooter from "../../../../../Shared/OverviewFooter";
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import Showcode from "../../../../../Shared/Component/ShowCode.jsx";
+import OverviewFooter from "@shared/OverviewFooter";
+import ContentHeader from "@shared/ContentHeader";
+import Showcode from "@shared/Component/ShowCode.jsx";
 
 // scrollspy
-import {pieChartContents} from "../../../../../Utils/ContentsConfig/DataDisplayContents.js";
-import {useScrollSpy} from "../../../../../CustomHooks/useScrollSpy.js";
+import {pieChartContents} from "@utils/ContentsConfig/DataDisplayContents.js";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const PieChart = () => {
 
@@ -186,9 +186,11 @@ const PieChart = () => {
                 <div>
                     <ContentHeader text={"fill pie chart"} id={"fill_pie_chart"}/>
 
-                    <ComponentDescription text="A pie chart visually represents data as slices of a circle, with each slice showing a category's proportion of the whole."/>
+                    <ComponentDescription
+                        text="A pie chart visually represents data as slices of a circle, with each slice showing a category's proportion of the whole."/>
 
-                    <ToggleTab code={fillPieChartCode} preview={fillPieChartPreview} setPreview={setFillPieChartPreview} setCode={setFillPieChartCode}/>
+                    <ToggleTab code={fillPieChartCode} preview={fillPieChartPreview} setPreview={setFillPieChartPreview}
+                               setCode={setFillPieChartCode}/>
 
                     <ComponentWrapper>
                         {fillPieChartPreview && (
@@ -230,7 +232,8 @@ const PieChart = () => {
                                                     className="w-3 h-3 mr-2"
                                                     style={{backgroundColor: slice.color}}
                                                 />
-                                                <span className="text-[0.7rem] dark:text-[#abc2d3] 400px:text-[0.9rem]">{slice.name}</span>
+                                                <span
+                                                    className="text-[0.7rem] dark:text-[#abc2d3] 400px:text-[0.9rem]">{slice.name}</span>
                                             </div>
                                         ))}
                                     </div>
@@ -395,9 +398,11 @@ export default PieChart;
                         <ContentHeader text={"bordered pie chart"} id={"bordered_pie_chart"}/>
                     </div>
 
-                    <ComponentDescription text=' A bordered pie chart shows data in slices with clear borders, making it easier to distinguish each segment’s proportion.'/>
+                    <ComponentDescription
+                        text=' A bordered pie chart shows data in slices with clear borders, making it easier to distinguish each segment’s proportion.'/>
 
-                    <ToggleTab code={borderedPieChartCode} preview={borderedPieCharPreview} setCode={setBorderedPieChartCode} setPreview={setBorderedPieChartPreview}/>
+                    <ToggleTab code={borderedPieChartCode} preview={borderedPieCharPreview}
+                               setCode={setBorderedPieChartCode} setPreview={setBorderedPieChartPreview}/>
 
                     <ComponentWrapper>
                         {borderedPieCharPreview && (
@@ -440,7 +445,8 @@ export default PieChart;
                                                     className="w-3 h-3 mr-2"
                                                     style={{backgroundColor: slice.color}}
                                                 />
-                                                <span className="text-[0.7rem] dark:text-[#abc2d3] 400px:text-[0.9rem]">{slice.name}</span>
+                                                <span
+                                                    className="text-[0.7rem] dark:text-[#abc2d3] 400px:text-[0.9rem]">{slice.name}</span>
                                             </div>
                                         ))}
                                     </div>

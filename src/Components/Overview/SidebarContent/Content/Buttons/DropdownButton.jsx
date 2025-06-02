@@ -1,23 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect, useState} from "react";
 
 // components
-import OverviewFooter from "../../../../../Shared/OverviewFooter";
-import ShowCode from "../../../../../Shared/Component/ShowCode.jsx";
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
+import OverviewFooter from "@shared/OverviewFooter";
+import ShowCode from "@shared/Component/ShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
 import {MdDone, MdKeyboardArrowDown} from "react-icons/md";
 import {BiCopy, BiEdit} from "react-icons/bi";
 import {AiOutlineDelete, AiOutlineSchedule} from "react-icons/ai";
 import {LuSaveAll} from "react-icons/lu";
 
 // contents for scrollspy
-import { dropdownButtonContents } from '../../../../../Utils/ContentsConfig/ButtonsContents';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {dropdownButtonContents} from '@utils/ContentsConfig/ButtonsContents';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const DropdownButton = () => {
     const sectionIds = dropdownButtonContents.map(item => item.href.slice(1));
@@ -50,10 +50,10 @@ const DropdownButton = () => {
         {
             label: 'Mark as read',
             icon: <MdDone/>
-        },{
+        }, {
             label: 'Copy',
             icon: <BiCopy/>
-        },{
+        }, {
             label: 'Edit',
             icon: <BiEdit/>
         },
@@ -63,10 +63,10 @@ const DropdownButton = () => {
         {
             label: 'Schedule for later',
             icon: <AiOutlineSchedule/>
-        },{
+        }, {
             label: 'Save draft',
             icon: <LuSaveAll/>
-        },{
+        }, {
             label: 'Delete',
             icon: <AiOutlineDelete/>
         },
@@ -89,43 +89,49 @@ const DropdownButton = () => {
 
     useEffect(() => {
         const handleClick = (event) => {
-            if(!event.target.closest('.publishButtonOptions') && !event.target.closest('.publishButton')){
+            if (!event.target.closest('.publishButtonOptions') && !event.target.closest('.publishButton')) {
                 setPublishButtonActive(false)
                 setActionButtonActive(false)
             }
         };
         document.addEventListener("click", handleClick);
         return () => {
-          document.removeEventListener("click", handleClick);
+            document.removeEventListener("click", handleClick);
         };
-      }, []);
+    }, []);
 
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"Publish Button"} id={"publish_button"} />
+                <ContentHeader text={"Publish Button"} id={"publish_button"}/>
 
-                <ComponentDescription text='Dropdown menu with a publish button, offering various publishing options for content management.'/>
+                <ComponentDescription
+                    text='Dropdown menu with a publish button, offering various publishing options for content management.'/>
 
-                <ToggleTab setCode={setPublishCode} code={publishCode} preview={publishPreview} setPreview={setPublishPreview}/>
+                <ToggleTab setCode={setPublishCode} code={publishCode} preview={publishPreview}
+                           setPreview={setPublishPreview}/>
 
                 <ComponentWrapper>
                     {publishPreview && (
-                        <div className={`p-8 ${publishButtonActive ? 'mb-20' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
-                            <div className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
+                        <div
+                            className={`p-8 ${publishButtonActive ? 'mb-20' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
+                            <div
+                                className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
                                 <button
                                     className=" text-[1rem] px-6 py-1.5 transition-all duration-500 cursor-auto">
                                     {publishButtonText}
                                 </button>
 
-                                <div onClick={()=> setPublishButtonActive(!publishButtonActive)} className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
+                                <div onClick={() => setPublishButtonActive(!publishButtonActive)}
+                                     className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
                                     <MdKeyboardArrowDown className='text-[2rem]'/>
                                 </div>
 
                                 <ul className={`${publishButtonActive ? 'opacity-100 z-20 translate-y-0' : ' opacity-0 z-[-1] translate-y-[-5px]'} dark:bg-slate-800 dark:text-[#abc2d3] publishButtonOptions transition-all duration-500 flex flex-col boxShadow bg-white absolute top-[46px] rounded right-0 text-text text-[0.9rem]`}>
                                     {
-                                        publishButtonContent?.map((item, index)=> (
-                                            <li className='py-2 px-6 hover:bg-gray-50 dark:hover:bg-slate-900/40 rounded cursor-pointer' key={index} onClick={()=> handlePublishButtonClick(item)}>{item}</li>
+                                        publishButtonContent?.map((item, index) => (
+                                            <li className='py-2 px-6 hover:bg-gray-50 dark:hover:bg-slate-900/40 rounded cursor-pointer'
+                                                key={index} onClick={() => handlePublishButtonClick(item)}>{item}</li>
                                         ))
                                     }
                                 </ul>
@@ -196,30 +202,36 @@ export default DropdownButton;
                 </ComponentWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"action Button"} id={"action_button"} />
+                    <ContentHeader text={"action Button"} id={"action_button"}/>
                 </div>
 
-                <ComponentDescription text='Dropdown menu with an action button, providing a range of selectable actions for quick task execution.'/>
+                <ComponentDescription
+                    text='Dropdown menu with an action button, providing a range of selectable actions for quick task execution.'/>
 
-                <ToggleTab setCode={setActionButtonCode} code={actionButtonCode} setPreview={setActionButtonPreview} preview={actionButtonPreview}/>
+                <ToggleTab setCode={setActionButtonCode} code={actionButtonCode} setPreview={setActionButtonPreview}
+                           preview={actionButtonPreview}/>
 
                 <ComponentWrapper>
                     {actionButtonPreview && (
-                        <div className={`p-8 ${actionButtonActive ? 'mb-28' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
-                            <div className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
+                        <div
+                            className={`p-8 ${actionButtonActive ? 'mb-28' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
+                            <div
+                                className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
                                 <button
                                     className=" text-[1rem] px-6 py-1.5 transition-all duration-500 cursor-auto">
                                     {actionButtonText}
                                 </button>
 
-                                <div onClick={()=> setActionButtonActive(!actionButtonActive)} className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
+                                <div onClick={() => setActionButtonActive(!actionButtonActive)}
+                                     className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
                                     <MdKeyboardArrowDown className='text-[2rem]'/>
                                 </div>
 
                                 <ul className={`${actionButtonActive ? 'opacity-100 z-20 translate-y-0' : ' opacity-0 z-[-1] translate-y-[-5px]'} dark:bg-slate-800 dark:text-[#abc2d3] publishButtonOptions transition-all duration-500 flex flex-col boxShadow bg-white py-1 w-full absolute top-[46px] rounded right-0 text-text text-[0.9rem]`}>
                                     {
-                                        actionContents?.map((item, index)=> (
-                                            <li className='py-2 px-3 flex items-center dark:hover:bg-slate-900/40 gap-[5px] hover:bg-gray-50 rounded cursor-pointer' key={index} onClick={()=> handleActionButtonClick(item.label)}>
+                                        actionContents?.map((item, index) => (
+                                            <li className='py-2 px-3 flex items-center dark:hover:bg-slate-900/40 gap-[5px] hover:bg-gray-50 rounded cursor-pointer'
+                                                key={index} onClick={() => handleActionButtonClick(item.label)}>
                                                 {item.icon}
                                                 {item.label}
                                             </li>
@@ -306,31 +318,38 @@ export default DropdownButton;
                 </ComponentWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"send Button with arrow"} id={"send_button_with_arrow"} />
+                    <ContentHeader text={"send Button with arrow"} id={"send_button_with_arrow"}/>
                 </div>
 
-                <ComponentDescription text='Dropdown menu with a send button and arrow, allowing users to choose from multiple sending options.'/>
+                <ComponentDescription
+                    text='Dropdown menu with a send button and arrow, allowing users to choose from multiple sending options.'/>
 
-                <ToggleTab setCode={setArrowSendButtonCode} code={arrowSendButtonCode} setPreview={setArrowSendButtonPreview} preview={arrowSendButtonPreview}/>
+                <ToggleTab setCode={setArrowSendButtonCode} code={arrowSendButtonCode}
+                           setPreview={setArrowSendButtonPreview} preview={arrowSendButtonPreview}/>
 
                 <ComponentWrapper>
                     {arrowSendButtonPreview && (
-                        <div className={`p-8 ${actionButtonActive2 ? 'mb-32' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
-                            <div className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
+                        <div
+                            className={`p-8 ${actionButtonActive2 ? 'mb-32' : 'mb-4'} flex flex-wrap items-center gap-5 justify-center transition-all duration-300`}>
+                            <div
+                                className='flex items-center rounded bg-primary border-none outline-none text-secondary justify-between relative'>
                                 <button
                                     className=" text-[1rem] px-6 py-1.5 transition-all duration-500 cursor-auto">
                                     {sendButtonText}
                                 </button>
 
-                                <div onClick={()=> setActionButtonActive2(!actionButtonActive2)} className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
+                                <div onClick={() => setActionButtonActive2(!actionButtonActive2)}
+                                     className='bg-[#005fb2] w-[50px] py-1.5 flex items-center justify-center cursor-pointer rounded-r publishButton'>
                                     <MdKeyboardArrowDown className='text-[2rem]'/>
                                 </div>
 
                                 <ul className={`${actionButtonActive2 ? 'opacity-100 z-20 translate-y-4' : ' opacity-0 z-[-1] translate-y-[-20px]'} publishButtonOptions transition-all duration-500 flex flex-col boxShadow bg-white py-1 w-max dark:bg-slate-800 dark:border-slate-700 dark:text-[#abc2d3] absolute top-[46px] rounded border border-[#e6e6e6] right-0 text-text text-[0.9rem]`}>
-                                    <div className='absolute -top-[8px] dark:bg-slate-800 dark:border-slate-700 right-3 border-l border-b border-[#e6e6e6] bg-white w-[15px] h-[15px] rotate-[135deg]'></div>
+                                    <div
+                                        className='absolute -top-[8px] dark:bg-slate-800 dark:border-slate-700 right-3 border-l border-b border-[#e6e6e6] bg-white w-[15px] h-[15px] rotate-[135deg]'></div>
                                     {
-                                        sendButtonContent?.map((item, index)=> (
-                                            <li className='z-20 py-2 px-3 dark:hover:bg-slate-900/40 flex items-center gap-[8px] hover:bg-gray-50 rounded cursor-pointer' key={index} onClick={()=> handleSendButtonClick(item.label)}>
+                                        sendButtonContent?.map((item, index) => (
+                                            <li className='z-20 py-2 px-3 dark:hover:bg-slate-900/40 flex items-center gap-[8px] hover:bg-gray-50 rounded cursor-pointer'
+                                                key={index} onClick={() => handleSendButtonClick(item.label)}>
                                                 <span className='text-primary'>{item.icon}</span>
                                                 {item.label}
                                             </li>
@@ -418,7 +437,8 @@ export default DropdownButton;
                         />}
                 </ComponentWrapper>
 
-                <OverviewFooter backUrl='/components/login-buttons' backName='login button' forwardUrl='/components/animated-button' forwardName='animated button'/>
+                <OverviewFooter backUrl='/components/login-buttons' backName='login button'
+                                forwardUrl='/components/animated-button' forwardName='animated button'/>
             </div>
 
             <ContentNavbar contents={dropdownButtonContents} activeSection={activeSection}/>

@@ -1,7 +1,7 @@
 import React from 'react';
 
 // data
-import { allComponents } from "../../../../../../Utils/AllComponents.js";
+import {allComponents} from "@utils/AllComponents.js";
 
 const VerticalMarquee = () => {
 
@@ -9,7 +9,8 @@ const VerticalMarquee = () => {
 
     return (
         <div className='flex gap-5'>
-            <div className="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
+            <div
+                className="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
 
                 <div className="allComponentSliderUp flex flex-col items-center gap-5">
                     {doubledComponents.map((item, index) => (
@@ -24,7 +25,8 @@ const VerticalMarquee = () => {
                 </div>
             </div>
 
-            <div className="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
+            <div
+                className="slider-container h-80 w-full relative overflow-hidden [mask-image:_linear-gradient(to_bottom,transparent_0,_black_60px,_black_calc(100%-60px),transparent_100%)]">
                 <div className="allComponentSliderDown flex flex-col items-center gap-5">
                     {doubledComponents.map((item, index) => (
                         <a

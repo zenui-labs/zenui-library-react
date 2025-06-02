@@ -1,14 +1,13 @@
-
 // components
-import AnimatedButton from "../../../Components/Overview/SidebarContent/Content/Buttons/AnimatedButton";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import AnimatedButton from "@components/Buttons/AnimatedButton";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AnimatedButtonPage = () => {
-  return (
-    <ContentPageLayout>
-        <AnimatedButton />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <AnimatedButton/>
+        </ContentPageLayout>
+    );
 };
 
 export default AnimatedButtonPage;

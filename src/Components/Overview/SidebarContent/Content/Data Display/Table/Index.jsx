@@ -1,59 +1,60 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // components
-import OverviewFooter from '../../../../../../Shared/OverviewFooter.jsx';
-import ContentHeader from '../../../../../../Shared/ContentHeader.jsx';
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import OverviewFooter from '@shared/OverviewFooter.jsx';
+import ContentHeader from '@shared/ContentHeader.jsx';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
 // contents for scrollspy
-import { tableContents } from '../../../../../../Utils/ContentsConfig/DataDisplayContents.js';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy.js';
+import {tableContents} from '@utils/ContentsConfig/DataDisplayContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 import CheckboxTableExample from "./CheckboxTableExample.jsx";
 import PaginationTableExample from "./PaginationTableExample.jsx";
 import SearchableTableExample from "./SearchableTableExample.jsx";
 
 const Index = () => {
-  const sectionIds = tableContents.map((item) => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = tableContents.map((item) => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  const [table1Preview, setTable1Preview] = useState(true);
-  const [table1Code, setTable1Code] = useState(false);
+    const [table1Preview, setTable1Preview] = useState(true);
+    const [table1Code, setTable1Code] = useState(false);
 
-  const [table2Preview, setTable2Preview] = useState(true);
-  const [table2Code, setTable2Code] = useState(false);
+    const [table2Preview, setTable2Preview] = useState(true);
+    const [table2Code, setTable2Code] = useState(false);
 
-  const [table3Preview, setTable3Preview] = useState(true);
-  const [table3Code, setTable3Code] = useState(false);
+    const [table3Preview, setTable3Preview] = useState(true);
+    const [table3Code, setTable3Code] = useState(false);
 
-  return (
-    <>
-      <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-        <div>
-          <ContentHeader text={'searchable table'} id={'searchable_table'} />
+    return (
+        <>
+            <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
+                <div>
+                    <ContentHeader text={'searchable table'} id={'searchable_table'}/>
 
-          <ComponentDescription text='A searchable table lets users quickly filter rows by typing into a
+                    <ComponentDescription text='A searchable table lets users quickly filter rows by typing into a
             search box, instantly narrowing displayed data to match keywords or
             phrases.'/>
 
-          <ToggleTab code={table1Code} setPreview={setTable1Preview} preview={table1Preview} setCode={setTable1Code} />
+                    <ToggleTab code={table1Code} setPreview={setTable1Preview} preview={table1Preview}
+                               setCode={setTable1Code}/>
 
-          <ComponentWrapper>
-            {table1Preview && (
-                <SearchableTableExample/>
-            )}
+                    <ComponentWrapper>
+                        {table1Preview && (
+                            <SearchableTableExample/>
+                        )}
 
-            {table1Code && (
-                <Showcode
-                    code='
+                        {table1Code && (
+                            <Showcode
+                                code='
 import React, {useEffect, useMemo, useState} from "react";
 
 // react icons
@@ -253,28 +254,29 @@ const Table = () => {
 
 export default Table;
           '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader text={'pagination table'} id={'pagination_table'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader text={'pagination table'} id={'pagination_table'}/>
+                    </div>
 
-          <ComponentDescription text='A pagination table displays data in pages, showing a limited number
+                    <ComponentDescription text='A pagination table displays data in pages, showing a limited number
             of rows per page with controls to navigate between pages, improving
             data readability.'/>
 
-          <ToggleTab code={table1Code} setPreview={setTable2Preview} setCode={setTable2Code} preview={table2Preview}/>
+                    <ToggleTab code={table1Code} setPreview={setTable2Preview} setCode={setTable2Code}
+                               preview={table2Preview}/>
 
-          <ComponentWrapper>
-            {table2Preview && (
-                <PaginationTableExample/>
-            )}
+                    <ComponentWrapper>
+                        {table2Preview && (
+                            <PaginationTableExample/>
+                        )}
 
-            {table2Code && (
-                <Showcode
-                    code='
+                        {table2Code && (
+                            <Showcode
+                                code='
 import React, {useEffect, useMemo, useRef, useState} from "react";
 
 // react icons
@@ -576,27 +578,28 @@ const Table = () => {
 
 export default Table;
           '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader text={'checkbox table'} id={'checkbox_table'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader text={'checkbox table'} id={'checkbox_table'}/>
+                    </div>
 
-          <ComponentDescription text='A checkbox table lets users select rows using checkboxes, enabling
+                    <ComponentDescription text='A checkbox table lets users select rows using checkboxes, enabling
             bulk actions like delete or export on multiple entries.'/>
 
-          <ToggleTab code={table3Code} preview={table3Preview} setCode={setTable3Code} setPreview={setTable3Preview}/>
+                    <ToggleTab code={table3Code} preview={table3Preview} setCode={setTable3Code}
+                               setPreview={setTable3Preview}/>
 
-          <ComponentWrapper>
-            {table3Preview && (
-                <CheckboxTableExample/>
-            )}
+                    <ComponentWrapper>
+                        {table3Preview && (
+                            <CheckboxTableExample/>
+                        )}
 
-            {table3Code && (
-                <Showcode
-                    code='
+                        {table3Code && (
+                            <Showcode
+                                code='
 import React, {useEffect, useMemo, useRef, useState} from "react";
 
 // react icons
@@ -1089,26 +1092,26 @@ const Table = () => {
 
 export default Table;
           '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter
-            backUrl='/components/badge'
-            backName='badge'
-            forwardName='redo & undo'
-            forwardUrl='/components/redo-undo'
-          />
-        </div>
+                    <OverviewFooter
+                        backUrl='/components/badge'
+                        backName='badge'
+                        forwardName='redo & undo'
+                        forwardUrl='/components/redo-undo'
+                    />
+                </div>
 
-        <ContentNavbar activeSection={activeSection} contents={tableContents}/>
+                <ContentNavbar activeSection={activeSection} contents={tableContents}/>
 
-      </aside>
-      <Helmet>
-        <title>Data Display - Table</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+            <Helmet>
+                <title>Data Display - Table</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default Index;

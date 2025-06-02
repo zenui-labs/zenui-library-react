@@ -24,7 +24,8 @@ export const TeamData = [
         behanceLink: '',
         figmaLink: '',
         linkedinLink: 'linkedin.com/in/prituemondal',
-        twitterLink: ''
+        twitterLink: '',
+        zenuiHero: true,
     },
     {
         name: 'Amin RahmanZadeh',

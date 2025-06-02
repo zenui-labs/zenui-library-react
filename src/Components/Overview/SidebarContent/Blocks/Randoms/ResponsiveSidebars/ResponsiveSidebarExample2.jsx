@@ -22,8 +22,9 @@ const ResponsiveSidebarExample2 = () => {
                             <img src='https://i.ibb.co/ZHYQ04D/footer-logo.png' alt='logo'
                                  className='w-[130px] cursor-pointer'/>
                             <div className='relative group'>
-                                <GoSidebarCollapse className='text-[1.5rem] dark:text-[#abc2d3] text-gray-600 cursor-pointer'
-                                                   onClick={() => setIsCollapse1(false)}/>
+                                <GoSidebarCollapse
+                                    className='text-[1.5rem] dark:text-[#abc2d3] text-gray-600 cursor-pointer'
+                                    onClick={() => setIsCollapse1(false)}/>
 
                                 {/* tooltip */}
                                 <div

@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // components
-import OverviewFooter from '../../../../../../Shared/OverviewFooter.jsx';
-import ContentHeader from '../../../../../../Shared/ContentHeader.jsx';
+import OverviewFooter from '@shared/OverviewFooter.jsx';
+import ContentHeader from '@shared/ContentHeader.jsx';
 
 // contents for scrollspy
-import { selectInputContents } from '../../../../../../Utils/ContentsConfig/InputContents.js';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy.js';
+import {selectInputContents} from '@utils/ContentsConfig/InputContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // showing the code
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
-import ComponentDescription from '../../../../../../Shared/Component/ComponentDescription.jsx';
-import ComponentWrapper from '../../../../../../Shared/Component/ComponentWrapper.jsx';
-import ToggleTab from '../../../../../../Shared/Component/ToggleTab.jsx';
-import ContentNavbar from '../../../../../../Shared/Component/ContentNavbar.jsx';
+import ComponentDescription from '@shared/Component/ComponentDescription.jsx';
+import ComponentWrapper from '@shared/Component/ComponentWrapper.jsx';
+import ToggleTab from '@shared/Component/ToggleTab.jsx';
+import ContentNavbar from '@shared/Component/ContentNavbar.jsx';
 
 // all the examples
 import SelectExample from "./SelectExample.jsx";
@@ -28,57 +28,58 @@ import SingleSelectWithSearchAndBadge from "./SingleSelectWithSearchAndBadge.jsx
 import MultipleSelectWithSearchAndBadge from "./MutipleSelectWithSearchAndBadge.jsx";
 
 const Index = () => {
-  const sectionIds = selectInputContents.map((item) => item.href.slice(1));
-  const activeSection = useScrollSpy(sectionIds);
+    const sectionIds = selectInputContents.map((item) => item.href.slice(1));
+    const activeSection = useScrollSpy(sectionIds);
 
-  // code
-  const [selectPreview, setSelectPreview] = useState(true);
-  const [selectCode, setSelectCode] = useState(false);
+    // code
+    const [selectPreview, setSelectPreview] = useState(true);
+    const [selectCode, setSelectCode] = useState(false);
 
-  // select with icon
-  const [iconSelectPreview, setIconSelectPreview] = useState(true);
-  const [iconSelectCode, setIconSelectCode] = useState(false);
+    // select with icon
+    const [iconSelectPreview, setIconSelectPreview] = useState(true);
+    const [iconSelectCode, setIconSelectCode] = useState(false);
 
-  // multiple section with search
-  const [multipleWithSearchPreview, setMultipleWithSearchPreview] =
-    useState(true);
-  const [multipleWithSearchCode, setMultipleWithSearchCode] = useState(false);
+    // multiple section with search
+    const [multipleWithSearchPreview, setMultipleWithSearchPreview] =
+        useState(true);
+    const [multipleWithSearchCode, setMultipleWithSearchCode] = useState(false);
 
-  // single section with search
-  const [singleWithSearchPreview, setSingleWithSearchPreview] = useState(true);
-  const [singleWithSearchCode, setSingleWithSearchCode] = useState(false);
+    // single section with search
+    const [singleWithSearchPreview, setSingleWithSearchPreview] = useState(true);
+    const [singleWithSearchCode, setSingleWithSearchCode] = useState(false);
 
-  // single select search with badge
-  const [singleSearchWithBadgePreview, setSingleSearchWithBadgePreview] =
-    useState(true);
-  const [singleSearchWithBadgeCode, setSingleSearchWithBadgeCode] =
-    useState(false);
+    // single select search with badge
+    const [singleSearchWithBadgePreview, setSingleSearchWithBadgePreview] =
+        useState(true);
+    const [singleSearchWithBadgeCode, setSingleSearchWithBadgeCode] =
+        useState(false);
 
-  // multiple select search with badge
-  const [multipleSearchWithBadgePreview, setMultipleSearchWithBadgePreview] =
-    useState(true);
-  const [multipleSearchWithBadgeCode, setMultipleSearchWithBadgeCode] =
-    useState(false);
+    // multiple select search with badge
+    const [multipleSearchWithBadgePreview, setMultipleSearchWithBadgePreview] =
+        useState(true);
+    const [multipleSearchWithBadgeCode, setMultipleSearchWithBadgeCode] =
+        useState(false);
 
-  return (
-    <>
-      <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
-        <div>
-          <ContentHeader text={'Select'} id={'select'} />
+    return (
+        <>
+            <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
+                <div>
+                    <ContentHeader text={'Select'} id={'select'}/>
 
-          <ComponentDescription text='This is a select component. Choose options from the dropdown menu
+                    <ComponentDescription text='This is a select component. Choose options from the dropdown menu
             for seamless interaction.'/>
 
-          <ToggleTab code={selectCode} setCode={setSelectCode} preview={selectPreview} setPreview={setSelectPreview}/>
+                    <ToggleTab code={selectCode} setCode={setSelectCode} preview={selectPreview}
+                               setPreview={setSelectPreview}/>
 
-          <ComponentWrapper>
-            {selectPreview && (
-                <SelectExample/>
-            )}
+                    <ComponentWrapper>
+                        {selectPreview && (
+                            <SelectExample/>
+                        )}
 
-            {selectCode && (
-                <Showcode
-                    code="
+                        {selectCode && (
+                            <Showcode
+                                code="
 import React, {useEffect, useState} from 'react';
 
 // react icons
@@ -142,27 +143,28 @@ const SelectInput = () => {
 
 export default SelectInput;
                     "
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader text={'Select with icon'} id={'select_with_icon'} />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader text={'Select with icon'} id={'select_with_icon'}/>
+                    </div>
 
-          <ComponentDescription text='This is a select with icon component. Select options from the
+                    <ComponentDescription text='This is a select with icon component. Select options from the
             dropdown menu enriched with intuitive icons.'/>
 
-          <ToggleTab code={iconSelectCode} setCode={setIconSelectCode} setPreview={setIconSelectPreview} preview={iconSelectPreview}/>
+                    <ToggleTab code={iconSelectCode} setCode={setIconSelectCode} setPreview={setIconSelectPreview}
+                               preview={iconSelectPreview}/>
 
-          <ComponentWrapper>
-            {iconSelectPreview && (
-                <SelectWithIconExample/>
-            )}
+                    <ComponentWrapper>
+                        {iconSelectPreview && (
+                            <SelectWithIconExample/>
+                        )}
 
-            {iconSelectCode && (
-                <Showcode
-                    code="
+                        {iconSelectCode && (
+                            <Showcode
+                                code="
 import React, {useEffect, useState} from 'react';
 
 // react icons
@@ -247,30 +249,31 @@ const SelectInput = () => {
 
 export default SelectInput;
                     "
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'multiple select with search'}
-              id={'multiple_select_with_search'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'multiple select with search'}
+                            id={'multiple_select_with_search'}
+                        />
+                    </div>
 
-          <ComponentDescription text=' Multiple select dropdown with a search feature, allowing users to
+                    <ComponentDescription text=' Multiple select dropdown with a search feature, allowing users to
             easily find and select multiple options from a large list.'/>
 
-          <ToggleTab code={multipleWithSearchCode} setCode={setMultipleWithSearchCode} preview={multipleWithSearchPreview} setPreview={setMultipleWithSearchPreview}/>
+                    <ToggleTab code={multipleWithSearchCode} setCode={setMultipleWithSearchCode}
+                               preview={multipleWithSearchPreview} setPreview={setMultipleWithSearchPreview}/>
 
-          <ComponentWrapper>
-            {multipleWithSearchPreview && (
-                <MultipleSelectWithSearch/>
-            )}
+                    <ComponentWrapper>
+                        {multipleWithSearchPreview && (
+                            <MultipleSelectWithSearch/>
+                        )}
 
-            {multipleWithSearchCode && (
-                <Showcode
-                    code='
+                        {multipleWithSearchCode && (
+                            <Showcode
+                                code='
 import React, {useEffect, useState} from "react";
 
 // react icons
@@ -380,30 +383,31 @@ const SelectInput = () => {
 
 export default SelectInput;
                     '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'single select with search'}
-              id={'single_select_with_search'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'single select with search'}
+                            id={'single_select_with_search'}
+                        />
+                    </div>
 
-          <ComponentDescription text='Single select dropdown with a search feature, enabling users to
+                    <ComponentDescription text='Single select dropdown with a search feature, enabling users to
             quickly find and choose one option from a list.'/>
 
-          <ToggleTab code={singleWithSearchCode} setCode={setSingleWithSearchCode} setPreview={setSingleWithSearchPreview} preview={singleWithSearchPreview}/>
+                    <ToggleTab code={singleWithSearchCode} setCode={setSingleWithSearchCode}
+                               setPreview={setSingleWithSearchPreview} preview={singleWithSearchPreview}/>
 
-          <ComponentWrapper>
-            {singleWithSearchPreview && (
-                <SingleSelectWithSearch/>
-            )}
+                    <ComponentWrapper>
+                        {singleWithSearchPreview && (
+                            <SingleSelectWithSearch/>
+                        )}
 
-            {singleWithSearchCode && (
-                <Showcode
-                    code='
+                        {singleWithSearchCode && (
+                            <Showcode
+                                code='
 import React, {useEffect, useState} from "react";
 
 // react icons
@@ -503,31 +507,32 @@ const SelectInput = () => {
 
 export default SelectInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'single select with search and badge'}
-              id={'single_select_with_search_and_badge'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'single select with search and badge'}
+                            id={'single_select_with_search_and_badge'}
+                        />
+                    </div>
 
-          <ComponentDescription text='Single select dropdown with a search feature and a badge to
+                    <ComponentDescription text='Single select dropdown with a search feature and a badge to
             highlight the selected option, making it easy to identify your
             choice.'/>
 
-          <ToggleTab code={singleSearchWithBadgeCode} setCode={setSingleSearchWithBadgeCode} preview={singleSearchWithBadgePreview} setPreview={setSingleSearchWithBadgePreview}/>
+                    <ToggleTab code={singleSearchWithBadgeCode} setCode={setSingleSearchWithBadgeCode}
+                               preview={singleSearchWithBadgePreview} setPreview={setSingleSearchWithBadgePreview}/>
 
-          <ComponentWrapper>
-            {singleSearchWithBadgePreview && (
-                <SingleSelectWithSearchAndBadge/>
-            )}
+                    <ComponentWrapper>
+                        {singleSearchWithBadgePreview && (
+                            <SingleSelectWithSearchAndBadge/>
+                        )}
 
-            {singleSearchWithBadgeCode && (
-                <Showcode
-                    code='
+                        {singleSearchWithBadgeCode && (
+                            <Showcode
+                                code='
 import React, {useEffect, useState} from "react";
 
 // react icons
@@ -647,30 +652,31 @@ const SelectInput = () => {
 
 export default SelectInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <div className='mt-8'>
-            <ContentHeader
-              text={'multiple select with search and badge'}
-              id={'multiple_select_with_search_and_badge'}
-            />
-          </div>
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'multiple select with search and badge'}
+                            id={'multiple_select_with_search_and_badge'}
+                        />
+                    </div>
 
-          <ComponentDescription text='Multiple select dropdown with search and badges, allowing users to
+                    <ComponentDescription text='Multiple select dropdown with search and badges, allowing users to
             find options easily and display selected items with visual badges.'/>
 
-          <ToggleTab code={multipleSearchWithBadgeCode} setCode={setMultipleSearchWithBadgeCode} setPreview={setMultipleSearchWithBadgePreview} preview={multipleSearchWithBadgePreview}/>
+                    <ToggleTab code={multipleSearchWithBadgeCode} setCode={setMultipleSearchWithBadgeCode}
+                               setPreview={setMultipleSearchWithBadgePreview} preview={multipleSearchWithBadgePreview}/>
 
-          <ComponentWrapper>
-            {multipleSearchWithBadgePreview && (
-                <MultipleSelectWithSearchAndBadge/>
-            )}
+                    <ComponentWrapper>
+                        {multipleSearchWithBadgePreview && (
+                            <MultipleSelectWithSearchAndBadge/>
+                        )}
 
-            {multipleSearchWithBadgeCode && (
-                <Showcode
-                    code='
+                        {multipleSearchWithBadgeCode && (
+                            <Showcode
+                                code='
 import React, {useEffect, useState} from "react";
 
 // react icons
@@ -798,26 +804,26 @@ const SelectInput = () => {
 
 export default SelectInput;
                 '
-                />
-            )}
-          </ComponentWrapper>
+                            />
+                        )}
+                    </ComponentWrapper>
 
-          <OverviewFooter
-            backUrl='/components/strong-password'
-            backName='strong password'
-            forwardName='radio'
-            forwardUrl='/components/input-radio'
-          />
-        </div>
+                    <OverviewFooter
+                        backUrl='/components/strong-password'
+                        backName='strong password'
+                        forwardName='radio'
+                        forwardUrl='/components/input-radio'
+                    />
+                </div>
 
-        <ContentNavbar activeSection={activeSection} contents={selectInputContents}/>
+                <ContentNavbar activeSection={activeSection} contents={selectInputContents}/>
 
-      </aside>
-      <Helmet>
-        <title>Form - Select</title>
-      </Helmet>
-    </>
-  );
+            </aside>
+            <Helmet>
+                <title>Form - Select</title>
+            </Helmet>
+        </>
+    );
 };
 
 export default Index;

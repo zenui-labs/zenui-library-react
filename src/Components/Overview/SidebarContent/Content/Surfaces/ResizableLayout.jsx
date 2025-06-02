@@ -4,12 +4,12 @@ import React, {useState, useEffect} from "react";
 import {Helmet} from "react-helmet";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import Showcode from "../../../../../Shared/Component/ShowCode.jsx";
-import OverviewFooter from "../../../../../Shared/OverviewFooter";
+import ContentHeader from "@shared/ContentHeader";
+import Showcode from "@shared/Component/ShowCode.jsx";
+import OverviewFooter from "@shared/OverviewFooter";
 
 // icons
-import {useToggleCardView} from "../../../../../CustomHooks/ButtonToggle.js";
+import {useToggleCardView} from "@/CustomHooks/ButtonToggle.js";
 
 const ResizableLayout = () => {
     const [contentActiveTab, setContentActiveTab] = useState(0);
@@ -28,7 +28,7 @@ const ResizableLayout = () => {
     const handleMouseMove = (e) => {
         const newLeftWidth = e.clientX;
         console.log(leftWidth)
-        if (newLeftWidth < 600 && newLeftWidth > 100 ) {
+        if (newLeftWidth < 600 && newLeftWidth > 100) {
             console.log('inside')
             setLeftWidth(newLeftWidth);
         }
@@ -43,7 +43,6 @@ const ResizableLayout = () => {
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', handleMouseUp);
     };
-
 
 
     return (

@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import RadioInput from "../../../Components/Overview/SidebarContent/Content/Inputs/RadioInput";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import RadioInput from "@components/Inputs/RadioInput";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const InputRadioPage = () => {
-  return (
-    <ContentPageLayout>
-        <RadioInput />
-    </ContentPageLayout>
-  );
+    return (
+        <ContentPageLayout>
+            <RadioInput/>
+        </ContentPageLayout>
+    );
 };
 
 export default InputRadioPage;

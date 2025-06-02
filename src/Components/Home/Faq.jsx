@@ -1,15 +1,13 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-// import aos animation
-import "aos/dist/aos.css";
-import AOS from "aos";
+import SectionHead from "./SectionHead.jsx";
+import SectionWrapper from "./SectionWrapper.jsx";
 
 const Faq = () => {
 
     const [isAccording1, setIsAccording1] = useState(null);
     const [isAccording2, setIsAccording2] = useState(null);
-
-    // according data
+ 
     const accordingData1 = [
         {
             title: "What is ZenUI Library?",
@@ -74,30 +72,24 @@ const Faq = () => {
 
     const handleClick2 = (index) => setIsAccording2((prevIndex) => (prevIndex === index ? null : index));
 
-    useEffect(() => {
-        AOS.init({
-            duration: 1000,
-        });
-    }, []);
-
     return (
-        <div className='max-w-[1700px] mx-auto'>
-            <div data-aos="fade-zoom-in" className='flex items-center justify-center flex-col mt-6 mb-12'>
-                <h1 className='text-[1.4rem] 425px:text-[2.2rem] text-text font-[600] dark:text-darkTextColor px-8'>Frequently Asked Questions</h1>
-                <p className='text-[0.9rem] dark:text-darkSubTextColor 640px:text-[1.1rem] text-gray-500 px-8 w-full 640px:w-[35%] text-center mx-auto'>Find quick answers to common queries</p>
-            </div>
-            <section data-aos="fade-up" className='px-8 640px:px-10 mb-16 grid grid-cols-1 640px:grid-cols-2 gap-[15px]'>
+        <SectionWrapper>
+            <SectionHead title={'FAQ'} description={'Find\n' +
+                '                    quick answers to common queries'}/>
+
+            <section className='mt-14 mb-16 grid grid-cols-1 1024px:grid-cols-2 gap-[15px]'>
                 <div className='flex-col flex gap-[15px]'>
                     {accordingData1?.map((according, index) => (
-                        <article key={index} className="border dark:border-darkBorderColor/80 border-gray-200 rounded p-5">
+                        <article key={index}
+                                 className="border dark:border-darkBorderColor/80 border-border rounded-high p-5">
                             <div
                                 className="flex gap-2 cursor-pointer items-center justify-between w-full"
                                 onClick={() => handleClick1(index)}>
-                                <h2 className={`${isAccording1 === index ? 'text-gray-700 dark:text-darkSubTextColor ' : ' dark:text-darkSubTextColor text-gray-500'} font-[600] text-[1.1rem]`}>
+                                <h2 className={`${isAccording1 === index ? 'dark:text-darkSubTextColor ' : ' dark:text-darkSubTextColor'} font-[600] text-[1.1rem]`}>
                                     {according.title}
                                 </h2>
                                 <svg
-                                    className={`${isAccording1 === index ? 'fill-gray-700 dark:fill-darkSubTextColor' : 'dark:fill-darkSubTextColor fill-gray-500'} shrink-0 ml-8`}
+                                    className={`${isAccording1 === index ? 'fill-gray-700 dark:fill-darkSubTextColor' : 'dark:fill-darkSubTextColor'} shrink-0 ml-8`}
                                     width="16"
                                     height="16"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -127,7 +119,7 @@ const Faq = () => {
                                         ? "grid-rows-[1fr] opacity-100 mt-4"
                                         : "grid-rows-[0fr] opacity-0"
                                 }`}>
-                                <p className="text-gray-600 dark:text-darkSubTextColor text-[0.9rem] overflow-hidden">
+                                <p className="dark:text-darkSubTextColor text-[1rem] overflow-hidden">
                                     {according.description}
                                 </p>
                             </div>
@@ -137,15 +129,16 @@ const Faq = () => {
                 </div>
                 <div className='flex-col flex gap-[15px]'>
                     {accordingData2?.map((according, index) => (
-                        <article key={index} className="border dark:border-darkBorderColor/80 border-gray-200 rounded p-5">
+                        <article key={index}
+                                 className="border dark:border-darkBorderColor/80 border-border rounded-high p-5">
                             <div
                                 className="flex gap-2 cursor-pointer items-center justify-between w-full"
                                 onClick={() => handleClick2(index)}>
-                                <h2 className={`${isAccording2 === index ? 'text-gray-700 dark:text-darkSubTextColor' : 'dark:text-darkSubTextColor text-gray-500'} font-[600] text-[1.1rem]`}>
+                                <h2 className={`${isAccording2 === index ? 'dark:text-darkSubTextColor ' : ' dark:text-darkSubTextColor'} font-[600] text-[1.1rem]`}>
                                     {according.title}
                                 </h2>
                                 <svg
-                                    className={`${isAccording2 === index ? 'fill-gray-700 dark:fill-darkSubTextColor' : 'dark:fill-darkSubTextColor fill-gray-500'} shrink-0 ml-8`}
+                                    className={`${isAccording2 === index ? 'fill-gray-700 dark:fill-darkSubTextColor' : 'dark:fill-darkSubTextColor'} shrink-0 ml-8`}
                                     width="16"
                                     height="16"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -175,7 +168,7 @@ const Faq = () => {
                                         ? "grid-rows-[1fr] opacity-100 mt-4"
                                         : "grid-rows-[0fr] opacity-0"
                                 }`}>
-                                <p className="text-gray-600 dark:text-darkSubTextColor text-[0.9rem] overflow-hidden">
+                                <p className="dark:text-darkSubTextColor text-[1rem] overflow-hidden">
                                     {according.description}
                                 </p>
                             </div>
@@ -184,7 +177,7 @@ const Faq = () => {
                     }
                 </div>
             </section>
-        </div>
+        </SectionWrapper>
     );
 };
 

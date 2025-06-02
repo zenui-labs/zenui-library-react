@@ -1,19 +1,19 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import OverviewFooter from "../../../../../Shared/OverviewFooter";
-import ShowCode from "../../../../../Shared/Component/ShowCode.jsx";
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
+import OverviewFooter from "@shared/OverviewFooter";
+import ShowCode from "@shared/Component/ShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
 
 // contents for scrollspy
-import { authButtonContents } from '../../../../../Utils/ContentsConfig/ButtonsContents.js';
-import { useScrollSpy } from '../../../../../CustomHooks/useScrollSpy';
+import {authButtonContents} from '@utils/ContentsConfig/ButtonsContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-import ComponentDescription from "../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 const AuthButton = () => {
     const sectionIds = authButtonContents.map(item => item.href.slice(1));
@@ -40,9 +40,11 @@ const AuthButton = () => {
             <div>
                 <ContentHeader text={"login with google"} id={"login_with_google"}/>
 
-                <ComponentDescription text='Button for logging in with Google, offering a quick and secure way to authenticate using your Google account.'/>
+                <ComponentDescription
+                    text='Button for logging in with Google, offering a quick and secure way to authenticate using your Google account.'/>
 
-                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode} setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
+                <ToggleTab setCode={setGoogleLoginButtonCode} code={googleLoginButtonCode}
+                           setPreview={setGoogleLoginButtonPreview} preview={googleLoginButtonPreview}/>
 
                 <ComponentWrapper>
                     {googleLoginButtonPreview && (
@@ -115,9 +117,11 @@ const AuthButton = () => {
                     <ContentHeader text={"login with apple"} id={"login_with_apple"}/>
                 </div>
 
-                <ComponentDescription text='Button for logging in with Apple, providing a seamless and private way to sign in using your Apple ID.'/>
+                <ComponentDescription
+                    text='Button for logging in with Apple, providing a seamless and private way to sign in using your Apple ID.'/>
 
-                <ToggleTab setCode={setAppleLoginButtonCode} code={appleLoginButtonCode} setPreview={setAppleLoginButtonPreview} preview={appleLoginButtonPreview}/>
+                <ToggleTab setCode={setAppleLoginButtonCode} code={appleLoginButtonCode}
+                           setPreview={setAppleLoginButtonPreview} preview={appleLoginButtonPreview}/>
 
                 <ComponentWrapper>
                     {appleLoginButtonPreview && (
@@ -163,9 +167,11 @@ const AuthButton = () => {
                     <ContentHeader text={"Social Login background"} id={"social_login_background"}/>
                 </div>
 
-                <ComponentDescription text='Background design for social login buttons, enhancing the visual appeal and consistency of social authentication options.'/>
+                <ComponentDescription
+                    text='Background design for social login buttons, enhancing the visual appeal and consistency of social authentication options.'/>
 
-                <ToggleTab setCode={setSocialBgButtonCode} code={socialBgButtonCode} setPreview={setSocialBgButtonPreview} preview={socialBgButtonPreview}/>
+                <ToggleTab setCode={setSocialBgButtonCode} code={socialBgButtonCode}
+                           setPreview={setSocialBgButtonPreview} preview={socialBgButtonPreview}/>
 
                 <ComponentWrapper>
                     {socialBgButtonPreview && (
@@ -179,8 +185,10 @@ const AuthButton = () => {
 
                             <button
                                 className='bg-[#0a66c2] text-white rounded-md py-[11px] px-[15px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632cacdc3a7f08d5fb21fa73_linkedin-white.svg' alt='Linkedin logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632cacdc3a7f08d5fb21fa73_linkedin-white.svg'
+                                    alt='Linkedin logo'
+                                    className='w-[25px]'/>
                                 Continue with Linkedin
                             </button>
 
@@ -200,15 +208,19 @@ const AuthButton = () => {
 
                             <button
                                 className='bg-[#1db954] text-white rounded-md py-[11px] px-[19px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632cacdbd49f28d441099203_spotify-white.svg' alt='Spotify logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632cacdbd49f28d441099203_spotify-white.svg'
+                                    alt='Spotify logo'
+                                    className='w-[25px]'/>
                                 Continue with Spotify
                             </button>
 
                             <button
                                 className='bg-[#2f2f2f] text-white rounded-md py-[11px] px-[10px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0430d840a26_microsoft.svg' alt='Microsoft logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0430d840a26_microsoft.svg'
+                                    alt='Microsoft logo'
+                                    className='w-[25px]'/>
                                 Continue with Microsoft
                             </button>
                         </div>
@@ -277,52 +289,66 @@ const AuthButton = () => {
                     <ContentHeader text={"Social Login bordered"} id={"social_login_bordered"}/>
                 </div>
 
-                <ComponentDescription text='Social login buttons with borders, providing a clean and defined look for authentication options.'/>
+                <ComponentDescription
+                    text='Social login buttons with borders, providing a clean and defined look for authentication options.'/>
 
-                <ToggleTab setCode={setSocialBorderButtonCode} code={socialBorderButtonCode} setPreview={setSocialBorderButtonPreview} preview={socialBorderButtonPreview}/>
+                <ToggleTab setCode={setSocialBorderButtonCode} code={socialBorderButtonCode}
+                           setPreview={setSocialBorderButtonPreview} preview={socialBorderButtonPreview}/>
 
                 <ComponentWrapper>
                     {socialBorderButtonPreview && (
                         <div className="p-8 mb-4 flex flex-col flex-wrap items-center gap-5 justify-center">
                             <button
                                 className='border border-black dark:border-slate-600 dark:text-[#abc2d3] text-black rounded-md py-2 px-4 flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c46041d682027a3c2a_github.svg' alt='Github logo'
-                                     className='w-[30px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c46041d682027a3c2a_github.svg'
+                                    alt='Github logo'
+                                    className='w-[30px]'/>
                                 Continue with Github
                             </button>
 
                             <button
                                 className='border border-[#0a66c2] text-[#0a66c2] rounded-md py-[11px] px-[12px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0e861840a27_linkedin.svg' alt='Linkedin logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0e861840a27_linkedin.svg'
+                                    alt='Linkedin logo'
+                                    className='w-[25px]'/>
                                 Continue with Linkedin
                             </button>
 
                             <button
                                 className='border border-[#ea4c89] text-[#ea4c89] rounded-md py-[11px] px-[16px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632ca01585cf323fdd614a81_dribbble-svgrepo-com.svg' alt='Dribble logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632ca01585cf323fdd614a81_dribbble-svgrepo-com.svg'
+                                    alt='Dribble logo'
+                                    className='w-[25px]'/>
                                 Continue with Dribble
                             </button>
 
                             <button
                                 className='border border-[#1777f2] text-[#1777f2] rounded-md py-[11px] px-[7px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c960d4839cf20aeafcad2_facebook.svg' alt='Facebook logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c960d4839cf20aeafcad2_facebook.svg'
+                                    alt='Facebook logo'
+                                    className='w-[25px]'/>
                                 Continue with Facebook
                             </button>
 
                             <button
                                 className='border border-[#1db954] text-[#1db954] rounded-md py-[11px] px-[16px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4c75f2ea0362f20b7_spotify.svg' alt='Spotify logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4c75f2ea0362f20b7_spotify.svg'
+                                    alt='Spotify logo'
+                                    className='w-[25px]'/>
                                 Continue with Spotify
                             </button>
 
                             <button
                                 className='border dark:border-slate-600 dark:text-[#abc2d3] border-[#2f2f2f] text-[#2f2f2f] rounded-md py-[11px] px-[7px] flex items-center gap-[10px] text-[1rem] '>
-                                <img src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0430d840a26_microsoft.svg' alt='Microsoft logo'
-                                     className='w-[25px]'/>
+                                <img
+                                    src='https://assets.website-files.com/632c941ea9199f8985f3fd52/632c95c4b20dd0430d840a26_microsoft.svg'
+                                    alt='Microsoft logo'
+                                    className='w-[25px]'/>
                                 Continue with Microsoft
                             </button>
                         </div>
@@ -393,7 +419,8 @@ const AuthButton = () => {
                         />}
                 </ComponentWrapper>
 
-                <OverviewFooter backUrl='/components/normal-button' backName='normal button' forwardUrl='/components/dropdown-button' forwardName='dropdown button'/>
+                <OverviewFooter backUrl='/components/normal-button' backName='normal button'
+                                forwardUrl='/components/dropdown-button' forwardName='dropdown button'/>
             </div>
 
             <ContentNavbar contents={authButtonContents} activeSection={activeSection}/>

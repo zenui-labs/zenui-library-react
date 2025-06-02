@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import CheckboxInput from "../../../Components/Overview/SidebarContent/Content/Inputs/CheckboxInput.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import CheckboxInput from "@components/Inputs/CheckboxInput.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const CheckboxInputPage = () => {
     return (
         <ContentPageLayout>
-            <CheckboxInput />
+            <CheckboxInput/>
         </ContentPageLayout>
     );
 };

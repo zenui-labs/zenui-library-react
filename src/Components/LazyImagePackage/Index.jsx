@@ -123,17 +123,21 @@ const Index = () => {
     const handleCopy = (code) => {
         window.navigator.clipboard.writeText(code)
         setIsCopied(true)
-        setTimeout(()=> {
+        setTimeout(() => {
             setIsCopied(false)
         }, 1000)
     }
 
     return (
-        <div className="min-h-screen flex flex-col 1024px:flex-row px-8 640px:px-12 py-8 justify-between gap-[50px] max-w-[1615px] mx-auto">
+        <div
+            className="min-h-screen flex flex-col 1024px:flex-row px-8 640px:px-12 py-8 justify-between gap-[50px] max-w-[1615px] mx-auto">
             <div className='flex-1'>
-                <h1 className="text-[2rem] 640px:text-[2.5rem] font-[700] leading-[45px] 640px:leading-[55px] text-[#0499B6]">ZenUI Image React Playground</h1>
-                <p className="text-gray-600 mb-8 dark:text-darkSubTextColor max-w-[90%] leading-[30px] mt-2">Experiment with different settings to see how the LazyLoadImage
-                    component behaves. ( open network tab in the browser developer tool and scroll images to see lazy loading ) </p>
+                <h1 className="text-[2rem] 640px:text-[2.5rem] font-[700] leading-[45px] 640px:leading-[55px] text-[#0499B6]">ZenUI
+                    Image React Playground</h1>
+                <p className="text-gray-600 mb-8 dark:text-darkSubTextColor max-w-[90%] leading-[30px] mt-2">Experiment
+                    with different settings to see how the LazyLoadImage
+                    component behaves. ( open network tab in the browser developer tool and scroll images to see lazy
+                    loading ) </p>
 
                 {/* Configuration Card */}
                 <div className="mb-8 max-w-[500px]">
@@ -200,7 +204,8 @@ const Index = () => {
                         )}
 
                         <div className="flex flex-col gap-2">
-                            <label className="text-sm dark:text-darkSubTextColor font-medium text-gray-700">Loading Offset (px)</label>
+                            <label className="text-sm dark:text-darkSubTextColor font-medium text-gray-700">Loading
+                                Offset (px)</label>
                             <input
                                 type="number"
                                 min={0}
@@ -213,7 +218,10 @@ const Index = () => {
 
                         <div className='relative'>
                             {
-                                isCopied ? <MdDone className='text-slate-300 bg-black p-2 text-[2.5rem] rounded-bl absolute top-2 right-0.5'/> : <BiCopy onClick={()=> handleCopy(CodePreview)} className='text-slate-300 bg-black p-2 cursor-pointer text-[2.5rem] rounded-bl absolute top-2 right-0.5'/>
+                                isCopied ? <MdDone
+                                        className='text-slate-300 bg-black p-2 text-[2.5rem] rounded-bl absolute top-2 right-0.5'/> :
+                                    <BiCopy onClick={() => handleCopy(CodePreview)}
+                                            className='text-slate-300 bg-black p-2 cursor-pointer text-[2.5rem] rounded-bl absolute top-2 right-0.5'/>
                             }
 
                             <SyntaxHighlighter language="html" className='text-[14px]' style={dracula} showLineNumbers>

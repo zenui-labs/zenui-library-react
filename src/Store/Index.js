@@ -1,13 +1,13 @@
-import { create } from 'zustand'
+import {create} from 'zustand'
 
 const useZenuiStore = create((set) => ({
-    withDarkClasses: false,
-    handleToggle: () => set((state) => ({ withDarkClasses: !state.withDarkClasses })),
+    withDarkClasses: true,
+    handleToggle: () => set((state) => ({withDarkClasses: !state.withDarkClasses})),
     theme: localStorage.getItem('zenuiTheme') || 'light',
     toggleTheme: () => set((state) => {
         const newTheme = state.theme === 'light' ? 'dark' : 'light';
         localStorage.setItem('zenuiTheme', newTheme);
-        return { theme: newTheme };
+        return {theme: newTheme};
     }),
 }))
 

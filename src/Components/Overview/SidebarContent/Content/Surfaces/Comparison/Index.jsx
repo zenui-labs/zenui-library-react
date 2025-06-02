@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, {useState} from 'react';
 
 // react helmet
-import { Helmet } from 'react-helmet';
+import {Helmet} from 'react-helmet';
 
 // components
-import ContentHeader from '../../../../../../Shared/ContentHeader.jsx';
-import OverviewFooter from '../../../../../../Shared/OverviewFooter.jsx';
-import Showcode from '../../../../../../Shared/Component/ShowCode.jsx';
+import ContentHeader from '@shared/ContentHeader.jsx';
+import OverviewFooter from '@shared/OverviewFooter.jsx';
+import Showcode from '@shared/Component/ShowCode.jsx';
 
 // contents for scrollspy
-import {comparisonContents} from '../../../../../../Utils/ContentsConfig/SurfacesContents.js';
-import { useScrollSpy } from '../../../../../../CustomHooks/useScrollSpy.js';
+import {comparisonContents} from '@utils/ContentsConfig/SurfacesContents.js';
+import {useScrollSpy} from '@/CustomHooks/useScrollSpy.js';
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
 import VerticalComparisonExample from "./VerticalComparisonExample.jsx";
 import HorizontalComparisonExample from "./HorizontalComparisonExample.jsx";
@@ -28,18 +28,21 @@ const Index = () => {
     const [verticalComparisonCode, setVerticalComparisonCode] = useState(false);
 
     const [horizontalComparisonPreview, setHorizontalComparisonPreview] = useState(true);
-    const [horizontalComparisonCode, setHorizontalComparisonCode] = useState(false);;
+    const [horizontalComparisonCode, setHorizontalComparisonCode] = useState(false);
+    
 
     return (
         <>
             <aside className='flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
                 <div className='w-full 425px:w-[80%]'>
 
-                    <ContentHeader id='vertical_comparison' text={'Vertical comparison'} />
+                    <ContentHeader id='vertical_comparison' text={'Vertical comparison'}/>
 
-                    <ComponentDescription text='Compare items side-by-side in a vertical layout for clear and easy analysis.'/>
+                    <ComponentDescription
+                        text='Compare items side-by-side in a vertical layout for clear and easy analysis.'/>
 
-                    <ToggleTab code={verticalComparisonCode} preview={verticalComparisonPreview} setPreview={setVerticalComparisonPreview} setCode={setVerticalComparisonCode}/>
+                    <ToggleTab code={verticalComparisonCode} preview={verticalComparisonPreview}
+                               setPreview={setVerticalComparisonPreview} setCode={setVerticalComparisonCode}/>
 
                     <ComponentWrapper>
                         {verticalComparisonPreview && (
@@ -148,12 +151,14 @@ export default VerticalComparisonCard;
                     </ComponentWrapper>
 
                     <div className='mt-8'>
-                        <ContentHeader id='horizontal_comparison' text={'Horizontal comparison'} />
+                        <ContentHeader id='horizontal_comparison' text={'Horizontal comparison'}/>
                     </div>
 
-                    <ComponentDescription text='Compare items side-by-side in a horizontal layout for clear and easy analysis.'/>
+                    <ComponentDescription
+                        text='Compare items side-by-side in a horizontal layout for clear and easy analysis.'/>
 
-                    <ToggleTab code={horizontalComparisonCode} setCode={setHorizontalComparisonCode} setPreview={setHorizontalComparisonPreview} preview={horizontalComparisonPreview}/>
+                    <ToggleTab code={horizontalComparisonCode} setCode={setHorizontalComparisonCode}
+                               setPreview={setHorizontalComparisonPreview} preview={horizontalComparisonPreview}/>
 
                     <ComponentWrapper>
                         {horizontalComparisonPreview && (

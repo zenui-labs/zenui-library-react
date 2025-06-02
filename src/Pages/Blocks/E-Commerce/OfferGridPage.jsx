@@ -1,11 +1,11 @@
 // components
-import OfferGrid from "../../../Components/Overview/SidebarContent/Blocks/E-Commerce/OfferGrid.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import OfferGrid from "@blocks/E-Commerce/OfferGrid.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const OfferGridPage = () => {
     return (
         <ContentPageLayout>
-            <OfferGrid />
+            <OfferGrid/>
         </ContentPageLayout>
     );
 };

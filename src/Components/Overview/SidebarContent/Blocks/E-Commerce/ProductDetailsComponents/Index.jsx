@@ -1,20 +1,20 @@
 import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../../Shared/ContentHeader";
+import ContentHeader from "@shared/ContentHeader";
 import {Helmet} from "react-helmet";
-import BlocksShowCode from "../../../../../../Shared/Block/BlocksShowCode.jsx";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
 // product details examples components
 import ProductDetailsExample1 from "./ProductDetailsExample1.jsx";
 import ProductDetailsExample2 from "./ProductDetailsExample2.jsx";
 import ProductDetailsExample3 from "./ProductDetailsExample3.jsx";
-import BlockDescription from "../../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 
 const Index = () => {
@@ -720,9 +720,11 @@ const Index = () => {
             <div>
                 <ContentHeader text={"product details page 1"} id={"product_details_page_1"}/>
 
-                <BlockDescription text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
+                <BlockDescription
+                    text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
 
-                <BlockToggleTab code={productDetails1Code} setCode={setProductDetails1Code} setPreview={setProductDetails1Preview} preview={productDetails1Preview}/>
+                <BlockToggleTab code={productDetails1Code} setCode={setProductDetails1Code}
+                                setPreview={setProductDetails1Preview} preview={productDetails1Preview}/>
 
                 <BlockWrapper>
                     {productDetails1Preview && (
@@ -739,9 +741,11 @@ const Index = () => {
                     <ContentHeader text={"product details page 2"} id={"product_details_page_2"}/>
                 </div>
 
-                <BlockDescription text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
+                <BlockDescription
+                    text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
 
-                <BlockToggleTab setPreview={setProductDetails2Preview} setCode={setProductDetails2Code} preview={productDetails2Preview} code={productDetails2Code}/>
+                <BlockToggleTab setPreview={setProductDetails2Preview} setCode={setProductDetails2Code}
+                                preview={productDetails2Preview} code={productDetails2Code}/>
 
                 <BlockWrapper>
                     {productDetails2Preview && (
@@ -758,9 +762,11 @@ const Index = () => {
                     <ContentHeader text={"product details page 3"} id={"product_details_page_3"}/>
                 </div>
 
-                <BlockDescription text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
+                <BlockDescription
+                    text='View all product details in one place - images, specs, reviews, pricing, and more. Everything you need to make an informed purchase!'/>
 
-                <BlockToggleTab setPreview={setProductDetails3Preview} setCode={setProductDetails3Code} preview={productDetails3Preview} code={productDetails3Code}/>
+                <BlockToggleTab setPreview={setProductDetails3Preview} setCode={setProductDetails3Code}
+                                preview={productDetails3Preview} code={productDetails3Code}/>
 
                 <BlockWrapper>
                     {productDetails3Preview && (

@@ -1,12 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, {useEffect, useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {MdOutlineDone} from "react-icons/md";
 import {RxCross1} from "react-icons/rx";
 
@@ -40,8 +40,8 @@ const Testimonial = () => {
     const [inputFocus, setInputFocus] = useState(false)
 
     useEffect(() => {
-        const filtered = content?.filter((text)=> {
-            if(inputText !== ''){
+        const filtered = content?.filter((text) => {
+            if (inputText !== '') {
                 return text.toLowerCase().includes(inputText)
             }
         })
@@ -58,12 +58,14 @@ const Testimonial = () => {
     const [pricing1, setPricing1] = useState(false)
 
     return (
-        <aside className="flex items-start justify-between gap-6 pt-[9.5rem] !px-5 425px:!px-10 1024px:!pl-[5rem] 1024px:pt-[4.5rem]">
+        <aside
+            className="flex items-start justify-between gap-6 pt-[9.5rem] !px-5 425px:!px-10 1024px:!pl-[5rem] 1024px:pt-[4.5rem]">
             <div>
-                <ContentHeader text={"Pricing section 1"} id={"pricing_section_1"} />
+                <ContentHeader text={"Pricing section 1"} id={"pricing_section_1"}/>
 
                 <p className="w-full text-text text-[1rem]">
-                    This is an animated button on click component. Enjoy dynamic responses with captivating animations upon clicking.
+                    This is an animated button on click component. Enjoy dynamic responses with captivating animations
+                    upon clicking.
                 </p>
 
                 <div className="w-full border border-border rounded mt-8">
@@ -88,21 +90,31 @@ const Testimonial = () => {
                         </button>
                     </div>
                     {searchbarPreview && (
-                        <div className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
+                        <div
+                            className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
                             <section className='w-full rounded-xl p-[20px]'>
                                 <h1 className='text-[30px] font-[500] leading-[40px]'>Plans & Pricing</h1>
                                 <div className='w-full flex items-center justify-between'>
-                                    <p className='text-[18px] font-[400] text-gray-400 w-[50%] mt-2'>Whether your time-saving automation needs are large or small, we’re here to help you scale.</p>
+                                    <p className='text-[18px] font-[400] text-gray-400 w-[50%] mt-2'>Whether your
+                                        time-saving automation needs are large or small, we’re here to help you
+                                        scale.</p>
 
                                     <div className='flex items-center bg-white rounded-full boxShadow w-max'>
-                                        <button className={`${pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text'} px-4 py-2.5 rounded-full transition-all duration-300`} onClick={()=> setPricing1(true)}>monthly</button>
-                                        <button className={`${!pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text'} px-4 py-2.5 transition-all duration-300 rounded-full`} onClick={()=> setPricing1(false)}>Yearly</button>
+                                        <button
+                                            className={`${pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text'} px-4 py-2.5 rounded-full transition-all duration-300`}
+                                            onClick={() => setPricing1(true)}>monthly
+                                        </button>
+                                        <button
+                                            className={`${!pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text'} px-4 py-2.5 transition-all duration-300 rounded-full`}
+                                            onClick={() => setPricing1(false)}>Yearly
+                                        </button>
                                     </div>
                                 </div>
 
                                 {/*  pricing cards  */}
-                                <div className='grid grid-cols-3 bg-white toastshadow py-[30px] gap-[50px] px-[40px] rounded-xl mt-10'>
+                                <div
+                                    className='grid grid-cols-3 bg-white toastshadow py-[30px] gap-[50px] px-[40px] rounded-xl mt-10'>
                                     <div className='w-full flex flex-col justify-between h-full'>
                                         <div>
                                             <div className='flex items-end gap-[8px]'>
@@ -180,10 +192,12 @@ const Testimonial = () => {
                                         </button>
                                     </div>
 
-                                    <div className='w-full flex flex-col justify-between h-full bg-[#231D4F] text-white p-[25px] rounded-xl'>
+                                    <div
+                                        className='w-full flex flex-col justify-between h-full bg-[#231D4F] text-white p-[25px] rounded-xl'>
                                         <div>
 
-                                            <div className='bg-[#393360] rounded-full px-4 py-[5px] mb-6 text-[0.8rem] text-[#BB6BD9] w-max ml-auto'>
+                                            <div
+                                                className='bg-[#393360] rounded-full px-4 py-[5px] mb-6 text-[0.8rem] text-[#BB6BD9] w-max ml-auto'>
                                                 Most Popular
                                             </div>
 
@@ -193,7 +207,8 @@ const Testimonial = () => {
                                             </div>
 
                                             <h3 className='text-[1.5rem] font-[500] mt-3'>Company</h3>
-                                            <p className='text-[1rem] text-gray-300'>Automation plus enterprise-grade features.</p>
+                                            <p className='text-[1rem] text-gray-300'>Automation plus enterprise-grade
+                                                features.</p>
 
                                             <div className='flex flex-col gap-[10px] mt-5'>
                                                 <p className='text-[1rem] text-gray-200 flex items-center gap-[10px]'>
@@ -241,11 +256,12 @@ const Testimonial = () => {
                 </div>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 2"} id={"pricing_section_2"} />
+                    <ContentHeader text={"Pricing section 2"} id={"pricing_section_2"}/>
                 </div>
 
                 <p className="w-full text-text text-[1rem]">
-                    This is an animated button on click component. Enjoy dynamic responses with captivating animations upon clicking.
+                    This is an animated button on click component. Enjoy dynamic responses with captivating animations
+                    upon clicking.
                 </p>
 
                 <div className="w-full border border-border rounded mt-8">
@@ -270,11 +286,14 @@ const Testimonial = () => {
                         </button>
                     </div>
                     {searchbarPreview && (
-                        <div className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
+                        <div
+                            className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[30px] font-[500] leading-[40px] text-center'>The Right Plan for Your Business</h1>
-                                <p className='text-[18px] font-[400] text-gray-400 w-[50%] text-center mx-auto mt-2'>We have several powerful plans to showcase your business and get discovered
+                                <h1 className='text-[30px] font-[500] leading-[40px] text-center'>The Right Plan for
+                                    Your Business</h1>
+                                <p className='text-[18px] font-[400] text-gray-400 w-[50%] text-center mx-auto mt-2'>We
+                                    have several powerful plans to showcase your business and get discovered
                                     as a creative entrepreneurs. Everything you need.</p>
 
                                 <div className='w-full flex items-center justify-center mt-8 gap-[20px]'>
@@ -459,11 +478,12 @@ const Testimonial = () => {
                 </div>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 3"} id={"pricing_section_3"} />
+                    <ContentHeader text={"Pricing section 3"} id={"pricing_section_3"}/>
                 </div>
 
                 <p className="w-full text-text text-[1rem]">
-                    This is an animated button on click component. Enjoy dynamic responses with captivating animations upon clicking.
+                    This is an animated button on click component. Enjoy dynamic responses with captivating animations
+                    upon clicking.
                 </p>
 
                 <div className="w-full border border-border rounded mt-8">
@@ -488,11 +508,14 @@ const Testimonial = () => {
                         </button>
                     </div>
                     {searchbarPreview && (
-                        <div className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
+                        <div
+                            className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[40px] font-[800] leading-[40px] text-center w-[80%] mx-auto'>Another 2,272 organizations signed up last week.</h1>
-                                <p className='text-[18px] font-[400] text-gray-800 w-[50%] text-center mx-auto mt-3'>Two simple plans, each with a <b>30-day free trial</b>. No credit card required.</p>
+                                <h1 className='text-[40px] font-[800] leading-[40px] text-center w-[80%] mx-auto'>Another
+                                    2,272 organizations signed up last week.</h1>
+                                <p className='text-[18px] font-[400] text-gray-800 w-[50%] text-center mx-auto mt-3'>Two
+                                    simple plans, each with a <b>30-day free trial</b>. No credit card required.</p>
 
                                 {/*  pricing cards  */}
                                 <div className='flex items-center mt-20'>
@@ -520,14 +543,18 @@ const Testimonial = () => {
                                                 Invite clients, contractors and guests for free.
                                             </p>
 
-                                            <button className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try for Free</button>
+                                            <button
+                                                className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try
+                                                for Free
+                                            </button>
                                         </div>
                                     </div>
 
                                     <div className='border-[3px] border-[#EC677C] rounded-xl relative'>
 
                                         {/*  badge  */}
-                                        <span className='bg-[#EB4866] text-white rounded-md px-5 uppercase text-[0.8rem] py-[7px] rotate-[-7deg] absolute top-[-30px] z-20 right-[-20px]'>
+                                        <span
+                                            className='bg-[#EB4866] text-white rounded-md px-5 uppercase text-[0.8rem] py-[7px] rotate-[-7deg] absolute top-[-30px] z-20 right-[-20px]'>
                                             Best value for <br/>
                                             larger teams
                                         </span>
@@ -535,9 +562,11 @@ const Testimonial = () => {
                                         <div className=' p-[25px]'>
                                             <div className='flex items-center gap-[20px] mb-[10px]'>
                                                 <h1 className='text-[1.3rem] font-[500] text-gray-800'>Basecamp</h1>
-                                                <span className='py-[5px] px-4 bg-[#FF7D0F] text-white rounded-full text-[0.9rem] uppercase'>Pro Unlimited</span>
+                                                <span
+                                                    className='py-[5px] px-4 bg-[#FF7D0F] text-white rounded-full text-[0.9rem] uppercase'>Pro Unlimited</span>
                                             </div>
-                                            <h3 className='text-[1rem] font-[400] text-gray-800 mb-[20px]'>Perfect for growing businesses, larger groups,
+                                            <h3 className='text-[1rem] font-[400] text-gray-800 mb-[20px]'>Perfect for
+                                                growing businesses, larger groups,
                                                 and companies that want the best.</h3>
 
                                             <div className='flex justify-between gap-[20px]'>
@@ -560,11 +589,15 @@ const Testimonial = () => {
                                                 <b>Unlimited users</b> just $299/month, billed annually
                                             </h2>
                                             <p className='text-[1rem] mt-[10px] mb-[20px]'>
-                                                <b>No per-user charges. Your whole organization for one fixed price.</b> <br/>
+                                                <b>No per-user charges. Your whole organization for one fixed price.</b>
+                                                <br/>
                                                 If you prefer to pay month-to-month, it’s $349/month.
                                             </p>
 
-                                            <button className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try for Free</button>
+                                            <button
+                                                className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try
+                                                for Free
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -580,11 +613,12 @@ const Testimonial = () => {
                 </div>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 4"} id={"pricing_section_4"} />
+                    <ContentHeader text={"Pricing section 4"} id={"pricing_section_4"}/>
                 </div>
 
                 <p className="w-full text-text text-[1rem]">
-                    This is an animated button on click component. Enjoy dynamic responses with captivating animations upon clicking.
+                    This is an animated button on click component. Enjoy dynamic responses with captivating animations
+                    upon clicking.
                 </p>
 
                 <div className="w-full border border-border rounded mt-8">
@@ -609,10 +643,12 @@ const Testimonial = () => {
                         </button>
                     </div>
                     {searchbarPreview && (
-                        <div className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
+                        <div
+                            className={` ${basicNavbarOpen ? 'pb-56' : 'pb-8'} p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
 
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[40px] font-[800] leading-[40px] text-center w-[80%] mx-auto'>Choose the plan that fits your needs.</h1>
+                                <h1 className='text-[40px] font-[800] leading-[40px] text-center w-[80%] mx-auto'>Choose
+                                    the plan that fits your needs.</h1>
 
                                 {/*  pricing cards  */}
                                 <div className='grid grid-cols-3 gap-[10px] mt-20'>
@@ -621,7 +657,9 @@ const Testimonial = () => {
                                         <p className='text-[1rem] text-[#3D2E7C] font-[400]'>Quick video messages</p>
                                         <h4 className='text-[1.7rem] font-[400] text-[#3D2E7C] mt-3'>free</h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Sign Up, It’s Free</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Sign Up,
+                                            It’s Free
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] pl-[40px] flex flex-col gap-[8px]     text-[#3D2E7C] text-[0.9rem]'>
                                             <li>Up to 50 Creators Lite</li>
@@ -629,7 +667,8 @@ const Testimonial = () => {
                                             <li>Up to 5 mins/video</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
 
                                             <p className='text-[1rem] text-[#2B1C50]'>Key Features</p>
 
@@ -663,11 +702,14 @@ const Testimonial = () => {
                                     </div>
                                     <div className='p-[30px] rounded-xl bg-[#fff] boxShadow scale-[1.1]'>
                                         <h1 className='text-[2rem] font-[500] text-[#3D2E7C]'>Business</h1>
-                                        <p className='text-[1rem] text-[#3D2E7C] font-[400]'>Advanced recording & analytics</p>
+                                        <p className='text-[1rem] text-[#3D2E7C] font-[400]'>Advanced recording &
+                                            analytics</p>
                                         <h4 className='text-[1.7rem] font-[400] text-[#3D2E7C] mt-3 flex items-center gap-[5px]'>$12.50
                                             <span className='text-[0.8rem]'>USD/Creator/mo (annually)</span></h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Start Free 14-Day Trial</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Start
+                                            Free 14-Day Trial
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] pl-[40px] flex flex-col gap-[8px]     text-[#3D2E7C] text-[0.9rem]'>
                                             <li> Unlimited Creators</li>
@@ -676,7 +718,8 @@ const Testimonial = () => {
                                             <li>Up to 50 Creators Lite</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
 
                                             <p className='text-[1rem] text-[#2B1C50]'>Everything in Starter, plus</p>
 
@@ -709,10 +752,13 @@ const Testimonial = () => {
                                     </div>
                                     <div className='p-[30px] rounded-xl bg-[#eff0ff]'>
                                         <h1 className='text-[2rem] font-[500] text-[#3D2E7C]'>Enterprise</h1>
-                                        <p className='text-[1rem] text-[#3D2E7C] font-[400]'>Advanced admin & security</p>
+                                        <p className='text-[1rem] text-[#3D2E7C] font-[400]'>Advanced admin &
+                                            security</p>
                                         <h4 className='text-[1.7rem] font-[400] text-[#3D2E7C] mt-3'>Let’s Talk</h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Contact Sales</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Contact
+                                            Sales
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] pl-[40px] flex flex-col gap-[8px]     text-[#3D2E7C] text-[0.9rem]'>
                                             <li>Unlimited Members</li>
@@ -720,7 +766,8 @@ const Testimonial = () => {
                                             <li>Unlimited recording length</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] mt-5 pt-[30px] border-t border-[#D1D1F7]'>
 
                                             <p className='text-[1rem] text-[#2B1C50]'>Everything in Business, plus</p>
 

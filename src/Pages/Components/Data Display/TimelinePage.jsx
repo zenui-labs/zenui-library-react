@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import Timeline from "../../../Components/Overview/SidebarContent/Content/Data Display/Timeline/Timeline.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Timeline from "@components/Data Display/Timeline/Timeline.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const TooltipPage = () => {
     return (
         <ContentPageLayout>
-            <Timeline />
+            <Timeline/>
         </ContentPageLayout>
     );
 };

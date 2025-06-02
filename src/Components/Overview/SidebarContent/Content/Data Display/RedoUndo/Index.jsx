@@ -4,18 +4,18 @@ import React, {useState} from "react";
 import {Helmet} from "react-helmet";
 
 // components
-import OverviewFooter from "../../../../../../Shared/OverviewFooter";
-import ContentHeader from "../../../../../../Shared/ContentHeader";
-import Showcode from "../../../../../../Shared/Component/ShowCode.jsx";
+import OverviewFooter from "@shared/OverviewFooter";
+import ContentHeader from "@shared/ContentHeader";
+import Showcode from "@shared/Component/ShowCode.jsx";
 
 // scrollspy
-import {redoUndoContents} from "../../../../../../Utils/ContentsConfig/DataDisplayContents.js";
-import {useScrollSpy} from "../../../../../../CustomHooks/useScrollSpy.js";
+import {redoUndoContents} from "@utils/ContentsConfig/DataDisplayContents.js";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 
-import ComponentDescription from "../../../../../../Shared/Component/ComponentDescription.jsx";
-import ToggleTab from "../../../../../../Shared/Component/ToggleTab.jsx";
-import ComponentWrapper from "../../../../../../Shared/Component/ComponentWrapper.jsx";
-import ContentNavbar from "../../../../../../Shared/Component/ContentNavbar.jsx";
+import ComponentDescription from "@shared/Component/ComponentDescription.jsx";
+import ToggleTab from "@shared/Component/ToggleTab.jsx";
+import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
+import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 import RedoUndoUsingButton from "./RedoUndoUsingButton.jsx";
 import RedoUndoUsingKeyboardShortcut from "./RedoUndoUsingKeyboardShortcut.jsx";
 import RedoUndoUsingButtonAndKeyboardShortcut from "./RedoUndoUsingButtonAndKeyboardShortcut.jsx";
@@ -40,9 +40,11 @@ const RedoUndo = () => {
                 <div>
                     <ContentHeader text={"Redo Undo using button"} id={"redo-undo-using-button"}/>
 
-                    <ComponentDescription text="Undo and redo actions can be performed using dedicated buttons in the UI."/>
+                    <ComponentDescription
+                        text="Undo and redo actions can be performed using dedicated buttons in the UI."/>
 
-                    <ToggleTab code={usingButtonCode} preview={usingButtonPreview} setPreview={setUsingButtonPreview} setCode={setUsingButtonCode}/>
+                    <ToggleTab code={usingButtonCode} preview={usingButtonPreview} setPreview={setUsingButtonPreview}
+                               setCode={setUsingButtonCode}/>
 
                     <ComponentWrapper>
                         {usingButtonPreview && (
@@ -216,12 +218,14 @@ export default RedoUndoUsingButton;'
                     </ComponentWrapper>
 
                     <div className='mt-8'>
-                        <ContentHeader text={"Redo Undo using keyboard shortcut"} id={"redo-undo-using-keyboard-shortcut"}/>
+                        <ContentHeader text={"Redo Undo using keyboard shortcut"}
+                                       id={"redo-undo-using-keyboard-shortcut"}/>
                     </div>
 
                     <ComponentDescription text='Supports undo and redo using keyboard shortcuts: Ctrl+Z and Ctrl+Y'/>
 
-                    <ToggleTab code={usingKeyboardShortcutCode} preview={usingKeyboardShortcutPreview} setCode={setUsingKeyboardShortcutCode} setPreview={setUsingKeyboardShortcutPreview}/>
+                    <ToggleTab code={usingKeyboardShortcutCode} preview={usingKeyboardShortcutPreview}
+                               setCode={setUsingKeyboardShortcutCode} setPreview={setUsingKeyboardShortcutPreview}/>
 
                     <ComponentWrapper>
                         {usingKeyboardShortcutPreview && (
@@ -385,12 +389,15 @@ export default RedoUndoUsingKeyboardShortcut;'
                     </ComponentWrapper>
 
                     <div className='mt-8'>
-                        <ContentHeader text={"redo undo using button and keyboard shortcut"} id={"redo-undo-using-button-and-keyboard-shortcut"}/>
+                        <ContentHeader text={"redo undo using button and keyboard shortcut"}
+                                       id={"redo-undo-using-button-and-keyboard-shortcut"}/>
                     </div>
 
-                    <ComponentDescription text='Undo and redo features are available using buttons and keyboard shortcuts for easier editing.'/>
+                    <ComponentDescription
+                        text='Undo and redo features are available using buttons and keyboard shortcuts for easier editing.'/>
 
-                    <ToggleTab code={usingShortcutAndButtonCode} preview={usingShortcutAndButtonPreview} setCode={setUsingShortcutAndButtonCode} setPreview={setUsingShortcutAndButtonPreview}/>
+                    <ToggleTab code={usingShortcutAndButtonCode} preview={usingShortcutAndButtonPreview}
+                               setCode={setUsingShortcutAndButtonCode} setPreview={setUsingShortcutAndButtonPreview}/>
 
                     <ComponentWrapper>
                         {usingShortcutAndButtonPreview && (
@@ -584,7 +591,8 @@ export default RedoUndoUsingButtonAndKeyboard;'
                         )}
                     </ComponentWrapper>
 
-                    <OverviewFooter backName='table' backUrl='/components/table' forwardUrl='/components/github-activity-graph'
+                    <OverviewFooter backName='table' backUrl='/components/table'
+                                    forwardUrl='/components/github-activity-graph'
                                     forwardName='github activity graph'/>
                 </div>
 

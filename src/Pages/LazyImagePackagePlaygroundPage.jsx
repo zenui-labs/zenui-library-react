@@ -1,16 +1,15 @@
 import React from 'react';
 
-import Navbar from "../Components/Home/Navbar.jsx";
-import MobileNavbar from "../Components/Home/MobileNavbar.jsx";
+import Navbar from "@/Components/Home/Navbar.jsx";
+import MobileNavbar from "@/Components/Home/MobileNavbar.jsx";
 import LazyImageReact from "../Components/LazyImagePackage/Index.jsx"
-import Footer from "../Components/Home/Footer.jsx";
-import AnimatedDarkBg from "../Shared/AnimatedDarkBg.jsx";
-import NewsBoard from "../Components/Home/NewsBoard.jsx";
+import Footer from "@/Components/Home/Footer.jsx";
+import AnimatedDarkBg from "@shared/AnimatedDarkBg.jsx";
+import NewsBoard from "@/Components/Home/NewsBoard.jsx";
 
 const LazyImagePackagePlaygroundPage = () => {
     return (
         <div>
-            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <LazyImageReact/>

@@ -1,32 +1,32 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 
 // components
-import ContentHeader from "../../../../../Shared/ContentHeader";
-import { Helmet } from "react-helmet";
-import BlocksShowCode from "../../../../../Shared/Block/BlocksShowCode.jsx";
+import ContentHeader from "@shared/ContentHeader";
+import {Helmet} from "react-helmet";
+import BlocksShowCode from "@shared/Block/BlocksShowCode.jsx";
 
 // icons
-import BlocksFooter from "../../../../../Shared/Block/BlocksFooter.jsx";
+import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 import {MdOutlineDone} from "react-icons/md";
 import {RxCross1} from "react-icons/rx";
 
-import BlockDescription from "../../../../../Shared/Block/BlockDescription.jsx";
-import BlockToggleTab from "../../../../../Shared/Block/BlockToggleTab.jsx";
-import BlockWrapper from "../../../../../Shared/Block/BlockWrapper.jsx";
+import BlockDescription from "@shared/Block/BlockDescription.jsx";
+import BlockToggleTab from "@shared/Block/BlockToggleTab.jsx";
+import BlockWrapper from "@shared/Block/BlockWrapper.jsx";
 
 const PricingSection = () => {
 
-    const[pricingSection1Preview, setPricingSection1Preview] = useState(true);
-    const[pricingSection1Code, setPricingSection1Code] = useState(false);
+    const [pricingSection1Preview, setPricingSection1Preview] = useState(true);
+    const [pricingSection1Code, setPricingSection1Code] = useState(false);
 
-    const[pricingSection2Preview, setPricingSection2Preview] = useState(true);
-    const[pricingSection2Code, setPricingSection2Code] = useState(false);
+    const [pricingSection2Preview, setPricingSection2Preview] = useState(true);
+    const [pricingSection2Code, setPricingSection2Code] = useState(false);
 
-    const[pricingSection3Preview, setPricingSection3Preview] = useState(true);
-    const[pricingSection3Code, setPricingSection3Code] = useState(false);
+    const [pricingSection3Preview, setPricingSection3Preview] = useState(true);
+    const [pricingSection3Code, setPricingSection3Code] = useState(false);
 
-    const[pricingSection4Preview, setPricingSection4Preview] = useState(true);
-    const[pricingSection4Code, setPricingSection4Code] = useState(false);
+    const [pricingSection4Preview, setPricingSection4Preview] = useState(true);
+    const [pricingSection4Code, setPricingSection4Code] = useState(false);
 
     // basic navbar actions
     const [toggle, setToggle] = useState(false)
@@ -35,37 +35,53 @@ const PricingSection = () => {
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"Pricing section 1"} id={"pricing_section_1"} />
+                <ContentHeader text={"Pricing section 1"} id={"pricing_section_1"}/>
 
-                <BlockDescription text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
+                <BlockDescription
+                    text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
 
-                <BlockToggleTab preview={pricingSection2Preview} setCode={setPricingSection1Code} setPreview={setPricingSection1Preview} code={pricingSection1Code}/>
+                <BlockToggleTab preview={pricingSection2Preview} setCode={setPricingSection1Code}
+                                setPreview={setPricingSection1Preview} code={pricingSection1Code}/>
 
                 <BlockWrapper>
                     {pricingSection1Preview && (
                         <div className={` p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[30px] font-[500] leading-[40px] dark:text-[#abc2d3]'>Plans & Pricing</h1>
-                                <div className='w-full 640px:flex-row flex-col gap-[30px] flex items-center justify-between'>
-                                    <p className='text-[18px] dark:text-slate-400 font-[400] text-gray-400 w-full 640px:w-[50%] mt-2'>Whether your time-saving automation needs are large or small, we’re here to help you scale.</p>
+                                <h1 className='text-[30px] font-[500] leading-[40px] dark:text-[#abc2d3]'>Plans &
+                                    Pricing</h1>
+                                <div
+                                    className='w-full 640px:flex-row flex-col gap-[30px] flex items-center justify-between'>
+                                    <p className='text-[18px] dark:text-slate-400 font-[400] text-gray-400 w-full 640px:w-[50%] mt-2'>Whether
+                                        your time-saving automation needs are large or small, we’re here to help you
+                                        scale.</p>
 
-                                    <div className='flex items-center dark:bg-slate-800 bg-white rounded-full boxShadow w-max'>
-                                        <button className={`${pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text dark:text-[#abc2d3]'} px-4 py-2.5 rounded-full transition-all duration-300`} onClick={()=> setPricing1(true)}>monthly</button>
-                                        <button className={`${!pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text dark:text-[#abc2d3]'} px-4 py-2.5 transition-all duration-300 rounded-full`} onClick={()=> setPricing1(false)}>Yearly</button>
+                                    <div
+                                        className='flex items-center dark:bg-slate-800 bg-white rounded-full boxShadow w-max'>
+                                        <button
+                                            className={`${pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text dark:text-[#abc2d3]'} px-4 py-2.5 rounded-full transition-all duration-300`}
+                                            onClick={() => setPricing1(true)}>monthly
+                                        </button>
+                                        <button
+                                            className={`${!pricing1 ? 'bg-[#BB6BD9] text-white' : 'bg-transparent text-text dark:text-[#abc2d3]'} px-4 py-2.5 transition-all duration-300 rounded-full`}
+                                            onClick={() => setPricing1(false)}>Yearly
+                                        </button>
                                     </div>
                                 </div>
 
                                 {/*  pricing cards  */}
-                                <div className='grid grid-cols-1 640px:grid-cols-2 1260px:grid-cols-3 bg-white toastshadow py-[30px] gap-[50px] dark:bg-slate-900 px-[20px] 640px:px-[40px] rounded-xl mt-10'>
+                                <div
+                                    className='grid grid-cols-1 640px:grid-cols-2 1260px:grid-cols-3 bg-white toastshadow py-[30px] gap-[50px] dark:bg-slate-900 px-[20px] 640px:px-[40px] rounded-xl mt-10'>
                                     <div className='w-full flex flex-col justify-between h-full'>
                                         <div>
                                             <div className='flex items-end gap-[8px]'>
                                                 <h3 className='text-[1.8rem] dark:text-[#abc2d3] font-[800]'>$19</h3>
-                                                <span className='text-[1rem] text-gray-400 dark:text-slate-400 mb-2'>/month</span>
+                                                <span
+                                                    className='text-[1rem] text-gray-400 dark:text-slate-400 mb-2'>/month</span>
                                             </div>
 
                                             <h3 className='text-[1.5rem] font-[500] dark:text-[#abc2d3] mt-3'>Starter</h3>
-                                            <p className='text-[1rem] dark:text-slate-400 text-gray-500'>Unleash the power of
+                                            <p className='text-[1rem] dark:text-slate-400 text-gray-500'>Unleash the
+                                                power of
                                                 automation.</p>
 
                                             <div className='flex flex-col gap-[10px] mt-5'>
@@ -97,11 +113,13 @@ const PricingSection = () => {
                                         <div>
                                             <div className='flex items-end gap-[8px]'>
                                                 <h3 className='text-[1.8rem] dark:text-[#abc2d3] font-[800]'>$54</h3>
-                                                <span className='text-[1rem] text-gray-400 dark:text-slate-400 mb-2'>/month</span>
+                                                <span
+                                                    className='text-[1rem] text-gray-400 dark:text-slate-400 mb-2'>/month</span>
                                             </div>
 
                                             <h3 className='text-[1.5rem] dark:text-[#abc2d3] font-[500] mt-3'>Professional</h3>
-                                            <p className='text-[1rem] dark:text-slate-400 text-gray-500'>Advanced tools to take your work to
+                                            <p className='text-[1rem] dark:text-slate-400 text-gray-500'>Advanced tools
+                                                to take your work to
                                                 the next level.</p>
 
                                             <div className='flex flex-col gap-[10px] mt-5'>
@@ -134,10 +152,12 @@ const PricingSection = () => {
                                         </button>
                                     </div>
 
-                                    <div className='w-full flex flex-col justify-between h-full bg-[#231D4F] text-white p-[25px] rounded-xl'>
+                                    <div
+                                        className='w-full flex flex-col justify-between h-full bg-[#231D4F] text-white p-[25px] rounded-xl'>
                                         <div>
 
-                                            <div className='bg-[#393360] rounded-full px-4 py-[5px] mb-6 text-[0.8rem] text-[#BB6BD9] w-max ml-auto'>
+                                            <div
+                                                className='bg-[#393360] rounded-full px-4 py-[5px] mb-6 text-[0.8rem] text-[#BB6BD9] w-max ml-auto'>
                                                 Most Popular
                                             </div>
 
@@ -147,7 +167,8 @@ const PricingSection = () => {
                                             </div>
 
                                             <h3 className='text-[1.5rem] font-[500] mt-3'>Company</h3>
-                                            <p className='text-[1rem] text-gray-300'>Automation plus enterprise-grade features.</p>
+                                            <p className='text-[1rem] text-gray-300'>Automation plus enterprise-grade
+                                                features.</p>
 
                                             <div className='flex flex-col gap-[10px] mt-5'>
                                                 <p className='text-[1rem] text-gray-200 flex items-center gap-[10px]'>
@@ -359,23 +380,29 @@ export default PricingSection;
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 2"} id={"pricing_section_2"} />
+                    <ContentHeader text={"Pricing section 2"} id={"pricing_section_2"}/>
                 </div>
 
-                <BlockDescription text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
+                <BlockDescription
+                    text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
 
-                <BlockToggleTab preview={pricingSection2Preview} setCode={setPricingSection2Code} code={pricingSection2Code} setPreview={setPricingSection2Preview}/>
+                <BlockToggleTab preview={pricingSection2Preview} setCode={setPricingSection2Code}
+                                code={pricingSection2Code} setPreview={setPricingSection2Preview}/>
 
                 <BlockWrapper>
                     {pricingSection2Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[30px] font-[500] leading-[40px] dark:text-[#abc2d3] text-center'>The Right Plan for Your Business</h1>
-                                <p className='text-[18px] font-[400] dark:text-slate-400 text-gray-400 w-full 640px:w-[50%] text-center mx-auto mt-2'>We have several powerful plans to showcase your business and get discovered
+                                <h1 className='text-[30px] font-[500] leading-[40px] dark:text-[#abc2d3] text-center'>The
+                                    Right Plan for Your Business</h1>
+                                <p className='text-[18px] font-[400] dark:text-slate-400 text-gray-400 w-full 640px:w-[50%] text-center mx-auto mt-2'>We
+                                    have several powerful plans to showcase your business and get discovered
                                     as a creative entrepreneurs. Everything you need.</p>
 
-                                <div className='w-full flex-col 640px:flex-row flex items-center justify-center mt-8 gap-[20px]'>
-                                    <p className='text-[1rem] font-[600] dark:text-slate-400 text-gray-800'>Bill Monthly</p>
+                                <div
+                                    className='w-full flex-col 640px:flex-row flex items-center justify-center mt-8 gap-[20px]'>
+                                    <p className='text-[1rem] font-[600] dark:text-slate-400 text-gray-800'>Bill
+                                        Monthly</p>
                                     <div
                                         className={`${
                                             toggle ? " bg-[#3B9DF8]" : "bg-[#f0f0f0] dark:bg-slate-800"
@@ -389,7 +416,8 @@ export default PricingSection;
                                             style={{boxShadow: "1px 2px 5px 2px rgb(0,0,0,0.1)"}}
                                         ></div>
                                     </div>
-                                    <p className='text-[1rem] font-[400] dark:text-slate-400 text-gray-800'>Bill Annualy</p>
+                                    <p className='text-[1rem] font-[400] dark:text-slate-400 text-gray-800'>Bill
+                                        Annualy</p>
                                 </div>
 
                                 {/*  pricing cards  */}
@@ -434,7 +462,8 @@ export default PricingSection;
                                         <div className='mt-8'>
                                             <div className='flex items-end gap-[8px]'>
                                                 <h3 className='text-[1.8rem] dark:text-[#abc2d3] font-[800]'>$19</h3>
-                                                <span className='text-[1rem] dark:text-slate-400 text-gray-400 mb-2'>/month</span>
+                                                <span
+                                                    className='text-[1rem] dark:text-slate-400 text-gray-400 mb-2'>/month</span>
                                             </div>
 
                                             <button
@@ -488,7 +517,8 @@ export default PricingSection;
                                         <div className='mt-8'>
                                             <div className='flex items-end gap-[8px]'>
                                                 <h3 className='text-[1.8rem] dark:text-slate-300 font-[800] text-white'>$123</h3>
-                                                <span className='text-[1rem] dark:text-slate-400 text-gray-300 mb-2'>/month</span>
+                                                <span
+                                                    className='text-[1rem] dark:text-slate-400 text-gray-300 mb-2'>/month</span>
                                             </div>
 
                                             <button
@@ -536,7 +566,8 @@ export default PricingSection;
                                         <div className='mt-8'>
                                             <div className='flex items-end gap-[8px]'>
                                                 <h3 className='text-[1.8rem] dark:text-[#abc2d3] font-[800]'>$189</h3>
-                                                <span className='text-[1rem] dark:text-slate-400 text-gray-400 mb-2'>/month</span>
+                                                <span
+                                                    className='text-[1rem] dark:text-slate-400 text-gray-400 mb-2'>/month</span>
                                             </div>
 
                                             <button
@@ -748,26 +779,31 @@ export default PricingSection;
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 3"} id={"pricing_section_3"} />
+                    <ContentHeader text={"Pricing section 3"} id={"pricing_section_3"}/>
                 </div>
 
-                <BlockDescription text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
+                <BlockDescription
+                    text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
 
-                <BlockToggleTab preview={pricingSection3Preview} setPreview={setPricingSection3Preview} code={pricingSection3Code} setCode={setPricingSection3Code}/>
+                <BlockToggleTab preview={pricingSection3Preview} setPreview={setPricingSection3Preview}
+                                code={pricingSection3Code} setCode={setPricingSection3Code}/>
 
                 <BlockWrapper>
                     {pricingSection3Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[30px] 640px:text-[40px] dark:text-[#abc2d3] font-[800] leading-[40px] text-center w-full 640px:w-[80%] mx-auto'>Another 2,272 organizations signed up last week.</h1>
-                                <p className='text-[18px] font-[400] dark:text-slate-400 text-gray-800 w-full 640px:w-[50%] text-center mx-auto mt-3'>Two simple plans, each with a <b>30-day free trial</b>. No credit card required.</p>
+                                <h1 className='text-[30px] 640px:text-[40px] dark:text-[#abc2d3] font-[800] leading-[40px] text-center w-full 640px:w-[80%] mx-auto'>Another
+                                    2,272 organizations signed up last week.</h1>
+                                <p className='text-[18px] font-[400] dark:text-slate-400 text-gray-800 w-full 640px:w-[50%] text-center mx-auto mt-3'>Two
+                                    simple plans, each with a <b>30-day free trial</b>. No credit card required.</p>
 
                                 {/*  pricing cards  */}
                                 <div className='flex 640px:flex-row flex-col gap-[50px] 640px:gap-0 items-center mt-20'>
                                     <div className='border border-gray-200 dark:border-slate-700 rounded-l-xl'>
                                         <div className=' p-[25px]'>
                                             <h1 className='text-[1.3rem] font-[500] dark:text-[#abc2d3] text-gray-800'>Basecamp</h1>
-                                            <h3 className='text-[1rem] font-[400] dark:text-slate-400 text-gray-800 mb-[20px]'>Ideal for
+                                            <h3 className='text-[1rem] font-[400] dark:text-slate-400 text-gray-800 mb-[20px]'>Ideal
+                                                for
                                                 freelancers,
                                                 startups, or smaller teams.</h3>
 
@@ -781,30 +817,38 @@ export default PricingSection;
                                         <div className='bg-[#FCF4F2] p-[25px] dark:bg-slate-800 rounded-bl-xl'>
                                             <h2 className='text-[1.4rem] dark:text-[#abc2d3] flex items-end gap-[6px] font-[600]'>
                                                 $15
-                                                <span className='text-[1rem] dark:text-slate-400 text-gray-500 font-[400] mb-1'>/user per month</span>
+                                                <span
+                                                    className='text-[1rem] dark:text-slate-400 text-gray-500 font-[400] mb-1'>/user per month</span>
                                             </h2>
                                             <p className='text-[1rem] dark:text-slate-400 mt-[10px] mb-[20px]'>
                                                 <b>We only bill you for employees.</b> <br/>
                                                 Invite clients, contractors and guests for free.
                                             </p>
 
-                                            <button className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try for Free</button>
+                                            <button
+                                                className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try
+                                                for Free
+                                            </button>
                                         </div>
                                     </div>
 
                                     <div className='border-[3px] border-[#EC677C] rounded-xl relative'>
                                         {/*  badge  */}
-                                        <span className='bg-[#EB4866] text-white rounded-md px-5 uppercase text-[0.8rem] py-[7px] rotate-[-7deg] absolute top-[-30px] z-20 right-[-20px]'>
+                                        <span
+                                            className='bg-[#EB4866] text-white rounded-md px-5 uppercase text-[0.8rem] py-[7px] rotate-[-7deg] absolute top-[-30px] z-20 right-[-20px]'>
                                             Best value for <br/>
                                             larger teams
                                         </span>
 
                                         <div className='p-[25px]'>
-                                            <div className='flex flex-col 640px:flex-row items-center gap-[5px] 640px:gap-[20px] mb-[10px]'>
+                                            <div
+                                                className='flex flex-col 640px:flex-row items-center gap-[5px] 640px:gap-[20px] mb-[10px]'>
                                                 <h1 className='text-[1.3rem] dark:text-[#abc2d3] font-[500] text-gray-800'>Basecamp</h1>
-                                                <span className='py-[5px] px-4 bg-[#FF7D0F] text-white rounded-full text-[0.6rem] 640px:text-[0.9rem] uppercase'>Pro Unlimited</span>
+                                                <span
+                                                    className='py-[5px] px-4 bg-[#FF7D0F] text-white rounded-full text-[0.6rem] 640px:text-[0.9rem] uppercase'>Pro Unlimited</span>
                                             </div>
-                                            <h3 className='text-[1rem] dark:text-slate-400 font-[400] text-gray-800 mb-[20px]'>Perfect for growing businesses, larger groups,
+                                            <h3 className='text-[1rem] dark:text-slate-400 font-[400] text-gray-800 mb-[20px]'>Perfect
+                                                for growing businesses, larger groups,
                                                 and companies that want the best.</h3>
 
                                             <div className='flex 640px:flex-row flex-col justify-between gap-[20px]'>
@@ -827,11 +871,15 @@ export default PricingSection;
                                                 <b>Unlimited users</b> just $299/month, billed annually
                                             </h2>
                                             <p className='text-[1rem] dark:text-slate-400 mt-[10px] mb-[20px]'>
-                                                <b>No per-user charges. Your whole organization for one fixed price.</b> <br/>
+                                                <b>No per-user charges. Your whole organization for one fixed price.</b>
+                                                <br/>
                                                 If you prefer to pay month-to-month, it’s $349/month.
                                             </p>
 
-                                            <button className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try for Free</button>
+                                            <button
+                                                className='py-2 px-4 text-white bg-[#2DA530] rounded-full text-[0.9rem]'>Try
+                                                for Free
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -942,27 +990,34 @@ export default PricingSection;
                 </BlockWrapper>
 
                 <div className='mt-8'>
-                    <ContentHeader text={"Pricing section 4"} id={"pricing_section_4"} />
+                    <ContentHeader text={"Pricing section 4"} id={"pricing_section_4"}/>
                 </div>
 
-                <BlockDescription text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
+                <BlockDescription
+                    text='A section on a webpage that displays pricing plans or packages, typically showcasing different tiers of services or products with features, costs, and call-to-action buttons.'/>
 
-                <BlockToggleTab preview={pricingSection4Preview} setCode={setPricingSection4Code} code={pricingSection4Code} setPreview={setPricingSection4Preview}/>
+                <BlockToggleTab preview={pricingSection4Preview} setCode={setPricingSection4Code}
+                                code={pricingSection4Code} setPreview={setPricingSection4Preview}/>
 
                 <BlockWrapper>
                     {pricingSection4Preview && (
                         <div className={`p-8  flex flex-wrap items-center gap-5 justify-center overflow-hidden`}>
                             <section className='w-full rounded-xl p-[20px]'>
-                                <h1 className='text-[30px] 640px:text-[40px] font-[800] leading-[40px] text-center w-full 640px:w-[80%] mx-auto dark:text-[#abc2d3]'>Choose the plan that fits your needs.</h1>
+                                <h1 className='text-[30px] 640px:text-[40px] font-[800] leading-[40px] text-center w-full 640px:w-[80%] mx-auto dark:text-[#abc2d3]'>Choose
+                                    the plan that fits your needs.</h1>
 
                                 {/*  pricing cards  */}
-                                <div className='w-full grid grid-cols-1 640px:grid-cols-2 1260px:grid-cols-3 gap-[10px] 640px:mt-20 mt-10'>
+                                <div
+                                    className='w-full grid grid-cols-1 640px:grid-cols-2 1260px:grid-cols-3 gap-[10px] 640px:mt-20 mt-10'>
                                     <div className='p-[30px] rounded-xl dark:bg-blue-300/10 bg-[#eff0ff]'>
                                         <h1 className='text-[2rem] font-[500] dark:text-[#abc2d3] text-[#3D2E7C]'>Starter</h1>
-                                        <p className='text-[1rem] dark:text-slate-400 text-[#3D2E7C] font-[400]'>Quick video messages</p>
+                                        <p className='text-[1rem] dark:text-slate-400 text-[#3D2E7C] font-[400]'>Quick
+                                            video messages</p>
                                         <h4 className='text-[1.7rem] font-[400] dark:text-slate-400 text-[#3D2E7C] mt-3'>free</h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Sign Up, It’s Free</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Sign Up,
+                                            It’s Free
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] dark:marker:text-purple-300/50 pl-[40px] flex flex-col gap-[8px] dark:text-slate-400 text-[#3D2E7C] text-[0.9rem]'>
                                             <li>Up to 50 Creators Lite</li>
@@ -970,9 +1025,11 @@ export default PricingSection;
                                             <li>Up to 5 mins/video</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] dark:border-slate-700 mt-5 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] dark:border-slate-700 mt-5 pt-[30px] border-t border-[#D1D1F7]'>
 
-                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Key Features</p>
+                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Key
+                                                Features</p>
 
                                             <p className='text-[0.9rem] text-[#2B1C50] dark:text-slate-400 flex items-center gap-[8px]'>
                                                 <MdOutlineDone
@@ -1002,13 +1059,17 @@ export default PricingSection;
                                             </p>
                                         </div>
                                     </div>
-                                    <div className='p-[30px] rounded-xl dark:bg-gray-800 bg-[#fff] boxShadow 640px:scale-[1.1]'>
+                                    <div
+                                        className='p-[30px] rounded-xl dark:bg-gray-800 bg-[#fff] boxShadow 640px:scale-[1.1]'>
                                         <h1 className='text-[2rem] dark:text-[#abc2d3] font-[500] text-[#3D2E7C]'>Business</h1>
-                                        <p className='text-[1rem] dark:text-slate-400 text-[#3D2E7C] font-[400]'>Advanced recording & analytics</p>
+                                        <p className='text-[1rem] dark:text-slate-400 text-[#3D2E7C] font-[400]'>Advanced
+                                            recording & analytics</p>
                                         <h4 className='text-[1.7rem] dark:text-[#abc2d3] font-[400] text-[#3D2E7C] mt-3 flex items-center gap-[5px]'>$12.50
                                             <span className='text-[0.8rem]'>USD/Creator/mo (annually)</span></h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Start Free 14-Day Trial</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Start
+                                            Free 14-Day Trial
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] dark:marker:text-purple-300/70 pl-[20px] 640px:pl-[40px] flex flex-col gap-[8px] dark:text-slate-400 text-[#3D2E7C] text-[0.9rem]'>
                                             <li> Unlimited Creators</li>
@@ -1017,9 +1078,11 @@ export default PricingSection;
                                             <li>Up to 50 Creators Lite</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] dark:border-slate-700 mt-5 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] dark:border-slate-700 mt-5 pt-[30px] border-t border-[#D1D1F7]'>
 
-                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Everything in Starter, plus</p>
+                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Everything in
+                                                Starter, plus</p>
 
                                             <p className='text-[0.9rem] text-[#2B1C50] dark:text-slate-400 flex items-center gap-[8px]'>
                                                 <MdOutlineDone
@@ -1050,10 +1113,14 @@ export default PricingSection;
                                     </div>
                                     <div className='p-[30px] rounded-xl dark:bg-blue-300/10 bg-[#eff0ff]'>
                                         <h1 className='text-[2rem] font-[500] dark:text-[#abc2d3] text-[#3D2E7C]'>Enterprise</h1>
-                                        <p className='text-[1rem] text-[#3D2E7C] dark:text-slate-400 font-[400]'>Advanced admin & security</p>
-                                        <h4 className='text-[1.7rem] font-[400] dark:text-slate-400 text-[#3D2E7C] mt-3'>Let’s Talk</h4>
+                                        <p className='text-[1rem] text-[#3D2E7C] dark:text-slate-400 font-[400]'>Advanced
+                                            admin & security</p>
+                                        <h4 className='text-[1.7rem] font-[400] dark:text-slate-400 text-[#3D2E7C] mt-3'>Let’s
+                                            Talk</h4>
 
-                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Contact Sales</button>
+                                        <button className='bg-[#565ADD] my-6 py-3 px-4 rounded-full text-white'>Contact
+                                            Sales
+                                        </button>
 
                                         <ul className='list-disc marker:text-[#3D2E7C] dark:marker:text-purple-300/50 pl-[20px] 640px:pl-[40px] flex flex-col gap-[8px] dark:text-slate-400 text-[#3D2E7C] text-[0.9rem]'>
                                             <li>Unlimited Members</li>
@@ -1061,9 +1128,11 @@ export default PricingSection;
                                             <li>Unlimited recording length</li>
                                         </ul>
 
-                                        <div className='flex flex-col gap-[10px] mt-5 dark:border-slate-700 pt-[30px] border-t border-[#D1D1F7]'>
+                                        <div
+                                            className='flex flex-col gap-[10px] mt-5 dark:border-slate-700 pt-[30px] border-t border-[#D1D1F7]'>
 
-                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Everything in Business, plus</p>
+                                            <p className='text-[1rem] dark:text-[#abc2d3] text-[#2B1C50]'>Everything in
+                                                Business, plus</p>
 
                                             <p className='text-[0.9rem] text-[#2B1C50] dark:text-slate-400 flex items-center gap-[8px]'>
                                                 <MdOutlineDone
@@ -1266,7 +1335,8 @@ export default PricingSection;
                     }
                 </BlockWrapper>
 
-                <BlocksFooter backUrl='/blocks/hero-section' backName='hero section' forwardName='responsive footer' forwardUrl='/blocks/responsive-footer'/>
+                <BlocksFooter backUrl='/blocks/hero-section' backName='hero section' forwardName='responsive footer'
+                              forwardUrl='/blocks/responsive-footer'/>
             </div>
 
 

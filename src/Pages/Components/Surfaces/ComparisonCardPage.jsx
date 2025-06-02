@@ -1,13 +1,13 @@
 import React from "react";
 
 // components
-import Index from "../../../Components/Overview/SidebarContent/Content/Surfaces/Comparison/Index.jsx";
-import ContentPageLayout from "../../../Shared/ContentPageLayout.jsx";
+import Index from "@components/Surfaces/Comparison/Index.jsx";
+import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const ComparisonCardPage = () => {
     return (
         <ContentPageLayout>
-            <Index />
+            <Index/>
         </ContentPageLayout>
     );
 };

@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // react icons
 import {RxCross1} from "react-icons/rx";
@@ -152,18 +152,19 @@ const Modal = ({image, setImage, setCroppedImage}) => {
                     <h4 className='text-[20px] font-[600] dark:text-darkTextColor text-gray-800'>Crop Image</h4>
                     <RxCross1
                         className="p-2 text-[2.3rem] dark:hover:bg-slate-800 dark:text-darkTextColor/70 hover:bg-[#e7e7e7] rounded-full transition-all duration-300 cursor-pointer"
-                        onClick={()=> setImage('')}
+                        onClick={() => setImage('')}
                     />
                 </div>
 
-                <div className="flex-grow flex items-center justify-center mt-4 max-h-[calc(80vh-120px)] overflow-hidden">
+                <div
+                    className="flex-grow flex items-center justify-center mt-4 max-h-[calc(80vh-120px)] overflow-hidden">
                     <div
                         ref={cropperRef}
                         onMouseMove={isMoving ? handleMouseMove : isResizing ? handleResize : undefined}
                         onMouseUp={stopInteraction}
                         onMouseLeave={stopInteraction}
                         className="relative rounded-md overflow-hidden"
-                        style={{ maxWidth: '100%', maxHeight: '100%' }}
+                        style={{maxWidth: '100%', maxHeight: '100%'}}
                     >
                         {image && (
                             <>

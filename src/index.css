@@ -33,7 +33,7 @@
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: #3b9df8;
+    background-color: #0FABCA;
     border-radius: 30px;
 }
 
@@ -59,16 +59,6 @@
 .card-gradient {
     background: linear-gradient(to top right, white 30%, rgba(15, 171, 202, 0.33) 100%);
 }
-
-/*.logos:before {*/
-/*  left: 0;*/
-/*  background: linear-gradient(to left, rgba(255, 255, 255, 0), white);*/
-/*}*/
-
-/*.logos:after {*/
-/*  right: 0;*/
-/*  background: linear-gradient(to right, rgba(255, 255, 255, 0), white);*/
-/*}*/
 
 .logos:hover .logos-slide {
     animation-play-state: paused;
@@ -201,31 +191,21 @@ aside ul a:not(.getStarted a) {
 }
 
 aside ul a:not(.getStarted a, .sectionHeader):hover {
-    background-color: #e5eaf2;
+    background-color: rgba(229, 234, 242, 0.75);
     border-left: 1px solid #9caebc;
-    border-radius: 0.25rem;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
 }
 
 
 /* sidebar component section header  */
 .sectionHeader {
-    color: #0471d6;
-    border-left: 1px solid #9caebc;
-}
-
-.sectionHeader:hover {
-    background-color: transparent;
-    font-weight: 400;
-    border-left: 1px solid #9caebc;
+    color: #0FABCA;
 }
 
 .sectionHeader::after {
     content: "";
-    background-color: #9caebc;
-    top: -1%;
-    left: -2.3%;
+    background-color: #0FABCA;
+    top: 31%;
+    left: -5px;
     position: absolute;
     width: 10px;
     border-radius: 50%;
@@ -441,6 +421,10 @@ input[type="number"] {
     height: 8px;
 }
 
+.zenui_code_snippet {
+    bottom-border-radius: 8px !important;
+}
+
 @keyframes bounce-custom {
     0%, 100% {
         transform: translateX(0);
@@ -499,4 +483,34 @@ input[type="number"] {
 .slider-container:hover .allComponentSliderUp,
 .slider-container:hover .allComponentSliderDown {
     animation-play-state: paused;
+}
+
+.stretch-bg::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -6px;
+    width: 120%;
+    height: 120%;
+    background: rgba(154, 4, 245, 0.79);
+    z-index: 20;
+    border-radius: 40% 60% 50% 70% / 50% 60% 40% 50%;
+    transform: rotate(-3deg);
+    transition: all 0.3s ease;
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.scale-animate {
+    animation: scale 1.5s ease-in-out infinite;
 }
