@@ -7,7 +7,7 @@ import {RxCross2, RxDiscordLogo} from "react-icons/rx";
 import {FiGithub} from "react-icons/fi";
 
 // react router dom
-import {Link, useNavigate} from "react-router-dom";
+import {Link, useLocation, useNavigate} from "react-router-dom";
 import Search from "./Search";
 import {AnimatePresence, motion} from "framer-motion";
 import {LuSun} from "react-icons/lu";
@@ -24,6 +24,7 @@ const NewMobileNavbar = () => {
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
     const navigate = useNavigate();
+    const location = useLocation()
 
     const handleSearchClick = () => {
         setIsSearchOpen(true);
@@ -52,7 +53,7 @@ const NewMobileNavbar = () => {
     }, [])
 
     useEffect(() => {
-        const placeholderTexts = ["Search components", "Search Blocks", "Explore templates", "Search E-commerce"];
+        const placeholderTexts = ["Components", "Blocks", "Templates", "E-commerce Kits", "Animated Components"];
         let index = 0;
 
         const interval = setInterval(() => {
@@ -66,7 +67,7 @@ const NewMobileNavbar = () => {
     return (
         <>
             <nav
-                className="flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50">
+                className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100 dark:border-darkBorderColor'} border-b flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50`}>
                 <div className="flex items-center gap-8 relative">
                     <div className='relative'>
                         <VersionSelectBox/>
@@ -146,9 +147,9 @@ const NewMobileNavbar = () => {
                 <ul className='text-gray-600 flex flex-col mt-5 items-start gap-4 font-[500] capitalize text-[1rem]'>
                     <Link to='/about-us' className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>About
                         Us</Link>
-                    <Link to='/about-us'
+                    <Link to='/docs/overview'
                           className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>Documentation</Link>
-                    <Link to='/about-us'
+                    <Link to='/components/all-components'
                           className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>Components</Link>
                     <li onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                         className='cursor-pointer relative dark:text-darkSubTextColor flex items-center gap-[8px]'>

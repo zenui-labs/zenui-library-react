@@ -73,7 +73,7 @@ const Navbar = ({className}) => {
     }, [])
 
     useEffect(() => {
-        const placeholderTexts = ["Search components", "Search Blocks", "Explore templates", "Search E-commerce"];
+        const placeholderTexts = ["Components", "Blocks", "Templates", "E-commerce Kits", "Animated Components"];
         let index = 0;
 
         const interval = setInterval(() => {
