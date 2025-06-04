@@ -127,4 +127,9 @@ export const animatedButtonContents = [
     title: '2 Part Marge Animation',
     href: '#2_part_marge_animation',
   },
+  {
+    id: 10,
+    title: 'Theme toggle animation',
+    href: '#theme_toggle_animation',
+  },
 ];
