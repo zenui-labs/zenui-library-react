@@ -184,6 +184,10 @@ const AnimationRoutes = [
         path: "/animations/animated-accordion",
         component: lazy(() => import("@pages/Animations/Layouts/AnimatedAccordionPage"))
     },
+    {
+        path: "/animations/mouse-navigations",
+        component: lazy(() => import("@pages/Animations/Visuals/MouseNavigationsPage"))
+    },
 ];
 
 // Misc Routes

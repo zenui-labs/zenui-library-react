@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // icons
 import {CiMenuFries, CiSearch} from "react-icons/ci";
@@ -15,11 +15,18 @@ import {RiMoonClearLine} from "react-icons/ri";
 import useZenuiStore from "@/Store/Index.js";
 import CommandIcon from "@/SvgIcons/CommandIcon.jsx";
 import VersionSelectBox from "@/Components/Home/VersionSelectBox.jsx";
+import {CountUp} from "use-count-up";
+import {useGitHubStars} from "@/CustomHooks/useGithubStars.js";
 
 const NewMobileNavbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [toolsDropdownOpen, setToolsDropdownOpen] = useState(false);
+
+    const [showStars, setShowStars] = useState(false);
+    const [textWidth, setTextWidth] = useState(0);
+    const textRef = useRef(null);
+    const {stars, loading} = useGitHubStars("Asfak00", "zenui-library");
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
@@ -64,6 +71,20 @@ const NewMobileNavbar = () => {
         return () => clearInterval(interval);
     }, []);
 
+    useEffect(() => {
+        setShowStars(true);
+        const timer = setTimeout(() => {
+            setShowStars(false);
+        }, 5000);
+        return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+        if (showStars && textRef.current) {
+            setTextWidth(textRef.current.offsetWidth);
+        }
+    }, [showStars, stars]);
+
     return (
         <>
             <nav
@@ -87,10 +108,29 @@ const NewMobileNavbar = () => {
                                 className={`text-[2.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-400 rounded-normal p-[8px] border border-gray-200 cursor-pointer`}/>
                         </a>
 
-                        <a href='https://github.com/Asfak00/zenui-library' target='_blank' rel="noreferrer">
-                            <FiGithub
-                                className={`text-[2.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-400 rounded-normal p-[8px] border border-gray-200 cursor-pointer`}/>
-                        </a>
+                        <motion.a
+                            href="https://github.com/Asfak00/zenui-library"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-300 dark:text-slate-400 flex items-center text-gray-400 rounded-normal border border-gray-200 cursor-pointer overflow-hidden"
+                            initial={{opacity: 0, x: 30}}
+                            animate={{opacity: 1, x: 0}}
+                            transition={{duration: 0.5}}
+                        >
+                            <FiGithub className="text-[2.45rem] px-[9px] py-[7px]"/>
+
+                            <motion.div
+                                animate={{width: showStars ? textWidth + 16 : 0}}
+                                transition={{duration: 0.3}}
+                                style={{overflow: "hidden"}}
+                            >
+                                <p ref={textRef}
+                                   className="text-black text-[0.9rem] font-medium pr-6 whitespace-nowrap">
+                                    <CountUp isCounting end={stars}
+                                             duration={3.2}/>+
+                                </p>
+                            </motion.div>
+                        </motion.a>
 
                         <div onClick={toggleTheme}
                              className='text-[1.5rem] dark:border-darkBorderColor dark:text-slate-400 text-gray-500 overflow-hidden h-[40px] border border-border rounded-normal px-[8px] p-1 cursor-pointer'>

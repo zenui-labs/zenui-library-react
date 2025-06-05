@@ -4,7 +4,7 @@ import ResourceIcon from "@/SvgIcons/ResourceIcon.jsx";
 import TemplatesIcon from "@/SvgIcons/TemplatesIcon.jsx";
 import HookIcon from "@/SvgIcons/HookIcon.jsx";
 import {CollapseMenu, DefaultMenu} from "./children/Menu/index.jsx";
- 
+
 const Content = () => {
     return (
         <>
@@ -354,7 +354,6 @@ const Content = () => {
             {/*  animations  */}
             <CollapseMenu
                 title={"Animations"}
-                isNewComponent={true}
                 items={[
                     {
                         title: "Installation",
@@ -435,6 +434,12 @@ const Content = () => {
                     {
                         title: "Dropdown Animations",
                         url: "/animations/dropdown-animations",
+                        parent: 'VISUALS'
+                    },
+                    {
+                        title: "Mouse Navigations",
+                        url: "/animations/mouse-navigations",
+                        isNewComponent: true,
                         parent: 'VISUALS'
                     },
                     {

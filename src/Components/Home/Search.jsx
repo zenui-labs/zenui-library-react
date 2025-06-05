@@ -1,24 +1,24 @@
 import React, {useEffect, useState} from "react";
 import Fuse from 'fuse.js';
 import {CiSearch} from "react-icons/ci";
-import {blocksSearchData, componentSearchData} from "@utils/SearchData.js";
+import {animationsSearchData, blocksSearchData, componentsSearchData, docsSearchData} from "@utils/SearchData.js";
 import {LuLayoutTemplate} from "react-icons/lu";
 import {RxSection} from "react-icons/rx";
 import {Link, useNavigate} from "react-router-dom";
- 
+
 const Search = ({isSearchOpen, setIsSearchOpen}) => {
     const [inputText, setInputText] = useState("");
     const [focusedIndex, setFocusedIndex] = useState(-1);
     const [isKeyboardActive, setIsKeyboardActive] = useState(false);
     const navigate = useNavigate();
 
-    // Combine and prepare search data for Fuse.js
     const combinedSearchData = [
-        ...componentSearchData.map(item => ({...item, type: 'component'})),
+        ...docsSearchData.map(item => ({...item, type: 'documentation'})),
+        ...componentsSearchData.map(item => ({...item, type: 'component'})),
+        ...animationsSearchData.map(item => ({...item, type: 'animation'})),
         ...blocksSearchData.map(item => ({...item, type: 'block'}))
     ];
 
-    // Fuse.js configuration
     const fuse = new Fuse(combinedSearchData, {
         keys: [
             {name: 'title', weight: 2},
@@ -30,15 +30,40 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
         useExtendedSearch: true
     });
 
-    // Search results based on Fuse.js
     const searchResults = inputText
         ? fuse.search(inputText).map(result => result.item)
         : combinedSearchData;
 
-
-    // Separate components and blocks
-    const filteredComponentData = searchResults.filter(item => item.type === 'component');
-    const filteredBlocksData = searchResults.filter(item => item.type === 'block');
+    const sections = [
+        {
+            type: 'documentation',
+            title: 'Documentation',
+            data: searchResults.filter(item => item.type === 'documentation'),
+            icon: LuLayoutTemplate,
+            className: ''
+        },
+        {
+            type: 'component',
+            title: 'Components',
+            data: searchResults.filter(item => item.type === 'component'),
+            icon: LuLayoutTemplate,
+            className: ''
+        },
+        {
+            type: 'animation',
+            title: 'Animations',
+            data: searchResults.filter(item => item.type === 'animation'),
+            icon: LuLayoutTemplate,
+            className: ''
+        },
+        {
+            type: 'block',
+            title: 'Blocks',
+            data: searchResults.filter(item => item.type === 'block'),
+            icon: RxSection,
+            className: 'mt-5'
+        }
+    ];
 
     const allItems = searchResults;
 
@@ -128,8 +153,10 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
         return text.replace(regex, "<mark class='bg-yellow-200 text-gray-900'>$1</mark>");
     };
 
+    let cumulativeIndex = 0;
+
     return (
-        <main
+        <div
             className='w-full h-screen fixed top-0 left-0 bg-black/70 z-[1000000000] flex items-center justify-center'>
             <div
                 className={`${
@@ -155,124 +182,81 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                 </div>
 
                 <div className='h-[65vh] overflow-y-auto' style={{scrollbarWidth: 'none'}}>
-                    {filteredComponentData?.length > 0 && (
-                        <div className='sticky top-0 dark:bg-slate-800 bg-white z-10'>
-                            <h3 className='font-bold dark:text-darkTextColor pb-[10px]'>Components</h3>
-                        </div>
-                    )}
-                    <div className='flex flex-col pr-2'>
-                        {filteredComponentData?.map((component, index) => (
-                            <Link
-                                id={`search-item-${index}`}
-                                key={index}
-                                to={component.url}
-                                onMouseMove={handleMouseMove}
-                                className={`flex group items-start gap-[10px] py-3 px-3 text-gray-500 
-                  ${isKeyboardActive
-                                    ? focusedIndex === index
-                                        ? 'bg-gray-50 dark:bg-slate-900'
-                                        : 'text-gray-500'
-                                    : 'hover:bg-gray-50 dark:hover:bg-slate-900'
-                                } rounded-md transition-colors`}
-                            >
-                                <LuLayoutTemplate
-                                    className='text-[1.4rem] dark:text-darkSubTextColor flex-shrink-0 mt-1'/>
-                                <div className='flex-1 min-w-0'>
-                                    <p
-                                        className='text-[1rem] font-[500] dark:text-darkSubTextColor text-gray-600 capitalize'
-                                        dangerouslySetInnerHTML={{
-                                            __html: highlightText(component.title, inputText),
-                                        }}
-                                    />
-                                    {component.description && (
-                                        <p
-                                            className={`text-sm font-[300] dark:text-darkSubTextColor/60 mt-0.5 truncate text-gray-500`}
-                                            dangerouslySetInnerHTML={{
-                                                __html: highlightText(component.description, inputText),
-                                            }}
-                                        />
-                                    )}
-                                    {component.tags && (
-                                        <div className='flex flex-wrap gap-1 mt-2'>
-                                            {component.tags.map((tag, tagIndex) => (
-                                                <span
-                                                    key={tagIndex}
-                                                    className={`text-xs group-hover:bg-gray-200 dark:group-hover:bg-slate-800 dark:group-hover:text-darkSubTextColor px-2 py-0.5 rounded-full ${
-                                                        focusedIndex === index
-                                                            ? 'bg-gray-200 dark:bg-slate-800 dark:text-darkSubTextColor'
-                                                            : 'bg-gray-100 text-gray-600 dark:bg-slate-900/40 dark:text-darkSubTextColor'
-                                                    }`}
-                                                >
-                          {tag}
-                        </span>
-                                            ))}
-                                        </div>
-                                    )}
-                                </div>
-                            </Link>
-                        ))}
-                    </div>
-                    {filteredBlocksData?.length > 0 && (
-                        <div className='sticky top-0 bg-white dark:bg-slate-800 z-10 mt-5'>
-                            <h3 className='dark:text-darkTextColor font-bold pb-[10px]'>Blocks</h3>
-                        </div>
-                    )}
-                    <div className='flex flex-col pr-2 pb-7'>
-                        {filteredBlocksData?.map((block, index) => {
-                            const blockIndex = filteredComponentData.length + index;
+                    {sections.map((section) => {
+                        if (section.data.length === 0) return null;
+
+                        const sectionStartIndex = cumulativeIndex;
+                        const sectionItems = section.data.map((item, index) => {
+                            const globalIndex = sectionStartIndex + index;
+                            const IconComponent = section.icon;
+
                             return (
                                 <Link
-                                    id={`search-item-${blockIndex}`}
-                                    key={blockIndex}
-                                    to={block.url}
+                                    id={`search-item-${globalIndex}`}
+                                    key={globalIndex}
+                                    to={item.url}
                                     onMouseMove={handleMouseMove}
-                                    className={`flex items-start group gap-[10px] py-3 px-3 text-gray-500 
-                    ${isKeyboardActive
-                                        ? focusedIndex === blockIndex
+                                    className={`flex group items-start gap-[10px] py-3 px-3 text-gray-500 
+                                        ${isKeyboardActive
+                                        ? focusedIndex === globalIndex
                                             ? 'bg-gray-50 dark:bg-slate-900'
                                             : 'text-gray-500'
                                         : 'hover:bg-gray-50 dark:hover:bg-slate-900'
                                     } rounded-md transition-colors`}
                                 >
-                                    <RxSection className='text-[1.4rem] dark:text-darkSubTextColor flex-shrink-0 mt-1'/>
+                                    <IconComponent
+                                        className='text-[1.4rem] dark:text-darkSubTextColor flex-shrink-0 mt-1'/>
                                     <div className='flex-1 min-w-0'>
                                         <p
-                                            className='text-[1rem] dark:text-darkSubTextColor text-gray-600 font-[500] capitalize'
+                                            className='text-[1rem] font-[500] dark:text-darkSubTextColor text-gray-600 capitalize'
                                             dangerouslySetInnerHTML={{
-                                                __html: highlightText(block.title, inputText),
+                                                __html: highlightText(item.title, inputText),
                                             }}
                                         />
-                                        {block.description && (
+                                        {item.description && (
                                             <p
                                                 className={`text-sm font-[300] dark:text-darkSubTextColor/60 mt-0.5 truncate text-gray-500`}
                                                 dangerouslySetInnerHTML={{
-                                                    __html: highlightText(block.description, inputText),
+                                                    __html: highlightText(item.description, inputText),
                                                 }}
                                             />
                                         )}
-                                        {block.tags && (
+                                        {item.tags && (
                                             <div className='flex flex-wrap gap-1 mt-2'>
-                                                {block.tags.map((tag, tagIndex) => (
+                                                {item.tags.map((tag, tagIndex) => (
                                                     <span
                                                         key={tagIndex}
-                                                        className={`text-xs px-2 group-hover:bg-gray-200 dark:group-hover:bg-slate-800 dark:group-hover:text-darkSubTextColor py-0.5 rounded-full ${
-                                                            focusedIndex === blockIndex
+                                                        className={`text-xs group-hover:bg-gray-200 dark:group-hover:bg-slate-800 dark:group-hover:text-darkSubTextColor px-2 py-0.5 rounded-full ${
+                                                            focusedIndex === globalIndex
                                                                 ? 'bg-gray-200 dark:bg-slate-800 dark:text-darkSubTextColor'
                                                                 : 'bg-gray-100 text-gray-600 dark:bg-slate-900/40 dark:text-darkSubTextColor'
                                                         }`}
                                                     >
-                            {tag}
-                          </span>
+                                                        {tag}
+                                                    </span>
                                                 ))}
                                             </div>
                                         )}
                                     </div>
                                 </Link>
                             );
-                        })}
-                    </div>
+                        });
 
-                    {!filteredBlocksData?.length && !filteredComponentData?.length && (
+                        cumulativeIndex += section.data.length;
+
+                        return (
+                            <div key={section.type}>
+                                <div className={`sticky top-0 dark:bg-slate-800 bg-white z-10 ${section.className}`}>
+                                    <h3 className='font-bold dark:text-darkTextColor pb-[10px]'>{section.title}</h3>
+                                </div>
+                                <div className='flex flex-col pr-2 pb-7'>
+                                    {sectionItems}
+                                </div>
+                            </div>
+                        );
+                    })}
+
+                    {allItems.length === 0 && (
                         <div className='mt-5 flex items-center h-[90%] flex-col justify-center'>
                             <img src='/zenui_search_not_found.png' className='w-[60px]'/>
                             <p className='text-[0.9rem] text-text mt-2'>No Search found!</p>
@@ -285,39 +269,39 @@ const Search = ({isSearchOpen, setIsSearchOpen}) => {
                     className='w-full hidden 1024px:block fixed bottom-0 left-0 dark:bg-slate-800 dark:border-slate-700 bg-white border-t border-gray-200 rounded-b-high'>
                     <div className='flex flex-wrap gap-[15px] p-3'>
                         <div className='flex items-center gap-[5px]'>
-              <span
-                  className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 flex items-center justify-center py-1 rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
-                ↑
-              </span>
+                            <span
+                                className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 flex items-center justify-center py-1 rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
+                                ↑
+                            </span>
                             <span className='text-[0.7rem] dark:text-darkSubTextColor text-gray-500 capitalize'>up navigate</span>
                         </div>
                         <div className='flex items-center gap-[5px]'>
-              <span
-                  className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
-                ↓
-              </span>
+                            <span
+                                className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
+                                ↓
+                            </span>
                             <span className='text-[0.7rem] dark:text-darkSubTextColor text-gray-500 capitalize'>down navigate</span>
                         </div>
                         <div className='flex items-center gap-[5px]'>
-              <span
-                  className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
-                ↵
-              </span>
+                            <span
+                                className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-5 h-5 text-center'>
+                                ↵
+                            </span>
                             <span
                                 className='text-[0.7rem] dark:text-darkSubTextColor text-gray-500 capitalize'>select</span>
                         </div>
                         <div className='flex items-center gap-2'>
-              <span
-                  className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-8 h-5 text-center'>
-                Esc
-              </span>
+                            <span
+                                className='bg-gray-100 dark:bg-slate-900 dark:text-darkSubTextColor text-gray-500 px-2 py-1 flex items-center justify-center rounded font-semibold text-[0.7rem] w-8 h-5 text-center'>
+                                Esc
+                            </span>
                             <span
                                 className='text-[0.7rem] dark:text-darkSubTextColor text-gray-500 capitalize'>close</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </main>
+        </div>
     );
 };
 

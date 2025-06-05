@@ -67,3 +67,16 @@ export const ImageGalleryContents = [
         href: '#hover-effect-&-image-scale'
     },
 ]
+
+export const MouseNavigationContents = [
+    {
+        id: 1,
+        title: 'scroll tabs with mouse',
+        href: '#scroll-tabs-with-mouse'
+    },
+    {
+        id: 2,
+        title: 'scroll tabs with mouse and dragging',
+        href: '#scroll-tabs-with-mouse-and-dragging'
+    },
+]

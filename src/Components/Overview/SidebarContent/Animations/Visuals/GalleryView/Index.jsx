@@ -47,7 +47,7 @@ const Index = () => {
                         />}
                 </ComponentWrapper>
 
-                <OverviewFooter backUrl='/animations/dropdown-animations' backName='dropdown animations'
+                <OverviewFooter backUrl='/animations/mouse-navigations' backName='mouse navigations'
                                 forwardUrl='/blocks/all-blocks' forwardName='all blocks'/>
             </div>
 
