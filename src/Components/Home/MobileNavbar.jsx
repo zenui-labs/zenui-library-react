@@ -125,7 +125,7 @@ const NewMobileNavbar = () => {
                                 style={{overflow: "hidden"}}
                             >
                                 <p ref={textRef}
-                                   className="text-black text-[0.9rem] font-medium pr-6 whitespace-nowrap">
+                                   className="text-black text-[0.9rem] font-medium pr-4 whitespace-nowrap">
                                     <CountUp isCounting end={stars}
                                              duration={3.2}/>+
                                 </p>
