@@ -35,7 +35,7 @@ const Hero = () => {
     }, [theme])
 
     return (<main
-        className={`${darkModeWithDelay ? 'bg-[linear-gradient(to_right,#212121_1px,transparent_1px),linear-gradient(to_bottom,#212121_1px,transparent_1px)]' : 'bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)]'} py-16 640px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative`}>
+        className={`${darkModeWithDelay ? 'bg-[linear-gradient(to_right,#212121_1px,transparent_1px),linear-gradient(to_bottom,#212121_1px,transparent_1px)]' : 'bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)]'} py-16 1024px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative`}>
 
 
         <div
@@ -51,10 +51,25 @@ const Hero = () => {
 
             <div className="1024px:w-[80%] 1360px:w-[65%] text-center mx-auto w-full">
 
-                <button
-                    className='py-1.5 pl-5 cursor-text dark:border-slate-500 dark:text-darkTextColor backdrop-blur-md pr-6 text-[0.8rem] 640px:text-[0.9rem] border mb-4 border-border rounded-full'>
-                    ✨ Introducing ZenUI v3
-                </button>
+                <div
+                    className="flex items-center flex-col 640px:flex-row gap-2 justify-center 640px:gap-4 mb-4 640px:mb-4">
+                    <a href='https://www.npmjs.com/package/zenui-image-react'
+                       target='_blank' rel="noreferrer"
+                       className='p-2 pr-3 rounded-[10px] dark:border-slate-700 select-none hover:bg-gray-50 transition-all duration-200 border border-border dark:hover:bg-slate-900 flex items-center gap-2'>
+                        <img src='https://i.ibb.co/D2MSBtc/images-removebg-preview-4.png' alt='npm package'
+                             className='w-[25px] rounded-high'/>
+                        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>ZenUI Image
+                            React</p>
+                    </a>
+                    <a
+                        className='p-[9px] pr-[18px] 640px:pr-3 dark:border-slate-700 rounded-[10px] select-none cursor-not-allowed transition-all duration-200 border border-border flex items-center gap-2'>
+                        <img src='https://i.ibb.co/1fjC2SkM/Google-Chrome-icon-February-2022-svg.png'
+                             alt='chrome extension'
+                             className='w-[23px] rounded-high'/>
+                        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>Extension
+                            coming</p>
+                    </a>
+                </div>
 
                 <h1
                     className="text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
@@ -88,7 +103,10 @@ const Hero = () => {
                     </button>
                 </div>
 
-                <div className='flex items-center gap-5 justify-center mt-6'>
+                <p className='mt-6 text-gray-500/80 dark:text-darkSubTextColor/70 text-[0.9rem] mb-1 font-medium'>Compatible
+                    With:</p>
+
+                <div className='flex items-center gap-5 justify-center'>
                     <a href='https://react.dev/learn' target='_blank' rel="noreferrer">
                         <FaReact
                             className='text-[1.8rem] hover:scale-[1.2] transition-all duration-300 dark:text-darkSubTextColor text-gray-500'/>
