@@ -113,8 +113,8 @@ const NewMobileNavbar = () => {
                             target="_blank"
                             rel="noreferrer"
                             className="hover:bg-gray-50 dark:hover:bg-slate-900 dark:border-darkBorderColor transition-all duration-300 dark:text-slate-400 flex items-center text-gray-400 rounded-normal border border-gray-200 cursor-pointer overflow-hidden"
-                            initial={{opacity: 0, x: 30}}
-                            animate={{opacity: 1, x: 0}}
+                            initial={{opacity: 0}}
+                            animate={{opacity: 1}}
                             transition={{duration: 0.5}}
                         >
                             <FiGithub className="text-[2.45rem] px-[9px] py-[7px]"/>

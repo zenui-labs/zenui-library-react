@@ -77,7 +77,7 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                     </p>
                 </div>
 
-                <div className='p-3 my-5 max-w-[273px]'>
+                <div className='p-3 mb-5 mt-3 max-w-[273px]'>
                     <div
                         className="relative origin-center -translate-x-3 rotate-6 p-6 duration-300 hover:rotate-0"
                     >
