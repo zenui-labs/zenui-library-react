@@ -188,6 +188,10 @@ const AnimationRoutes = [
         path: "/animations/mouse-navigations",
         component: lazy(() => import("@pages/Animations/Visuals/MouseNavigationsPage"))
     },
+    {
+        path: "/animations/search-placeholder",
+        component: lazy(() => import("@pages/Animations/Visuals/SearchPlaceholderPage"))
+    },
 ];
 
 // Misc Routes

@@ -80,10 +80,9 @@ const Hero = () => {
                 </h1>
 
                 <p
-                    className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] 1024pxtext-[1.1rem]">
-                    ZenUI Library is an Tailwind CSS components library for any needs. Comes with UI examples &
-                    blocks,
-                    templates, Icons, Color Palette and more.
+                    className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem]">
+                    ZenUI is your all-in-one Front-End Toolkit — No installs, No setup, just copy, paste, and build
+                    beautiful UIs in seconds.
                 </p>
 
                 <div

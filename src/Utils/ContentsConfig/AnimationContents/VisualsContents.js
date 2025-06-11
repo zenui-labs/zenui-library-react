@@ -80,3 +80,26 @@ export const MouseNavigationContents = [
         href: '#scroll-tabs-with-mouse-and-dragging'
     },
 ]
+
+export const SearchPlaceholderContents = [
+    {
+        id: 1,
+        title: 'fade in placeholder animation',
+        href: '#fade-in-placeholder-animation'
+    },
+    {
+        id: 2,
+        title: 'type writer placeholder animation',
+        href: '#type-writer-placeholder-animation'
+    },
+    {
+        id: 3,
+        title: 'flip placeholder animation',
+        href: '#flip-placeholder-animation'
+    },
+    {
+        id: 4,
+        title: 'slide in out placeholder animation',
+        href: '#slide-in-out-placeholder-animation'
+    }
+]

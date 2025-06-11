@@ -1,14 +1,12 @@
 import {useEffect, useState} from "react";
-
-// framer motion
 import {AnimatePresence, motion} from "framer-motion";
-
-// react-icons
 import {CiSearch} from "react-icons/ci";
 
-const SearchInput = ({placeholders, searchValue, setSearchValue}) => {
+const SlideInOutPlaceholder = () => {
     const [isFoucsed, setIsFocused] = useState(false);
+    const [searchValue, setSearchValue] = useState('');
     const [currentPlaceholder, setCurrentPlaceholder] = useState(0);
+    const placeholders = ["Search products...", "Find services...", "Discover brands...", "Look for deals..."];
 
     useEffect(() => {
         if (!searchValue) {
@@ -20,7 +18,7 @@ const SearchInput = ({placeholders, searchValue, setSearchValue}) => {
     }, [searchValue, placeholders.length]);
 
     return (
-        <div className="relative w-full lg:w-[85%] border dark:border-slate-700 border-gray-300 rounded-lg">
+        <div className="relative w-full 1024px:w-[85%] border dark:border-slate-700 border-gray-300 rounded-lg">
             <CiSearch
                 className="absolute left-4 top-1/2 dark:text-slate-500 transform -translate-y-1/2 text-gray-400 text-[1.5rem]"/>
 
@@ -30,7 +28,7 @@ const SearchInput = ({placeholders, searchValue, setSearchValue}) => {
                 onFocus={() => setIsFocused(true)}
                 onBlur={() => setIsFocused(false)}
                 onChange={(e) => setSearchValue(e.target.value)}
-                className="w-full py-3.5 focus:border-[#0FABCA] dark:text-[#334155] dark:bg-transparent rounded-lg border border-transparent outline-none pr-3 pl-12"
+                className="w-full py-3.5 focus:border-brandColor dark:text-darkTextColor dark:bg-transparent rounded-lg border border-transparent outline-none pr-3 pl-12"
             />
             {!searchValue && !isFoucsed && (
                 <div
@@ -53,4 +51,4 @@ const SearchInput = ({placeholders, searchValue, setSearchValue}) => {
     );
 }
 
-export default SearchInput;
+export default SlideInOutPlaceholder;

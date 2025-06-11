@@ -140,7 +140,8 @@ const Content = () => {
                     {
                         title: "Animated Button",
                         url: "/components/animated-button",
-                        parent: 'BUTTONS'
+                        parent: 'BUTTONS',
+                        isUpdated: true
                     },
                     {
                         label: "SURFACES",
@@ -446,6 +447,12 @@ const Content = () => {
                         title: "Gallery View",
                         url: "/animations/gallery-view",
                         parent: 'VISUALS'
+                    },
+                    {
+                        title: "Search Placeholder",
+                        url: "/animations/search-placeholder",
+                        parent: 'VISUALS',
+                        isNewComponent: true
                     },
                 ]}
             />
