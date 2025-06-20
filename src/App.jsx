@@ -25,7 +25,7 @@ const App = () => {
                 !e.altKey &&
                 !e.ctrlKey &&
                 !e.metaKey &&
-                !e.shiftKey;
+                e.shiftKey;
 
             if (isOnlySpace) {
                 e.preventDefault();

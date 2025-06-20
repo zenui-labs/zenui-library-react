@@ -1,5 +1,6 @@
 import React from 'react';
 import {RxCross1} from "react-icons/rx";
+import {GoPlus} from "react-icons/go";
 
 const ShortcutHintModal = ({setIsOpen}) => {
     return (
@@ -9,8 +10,13 @@ const ShortcutHintModal = ({setIsOpen}) => {
                       className='absolute top-2 right-2 text-gray-500 cursor-pointer dark:hover:text-white hover:text-black'/>
             <p className='leading-[20px]'>Use Keyboard Shortcut. <span
                 className='font-medium text-brandColor'>Press:</span>
-                <span
-                    className='bg-gray-300/50 font-mono text-black/60 px-2 font-semibold py-0.5 rounded text-[0.8rem] dark:text-darkSubTextColor dark:bg-slate-700 mx-1.5'>Space</span>
+                <p className='mx-1.5 items-center inline-flex'>
+                    <span
+                        className='bg-gray-300/50 font-mono text-black/60 px-2 font-semibold py-[1px] rounded text-[0.8rem] dark:text-darkSubTextColor dark:bg-slate-700'>Shift</span>
+                    <GoPlus className="text-gray-500"/>
+                    <span
+                        className='bg-gray-300/50 font-mono text-black/60 px-2 font-semibold py-[1px] rounded text-[0.8rem] dark:text-darkSubTextColor dark:bg-slate-700'>Space</span>
+                </p>
                 To show Cheatsheet Modal.
             </p>
         </div>
