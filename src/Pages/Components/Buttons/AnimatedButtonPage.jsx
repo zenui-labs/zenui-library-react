@@ -1,11 +1,11 @@
 // components
-import AnimatedButton from "@components/Buttons/AnimatedButton";
+import Index from "@components/Buttons/AnimatedButtons/Index.jsx";
 import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
 const AnimatedButtonPage = () => {
     return (
         <ContentPageLayout>
-            <AnimatedButton/>
+            <Index/>
         </ContentPageLayout>
     );
 };

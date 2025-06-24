@@ -117,7 +117,7 @@ export const DevContributorsData = [
         twitterLink: '',
         githubLink: 'https://github.com/mohiulislam',
         website: '',
-        zenuiHero: false,
+        zenuiHero: true,
     },
     {
         name: 'codemine24',
