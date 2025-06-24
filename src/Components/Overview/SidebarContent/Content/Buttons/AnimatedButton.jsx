@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useRef, useEffect} from "react";
 
 // components
 import OverviewFooter from "@shared/OverviewFooter";
@@ -18,7 +18,6 @@ import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 const AnimatedButton = () => {
     const sectionIds = animatedButtonContents.map(item => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
-
 
     // click animated button
     const [clickAnimatedButtonPreview, setClickAnimatedButtonPreview] = useState(true);
@@ -60,9 +59,297 @@ const AnimatedButton = () => {
     const [dayNightTogglePreview, setDayNightTogglePreview] = useState(true);
     const [dayNightToggleCode, setDayNightToggleCode] = useState(false);
 
+    // celebration button
+    const [celebrationButtonPreview, setCelebrationButtonPreview] = useState(true);
+    const [celebrationButtonCode, setCelebrationButtonCode] = useState(false);
+
     // Variables for Day Night Toggle
     const size = 60; // Default size in pixels
     const animationSpeed = .6; // Default animation speed in seconds
+
+    // CelebrationButton component
+    const PARTICLE_COUNT = 90;
+    const COLORS = [
+        "#f87171", "#60a5fa", "#34d399", "#fbbf24",
+        "#a78bfa", "#f472b6", "#f59e0b", "#10b981",
+    ];
+    const GRAVITY = 0.35;
+    const DRAG = 0.92;
+    const SHAPES = ["rect", "line", "circle", "triangle", "star"];
+
+    function randomRange(min, max) {
+        return Math.random() * (max - min) + min;
+    }
+
+    function CelebrationButton({ label = "Claim", successText = "Success" }) {
+        const [particles, setParticles] = useState([]);
+        const [isLoading, setIsLoading] = useState(false);
+        const [buttonText, setButtonText] = useState(label);
+        const buttonRef = useRef(null);
+        const animationRef = useRef(null);
+
+        function createParticles() {
+            if (!buttonRef.current) return;
+            const rect = buttonRef.current.getBoundingClientRect();
+            const originX = rect.left + rect.width / 2;
+            const originY = rect.top + rect.height / 2;
+            const newParticles = [];
+            for (let i = 0; i < PARTICLE_COUNT; i++) {
+                const angle = randomRange(40, 140) * (Math.PI / 180);
+                const speed = randomRange(10, 20);
+                newParticles.push({
+                    id: Math.random().toString(36).slice(2),
+                    x: originX,
+                    y: originY,
+                    vx: Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1) * randomRange(0.5, 1),
+                    vy: -Math.sin(angle) * speed,
+                    color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                    size: randomRange(4, 10),
+                    life: 50 + Math.floor(Math.random() * 30),
+                    shape: SHAPES[Math.floor(Math.random() * SHAPES.length)],
+                    rotationZ: randomRange(0, 360),
+                    rotationZSpeed: randomRange(-20, 20),
+                    rotationY: randomRange(0, 360),
+                    rotationYSpeed: randomRange(-15, 15),
+                    scale: 1,
+                    scaleSpeed: randomRange(-0.015, -0.005),
+                    opacity: 1,
+                });
+            }
+            setParticles(newParticles);
+        }
+
+        function handleClick() {
+            setIsLoading(true);
+            setTimeout(() => {
+                setIsLoading(false);
+                setButtonText(successText);
+                createParticles();
+                setTimeout(() => setButtonText(label), 2000);
+            }, 1000);
+        }
+
+        useEffect(() => {
+            if (particles.length === 0) return;
+            function animate() {
+                setParticles((oldParticles) =>
+                    oldParticles
+                        .map((p) => {
+                            let { x, y, vx, vy, life, rotationZ, rotationY, opacity, scale, scaleSpeed } = p;
+                            vy += GRAVITY;
+                            vx *= DRAG;
+                            vy *= DRAG;
+                            x += vx;
+                            y += vy;
+                            rotationZ += p.rotationZSpeed;
+                            rotationY += p.rotationYSpeed;
+                            life -= 1;
+                            if (life < 30) {
+                                opacity = Math.max(0, life / 30);
+                            }
+                            scale += scaleSpeed;
+                            if (scale < 0) scale = 0;
+                            return { ...p, x, y, vx, vy, life, rotationZ, rotationY, opacity, scale };
+                        })
+                        .filter((p) => p.life > 0 && p.y < window.innerHeight + 100)
+                );
+                animationRef.current = requestAnimationFrame(animate);
+            }
+            animationRef.current = requestAnimationFrame(animate);
+            return () => cancelAnimationFrame(animationRef.current);
+        }, [particles.length]);
+
+        function renderParticle(p) {
+            const { id, x, y, color, size, shape, rotationZ, rotationY, opacity, scale } = p;
+            const baseStyle = {
+                position: "absolute",
+                left: x,
+                top: y,
+                opacity,
+                pointerEvents: "none",
+                transform: `translate(-50%, -50%) rotateZ(${rotationZ}deg) rotateY(${rotationY}deg) scale(${scale})`,
+                filter: "drop-shadow(0 0 2px rgba(0,0,0,0.15))",
+                willChange: "transform, opacity",
+            };
+            switch (shape) {
+                case "line":
+                    return (
+                        <div
+                            key={id}
+                            style={{
+                                ...baseStyle,
+                                width: size * 0.3,
+                                height: size * 1.8,
+                                backgroundColor: color,
+                                borderRadius: size * 0.15,
+                            }}
+                        />
+                    );
+                case "rect":
+                    return (
+                        <div
+                            key={id}
+                            style={{
+                                ...baseStyle,
+                                width: size,
+                                height: size * 0.6,
+                                backgroundColor: color,
+                                borderRadius: size * 0.2,
+                            }}
+                        />
+                    );
+                case "circle":
+                    return (
+                        <div
+                            key={id}
+                            style={{
+                                ...baseStyle,
+                                width: size,
+                                height: size,
+                                backgroundColor: color,
+                                borderRadius: "50%",
+                            }}
+                        />
+                    );
+                case "triangle":
+                    return (
+                        <div
+                            key={id}
+                            style={{ ...baseStyle, width: size, height: size }}
+                            aria-hidden="true"
+                        >
+                            <Triangle size={size} color={color} />
+                        </div>
+                    );
+                case "star":
+                    return (
+                        <div
+                            key={id}
+                            style={{ ...baseStyle, width: size * 2, height: size * 2 }}
+                            aria-hidden="true"
+                        >
+                            <Star size={size} color={color} />
+                        </div>
+                    );
+                default:
+                    return null;
+            }
+        }
+
+        function Triangle({ size, color }) {
+            const path = `
+          M 0 ${size}
+          L ${size / 2} 0
+          L ${size} ${size}
+          Z
+        `;
+            return (
+                <svg
+                    width={size}
+                    height={size}
+                    viewBox={`0 0 ${size} ${size}`}
+                    fill={color}
+                    style={{ display: "block" }}
+                >
+                    <path d={path} />
+                </svg>
+            );
+        }
+
+        function Star({ size, color }) {
+            const cx = size;
+            const cy = size;
+            const spikes = 5;
+            const outerRadius = size;
+            const innerRadius = size / 2.5;
+            let rot = Math.PI / 2 * 3;
+            let x = cx;
+            let y = cy;
+            const step = Math.PI / spikes;
+            let path = "";
+
+            for (let i = 0; i < spikes; i++) {
+                x = cx + Math.cos(rot) * outerRadius;
+                y = cy + Math.sin(rot) * outerRadius;
+                path += `L${x} ${y} `;
+                rot += step;
+
+                x = cx + Math.cos(rot) * innerRadius;
+                y = cy + Math.sin(rot) * innerRadius;
+                path += `L${x} ${y} `;
+                rot += step;
+            }
+            path += "L" + cx + " " + (cy - outerRadius) + " Z";
+
+            return (
+                <svg
+                    width={size * 2}
+                    height={size * 2}
+                    viewBox={`0 0 ${size * 2} ${size * 2}`}
+                    fill={color}
+                    style={{ display: "block" }}
+                >
+                    <path d={path} />
+                </svg>
+            );
+        }
+
+        return (
+            <div className="relative">
+                <button
+                    ref={buttonRef}
+                    onClick={handleClick}
+                    disabled={isLoading}
+                    className={`w-32 px-6 py-3 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold rounded-lg shadow-lg shadow-pink-500/50 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 transition-all duration-300 active:scale-90 relative overflow-hidden ${
+                        isLoading ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
+                >
+                    {isLoading ? (
+                        <span className="flex items-center justify-center">
+                            <svg
+                                className="animate-spin h-5 w-5 text-white"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                            >
+                                <circle
+                                    className="opacity-25"
+                                    cx="12"
+                                    cy="12"
+                                    r="10"
+                                    stroke="currentColor"
+                                    strokeWidth="4"
+                                ></circle>
+                                <path
+                                    className="opacity-75"
+                                    fill="currentColor"
+                                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                ></path>
+                            </svg>
+                        </span>
+                    ) : (
+                        buttonText
+                    )}
+                </button>
+                <div
+                    style={{
+                        position: "fixed",
+                        top: 0,
+                        left: 0,
+                        width: "100vw",
+                        height: "100vh",
+                        overflow: "hidden",
+                        pointerEvents: "none",
+                        zIndex: 9999,
+                        perspective: "800px",
+                    }}
+                >
+                    {particles.map(renderParticle)}
+                </div>
+            </div>
+        );
+    }
+
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
@@ -128,9 +415,8 @@ const AnimatedButton = () => {
                         </div>
                     )}
 
-                    {hoverAnimatedButtonCode && (
-                        <ShowCode
-                            code='
+                    {hoverAnimatedButtonCode &&
+                        <ShowCode code='
 import React from "react";
 
 const AnimatedButton = () => {
@@ -153,7 +439,7 @@ const AnimatedButton = () => {
 export default AnimatedButton;
                   '
                         />
-                    )}
+                    }
                 </ComponentWrapper>
 
                 <div className="mt-8">
@@ -253,8 +539,7 @@ const AnimatedButton = () => {
 
 export default AnimatedButton;
               '
-                        />
-                    }
+                        />}
                 </ComponentWrapper>
 
                 <div className="mt-8">
@@ -566,18 +851,19 @@ export default AnimatedButton;
                 </ComponentWrapper>
 
                 <div className="mt-8">
-  <ContentHeader text={"Theme toggle animation"} id={"theme_toggle_animation"}/>
-</div>
+                    <ContentHeader text={"Theme toggle animation"} id={"theme_toggle_animation"}/>
+                </div>
 
-<ComponentDescription text='A reusable button with a day-night toggle animation that can be used to switch between dark and light mode.'/>
+                <ComponentDescription text='A reusable button with a day-night toggle animation that can be used to switch between dark and light mode.'/>
 
-<ToggleTab setCode={setDayNightToggleCode} code={dayNightToggleCode} preview={dayNightTogglePreview} setPreview={setDayNightTogglePreview}/>
+                <ToggleTab setCode={setDayNightToggleCode} code={dayNightToggleCode} preview={dayNightTogglePreview}
+                           setPreview={setDayNightTogglePreview}/>
 
-<ComponentWrapper>
-  {dayNightTogglePreview && (
-      <div className="p-8 mb-4 flex items-center gap-5 justify-center">
-        <div>
-          <style>{`
+                <ComponentWrapper>
+                    {dayNightTogglePreview && (
+                        <div className="p-8 mb-4 flex items-center gap-5 justify-center">
+                            <div>
+                                <style>{`
             .sky {
               background-color: #357bb3;
               height: ${size}px;
@@ -907,58 +1193,58 @@ export default AnimatedButton;
               transform: unset;
             }
           `}</style>
-          <input id="checkbox" type="checkbox" />
-          <label htmlFor="checkbox" className="sky">
-            <div id="sun_wrapper">
-              <div className="ray"></div>
-              <div className="ray"></div>
-              <div className="ray"></div>
-              <div id="sun">
-                <div id="moon">
-                  <div className="spot"></div>
-                  <div className="spot"></div>
-                  <div className="spot"></div>
-                </div>
-              </div>
-            </div>
-            <div className="cloud_wrapper">
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-            </div>
-            <div className="cloud_wrapper">
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-              <div className="cloud"></div>
-            </div>
-            <div id="stars">
-              {[...Array(9)].map((_, i) => (
-                <div className="star" key={`star-${i}`}>
-                  <div className="base"></div>
-                  <div className="ray"></div>
-                  <div className="ray"></div>
-                  <div className="ray"></div>
-                  <div className="ray"></div>
-                </div>
-              ))}
-            </div>
-          </label>
-        </div>
-      </div>
-  )}
+                                <input id="checkbox" type="checkbox"/>
+                                <label htmlFor="checkbox" className="sky">
+                                    <div id="sun_wrapper">
+                                        <div className="ray"></div>
+                                        <div className="ray"></div>
+                                        <div className="ray"></div>
+                                        <div id="sun">
+                                            <div id="moon">
+                                                <div className="spot"></div>
+                                                <div className="spot"></div>
+                                                <div className="spot"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="cloud_wrapper">
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                    </div>
+                                    <div className="cloud_wrapper">
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                        <div className="cloud"></div>
+                                    </div>
+                                    <div id="stars">
+                                        {[...Array(9)].map((_, i) => (
+                                            <div className="star" key={`star-${i}`}>
+                                                <div className="base"></div>
+                                                <div className="ray"></div>
+                                                <div className="ray"></div>
+                                                <div className="ray"></div>
+                                                <div className="ray"></div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    )}
 
-  {dayNightToggleCode && (
-      <ShowCode code={`
+                    {dayNightToggleCode && (
+                        <ShowCode code={`
 import React from 'react';
 
 const DayNightToggle = ({ size = 60, animationSpeed = .7 }) => {
@@ -1346,14 +1632,302 @@ const DayNightToggle = ({ size = 60, animationSpeed = .7 }) => {
 
 export default DayNightToggle;
               `}/>
-          )}
-        </ComponentWrapper>
+                    )}
+                </ComponentWrapper>
+
+                <div className="mt-8">
+                    <ContentHeader text={"Celebration Button"} id={"celebration_button"} />
+                </div>
+                <ComponentDescription text='A button with a celebration/confetti animation on click, providing delightful feedback for success actions.' />
+                <ToggleTab setCode={setCelebrationButtonCode} code={celebrationButtonCode} preview={celebrationButtonPreview} setPreview={setCelebrationButtonPreview} />
+                <ComponentWrapper>
+                  {celebrationButtonPreview && (
+                    <div className="p-8 mb-4 flex items-center gap-5 justify-center">
+                      <CelebrationButton />
+                    </div>
+                  )}
+                  {celebrationButtonCode && (
+                    <ShowCode code={`
+// CelebrationButton.jsx
+import React, { useState, useRef, useEffect } from "react";
+const PARTICLE_COUNT = 90;
+const COLORS = [
+  "#f87171", "#60a5fa", "#34d399", "#fbbf24",
+  "#a78bfa", "#f472b6", "#f59e0b", "#10b981",
+];
+const GRAVITY = 0.35;
+const DRAG = 0.92;
+const SHAPES = ["rect", "line", "circle", "triangle", "star"];
+function randomRange(min, max) {
+  return Math.random() * (max - min) + min;
+}
+function CelebrationButton({ label = "Claim", successText = "Success" }) {
+  const [particles, setParticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [buttonText, setButtonText] = useState(label);
+  const buttonRef = useRef(null);
+  const animationRef = useRef(null);
+  function createParticles() {
+    if (!buttonRef.current) return;
+    const rect = buttonRef.current.getBoundingClientRect();
+    const originX = rect.left + rect.width / 2;
+    const originY = rect.top + rect.height / 2;
+    const newParticles = [];
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      const angle = randomRange(40, 140) * (Math.PI / 180);
+      const speed = randomRange(10, 20);
+      newParticles.push({
+        id: Math.random().toString(36).slice(2),
+        x: originX,
+        y: originY,
+        vx: Math.cos(angle) * speed * (Math.random() > 0.5 ? 1 : -1) * randomRange(0.5, 1),
+        vy: -Math.sin(angle) * speed,
+        color: COLORS[Math.floor(Math.random() * COLORS.length)],
+        size: randomRange(4, 10),
+        life: 50 + Math.floor(Math.random() * 30),
+        shape: SHAPES[Math.floor(Math.random() * SHAPES.length)],
+        rotationZ: randomRange(0, 360),
+        rotationZSpeed: randomRange(-20, 20),
+        rotationY: randomRange(0, 360),
+        rotationYSpeed: randomRange(-15, 15),
+        scale: 1,
+        scaleSpeed: randomRange(-0.015, -0.005),
+        opacity: 1,
+      });
+    }
+    setParticles(newParticles);
+  }
+  function handleClick() {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      setButtonText(successText);
+      createParticles();
+      setTimeout(() => setButtonText(label), 2000);
+    }, 1000);
+  }
+  useEffect(() => {
+    if (particles.length === 0) return;
+    function animate() {
+      setParticles((oldParticles) =>
+        oldParticles
+          .map((p) => {
+            let { x, y, vx, vy, life, rotationZ, rotationY, opacity, scale, scaleSpeed } = p;
+            vy += GRAVITY;
+            vx *= DRAG;
+            vy *= DRAG;
+            x += vx;
+            y += vy;
+            rotationZ += p.rotationZSpeed;
+            rotationY += p.rotationYSpeed;
+            life -= 1;
+            if (life < 30) {
+              opacity = Math.max(0, life / 30);
+            }
+            scale += scaleSpeed;
+            if (scale < 0) scale = 0;
+            return { ...p, x, y, vx, vy, life, rotationZ, rotationY, opacity, scale };
+          })
+          .filter((p) => p.life > 0 && p.y < window.innerHeight + 100)
+      );
+      animationRef.current = requestAnimationFrame(animate);
+    }
+    animationRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [particles.length]);
+  function renderParticle(p) {
+    const { id, x, y, color, size, shape, rotationZ, rotationY, opacity, scale } = p;
+    const baseStyle = {
+      position: "absolute",
+      left: x,
+      top: y,
+      opacity,
+      pointerEvents: "none",
+      transform: \`translate(-50%, -50%) rotateZ(\${rotationZ}deg) rotateY(\${rotationY}deg) scale(\${scale})\`,
+      filter: "drop-shadow(0 0 2px rgba(0,0,0,0.15))",
+      willChange: "transform, opacity",
+    };
+    switch (shape) {
+      case "line":
+        return (
+          <div
+            key={id}
+            style={{
+              ...baseStyle,
+              width: size * 0.3,
+              height: size * 1.8,
+              backgroundColor: color,
+              borderRadius: size * 0.15,
+            }}
+          />
+        );
+      case "rect":
+        return (
+          <div
+            key={id}
+            style={{
+              ...baseStyle,
+              width: size,
+              height: size * 0.6,
+              backgroundColor: color,
+              borderRadius: size * 0.2,
+            }}
+          />
+        );
+      case "circle":
+        return (
+          <div
+            key={id}
+            style={{
+              ...baseStyle,
+              width: size,
+              height: size,
+              backgroundColor: color,
+              borderRadius: "50%",
+            }}
+          />
+        );
+      case "triangle":
+        return (
+          <div
+            key={id}
+            style={{ ...baseStyle, width: size, height: size }}
+            aria-hidden="true"
+          >
+            <Triangle size={size} color={color} />
+          </div>
+        );
+      case "star":
+        return (
+          <div
+            key={id}
+            style={{ ...baseStyle, width: size * 2, height: size * 2 }}
+            aria-hidden="true"
+          >
+            <Star size={size} color={color} />
+          </div>
+        );
+      default:
+        return null;
+    }
+  }
+  function Triangle({ size, color }) {
+    const path = \`
+      M 0 \${size}
+      L \${size / 2} 0
+      L \${size} \${size}
+      Z
+    \`;
+    return (
+      <svg
+        width={size}
+        height={size}
+        viewBox={\`0 0 \${size} \${size}\`}
+        fill={color}
+        style={{ display: "block" }}
+      >
+        <path d={path} />
+      </svg>
+    );
+  }
+  function Star({ size, color }) {
+    const cx = size;
+    const cy = size;
+    const spikes = 5;
+    const outerRadius = size;
+    const innerRadius = size / 2.5;
+    let rot = Math.PI / 2 * 3;
+    let x = cx;
+    let y = cy;
+    const step = Math.PI / spikes;
+    let path = "";
+    for (let i = 0; i < spikes; i++) {
+      x = cx + Math.cos(rot) * outerRadius;
+      y = cy + Math.sin(rot) * outerRadius;
+      path += \`L\${x} \${y} \`;
+      rot += step;
+      x = cx + Math.cos(rot) * innerRadius;
+      y = cy + Math.sin(rot) * innerRadius;
+      path += \`L\${x} \${y} \`;
+      rot += step;
+    }
+    path += "L" + cx + " " + (cy - outerRadius) + " Z";
+    return (
+      <svg
+        width={size * 2}
+        height={size * 2}
+        viewBox={\`0 0 \${size * 2} \${size * 2}\`}
+        fill={color}
+        style={{ display: "block" }}
+      >
+        <path d={path} />
+      </svg>
+    );
+  }
+  return (
+    <div className="relative">
+      <button
+        ref={buttonRef}
+        onClick={handleClick}
+        disabled={isLoading}
+        className={\`w-32 px-6 py-3 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 text-white font-semibold rounded-lg shadow-lg shadow-pink-500/50 hover:from-pink-600 hover:via-red-600 hover:to-yellow-600 transition-all duration-300 active:scale-90 relative overflow-hidden \${isLoading ? "opacity-50 cursor-not-allowed" : ""}\`}
+      >
+        {isLoading ? (
+          <span className="flex items-center justify-center">
+            <svg
+              className="animate-spin h-5 w-5 text-white"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <circle
+                className="opacity-25"
+                cx="12"
+                cy="12"
+                r="10"
+                stroke="currentColor"
+                strokeWidth="4"
+              ></circle>
+              <path
+                className="opacity-75"
+                fill="currentColor"
+                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+              ></path>
+            </svg>
+          </span>
+        ) : (
+          buttonText
+        )}
+      </button>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          width: "100vw",
+          height: "100vh",
+          overflow: "hidden",
+          pointerEvents: "none",
+          zIndex: 9999,
+          perspective: "800px",
+        }}
+      >
+        {particles.map(renderParticle)}
+      </div>
+    </div>
+  );
+}
+                    `} />
+                  )}
+                </ComponentWrapper>
 
                 <OverviewFooter backUrl='/components/dropdown-button' backName='dropdown button' forwardName='cards'
                                 forwardUrl='/components/cards'/>
             </div>
 
-            <ContentNavbar activeSection={activeSection} contents={animatedButtonContents}/>
+            <ContentNavbar activeSection={activeSection} contents={[
+              ...animatedButtonContents
+            ]}/>
 
             <Helmet>
                 <title>Buttons - Animated Button</title>

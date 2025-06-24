@@ -132,4 +132,9 @@ export const animatedButtonContents = [
     title: 'Theme toggle animation',
     href: '#theme_toggle_animation',
   },
+  {
+    id: 11,
+    title: 'Celebration Button',
+    href: '#celebration_button',
+  },
 ];
