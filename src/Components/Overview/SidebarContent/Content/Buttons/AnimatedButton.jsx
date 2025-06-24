@@ -1926,8 +1926,7 @@ function CelebrationButton({ label = "Claim", successText = "Success" }) {
             </div>
 
             <ContentNavbar activeSection={activeSection} contents={[
-              ...animatedButtonContents,
-              { id: 11, title: "Celebration Button", href: "#celebration_button" }
+              ...animatedButtonContents
             ]}/>
 
             <Helmet>
