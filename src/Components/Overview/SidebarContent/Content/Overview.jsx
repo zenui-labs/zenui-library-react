@@ -1,7 +1,6 @@
 import React from "react";
 
 // shared components
-import OverviewFooter from "@shared/OverviewFooter";
 import ContentHeader from "@shared/ContentHeader";
 
 // react helmet
@@ -23,9 +22,9 @@ const Overview = () => {
             </p>
 
             <div className="mt-8 w-full text-text">
-                <ContentHeader text={"Introduction"}/>
+                <ContentHeader text={"About ZenUI"}/>
                 <p className="mt-3 dark:text-darkSubTextColor">
-                    ZenUI is a developer-friendly platform offering over 600+ meticulously crafted components and
+                    ZenUI is a developer-friendly platform offering over 700+ meticulously crafted components and
                     templates. These resources are designed to save you time and elevate your creativity by providing
                     modern, reusable elements that fit seamlessly into any project.
                 </p>
@@ -39,12 +38,14 @@ const Overview = () => {
             </div>
 
             <div className="mt-8 w-full text-text">
-                <ContentHeader text={"What's New in ZenUI Library?"}/>
+                <ContentHeader text={"What will you get?"}/>
                 <ul className="flex flex-col gap-3 list-disc ml-8 mt-3">
-                    {/*<li className="p-0 hover:bg-transparent border-none hover:border-none hover:font-[400] hover:bg-secondary">*/}
-                    {/*    <b>Portfolio Website Templates:</b> Launch your portfolio with our new, sleek, and fully*/}
-                    {/*    customizable templates. Showcase your work in style without the need to code from the ground up.*/}
-                    {/*</li>*/}
+                    <li className="p-0 hover:bg-transparent border-none hover:border-none hover:font-[400] hover:bg-secondary">
+                        <b>Reusable Advanced Components:</b> Access a suite of highly customizable, production-ready
+                        components built with best practices in mind. From complex forms to interactive tabs and
+                        accordions, these components save development time while ensuring consistency across your
+                        project.
+                    </li>
                     <li className="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
                         <b>Multi-Page Website Templates:</b> Choose from a variety of pre-built multi-page templates,
                         perfect for businesses, blogs, and more. These templates are crafted to help you quickly
@@ -52,7 +53,7 @@ const Overview = () => {
                         an online presence.
                     </li>
                     <li className="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-                        <b>Essential Blocks:</b> Access a wide range of essential UI blocks that you can mix and match
+                        <b>Website Blocks:</b> Access a wide range of essential UI blocks that you can mix and match
                         to
                         create unique page layouts effortlessly.
                     </li>
@@ -61,7 +62,13 @@ const Overview = () => {
                         easy integration and customization options.
                     </li>
                     <li className="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
-                        <b>Opacity Palette:</b> Introducing the custom color opacity palette. A versatile tool that
+                        <b>Animated Components:</b> Bring your website to life with a collection of ready-to-use
+                        animated components using Framer-Motion. These subtle yet impactful animations improve user
+                        engagement and provide a
+                        polished, professional look to any design.
+                    </li>
+                    <li className="p-0 hover:bg-transparent border-none dark:text-darkSubTextColor hover:border-none hover:font-[400] hover:bg-secondary">
+                        <b>Color Palette:</b> Introducing the custom color opacity palette. A versatile tool that
                         allows
                         you to explore different opacity variations of colors. Simply paste your color code, and the
                         palette will generate a range of opacity levels along with the corresponding HEX, RGB, and HSL

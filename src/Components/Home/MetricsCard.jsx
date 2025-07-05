@@ -5,8 +5,11 @@ import {FaStar} from "react-icons/fa";
 import {BiLayout} from "react-icons/bi";
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
+import {useGitHubStars} from "@/CustomHooks/useGithubStars.js";
 
 const MetricsCard = () => {
+    const {stars} = useGitHubStars("Asfak00", "zenui-library")
+
     const metrics = [
         {
             icon: <MdOutlineFileDownload className="h-10 w-10 text-white"/>,
@@ -16,7 +19,7 @@ const MetricsCard = () => {
         },
         {
             icon: <BiLayout className="h-10 w-10 text-white"/>,
-            value: "500+",
+            value: "700+",
             label: "UI Components",
             bgColor: "bg-gradient-to-br from-green-500 to-green-400"
         },
@@ -28,7 +31,7 @@ const MetricsCard = () => {
         },
         {
             icon: <FaStar className="h-9 w-9 text-white"/>,
-            value: "303+",
+            value: stars + "+",
             label: "Github Stars",
             bgColor: "bg-gradient-to-br from-orange-500 to-orange-400"
         }

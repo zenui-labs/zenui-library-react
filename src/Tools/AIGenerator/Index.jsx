@@ -27,8 +27,7 @@ const Index = () => {
                 AI
                 - <span>TailwindCSS Config Generator</span></h4>
             <p className='w-full 640px:w-[90%] 1024px:w-[55%] 1024px:mt-0 text-center text-[0.9rem] 1024px:text-[1rem] font-normal text-gray-600 dark:text-darkSubTextColor'>
-                Config AI will provide you with a ready-to-use configuration by generating a <span
-                className='bg-primary/10 text-primary px-2 py-0.5 rounded'>tailwind.config.js</span> file with custom
+                Config AI will provide you with a ready-to-use TailwindCSS v4 configuration with custom
                 colors, fonts, and other settings tailored to your project needs.
             </p>
 

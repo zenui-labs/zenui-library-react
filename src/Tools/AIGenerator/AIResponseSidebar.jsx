@@ -72,7 +72,7 @@ const AIResponseSidebar = ({sidebarOpen, setSidebarOpen, codes, isGenerating}) =
                     </div>
                 ) : (
                     <SyntaxHighlighter
-                        language="javascript"
+                        language="scss"
                         style={dracula}
                         className='zenui_code_snippet overflow-x-scroll rounded-high dark:border-darkBorderColor dark:border h-full 425px:max-w-[380px] 640px:max-w-[780px] 1605px:max-w-[1177px] text-[0.9rem] w-full 1404px:max-w-[1107px] 1024px:max-w-[730px] 1260px:max-w-[880px] max-h-[380px] 1024px:max-h-[480px] max-w-[325px]'
                         showLineNumbers

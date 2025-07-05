@@ -17,6 +17,7 @@ import CommandIcon from "@/SvgIcons/CommandIcon.jsx";
 import VersionSelectBox from "@/Components/Home/VersionSelectBox.jsx";
 import {CountUp} from "use-count-up";
 import {useGitHubStars} from "@/CustomHooks/useGithubStars.js";
+import UpdateBadge from "@shared/UpdateBadge.jsx";
 
 const NewMobileNavbar = () => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -185,12 +186,13 @@ const NewMobileNavbar = () => {
                             </span>
                 </div>
                 <ul className='text-gray-600 flex flex-col mt-5 items-start gap-4 font-[500] capitalize text-[1rem]'>
-                    <Link to='/about-us' className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>About
+                    <Link to='/about-us'
+                          className='!text-[1rem] hover:!border-none hover:!bg-transparent dark:text-darkSubTextColor !pl-0 !font-[500]'>About
                         Us</Link>
                     <Link to='/docs/overview'
-                          className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>Documentation</Link>
+                          className='!text-[1rem] dark:text-darkSubTextColor hover:!border-none hover:!bg-transparent !pl-0 !font-[500]'>Documentation</Link>
                     <Link to='/components/all-components'
-                          className='!text-[1rem] dark:text-darkSubTextColor !pl-0 !font-[500]'>Components</Link>
+                          className='!text-[1rem] dark:text-darkSubTextColor hover:!border-none hover:!bg-transparent !pl-0 !font-[500]'>Components</Link>
                     <li onClick={() => setToolsDropdownOpen(!toolsDropdownOpen)}
                         className='cursor-pointer relative dark:text-darkSubTextColor flex items-center gap-[8px]'>
                         Tools
@@ -207,7 +209,8 @@ const NewMobileNavbar = () => {
                                 className="grid grid-cols-1 gap-[20px] ml-4"
                             >
                                 <div className='flex flex-col gap-[20px] text-[1rem]'>
-                                    <Link to='/shortcut-generator' className='!p-0'>
+                                    <Link to='/shortcut-generator'
+                                          className='!p-0 hover:!border-none hover:!bg-transparent'>
                                         <div className='flex items-center gap-[10px]'>
                                             <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                                 ShotKey
@@ -216,7 +219,7 @@ const NewMobileNavbar = () => {
                                         <span className='text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500'>generate keyboard shortcuts easily.</span>
                                     </Link>
                                     <Link to='/icons'
-                                          className='!p-0'>
+                                          className='!p-0 hover:!border-none hover:!bg-transparent'>
                                         <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                             Icons
                                         </p>
@@ -226,7 +229,7 @@ const NewMobileNavbar = () => {
 
                                 <div className='flex flex-col gap-[20px] text-[1rem]'>
                                     <Link to='/color-palette'
-                                          className='!p-0'>
+                                          className='!p-0 hover:!border-none hover:!bg-transparent'>
                                         <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                             Color Palettes
                                         </p>
@@ -235,23 +238,19 @@ const NewMobileNavbar = () => {
                                     </Link>
 
                                     <Link to='/config-generator'
-                                          className='!p-0'>
+                                          className='!p-0 hover:!border-none hover:!bg-transparent'>
                                         <div className='flex items-center gap-[10px]'>
                                             <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                                 Config AI
                                             </p>
-
-                                            <div
-                                                className='bg-red-50 rounded-full py-0.5 px-2 text-[0.5rem] font-normal text-red-600 border border-red-600'>
-                                                For Tailwind v3
-                                            </div>
+                                            <UpdateBadge/>
                                         </div>
                                         <span
                                             className='text-[0.8rem] dark:text-slate-400 font-[300] text-gray-500'>Generate tailwind config file by AI.</span>
                                     </Link>
 
                                     <Link to='/semantic-tag-master'
-                                          className='!p-0'>
+                                          className='!p-0 hover:!border-none hover:!bg-transparent'>
                                         <div className='flex items-center gap-[10px]'>
                                             <p className='cursor-pointer dark:text-darkSubTextColor leading-[20px] text-gray-600 transition-all duration-200'>
                                                 Semantic TagMaster

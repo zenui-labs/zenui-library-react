@@ -159,6 +159,13 @@ const Content = () => {
                     {
                         title: "Cards",
                         url: "/components/cards",
+                        parent: 'SURFACES'
+                    },
+                    {
+                        title: "Drawer",
+                        url: "/components/drawer",
+                        parent: 'SURFACES',
+                        isNewComponent: true,
                     },
                     {
                         title: "Animated Cards",
@@ -213,6 +220,12 @@ const Content = () => {
                         url: "/components/marquee",
                         parent: 'NAVIGATION',
                     },
+                    // {
+                    //     title: "Slider",
+                    //     url: "/components/slider",
+                    //     parent: 'NAVIGATION',
+                    //     isNewComponent: true,
+                    // },
                     {
                         title: "Timer",
                         url: "/components/timer",
@@ -236,7 +249,8 @@ const Content = () => {
                     {
                         title: "Modal",
                         url: "/components/modal",
-                        parent: 'NAVIGATION'
+                        parent: 'NAVIGATION',
+                        isUpdated: true,
                     },
                     {
                         title: "Tabs",

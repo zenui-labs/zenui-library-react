@@ -223,21 +223,6 @@ export const modalContents = [
     },
     {
         id: 6,
-        title: 'Cookie Modal',
-        href: '#Cookie_modal',
-    },
-    {
-        id: 7,
-        title: 'FullScreen Modal',
-        href: '#full_screen_modal',
-    },
-    {
-        id: 8,
-        title: 'Side Modal',
-        href: '#side_modal',
-    },
-    {
-        id: 9,
         title: 'Delete Modal',
         href: '#delete_modal',
     },
@@ -279,5 +264,34 @@ export const tabsContents = [
         id: 7,
         title: 'Toggle Navigation',
         href: '#toggle_button',
+    },
+];
+
+// drawer contents
+export const drawerContents = [
+    {
+        id: 1,
+        title: 'Drawer Top',
+        href: '#drawer_top',
+    },
+    {
+        id: 2,
+        title: 'Drawer Bottom',
+        href: '#drawer_bottom',
+    },
+    {
+        id: 3,
+        title: 'Drawer Left',
+        href: '#drawer_left',
+    },
+    {
+        id: 4,
+        title: 'Drawer Right',
+        href: '#drawer_right',
+    },
+    {
+        id: 5,
+        title: 'Full Screen Drawer',
+        href: '#full_screen_drawer',
     },
 ];

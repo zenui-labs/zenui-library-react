@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 const HorizontalComparisonExample = () => {
     const [sliderPosition, setSliderPosition] = useState(50);
@@ -32,7 +32,7 @@ const HorizontalComparisonExample = () => {
     useEffect(() => {
         document.addEventListener('mousemove', handleMouseMove);
         document.addEventListener('mouseup', stopDragging);
-        document.addEventListener('touchmove', handleTouchMove, { passive: true });
+        document.addEventListener('touchmove', handleTouchMove, {passive: true});
         document.addEventListener('touchend', stopDragging);
 
         return () => {
@@ -65,15 +65,16 @@ const HorizontalComparisonExample = () => {
                 }}
             />
 
-            {/* Slider Handle */}
+            {/* SwiperSlider Handle */}
             <div
                 className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
-                style={{ left: `${sliderPosition}%` }}
+                style={{left: `${sliderPosition}%`}}
                 onMouseDown={startDragging}
                 onTouchStart={startDragging}
             >
                 <div className="absolute top-1/2 left-1/2 w-8 h-8 -translate-x-1/2 -translate-y-1/2">
-                    <div className="w-full h-full rounded-full border-[3px] border-white bg-[#0FABCA] shadow-lg flex items-center justify-center">
+                    <div
+                        className="w-full h-full rounded-full border-[3px] border-white bg-[#0FABCA] shadow-lg flex items-center justify-center">
                         <div className="flex gap-[5px] justify-evenly">
                             <div className="w-0.5 h-4 bg-white"></div>
                             <div className="w-0.5 h-4 bg-white"></div>

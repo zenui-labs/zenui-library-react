@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {useToggleCardView} from "../../CustomHooks/ButtonToggle.js";
+import {useToggleCardView} from "@/CustomHooks/ButtonToggle.js";
 import {LuSettings2} from "react-icons/lu";
 
 // store

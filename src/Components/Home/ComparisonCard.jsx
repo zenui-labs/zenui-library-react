@@ -65,7 +65,7 @@ const ComparisonCard = () => {
                 }}
             />
 
-            {/* Slider Handle */}
+            {/* SwiperSlider Handle */}
             <div
                 className="absolute top-0 bottom-0 w-1 bg-white cursor-ew-resize"
                 style={{left: `${sliderPosition}%`}}

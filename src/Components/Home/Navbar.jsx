@@ -24,6 +24,7 @@ import {ImHtmlFive2} from "react-icons/im";
 import VersionSelectBox from "@/Components/Home/VersionSelectBox.jsx";
 import {useGitHubStars} from "@/CustomHooks/useGithubStars.js";
 import {CountUp} from "use-count-up";
+import UpdateBadge from "@shared/UpdateBadge.jsx";
 
 const Navbar = ({className}) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -220,9 +221,12 @@ const Navbar = ({className}) => {
                                         </div>
 
                                         <div>
-                                            <p className='cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200'>
-                                                Config AI
-                                            </p>
+                                            <div className='flex items-center gap-2'>
+                                                <p className='cursor-pointer dark:text-darkTextColor leading-[20px] text-gray-800 transition-all text-[1.1rem] duration-200'>
+                                                    Config AI
+                                                </p>
+                                                <UpdateBadge/>
+                                            </div>
                                             <span
                                                 className='text-[0.8rem] dark:text-darkSubTextColor font-[300] text-gray-500'>Generate tailwind config file by AI.</span>
                                         </div>

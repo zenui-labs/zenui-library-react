@@ -1,6 +1,6 @@
 import {GoPlus} from "react-icons/go";
 import {RxCross1} from "react-icons/rx";
-import {motion, AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import {useEffect, useState} from "react";
 import {PiOptionBold} from "react-icons/pi";
 
@@ -19,7 +19,7 @@ const shortcuts = [
     {keys: ["Alt", "Z", "O"], description: "Open Icons Tool"},
     {keys: ["Alt", "Z", "S"], description: "Open Shortcut Generator"},
     {keys: ["Alt", "Z", "N"], description: "Open ZenUI npm package"},
-    {keys: ["Space"], description: "Show shortcut cheatsheet modal"},
+    {keys: ["Shift", "Space"], description: "Show shortcut cheatsheet modal"},
 ];
 
 const backdropVariants = {

@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Index from "@components/Surfaces/DragAndDrop/Index.jsx";
+import SwiperSlider from "@components/Navigation/SwiperSlider/Index.jsx";
 import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
-const DragAndDropPage = () => {
+const StepsPage = () => {
     return (
         <ContentPageLayout>
-            <Index/>
+            <SwiperSlider/>
         </ContentPageLayout>
     );
 };
 
-export default DragAndDropPage;
+export default StepsPage;

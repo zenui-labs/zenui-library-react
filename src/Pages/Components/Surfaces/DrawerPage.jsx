@@ -1,15 +1,15 @@
 import React from "react";
 
 // components
-import Index from "@components/Surfaces/DragAndDrop/Index.jsx";
+import Drawer from "@components/Surfaces/Drawer/Index.jsx";
 import ContentPageLayout from "@shared/ContentPageLayout.jsx";
 
-const DragAndDropPage = () => {
+const DrawerPage = () => {
     return (
         <ContentPageLayout>
-            <Index/>
+            <Drawer/>
         </ContentPageLayout>
     );
 };
 
-export default DragAndDropPage;
+export default DrawerPage;

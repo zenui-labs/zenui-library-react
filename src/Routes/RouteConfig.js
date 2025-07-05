@@ -50,6 +50,7 @@ const NavigationRoutes = [
     {path: "/components/breadcrumb", component: lazy(() => import("@pages/Components/Navigation/BreadcrumbPage"))},
     {path: "/components/rating", component: lazy(() => import("@pages/Components/Navigation/RatingPage"))},
     {path: "/components/stepper", component: lazy(() => import("@pages/Components/Navigation/StepsPage"))},
+    {path: "/components/slider", component: lazy(() => import("@pages/Components/Navigation/SwiperSliderPage"))},
 ];
 
 // Feedback Component Routes
@@ -81,6 +82,10 @@ const SurfaceRoutes = [
     {
         path: "/components/resizable-layout",
         component: lazy(() => import("@pages/Components/Surfaces/ResizableLayoutPage"))
+    },
+    {
+        path: "/components/drawer",
+        component: lazy(() => import("@pages/Components/Surfaces/DrawerPage"))
     },
 ];
 
