@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {AnimatePresence, motion} from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
 
@@ -162,7 +162,7 @@ const ZenUITools = () => {
                                             className="overflow-hidden"
                                         >
                                             <motion.p
-                                                initial={{opacity: 0, y: 10}}
+                                                initial={{ opacity: 0, y: 10 }}
                                                 animate={{
                                                     opacity: 1,
                                                     y: 0,
@@ -191,7 +191,7 @@ const ZenUITools = () => {
                 </motion.div>
 
                 <motion.div
-                    initial={{opacity: 0, x: 50}}
+                    initial={{ opacity: 0, x: 50 }}
                     animate={{
                         opacity: 1,
                         x: 0,
@@ -227,7 +227,7 @@ const ZenUITools = () => {
                                 }
                             }}
                             alt="image"
-                            className='w-full h-full rounded-normal'
+                            className='w-full h-full max-h-[500px] rounded-normal'
                         />
                     </AnimatePresence>
                 </motion.div>
