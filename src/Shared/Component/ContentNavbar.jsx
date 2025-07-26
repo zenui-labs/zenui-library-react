@@ -87,8 +87,8 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                         <div
                             className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
                         ></div>
-                        <a href='https://www.softollyo.com/' target='_blank' rel='noreferrer'>
-                            <img alt='softollyo.com' src='/sponsor-image.png'
+                        <a href='https://readmestudio.zenui.net/' target='_blank' rel='noreferrer'>
+                            <img alt='softollyo.com' src='/small_ads_for_zenui.png'
                                  className='rounded-high max-w-[200px]'/>
                         </a>
                         <div

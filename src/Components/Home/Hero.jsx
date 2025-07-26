@@ -8,6 +8,7 @@ import {TbBrandFramerMotion, TbBrandNextjs} from "react-icons/tb";
 import {IoChevronForward} from "react-icons/io5";
 import {useEffect, useState} from "react";
 import useZenuiStore from "@store";
+import ShimmerButton from "@/Components/Home/ShimmerButton.jsx";
 
 const Hero = () => {
     const [darkModeWithDelay, setDarkModeWithDelay] = useState(false)
@@ -51,25 +52,27 @@ const Hero = () => {
 
             <div className="1024px:w-[80%] 1360px:w-[65%] text-center mx-auto w-full">
 
-                <div
-                    className="flex items-center flex-col 640px:flex-row gap-2 justify-center 640px:gap-4 mb-4 640px:mb-4">
-                    <a href='https://www.npmjs.com/package/zenui-image-react'
-                       target='_blank' rel="noreferrer"
-                       className='p-2 pr-3 rounded-[10px] dark:border-slate-700 dark:bg-slate-900 select-none hover:bg-gray-50 transition-all duration-200 border border-border dark:hover:bg-slate-900 flex items-center gap-2'>
-                        <img src='https://i.ibb.co/D2MSBtc/images-removebg-preview-4.png' alt='npm package'
-                             className='w-[25px] rounded-high'/>
-                        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>ZenUI Image
-                            React</p>
-                    </a>
-                    <a
-                        className='p-[9px] pr-[18px] 640px:pr-3 dark:border-slate-700 dark:bg-slate-900 rounded-[10px] select-none cursor-not-allowed transition-all duration-200 border border-border flex items-center gap-2'>
-                        <img src='https://i.ibb.co/1fjC2SkM/Google-Chrome-icon-February-2022-svg.png'
-                             alt='chrome extension'
-                             className='w-[23px] rounded-high'/>
-                        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>Extension
-                            coming</p>
-                    </a>
-                </div>
+                <ShimmerButton/>
+
+                {/*<div*/}
+                {/*    className="flex items-center flex-col 640px:flex-row gap-2 justify-center 640px:gap-4 mb-4 640px:mb-4">*/}
+                {/*    <a href='https://www.npmjs.com/package/zenui-image-react'*/}
+                {/*       target='_blank' rel="noreferrer"*/}
+                {/*       className='p-2 pr-3 rounded-[10px] dark:border-slate-700 dark:bg-slate-900 select-none hover:bg-gray-50 transition-all duration-200 border border-border dark:hover:bg-slate-900 flex items-center gap-2'>*/}
+                {/*        <img src='https://i.ibb.co/D2MSBtc/images-removebg-preview-4.png' alt='npm package'*/}
+                {/*             className='w-[25px] rounded-high'/>*/}
+                {/*        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>ZenUI Image*/}
+                {/*            React</p>*/}
+                {/*    </a>*/}
+                {/*    <a*/}
+                {/*        className='p-[9px] pr-[18px] 640px:pr-3 dark:border-slate-700 dark:bg-slate-900 rounded-[10px] select-none cursor-not-allowed transition-all duration-200 border border-border flex items-center gap-2'>*/}
+                {/*        <img src='https://i.ibb.co/1fjC2SkM/Google-Chrome-icon-February-2022-svg.png'*/}
+                {/*             alt='chrome extension'*/}
+                {/*             className='w-[23px] rounded-high'/>*/}
+                {/*        <p className='text-[0.8rem] font-medium dark:text-darkSubTextColor text-text'>Extension*/}
+                {/*            coming</p>*/}
+                {/*    </a>*/}
+                {/*</div>*/}
 
                 <h1
                     className="text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
