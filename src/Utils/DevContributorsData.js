@@ -2,6 +2,7 @@ export const DevContributorsData = [
     {
         name: 'Raihan Uddin Tuhin\n',
         title: 'Web Developer',
+        certificate: 'Raihan',
         image: 'https://avatars.githubusercontent.com/u/98041657?v=4',
         linkedinLink: '',
         twitterLink: '',
@@ -12,6 +13,7 @@ export const DevContributorsData = [
     {
         name: 'Rahamtullah sheikh',
         title: 'Software Engineer',
+        certificate: 'Rahamtullah',
         image: 'https://avatars.githubusercontent.com/u/76489436?v=4',
         linkedinLink: 'https://www.linkedin.com/in/rahamtullah-sheikh-792497205/',
         twitterLink: 'https://x.com/Rahamtullah123',
@@ -22,6 +24,7 @@ export const DevContributorsData = [
     {
         name: 'Danish Kamal',
         title: 'Frontend Developer',
+        certificate: 'Danish',
         image: 'https://avatars.githubusercontent.com/u/46997504?v=4',
         linkedinLink: 'https://www.linkedin.com/in/danishzayan/',
         twitterLink: '',
@@ -32,6 +35,7 @@ export const DevContributorsData = [
     {
         name: 'Eshwar S Devaramane',
         title: 'Software Engineer',
+        certificate: 'Eshwar',
         image: 'https://i.ibb.co.com/WfP5nhm/1712361854052.jpg',
         linkedinLink: 'https://www.linkedin.com/in/eshwar-sdev/',
         twitterLink: '',
@@ -42,6 +46,7 @@ export const DevContributorsData = [
     {
         name: 'phuoctaiismee',
         title: 'Web Developer',
+        certificate: 'phuoctaiismee',
         image: 'https://avatars.githubusercontent.com/u/113773744?v=4',
         linkedinLink: '',
         twitterLink: '',
@@ -52,6 +57,7 @@ export const DevContributorsData = [
     {
         name: 'MD.Asif Ullah',
         title: 'Web Developer',
+        certificate: 'Asif',
         image: 'https://i.ibb.co.com/YNSYsPL/122894322.jpg',
         linkedinLink: 'https://www.linkedin.com/in/DevMdAsif',
         twitterLink: 'https://x.com/DevMdAsif',
@@ -62,6 +68,7 @@ export const DevContributorsData = [
     {
         name: 'Fabian Ajokubi',
         title: 'Frontend Developer',
+        certificate: 'Fabian',
         image: 'https://i.ibb.co.com/DMxRHBd/1704506313487.jpg',
         linkedinLink: 'https://www.linkedin.com/in/fabiconcept/?originalSubdomain=ng',
         twitterLink: '',
@@ -72,6 +79,7 @@ export const DevContributorsData = [
     {
         name: 'Hoang Nguyen',
         title: 'Web Developer',
+        certificate: 'Hoang',
         image: 'https://i.ibb.co.com/VwfFxF3/67743418.jpg',
         linkedinLink: 'https://www.linkedin.com/in/hoang-nguyen-876a12257/',
         twitterLink: 'https://x.com/akirad836',
@@ -82,6 +90,7 @@ export const DevContributorsData = [
     {
         name: 'Misbahul Alam',
         title: 'Full-stack Web Developer',
+        certificate: 'Misbahul',
         image: 'https://avatars.githubusercontent.com/u/88716007?v=4',
         linkedinLink: 'https://www.linkedin.com/in/misbahul-alam',
         twitterLink: '',
@@ -92,6 +101,7 @@ export const DevContributorsData = [
     {
         name: 'Mohammad Shahnwaz',
         title: 'Full-stack Web Developer',
+        certificate: 'Shahnwaz',
         image: 'https://i.ibb.co.com/pwqnW7M/34994498.jpg',
         linkedinLink: '',
         twitterLink: '',
@@ -102,6 +112,7 @@ export const DevContributorsData = [
     {
         name: 'Fazly Alahi\n',
         title: 'React Developer',
+        certificate: 'Fazly',
         image: 'https://pbs.twimg.com/profile_images/1674815594103975936/u8JgyguL_400x400.jpg',
         linkedinLink: 'https://www.linkedin.com/in/fazlyalahiru/',
         twitterLink: 'https://x.com/fazlyalahiru',
@@ -112,6 +123,7 @@ export const DevContributorsData = [
     {
         name: 'Mohiul Islam',
         title: 'Full Stack Web Developer',
+        certificate: 'Mohiul',
         image: 'https://avatars.githubusercontent.com/u/68007928?v=4',
         linkedinLink: '',
         twitterLink: '',
@@ -122,6 +134,7 @@ export const DevContributorsData = [
     {
         name: 'codemine24',
         title: 'Web Developer',
+        certificate: 'codemine24',
         image: 'https://i.ibb.co.com/fdSvvkYp/pngtree-person-gray-photo-placeholder-man-silhouette-on-gray-background-png-image-4847624.png',
         linkedinLink: '',
         twitterLink: '',

@@ -8,6 +8,7 @@ import {DevContributorsData} from "@utils/DevContributorsData.js";
 import {AiOutlineGlobal} from "react-icons/ai";
 import SectionHead from "./SectionHead.jsx";
 import SectionWrapper from "./SectionWrapper.jsx";
+import {PiCertificate} from "react-icons/pi";
 
 const Team = () => {
     const socialIconsContainer = {
@@ -33,6 +34,39 @@ const Team = () => {
     };
 
     const MemberCard = ({member, isMemberDev = false}) => {
+
+        const handleDownloadCertificate = async (certificate) => {
+            if (!certificate) return;
+
+            try {
+                const imagePath = `/certificates/certificate-${certificate}.png`;
+
+                const response = await fetch(imagePath);
+
+                if (!response.ok) {
+                    throw new Error('Image not found');
+                }
+
+                const blob = await response.blob();
+
+                const blobUrl = URL.createObjectURL(blob);
+
+                const link = document.createElement("a");
+                link.href = blobUrl;
+                link.setAttribute("download", `zenui-contributor-certificate.png`);
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                URL.revokeObjectURL(blobUrl);
+
+            } catch (error) {
+                console.error('Error downloading certificate:', error);
+                alert('Certificate not found or could not be downloaded');
+            }
+        };
+
+
         return (
             <motion.div
                 initial="hidden"
@@ -60,7 +94,11 @@ const Team = () => {
                 <div
                     className='absolute bottom-[0.7rem] text-center rounded-normal py-3 w-[90%] left-[50%] translate-x-[-50%] backdrop-blur-md'>
                     <h3 className='text-[1.15rem] font-[500] text-white dark:text-darkTextColor'>{member?.name}</h3>
-                    <p className='text-[1rem] text-white/80 font-[300] dark:text-darkSubTextColor/80'>{member?.title}</p>
+                    <p className='text-[1rem] text-white/80 font-[300] dark:text-darkSubTextColor/80 flex justify-center items-center gap-2'>{member?.title}
+                        <PiCertificate
+                            onClick={() => handleDownloadCertificate(member?.certificate)}
+                            className='text-[1.2rem] text-brandColor hover:scale-[1.2] transition-all duration-200'/>
+                    </p>
                 </div>
 
                 {/* Social icons container with motion */}
