@@ -14,7 +14,7 @@ import {Helmet} from 'react-helmet';
 // icons
 import {RiAccountCircleLine, RiLockPasswordLine} from 'react-icons/ri';
 import {MdOutlineMail} from 'react-icons/md';
-import {IoEyeOutline, IoEyeOffOutline, IoSearch} from 'react-icons/io5';
+import {IoEyeOffOutline, IoEyeOutline, IoSearch} from 'react-icons/io5';
 
 // showing the code
 import Showcode from '@shared/Component/ShowCode.jsx';
@@ -87,6 +87,8 @@ const TextInput = () => {
         setPriceDropdownOpen(false);
     };
 
+    const [animatedInputValue, setAnimatedInputValue] = useState('');
+
     return (
         <>
             <aside className='flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
@@ -132,7 +134,7 @@ const TextInput = () => {
         <div className="w-full md:w-[80%]">
             <label
                 htmlFor="name"
-                className="text-[15px] dark:text-slate-300 text-text font-[400]"
+                className="text-[15px] dark:text-slate-300 text-[#424242] font-[400]"
             >
                 Name <span className="text-red-500">*</span>
             </label>
@@ -141,7 +143,7 @@ const TextInput = () => {
                 name="name"
                 id="name"
                 placeholder="Your name"
-                className="border-border dark:bg-transparent dark:border-slate-600 dark:placeholder:text-slate-600 dark:text-slate-300 border rounded-md outline-none px-4 w-full mt-1 py-3 focus:border-primary transition-colors duration-300"
+                className="border-[#e5eaf2] dark:bg-transparent dark:border-slate-600 dark:placeholder:text-slate-600 dark:text-slate-300 border rounded-md outline-none px-4 w-full mt-1 py-3 focus:border-[#3B9DF8] transition-colors duration-300"
             />
         </div>
     );
@@ -187,7 +189,7 @@ export default TextInput;
    name="name"
    id="name"
    placeholder="Your name"
-   className="border-border dark:bg-slate-900 dark:text-[#abc2d3] dark:border-slate-600 border-b outline-none px-4 w-full 1024px:w-[80%] py-3 focus:border-primary transition-colors duration-300"
+   className="border-[#e5eaf2] dark:bg-slate-900 dark:text-[#abc2d3] dark:border-slate-600 border-b outline-none px-4 w-full 1024px:w-[80%] py-3 focus:border-[#3B9DF8] transition-colors duration-300"
 />
                     '
                             />
@@ -214,13 +216,15 @@ export default TextInput;
                                     <input
                                         type='text'
                                         name='name'
+                                        value={animatedInputValue}
+                                        onChange={(e) => setAnimatedInputValue(e.target.value)}
                                         id='name'
                                         className='peer border-border dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300'
                                     />
                                     <span
-                                        className=' absolute top-3.5 dark:peer-focus:bg-darkBgColor left-5 peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300 '>
-                    Your name
-                  </span>
+                                        className={`${animatedInputValue ? '-top-3 left-2 scale-[0.9] bg-white px-[4px]' : 'left-5 top-3'} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300`}>
+                                            Your name
+                                    </span>
                                 </label>
                             </div>
                         )}
@@ -228,22 +232,25 @@ export default TextInput;
                         {animateLabelCode && (
                             <Showcode
                                 code='
-import React from "react";
+import React, {useState} from "react";
 
 const TextInput = () => {
+    const [name, setName] = useState("");
 
     return (
         <label className="relative w-full md:w-[80%]">
             <input
                 type="text"
                 name="name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
                 id="name"
-                className="peer border-border dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300"
+                className="peer border-[#e5eaf2] dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
             />
             <span
-                className=" absolute top-3.5 dark:peer-focus:bg-darkBgColor left-5 peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                    Your name
-                  </span>
+                className={`${name ? "-top-3 left-2 scale-[0.9] bg-white px-[4px]" : "left-5 top-3"} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`}>
+                Your name
+            </span>
         </label>
     );
 };
@@ -328,7 +335,7 @@ const TextInput = () => {
                     name="text"
                     id="text"
                     placeholder="Username"
-                    className="peer border-border dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-primary transition-colors duration-300"
+                    className="peer border-[#e5eaf2] dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                 />
             </div>
 
@@ -341,7 +348,7 @@ const TextInput = () => {
                     name="password"
                     id="password"
                     placeholder="Password"
-                    className="peer border-border dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-primary transition-colors duration-300"
+                    className="peer border-[#e5eaf2] dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                 />
             </div>
 
@@ -354,7 +361,7 @@ const TextInput = () => {
                     name="email"
                     id="email"
                     placeholder="Email address"
-                    className="peer border-border dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-primary transition-colors duration-300"
+                    className="peer border-[#e5eaf2] dark:bg-slate-900 dark:placeholder:text-slate-500 dark:text-[#abc2d3] dark:border-slate-600 border rounded-md outline-none pl-10 pr-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                 />
             </div>
         </div>
@@ -428,7 +435,7 @@ const TextInput = () => {
         <div className="w-full md:w-[80%]">
             <label
                 htmlFor="password"
-                className="text-[15px] dark:text-[#abc2d3] text-text font-[400]"
+                className="text-[15px] dark:text-[#abc2d3] text-[#424242] font-[400]"
             >
                 Password
             </label>
@@ -438,7 +445,7 @@ const TextInput = () => {
                     name="password"
                     id="password"
                     placeholder="Password"
-                    className="peer border-border dark:border-slate-600 dark:bg-slate-900 dark:placeholder:text-slate-500 border dark:text-[#abc2d3] rounded-md outline-none pl-4 pr-12 py-3 w-full mt-1 focus:border-primary transition-colors duration-300"
+                    className="peer border-[#e5eaf2] dark:border-slate-600 dark:bg-slate-900 dark:placeholder:text-slate-500 border dark:text-[#abc2d3] rounded-md outline-none pl-4 pr-12 py-3 w-full mt-1 focus:border-[#3B9DF8] transition-colors duration-300"
                 />
                 {isEyeOpen ? (
                     <IoEyeOutline
@@ -502,7 +509,7 @@ const TextInput = () => {
             <input
                 type="text"
                 placeholder="Website url"
-                className="border dark:border-slate-600 dark:text-[#abc2d3] dark:placeholder:text-slate-500 bg-transparent border-border py-3 pr-4 pl-[90px] outline-none w-full rounded-md"
+                className="border dark:border-slate-600 dark:text-[#abc2d3] dark:placeholder:text-slate-500 bg-transparent border-[#e5eaf2] py-3 pr-4 pl-[90px] outline-none w-full rounded-md"
             />
 
             <span
@@ -625,7 +632,7 @@ const PriceInputWithDropdown = () => {
                 <input
                     type="number"
                     placeholder="0"
-                    className="border dark:border-slate-600 bg-transparent dark:text-[#abc2d3] dark:placeholder:text-slate-500 border-border py-3 pl-[65px] pr-[80px] outline-none w-full rounded-md"
+                    className="border dark:border-slate-600 bg-transparent dark:text-[#abc2d3] dark:placeholder:text-slate-500 border-[#e5eaf2] py-3 pl-[65px] pr-[80px] outline-none w-full rounded-md"
                 />
 
                 <div
@@ -643,7 +650,7 @@ const PriceInputWithDropdown = () => {
 
                 <div
                     onClick={() => setPriceDropdownOpen(!priceDropdownOpen)}
-                    className="absolute top-0 right-0 h-full flex dark:border-slate-600 items-center justify-center cursor-pointer border-l border-border px-4"
+                    className="absolute top-0 right-0 h-full flex dark:border-slate-600 items-center justify-center cursor-pointer border-l border-[#e5eaf2] px-4"
                 >
                     <span className="flex items-center gap-[8px] dark:text-slate-300 text-text">
                       {selectedCurrencyType}
@@ -754,7 +761,7 @@ const VariantInputs = () => {
                 <input
                     type="text"
                     placeholder="Search..."
-                    className="border dark:border-slate-600 bg-transparent dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-border py-3 pl-4 pr-[65px] outline-none w-full rounded-md"
+                    className="border dark:border-slate-600 bg-transparent dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-[#e5eaf2] py-3 pl-4 pr-[65px] outline-none w-full rounded-md"
                 />
 
                 <span
@@ -768,7 +775,7 @@ const VariantInputs = () => {
                 <input
                     type="text"
                     placeholder="Search..."
-                    className="border dark:border-slate-600 dark:placeholder:text-slate-500 bg-transparent dark:text-[#abc2d3] border-border py-3 pl-4 pr-[65px] outline-none w-full rounded-md"
+                    className="border dark:border-slate-600 dark:placeholder:text-slate-500 bg-transparent dark:text-[#abc2d3] border-[#e5eaf2] py-3 pl-4 pr-[65px] outline-none w-full rounded-md"
                 />
 
                 <span
@@ -779,13 +786,13 @@ const VariantInputs = () => {
 
             {/* search input with background color */}
             <div
-                className="bg-primary py-4 w-full md:w-[80%] px-5 flex items-center justify-center rounded-full cursor-pointer relative">
+                className="bg-[#3B9DF8] py-4 w-full md:w-[80%] px-5 flex items-center justify-center rounded-full cursor-pointer relative">
                 <IoSearch className="text-[1.3rem] text-white ml-auto"/>
 
                 <input
                     type="text"
                     placeholder="Search..."
-                    className="border dark:bg-slate-900 dark:border-none dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-border absolute top-[2px] left-[3px] h-[90%] w-[85%] py-3 px-4 outline-none rounded-full"
+                    className="border dark:bg-slate-900 dark:border-none dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-[#e5eaf2] absolute top-[2px] left-[3px] h-[90%] w-[85%] py-3 px-4 outline-none rounded-full"
                 />
             </div>
         </div>
@@ -839,11 +846,11 @@ const NewsletterSubscribeInput = () => {
             <input
                 type="email"
                 placeholder="Email"
-                className="border bg-transparent dark:border-slate-500 dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-border py-3 pl-4 pr-[115px] outline-none w-full rounded-md"
+                className="border bg-transparent dark:border-slate-500 dark:placeholder:text-slate-500 dark:text-[#abc2d3] border-[#e5eaf2] py-3 pl-4 pr-[115px] outline-none w-full rounded-md"
             />
 
             <span
-                className="bg-primary text-white absolute top-0 right-0 h-full px-5 flex items-center justify-center rounded-r-md cursor-pointer hover:bg-gray-400 group">
+                className="bg-[#3B9DF8] text-white absolute top-0 right-0 h-full px-5 flex items-center justify-center rounded-r-md cursor-pointer hover:bg-gray-400 group">
                     Subscribe
                   </span>
         </div>

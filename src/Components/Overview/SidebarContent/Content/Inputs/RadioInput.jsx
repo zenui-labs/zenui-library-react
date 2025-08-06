@@ -90,7 +90,7 @@ const RadioInput = () => {
                 <div
                     className={`${
                         isToggle
-                            ? "bg-primary scale-[1]"
+                            ? "bg-[#3B9DF8] scale-[1]"
                             : "bg-transparent scale-[0.7]"
                     } w-[25px] h-[25px] transition-all duration-200 rounded-full`}
                 ></div>
@@ -165,7 +165,7 @@ const RadioInput = () => {
                 <div
                     className={`${
                         isToggle
-                            ? "bg-primary scale-[1]"
+                            ? "bg-[#3B9DF8] scale-[1]"
                             : "bg-transparent scale-[0.7]"
                     } w-[25px] h-[25px] transition-all duration-200 rounded-md`}
                 ></div>

@@ -34,6 +34,8 @@ const TextareaInput = () => {
     const [animateLabelPreiview, setAnimateLabelPreview] = useState(true);
     const [animateLabelCode, setAnimateLabelCode] = useState(false);
 
+    const [animatedTextValue, setAnimatedTextValue] = useState("");
+
     return (
         <>
             <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
@@ -76,14 +78,14 @@ const TextareaInput = () => {
         <div className="w-full md:w-[80%]">
             <label
                 htmlFor="description"
-                className="font-[400] dark:text-[#abc2d3] text-[15px] text-text"
+                className="font-[400] dark:text-[#abc2d3] text-[15px] text-[#424242]"
             >
                 Description <span className="text-red-500">*</span>
             </label>
             <textarea
                 id="description"
                 placeholder="Write something about zenUI"
-                className="border-border dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border rounded-md outline-none mt-1 px-4 w-full py-3 min-h-[200px] focus:border-primary transition-colors duration-300"
+                className="border-border dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border rounded-md outline-none mt-1 px-4 w-full py-3 min-h-[200px] focus:border-[#3B9DF8] transition-colors duration-300"
             />
         </div>
     );
@@ -138,14 +140,14 @@ const TextareaInput = () => {
         <div className="w-full md:w-[80%]">
             <label
                 htmlFor="description"
-                className="font-[400] dark:text-[#abc2d3] text-[15px] text-text"
+                className="font-[400] dark:text-[#abc2d3] text-[15px] text-[#424242]"
             >
                 Description
             </label>
             <textarea
                 id="name"
                 placeholder="Write something about zenUI"
-                className="border-border dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border outline-none px-4 w-full mt-1 min-h-[100px] bg-gray-200 rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
+                className="border-[#e5eaf2] dark:bg-slate-900 dark:border-slate-700 dark:text-[#abc2d3] dark:placeholder:text-slate-500 border outline-none px-4 w-full mt-1 min-h-[100px] bg-gray-200 rounded-md py-3 focus:border-gray-400 transition-colors duration-300"
             />
         </div>
     );
@@ -177,10 +179,12 @@ export default TextareaInput;
                         <textarea
                             name="name"
                             id="name"
+                            value={animatedTextValue}
+                            onChange={(e) => setAnimatedTextValue(e.target.value)}
                             className="peer dark:border-slate-700 dark:bg-transparent border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] dark:text-darkTextColor py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
                         />
                                     <span
-                                        className="absolute top-3.5 left-5 dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
+                                        className={`${animatedTextValue ? "-top-3 left-2 scale-[0.9] bg-white px-[4px]" : "left-5 top-3.5"} absolute dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`}>
                             Write something about zenUI
                       </span>
                                 </label>
@@ -190,20 +194,23 @@ export default TextareaInput;
                         {animateLabelCode && (
                             <Showcode
                                 code='
-import React from "react";
+import React, {useState} from "react";
 
 const TextareaInput = () => {
+    const [name, setName] = useState("");
 
     return (
         <label className="relative w-full md:w-[80%]">
              <textarea
                  name="name"
                  id="name"
+                 value={name}
+                 onChange={(e) => setName(e.target.value)}
                  className="peer dark:border-slate-700 dark:bg-transparent border-[#e5eaf2] border rounded-md outline-none px-4 min-h-[200px] py-3 dark:text-slate-400 w-full focus:border-[#3B9DF8] transition-colors duration-300"
-            />
+             />
             <span
-                className="absolute top-3.5 left-5 dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300 ">
-                   Write something about zenUI
+                className={`${name ? "-top-3 left-2 scale-[0.9] bg-white px-[4px]" : "left-5 top-3.5"} absolute dark:text-slate-500 dark:peer-focus:bg-[#020617] peer-focus:-top-3 peer-focus:bg-white peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`}>
+                Write something about zenUI
             </span>
         </label>
     );

@@ -24,7 +24,7 @@ export default function ShimmerButton() {
                 <span
                     className="relative z-10 inline-flex items-center justify-center w-full h-full px-6 py-1.5 640px:py-2 text-gray-900 dark:text-white bg-white text-[0.8rem] 640px:text-[0.9rem] dark:bg-gray-900 rounded-full group-hover:bg-gray-100 dark:group-hover:bg-gray-800 transition-colors duration-300">
 
-                    Introduce With Readme Studio
+                    Try Readme Studio Editor
         </span>
             </a>
         </div>
