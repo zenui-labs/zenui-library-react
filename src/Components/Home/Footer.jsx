@@ -56,17 +56,17 @@ const Footer = () => {
                         </p>
 
                         <div className="flex items-center gap-4 mt-5">
-                            <a href="https://web.facebook.com/zenuilibrary" target='_blank' rel="noreferrer">
+                            <a href="https://web.facebook.com/zenuilabs" target='_blank' rel="noreferrer">
                                 <FaFacebook
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
 
-                            <a href="https://www.linkedin.com/company/zenui/" target='_blank' rel="noreferrer">
+                            <a href="https://www.linkedin.com/company/zenui-labs/" target='_blank' rel="noreferrer">
                                 <FaLinkedin
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
 
-                            <a href="https://x.com/zenuilibrary" target='_blank' rel="noreferrer">
+                            <a href="https://x.com/zenuilabs" target='_blank' rel="noreferrer">
                                 <FaXTwitter
                                     className="text-black/70 dark:text-darkSubTextColor text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
                             </a>
