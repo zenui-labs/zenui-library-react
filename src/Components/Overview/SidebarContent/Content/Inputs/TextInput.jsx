@@ -219,10 +219,10 @@ export default TextInput;
                                         value={animatedInputValue}
                                         onChange={(e) => setAnimatedInputValue(e.target.value)}
                                         id='name'
-                                        className='peer border-border dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-primary transition-colors duration-300'
+                                        className='peer border-border dark:border-slate-600 bg-transparent border rounded-md outline-none dark:text-darkTextColor px-4 py-3 w-full focus:border-primary transition-colors duration-300'
                                     />
                                     <span
-                                        className={`${animatedInputValue ? '-top-3 left-2 scale-[0.9] bg-white px-[4px]' : 'left-5 top-3'} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300`}>
+                                        className={`${animatedInputValue ? '-top-3 left-2 scale-[0.9] dark:bg-darkBgColor bg-white px-[4px]' : 'left-5 top-3'} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-primary text-[#777777] peer-focus:px-1 transition-all duration-300`}>
                                             Your name
                                     </span>
                                 </label>
@@ -245,10 +245,10 @@ const TextInput = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 id="name"
-                className="peer border-[#e5eaf2] dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full focus:border-[#3B9DF8] transition-colors duration-300"
+                className="peer border-[#e5eaf2] dark:border-slate-600 bg-transparent border rounded-md outline-none px-4 py-3 w-full dark:text-[#d2e5f5] focus:border-[#3B9DF8] transition-colors duration-300"
             />
             <span
-                className={`${name ? "-top-3 left-2 scale-[0.9] bg-white px-[4px]" : "left-5 top-3"} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`}>
+                className={`${name ? "-top-3 left-2 scale-[0.9] dark:bg-black bg-white px-[4px]" : "left-5 top-3"} absolute dark:peer-focus:bg-darkBgColor peer-focus:-top-3 peer-focus:bg-white dark:text-slate-500 peer-focus:left-2 peer-focus:scale-[0.9] peer-focus:text-[#3B9DF8] text-[#777777] peer-focus:px-1 transition-all duration-300`}>
                 Your name
             </span>
         </label>
