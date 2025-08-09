@@ -159,8 +159,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ## Connect With ZenUI
 
 <p align="left">
-<a href="https://x.com/zenuilibrary" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="zenuilibrary" height="30" width="40" /></a>
-<a href="https://www.linkedin.com/company/zenui/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="zenui" height="30" width="40" /></a>
-<a href="https://web.facebook.com/zenuilibrary" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="zenuilibrary" height="30" width="40" /></a>
+<a href="https://x.com/zenuilabs" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="zenuilibrary" height="30" width="40" /></a>
+<a href="https://www.linkedin.com/company/zenui-labs/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="zenui" height="30" width="40" /></a>
+<a href="https://web.facebook.com/zenuilabs" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/facebook.svg" alt="zenuilibrary" height="30" width="40" /></a>
 <a href="https://discord.gg/qbwytm4WUG" target="blank"><img align="center" src="https://static.vecteezy.com/system/resources/previews/023/986/612/non_2x/discord-logo-discord-logo-transparent-discord-icon-transparent-free-free-png.png" alt="zenui" height="45" width="45" /></a>
 </p>

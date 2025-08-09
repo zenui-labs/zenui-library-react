@@ -52,17 +52,17 @@ const Footer = () => {
               {/*  <FaGithub className="text-[#9caebc] text-[1.5rem]" />*/}
               {/*</a>*/}
 
-              <a href="https://web.facebook.com/zenuilibrary" target='_blank'>
+              <a href="https://web.facebook.com/zenuilabs" target='_blank'>
                 <FaFacebook
                     className="text-[#9caebc] text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
               </a>
 
-              <a href="https://www.linkedin.com/company/zenui/" target='_blank'>
+              <a href="https://www.linkedin.com/company/zenui-labs/" target='_blank'>
                 <FaLinkedin
                     className="text-[#9caebc] text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
               </a>
 
-              <a href="https://x.com/zenuilibrary" target='_blank'>
+              <a href="https://x.com/zenuilabs" target='_blank'>
                 <FaXTwitter
                     className="text-[#9caebc] text-[1.4rem] hover:text-[#0FABCA] transition-colors duration-300"/>
               </a>
