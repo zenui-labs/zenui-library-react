@@ -50,7 +50,7 @@ Elevate your projects with ZenUI, a free, lightweight, customizable UI component
 
 ## Your Support = More UI Magic 😍
 
-<p><a href="https://ko-fi.com/zenuilibrary"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="asfak00" /></a></p>
+<p><a href="https://ko-fi.com/zenuilabs"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="asfak00" /></a></p>
 
 <br/>
 <br/>

@@ -55,7 +55,7 @@ const OverviewFooter = ({
 
                 <div className="flex items-center gap-3">
                     <p className=" font-[600] text-[1rem] text-text dark:text-darkSubTextColor/90">Support:</p>
-                    <a href="https://ko-fi.com/zenuilibrary" target="_blank"
+                    <a href="https://ko-fi.com/zenuilabs" target="_blank"
                        className='bg-[#FFDD00] flex items-center gap-2 py-1.5 px-3 rounded-normal text-[0.9rem] font-medium' rel="noreferrer">
                         <img
                             src="https://i.ibb.co/SXWbR1v5/670f5a01229bf8a18f97a3c1-favion.png"
