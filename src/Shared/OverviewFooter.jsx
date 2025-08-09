@@ -48,7 +48,7 @@ const OverviewFooter = ({backUrl, forwardUrl, backName, forwardName, isBackButto
 
                 <div className="flex items-center gap-3">
                     <p className=" font-[600] text-[1rem] dark:text-darkSubTextColor/90 text-text">Support:</p>
-                    <a href="https://buymeacoffee.com/zenuilibrary" target="_blank">
+                    <a href="https://ko-fi.com/zenuilabs" target="_blank">
                         <img
                             src="https://www.codehim.com/wp-content/uploads/2022/09/bmc-button-640x180.png.webp"
                             alt="sponser-image"
