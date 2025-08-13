@@ -40,6 +40,7 @@ const OtpInput = () => {
 
     // actions
     const [check1Change, setCheck1Change] = useState(false);
+    const [animatedCheckChange, setAnimatedCheckChange] = useState(false);
 
     const handleCheckbox1Change = (event) => {
         if (event.target.checked) {
@@ -49,10 +50,22 @@ const OtpInput = () => {
         }
     };
 
-    const [selected, setSelected] = useState(null);
+    const handleAnimatedCheckboxChange = (event) => {
+        if (event.target.checked) {
+            setAnimatedCheckChange(true);
+        } else {
+            setAnimatedCheckChange(false);
+        }
+    };
+
+    const [selected, setSelected] = useState([]);
 
     const handleChange = (value) => {
-        setSelected(value);
+        if (selected.includes(value)) {
+            setSelected(selected.filter((i) => i !== value));
+        } else {
+            setSelected([...selected, value]);
+        }
     };
 
     return (
@@ -240,12 +253,12 @@ export default CheckboxInput;
                                     <input
                                         type='checkbox'
                                         className='hidden'
-                                        onChange={handleCheckbox1Change}
+                                        onChange={handleAnimatedCheckboxChange}
                                     />
                                     <div className='relative'>
                     <span
                         className={`${
-                            check1Change
+                            animatedCheckChange
                                 ? 'opacity-100 z-20 scale-[1]'
                                 : 'opacity-0 scale-[0.4] z-[-1]'
                         } transition-all duration-200 absolute top-0 left-0`}
@@ -279,7 +292,7 @@ export default CheckboxInput;
 
                                         <span
                                             className={`${
-                                                !check1Change
+                                                !animatedCheckChange
                                                     ? 'opacity-100 z-20 scale-[1]'
                                                     : 'opacity-0 scale-[0.4] z-[-1]'
                                             } transition-all duration-200`}
@@ -432,17 +445,17 @@ export default CheckboxInput;
                                             className='flex items-center gap-[10px] cursor-pointer'
                                         >
                                             <input
-                                                type='radio'
+                                                type='checkbox'
                                                 name='checkboxGroup'
                                                 value={item}
-                                                checked={selected === item}
+                                                checked={selected.includes(item)}
                                                 onChange={() => handleChange(item)}
                                                 className='hidden'
                                             />
                                             <div className='relative'>
                         <span
                             className={`${
-                                selected === item
+                                selected.includes(item)
                                     ? 'opacity-100 z-20 scale-[1]'
                                     : 'opacity-0 scale-[0.4] z-[-1]'
                             } transition-all duration-200 absolute top-0 left-0`}
@@ -476,7 +489,7 @@ export default CheckboxInput;
 
                                                 <span
                                                     className={`${
-                                                        selected !== item
+                                                        !selected.includes(item)
                                                             ? 'opacity-100 z-20 scale-[1]'
                                                             : 'opacity-0 scale-[0.4] z-[-1]'
                                                     } transition-all duration-200`}
@@ -519,10 +532,14 @@ import React, {useState} from "react";
 
 const CheckboxInput = () => {
 
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selected, setSelected] = useState([]);
 
     const handleChange = (value) => {
-        setSelectedItem(value);
+        if (selected.includes(value)) {
+            setSelected(selected.filter((i) => i !== value));
+        } else {
+            setSelected([...selected, value]);
+        }
     };
 
     return (
@@ -533,17 +550,17 @@ const CheckboxInput = () => {
                     className="flex items-center gap-[10px] cursor-pointer"
                 >
                     <input
-                        type="radio"
+                        type="checkbox"
                         name="checkboxGroup"
                         value={item}
-                        checked={selectedItem === item}
+                        checked={selected.includes(item)}
                         onChange={() => handleChange(item)}
                         className="hidden"
                     />
                     <div className="relative">
                         <span
                             className={`${
-                                selectedItem === item
+                                selected.includes(item)
                                     ? "opacity-100 z-20 scale-[1]"
                                     : "opacity-0 scale-[0.4] z-[-1]"
                             } transition-all duration-200 absolute top-0 left-0`}
@@ -577,7 +594,7 @@ const CheckboxInput = () => {
 
                         <span
                             className={`${
-                                selectedItem !== item
+                                !selected.includes(item)
                                     ? "opacity-100 z-20 scale-[1]"
                                     : "opacity-0 scale-[0.4] z-[-1]"
                             } transition-all duration-200`}
