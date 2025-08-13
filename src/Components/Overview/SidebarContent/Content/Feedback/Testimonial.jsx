@@ -620,8 +620,8 @@ export default Testimonial;
                     <ComponentDescription text='This is a testimonial component. Showcase user feedback and reviews
             with a stylish, engaging layout.'/>
 
-                    <ToggleTab code={testimonial7Code} setPreview={setTestimonial7Code} preview={testimonial7Preview}
-                               setCode={setTestimonial7Preview}/>
+                    <ToggleTab code={testimonial7Code} setPreview={setTestimonial7Preview} preview={testimonial7Preview}
+                               setCode={setTestimonial7Code}/>
 
                     <ComponentWrapper>
                         {testimonial7Preview && (
