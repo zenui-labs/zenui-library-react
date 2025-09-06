@@ -142,4 +142,15 @@ export const DevContributorsData = [
         website: '',
         zenuiHero: false,
     },
+    {
+        name: 'Novodip Mondal',
+        title: 'Frontend Developer',
+        certificate: 'novodip_mondal',
+        image: 'https://i.ibb.co.com/jPynRqhX/120156959.jpg',
+        linkedinLink: 'https://www.linkedin.com/in/novodip/',
+        twitterLink: '',
+        githubLink: 'https://github.com/Novo1999',
+        website: 'https://novodip.vercel.app/',
+        zenuiHero: false,
+    },
 ]

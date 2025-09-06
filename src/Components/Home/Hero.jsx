@@ -64,12 +64,12 @@ const Hero = () => {
 
                 <p
                     className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem]">
-                    ZenUI is your all-in-one Front-End Toolkit — No installs, No setup, just copy, paste, and build
+                    ZenUI is your all-in-one Front-End Toolkit. No installs, No setup, just copy, paste, and build
                     beautiful UIs in seconds.
                 </p>
 
                 <div
-                    className="flex items-center flex-col 640px:flex-row gap-3 justify-center 425px:gap-6 mt-10 640px:mt-12">
+                    className="flex items-center flex-col 640px:flex-row gap-3 justify-center 425px:gap-4 mt-10 640px:mt-12">
                     <button
                         className='py-3 px-6 640px:px-8 bg-[#0FABCA] text-white rounded-high hover:bg-[#1cbedb] transition-all flex items-center justify-center gap-3 duration-300 group'
                         onClick={() => navigate("/components/all-components")}

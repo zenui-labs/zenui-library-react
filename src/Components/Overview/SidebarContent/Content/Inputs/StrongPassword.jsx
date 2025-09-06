@@ -78,19 +78,14 @@ const OtpInput = () => {
         switch (signal) {
             case 'length-error':
                 return 'Password must be at least 8 characters long.';
-                break;
             case 'uppercase-error':
                 return 'Password must contain at least one uppercase letter.';
-                break;
             case 'lowercase-error':
                 return 'Password must contain at least one lowercase letter.';
-                break;
             case 'number-error':
                 return 'Password must contain at least one number.';
-                break;
             case 'symbol-error':
                 return 'Password must contain at least one special character.';
-                break;
             default:
                 return 'Wow! Very strong password.';
         }

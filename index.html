@@ -31,23 +31,5 @@
     <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
-
-    <script type="text/javascript">
-      (function (w, d, s, o) {
-        var js = d.createElement(s);
-        js.src = o.widgetSrc;
-        js.async = true;
-        js.onload = function () {
-          if (typeof w.Replicate === 'function') {
-            w.ReplicateInstance = new w.Replicate();
-            w.ReplicateInstance.init(o.channelId);
-          }
-        };
-        d.head.appendChild(js);
-      }(window, document, 'script', {
-        widgetSrc: 'https://api.replicate.so/widget/widget.umd.js',
-        channelId: 'c1bb4a77-4cfb-4a58-8981-9e036a7d08d0'
-      }));
-    </script>
     </body>
 </html>

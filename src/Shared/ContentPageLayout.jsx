@@ -6,7 +6,7 @@ import MobileNavbar from "@/Components/Home/MobileNavbar.jsx";
 import Sidebar from "@/Components/Overview/Sidebar/index.jsx";
 import {MenuContext} from "../Context/MenuContext.jsx";
 import useZenuiStore from "../Store/Index.js";
-import NewsBoard from "@/Components/Home/NewsBoard.jsx";
+import {PageActions} from "@shared/PageActions.jsx";
 
 const ContentPageLayout = ({children}) => {
     const {scrollY} = useContext(MenuContext);
@@ -29,8 +29,12 @@ const ContentPageLayout = ({children}) => {
                 <div
                     className="w-full h-[calc(100vh-76px)] overflow-y-auto pb-[2rem] pt-[5rem] 640px:py-[5rem] 1024px:py-[2rem] 1024px:px-[0.5rem] relative"
                     style={{scrollbarWidth: 'none'}}>
+
+                    <PageActions/>
                     <MobileSidebar/>
+
                     {children}
+
                 </div>
             </div>
 
