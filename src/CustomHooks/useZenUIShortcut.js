@@ -1,5 +1,5 @@
 import {useEffect, useRef} from "react";
-import useZenuiStore from "../Store";
+import useZenuiStore from "@/Store";
 
 export function useZenUIShortcuts() {
     const zTriggered = useRef(false);
