@@ -17,5 +17,8 @@ export default defineConfig({
             '@shared': path.resolve(__dirname, 'src/Shared'),
             '@helpers': path.resolve(__dirname, 'src/Helpers'),
         }
+    },
+    commonjsOptions: {
+        transformMixedEsModules: true,
     }
 })
