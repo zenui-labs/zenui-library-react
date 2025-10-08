@@ -126,7 +126,7 @@ const ZenUITools = () => {
                 isSubjet={'ZenUI'}
             />
 
-            <div className='grid grid-cols-1 1024px:grid-cols-2 mt-14 gap-[50px]'>
+            <div className='grid grid-cols-1 min-h-[520px] 1024px:grid-cols-2 mt-14 gap-[50px]'>
                 <motion.div
                     variants={containerVariants}
                     initial="hidden"

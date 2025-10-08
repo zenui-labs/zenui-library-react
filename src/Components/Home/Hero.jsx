@@ -21,13 +21,13 @@ const Hero = () => {
             if (theme === 'dark') {
                 setDarkModeWithDelay(true);
             }
-        }, 500);
+        }, 400);
 
         const notDarkMode = setTimeout(() => {
             if (theme !== 'dark') {
                 setDarkModeWithDelay(false);
             }
-        }, 200);
+        }, 400);
 
         return () => {
             clearTimeout(timer);
@@ -36,7 +36,7 @@ const Hero = () => {
     }, [theme])
 
     return (<main
-        className={`${darkModeWithDelay ? 'bg-[linear-gradient(to_right,#212121_1px,transparent_1px),linear-gradient(to_bottom,#212121_1px,transparent_1px)]' : 'bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)]'} py-16 1024px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative`}>
+        className={`${darkModeWithDelay ? 'bg-[linear-gradient(to_right,#050a1c_1px,transparent_1px),linear-gradient(to_bottom,#050a1c_1px,transparent_1px)]' : 'bg-[linear-gradient(to_right,#e3e3e32e_1px,transparent_1px),linear-gradient(to_bottom,#e3e3e32e_1px,transparent_1px)]'} py-16 1024px:py-0 w-full min-h-screen 1024px:min-h-[calc(100vh-50px)] flex items-center justify-center bg-[size:30px_30px] relative`}>
 
 
         <div

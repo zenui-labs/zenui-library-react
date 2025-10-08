@@ -25,3 +25,6 @@ dist-ssr
 *.sln
 *.sw?
 *.lock
+
+# Local Netlify folder
+.netlify
