@@ -253,8 +253,8 @@ const Footer = () => {
 
                 <div
                     className="w-full border-t dark:border-darkBorderColor border-gray-100 flex items-center 425px:flex-row flex-col 425px:gap-0 gap-5 justify-center mt-12 pt-6">
-                    <p className="text-gray-400 dark:text-darkSubTextColor/70 text-center text-[0.9rem]">
-                        Copyright &copy; {date.getFullYear()} by ZenUI Library.
+                    <p className="text-gray-400 dark:text-darkSubTextColor/70 font-normal text-center text-[0.8rem]">
+                        A product of <a href='https://zenui.net' target="_blank" className='text-brandColor'>@zenui-labs</a>
                     </p>
                 </div>
             </SectionWrapper>

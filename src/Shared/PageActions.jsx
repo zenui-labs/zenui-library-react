@@ -116,7 +116,7 @@ Explain clearly as if reviewing it for developers.
                 </div>
                 <button
                     onClick={() => setOpen(!open)}
-                    className="zenui_page_actions dark:bg-darkBgColor dark:border-darkBorderColor dark:text-darkTextColor dark:shadow-darkBorderColor inline-flex items-center px-2 h-full text-[0.8rem] py-[7.8px] bg-white border rounded-r-lg shadow-sm dark:hover:bg-slate-800/60 hover:bg-gray-50"
+                    className="zenui_page_actions dark:bg-darkBgColor dark:border-darkBorderColor dark:text-darkTextColor dark:shadow-darkBorderColor inline-flex items-center px-2 h-full text-[0.8rem] py-[7.4px] bg-white border rounded-r-lg shadow-sm dark:hover:bg-slate-800/60 hover:bg-gray-50"
                 >
                     <IoChevronDownOutline className={`size-4 ${open ? "rotate-180" : ""} transition-all duration-200`}/>
                 </button>

@@ -7,7 +7,6 @@ import FallbackLoader from "@shared/FallbackLoader.jsx";
 import ShortcutCheatsheetModal from "@shared/ShortcutCheatsheetModal.jsx";
 import {useZenUIShortcuts} from "@/CustomHooks/useZenUIShortcut.js";
 import ShortcutHintModal from "@shared/ShortcutHintModal.jsx";
-import ReadmeStudioAds from "@shared/ReadmeStudioAds.jsx";
 import DonationButton from "@shared/DonationButton.jsx";
 
 const CookieModal = React.lazy(() => import("./Shared/CookieModal.jsx"));
@@ -101,7 +100,6 @@ const App = () => {
                     isHintModalOpen && <ShortcutHintModal setIsOpen={setIsHintModalOpen}/>
                 }
                 <CookieModal isModalOpen={isCookie} setisModalOpen={setIsCookie}/>
-                <ReadmeStudioAds/>
                 <DonationButton/>
                 <ShortcutCheatsheetModal isOpen={isShortcutCheatsheetOpen} setIsOpen={setIsShortcutCheatsheetOpen}/>
             </MenuProvider>
