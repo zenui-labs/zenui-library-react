@@ -42,24 +42,6 @@ const OverviewFooter = ({backUrl, forwardUrl, backName, forwardName, isBackButto
                     </div>
                 )
             }
-
-            <div
-                className="flex items-center flex-col 640px:flex-row gap-5 justify-between w-full dark:border-darkBorderColor border-t border-border pt-5">
-                <img src="/footer_logo.png" alt="logo-image" className="w-[100px] 640px:w-[120px]"/>
-
-                <div className="flex items-center gap-3">
-                    <p className=" font-[600] text-[1rem] dark:text-darkSubTextColor/90 text-text">Support:</p>
-                    <a href="https://ko-fi.com/zenuilabs" target="_blank"
-                       className='bg-[#FFDD00] flex items-center gap-2 py-1.5 px-3 rounded-normal text-[0.9rem] font-medium' rel="noreferrer">
-                        <img
-                            src="https://i.ibb.co/SXWbR1v5/670f5a01229bf8a18f97a3c1-favion.png"
-                            alt="sponser-image"
-                            className="w-[25px]"
-                        />
-                        Keep ZenUI Brewing
-                    </a>
-                </div>
-            </div>
         </footer>
     );
 };

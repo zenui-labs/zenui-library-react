@@ -8,10 +8,7 @@ import useZenuiStore from "@/Store/Index.js";
 import SectionWrapper from "./SectionWrapper.jsx";
 import {GoArrowUpRight} from "react-icons/go";
 
-const Footer = () => {
-    const date = new Date();
-    const [inputValue, setInputValue] = useState("");
-
+const Footer = ({needMuchMargin=true}) => {
     const {theme} = useZenuiStore()
 
     const [result, setResult] = React.useState("");
@@ -42,8 +39,8 @@ const Footer = () => {
 
     return (
         <footer
-            className="w-full border-t border-gray-100 pb-8 dark:bg-darkBgColor transition-all duration-500 dark:border-darkBorderColor bg-secondary mt-16">
-            <SectionWrapper className='mt-8'>
+            className={`${needMuchMargin ? 'mt-16' : 'mt-8'} w-full border-t border-gray-100 pb-8 transition-all duration-500 dark:border-darkBorderColor`}>
+            <SectionWrapper className='mt-8 max-w-[1600px]'>
                 <div
                     className="w-full flex 640px:flex-row flex-col flex-wrap 1024px:gap-0 gap-8 justify-between items-start">
                     <div className="w-full 640px:w-[40%] 1024px:w-[28%]">
@@ -83,7 +80,7 @@ const Footer = () => {
                         <h3 className="font-[600] dark:text-darkTextColor text-[20px] capitalize">
                             tools
                         </h3>
-                        <ul className="footer font-[500] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
+                        <ul className="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
                             <li>
                                 <p><a href='/shortcut-generator'>ShortKey</a></p>
                                 <span><a href='/shortcut-generator'>ShortKey</a></span>
@@ -107,7 +104,7 @@ const Footer = () => {
                         <h3 className="font-[600] dark:text-darkTextColor text-[20px] capitalize">
                             resources
                         </h3>
-                        <ul className="footer font-[500] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
+                        <ul className="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
                             <li>
                                 <p><a href='/templates'>Free templates</a></p>
                                 <span><a href='/templates'>Free templates</a></span>
@@ -139,7 +136,7 @@ const Footer = () => {
                         <h3 className="font-[600] dark:text-darkTextColor text-[20px] capitalize">
                             Company
                         </h3>
-                        <ul className="footer font-[500] text-[1rem] dark:text-darkSubTextColor mt-2 text-black/70 flex flex-col gap-2">
+                        <ul className="footer font-[400] text-[1rem] dark:text-darkSubTextColor mt-2 text-black/70 flex flex-col gap-2">
                             <li>
                                 <p><a href='/about-us'>About Us</a></p>
                                 <span><a href='/about-us'>About Us</a></span>
@@ -178,7 +175,7 @@ const Footer = () => {
                         <form onSubmit={onSubmitSubscribe} className='mt-2'>
                             <label
                                 htmlFor="email"
-                                className="text-black/70 text-[1rem] dark:text-darkSubTextColor font-[500] mb-2"
+                                className="text-black/70 text-[1rem] dark:text-darkSubTextColor font-[400] mb-2"
                             >
                                 Your Email
                             </label>
@@ -213,7 +210,7 @@ const Footer = () => {
                         <div>
                             <h4 className='text-[0.9rem] leading-[22px] font-[600] dark:text-darkTextColor text-blue-600'>Facebook
                                 Community</h4>
-                            <p className='text-[0.7rem] font-[300] dark:text-darkSubTextColor text-gray-700'>150+
+                            <p className='text-[0.7rem] font-[300] dark:text-darkSubTextColor text-gray-700'>180+
                                 Members</p>
                         </div>
                     </a>
@@ -244,7 +241,7 @@ const Footer = () => {
                         <div>
                             <h4 className='text-[0.9rem] leading-[22px] font-[600] dark:text-darkTextColor text-blue-500'>Discord
                                 Community</h4>
-                            <p className='text-[0.7rem] font-[300] dark:text-darkSubTextColor text-gray-700'>80+
+                            <p className='text-[0.7rem] font-[300] dark:text-darkSubTextColor text-gray-700'>120+
                                 Members</p>
                         </div>
                     </a>

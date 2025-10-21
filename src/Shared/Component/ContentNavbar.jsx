@@ -77,27 +77,13 @@ const ContentNavbar = ({contents, activeSection, width = '40%'}) => {
                     </p>
                 </div>
 
-                <div className='p-3 mb-5 mt-3 max-w-[273px]'>
-                    <div
-                        className="relative origin-center -translate-x-3 rotate-6 p-6 duration-300 hover:rotate-0"
-                    >
-                        <div
-                            className="absolute top-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_right,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
-                        ></div>
-                        <div
-                            className="absolute top-0 left-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.15)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
-                        ></div>
-                        <a href='https://readmestudio.zenui.net/' target='_blank' rel='noreferrer'>
-                            <img alt='softollyo.com' src='/small_ads_for_zenui.png'
-                                 className='rounded-high max-w-[200px]'/>
-                        </a>
-                        <div
-                            className="absolute top-0 right-4 h-full w-px bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.1)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_bottom,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
-                        ></div>
-                        <div
-                            className="absolute bottom-4 left-0 h-px w-full bg-[linear-gradient(to_right,_transparent_0%,_rgba(0,0,0,0.1)_9.27%,_rgba(0,0,0,0.1)_90.7%,_transparent_100%)] dark:bg-[linear-gradient(to_right,_transparent_0%,_rgba(255,255,255,0.1)_9.27%,_rgba(255,255,255,0.1)_90.7%,_transparent_100%)]"
-                        ></div>
-                    </div>
+                <div className='py-3 px-1.5 mb-5 mt-3 flex flex-col gap-3 max-w-[273px]'>
+                    <a href='https://readmestudio.zenui.net/' target='_blank' rel="noreferrer">
+                        <img src='https://i.ibb.co.com/svzKxvxY/small-ads-for-zenui.png' alt='Readme Studio Ads' className='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
+                    </a>
+                    <a href='https://react-hooks.zenui.net/' target='_blank' rel="noreferrer">
+                        <img src='https://i.ibb.co.com/wNSCP9X1/small-ads-for-zenui-1.png' alt='React Hooks Ads' className='w-full rounded-xl active:scale-[0.95] transition-all duration-200 grayscale hover:grayscale-0'/>
+                    </a>
                 </div>
             </div>
         </div>

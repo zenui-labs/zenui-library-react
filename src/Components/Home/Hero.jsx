@@ -56,29 +56,26 @@ const Hero = () => {
 
                 <h1
                     className="text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
-                    <span className='mr-3'>Open-Source</span>
-                    UI Components
-                    & Templates
-                    Library
+                    Open-Source UI Components Library for <span className="text-[#2498b5]">React Developers</span>
                 </h1>
 
                 <p
                     className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem]">
-                    ZenUI is your all-in-one Front-End Toolkit. No installs, No setup, just copy, paste, and build
-                    beautiful UIs in seconds.
+                    ZenUI is your all-in-one React + Tailwind CSS component library. Ready to use UI components for faster your
+                    development workflow.
                 </p>
 
                 <div
                     className="flex items-center flex-col 640px:flex-row gap-3 justify-center 425px:gap-4 mt-10 640px:mt-12">
                     <button
-                        className='py-3 px-6 640px:px-8 bg-[#0FABCA] text-white rounded-high hover:bg-[#1cbedb] transition-all flex items-center justify-center gap-3 duration-300 group'
+                        className='py-3.5 px-6 640px:px-8 bg-[#0FABCA] text-white rounded-high hover:bg-[#1cbedb] transition-all flex items-center justify-center gap-3 duration-300 group'
                         onClick={() => navigate("/components/all-components")}
                     >
                         Browse Components
                         <IoChevronForward className='group-hover:ml-1 transition-all duration-200'/>
                     </button>
                     <button
-                        className='py-[11px] px-8 z-10 border-2 border-[#0FABCA] text-[#0FABCA] rounded-high transition-all flex items-center justify-center gap-3 duration-300 group'
+                        className='py-[13px] px-8 z-10 border-2 border-[#0FABCA] text-[#0FABCA] rounded-high transition-all flex items-center justify-center gap-3 duration-300 group'
                         onClick={() => navigate('/templates')}>
                         Browse Templates
                         <IoChevronForward className='group-hover:ml-1 transition-all duration-200'/>

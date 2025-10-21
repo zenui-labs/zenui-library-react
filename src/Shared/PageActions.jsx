@@ -96,7 +96,7 @@ Explain clearly as if reviewing it for developers.
     const selectedAction = actions.find((a) => a.id === selected);
 
     return (
-        <div className="relative mb-6 ml-6 1024px:ml-10">
+        <div className="relative mb-6 ml-6 640px:ml-10">
             <div className='flex items-center'>
                 <div
                     onClick={() => {
