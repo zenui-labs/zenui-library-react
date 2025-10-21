@@ -28,6 +28,14 @@
     width: 8px
 }
 
+html.dark ::-webkit-scrollbar {
+    background-color: rgb(32, 32, 32);
+}
+
+html.dark ::-webkit-scrollbar-track {
+    background-color: rgb(32, 32, 32);
+}
+
 *::-webkit-scrollbar-track {
     background-color: rgba(15, 171, 202, 0.13);
 }
