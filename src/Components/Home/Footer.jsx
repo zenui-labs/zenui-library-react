@@ -39,7 +39,7 @@ const Footer = ({needMuchMargin=true}) => {
 
     return (
         <footer
-            className={`${needMuchMargin ? 'mt-16' : 'mt-8'} w-full border-t border-gray-100 pb-8 transition-all duration-500 dark:border-darkBorderColor`}>
+            className={`${needMuchMargin ? 'mt-16' : 'mt-8'} 1404px:px-12 w-full border-t border-gray-100 pb-8 transition-all duration-500 dark:border-darkBorderColor`}>
             <SectionWrapper className='mt-8 max-w-[1600px]'>
                 <div
                     className="w-full flex 640px:flex-row flex-col flex-wrap 1024px:gap-0 gap-8 justify-between items-start">

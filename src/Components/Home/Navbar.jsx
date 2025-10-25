@@ -124,11 +124,6 @@ const Navbar = ({className}) => {
                         />
                     </div>
                     <ul className={`text-gray-600 flex items-center gap-8 font-[500] capitalize text-[1rem]`}>
-                        <Link to='/about-us'
-                              className='dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200'>
-                            About Us
-                        </Link>
-
                         <Link to='/docs/overview'
                               className='dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200'>
                             Documentation
@@ -257,6 +252,12 @@ const Navbar = ({className}) => {
                                 </div>
                             </motion.div>)}
                         </li>
+
+                        <Link to='/contributors'
+                              className='dark:text-darkTextColor cursor-pointer hover:text-[#0FABCA] transition-all duration-200'>
+                            Contributors
+                        </Link>
+
                     </ul>
                 </div>
 

@@ -202,7 +202,7 @@ const AnimationRoutes = [
 // Misc Routes
 const MiscRoutes = [
     {path: "/", component: lazy(() => import("@pages/HomePage"))},
-    {path: "/about-us", component: lazy(() => import("@pages/AboutUsPage"))},
+    {path: "/contributors", component: lazy(() => import("@pages/ContributorsPage"))},
     {path: "/privacy-policy", component: lazy(() => import("@pages/PrivacyPolicyPage"))},
     {path: "/components/all-components", component: lazy(() => import("@pages/Components/AllComponentsPage"))},
     {path: "/icons", component: lazy(() => import("@pages/IconsPage"))},

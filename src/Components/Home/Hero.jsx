@@ -25,7 +25,7 @@ const Hero = () => {
         <div
             className="px-8 max-w-[1700px] mx-auto">
 
-            <div className="1024px:w-[80%] 1360px:w-[60%] text-center mx-auto w-full">
+            <div className="1024px:w-[80%] 1360px:w-[70%] text-center mx-auto w-full">
 
                 <ShimmerButton/>
 
@@ -35,7 +35,7 @@ const Hero = () => {
                 </h1>
 
                 <p
-                    className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem]">
+                    className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem] max-w-4xl">
                     ZenUI is your all-in-one React + Tailwind CSS component library. Ready to use UI components for faster your
                     development workflow.
                 </p>
