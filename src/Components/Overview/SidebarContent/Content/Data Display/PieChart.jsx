@@ -35,6 +35,8 @@ const PieChart = () => {
         window.addEventListener("resize", handleResize);
         handleResize();
 
+        console.log(windowSize)
+
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
@@ -53,8 +55,8 @@ const PieChart = () => {
         {name: 'Operations', value: 21.2}
     ]
 
-    const width = windowSize.width < 376 ? 250 : 400
-    const height = windowSize.width < 376 ? 250 : 400
+    const width = windowSize.width < 640 ? 250 : 400
+    const height = windowSize.width < 640 ? 250 : 400
     const colors = [
         '#4b77be',
         '#f5ab35',

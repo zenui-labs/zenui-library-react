@@ -36,7 +36,7 @@ const ToggleTab = ({preview, code, setPreview, setCode}) => {
             <div
                 className='relative backdrop-blur-md overflow-hidden bg-gray-200/80 dark:bg-slate-800 w-max rounded-normal'>
                 <div
-                    className={`absolute top-[50%] translate-y-[-50%] dark:bg-darkBgColor shadow-sm shadow-gray-300 dark:shadow-slate-900 transform left-0 w-[50%] h-[85%] z-[1] bg-white transition-all rounded-normal duration-500 ${
+                    className={`absolute top-[50%] translate-y-[-50%] dark:bg-darkBgColor shadow-sm shadow-gray-300 dark:shadow-slate-900 transform left-0 w-[50%] h-[85%] z-[1] bg-white transition-all rounded-normal duration-300 ${
                         preview
                             ? 'translate-x-[3%] w-[53%]'
                             : 'translate-x-[128%] !w-[43%]'

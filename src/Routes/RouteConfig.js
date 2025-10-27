@@ -5,7 +5,6 @@ const DocsRoutes = [
     {path: "/docs/overview", component: lazy(() => import("@pages/OverviewPage"))},
     {path: "/docs/resources", component: lazy(() => import("@pages/ResourcesPage"))},
     {path: "/docs/installation", component: lazy(() => import("@pages/InstallationPage"))},
-    {path: "/custom-hooks", component: lazy(() => import("@pages/ReactCustomHooksPage"))},
     {path: "/templates", component: lazy(() => import("@pages/TempletePage"))},
 ];
 

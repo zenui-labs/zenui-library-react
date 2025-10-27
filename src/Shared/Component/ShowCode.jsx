@@ -95,7 +95,7 @@ const ShowCode = ({code}) => {
                         fontSize: "14px",
                         maxHeight: "400px",
                     }}
-                    className='zenui_code_snippet text-[14px] 1404px:max-w-[700px] 1605px:max-w-[750px] max-h-[400px] 400px:max-w-[380px] 425px:max-w-[638px] max-w-[325px]'
+                    className='zenui_code_snippet text-[14px] 1404px:max-w-[700px] 1605px:max-w-[800px] max-h-[400px] 400px:max-w-[380px] 425px:max-w-[638px] max-w-[325px]'
                 >
                     {toggleThemeBaseClasses(formattedCode.find(item => item.id === activeTab)?.code, store.withDarkClasses) || ''}
                 </SyntaxHighlighter>

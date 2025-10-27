@@ -36,14 +36,6 @@ const Content = () => {
                         url: "/docs/resources",
                     },
                     {
-                        bgColor: "bg-[#DB06F9]",
-                        borderColor: "border-[#DB06F9]",
-                        textColor: "text-[#DB06F9]",
-                        title: "Custom Hooks",
-                        icon: HookIcon,
-                        url: "/custom-hooks",
-                    },
-                    {
                         bgColor: "bg-indigo-600",
                         borderColor: "border-indigo-600",
                         textColor: "text-indigo-600",

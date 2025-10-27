@@ -16,7 +16,7 @@ const MyComponent = () => {
     }, []);
 
     return (
-        <div className='bg-blue-50 flex flex-col items-center justify-center w-full h-screen'>
+        <div className='bg-brandColor/20 flex flex-col items-center justify-center w-full h-screen'>
             <div className='' data-aos="zoom-in">
                 <img
                     src='https://besnik-space.fra1.cdn.digitaloceanspaces.com/marketing-sites/Mo6JckUH7sgbkTfBSdXV1722624836.webp'

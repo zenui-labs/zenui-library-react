@@ -31,7 +31,7 @@ const Hero = () => {
 
                 <h1
                     className="text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
-                    Open-Source UI Components Library for <span className="text-[#2498b5]">React Developers</span>
+                    Open-Source UI Components Library for <span className="text-[#2498b5] dark:text-[#41bfdb]">React Developers</span>
                 </h1>
 
                 <p

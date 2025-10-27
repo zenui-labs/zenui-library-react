@@ -29,7 +29,7 @@ const OverviewFooter = ({
                         {
                             isBackButton && (
                                 <Link to={backUrl}
-                                      className='flex w-full 640px:w-max items-center gap-[5px] text-[0.9rem] py-4 640px:py-1.5 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100'>
+                                      className='flex w-full 640px:w-max items-center gap-[5px] text-[0.9rem] py-4 640px:py-2 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100'>
                                     <IoChevronBack className='text-[1rem] text-gray-500'/>
                                     {backName}
                                 </Link>
@@ -39,7 +39,7 @@ const OverviewFooter = ({
                         {
                             isForwardButton && (
                                 <Link to={forwardUrl}
-                                      className='flex items-center justify-end 640px:justify-start w-full 640px:w-max gap-[5px] text-[0.9rem] py-4 640px:py-1.5 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100'>
+                                      className='flex items-center justify-end 640px:justify-start w-full 640px:w-max gap-[5px] text-[0.9rem] py-4 640px:py-2 px-3 border border-gray-200 hover:bg-gray-200 dark:bg-slate-900 dark:text-darkSubTextColor dark:border-darkBorderColor dark:hover:bg-slate-800 capitalize transition-all duration-200 text-gray-500 rounded-md bg-gray-100'>
                                     {forwardName}
                                     <IoChevronBack className='text-[1rem] text-gray-500 rotate-[180deg]'/>
                                 </Link>

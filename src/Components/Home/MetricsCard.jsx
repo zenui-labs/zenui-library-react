@@ -13,13 +13,13 @@ const MetricsCard = () => {
     const metrics = [
         {
             icon: <MdOutlineFileDownload className="h-10 w-10 text-white"/>,
-            value: "24.5k+",
+            value: "30.5k+",
             label: "Active Users",
             bgColor: "bg-gradient-to-br from-pink-500 to-pink-400"
         },
         {
             icon: <BiLayout className="h-10 w-10 text-white"/>,
-            value: "700+",
+            value: "800+",
             label: "UI Components",
             bgColor: "bg-gradient-to-br from-green-500 to-green-400"
         },
