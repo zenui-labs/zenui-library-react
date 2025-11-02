@@ -138,8 +138,8 @@ const Footer = ({needMuchMargin=true}) => {
                         </h3>
                         <ul className="footer font-[400] text-[1rem] dark:text-darkSubTextColor mt-2 text-black/70 flex flex-col gap-2">
                             <li>
-                                <p><a href='/about-us'>About Us</a></p>
-                                <span><a href='/about-us'>About Us</a></span>
+                                <p><a href='/contributors'>Contributors</a></p>
+                                <span><a href='/contributors'>Contributors</a></span>
                             </li>
                             <li>
                                 <p><a href='/privacy-policy'>Privacy policy</a></p>

@@ -71,7 +71,7 @@ export const MemberCard = ({member, isMemberDev = false}) => {
             <img
                 src={member?.image}
                 alt='profile/image'
-                className='w-[250px] h-[300px] object-cover rounded-normal'
+                className='w-[250px] 640px:h-[300px] object-cover rounded-normal'
             />
 
             {member.zenuiHero && (
@@ -87,8 +87,8 @@ export const MemberCard = ({member, isMemberDev = false}) => {
 
             <div
                 className='absolute bottom-[0.7rem] text-center rounded-normal py-3 w-[90%] left-[50%] translate-x-[-50%] backdrop-blur-md'>
-                <h3 className='text-[1.15rem] font-[500] text-white dark:text-darkTextColor'>{member?.name}</h3>
-                <p className='text-[1rem] text-white/80 font-[300] dark:text-darkSubTextColor/80 flex justify-center items-center gap-2'>{member?.title}
+                <h3 className='text-[0.9rem] 640px:text-[1.15rem] font-[500] text-white dark:text-darkTextColor'>{member?.name}</h3>
+                <p className='text-[0.7rem] 640px:text-[1rem] text-white/80 font-[300] dark:text-darkSubTextColor/80 flex justify-center items-center gap-2'>{member?.title}
                     <PiCertificate
                         onClick={() => handleDownloadCertificate(member?.certificate)}
                         className='text-[1.2rem] text-brandColor hover:scale-[1.2] transition-all duration-200'/>

@@ -18,7 +18,7 @@ const Contributors = () => {
                     title={'Contributors'}
                 />
 
-                <div className='mt-16 flex flex-wrap gap-4 justify-center'>
+                <div className='mt-16 grid grid-cols-2 640px:flex flex-wrap gap-4 justify-center'>
                     {DevContributorsData?.map((member, index) => (
                         <MemberCard key={index} member={member} isMemberDev={true}/>
                     ))}
@@ -34,7 +34,7 @@ const Contributors = () => {
                     title={'Contributors'}
                 />
 
-                <div className='mt-16 flex flex-wrap gap-4 justify-center'>
+                <div className='mt-16 grid grid-cols-2 640px:flex flex-wrap gap-4 justify-center'>
                     {TeamData?.map((member, index) => (
                         <MemberCard key={index} member={member}/>
                     ))}

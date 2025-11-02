@@ -38,7 +38,7 @@ const MetricsCard = () => {
     ];
 
     return (
-        <SectionWrapper className='!mt-24 relative'>
+        <SectionWrapper className='mt-18 640px:!mt-24 relative'>
             <div
                 className='rounded-3xl bg-gradient-to-r overflow-hidden relative dark:from-blue-900 from-blue-100 dark:via-[#A576E3]/60 via-white to-cyan-100 z-0 dark:to-cyan-600/80 640px:pt-16 p-8 640px:p-20 1024px:p-24'>
 
