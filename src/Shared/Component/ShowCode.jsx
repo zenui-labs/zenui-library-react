@@ -18,12 +18,10 @@ const ShowCode = ({code}) => {
 
     const store = useZenuiStore(state => state);
 
-    // Format code properly whether it's a single code string or multiple
     const formattedCode = isMultiTab
         ? code
         : [{id: "default", displayText: "", language: "jsx", code: code}];
 
-    // copy to clipboard
     const copyToClipboard = () => {
         const currentCode = formattedCode.find(item => item.id === activeTab)?.code || "";
         const classes = toggleThemeBaseClasses(currentCode, store.withDarkClasses);
@@ -95,7 +93,7 @@ const ShowCode = ({code}) => {
                         fontSize: "14px",
                         maxHeight: "400px",
                     }}
-                    className='zenui_code_snippet text-[14px] 1404px:max-w-[700px] 1605px:max-w-[800px] max-h-[400px] 400px:max-w-[380px] 425px:max-w-[638px] max-w-[325px]'
+                    className='zenui_code_snippet text-[14px] 1404px:max-w-[700px] 1605px:max-w-[800px] max-h-[400px] 400px:max-w-[380px] max-w-[325px] 640px:max-w-[980px]'
                 >
                     {toggleThemeBaseClasses(formattedCode.find(item => item.id === activeTab)?.code, store.withDarkClasses) || ''}
                 </SyntaxHighlighter>

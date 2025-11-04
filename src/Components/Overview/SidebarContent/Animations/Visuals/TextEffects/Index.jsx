@@ -26,14 +26,23 @@ import {TextEffectContents} from "@utils/ContentsConfig/AnimationContents/Visual
 import {
     ElasticTextAnimationCodes,
     MagneticTextCodes,
-    ScrambleTextCodes, TextFloatingAnimationCodes,
-    TextRevealCodes, TextTypeWriterCodes, ThreeDRotationCodes,
-    ThreeDTransformCodes, WaveTextAnimationCodes
+    ScrambleTextCodes,
+    TextFloatingAnimationCodes,
+    TextRevealCodes,
+    TextSpoilerCodes,
+    TextTypeWriterCodes,
+    ThreeDRotationCodes,
+    ThreeDTransformCodes,
+    WaveTextAnimationCodes
 } from "@animations/Visuals/TextEffects/PreivewCodes.js";
+import SpoilerTextExample from "@animations/Visuals/TextEffects/SpoilerTextExample.jsx";
 
 const Index = () => {
     const sectionIds = TextEffectContents.map(item => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
+
+    const [spoilerTextPreview, setSpoilerTextPreview] = useState(true);
+    const [spoilerTextCode, setSpoilerTextCode] = useState(false);
 
     const [textRevealPreview, setTextRevealPreview] = useState(true);
     const [textRevealCode, setTextRevealCode] = useState(false);
@@ -65,7 +74,29 @@ const Index = () => {
     return (
         <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
             <div>
-                <ContentHeader text={"text reveal animation"} id={"text-reveal-animation"}/>
+                <ContentHeader text={"Spoiler text animation"} id={"spoiler-text-animation"}/>
+
+                <ComponentDescription
+                    text='Spoiler Text Animation reveals hidden words interactively, adding curiosity and motion to your content.'/>
+
+                <ToggleTab setCode={setSpoilerTextCode} code={spoilerTextCode}
+                           setPreview={setSpoilerTextPreview} preview={spoilerTextPreview}/>
+
+                <ComponentWrapper>
+                    {spoilerTextPreview && (
+                        <div className="px-8 py-12 flex flex-col flex-wrap items-center gap-5 justify-center">
+                            <SpoilerTextExample/>
+                        </div>
+                    )}
+
+                    {spoilerTextCode &&
+                        <ShowCode code={TextSpoilerCodes}
+                        />}
+                </ComponentWrapper>
+
+                <div className='mt-8'>
+                    <ContentHeader text={"text reveal animation"} id={"text-reveal-animation"}/>
+                </div>
 
                 <ComponentDescription
                     text='Text reveal animation shows text with smooth transitions like slide adding a dynamic touch to content display.'/>

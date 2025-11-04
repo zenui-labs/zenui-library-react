@@ -1,17 +1,24 @@
-import {useEffect, useRef, useState} from "react";
+import {forwardRef, useEffect, useImperativeHandle, useRef, useState} from 'react';
 
-const SpoilerAnimation = ({children}) => {
+const SpoilerAnimationCore = forwardRef(({children, onRestart}, ref) => {
     const [isRevealed, setIsRevealed] = useState(false);
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const animationRef = useRef(null);
     const particlesRef = useRef([]);
 
+    useImperativeHandle(ref, () => ({
+        restart: () => {
+            setIsRevealed(false);
+            if (onRestart) onRestart();
+        },
+    }));
+
     useEffect(() => {
         if (!canvasRef.current || !containerRef.current) return;
 
         const canvas = canvasRef.current;
-        const ctx = canvas.getContext("2d");
+        const ctx = canvas.getContext('2d');
         const container = containerRef.current;
         const rect = container.getBoundingClientRect();
 
@@ -19,21 +26,23 @@ const SpoilerAnimation = ({children}) => {
         canvas.height = rect.height;
 
         const particleCount = Math.floor((rect.width * rect.height) / 50);
-        const initialParticles = [];
+        const createParticles = () => {
+            const particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push({
+                    x: Math.random() * rect.width,
+                    y: Math.random() * rect.height,
+                    vx: (Math.random() - 0.5) * 1.5,
+                    vy: (Math.random() - 0.5) * 1.5,
+                    life: 1,
+                    size: Math.random() * 2.5 + 1,
+                    opacity: Math.random() * 0.5 + 0.5,
+                });
+            }
+            return particles;
+        };
 
-        for (let i = 0; i < particleCount; i++) {
-            initialParticles.push({
-                x: Math.random() * rect.width,
-                y: Math.random() * rect.height,
-                vx: (Math.random() - 0.5) * 1.5,
-                vy: (Math.random() - 0.5) * 1.5,
-                life: 1,
-                size: Math.random() * 2.5 + 1,
-                opacity: Math.random() * 0.5 + 0.5,
-            });
-        }
-
-        particlesRef.current = initialParticles;
+        particlesRef.current = createParticles();
 
         const animate = () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -63,20 +72,11 @@ const SpoilerAnimation = ({children}) => {
                 particlesRef.current.forEach(p => {
                     p.x += p.vx;
                     p.y += p.vy;
-
-                    if (p.x < 0 || p.x > rect.width) {
-                        p.vx *= -1;
-                        p.x = Math.max(0, Math.min(rect.width, p.x));
-                    }
-                    if (p.y < 0 || p.y > rect.height) {
-                        p.vy *= -1;
-                        p.y = Math.max(0, Math.min(rect.height, p.y));
-                    }
-
+                    if (p.x < 0 || p.x > rect.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > rect.height) p.vy *= -1;
                     ctx.fillStyle = `rgba(107, 114, 128, ${p.opacity})`;
                     ctx.fillRect(p.x, p.y, p.size, p.size);
                 });
-
                 animationRef.current = requestAnimationFrame(animate);
             }
         };
@@ -84,16 +84,12 @@ const SpoilerAnimation = ({children}) => {
         animate();
 
         return () => {
-            if (animationRef.current) {
-                cancelAnimationFrame(animationRef.current);
-            }
+            if (animationRef.current) cancelAnimationFrame(animationRef.current);
         };
     }, [isRevealed]);
 
     const handleReveal = () => {
-        if (!isRevealed) {
-            setIsRevealed(true);
-        }
+        if (!isRevealed) setIsRevealed(true);
     };
 
     return (
@@ -101,9 +97,9 @@ const SpoilerAnimation = ({children}) => {
             ref={containerRef}
             className="relative inline-block cursor-pointer select-none px-1"
             onClick={handleReveal}
-            style={{minHeight: "0.9rem"}}
+            style={{minHeight: '0.9rem'}}
         >
-            <span className={`relative z-10 ${isRevealed ? "animate-wave-reveal" : "opacity-0"}`}>
+            <span className={`relative z-10 ${isRevealed ? 'animate-wave-reveal' : 'opacity-0'}`}>
                 {children}
             </span>
             <canvas
@@ -112,6 +108,8 @@ const SpoilerAnimation = ({children}) => {
             />
         </span>
     );
-};
+});
 
-export default SpoilerAnimation;
+SpoilerAnimationCore.displayName = 'SpoilerAnimationCore';
+
+export default SpoilerAnimationCore;

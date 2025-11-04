@@ -1,3 +1,234 @@
+export const TextSpoilerCodes = [
+    {
+        id: "container",
+        displayText: "App.jsx",
+        language: "jsx",
+        code: 'import SpoilerAnimationCore from "./SpoilerAnimation.jsx";\n' +
+            '\n' +
+            'const App = () => {\n' +
+            '    return (\n' +
+            '        <div className="w-full flex items-center gap-12 justify-center flex-col">\n' +
+            '            <h5 className="text-3xl text-center leading-relaxed font-bold mt-3 text-gray-800 dark:text-gray-100">\n' +
+            '                Elevate your project with{" "}\n' +
+            '                <SpoilerAnimationCore>\n' +
+            '                    free UI components,\n' +
+            '                </SpoilerAnimationCore>{" "}\n' +
+            '                <SpoilerAnimationCore>\n' +
+            '                    customizable icons,\n' +
+            '                </SpoilerAnimationCore>{" "}\n' +
+            '                and a{" "}\n' +
+            '                <SpoilerAnimationCore>\n' +
+            '                    color palette\n' +
+            '                </SpoilerAnimationCore>\n' +
+            '                . No{" "}\n' +
+            '                <SpoilerAnimationCore>\n' +
+            '                    dependencies\n' +
+            '                </SpoilerAnimationCore>{" "}\n' +
+            '                required 🤫\n' +
+            '            </h5>\n' +
+            '        </div>\n' +
+            '    );\n' +
+            '};\n' +
+            '\n' +
+            'export default App;\n'
+    },
+    {
+        id: "animated_text",
+        displayText: "SpoilerAnimation.jsx",
+        language: "jsx",
+        code: 'import {useEffect, useRef, useState} from "react";\n' +
+            '\n' +
+            'const SpoilerAnimation = ({children}) => {\n' +
+            '    const [isRevealed, setIsRevealed] = useState(false);\n' +
+            '    const canvasRef = useRef(null);\n' +
+            '    const containerRef = useRef(null);\n' +
+            '    const animationRef = useRef(null);\n' +
+            '    const particlesRef = useRef([]);\n' +
+            '\n' +
+            '    useEffect(() => {\n' +
+            '        if (!canvasRef.current || !containerRef.current) return;\n' +
+            '\n' +
+            '        const canvas = canvasRef.current;\n' +
+            '        const ctx = canvas.getContext("2d");\n' +
+            '        const container = containerRef.current;\n' +
+            '        const rect = container.getBoundingClientRect();\n' +
+            '\n' +
+            '        canvas.width = rect.width;\n' +
+            '        canvas.height = rect.height;\n' +
+            '\n' +
+            '        const particleCount = Math.floor((rect.width * rect.height) / 50);\n' +
+            '        const initialParticles = [];\n' +
+            '\n' +
+            '        for (let i = 0; i < particleCount; i++) {\n' +
+            '            initialParticles.push({\n' +
+            '                x: Math.random() * rect.width,\n' +
+            '                y: Math.random() * rect.height,\n' +
+            '                vx: (Math.random() - 0.5) * 1.5,\n' +
+            '                vy: (Math.random() - 0.5) * 1.5,\n' +
+            '                life: 1,\n' +
+            '                size: Math.random() * 2.5 + 1,\n' +
+            '                opacity: Math.random() * 0.5 + 0.5,\n' +
+            '            });\n' +
+            '        }\n' +
+            '\n' +
+            '        particlesRef.current = initialParticles;\n' +
+            '\n' +
+            '        const animate = () => {\n' +
+            '            ctx.clearRect(0, 0, canvas.width, canvas.height);\n' +
+            '\n' +
+            '            if (isRevealed) {\n' +
+            '                particlesRef.current = particlesRef.current\n' +
+            '                    .map(p => ({\n' +
+            '                        ...p,\n' +
+            '                        x: p.x + p.vx * 4,\n' +
+            '                        y: p.y + p.vy * 4,\n' +
+            '                        vx: p.vx * 1.05,\n' +
+            '                        vy: p.vy * 1.05,\n' +
+            '                        life: p.life - 0.02,\n' +
+            '                        opacity: p.life,\n' +
+            '                    }))\n' +
+            '                    .filter(p => p.life > 0);\n' +
+            '\n' +
+            '                particlesRef.current.forEach(p => {\n' +
+            '                    ctx.fillStyle = `rgba(107, 114, 128, ${p.opacity * p.life})`;\n' +
+            '                    ctx.fillRect(p.x, p.y, p.size, p.size);\n' +
+            '                });\n' +
+            '\n' +
+            '                if (particlesRef.current.length > 0) {\n' +
+            '                    animationRef.current = requestAnimationFrame(animate);\n' +
+            '                }\n' +
+            '            } else {\n' +
+            '                particlesRef.current.forEach(p => {\n' +
+            '                    p.x += p.vx;\n' +
+            '                    p.y += p.vy;\n' +
+            '\n' +
+            '                    if (p.x < 0 || p.x > rect.width) {\n' +
+            '                        p.vx *= -1;\n' +
+            '                        p.x = Math.max(0, Math.min(rect.width, p.x));\n' +
+            '                    }\n' +
+            '                    if (p.y < 0 || p.y > rect.height) {\n' +
+            '                        p.vy *= -1;\n' +
+            '                        p.y = Math.max(0, Math.min(rect.height, p.y));\n' +
+            '                    }\n' +
+            '\n' +
+            '                    ctx.fillStyle = `rgba(107, 114, 128, ${p.opacity})`;\n' +
+            '                    ctx.fillRect(p.x, p.y, p.size, p.size);\n' +
+            '                });\n' +
+            '\n' +
+            '                animationRef.current = requestAnimationFrame(animate);\n' +
+            '            }\n' +
+            '        };\n' +
+            '\n' +
+            '        animate();\n' +
+            '\n' +
+            '        return () => {\n' +
+            '            if (animationRef.current) {\n' +
+            '                cancelAnimationFrame(animationRef.current);\n' +
+            '            }\n' +
+            '        };\n' +
+            '    }, [isRevealed]);\n' +
+            '\n' +
+            '    const handleReveal = () => {\n' +
+            '        if (!isRevealed) {\n' +
+            '            setIsRevealed(true);\n' +
+            '        }\n' +
+            '    };\n' +
+            '\n' +
+            '    return (\n' +
+            '        <span\n' +
+            '            ref={containerRef}\n' +
+            '            className="relative inline-block cursor-pointer select-none px-1"\n' +
+            '            onClick={handleReveal}\n' +
+            '            style={{minHeight: "0.9rem"}}\n' +
+            '        >\n' +
+            '            <span className={`relative z-10 ${isRevealed ? "animate-wave-reveal" : "opacity-0"}`}>\n' +
+            '                {children}\n' +
+            '            </span>\n' +
+            '            <canvas\n' +
+            '                ref={canvasRef}\n' +
+            '                className="absolute inset-0 z-20 pointer-events-none"\n' +
+            '            />\n' +
+            '        </span>\n' +
+            '    );\n' +
+            '};\n' +
+            '\n' +
+            'export default SpoilerAnimation;'
+    },
+    {
+        id: "css",
+        displayText: "Index.css",
+        language: "css",
+        code: '@keyframes wave-reveal {\n' +
+            '    0% {\n' +
+            '        opacity: 0;\n' +
+            '        clip-path: polygon(\n' +
+            '                0% 50%,\n' +
+            '                10% 45%,\n' +
+            '                20% 50%,\n' +
+            '                30% 55%,\n' +
+            '                40% 50%,\n' +
+            '                50% 45%,\n' +
+            '                60% 50%,\n' +
+            '                70% 55%,\n' +
+            '                80% 50%,\n' +
+            '                90% 45%,\n' +
+            '                100% 50%,\n' +
+            '                100% 50%,\n' +
+            '                90% 45%,\n' +
+            '                80% 50%,\n' +
+            '                70% 55%,\n' +
+            '                60% 50%,\n' +
+            '                50% 45%,\n' +
+            '                40% 50%,\n' +
+            '                30% 55%,\n' +
+            '                20% 50%,\n' +
+            '                10% 45%,\n' +
+            '                0% 50%\n' +
+            '        );\n' +
+            '    }\n' +
+            '    50% {\n' +
+            '        opacity: 0.7;\n' +
+            '        clip-path: polygon(\n' +
+            '                0% 0%,\n' +
+            '                10% 5%,\n' +
+            '                20% 0%,\n' +
+            '                30% -5%,\n' +
+            '                40% 0%,\n' +
+            '                50% 5%,\n' +
+            '                60% 0%,\n' +
+            '                70% -5%,\n' +
+            '                80% 0%,\n' +
+            '                90% 5%,\n' +
+            '                100% 0%,\n' +
+            '                100% 100%,\n' +
+            '                90% 95%,\n' +
+            '                80% 100%,\n' +
+            '                70% 105%,\n' +
+            '                60% 100%,\n' +
+            '                50% 95%,\n' +
+            '                40% 100%,\n' +
+            '                30% 105%,\n' +
+            '                20% 100%,\n' +
+            '                10% 95%,\n' +
+            '                0% 100%\n' +
+            '        );\n' +
+            '    }\n' +
+            '    100% {\n' +
+            '        opacity: 1;\n' +
+            '        clip-path: polygon(\n' +
+            '                0% 0%,\n' +
+            '                100% 0%,\n' +
+            '                100% 100%,\n' +
+            '                0% 100%\n' +
+            '        );\n' +
+            '    }\n' +
+            '}\n' +
+            '\n' +
+            '.animate-wave-reveal {\n' +
+            '    animation: wave-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;\n' +
+            '}'
+    }
+]
 export const TextRevealCodes = [
     {
         id: "container",
