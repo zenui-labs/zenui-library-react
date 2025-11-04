@@ -13,7 +13,7 @@ export default function ShimmerButton() {
   `;
     return (<div className="flex items-center justify-center font-sans mb-4">
             <style>{customCss}</style>
-            <a href='http://localhost:5173/animations/text-effects#spoiler-text-animation'
+            <a href='https://zenui.net/animations/text-effects#spoiler-text-animation'
                rel='noreferrer'
                className="relative inline-flex items-center justify-center p-[1.5px] bg-gray-100 dark:bg-black rounded-full overflow-hidden group">
                 <div className="absolute inset-0" style={{
