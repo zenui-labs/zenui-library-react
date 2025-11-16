@@ -1,13 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
 
-// icons
 import {CiMenuFries, CiSearch} from "react-icons/ci";
 import {IoIosArrowDown} from "react-icons/io";
 import {RxCross2, RxDiscordLogo} from "react-icons/rx";
 import {FiGithub} from "react-icons/fi";
 
-// react router dom
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Search from "./Search";
 import {AnimatePresence, motion} from "framer-motion";
 import {LuSun} from "react-icons/lu";
@@ -27,12 +25,11 @@ const NewMobileNavbar = () => {
     const [showStars, setShowStars] = useState(false);
     const [textWidth, setTextWidth] = useState(0);
     const textRef = useRef(null);
-    const {stars, loading} = useGitHubStars("Asfak00", "zenui-library");
+    const {stars} = useGitHubStars("Asfak00", "zenui-library");
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
     const navigate = useNavigate();
-    const location = useLocation()
 
     const handleSearchClick = () => {
         setIsSearchOpen(true);
@@ -89,7 +86,7 @@ const NewMobileNavbar = () => {
     return (
         <>
             <nav
-                className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100 dark:border-darkBorderColor'} border-b flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50`}>
+                className={`border-gray-100 dark:border-darkBorderColor' border-b flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50`}>
                 <div className="flex items-center gap-8 relative">
                     <div className='relative'>
                         <VersionSelectBox/>

@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 
 // react helmet
 import {Helmet} from "react-helmet";
@@ -27,9 +27,7 @@ const ResizableLayout = () => {
 
     const handleMouseMove = (e) => {
         const newLeftWidth = e.clientX;
-        console.log(leftWidth)
         if (newLeftWidth < 600 && newLeftWidth > 100) {
-            console.log('inside')
             setLeftWidth(newLeftWidth);
         }
     };

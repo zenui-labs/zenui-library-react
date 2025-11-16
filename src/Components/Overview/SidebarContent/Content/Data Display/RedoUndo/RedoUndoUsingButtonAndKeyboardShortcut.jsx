@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 // react icons
 import {LuRedo2, LuUndo2} from "react-icons/lu";
@@ -30,7 +30,7 @@ function RedoUndoUsingButtonAndKeyboard() {
                     sel.addRange(range);
                     editorRef.current.focus();
                 } catch (e) {
-                    console.log("Selection error handled");
+                    console.error("Selection error handled");
                 }
             }
         }
@@ -163,7 +163,7 @@ function RedoUndoUsingButtonAndKeyboard() {
                             : 'bg-primary text-white hover:bg-blue-600'
                     }`}
                 >
-                    <LuRedo2 />
+                    <LuRedo2/>
                 </button>
             </div>
 

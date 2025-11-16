@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useEffect, useState} from "react";
 
 // react helmet
 import {Helmet} from "react-helmet";
@@ -34,8 +34,6 @@ const PieChart = () => {
 
         window.addEventListener("resize", handleResize);
         handleResize();
-
-        console.log(windowSize)
 
         return () => window.removeEventListener("resize", handleResize);
     }, []);

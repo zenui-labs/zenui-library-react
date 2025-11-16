@@ -153,4 +153,15 @@ export const DevContributorsData = [
         website: 'https://novodip.vercel.app/',
         zenuiHero: false,
     },
+    {
+        name: 'Yeakin Iqra',
+        title: 'Software Engineer',
+        certificate: 'yeakin_iqra',
+        image: 'https://i.ibb.co.com/v6N0JJzF/108855634.jpg',
+        linkedinLink: 'https://www.linkedin.com/in/nazmul-yeakin-iqra-975206344/',
+        twitterLink: '',
+        githubLink: 'https://github.com/yeakiniqra',
+        website: 'https://yeakiniqra.com/',
+        zenuiHero: false,
+    },
 ]

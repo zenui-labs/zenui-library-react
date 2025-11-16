@@ -28,8 +28,6 @@ const ShadePalette = () => {
         return [];
     };
 
-    console.log(generateShades('#0FABCA'))
-
     const addColor = () => {
         const color = tinycolor(colorInput);
 

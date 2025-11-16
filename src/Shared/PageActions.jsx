@@ -76,8 +76,6 @@ Explain clearly as if reviewing it for developers.
 
     const [selectedOption, setSelectedOption] = useState(actions[0]);
 
-    console.log(selectedOption)
-
     useEffect(() => {
         if (typeof window !== "undefined") {
             setPageHtml(document.documentElement.outerHTML);

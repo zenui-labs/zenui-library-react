@@ -2,8 +2,6 @@ import axios from "axios";
 
 const GROQ_API_KEY = import.meta.env.VITE_GROQ_API_KEY;
 
-console.log(GROQ_API_KEY);
-
 export const generateTailwindConfig = async (prompt) => {
     const response = await axios.post(
         'https://api.groq.com/openai/v1/chat/completions',

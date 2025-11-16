@@ -51,10 +51,8 @@ const TodoAppDragDrop = () => {
                     text: newTodoText.trim(),
                     completed: false,
                 };
-                console.log('Adding new todo:', newTodo);
                 setTodos((prevTodos) => {
                     const updatedTodos = [...prevTodos, newTodo];
-                    console.log('Updated todos:', updatedTodos);
                     return updatedTodos;
                 });
                 setNewTodoText('');

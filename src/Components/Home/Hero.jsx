@@ -30,13 +30,14 @@ const Hero = () => {
                 <ShimmerButton/>
 
                 <h1
-                    className="text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
+                    className="text-[2.3rem] 400px:text-[2.5rem] font-bold 640px:text-[3.2rem] 1024px:text-[4rem] leading-[3.2rem] 640px:leading-[4rem] 1024px:leading-[5rem] transition-all duration-700 dark:text-darkTextColor">
                     Open-Source UI Components Library for <span className="text-[#2498b5] dark:text-[#41bfdb]">React Developers</span>
                 </h1>
 
                 <p
                     className="dark:text-darkSubTextColor text-gray-500 w-full 640px:w-[90%] mt-4 640px:mt-3 1024px:w-[85%] mx-auto font-[400] text-[1rem] capitalize 1024pxtext-[1.1rem] max-w-4xl">
-                    ZenUI is your all-in-one React + Tailwind CSS component library. Ready to use UI components for faster your
+                    ZenUI is your all-in-one React + Tailwind CSS component library. Ready to use UI components for
+                    faster your
                     development workflow.
                 </p>
 

@@ -1,7 +1,6 @@
-import {useState, useRef, useEffect} from 'react';
+import {useEffect, useRef, useState} from 'react';
 
 // react icons
-import {LuRedo2, LuUndo2} from "react-icons/lu";
 
 function RedoUndoUsingKeyboardShortcut() {
     const MAX_HISTORY_LENGTH = 30;
@@ -30,7 +29,7 @@ function RedoUndoUsingKeyboardShortcut() {
                     sel.addRange(range);
                     editorRef.current.focus();
                 } catch (e) {
-                    console.log("Selection error handled");
+                    console.error("Selection error handled");
                 }
             }
         }

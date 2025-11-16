@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, {useRef, useState} from 'react';
 
 // framer motion
-import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
+import {AnimatePresence, motion, useMotionValue, useTransform} from 'framer-motion';
 
 // react icons
 import {AiOutlineDelete} from "react-icons/ai";
@@ -39,7 +39,6 @@ export default function BasicSwipeCardExample() {
     };
 
     const handleAction = (action) => {
-        console.log(`Executing action: ${action}`);
         resetCard();
     };
 
@@ -50,7 +49,7 @@ export default function BasicSwipeCardExample() {
                 {/* Left Actions */}
                 <div
                     className="absolute top-0 left-0 h-full flex items-center justify-start pl-[19px] bg-green-600 w-1/3"
-                    style={{ opacity: leftActionsOpacity }}
+                    style={{opacity: leftActionsOpacity}}
                 >
                     <button
                         onClick={() => handleAction('Mark as Read')}
@@ -65,7 +64,7 @@ export default function BasicSwipeCardExample() {
                     className="absolute top-0 right-0 h-full flex items-center justify-end pr-[19px] bg-red-500 w-1/3"
                     style={{opacity: rightActionsOpacity}}
                 >
-                <button
+                    <button
                         onClick={() => handleAction('Delete')}
                         className="p-2 bg-red-600 text-white rounded-full"
                     >
@@ -78,11 +77,11 @@ export default function BasicSwipeCardExample() {
                     <motion.div
                         className="bg-white dark:bg-slate-800 p-5 w-full z-10 relative"
                         drag="x"
-                        dragConstraints={{ left: 0, right: 0 }}
+                        dragConstraints={{left: 0, right: 0}}
                         dragElastic={0.2}
                         onDragStart={() => (isDragging.current = true)}
                         onDragEnd={handleDragEnd}
-                        initial={{ x: 0 }}
+                        initial={{x: 0}}
                         animate={{
                             x: isLeftRevealed ? 80 : isRightRevealed ? -80 : 0,
                         }}
@@ -91,7 +90,7 @@ export default function BasicSwipeCardExample() {
                             stiffness: 250,
                             damping: 25,
                         }}
-                        style={{ x }}
+                        style={{x}}
                     >
                         <div
                             className="flex items-center cursor-grab active:cursor-grabbing"

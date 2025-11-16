@@ -1,10 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
 
-// icons
 import {IoIosArrowDown} from "react-icons/io";
 
-// react router dom
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import Search from "./Search";
 import {FiGithub} from "react-icons/fi";
 import {RxDiscordLogo} from "react-icons/rx";
@@ -34,8 +32,7 @@ const Navbar = ({className}) => {
     const [textWidth, setTextWidth] = useState(0);
     const textRef = useRef(null);
 
-    const location = useLocation()
-    const {stars, loading} = useGitHubStars("Asfak00", "zenui-library");
+    const {stars} = useGitHubStars("Asfak00", "zenui-library");
 
     const [searchPlaceholderText, setSearchPlaceholderText] = useState("search component");
 
@@ -110,7 +107,7 @@ const Navbar = ({className}) => {
 
     return (<>
         <nav
-            className={`${location.pathname === '/' ? 'border-transparent' : 'border-gray-100 dark:border-darkBorderColor'} border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500 ${className}`}>
+            className={`border-gray-100 dark:border-darkBorderColor' border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500 ${className}`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 
@@ -147,7 +144,7 @@ const Navbar = ({className}) => {
                                 initial={{opacity: 0, scale: 0.8}}
                                 animate={{opacity: 1, scale: 1}}
                                 exit={{opacity: 0, scale: 0.8}}
-                                className="absolute dark:bg-slate-800 dark:border-darkBorderColor border top-[64px] left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5"
+                                className="absolute dark:bg-slate-800 dark:border-darkBorderColor/70 border top-[64px] border-gray-100 left-[-250px] gap-x-[30px] w-[700px] grid grid-cols-2 gap-y-3 bg-white shadow-[0px_40px_80px_-8px_rgba(145,158,171,0.24)] rounded-high p-5"
                                 onMouseEnter={() => setIsToolsHover(true)}
                                 onMouseLeave={() => setIsToolsHover(false)}
                             >
