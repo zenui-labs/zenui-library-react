@@ -261,7 +261,7 @@ const Navbar = ({className}) => {
                 <div className="flex items-center gap-2">
                     <div className="zenuiSearchInput relative w-full" onClick={handleSearchClick}>
                         <CiSearch
-                            className={`text-gray-400 absolute dark:text-slate-400 left-3 top-[0.6rem] text-[1.5rem]`}/>
+                            className={`text-gray-400 absolute dark:text-slate-400 left-3 top-[0.7rem] text-[1.4rem]`}/>
                         <AnimatePresence>
                             <motion.p
                                 key={searchPlaceholderText}
@@ -269,15 +269,13 @@ const Navbar = ({className}) => {
                                 animate={{opacity: 1, y: 0}}
                                 exit={{opacity: 0, y: 10}}
                                 transition={{duration: 0.5}}
-                                className='text-[0.9rem] dark:text-slate-400 text-gray-400 absolute top-[11px] left-[45px]'
+                                className='text-[0.9rem] dark:text-slate-400 text-gray-400 absolute top-[11px] left-[40px]'
                             >
                                 {searchPlaceholderText}
                             </motion.p>
                         </AnimatePresence>
                         <input
                             type="search"
-                            name=""
-                            id=""
                             readOnly={true}
                             className={`py-[0.59rem] pl-10 dark:border-darkBorderColor border w-full bg-transparent border-gray-200 rounded-normal focus:ring-0 outline-none`}
                         />
