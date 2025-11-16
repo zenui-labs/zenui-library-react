@@ -42,6 +42,10 @@ const ProgressBar = () => {
     const [circlePreview, setCirclePreview] = useState(true);
     const [circleCode, setCircleCode] = useState(false);
 
+    // striped animated progress bar
+    const [stripedPreview, setStripedPreview] = useState(true);
+    const [stripedCode, setStripedCode] = useState(false);
+
     const [progress, setProgress] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
 
@@ -263,7 +267,7 @@ export default ProgressBar;
                                         ></div>
                                     </div>
 
-                                    <p>
+                                    <p className='dark:text-gray-400'>
                                         Loading: <b>{progress}%</b>
                                     </p>
                                 </div>
@@ -385,7 +389,7 @@ export default ProgressBar;
                                         />
                                     </svg>
 
-                                    <p className='absolute top-[35%] left-[30%] translate-x-1/2 transform translate-y-1/2'>
+                                    <p className='absolute top-[35%] left-[30%] translate-x-1/2 transform translate-y-1/2 dark:text-gray-400'>
                                         {progress}%
                                     </p>
                                 </div>
@@ -474,6 +478,111 @@ const ProgressBar = () => {
             <button onClick={handleStartLoading}
                     className={`bg-blue-500 rounded-md text-[0.8rem] px-2 py-1 mx-auto`}>Start Loading
             </button>
+        </>
+    );
+};
+
+export default ProgressBar;
+                                '
+                            />
+                        )}
+                    </ComponentWrapper>
+
+                    <div className='mt-8'>
+                        <ContentHeader
+                            text={'striped animated progress bar'}
+                            id={'striped_animated_progress_bar'}
+                        />
+                    </div>
+
+                    <ComponentDescription text='A progress bar with animated diagonal stripes that move across the bar,
+            providing a dynamic visual indication of ongoing progress.'/>
+
+                    <ToggleTab setPreview={setStripedPreview} code={stripedCode} preview={stripedPreview}
+                               setCode={setStripedCode}/>
+
+                    <ComponentWrapper>
+                        {stripedPreview && (
+                            <div className='p-8 mb-4 flex flex-col pt-12 flex-wrap items-center gap-5 justify-center'>
+                                <div className='relative dark:bg-slate-700 bg-gray-200 w-[80%] h-[15px] rounded-full overflow-hidden'>
+                                    <div
+                                        className='absolute top-0 left-0 bg-primary h-full rounded-full transition-all duration-300'
+                                        style={{
+                                            width: `${progress}%`,
+                                            backgroundImage: 'linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent)',
+                                            backgroundSize: '30px 30px',
+                                            animation: progress > 0 ? 'progress-stripes 1s linear infinite' : 'none'
+                                        }}
+                                    ></div>
+                                </div>
+
+                                <button
+                                    onClick={handleStartLoading}
+                                    className={`${utils.buttonSecondary} text-[0.8rem] !px-2 !py-1`}
+                                >
+                                    Start Loading
+                                </button>
+
+                                <style>{`
+                                    @keyframes progress-stripes {
+                                        0% {
+                                            background-position: 0 0;
+                                        }
+                                        100% {
+                                            background-position: 30px 0;
+                                        }
+                                    }
+                                `}</style>
+                            </div>
+                        )}
+
+                        {stripedCode && (
+                            <Showcode
+                                code='
+import React, {useState} from "react";
+
+const ProgressBar = () => {
+    const [progress, setProgress] = useState(0);
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleStartLoading = () => {
+        if (isLoading) {
+            setProgress(0);
+            setIsLoading(false);
+        }
+
+        setProgress(0);
+        setIsLoading(true);
+    };
+
+    return (
+        <>
+            <div className="relative bg-gray-200 dark:bg-slate-700 w-[80%] h-[15px] rounded-full overflow-hidden">
+                <div 
+                    className="absolute top-0 left-0 bg-primary h-full rounded-full transition-all duration-300"
+                    style={{
+                        width: `${progress}%`,
+                        backgroundImage: "linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent)",
+                        backgroundSize: "30px 30px",
+                        animation: progress > 0 ? "progress-stripes 1s linear infinite" : "none"
+                    }}
+                ></div>
+            </div>
+
+            <button onClick={handleStartLoading}
+                    className={`text-[0.8rem] px-2 py-1 bg-blue-500 rounded-md`}>Start Loading
+            </button>
+
+            <style>{`
+                @keyframes progress-stripes {
+                    0% {
+                        background-position: 0 0;
+                    }
+                    100% {
+                        background-position: 30px 0;
+                    }
+                }
+            `}</style>
         </>
     );
 };
