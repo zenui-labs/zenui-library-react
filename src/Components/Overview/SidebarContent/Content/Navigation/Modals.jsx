@@ -49,6 +49,10 @@ const Modals = () => {
     const [deleteModalPreview, setDeleteModalPreview] = useState(true);
     const [deleteModalCode, setDeleteModalCode] = useState(false);
 
+    // blur background modal
+    const [blurModalPreview, setBlurModalPreview] = useState(true);
+    const [blurModalCode, setBlurModalCode] = useState(false);
+
     // handling all of modal actions
     const [modal1Open, setModal1Open] = useState(false);
     const [modal2Open, setModal2Open] = useState(false);
@@ -56,6 +60,7 @@ const Modals = () => {
     const [modal4Open, setModal4Open] = useState(false);
     const [modal5Open, setModal5Open] = useState(false);
     const [modal10Open, setModal10Open] = useState(false);
+    const [modal11Open, setModal11Open] = useState(false);
 
     const [disabledButton, setDisabledButton] = useState(true);
 
@@ -1016,6 +1021,151 @@ const Modal = () => {
 
 export default Modal;
           '
+                            />
+                        )}
+                    </ComponentWrapper>
+
+                    <div className='mt-8'>
+                        <ContentHeader id='blur_background_modal' text={'Focused Modal'}/>
+                    </div>
+
+                    <ComponentDescription text='A modal with a blurred background effect that creates a frosted glass
+            appearance, providing focus on the modal while maintaining visual context.'/>
+
+                    <ToggleTab code={blurModalCode} setPreview={setBlurModalPreview} setCode={setBlurModalCode}
+                               preview={blurModalPreview}/>
+
+                    <ComponentWrapper>
+                        {blurModalPreview && (
+                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                                <div className='w-full flex items-center justify-center'>
+                                    <button
+                                        className='px-4 py-2 bg-primary text-secondary rounded '
+                                        onClick={() => setModal11Open(true)}
+                                    >
+                                        Open Modal
+                                    </button>
+                                </div>
+                                <div
+                                    className={`${
+                                        modal11Open
+                                            ? ' scale-[1] opacity-100'
+                                            : ' scale-[0] opacity-0'
+                                    } w-full h-screen fixed top-0 left-0 z-[200000000] backdrop-blur-md dark:bg-black/50 bg-white/30 flex items-center justify-center transition-all duration-300`}
+                                >
+                                    <div
+                                        className={`w-[90%] 1024px:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl`}
+                                    >
+                                        <div className='w-full flex justify-between items-start'>
+                                            <div>
+                                                <h2 className='text-[1.7rem] dark:text-[#abc2d3] font-[600] text-[#202020]'>
+                                                    Welcome Back!
+                                                </h2>
+                                                <p className='text-[1rem] dark:text-[#abc2d3]/80 text-[#525252] mt-1'>
+                                                    Continue your journey with us
+                                                </p>
+                                            </div>
+
+                                            <RxCross1
+                                                className='p-2 text-[2.5rem] dark:text-[#abc2d3]/80 dark:hover:bg-slate-900/70 hover:bg-gray-100 rounded-full transition-all duration-300 cursor-pointer'
+                                                onClick={() => setModal11Open(false)}
+                                            />
+                                        </div>
+
+                                        <div className='mt-6'>
+                                            <p className='text-[1rem] dark:text-[#abc2d3]/90 text-gray-700 leading-relaxed'>
+                                                Experience a modern modal with a beautiful blur effect. 
+                                                This creates an elegant overlay while maintaining context 
+                                                of the content behind it.
+                                            </p>
+                                        </div>
+
+                                        <div className='flex items-center gap-2 1024px:gap-3 w-full justify-end mt-8'>
+                                            <button
+                                                className='px-5 py-2.5 dark:hover:bg-slate-900/50 hover:bg-gray-100 border dark:border-slate-700 dark:text-[#abc2d3] border-gray-300 rounded-lg text-[#585858] font-[500] transition-all duration-200'
+                                                onClick={() => setModal11Open(false)}
+                                            >
+                                                Cancel
+                                            </button>
+                                            <button
+                                                className='px-5 py-2.5 bg-primary rounded-lg text-white font-[500] hover:opacity-90 transition-all duration-200'
+                                                onClick={() => setModal11Open(false)}
+                                            >
+                                                Continue
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {blurModalCode && (
+                            <Showcode
+                                code='
+import React, {useState} from "react";
+
+// react icons
+import {RxCross1} from "react-icons/rx";
+
+const Modal = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    return (
+        <div
+            className={`${
+                isModalOpen
+                    ? " scale-[1] opacity-100"
+                    : " scale-[0] opacity-0"
+            } w-full h-screen fixed top-0 left-0 z-[200000000] backdrop-blur-md dark:bg-black/50 bg-white/30 flex items-center justify-center transition-all duration-300`}
+        >
+            <div
+                className={`w-[90%] md:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl`}
+            >
+                <div className="w-full flex justify-between items-start">
+                    <div>
+                        <h2 className="text-[1.7rem] dark:text-[#abc2d3] font-[600] text-[#202020]">
+                            Welcome Back!
+                        </h2>
+                        <p className="text-[1rem] dark:text-[#abc2d3]/80 text-[#525252] mt-1">
+                            Continue your journey with us
+                        </p>
+                    </div>
+
+                    <RxCross1
+                        className="p-2 text-[2.5rem] dark:text-[#abc2d3]/80 dark:hover:bg-slate-900/70 hover:bg-gray-100 rounded-full transition-all duration-300 cursor-pointer"
+                        onClick={() => setIsModalOpen(false)}
+                    />
+                </div>
+
+                <div className="mt-6">
+                    <p className="text-[1rem] dark:text-[#abc2d3]/90 text-gray-700 leading-relaxed">
+                        Experience a modern modal with a beautiful blur effect. 
+                        This creates an elegant overlay while maintaining context 
+                        of the content behind it.
+                    </p>
+                </div>
+
+                <div className="flex items-center gap-2 md:gap-3 w-full justify-end mt-8">
+                    <button
+                        className="px-5 py-2.5 dark:hover:bg-slate-900/50 hover:bg-gray-100 border dark:border-slate-700 dark:text-[#abc2d3] border-gray-300 rounded-lg text-[#585858] font-[500] transition-all duration-200"
+                        onClick={() => setIsModalOpen(false)}
+                    >
+                        Cancel
+                    </button>
+                    <button
+                        className="px-5 py-2.5 bg-[#3B9DF8] rounded-lg text-white font-[500] hover:opacity-90 transition-all duration-200"
+                        onClick={() => setIsModalOpen(false)}
+                    >
+                        Continue
+                    </button>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Modal;
+              '
                             />
                         )}
                     </ComponentWrapper>
