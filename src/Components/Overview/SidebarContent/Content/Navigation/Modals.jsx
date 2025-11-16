@@ -1037,7 +1037,7 @@ export default Modal;
 
                     <ComponentWrapper>
                         {blurModalPreview && (
-                            <div className='p-8 mb-4 flex items-center gap-5 justify-center'>
+                            <div className='p-8 pt-12 mb-4 flex items-center gap-5 justify-center'>
                                 <div className='w-full flex items-center justify-center'>
                                     <button
                                         className='px-4 py-2 bg-primary text-secondary rounded '
@@ -1049,12 +1049,16 @@ export default Modal;
                                 <div
                                     className={`${
                                         modal11Open
-                                            ? ' scale-[1] opacity-100'
-                                            : ' scale-[0] opacity-0'
+                                            ? 'visible'
+                                            : 'invisible'
                                     } w-full h-screen fixed top-0 left-0 z-[200000000] backdrop-blur-md dark:bg-black/50 bg-white/30 flex items-center justify-center transition-all duration-300`}
                                 >
                                     <div
-                                        className={`w-[90%] 1024px:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl`}
+                                        className={`${
+                                            modal11Open
+                                                ? 'scale-[1] opacity-100'
+                                                : 'scale-[0] opacity-0 '
+                                        } w-[90%] 1024px:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl transition-all duration-300`}
                                     >
                                         <div className='w-full flex justify-between items-start'>
                                             <div>
@@ -1074,8 +1078,8 @@ export default Modal;
 
                                         <div className='mt-6'>
                                             <p className='text-[1rem] dark:text-[#abc2d3]/90 text-gray-700 leading-relaxed'>
-                                                Experience a modern modal with a beautiful blur effect. 
-                                                This creates an elegant overlay while maintaining context 
+                                                Experience a modern modal with a beautiful blur effect.
+                                                This creates an elegant overlay while maintaining context
                                                 of the content behind it.
                                             </p>
                                         </div>
@@ -1114,12 +1118,16 @@ const Modal = () => {
         <div
             className={`${
                 isModalOpen
-                    ? " scale-[1] opacity-100"
-                    : " scale-[0] opacity-0"
+                    ? "visible"
+                    : "invisible"
             } w-full h-screen fixed top-0 left-0 z-[200000000] backdrop-blur-md dark:bg-black/50 bg-white/30 flex items-center justify-center transition-all duration-300`}
         >
             <div
-                className={`w-[90%] md:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl`}
+                className={`${
+                isModalOpen
+                    ? "scale-[1] opacity-100"
+                    : "scale-[0] opacity-0"
+            } w-[90%] md:w-[35%] dark:bg-slate-800 bg-white/90 backdrop-blur-xl border dark:border-slate-700 border-gray-200 rounded-lg p-5 shadow-2xl transition-all duration-300`}
             >
                 <div className="w-full flex justify-between items-start">
                     <div>

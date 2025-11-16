@@ -1,17 +1,13 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 
-// components
 import OverviewFooter from '@shared/OverviewFooter';
 import ContentHeader from '@shared/ContentHeader';
 
-// contents for scrollspy
 import {progressBarContents} from '@utils/ContentsConfig/NavigationContents.js';
 import {useScrollSpy} from '@/CustomHooks/useScrollSpy';
 
-// react helmet
 import {Helmet} from 'react-helmet';
 
-// showing the code
 import Showcode from '@shared/Component/ShowCode.jsx';
 import utils from '@utils/index.jsx';
 
@@ -24,30 +20,27 @@ const ProgressBar = () => {
     const sectionIds = progressBarContents.map((item) => item.href.slice(1));
     const activeSection = useScrollSpy(sectionIds);
 
-    // basic progress bar
     const [basicProgressBarPreview, setBasicProgressBarPreview] = useState(true);
     const [basicProgressBarCode, setBasicProgressBarCode] = useState(false);
 
-    // progress with tooltip
     const [progressBarWithTooltipPreview, setProgressBarWithTooltipPreview] =
         useState(true);
     const [progressBarWithTooltipCode, setProgressBarWithTooltipCode] =
         useState(false);
 
-    // counting progress bar
     const [countingPreview, setCountingPreview] = useState(true);
     const [countingCode, setCountingCode] = useState(false);
 
-    // circle progress bar
     const [circlePreview, setCirclePreview] = useState(true);
     const [circleCode, setCircleCode] = useState(false);
 
-    // striped animated progress bar
     const [stripedPreview, setStripedPreview] = useState(true);
     const [stripedCode, setStripedCode] = useState(false);
 
     const [progress, setProgress] = useState(0);
     const [isLoading, setIsLoading] = useState(false);
+
+    const [animationKey, setAnimationKey] = useState(0);
 
     useEffect(() => {
         let interval;
@@ -71,6 +64,7 @@ const ProgressBar = () => {
     }, [isLoading]);
 
     const handleStartLoading = () => {
+        setAnimationKey(prev => prev + 1);
         if (isLoading) {
             setProgress(0);
             setIsLoading(false);
@@ -504,8 +498,10 @@ export default ProgressBar;
                     <ComponentWrapper>
                         {stripedPreview && (
                             <div className='p-8 mb-4 flex flex-col pt-12 flex-wrap items-center gap-5 justify-center'>
-                                <div className='relative dark:bg-slate-700 bg-gray-200 w-[80%] h-[15px] rounded-full overflow-hidden'>
+                                <div
+                                    className='relative dark:bg-slate-700 bg-gray-200 w-[80%] h-[15px] rounded-full overflow-hidden'>
                                     <div
+                                        key={animationKey}
                                         className='absolute top-0 left-0 bg-primary h-full rounded-full transition-all duration-300'
                                         style={{
                                             width: `${progress}%`,
@@ -522,73 +518,69 @@ export default ProgressBar;
                                 >
                                     Start Loading
                                 </button>
-
-                                <style>{`
-                                    @keyframes progress-stripes {
-                                        0% {
-                                            background-position: 0 0;
-                                        }
-                                        100% {
-                                            background-position: 30px 0;
-                                        }
-                                    }
-                                `}</style>
                             </div>
                         )}
 
                         {stripedCode && (
                             <Showcode
-                                code='
-import React, {useState} from "react";
-
-const ProgressBar = () => {
-    const [progress, setProgress] = useState(0);
-    const [isLoading, setIsLoading] = useState(false);
-
-    const handleStartLoading = () => {
-        if (isLoading) {
-            setProgress(0);
-            setIsLoading(false);
-        }
-
-        setProgress(0);
-        setIsLoading(true);
-    };
-
-    return (
-        <>
-            <div className="relative bg-gray-200 dark:bg-slate-700 w-[80%] h-[15px] rounded-full overflow-hidden">
-                <div 
-                    className="absolute top-0 left-0 bg-primary h-full rounded-full transition-all duration-300"
-                    style={{
-                        width: `${progress}%`,
-                        backgroundImage: "linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent)",
-                        backgroundSize: "30px 30px",
-                        animation: progress > 0 ? "progress-stripes 1s linear infinite" : "none"
-                    }}
-                ></div>
-            </div>
-
-            <button onClick={handleStartLoading}
-                    className={`text-[0.8rem] px-2 py-1 bg-blue-500 rounded-md`}>Start Loading
-            </button>
-
-            <style>{`
-                @keyframes progress-stripes {
-                    0% {
-                        background-position: 0 0;
-                    }
-                    100% {
-                        background-position: 30px 0;
-                    }
-                }
-            `}</style>
-        </>
-    );
-};
-
-export default ProgressBar;
-                                '
+                                code={[
+                                    {
+                                        id: "loader",
+                                        displayText: "Loader.jsx",
+                                        language: "jsx",
+                                        code: 'import React, {useState} from "react";\n' +
+                                            '\n' +
+                                            'const ProgressBar = () => {\n' +
+                                            '    const [progress, setProgress] = useState(0);\n' +
+                                            '    const [isLoading, setIsLoading] = useState(false);\n' +
+                                            '\n' +
+                                            '    const handleStartLoading = () => {\n' +
+                                            '        if (isLoading) {\n' +
+                                            '            setProgress(0);\n' +
+                                            '            setIsLoading(false);\n' +
+                                            '        }\n' +
+                                            '\n' +
+                                            '        setProgress(0);\n' +
+                                            '        setIsLoading(true);\n' +
+                                            '    };\n' +
+                                            '\n' +
+                                            '    return (\n' +
+                                            '        <>\n' +
+                                            '            <div className="relative bg-gray-200 dark:bg-slate-700 w-[80%] h-[15px] rounded-full overflow-hidden">\n' +
+                                            '                <div\n' +
+                                            '                    className="absolute top-0 left-0 bg-[#3B9DF8] h-full rounded-full transition-all duration-300"\n' +
+                                            '                    style={{\n' +
+                                            '                        width: `${progress}%`,\n' +
+                                            '                        backgroundImage: "linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent)",\n' +
+                                            '                        backgroundSize: "30px 30px",\n' +
+                                            '                        animation: progress > 0 ? "progress-stripes 1s linear infinite" : "none"\n' +
+                                            '                    }}\n' +
+                                            '                ></div>\n' +
+                                            '            </div>\n' +
+                                            '\n' +
+                                            '            <button onClick={handleStartLoading}\n' +
+                                            '                    className={`text-[0.8rem] px-2 py-1 bg-blue-500 rounded-md`}>Start Loading\n' +
+                                            '            </button>\n' +
+                                            '        </>\n' +
+                                            '    );\n' +
+                                            '};\n' +
+                                            '\n' +
+                                            'export default ProgressBar;'
+                                    },
+                                    {
+                                        id: "styles",
+                                        displayText: "Styles.css",
+                                        language: "css",
+                                        code: '@keyframes progress-stripes {\n' +
+                                            '    0% {\n' +
+                                            '        background-position: 0 0;\n' +
+                                            '    }\n' +
+                                            '    100% {\n' +
+                                            '        background-position: 30px 0;\n' +
+                                            '    }\n' +
+                                            '}'
+                                    },
+                                ]}
                             />
                         )}
                     </ComponentWrapper>

@@ -107,7 +107,7 @@ const Navbar = ({className}) => {
 
     return (<>
         <nav
-            className={`border-gray-100 dark:border-darkBorderColor' border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500 ${className}`}>
+            className={`border-gray-100 dark:border-darkBorderColor border-b 1024px:flex w-full px-10 backdrop-blur-2xl sticky top-0 left-0 z-[999] hidden transition-all duration-500 ${className}`}>
             <div className='max-w-[1615px] mx-auto w-full flex items-center justify-between'>
                 <div className="flex items-center gap-8">
 

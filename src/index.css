@@ -613,3 +613,13 @@ input[type="number"] {
     animation: wave-reveal 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* striped animated progress bar */
+@keyframes progress-stripes {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 30px 0;
+    }
+}
+

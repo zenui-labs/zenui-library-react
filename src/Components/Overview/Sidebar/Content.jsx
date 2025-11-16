@@ -199,7 +199,8 @@ const Content = () => {
                     {
                         title: "Progress Bar",
                         url: "/components/progress-bar",
-                        parent: 'NAVIGATION'
+                        parent: 'NAVIGATION',
+                        isUpdated: true,
                     },
                     {
                         title: "Chip",
