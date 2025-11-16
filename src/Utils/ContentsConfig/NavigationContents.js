@@ -110,6 +110,12 @@ export const breadcrumbContents = [
         title: 'Customizable Breadcrumb',
         href: '#customizable_breadcrumb',
     },
+    {
+        id: 5,
+        title: 'Modern Breadcrumb with Back Button',
+        href: '#modern_breadcrumb',
+    },
+   
 ];
 
 // Rating contents
