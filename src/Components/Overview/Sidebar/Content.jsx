@@ -226,7 +226,8 @@ const Content = () => {
                     {
                         title: "Breadcrumb",
                         url: "/components/breadcrumb",
-                        parent: 'NAVIGATION'
+                        parent: 'NAVIGATION',
+                        isUpdated: true
                     },
                     {
                         title: "Rating",

@@ -164,4 +164,15 @@ export const DevContributorsData = [
         website: 'https://yeakiniqra.com/',
         zenuiHero: false,
     },
+    {
+        name: 'Md Shakil Hossain',
+        title: 'FullStack Engineer',
+        certificate: 'shakil_hossain',
+        image: 'https://i.ibb.co.com/KjGQPZtD/108464347.png',
+        linkedinLink: 'https://www.linkedin.com/in/devshakilh/',
+        twitterLink: 'https://x.com/devshakilh',
+        githubLink: 'https://github.com/devshakilh',
+        website: 'https://devshakilh.netlify.app/',
+        zenuiHero: false,
+    },
 ]
