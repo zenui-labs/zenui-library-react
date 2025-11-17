@@ -7,7 +7,7 @@ import ToggleTab from '@shared/Component/ToggleTab.jsx';
 import ComponentWrapper from '@shared/Component/ComponentWrapper.jsx';
 import ContentNavbar from '@shared/Component/ContentNavbar.jsx';
 import Showcode from '@shared/Component/ShowCode.jsx';
-import PropTypes from 'prop-types'; 
+
 // scrollspy
 import { breadcrumbContents } from '@utils/ContentsConfig/NavigationContents';
 import { useScrollSpy } from '@/CustomHooks/useScrollSpy';
@@ -19,7 +19,7 @@ import { Helmet } from 'react-helmet';
 import { MdKeyboardArrowDown, MdArrowBackIos, MdChevronRight } from 'react-icons/md';
 
 // react-router
-import { Link, useNavigate } from 'react-router-dom';
+import { Link,  } from 'react-router-dom';
 
 const Breadcrumb = () => {
   const sectionIds = breadcrumbContents.map((item) => item.href.slice(1));
@@ -77,44 +77,6 @@ const Breadcrumb = () => {
       document.removeEventListener('click', handleClickOutside);
     };
   }, []);
-
-  // BreadcrumbV2 Component
-  const Breadcrumb = ({ title, breadcrumbs = [] }) => {
-    const navigate = useNavigate();
-
-    return (
-      <div className="flex items-center justify-between py-2">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate(-1)}
-            className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-          >
-            <MdArrowBackIos className="w-4 h-4 text-gray-600 dark:text-gray-300" />
-          </button>
-
-          <div>
-            <h1 className="text-xl font-semibold dark:text-white">{title}</h1>
-
-            <nav className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-              {breadcrumbs.map((crumb, index) => (
-                <div key={index} className="flex items-center">
-                  <Link
-                    to={crumb.href}
-                    className="hover:underline transition-colors"
-                  >
-                    {crumb.label}
-                  </Link>
-                  {index < breadcrumbs.length - 1 && (
-                    <MdChevronRight className="w-3 h-3 mx-1 text-gray-400 dark:text-gray-500" />
-                  )}
-                </div>
-              ))}
-            </nav>
-          </div>
-        </div>
-      </div>
-    );
-  };
 
   return (
     <>
@@ -332,21 +294,21 @@ export default Breadcrumb;
             {dropdownBreadcrumbCode && (
               <Showcode
                 code={`
-import React, { useState } from "react";
-import { MdKeyboardArrowDown } from "react-icons/md";
+                  import React, { useState } from "react";
+                  import { MdKeyboardArrowDown } from "react-icons/md";
 
-const Breadcrumb = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const breadcrumbItems = [
-    { label: "Home", path: "/" },
-    { label: "Category", path: "/category" },
-    { label: "Sub Category", path: "/sub-category" },
-    { label: "About Us", path: "/about-us" },
-    { label: "Contact Us", path: "/contact-us" },
-    { label: "Current Page", path: "/current-page" },
-  ];
+                  const Breadcrumb = () => {
+                  const [dropdownOpen, setDropdownOpen] = useState(false);
+                  const breadcrumbItems = [
+                   { label: "Home", path: "/" },
+                   { label: "Category", path: "/category" },
+                   { label: "Sub Category", path: "/sub-category" },
+                   { label: "About Us", path: "/about-us" },
+                   { label: "Contact Us", path: "/contact-us" },
+                  { label: "Current Page", path: "/current-page" },
+                   ];
 
-  document.addEventListener("click", (e) => {
+                document.addEventListener("click", (e) => {
     if (!e.target.closest(".dropdownModal") && !e.target.closest(".dropdownButton")) {
       setDropdownOpen(false);
     }
@@ -518,9 +480,9 @@ export default Breadcrumb;
             )}
           </ComponentWrapper>
 
-          {/* 5. BreadcrumbV2 (New Component) */}
+          {/* 5. BreadcrumbV2 */}
           <div className="mt-8">
-            <ContentHeader text="Breadcrumb  (with back button & title)" id="breadcrumb_v2" />
+            <ContentHeader text="Breadcrumb (with back button & title)" id="modern_breadcrumb" />
           </div>
           <ComponentDescription
             text="A modern breadcrumb that shows a page title, a back-arrow button, and fully clickable links using React-Router. Ideal for detail pages."
@@ -533,51 +495,77 @@ export default Breadcrumb;
           />
           <ComponentWrapper>
             {v2Preview && (
-              <div className="p-8 mb-4  rounded-lg">
-                <Breadcrumb
-                  title="Product Detail"
-                  breadcrumbs={[
-                    { label: 'Home', href: '/' },
-                    { label: 'Shop', href: '/shop' },
-                    { label: 'Electronics', href: '/shop/electronics' },
-                    { label: 'Laptop', href: '/shop/electronics/laptop' },
-                  ]}
-                />
+              <div className="p-8 mb-4 rounded-lg">
+                <div className="flex items-center justify-between py-2">
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => window.history.back()}
+                      className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <MdArrowBackIos className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                    </button>
+
+                    <div>
+                      <h1 className="text-xl font-semibold dark:text-white">Product Detail</h1>
+
+                      <nav className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
+                        {[
+                          { label: 'Home', href: '/' },
+                          { label: 'Shop', href: '/shop' },
+                          { label: 'Electronics', href: '/shop/electronics' },
+                          { label: 'Laptop', href: '/shop/electronics/laptop' },
+                        ].map((crumb, index) => (
+                          <div key={index} className="flex items-center">
+                            <Link
+                              to={crumb.href}
+                              className="hover:underline transition-colors"
+                            >
+                              {crumb.label}
+                            </Link>
+                            {index < 3 && (
+                              <MdChevronRight className="w-3 h-3 mx-1 text-gray-400 dark:text-gray-500" />
+                            )}
+                          </div>
+                        ))}
+                      </nav>
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
             {v2Code && (
               <Showcode
                 code={`
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MdArrowBackIos, MdChevronRight } from "react-icons/md";
 
-const Breadcrumb = ({ title, breadcrumbs = [] }) => {
-  const navigate = useNavigate();
-
+const Breadcrumb = () => {
   return (
     <div className="flex items-center justify-between py-2">
       <div className="flex items-center gap-3">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => window.history.back()}
           className="p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
         >
           <MdArrowBackIos className="w-4 h-4 text-gray-600 dark:text-gray-300" />
         </button>
 
         <div>
-          <h1 className="text-xl font-semibold dark:text-white">{title}</h1>
+          <h1 className="text-xl font-semibold dark:text-white">Product Detail</h1>
 
           <nav className="flex items-center gap-1 text-xs text-gray-500 dark:text-gray-400">
-            {breadcrumbs.map((crumb, index) => (
+            {[
+              { label: "Home", href: "/" },
+              { label: "Shop", href: "/shop" },
+              { label: "Electronics", href: "/shop/electronics" },
+              { label: "Laptop", href: "/shop/electronics/laptop" }
+            ].map((crumb, index) => (
               <div key={index} className="flex items-center">
-                <Link
-                  to={crumb.href}
-                  className="hover:underline transition-colors"
-                >
+                <Link to={crumb.href} className="hover:underline transition-colors">
                   {crumb.label}
                 </Link>
-                {index < breadcrumbs.length - 1 && (
+                {index < 3 && (
                   <MdChevronRight className="w-3 h-3 mx-1 text-gray-400 dark:text-gray-500" />
                 )}
               </div>
@@ -614,16 +602,5 @@ export default Breadcrumb;
     </>
   );
 };
-Breadcrumb.propTypes = {
-  title: PropTypes.string.isRequired,
-  breadcrumbs: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string.isRequired,
-      href: PropTypes.string.isRequired,
-    })
-  ),
-};
+
 export default Breadcrumb;
-
-
-
