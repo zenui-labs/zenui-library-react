@@ -183,9 +183,8 @@ const NewMobileNavbar = () => {
                             </span>
                 </div>
                 <ul className='text-gray-600 flex flex-col mt-5 items-start gap-4 font-[500] capitalize text-[1rem]'>
-                    <Link to='/about-us'
-                          className='!text-[1rem] hover:!border-none hover:!bg-transparent dark:text-darkSubTextColor !pl-0 !font-[500]'>About
-                        Us</Link>
+                    <Link to='/contributors'
+                          className='!text-[1rem] hover:!border-none hover:!bg-transparent dark:text-darkSubTextColor !pl-0 !font-[500]'>Contributors</Link>
                     <Link to='/docs/overview'
                           className='!text-[1rem] dark:text-darkSubTextColor hover:!border-none hover:!bg-transparent !pl-0 !font-[500]'>Documentation</Link>
                     <Link to='/components/all-components'
