@@ -8,6 +8,7 @@ import {MenuContext} from "../Context/MenuContext.jsx";
 import useZenuiStore from "../Store/Index.js";
 import {PageActions} from "@shared/PageActions.jsx";
 import Footer from "@/Components/Home/Footer.jsx";
+import NewsBoard from "@/Components/Home/NewsBoard.jsx";
 
 const ContentPageLayout = ({children}) => {
     const {scrollY} = useContext(MenuContext);
@@ -23,10 +24,13 @@ const ContentPageLayout = ({children}) => {
 
     return (
         <>
+            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
+            <MobileSidebar/>
             <div className="flex w-full mx-auto max-w-[1700px]">
-                <div className="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem] 1605px:mr-[0rem]">
+                <div
+                    className="1024px:w-[32%] 1260px:w-[28%] relative 1404px:w-[19%] 2000px:w-[18%] 1024px:mr-[3rem] 1605px:mr-[0rem]">
                     <div
                         className={`bg-gradient-to-b dark:from-darkBgColor dark:to-darkBgColor/20 from-white to-white/20 z-30 absolute top-0 left-0 w-full h-[80px] transition-opacity duration-300
                             ${scrollY > 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
@@ -35,11 +39,10 @@ const ContentPageLayout = ({children}) => {
                 </div>
 
                 <div
-                    className="w-full h-[calc(100vh-76px)] overflow-y-auto pt-[5rem] 640px:pt-[5rem] 1024px:pt-[2rem] 1024px:px-[0.5rem] relative"
+                    className="w-full h-[calc(100vh-76px)] overflow-y-auto pt-[2rem] 1024px:px-[0.5rem] relative"
                     style={{scrollbarWidth: 'none'}}>
 
                     <PageActions/>
-                    <MobileSidebar/>
 
                     {children}
 

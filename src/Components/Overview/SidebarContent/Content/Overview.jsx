@@ -1,9 +1,7 @@
 import React from "react";
 
-// shared components
 import ContentHeader from "@shared/ContentHeader";
 
-// react helmet
 import {Helmet} from "react-helmet";
 import BlocksFooter from "@shared/Block/BlocksFooter.jsx";
 
@@ -12,28 +10,32 @@ const Overview = () => {
         <aside className='w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
 
             <h1 className="font-[600] pt-0 text-[2.5rem] 1024px:text-[3rem] uppercase text-brandColor">
-                ZenUI Library
+                ZenUI Library React
             </h1>
             <p className="w-full text-text dark:text-darkSubTextColor text-[1rem]">
                 ZenUI is your ultimate destination for a comprehensive collection of UI components and designs, all
-                available for free. Whether you're building a website from scratch or enhancing an existing one, ZenUI
+                available for free. Whether you&#39;re building a website from scratch or enhancing an existing one,
+                ZenUI
                 has
                 everything you need to bring your vision to life.
             </p>
 
             <div className="mt-8 w-full text-text">
-                <ContentHeader text={"About ZenUI"}/>
+                <ContentHeader text="About ZenUI"/>
                 <p className="mt-3 dark:text-darkSubTextColor">
-                    ZenUI is a developer-friendly platform offering over 700+ meticulously crafted components and
-                    templates. These resources are designed to save you time and elevate your creativity by providing
-                    modern, reusable elements that fit seamlessly into any project.
+                    ZenUI is a developer-friendly platform designed to accelerate your workflow and inspire creativity.
+                    It offers a
+                    rich collection of meticulously crafted components that help you build modern, responsive, and
+                    visually appealing web interfaces with ease.
                 </p>
                 <p className="mt-4 dark:text-darkSubTextColor">
-                    Our collection includes an array of components and built-in web templates, enabling developers to
-                    create stunning websites without the hassle of designing from scratch. Each element adheres to
-                    contemporary design principles, ensuring that your projects are not only functional but also
-                    visually
-                    appealing.
+                    Our ecosystem includes ZenUI for React/Next.js and
+                    ZenUI for <a href="https://vueui.zenui.net/" target="_blank"
+                                 className="text-brandColor hover:underline" rel="noreferrer">Vue</a>, providing robust,
+                    framework-specific libraries
+                    that integrate seamlessly into your projects. Every component is reusable, customizable, and built
+                    following
+                    contemporary design standards to ensure consistency and performance.
                 </p>
             </div>
 

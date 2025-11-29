@@ -86,7 +86,7 @@ const NewMobileNavbar = () => {
     return (
         <>
             <nav
-                className={`border-gray-100 dark:border-darkBorderColor' border-b flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md  py-3 sticky top-0 left-0 z-50`}>
+                className={`border-gray-100 dark:border-darkBorderColor' border-b flex 1024px:hidden items-center justify-between w-full px-5 640px:px-10 backdrop-blur-md py-3 sticky top-0 left-0 z-50`}>
                 <div className="flex items-center gap-8 relative">
                     <div className='relative'>
                         <VersionSelectBox/>

@@ -102,32 +102,34 @@ const Footer = ({needMuchMargin = true}) => {
 
                     <div className="flex gap-2 flex-col mt-4">
                         <h3 className="font-[600] dark:text-darkTextColor text-[20px] capitalize">
-                            resources
+                            Products
                         </h3>
                         <ul className="footer font-[400] text-black/70 dark:text-darkSubTextColor mt-2 text-[1rem] flex flex-col gap-2">
                             <li>
-                                <p><a href='/templates'>Free templates</a></p>
-                                <span><a href='/templates'>Free templates</a></span>
+                                <p><a href='https://vueui.zenui.net/' target='_blank' rel='noreferrer'>ZenUI Library
+                                    Vue</a></p>
+                                <span><a href='https://vueui.zenui.net/' target='_blank' rel='noreferrer'>ZenUI Library Vue</a></span>
                             </li>
                             <li>
-                                <p><a href='/components/all-components'>Components</a></p>
-                                <span><a href='/components/all-components'>Components</a></span>
+                                <p><a href='https://react-hooks.zenui.net/' target='_blank' rel='noreferrer'>React
+                                    Hooks</a></p>
+                                <span><a href='https://react-hooks.zenui.net/' target='_blank' rel='noreferrer'>React Hooks</a></span>
                             </li>
                             <li>
-                                <p><a href='/blocks/all-blocks'>Blocks</a></p>
-                                <span><a href='/blocks/all-blocks'>Blocks</a></span>
+                                <p><a href='https://color-picker.zenui.net/' target='_blank' rel='noreferrer'>ZenUI
+                                    Color Picker</a></p>
+                                <span><a href='https://color-picker.zenui.net/' target='_blank' rel='noreferrer'>ZenUI Color Picker</a></span>
                             </li>
                             <li>
-                                <p><a href='/custom-hooks'>Custom Hooks</a></p>
-                                <span><a href='/custom-hooks'>Custom Hooks</a></span>
+                                <p><a href='https://readmestudio.zenui.net/' target='_blank' rel='noreferrer'>Readme
+                                    Studio</a></p>
+                                <span><a href='https://readmestudio.zenui.net/' target='_blank' rel='noreferrer'>Readme Studio</a></span>
                             </li>
                             <li>
-                                <p><a href='/docs/resources'>Resources</a></p>
-                                <span><a href='/docs/resources'>Resources</a></span>
-                            </li>
-                            <li>
-                                <p><a href='/semantic-tag-master'>Semantic TagMaster</a></p>
-                                <span><a href='/semantic-tag-master'>Semantic TagMaster</a></span>
+                                <p><a href='https://www.npmjs.com/package/zenui-image-react' target='_blank'
+                                      rel='noreferrer'>ZenUI Image React</a></p>
+                                <span><a href='https://www.npmjs.com/package/zenui-image-react' target='_blank'
+                                         rel='noreferrer'>ZenUI Image React</a></span>
                             </li>
                         </ul>
                     </div>

@@ -14,13 +14,14 @@ const PrivacyPolicy = () => {
                     className='w-[50px] bg-[#96E8F8] h-[600px] absolute top-[-100px] opacity-50 640px:opacity-100 640px:top-[-150px] right-[250px] rotate-[70deg] dark:blur-[120px] blur-[60px]'></div>
 
                 <div className='max-w-[800px] text-gray-800'>
-                    <h1 className="text-3xl 1024px:text-4xl font-bold mb-4 text-[#0FABCA]">Privacy Policy for Zenui
-                        Library</h1>
+                    <h1 className="text-3xl 1024px:text-4xl font-bold mb-4 text-[#0FABCA]">Privacy Policy for ZenUI
+                        Library React</h1>
                     <p className="mb-4 text-gray-500 dark:text-darkTextColor">Effective Date: January
                         1, {date.getFullYear()}</p>
 
                     <p className="mb-4 dark:text-darkSubTextColor text-gray-500">
-                        Welcome to Zenui Library. Your privacy is important to us. This Privacy Policy outlines how we
+                        Welcome to ZenUI Library React. Your privacy is important to us. This Privacy Policy outlines
+                        how we
                         collect, use, and protect your personal information when you use our services, including our
                         website, UI components library, and pre-built templates.
                     </p>
@@ -117,10 +118,10 @@ const PrivacyPolicy = () => {
                                   className='!text-primary'>zenuilibrary@gmail.com</a>
                     </p>
 
-                    <p className='dark:text-darkSubTextColor '>By using Zenui Library, you agree to the terms outlined
+                    <p className='dark:text-darkSubTextColor '>By using ZenUI Library, you agree to the terms outlined
                         in
                         this Privacy Policy. Thank you for
-                        trusting Zenui with your personal information.</p>
+                        trusting ZenUI with your personal information.</p>
 
                 </div>
             </section>

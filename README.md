@@ -1,29 +1,29 @@
 <br />
 <p align="center">
-  <a href="https://github.com/Asfak00/zenui-library">
-    <img src="https://i.ibb.co.com/0BZfPq6/darklogo.png" alt="ZenUI Library" width="150" />
+  <a href="https://github.com/zenui-labs/zenui-library-react">
+    <img src="https://i.ibb.co.com/0BZfPq6/darklogo.png" alt="ZenUI Library React" width="150" />
   </a>
 
 <h1 align="center">
-ZenUI Library
+ZenUI Library React
 </h1>
 <p align="center">
-<a href="https://github.com/Asfak00/zenui-library" target="__blank"><img alt="release date" src="https://img.shields.io/github/release-date/asfak00/zenui-library"></a>
-<a href="https://github.com/Asfak00/zenui-library" target="__blank"><img alt="commits" src="https://img.shields.io/github/commit-activity/w/asfak00/zenui-library"></a>
-<a href="https://github.com/Asfak00/zenui-library" target="__blank"><img alt="Contributors" src="https://img.shields.io/github/contributors/asfak00/zenui-library"></a>
-  <a href="https://github.com/Asfak00/zenui-library" target="__blank"><img alt="stars" src="https://img.shields.io/github/stars/asfak00/zenui-library"></a>
+<a href="https://github.com/zenui-labs/zenui-library-react" target="__blank"><img alt="release date" src="https://img.shields.io/github/release-date/zenui-labs/zenui-library-react"></a>
+<a href="https://github.com/zenui-labs/zenui-library-react" target="__blank"><img alt="commits" src="https://img.shields.io/github/commit-activity/w/zenui-labs/zenui-library-react"></a>
+<a href="https://github.com/zenui-labs/zenui-library-react" target="__blank"><img alt="Contributors" src="https://img.shields.io/github/contributors/zenui-labs/zenui-library-react"></a>
+  <a href="https://github.com/zenui-labs/zenui-library-react" target="__blank"><img alt="stars" src="https://img.shields.io/github/stars/zenui-labs/zenui-library-react"></a>
 </p>
 <p align="center">
 Open-Source UI Component Library<br>
-Elevate your projects with ZenUI, a free, lightweight, customizable UI component library built with React and Tailwind CSS. ZenUI provides various components, icons, website templates, and color palette options to accelerate development.
+Elevate your projects with ZenUI, a free, lightweight, customizable UI component library built with React and Tailwind CSS. ZenUI provides various components, icons, website templates, and color palette options to speed up development.
 
-![cover](https://i.ibb.co.com/CWtdR19/post.png)
+![cover](https://i.ibb.co.com/JWX1Bv4W/zenui-library-banner.png)
 
 ## Features
 
 > Components
 
-- 700+ Components
+- 800+ Components
 - 20+ pre-built templates
 - Website Blocks
 - E-commerce kits
@@ -44,13 +44,12 @@ Elevate your projects with ZenUI, a free, lightweight, customizable UI component
 > Resources
 
 - 118+ Programming Resources
-- 32+ React reusable custom hooks
 
 <br/>
 
 ## Your Support = More UI Magic 😍
 
-<p><a href="https://ko-fi.com/zenuilabs"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="asfak00" /></a></p>
+<p><a href="https://ko-fi.com/zenuilabs"> <img align="left" src="https://cdn.prod.website-files.com/5c14e387dab576fe667689cf/670f5a0172b90570b1c21dab_kofi_logo.png" height="42" width="150" alt="zenui-labs" /></a></p>
 
 <br/>
 <br/>
@@ -60,7 +59,7 @@ Elevate your projects with ZenUI, a free, lightweight, customizable UI component
 Clone the repository:
 
 ```bash
-git clone https://github.com/Asfak00/zenui-library.git
+git clone https://github.com/zenui-labs/zenui-library-react.git
 ```
 
 Go to the project directory:
@@ -92,7 +91,7 @@ into your project, no installation or configuration needed!
 
 ZenUI components are designed for quick and easy use. To get started, simply:
 
-1. Find the component you want in the [ZenUI library](https://zenui.net).
+1. Find the component you want in the [ZenUI library](https://react-ui.zenui.net).
 2. Copy the code snippet.
 3. Paste it into your project, anywhere HTML is supported.
 
@@ -170,7 +169,7 @@ sharing your React, Next.js, or Tailwind CSS templates with our community.
 
 For more details on how to submit and sell your templates, including guidelines, submission steps, and earnings
 information, please read
-the [TEMPLATE_SUBMISSION_GUIDE.md](https://github.com/Asfak00/zenui-library/blob/production/TEMPLATE_SUBMISSION_GUIDE.md)
+the [TEMPLATE_SUBMISSION_GUIDE.md](https://github.com/zenui-labs/zenui-library-react/blob/production/TEMPLATE_SUBMISSION_GUIDE.md)
 file.
 
 Earn 80% commission on each sale, and help empower other developers with your creative solutions! 🚀
@@ -178,13 +177,14 @@ Earn 80% commission on each sale, and help empower other developers with your cr
 ## Contribution
 
 We welcome contributions from the community! Please refer to
-the [CONTRIBUTING.md](https://github.com/Asfak00/zenui-library/blob/production/CONTRIBUTING.md) file for more details on
+the [CONTRIBUTING.md](https://github.com/zenui-labs/zenui-library-react/blob/production/CONTRIBUTING.md) file for more
+details on
 how to contribute.
 
 ## License
 
 This project is licensed under the MIT License - see
-the [LICENSE](https://github.com/Asfak00/zenui-library/blob/production/LICENSE.md) file for details.
+the [LICENSE](https://github.com/zenui-labs/zenui-library-react/blob/production/LICENSE.md) file for details.
 
 ## Connect With ZenUI
 

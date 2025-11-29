@@ -15,11 +15,13 @@ import MetricsCard from "@/Components/Home/MetricsCard.jsx";
 import Navbar from "@/Components/Home/Navbar.jsx";
 import TemplatesSlider from "@/Components/Home/TemplatesSlider.jsx";
 import AnimationsBentoGrid from "@/Components/Home/AnimatonsBentoGrid.jsx";
+import NewsBoard from "@/Components/Home/NewsBoard.jsx";
 
 
 const HomePage = () => {
     return (
         <div className='transition-all duration-500 overflow-clip'>
+            <NewsBoard/>
             <Navbar/>
             <MobileNavbar/>
             <Hero/>

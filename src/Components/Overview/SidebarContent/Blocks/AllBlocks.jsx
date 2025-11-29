@@ -54,9 +54,11 @@ const AllBlocks = () => {
                 </p>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Sections</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
                     {sections?.map((button, index) => (
-                        <a href={button.url} className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high" key={index}>
+                        <a href={button.url}
+                           className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
+                           key={index}>
                             <img
                                 src={button.image}
                                 alt="component/image"
@@ -72,9 +74,11 @@ const AllBlocks = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Forms</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 mt-4 1605px:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 mt-4 1605px:grid-cols-4 gap-8">
                     {forms?.map((button, index) => (
-                        <a href={button.url} className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high" key={index}>
+                        <a href={button.url}
+                           className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
+                           key={index}>
                             <img
                                 src={button.image}
                                 alt="component/image"
@@ -90,9 +94,11 @@ const AllBlocks = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Empty Pages</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 gap-8">
                     {emptyPages?.map((button, index) => (
-                        <a href={button.url} className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high" key={index}>
+                        <a href={button.url}
+                           className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
+                           key={index}>
                             <img
                                 src={button.image}
                                 alt="component/image"
@@ -108,9 +114,11 @@ const AllBlocks = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Randoms</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
                     {randoms?.map((button, index) => (
-                        <a href={button.url} className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high" key={index}>
+                        <a href={button.url}
+                           className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
+                           key={index}>
                             <img
                                 src={button.image}
                                 alt="component/image"

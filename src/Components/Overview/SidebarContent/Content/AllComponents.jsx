@@ -65,7 +65,7 @@ const AllComponents = () => {
                 </p>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Input</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
                     {inputsData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
@@ -85,7 +85,7 @@ const AllComponents = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Navigation</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
                     {navigationsData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
@@ -105,7 +105,7 @@ const AllComponents = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Buttons</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 gap-8">
                     {buttonsData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
@@ -125,7 +125,7 @@ const AllComponents = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] text-brandColor">Feedback</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 mt-4 gap-8">
                     {feedbackData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
@@ -145,7 +145,7 @@ const AllComponents = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Surface</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 gap-8">
                     {surfaceData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"
@@ -165,7 +165,7 @@ const AllComponents = () => {
                 </div>
 
                 <h2 className="mt-12 font-[600] text-[1.5rem] mb-3 text-brandColor">Data Display</h2>
-                <div className="grid grid-cols-2 425px:grid-cols-3 1605px:grid-cols-4 gap-8">
+                <div className="grid grid-cols-2 640px:grid-cols-3 1605px:grid-cols-4 gap-8">
                     {displayData?.map((button, index) => (
                         <a href={button.url}
                            className="border border-border transition-all duration-200 hover:shadow-[0px_40px_30px_-20px_rgba(107,110,148,.04)] dark:border-darkBorderColor rounded-high"

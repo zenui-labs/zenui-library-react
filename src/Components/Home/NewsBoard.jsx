@@ -1,9 +1,17 @@
-import React from 'react';
+import {FiArrowUpRight} from "react-icons/fi";
 
 const NewsBoard = () => {
     return (
-        <img alt='free palestine banner' src='/palestine-banner.svg'
-             className='w-full h-[50px] 1024px:h-auto object-cover'/>
+        <section className="bg-brandColor flex items-center justify-center gap-1 w-full px-5 py-3 md:h-[50px]">
+            <p className="text-base text-white text-center font-medium">🔥 We just launched <a
+                href="https://vueui.zenui.net"
+                target="_blank"
+                rel="noreferrer"
+                className="hover:underline">ZenUI
+                Library Vue!</a> Don’t miss it.
+                <FiArrowUpRight className='text-white text-[1.4rem] inline ml-1'/>
+            </p>
+        </section>
     );
 };
 

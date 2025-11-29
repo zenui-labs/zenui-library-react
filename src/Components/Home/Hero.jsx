@@ -52,8 +52,8 @@ const Hero = () => {
                     </button>
                     <button
                         className='py-[13px] px-8 z-10 border-2 border-[#0FABCA] text-[#0FABCA] rounded-high transition-all flex items-center justify-center gap-3 duration-300 group'
-                        onClick={() => navigate('/templates')}>
-                        Browse Templates
+                        onClick={() => navigate('/docs/installation')}>
+                        Documentation
                         <IoChevronForward className='group-hover:ml-1 transition-all duration-200'/>
                     </button>
                 </div>

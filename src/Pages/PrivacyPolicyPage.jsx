@@ -9,11 +9,7 @@ import AnimatedDarkBg from "@shared/AnimatedDarkBg.jsx";
 
 
 const AboutUsPage = () => {
-
-    const getTheRouteName = () => {
-        return window.location.pathname
-    }
-
+    
     return (
         <div className='overflow-clip'>
             <Navbar/>
