@@ -96,8 +96,33 @@ const Carousel = () => {
     };
 
 
+    
+    // functional codes related to carousel 3 started
     const [carouselPreview3, setCarouselPreview3] = useState(true);
     const [carouselCode3, setCarouselCode3] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [showImage, setShowImage] = useState(true);
+     const slides3 = [
+        {id: 1, content: 'Carousel 2 - Slide 1 Content', imgSrc: "https://picsum.photos/id/57/600/400"},
+        {id: 2, content: 'Carousel 2 - Slide 2 Content', imgSrc: "https://picsum.photos/id/58/600/400"},
+        {id: 3, content: 'Carousel 2 - Slide 3 Content', imgSrc: "https://picsum.photos/id/49/600/400"},
+    ];
+
+    useEffect(() => {
+    const interval = setInterval(() => {
+      setShowImage(false);
+      setTimeout(() => {
+        setCurrentIndex((currentIndex + 1) % slides3.length);
+        setShowImage(true);
+      }, 1000);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+
+    // functional codes related to carousel 3 ended
+
 
     return (
         <>
@@ -301,17 +326,99 @@ export default CarouselComponent2;
       
                     {/* Third Carousel Started ------------------------------------------------------------------------------------------------ */}
                     <div className='mt-8'>
-                <ContentHeader id='fading-carousel' text={'Carousel 3 (Fading Carousel)'}/>
+                <ContentHeader id='fading-carousel' text={'Fading Carousel'}/>
                         
                     </div>
                       <ComponentDescription text='This is a carousel component with automatic navigation and fading effect.'/>
 
-    <ToggleTab setPreview={setCarouselPreview3} preview={carouselPreview3} code={carouselCode3}
+                <ToggleTab setPreview={setCarouselPreview3} preview={carouselPreview3} code={carouselCode3}
                                setCode={setCarouselCode3}/>
 
+             <ComponentWrapper>
+        {carouselPreview3 && (
+            <div 
+            className='p-8 mb-4 flex flex-col items-center gap-5  h-[400px] justify-center'
+            >
+
+           <div className="relative w-full h-[300px] overflow-hidden">
+                <div className="w-full h-full relative">
+                    {slides3.map((item, index) => (
+                        <img
+                        key={item.id}
+                            src={item.imgSrc}
+                            alt=""
+                            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[10000ms] ease-out ${index === currentIndex && showImage ? "opacity-100" : "opacity-[0.05]"}`} />))}
+                </div>
+            </div>
 
 
-                      {/* Third Carousel Started ------------------------------------------------------------------------------------------------ */}
+                        </div>
+                        )}
+
+                        {carouselCode3 && (
+                            <Showcode
+                            code={`
+import React, { useState, useEffect } from "react";
+
+const CarouselComponent3 = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [showImage, setShowImage] = useState(true);
+  const slides3 = [
+    {
+      id: 1,
+      content: "Carousel 3 - Slide 1 Content",
+      imgSrc: "https://picsum.photos/id/57/600/400",
+    },
+    {
+      id: 2,
+      content: "Carousel 3 - Slide 2 Content",
+      imgSrc: "https://picsum.photos/id/58/600/400",
+    },
+    {
+      id: 3,
+      content: "Carousel 3 - Slide 3 Content",
+      imgSrc: "https://picsum.photos/id/49/600/400",
+    },
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setShowImage(false);
+      setTimeout(() => {
+        setCurrentIndex((currentIndex + 1) % slides3.length);
+        setShowImage(true);
+      }, 1000);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [currentIndex]);
+
+  return (
+    <div className="relative w-full h-[400px] overflow-hidden">
+      <div className="w-full h-full relative">
+        {slides3.map((item, index) => (
+          <img
+            key={item.id}
+            src={item.imgSrc}
+            alt=""
+            className={\`absolute inset-0 w-full h-full object-cover transition-opacity duration-[10000ms] ease-out \${index === currentIndex && showImage ? "opacity-100" : "opacity-[0.05]"}\`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default CarouselComponent3;
+
+                                `}
+                            />
+                        )}
+                    </ComponentWrapper>
+
+
+
+                      {/* Third Carousel ended ------------------------------------------------------------------------------------------------ */}
 
 
 
