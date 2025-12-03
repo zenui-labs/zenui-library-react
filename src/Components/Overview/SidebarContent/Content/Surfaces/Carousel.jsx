@@ -96,8 +96,7 @@ const Carousel = () => {
     };
 
 
-    
-    // functional codes related to carousel 3 started
+
     const [carouselPreview3, setCarouselPreview3] = useState(true);
     const [carouselCode3, setCarouselCode3] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -121,14 +120,13 @@ const Carousel = () => {
   }, [currentIndex]);
 
 
-    // functional codes related to carousel 3 ended
 
 
     return (
         <>
             <aside className='flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
                 <div className='w-full 425px:w-[80%]'>
-                    {/* first carousel started -------------------------------------------------------------------------------------------- */}
+                   
                     <ContentHeader id='normal-carousel' text={'Carousel 1'}/>
 
                     <ComponentDescription text='This is a carousel component with manual navigation to cycle through
@@ -218,11 +216,9 @@ export default CarouselComponent1;
                         )}
                     </ComponentWrapper>
 
-                       {/* first carousel ended -------------------------------------------------------------------------------------------- */}
+                      
 
-                       {/* <------------------------------!!!!!!!!!!!!---------------> */}
-
-                    {/* Second Carousel started ------------------------------------------------------------------------------------------------ */}
+                   
                     <div className='mt-8'>
                         <ContentHeader id='second-carousel' text={'Carousel 2'}/>
                     </div>
@@ -318,13 +314,7 @@ export default CarouselComponent2;
                         )}
                     </ComponentWrapper>
 
-                    
-                    {/* Second Carousel ended ------------------------------------------------------------------------------------------------ */}
-
-                    {/* <---------------------------!!!!!!!!!!!!!!!! -------------------> */}
-
-      
-                    {/* Third Carousel Started ------------------------------------------------------------------------------------------------ */}
+                   
                     <div className='mt-8'>
                 <ContentHeader id='fading-carousel' text={'Fading Carousel'}/>
                         
@@ -418,8 +408,7 @@ export default CarouselComponent3;
 
 
 
-                      {/* Third Carousel ended ------------------------------------------------------------------------------------------------ */}
-
+                
 
 
 
