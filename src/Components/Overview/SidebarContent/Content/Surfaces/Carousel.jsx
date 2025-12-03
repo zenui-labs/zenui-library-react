@@ -95,10 +95,15 @@ const Carousel = () => {
         setCurrentSlide2((prev) => (prev - 1 + slides2.length) % slides2.length);
     };
 
+
+    const [carouselPreview3, setCarouselPreview3] = useState(true);
+    const [carouselCode3, setCarouselCode3] = useState(false);
+
     return (
         <>
             <aside className='flex items-start gap-6 justify-between w-full 640px:pl-[2.5rem] px-6 640px:px-10'>
                 <div className='w-full 425px:w-[80%]'>
+                    {/* first carousel started -------------------------------------------------------------------------------------------- */}
                     <ContentHeader id='normal-carousel' text={'Carousel 1'}/>
 
                     <ComponentDescription text='This is a carousel component with manual navigation to cycle through
@@ -188,7 +193,11 @@ export default CarouselComponent1;
                         )}
                     </ComponentWrapper>
 
-                    {/* Second Carousel Container */}
+                       {/* first carousel ended -------------------------------------------------------------------------------------------- */}
+
+                       {/* <------------------------------!!!!!!!!!!!!---------------> */}
+
+                    {/* Second Carousel started ------------------------------------------------------------------------------------------------ */}
                     <div className='mt-8'>
                         <ContentHeader id='second-carousel' text={'Carousel 2'}/>
                     </div>
@@ -283,6 +292,29 @@ export default CarouselComponent2;
                             />
                         )}
                     </ComponentWrapper>
+
+                    
+                    {/* Second Carousel ended ------------------------------------------------------------------------------------------------ */}
+
+                    {/* <---------------------------!!!!!!!!!!!!!!!! -------------------> */}
+
+      
+                    {/* Third Carousel Started ------------------------------------------------------------------------------------------------ */}
+                    <div className='mt-8'>
+                <ContentHeader id='fading-carousel' text={'Carousel 3 (Fading Carousel)'}/>
+                        
+                    </div>
+                      <ComponentDescription text='This is a carousel component with automatic navigation and fading effect.'/>
+
+    <ToggleTab setPreview={setCarouselPreview3} preview={carouselPreview3} code={carouselCode3}
+                               setCode={setCarouselCode3}/>
+
+
+
+                      {/* Third Carousel Started ------------------------------------------------------------------------------------------------ */}
+
+
+
 
                     <OverviewFooter
                         backUrl='/components/image-gallery'
