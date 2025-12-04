@@ -259,6 +259,11 @@ export const carouselContents = [
     title: 'Carousel 2',
     href: '#second-carousel',
   },
+  {
+    id: 2,
+    title: 'Carousel 3',
+    href: '#fading-carousel',
+  },
 ];
 
 // Comparison contents
