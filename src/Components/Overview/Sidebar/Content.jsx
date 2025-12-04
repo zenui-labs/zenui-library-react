@@ -186,7 +186,8 @@ const Content = () => {
                     {
                         title: "Carousel",
                         url: "/components/carousel",
-                        parent: 'SURFACES'
+                        parent: 'SURFACES',
+                        isUpdated: true,
                     },
                     {
                         label: "NAVIGATION",

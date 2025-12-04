@@ -175,4 +175,14 @@ export const DevContributorsData = [
         website: 'https://devshakilh.netlify.app/',
         zenuiHero: false,
     },
+    {
+        name: 'Faridul Haque Murshed',
+        title: 'Web Developer',
+        certificate: 'faridul_haque',
+        image: 'https://i.ibb.co.com/KpdyCnMs/1655659208355.jpg',
+        linkedinLink: 'https://www.linkedin.com/in/faridulhaquemurshed/',
+        githubLink: 'https://github.com/faridulhaque',
+        website: 'https://my-portfolio-v4.vercel.app/',
+        zenuiHero: false,
+    },
 ]
