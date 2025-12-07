@@ -113,7 +113,7 @@ export const DevContributorsData = [
         name: 'Fazly Alahi\n',
         title: 'React Developer',
         certificate: 'Fazly',
-        image: 'https://pbs.twimg.com/profile_images/1674815594103975936/u8JgyguL_400x400.jpg',
+        image: 'https://i.ibb.co.com/6cKkv925/Te8-Aj-GI-400x400.jpg',
         linkedinLink: 'https://www.linkedin.com/in/fazlyalahiru/',
         twitterLink: 'https://x.com/fazlyalahiru',
         githubLink: 'https://github.com/fazlyalahi01',
