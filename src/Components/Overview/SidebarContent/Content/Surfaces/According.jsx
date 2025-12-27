@@ -36,6 +36,10 @@ const According = () => {
     const [bgAccordingPreview, setBgAccordingPreview] = useState(true);
     const [bgAccordingCode, setBgAccordingCode] = useState(false);
 
+    // hover effect accordion
+    const [hoverAccordingPreview, setHoverAccordingPreview] = useState(true);
+    const [hoverAccordingCode, setHoverAccordingCode] = useState(false);
+
     const accordingData = [
         {
             title: "What is the purpose of wireframing in design?",
@@ -78,6 +82,11 @@ const According = () => {
     const [bgAccording, setBgAccording] = useState(null);
     const handleBgAccording = (index) =>
         setBgAccording((prevIndex) => (prevIndex === index ? null : index));
+
+    // hover effect accordion
+    const [hoverAccording, setHoverAccording] = useState(null);
+    const handleHoverAccording = (index) =>
+        setHoverAccording((prevIndex) => (prevIndex === index ? null : index));
 
     return (
         <>
@@ -528,6 +537,166 @@ const Accordion = () => {
                         <div className="text-[#424242] dark:text-[#abc2d3] text-[0.9rem] overflow-hidden">
                             {according.description}
                         </div>
+                    </div>
+                </article>
+            ))}
+        </div>
+    );
+};
+
+export default Accordion;
+              '
+                            />
+                        )}
+                    </ComponentWrapper>
+
+                    <div className='mt-8'>
+                        <ContentHeader
+                            id='hover_effect_according'
+                            text={'Hover Effect Accordion'}
+                        />
+                    </div>
+
+                    <ComponentDescription text='This is a hover effect accordion with smooth transitions. Features
+            enhanced visual feedback on hover with shadow and color transitions for
+            better user interaction.'/>
+
+                    <ToggleTab code={hoverAccordingCode} setPreview={setHoverAccordingPreview} setCode={setHoverAccordingCode}
+                               preview={hoverAccordingPreview}/>
+
+                    <ComponentWrapper>
+                        {hoverAccordingPreview && (
+                            <div className='p-8 mb-4 flex items-center flex-col gap-5 justify-center'>
+                                <div className='flex gap-3 flex-col w-full'>
+                                    {accordingData?.map((according, index) => (
+                                        <article
+                                            key={index}
+                                            className={`border dark:border-slate-700 border-border rounded-lg p-4 transition-all duration-300 hover:shadow-lg hover:border-primary dark:hover:border-primary cursor-pointer ${
+                                                hoverAccording === index ? 'shadow-lg border-primary dark:border-primary' : ''
+                                            }`}
+                                        >
+                                            <div
+                                                className='flex gap-2 items-center justify-between w-full'
+                                                onClick={() => handleHoverAccording(index)}
+                                            >
+                                                <h2 className={`font-[600] text-[1.2rem] transition-all duration-300 ${
+                                                    hoverAccording === index ? 'text-primary' : 'text-text dark:text-[#abc2d3]'
+                                                }`}>
+                                                    {according.title}
+                                                </h2>
+                                                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                                                    hoverAccording === index ? 'bg-primary/10' : 'bg-gray-100 dark:bg-slate-700'
+                                                }`}>
+                                                    <FaChevronDown
+                                                        className={`text-[1rem] transition-all duration-300 ${
+                                                            hoverAccording === index
+                                                                ? 'rotate-[180deg] text-primary'
+                                                                : 'text-text dark:text-slate-400'
+                                                        }`}
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div
+                                                className={`grid transition-all duration-300 overflow-hidden ease-in-out ${
+                                                    hoverAccording === index
+                                                        ? 'grid-rows-[1fr] opacity-100 mt-4 pt-4 border-t dark:border-slate-700 border-gray-200'
+                                                        : 'grid-rows-[0fr] opacity-0'
+                                                }`}
+                                            >
+                                                <p className='text-text dark:text-[#abc2d3] text-[0.9rem] overflow-hidden leading-relaxed'>
+                                                    {according.description}
+                                                </p>
+                                            </div>
+                                        </article>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {hoverAccordingCode && (
+                            <Showcode
+                                code='
+import React, {useState} from "react";
+
+// react icons
+import {FaChevronDown} from "react-icons/fa6";
+
+const Accordion = () => {
+    const accordingData = [
+        {
+            title: "What is the purpose of wireframing in design?",
+            description:
+                "Wireframing outlines the basic structure and layout of a design, serving as a visual guide before detailed development.",
+        },
+        {
+            title: "Why is user-centered design important?",
+            description:
+                "User-centered design ensures products meet the needs and preferences of the end-users, enhancing usability and satisfaction.",
+        },
+        {
+            title: "What role does contrast play in graphic design?",
+            description:
+                "Contrast in graphic design emphasizes differences, making elements stand out and improving visual hierarchy.",
+        },
+
+        {
+            title: `Define the term "responsive design" in web development.`,
+            description:
+                "Responsive design ensures web pages adapt to various screen sizes, providing an optimal user experience on different devices.",
+        },
+
+        {
+            title: "What is the significance of color theory in design?",
+            description:
+                "Color theory guides the selection and combination of colors to evoke specific emotions, enhance readability, and create visually appealing designs.",
+        },
+    ];
+
+    const [hoverAccording, setHoverAccording] = useState(null);
+
+    const handleHoverAccording = (index) =>
+        setHoverAccording((prevIndex) => (prevIndex === index ? null : index));
+
+    return (
+        <div className="flex gap-3 flex-col w-full">
+            {accordingData?.map((according, index) => (
+                <article
+                    key={index}
+                    className={`border dark:border-slate-700 border-[#e5eaf2] rounded-lg p-4 transition-all duration-300 hover:shadow-lg hover:border-[#3B9DF8] dark:hover:border-[#3B9DF8] cursor-pointer ${
+                        hoverAccording === index ? "shadow-lg border-[#3B9DF8] dark:border-[#3B9DF8]" : ""
+                    }`}
+                >
+                    <div
+                        className="flex gap-2 items-center justify-between w-full"
+                        onClick={() => handleHoverAccording(index)}
+                    >
+                        <h2 className={`font-[600] text-[1.2rem] transition-all duration-300 ${
+                            hoverAccording === index ? "text-[#3B9DF8]" : "text-[#424242] dark:text-[#abc2d3]"
+                        }`}>
+                            {according.title}
+                        </h2>
+                        <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
+                            hoverAccording === index ? "bg-[#3B9DF8]/10" : "bg-gray-100 dark:bg-slate-700"
+                        }`}>
+                            <FaChevronDown
+                                className={`text-[1rem] transition-all duration-300 ${
+                                    hoverAccording === index
+                                        ? "rotate-[180deg] text-[#3B9DF8]"
+                                        : "text-[#424242] dark:text-slate-400"
+                                }`}
+                            />
+                        </div>
+                    </div>
+                    <div
+                        className={`grid transition-all duration-300 overflow-hidden ease-in-out ${
+                            hoverAccording === index
+                                ? "grid-rows-[1fr] opacity-100 mt-4 pt-4 border-t dark:border-slate-700 border-gray-200"
+                                : "grid-rows-[0fr] opacity-0"
+                        }`}
+                    >
+                        <p className="text-[#424242] dark:text-[#abc2d3] text-[0.9rem] overflow-hidden leading-relaxed">
+                            {according.description}
+                        </p>
                     </div>
                 </article>
             ))}
