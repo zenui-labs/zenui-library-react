@@ -10,6 +10,11 @@ export const ReactionTrailContents = [
         title: 'Professional Reaction Trail',
         href: '#professional-reaction-trail',
     },
+    {
+        id: 3,
+        title: 'Magazine Reaction Trail',
+        href: '#magazine-reaction-trail',
+    },
 ];
 
 
