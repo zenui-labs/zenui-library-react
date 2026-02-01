@@ -105,7 +105,8 @@ const Carousel = () => {
 
                     <ComponentWrapper>
                         {carouselPreview1 && (
-                            <div className='p-8 flex flex-col items-center gap-5 h-[200px] lg:h-[400px] justify-center'>
+                            <div
+                                className='p-8 flex flex-col items-center gap-5 h-[200px] 1024px:h-[400px] justify-center'>
                                 <div
                                     className='relative flex items-center border-black justify-center w-full max-h-full rounded-lg'>
                                     <FiChevronLeft
@@ -186,7 +187,8 @@ export default CarouselComponent1;
 
                     <ComponentWrapper>
                         {carouselPreview2 && (
-                            <div className='p-8 flex flex-col items-center gap-5 h-[200px] lg:h-[400px] justify-center'>
+                            <div
+                                className='p-8 flex flex-col items-center gap-5 h-[200px] 1024px:h-[400px] justify-center'>
                                 <div className='relative flex items-center justify-center w-full max-h-full rounded-lg'>
                                     <FiChevronLeft
                                         className='absolute left-2 lg:left-5 transition-all duration-200 hover:backdrop-blur-md hover:bg-white/20 rounded-full p-0.5 lg:p-1 text-white text-[1.8rem] lg:text-[2.8rem] cursor-pointer'
@@ -275,7 +277,7 @@ export default CarouselComponent2;
                     <ComponentWrapper>
                         {carouselPreview3 && (
                             <div
-                                className='p-8 flex flex-col items-center gap-5 h-[200px] lg:h-[400px] justify-center'
+                                className='p-8 flex flex-col items-center gap-5 h-[200px] 1024px:h-[400px] justify-center'
                             >
                                 <div className="relative w-full max-h-full h-full overflow-hidden">
                                     <div className="w-full h-full relative">

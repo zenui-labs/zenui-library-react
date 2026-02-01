@@ -1,7 +1,7 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // framer motion
-import {motion, AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 // react icons
 import {BiShare} from "react-icons/bi";
@@ -184,7 +184,7 @@ const LinkedinReactTrailExample = () => {
                                 }}
                                 onMouseLeave={handleMouseLeave}
                             >
-                                {reactions.map((reaction, index) => (
+                                {reactions.map((reaction) => (
                                     <motion.div layout key={reaction.label}
                                                 className={`${hoveredEmoji === reaction.label ? 'mx-3' : 'mx-0'} relative w-[40px] h-[40px]`}>
                                         <motion.img

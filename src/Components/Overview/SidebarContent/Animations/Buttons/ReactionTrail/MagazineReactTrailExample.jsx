@@ -1,11 +1,11 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // framer motion
-import {motion, AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 // react icons
-import {BiShare, BiRepost} from "react-icons/bi";
-import {MdOutlineThumbUp, MdClose} from "react-icons/md";
+import {BiRepost, BiShare} from "react-icons/bi";
+import {MdOutlineThumbUp} from "react-icons/md";
 import {FaRegComment} from "react-icons/fa";
 import {HiOutlineDotsVertical} from "react-icons/hi";
 
@@ -13,7 +13,6 @@ const MagazineReactTrailExample = () => {
     const [showEmojis, setShowEmojis] = useState(false);
     const [selectedReaction, setSelectedReaction] = useState(null);
     const [hoveredEmoji, setHoveredEmoji] = useState(null);
-    const [expandedActions, setExpandedActions] = useState(false);
     const hoverTimerRef = useRef(null);
 
     const reactions = [
@@ -202,7 +201,8 @@ const MagazineReactTrailExample = () => {
                             animate={{opacity: 1, y: 0}}
                             transition={{delay: 0.5}}
                         >
-                            <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold mb-4">
+                            <span
+                                className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-full text-xs font-semibold mb-4">
                                 FEATURED POST
                             </span>
                             <h2 className="text-3xl font-bold mb-2 leading-tight">
@@ -288,7 +288,7 @@ const MagazineReactTrailExample = () => {
                     >
                         <p className="text-gray-700 dark:text-darkTextColor leading-relaxed">
                             Excited to share insights from our latest research on interactive design patterns.
-                            We've discovered fascinating ways users engage with micro-animations and
+                            We&#39;ve discovered fascinating ways users engage with micro-animations and
                             contextual feedback systems. 🎨✨
                         </p>
 
@@ -386,7 +386,8 @@ const MagazineReactTrailExample = () => {
                                         }}
                                         onMouseLeave={handleMouseLeave}
                                     >
-                                        <div className="bg-white dark:bg-slate-700 rounded-2xl shadow-2xl p-3 flex gap-2 border border-gray-100 dark:border-slate-600">
+                                        <div
+                                            className="bg-white dark:bg-slate-700 rounded-2xl shadow-2xl p-3 flex gap-2 border border-gray-100 dark:border-slate-600">
                                             {reactions.map((reaction) => (
                                                 <motion.button
                                                     key={reaction.label}
@@ -398,7 +399,8 @@ const MagazineReactTrailExample = () => {
                                                     onMouseEnter={() => setHoveredEmoji(reaction.label)}
                                                     onMouseLeave={() => setHoveredEmoji(null)}
                                                 >
-                                                    <div className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-slate-600 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-100 dark:group-hover:bg-slate-500 transition-colors">
+                                                    <div
+                                                        className="w-12 h-12 rounded-xl bg-gray-50 dark:bg-slate-600 flex items-center justify-center relative overflow-hidden group-hover:bg-gray-100 dark:group-hover:bg-slate-500 transition-colors">
                                                         {/* Gradient glow on hover */}
                                                         <motion.div
                                                             className={`absolute inset-0 bg-gradient-to-br ${reaction.color} opacity-0 group-hover:opacity-20 transition-opacity`}
@@ -419,7 +421,8 @@ const MagazineReactTrailExample = () => {
                                                                 animate={{opacity: 1, y: 0}}
                                                                 exit={{opacity: 0, y: 5}}
                                                             >
-                                                                <div className={`px-3 py-1.5 bg-gradient-to-r ${reaction.color} text-white text-xs font-bold rounded-lg shadow-lg`}>
+                                                                <div
+                                                                    className={`px-3 py-1.5 bg-gradient-to-r ${reaction.color} text-white text-xs font-bold rounded-lg shadow-lg`}>
                                                                     {reaction.label}
                                                                 </div>
                                                             </motion.div>

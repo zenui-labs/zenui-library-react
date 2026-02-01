@@ -1,10 +1,10 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 // framer motion
-import {motion, AnimatePresence} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 
 // react icons
-import {BiShare, BiRepost} from "react-icons/bi";
+import {BiRepost, BiShare} from "react-icons/bi";
 import {MdOutlineThumbUp} from "react-icons/md";
 import {FaRegComment} from "react-icons/fa";
 
@@ -112,17 +112,21 @@ const ProfessionalReactTrailExample = () => {
     }
 
     return (
-        <div className="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 overflow-hidden">
+        <div
+            className="w-full max-w-2xl bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-100 dark:border-slate-700 overflow-hidden">
             {/* Header */}
             <div className="p-5 pb-3">
                 <div className="flex items-start gap-3">
-                    <div className="w-12 h-12 dark:bg-slate-700 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
+                    <div
+                        className="w-12 h-12 dark:bg-slate-700 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex-shrink-0"></div>
                     <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
                             <h3 className="font-semibold dark:text-darkTextColor text-gray-900">Sarah Anderson</h3>
-                            <button className="text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:hover:text-slate-400">
+                            <button
+                                className="text-gray-400 dark:text-slate-500 hover:text-gray-600 dark:hover:text-slate-400">
                                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z" />
+                                    <path
+                                        d="M10 6a2 2 0 110-4 2 2 0 010 4zM10 12a2 2 0 110-4 2 2 0 010 4zM10 18a2 2 0 110-4 2 2 0 010 4z"/>
                                 </svg>
                             </button>
                         </div>
@@ -134,13 +138,15 @@ const ProfessionalReactTrailExample = () => {
             {/* Content */}
             <div className="px-5 pb-4">
                 <p className="dark:text-darkTextColor text-gray-700 leading-relaxed">
-                    Excited to share our latest design system update! We've improved component accessibility and added new interactive patterns. Check it out! 🎨
+                    Excited to share our latest design system update! We&#39;ve improved component accessibility and
+                    added new interactive patterns. Check it out! 🎨
                 </p>
             </div>
 
             {/* Image */}
             <div className="px-5 pb-4">
-                <div className="h-56 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-slate-800 rounded-lg flex items-center justify-center border border-gray-100 dark:border-slate-700">
+                <div
+                    className="h-56 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-slate-900 dark:to-slate-800 rounded-lg flex items-center justify-center border border-gray-100 dark:border-slate-700">
                     <span className="text-gray-400 dark:text-slate-500 text-sm font-medium">[Design Preview]</span>
                 </div>
             </div>
@@ -150,9 +156,9 @@ const ProfessionalReactTrailExample = () => {
                 <div className="flex items-center justify-between text-sm text-gray-500 dark:text-darkSubTextColor">
                     <div className="flex items-center gap-1">
                         <div className="flex -space-x-1">
-                            <img src={reactions[0].emoji} alt="reaction" className="w-5 h-5" />
-                            <img src={reactions[2].emoji} alt="reaction" className="w-5 h-5" />
-                            <img src={reactions[1].emoji} alt="reaction" className="w-5 h-5" />
+                            <img src={reactions[0].emoji} alt="reaction" className="w-5 h-5"/>
+                            <img src={reactions[2].emoji} alt="reaction" className="w-5 h-5"/>
+                            <img src={reactions[1].emoji} alt="reaction" className="w-5 h-5"/>
                         </div>
                         <span className="ml-1">42</span>
                     </div>
@@ -233,7 +239,8 @@ const ProfessionalReactTrailExample = () => {
                                                             exit="hidden"
                                                         >
                                                             {reaction.label}
-                                                            <div className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-slate-900 rotate-45"></div>
+                                                            <div
+                                                                className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2 h-2 bg-gray-900 dark:bg-slate-900 rotate-45"></div>
                                                         </motion.div>
                                                     )}
                                                 </AnimatePresence>
@@ -246,19 +253,22 @@ const ProfessionalReactTrailExample = () => {
                     </div>
 
                     {/* Comment Button */}
-                    <button className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
+                    <button
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
                         <FaRegComment size={18}/>
                         <span className="text-sm font-medium">Comment</span>
                     </button>
 
                     {/* Repost Button */}
-                    <button className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
+                    <button
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
                         <BiRepost size={22}/>
                         <span className="text-sm font-medium">Repost</span>
                     </button>
 
                     {/* Share Button */}
-                    <button className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
+                    <button
+                        className="flex-1 flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-gray-600 dark:text-darkSubTextColor hover:bg-gray-50 dark:hover:bg-slate-700 transition-all duration-200">
                         <BiShare size={20}/>
                         <span className="text-sm font-medium">Share</span>
                     </button>

@@ -55,7 +55,7 @@ const DrawerBottom = () => {
                 >
                     <div
                         className='flex 640px::flex-row flex-col justify-between w-full gap-5 px-8 py-12'>
-                        <p className='text-[1.2rem] dark:text-[#abc2d3] text-text w-full 640px:w-[70%]'>
+                        <p className='text-base md:text-[1.2rem] dark:text-[#abc2d3] text-text w-full 640px:w-[70%]'>
                             This site uses cookies and related technologies, as
                             described in our privacy policy, for purposes that may
                             include site operation, analytics, enhanced user

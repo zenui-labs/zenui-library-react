@@ -415,7 +415,8 @@ const Content = () => {
                     {
                         title: "Reaction Trail",
                         url: "/animations/reaction-trail",
-                        parent: 'BUTTONS'
+                        parent: 'BUTTONS',
+                        isUpdated: true,
                     },
                     {
                         title: "Hover Effects",
