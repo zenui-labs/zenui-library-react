@@ -5,6 +5,16 @@ export const ReactionTrailContents = [
         title: 'Linkedin Reaction Trail',
         href: '#linkedin-reaction-trail',
     },
+    {
+        id: 2,
+        title: 'Professional Reaction Trail',
+        href: '#professional-reaction-trail',
+    },
+    {
+        id: 3,
+        title: 'Magazine Reaction Trail',
+        href: '#magazine-reaction-trail',
+    },
 ];
 
 
