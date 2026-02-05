@@ -2,7 +2,7 @@ import OverviewIcon from "@/SvgIcons/OverviewIcon.jsx";
 import InstallationIcon from "@/SvgIcons/InstallationIcon.jsx";
 import ResourceIcon from "@/SvgIcons/ResourceIcon.jsx";
 import TemplatesIcon from "@/SvgIcons/TemplatesIcon.jsx";
-import {CollapseMenu, DefaultMenu} from "./children/Menu/index.jsx";
+import { CollapseMenu, DefaultMenu } from "./children/Menu/index.jsx";
 
 const Content = () => {
     return (
@@ -326,6 +326,12 @@ const Content = () => {
                         title: "Pie Chart",
                         url: "/components/pie-chart",
                         parent: 'DATA DISPLAY'
+                    },
+                    {
+                        title: "Graph Chart",
+                        url: "/components/graph-chart",
+                        parent: 'DATA DISPLAY',
+                        isNewComponent: true
                     },
                     {
                         title: "Timeline",
