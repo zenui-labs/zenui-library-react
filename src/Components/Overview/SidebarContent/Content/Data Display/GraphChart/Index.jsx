@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
-import { Helmet } from "react-helmet";
+import React, {useEffect, useState} from "react";
+import {motion} from "framer-motion";
+import {Helmet} from "react-helmet";
 
-// components
 import OverviewFooter from "@shared/OverviewFooter";
 import ContentHeader from "@shared/ContentHeader";
 import Showcode from "@shared/Component/ShowCode.jsx";
@@ -11,9 +10,8 @@ import ToggleTab from "@shared/Component/ToggleTab.jsx";
 import ComponentWrapper from "@shared/Component/ComponentWrapper.jsx";
 import ContentNavbar from "@shared/Component/ContentNavbar.jsx";
 
-// contents for scrollspy
-import { graphChartContents } from "@utils/ContentsConfig/DataDisplayContents.js";
-import { useScrollSpy } from "@/CustomHooks/useScrollSpy.js";
+import {graphChartContents} from "@utils/ContentsConfig/DataDisplayContents.js";
+import {useScrollSpy} from "@/CustomHooks/useScrollSpy.js";
 
 const GraphChart = () => {
     const sectionIds = graphChartContents.map((item) => item.href.slice(1));
@@ -36,7 +34,6 @@ const GraphChart = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    // Toggle states
     const [lineChartPreview, setLineChartPreview] = useState(true);
     const [lineChartCode, setLineChartCode] = useState(false);
     const [barChartPreview, setBarChartPreview] = useState(true);
@@ -44,14 +41,13 @@ const GraphChart = () => {
     const [areaChartPreview, setAreaChartPreview] = useState(true);
     const [areaChartCode, setAreaChartCode] = useState(false);
 
-    // Sample data
     const data = [
-        { month: "Jan", value: 400 },
-        { month: "Feb", value: 520 },
-        { month: "Mar", value: 480 },
-        { month: "Apr", value: 650 },
-        { month: "May", value: 580 },
-        { month: "Jun", value: 720 },
+        {month: "Jan", value: 400},
+        {month: "Feb", value: 520},
+        {month: "Mar", value: 480},
+        {month: "Apr", value: 650},
+        {month: "May", value: 580},
+        {month: "Jun", value: 720},
     ];
 
     const chartWidth = windowSize.width < 640 ? 300 : 500;
@@ -59,9 +55,9 @@ const GraphChart = () => {
     const maxValue = Math.max(...data.map((d) => d.value));
     const yAxisMax = Math.ceil(maxValue / 200) * 200;
     const yTickCount = 4;
-    const yTicks = Array.from({ length: yTickCount + 1 }, (_, i) => Math.round((yAxisMax / yTickCount) * i));
+    const yTicks = Array.from({length: yTickCount + 1}, (_, i) => Math.round((yAxisMax / yTickCount) * i));
 
-    const pad = { top: 20, right: 20, bottom: 35, left: 50 };
+    const pad = {top: 20, right: 20, bottom: 35, left: 50};
     const plotWidth = chartWidth - pad.left - pad.right;
     const plotHeight = chartHeight - pad.top - pad.bottom;
 
@@ -74,7 +70,6 @@ const GraphChart = () => {
         "#c39bd3",
     ];
 
-    // Calculate points for line and area charts
     const getPoints = () => {
         return data.map((item, index) => ({
             x: pad.left + (plotWidth / (data.length - 1)) * index,
@@ -85,7 +80,6 @@ const GraphChart = () => {
 
     const points = getPoints();
 
-    // Generate SVG path for line chart
     const generateLinePath = () => {
         if (points.length === 0) return "";
         let path = `M ${points[0].x} ${points[0].y}`;
@@ -95,7 +89,6 @@ const GraphChart = () => {
         return path;
     };
 
-    // Generate area path
     const generateAreaPath = () => {
         const linePath = generateLinePath();
         if (linePath === "") return "";
@@ -105,15 +98,12 @@ const GraphChart = () => {
         );
     };
 
-    // Bar chart calculations
     const barGap = 0.6;
     const barSlotWidth = plotWidth / data.length;
     const barWidth = barSlotWidth * barGap;
 
-    // Helper to render grid lines and axes
     const renderGridAndAxes = (keyPrefix) => (
         <>
-            {/* Grid lines */}
             {yTicks.map((tick, i) => {
                 const y = chartHeight - pad.bottom - (tick / yAxisMax) * plotHeight;
                 return (
@@ -131,7 +121,6 @@ const GraphChart = () => {
                 );
             })}
 
-            {/* Y-axis labels */}
             {yTicks.map((tick, i) => {
                 const y = chartHeight - pad.bottom - (tick / yAxisMax) * plotHeight;
                 return (
@@ -147,7 +136,6 @@ const GraphChart = () => {
                 );
             })}
 
-            {/* X-axis */}
             <line
                 x1={pad.left}
                 x2={chartWidth - pad.right}
@@ -157,7 +145,6 @@ const GraphChart = () => {
                 strokeWidth="2"
                 className="stroke-gray-400 dark:stroke-gray-600"
             />
-            {/* Y-axis */}
             <line
                 x1={pad.left}
                 x2={pad.left}
@@ -174,13 +161,13 @@ const GraphChart = () => {
         <>
             <aside className="flex items-start justify-between gap-6 w-full 640px:pl-[2.5rem] px-6 640px:px-10">
                 <div>
-                    {/* ANIMATED LINE CHART SECTION */}
                     <ContentHeader
                         text={"animated line chart"}
                         id={"animated_line_chart"}
                     />
 
-                    <ComponentDescription text="An animated line chart that visualizes data trends with clean lines, animated data points, and labeled axes." />
+                    <ComponentDescription
+                        text="An animated line chart that visualizes data trends with clean lines, animated data points, and labeled axes."/>
 
                     <ToggleTab
                         code={lineChartCode}
@@ -199,7 +186,6 @@ const GraphChart = () => {
                                 >
                                     {renderGridAndAxes("line")}
 
-                                    {/* Animated line */}
                                     <motion.path
                                         d={generateLinePath()}
                                         fill="none"
@@ -207,15 +193,14 @@ const GraphChart = () => {
                                         strokeWidth="3"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        initial={{ pathLength: 0 }}
-                                        animate={{ pathLength: 1 }}
+                                        initial={{pathLength: 0}}
+                                        animate={{pathLength: 1}}
                                         transition={{
                                             duration: 1.5,
                                             ease: "easeInOut",
                                         }}
                                     />
 
-                                    {/* Data points */}
                                     {points.map((point, index) => (
                                         <motion.circle
                                             key={`line-point-${index}`}
@@ -223,19 +208,18 @@ const GraphChart = () => {
                                             cy={point.y}
                                             r="5"
                                             fill="#4b77be"
-                                            initial={{ opacity: 0, r: 0 }}
-                                            animate={{ opacity: 1, r: 5 }}
+                                            initial={{opacity: 0, r: 0}}
+                                            animate={{opacity: 1, r: 5}}
                                             transition={{
                                                 duration: 0.4,
                                                 delay: 1 + index * 0.1,
                                                 ease: "easeOut",
                                             }}
-                                            whileHover={{ r: 7 }}
+                                            whileHover={{r: 7}}
                                             className="cursor-pointer"
                                         />
                                     ))}
 
-                                    {/* X-axis labels */}
                                     {data.map((item, index) => (
                                         <text
                                             key={`line-label-${index}`}
@@ -249,9 +233,8 @@ const GraphChart = () => {
                                     ))}
                                 </svg>
 
-                                {/* Legend */}
                                 <div className="flex items-center gap-3 mt-2">
-                                    <div className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#4b77be" }} />
+                                    <div className="w-4 h-4 rounded-sm" style={{backgroundColor: "#4b77be"}}/>
                                     <span className="text-sm dark:text-gray-300 text-gray-700">
                                         Monthly Trends
                                     </span>
@@ -368,7 +351,6 @@ export default AnimatedLineChart;`}
                         )}
                     </ComponentWrapper>
 
-                    {/* ANIMATED BAR CHART SECTION */}
                     <div className="mt-8">
                         <ContentHeader
                             text={"animated bar chart"}
@@ -376,7 +358,8 @@ export default AnimatedLineChart;`}
                         />
                     </div>
 
-                    <ComponentDescription text="An animated bar chart with staggered entrance animations, labeled axes, and categorical data comparison." />
+                    <ComponentDescription
+                        text="An animated bar chart with staggered entrance animations, labeled axes, and categorical data comparison."/>
 
                     <ToggleTab
                         code={barChartCode}
@@ -395,7 +378,6 @@ export default AnimatedLineChart;`}
                                 >
                                     {renderGridAndAxes("bar")}
 
-                                    {/* Animated bars */}
                                     {data.map((item, index) => {
                                         const barHeight =
                                             (item.value / yAxisMax) * plotHeight;
@@ -413,8 +395,8 @@ export default AnimatedLineChart;`}
                                                 width={barWidth}
                                                 height={barHeight}
                                                 fill={colors[index]}
-                                                initial={{ scaleY: 0 }}
-                                                animate={{ scaleY: 1 }}
+                                                initial={{scaleY: 0}}
+                                                animate={{scaleY: 1}}
                                                 style={{
                                                     transformOrigin: "bottom",
                                                     transformBox: "fill-box",
@@ -424,13 +406,12 @@ export default AnimatedLineChart;`}
                                                     delay: index * 0.1,
                                                     ease: "easeOut",
                                                 }}
-                                                whileHover={{ opacity: 0.8 }}
+                                                whileHover={{opacity: 0.8}}
                                                 className="cursor-pointer"
                                             />
                                         );
                                     })}
 
-                                    {/* X-axis labels */}
                                     {data.map((item, index) => (
                                         <text
                                             key={`bar-label-${index}`}
@@ -448,14 +429,13 @@ export default AnimatedLineChart;`}
                                     ))}
                                 </svg>
 
-                                {/* Legend */}
                                 <div className="flex items-center gap-3 mt-2">
                                     <div className="flex gap-1">
                                         {colors.slice(0, 3).map((color, i) => (
                                             <div
                                                 key={`color-${i}`}
                                                 className="w-4 h-4 rounded-sm"
-                                                style={{ backgroundColor: color }}
+                                                style={{backgroundColor: color}}
                                             />
                                         ))}
                                     </div>
@@ -584,7 +564,8 @@ export default AnimatedBarChart;`}
                         />
                     </div>
 
-                    <ComponentDescription text="An animated area chart with gradient fill, combining line chart and shaded area visualization with labeled axes." />
+                    <ComponentDescription
+                        text="An animated area chart with gradient fill, combining line chart and shaded area visualization with labeled axes."/>
 
                     <ToggleTab
                         code={areaChartCode}
@@ -628,8 +609,8 @@ export default AnimatedBarChart;`}
                                     <motion.path
                                         d={generateAreaPath()}
                                         fill="url(#areaGradient)"
-                                        initial={{ opacity: 0 }}
-                                        animate={{ opacity: 1 }}
+                                        initial={{opacity: 0}}
+                                        animate={{opacity: 1}}
                                         transition={{
                                             duration: 1.5,
                                             ease: "easeInOut",
@@ -644,8 +625,8 @@ export default AnimatedBarChart;`}
                                         strokeWidth="3"
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
-                                        initial={{ pathLength: 0 }}
-                                        animate={{ pathLength: 1 }}
+                                        initial={{pathLength: 0}}
+                                        animate={{pathLength: 1}}
                                         transition={{
                                             duration: 1.5,
                                             ease: "easeInOut",
@@ -660,19 +641,18 @@ export default AnimatedBarChart;`}
                                             cy={point.y}
                                             r="4"
                                             fill="#96c0ce"
-                                            initial={{ opacity: 0, r: 0 }}
-                                            animate={{ opacity: 1, r: 4 }}
+                                            initial={{opacity: 0, r: 0}}
+                                            animate={{opacity: 1, r: 4}}
                                             transition={{
                                                 duration: 0.4,
                                                 delay: 1.2 + index * 0.1,
                                                 ease: "easeOut",
                                             }}
-                                            whileHover={{ r: 6 }}
+                                            whileHover={{r: 6}}
                                             className="cursor-pointer"
                                         />
                                     ))}
 
-                                    {/* X-axis labels */}
                                     {data.map((item, index) => (
                                         <text
                                             key={`area-label-${index}`}
@@ -686,9 +666,8 @@ export default AnimatedBarChart;`}
                                     ))}
                                 </svg>
 
-                                {/* Legend */}
                                 <div className="flex items-center gap-3 mt-2">
-                                    <div className="w-4 h-4 rounded-sm" style={{ backgroundColor: "#96c0ce" }} />
+                                    <div className="w-4 h-4 rounded-sm" style={{backgroundColor: "#96c0ce"}}/>
                                     <span className="text-sm dark:text-gray-300 text-gray-700">
                                         Performance Metrics
                                     </span>
@@ -824,8 +803,8 @@ export default AnimatedAreaChart;`}
                     <OverviewFooter
                         backName="Pie Chart"
                         backUrl="/components/pie-chart"
-                        forwardUrl="/components/badges"
-                        forwardName="Badge"
+                        forwardUrl="/components/timeline"
+                        forwardName="Timeline"
                     />
                 </div>
 

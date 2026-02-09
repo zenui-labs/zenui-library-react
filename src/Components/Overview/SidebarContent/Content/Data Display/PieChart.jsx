@@ -612,8 +612,9 @@ export default PieChart;
                         )}
                     </ComponentWrapper>
 
-                    <OverviewFooter backName='tooltip' backUrl='/components/tooltip' forwardUrl='/components/timeline'
-                                    forwardName='Timeline'/>
+                    <OverviewFooter backName='tooltip' backUrl='/components/tooltip'
+                                    forwardUrl='/components/graph-chart'
+                                    forwardName='graph chart'/>
                 </div>
 
 

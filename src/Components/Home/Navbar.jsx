@@ -277,7 +277,7 @@ const Navbar = ({className}) => {
                         <input
                             type="search"
                             readOnly={true}
-                            className={`py-[0.59rem] pl-10 dark:border-darkBorderColor border w-full bg-transparent border-gray-200 rounded-normal focus:ring-0 outline-none`}
+                            className={`py-[0.59rem] pl-10 pr-5 dark:border-darkBorderColor border w-full bg-transparent border-gray-200 rounded-normal focus:ring-0 outline-none`}
                         />
                         <span
                             className={`text-gray-400 dark:text-slate-400 transition-all duration-500 px-2 py-1 text-[1rem] font-[400] rounded-md h-[75%] absolute right-1.5 top-[0.35rem] flex items-center justify-center gap-[1px]`}>

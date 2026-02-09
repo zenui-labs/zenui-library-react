@@ -203,6 +203,6 @@ export const DevContributorsData = [
         twitterLink: 'https://x.com/murad_dev',
         githubLink: 'https://github.com/mozaddedalfeshani',
         website: 'https://imurad.me/',
-        zenuiHero: false,
+        zenuiHero: true,
     },
 ]
