@@ -187,6 +187,12 @@ const FeedbackRoutes = [
       () => import("@pages/Components/Feedback/NotificationPage"),
     ),
   },
+  {
+    path: "/components/toast",
+    component: lazy(
+      () => import("@pages/Components/Feedback/ToastPage"),
+    ),
+  },
 ];
 
 // Surface Component Routes
@@ -289,6 +295,12 @@ const DataDisplayRoutes = [
     path: "/components/timeline",
     component: lazy(
       () => import("@pages/Components/Data Display/TimelinePage"),
+    ),
+  },
+  {
+    path: "/components/calendar",
+    component: lazy(
+      () => import("@pages/Components/Data Display/CalendarPage"),
     ),
   },
 ];
