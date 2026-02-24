@@ -295,6 +295,12 @@ const Content = () => {
                         parent: 'FEEDBACK'
                     },
                     {
+                        title: "Toast",
+                        url: "/components/toast",
+                        parent: 'FEEDBACK',
+                        isNewComponent: true,
+                    },
+                    {
                         label: "DATA DISPLAY",
                     },
                     {
@@ -337,6 +343,12 @@ const Content = () => {
                         title: "Timeline",
                         url: "/components/timeline",
                         parent: 'DATA DISPLAY',
+                    },
+                    {
+                        title: "Calendar",
+                        url: "/components/calendar",
+                        parent: 'DATA DISPLAY',
+                        isNewComponent: true,
                     },
                     {
                         label: "E-COMMERCE",
