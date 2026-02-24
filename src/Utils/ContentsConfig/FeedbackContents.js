@@ -221,3 +221,33 @@ export const treeDropdownContents = [
   },
 ];
 
+
+
+// Toast contents
+export const toastContents = [
+    {
+        id: 1,
+        title: 'Basic Toast',
+        href: '#basic_toast',
+    },
+    {
+        id: 2,
+        title: 'Toast With Action',
+        href: '#toast_with_action',
+    },
+    {
+        id: 3,
+        title: 'Progress Toast',
+        href: '#progress_toast',
+    },
+    {
+        id: 4,
+        title: 'Stacked Toast',
+        href: '#stacked_toast',
+    },
+    {
+        id: 5,
+        title: 'Toast Positions',
+        href: '#toast_positions',
+    },
+];
