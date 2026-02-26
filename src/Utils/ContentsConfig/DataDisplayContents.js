@@ -145,3 +145,33 @@ export const graphChartContents = [
     href: "#animated_area_chart",
   },
 ];
+
+
+// Calendar contents
+export const calendarContents = [
+    {
+        id: 1,
+        title: 'Basic Calendar',
+        href: '#basic_calendar',
+    },
+    {
+        id: 2,
+        title: 'Date Picker',
+        href: '#date_picker',
+    },
+    {
+        id: 3,
+        title: 'Date Range Picker',
+        href: '#date_range_picker',
+    },
+    {
+        id: 4,
+        title: 'Calendar With Events',
+        href: '#calendar_with_events',
+    },
+    {
+        id: 5,
+        title: 'From / To Date Picker',
+        href: '#hotel_booking_picker',
+    },
+];
