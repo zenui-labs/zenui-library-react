@@ -113,9 +113,18 @@ for (const sf of program.getSourceFiles()) {
     visit(sf);
 }
 
-// src/Examples files show their own source, so the files themselves are the snippets.
+// src/Examples files show their own source, so the files themselves are the snippets. Reusable examples import
+// their component from a sibling file ("./KpiCards"); those files are copied next to the example so the usage is
+// checked against the real component, the way a developer would paste both.
 for (const f of files.filter((f) => f.includes(`${path.sep}Examples${path.sep}`) && /\.example\.tsx$/.test(f))) {
-    snippets.push({where: path.relative(ROOT, f), tabs: [{name: path.basename(f).replace(".example", ""), language: "tsx", code: fs.readFileSync(f, "utf8")}]});
+    const code = fs.readFileSync(f, "utf8");
+    const tabs = [{name: path.basename(f), language: "tsx", code}];
+    for (const [, spec] of code.matchAll(/from\s+["']\.\/([\w-]+)(?:\.tsx?)?["']/g)) {
+        const sibling = [".tsx", ".ts"].map((ext) => path.join(path.dirname(f), spec + ext)).find((p) => fs.existsSync(p));
+        if (!sibling) problems.push(`${path.relative(ROOT, f)}  imports ./${spec}, which does not exist`);
+        else tabs.push({name: path.basename(sibling), language: sibling.endsWith(".ts") ? "ts" : "tsx", code: fs.readFileSync(sibling, "utf8")});
+    }
+    snippets.push({where: path.relative(ROOT, f), tabs});
 }
 
 if (listOnly) {

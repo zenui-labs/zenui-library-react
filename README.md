@@ -105,9 +105,18 @@ The site is written in TypeScript (Vite, React 18, Tailwind CSS v3).
 Code examples are written in TypeScript. The site generates the JavaScript version from the same source (types are
 stripped with Sucrase), so there is only one version to maintain.
 
-New component pages go in `src/Examples/<components|animations|blocks>/<slug>/`: one `*.example.tsx` file per example
-and an `index.ts` listing them. Register the page in that section's `pages.ts` and it appears in the routes, sidebar,
-search and pager. The preview and the copyable code come from the same file.
+New component pages go in `src/Examples/<components|animations|blocks>/<slug>/` with an `index.ts` listing the examples.
+Register the page in that section's `pages.ts` and it appears in the routes, sidebar, search and pager.
+
+Each example is reusable and made of two files:
+
+- `<Name>.tsx` is the component. It has named exports, typed props and no demo data.
+- `<Name>.example.tsx` is the usage. It imports the component from `"./<Name>"`, passes demo data to it, and is what
+  the preview renders.
+
+List the component file in the example's `files` in `index.ts` (`files: [{name: "<Name>.tsx", source}]`). The code view
+then shows the component first and the usage second. `check-snippets` compiles each usage together with the component
+files it imports, so a prop change that breaks the usage is caught.
 
 <br/>
 

@@ -1,20 +1,28 @@
 import type {Example} from "../../types.ts";
 import ReadingProgress from "./ReadingProgress.example.tsx";
 import readingProgressSource from "./ReadingProgress.example.tsx?raw";
+import readingProgressComponentSource from "./ReadingProgress.tsx?raw";
 import ScrollWordReveal from "./ScrollWordReveal.example.tsx";
 import scrollWordRevealSource from "./ScrollWordReveal.example.tsx?raw";
+import scrollWordRevealComponentSource from "./ScrollWordReveal.tsx?raw";
 import StickySteps from "./StickySteps.example.tsx";
 import stickyStepsSource from "./StickySteps.example.tsx?raw";
+import stickyStepsComponentSource from "./StickySteps.tsx?raw";
 import HorizontalScroll from "./HorizontalScroll.example.tsx";
 import horizontalScrollSource from "./HorizontalScroll.example.tsx?raw";
+import horizontalScrollComponentSource from "./HorizontalScroll.tsx?raw";
 import ParallaxLayers from "./ParallaxLayers.example.tsx";
 import parallaxLayersSource from "./ParallaxLayers.example.tsx?raw";
+import parallaxLayersComponentSource from "./ParallaxLayers.tsx?raw";
 import ZoomOnScroll from "./ZoomOnScroll.example.tsx";
 import zoomOnScrollSource from "./ZoomOnScroll.example.tsx?raw";
+import zoomOnScrollComponentSource from "./ZoomOnScroll.tsx?raw";
 import ScrollCountUp from "./ScrollCountUp.example.tsx";
 import scrollCountUpSource from "./ScrollCountUp.example.tsx?raw";
+import scrollCountUpComponentSource from "./ScrollCountUp.tsx?raw";
 import VelocityMarquee from "./VelocityMarquee.example.tsx";
 import velocityMarqueeSource from "./VelocityMarquee.example.tsx?raw";
+import velocityMarqueeComponentSource from "./VelocityMarquee.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -23,6 +31,7 @@ const examples: Example[] = [
         description: "A thin bar and a percentage ring fill as the article scrolls, with an estimate of the minutes left. Use it for blog posts, docs and long reports.",
         component: ReadingProgress,
         source: readingProgressSource,
+        files: [{name: "ReadingProgress.tsx", source: readingProgressComponentSource}],
         minHeight: 520,
     },
     {
@@ -31,6 +40,7 @@ const examples: Example[] = [
         description: "Each word of a paragraph fades from faint to full as it scrolls past, so the text reads at the pace of the scroll. Use it for manifestos and mission statements.",
         component: ScrollWordReveal,
         source: scrollWordRevealSource,
+        files: [{name: "ScrollWordReveal.tsx", source: scrollWordRevealComponentSource}],
         minHeight: 500,
     },
     {
@@ -39,6 +49,7 @@ const examples: Example[] = [
         description: "A visual stays pinned while the steps scroll past, and changes to match the active step. Use it for onboarding tours and how it works sections.",
         component: StickySteps,
         source: stickyStepsSource,
+        files: [{name: "StickySteps.tsx", source: stickyStepsComponentSource}],
         minHeight: 540,
     },
     {
@@ -47,6 +58,7 @@ const examples: Example[] = [
         description: "Scrolling down moves a row of case study cards sideways, with a counter and progress line. Use it for portfolios and product galleries.",
         component: HorizontalScroll,
         source: horizontalScrollSource,
+        files: [{name: "HorizontalScroll.tsx", source: horizontalScrollComponentSource}],
         minHeight: 520,
     },
     {
@@ -55,6 +67,7 @@ const examples: Example[] = [
         description: "Sun, ridges and headline sink at different speeds as the hero scrolls away, which gives the scene depth. The scene stays still with reduced motion.",
         component: ParallaxLayers,
         source: parallaxLayersSource,
+        files: [{name: "ParallaxLayers.tsx", source: parallaxLayersComponentSource}],
         minHeight: 520,
     },
     {
@@ -63,6 +76,7 @@ const examples: Example[] = [
         description: "A small photo grows to fill the frame while the headline splits apart, then a caption fades in. Use it for product stories and editorial features.",
         component: ZoomOnScroll,
         source: zoomOnScrollSource,
+        files: [{name: "ZoomOnScroll.tsx", source: zoomOnScrollComponentSource}],
         minHeight: 520,
     },
     {
@@ -71,6 +85,7 @@ const examples: Example[] = [
         description: "Stats and bars move through five years of data as the panel scrolls, and count back down when scrolling up. Use it for annual reviews and investor pages.",
         component: ScrollCountUp,
         source: scrollCountUpSource,
+        files: [{name: "ScrollCountUp.tsx", source: scrollCountUpComponentSource}],
         minHeight: 520,
     },
     {
@@ -79,6 +94,7 @@ const examples: Example[] = [
         description: "Two rows of type drift on their own, speed up and lean with fast scrolling, and reverse when scrolling up. The rows pause off screen and with reduced motion.",
         component: VelocityMarquee,
         source: velocityMarqueeSource,
+        files: [{name: "VelocityMarquee.tsx", source: velocityMarqueeComponentSource}],
         minHeight: 520,
     },
 ];

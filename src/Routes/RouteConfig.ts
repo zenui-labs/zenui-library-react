@@ -553,8 +553,14 @@ const MiscRoutes = [
 const ExamplePage = lazy(() => import("@pages/ExamplePage"));
 const ExampleRoutes = examplePages.map((page) => ({ path: examplePagePath(page), component: ExamplePage }));
 
+// Legacy pages move into src/Examples one at a time at the same URL. Once a path is registered there, its old
+// route is dropped here, so the registry page is the one that renders.
+const examplePaths = new Set(ExampleRoutes.map((route) => route.path));
+const withoutMigrated = <T extends { path: string }>(list: T[]) => list.filter((route) => !examplePaths.has(route.path));
+
 // Combine all routes. MiscRoutes ends with the catch-all, so it stays last.
 const routes = [
+  ...withoutMigrated([
   ...DocsRoutes,
   ...InputRoutes,
   ...ButtonRoutes,
@@ -567,6 +573,7 @@ const routes = [
   ...BlockRoutes,
   ...ECommerceBlockRoutes,
   ...AnimationRoutes,
+  ]),
   ...ExampleRoutes,
   ...MiscRoutes,
 ];

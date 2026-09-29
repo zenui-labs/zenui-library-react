@@ -43,6 +43,10 @@ const Installation = () => {
                     <code>Button.tsx</code> and import it where you need it.
                 </p>
                 <p>
+                    Every example comes in two files. The first is the component, which takes your data as props.
+                    <b>Usage.tsx</b> shows it with sample data, so you can see which props to pass.
+                </p>
+                <p>
                     Every example is written in TypeScript. Choose <b>JS</b> above the code to get the same component as
                     plain JavaScript, generated from the TypeScript source with the types removed. Your choice is
                     remembered on every page.

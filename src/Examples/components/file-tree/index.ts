@@ -1,18 +1,25 @@
 import type {Example} from "../../types.ts";
 import FileTree from "./FileTree.example.tsx";
 import fileTreeSource from "./FileTree.example.tsx?raw";
+import fileTreeComponentSource from "./FileTree.tsx?raw";
 import SearchableTree from "./SearchableTree.example.tsx";
 import searchableTreeSource from "./SearchableTree.example.tsx?raw";
+import searchableTreeComponentSource from "./SearchableTree.tsx?raw";
 import SelectableTree from "./SelectableTree.example.tsx";
 import selectableTreeSource from "./SelectableTree.example.tsx?raw";
+import selectableTreeComponentSource from "./SelectableTree.tsx?raw";
 import EditableTree from "./EditableTree.example.tsx";
 import editableTreeSource from "./EditableTree.example.tsx?raw";
+import editableTreeComponentSource from "./EditableTree.tsx?raw";
 import ColumnBrowser from "./ColumnBrowser.example.tsx";
 import columnBrowserSource from "./ColumnBrowser.example.tsx?raw";
+import columnBrowserComponentSource from "./ColumnBrowser.tsx?raw";
 import StorageTree from "./StorageTree.example.tsx";
 import storageTreeSource from "./StorageTree.example.tsx?raw";
+import storageTreeComponentSource from "./StorageTree.tsx?raw";
 import ChangedFiles from "./ChangedFiles.example.tsx";
 import changedFilesSource from "./ChangedFiles.example.tsx?raw";
+import changedFilesComponentSource from "./ChangedFiles.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -21,6 +28,7 @@ const examples: Example[] = [
         description: "A project explorer that follows the tree keyboard pattern. Arrow keys move, open and close folders.",
         component: FileTree,
         source: fileTreeSource,
+        files: [{name: "FileTree.tsx", source: fileTreeComponentSource}],
         minHeight: 480,
     },
     {
@@ -29,6 +37,7 @@ const examples: Example[] = [
         description: "A filter field above the tree that keeps only matching files, opens the folders on their path and highlights the match. Arrow down moves from the field into the tree.",
         component: SearchableTree,
         source: searchableTreeSource,
+        files: [{name: "SearchableTree.tsx", source: searchableTreeComponentSource}],
         minHeight: 520,
     },
     {
@@ -37,6 +46,7 @@ const examples: Example[] = [
         description: "Create, rename and delete pages and folders in place. Names are checked for duplicates, and a deleted item can be restored from the undo bar.",
         component: EditableTree,
         source: editableTreeSource,
+        files: [{name: "EditableTree.tsx", source: editableTreeComponentSource}],
         minHeight: 460,
     },
     {
@@ -45,6 +55,7 @@ const examples: Example[] = [
         description: "Checkboxes with a mixed state for partly selected folders, sizes on every row and a meter that warns when the selection will not fit.",
         component: SelectableTree,
         source: selectableTreeSource,
+        files: [{name: "SelectableTree.tsx", source: selectableTreeComponentSource}],
         minHeight: 560,
     },
     {
@@ -53,6 +64,7 @@ const examples: Example[] = [
         description: "A Finder style column view with breadcrumbs and a details panel for the selected file. Small screens show one column at a time with a back button.",
         component: ColumnBrowser,
         source: columnBrowserSource,
+        files: [{name: "ColumnBrowser.tsx", source: columnBrowserComponentSource}],
         minHeight: 460,
     },
     {
@@ -61,6 +73,7 @@ const examples: Example[] = [
         description: "A disk usage view that sorts folders by size, shows each item's share of the disk and breaks the total down by file type.",
         component: StorageTree,
         source: storageTreeSource,
+        files: [{name: "StorageTree.tsx", source: storageTreeComponentSource}],
         minHeight: 560,
     },
     {
@@ -69,6 +82,7 @@ const examples: Example[] = [
         description: "A review list of changed files grouped by folder, with change type, line counts and a viewed checkbox.",
         component: ChangedFiles,
         source: changedFilesSource,
+        files: [{name: "ChangedFiles.tsx", source: changedFilesComponentSource}],
         minHeight: 520,
     },
 ];

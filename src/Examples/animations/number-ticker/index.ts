@@ -1,18 +1,25 @@
 import type {Example} from "../../types.ts";
 import NumberTicker from "./NumberTicker.example.tsx";
 import numberTickerSource from "./NumberTicker.example.tsx?raw";
+import numberTickerComponentSource from "./NumberTicker.tsx?raw";
 import FlipCountdown from "./FlipCountdown.example.tsx";
 import flipCountdownSource from "./FlipCountdown.example.tsx?raw";
+import flipCountdownComponentSource from "./FlipCountdown.tsx?raw";
 import OdometerCounter from "./OdometerCounter.example.tsx";
 import odometerCounterSource from "./OdometerCounter.example.tsx?raw";
+import odometerCounterComponentSource from "./OdometerCounter.tsx?raw";
 import CurrencyPricing from "./CurrencyPricing.example.tsx";
 import currencyPricingSource from "./CurrencyPricing.example.tsx?raw";
+import currencyPricingComponentSource from "./CurrencyPricing.tsx?raw";
 import ProgressRings from "./ProgressRings.example.tsx";
 import progressRingsSource from "./ProgressRings.example.tsx?raw";
+import progressRingsComponentSource from "./ProgressRings.tsx?raw";
 import StockWatchlist from "./StockWatchlist.example.tsx";
 import stockWatchlistSource from "./StockWatchlist.example.tsx?raw";
+import stockWatchlistComponentSource from "./StockWatchlist.tsx?raw";
 import SlotReels from "./SlotReels.example.tsx";
 import slotReelsSource from "./SlotReels.example.tsx?raw";
+import slotReelsComponentSource from "./SlotReels.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -21,6 +28,7 @@ const examples: Example[] = [
         description: "Numbers that count up once when they scroll into view. Supports a prefix, suffix and decimal places.",
         component: NumberTicker,
         source: numberTickerSource,
+        files: [{name: "NumberTicker.tsx", source: numberTickerComponentSource}],
     },
     {
         id: "odometer-counter",
@@ -28,6 +36,7 @@ const examples: Example[] = [
         description: "Each digit rolls on its own column like a car odometer while new installs arrive. Use it for live totals such as downloads, signups or orders.",
         component: OdometerCounter,
         source: odometerCounterSource,
+        files: [{name: "OdometerCounter.tsx", source: odometerCounterComponentSource}],
         minHeight: 420,
     },
     {
@@ -36,6 +45,7 @@ const examples: Example[] = [
         description: "Prices roll to their new value when the currency or billing period changes, and only the characters that differ move. Use it on pricing pages.",
         component: CurrencyPricing,
         source: currencyPricingSource,
+        files: [{name: "CurrencyPricing.tsx", source: currencyPricingComponentSource}],
         minHeight: 560,
     },
     {
@@ -44,6 +54,7 @@ const examples: Example[] = [
         description: "Rings fill with a spring while the percentage counts along with them, and the storage ring shifts from green to red as it fills. Use it for quotas, goals and usage.",
         component: ProgressRings,
         source: progressRingsSource,
+        files: [{name: "ProgressRings.tsx", source: progressRingsComponentSource}],
         minHeight: 440,
     },
     {
@@ -52,6 +63,7 @@ const examples: Example[] = [
         description: "Prices tick in place with a green or red flash, next to sparklines and a scrolling ticker tape. Updates pause while the list is off screen.",
         component: StockWatchlist,
         source: stockWatchlistSource,
+        files: [{name: "StockWatchlist.tsx", source: stockWatchlistComponentSource}],
         minHeight: 480,
     },
     {
@@ -60,6 +72,7 @@ const examples: Example[] = [
         description: "Four reels spin and stop one after another on a random number, then the result is revealed. Use it for giveaways, raffles and reward reveals.",
         component: SlotReels,
         source: slotReelsSource,
+        files: [{name: "SlotReels.tsx", source: slotReelsComponentSource}],
         minHeight: 520,
     },
     {
@@ -68,6 +81,7 @@ const examples: Example[] = [
         description: "A split-flap countdown where each digit folds over when it changes. Use it for launches, sales and event pages.",
         component: FlipCountdown,
         source: flipCountdownSource,
+        files: [{name: "FlipCountdown.tsx", source: flipCountdownComponentSource}],
         minHeight: 340,
     },
 ];

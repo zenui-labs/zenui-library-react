@@ -224,10 +224,18 @@ export const docsNavigation: NavSection[] = [
     },
 ];
 
-// Add pages registered in src/Examples to their section, creating groups that don't exist yet.
+// Add pages registered in src/Examples to their section, creating groups that don't exist yet. A page that replaces
+// a legacy page at the same URL takes over that sidebar entry in place, so the reading order stays the same.
 for (const page of examplePages) {
     const section = docsNavigation.find((entry) => entry.title === page.section);
-    if (!section) continue;
+    if (!section || page.unlisted) continue;
+    const url = examplePagePath(page);
+    const existing = [...section.items, ...(section.groups ?? []).flatMap((entry) => entry.items)].find((item) => item.url === url);
+    if (existing) {
+        existing.title = page.title;
+        if (page.status) existing.status = page.status;
+        continue;
+    }
     section.groups ??= [];
     let group = section.groups.find((entry) => entry.label === page.group);
     if (!group) {

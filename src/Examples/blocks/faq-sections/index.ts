@@ -1,18 +1,25 @@
 import type {Example} from "../../types.ts";
 import FaqSection from "./FaqSection.example.tsx";
 import faqSectionSource from "./FaqSection.example.tsx?raw";
+import faqSectionComponentSource from "./FaqSection.tsx?raw";
 import CenteredAccordion from "./CenteredAccordion.example.tsx";
 import centeredAccordionSource from "./CenteredAccordion.example.tsx?raw";
+import centeredAccordionComponentSource from "./CenteredAccordion.tsx?raw";
 import FaqCardGrid from "./FaqCardGrid.example.tsx";
 import faqCardGridSource from "./FaqCardGrid.example.tsx?raw";
+import faqCardGridComponentSource from "./FaqCardGrid.tsx?raw";
 import FaqWithContactForm from "./FaqWithContactForm.example.tsx";
 import faqWithContactFormSource from "./FaqWithContactForm.example.tsx?raw";
+import faqWithContactFormComponentSource from "./FaqWithContactForm.tsx?raw";
 import FaqSideNav from "./FaqSideNav.example.tsx";
 import faqSideNavSource from "./FaqSideNav.example.tsx?raw";
+import faqSideNavComponentSource from "./FaqSideNav.tsx?raw";
 import HelpCenterSearch from "./HelpCenterSearch.example.tsx";
 import helpCenterSearchSource from "./HelpCenterSearch.example.tsx?raw";
+import helpCenterSearchComponentSource from "./HelpCenterSearch.tsx?raw";
 import ConversationalFaq from "./ConversationalFaq.example.tsx";
 import conversationalFaqSource from "./ConversationalFaq.example.tsx?raw";
+import conversationalFaqComponentSource from "./ConversationalFaq.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -21,6 +28,7 @@ const examples: Example[] = [
         description: "An accordion FAQ grouped by topic, with search across every answer and a support card below. Use it on pricing or help pages with more than a handful of questions.",
         component: FaqSection,
         source: faqSectionSource,
+        files: [{name: "FaqSection.tsx", source: faqSectionComponentSource}],
         layout: "full",
         minHeight: 640,
     },
@@ -30,6 +38,7 @@ const examples: Example[] = [
         description: "A single column of questions that can open together, with an expand all toggle and arrow key navigation. Use it for a short FAQ at the bottom of a landing page.",
         component: CenteredAccordion,
         source: centeredAccordionSource,
+        files: [{name: "CenteredAccordion.tsx", source: centeredAccordionComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -39,6 +48,7 @@ const examples: Example[] = [
         description: "Topic cards with every answer visible and quick links to each topic. Use it when answers are short and readers should be able to scan without clicking.",
         component: FaqCardGrid,
         source: faqCardGridSource,
+        files: [{name: "FaqCardGrid.tsx", source: faqCardGridComponentSource}],
         layout: "full",
         minHeight: 820,
     },
@@ -48,6 +58,7 @@ const examples: Example[] = [
         description: "An accordion next to a contact card with validation, a sending state, and success and error messages. Use it on support and order help pages where the next step is asking a person.",
         component: FaqWithContactForm,
         source: faqWithContactFormSource,
+        files: [{name: "FaqWithContactForm.tsx", source: faqWithContactFormComponentSource}],
         layout: "full",
         minHeight: 680,
     },
@@ -57,6 +68,7 @@ const examples: Example[] = [
         description: "A long FAQ split into sections, with a navigation list that tracks the section in view and scrolls to any topic. Use it for a dedicated FAQ page with many questions.",
         component: FaqSideNav,
         source: faqSideNavSource,
+        files: [{name: "FaqSideNav.tsx", source: faqSideNavComponentSource}],
         layout: "full",
         minHeight: 900,
     },
@@ -66,6 +78,7 @@ const examples: Example[] = [
         description: "A help center hero with an accessible search combobox, highlighted matches, category cards and popular articles. Use it as the front page of a knowledge base.",
         component: HelpCenterSearch,
         source: helpCenterSearchSource,
+        files: [{name: "HelpCenterSearch.tsx", source: helpCenterSearchComponentSource}],
         layout: "full",
         minHeight: 920,
     },
@@ -75,6 +88,7 @@ const examples: Example[] = [
         description: "Suggested questions that play out as a chat, with a typing indicator and a restart button. Use it for consumer products where a friendly, guided tone fits the brand.",
         component: ConversationalFaq,
         source: conversationalFaqSource,
+        files: [{name: "ConversationalFaq.tsx", source: conversationalFaqComponentSource}],
         layout: "full",
         minHeight: 640,
     },

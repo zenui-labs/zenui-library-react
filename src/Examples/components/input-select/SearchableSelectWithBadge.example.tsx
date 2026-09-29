@@ -1,0 +1,13 @@
+import {SearchableSelectWithBadge, type SearchOption} from "./SearchableSelectWithBadge";
+
+const options: SearchOption[] = [
+    {id: 1, label: "Option 1"},
+    {id: 2, label: "Option 2"},
+    {id: 3, label: "Option 3"},
+    {id: 4, label: "Option 4"},
+    {id: 5, label: "Option 5"},
+];
+
+const SearchableSelectWithBadgeExample = () => <SearchableSelectWithBadge options={options}/>;
+
+export default SearchableSelectWithBadgeExample;

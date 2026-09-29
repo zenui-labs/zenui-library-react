@@ -10,14 +10,25 @@ import ContentNavbar from "@shared/Component/ContentNavbar.tsx";
 import ShowCode from "@shared/Component/ShowCode.tsx";
 import ToggleTab from "@shared/Component/ToggleTab.tsx";
 import OverviewFooter from "@shared/OverviewFooter.tsx";
+import WarningMessageCard from "@shared/Component/WarningMessageCard.tsx";
 import {DocsTitle} from "@shared/DocsProse.tsx";
 import {useScrollSpy} from "@/CustomHooks/useScrollSpy.ts";
 import {findExamplePage} from "@/Examples/registry.ts";
 import type {Example} from "@/Examples/types.ts";
+import type {CodeTab} from "@shared/Component/ShowCode.tsx";
 import {cn} from "@utils/Style.ts";
 
 const toFileName = (title: string) =>
     title.replace(/(^\w|[\s-]+\w)/g, (match) => match.replace(/[\s-]+/, "").toUpperCase()).replace(/[^\w]/g, "") + ".tsx";
+
+// Reusable examples show each component file, then the usage that passes it data. Others show their single file.
+const codeTabs = (example: Example): CodeTab[] =>
+    example.files?.length
+        ? [
+            ...example.files.map((file) => ({id: `${example.id}-${file.name}`, displayText: file.name, language: "tsx", code: file.source})),
+            {id: `${example.id}-usage`, displayText: "Usage.tsx", language: "tsx", code: example.source},
+        ]
+        : [{id: example.id, displayText: toFileName(example.title), language: "tsx", code: example.source}];
 
 const ExampleBlock = ({example}: {example: Example}) => {
     const [preview, setPreview] = useState(true);
@@ -41,7 +52,7 @@ const ExampleBlock = ({example}: {example: Example}) => {
                         <Component/>
                     </div>
                 ) : (
-                    <ShowCode code={[{id: example.id, displayText: toFileName(example.title), language: "tsx", code: example.source}]}/>
+                    <ShowCode code={codeTabs(example)}/>
                 )}
             </ComponentWrapper>
         </section>
@@ -72,6 +83,14 @@ const ExamplePage = () => {
             <aside>
                 <div>
                     <DocsTitle title={page.title} lead={page.description}/>
+
+                    {page.notice && (
+                        <div className="mt-8 [&_code]:rounded [&_code]:bg-amber-500/10 [&_code]:px-1 [&_code]:font-mono [&_code]:text-[0.85em]">
+                            <WarningMessageCard>
+                                {page.notice.split(/`([^`]+)`/).map((part, index) => (index % 2 ? <code key={index}>{part}</code> : part))}
+                            </WarningMessageCard>
+                        </div>
+                    )}
 
                     {examples === null ? (
                         <div className="mt-10 space-y-4" aria-label="Loading examples">

@@ -1,17 +1,5 @@
-import {useRef, useState} from "react";
-import type {PointerEvent} from "react";
-import {useMotionValue, useMotionValueEvent, useReducedMotion, useSpring} from "framer-motion";
-import {LuEye, LuHeadphones, LuStar} from "react-icons/lu";
-
-const SPOT = 120; // spotlight radius in px
-const FULL = 1400; // large enough to uncover the whole card
-
-// Wireframe placeholder: a gray block with a small label.
-const Placeholder = ({label, className}: {label: string; className: string}) => (
-    <div className={`flex items-center justify-center rounded-lg border border-dashed border-gray-300 bg-gray-100 font-mono text-[10px] uppercase tracking-wider text-gray-400 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-500 ${className}`}>
-        {label}
-    </div>
-);
+import {LuHeadphones, LuStar} from "react-icons/lu";
+import {SpotlightReveal, WireframePlaceholder as Placeholder} from "./SpotlightReveal";
 
 // Both layers share this grid, so the finished design lines up exactly with its wireframe.
 const layout = "grid h-full grid-cols-1 gap-5 p-5 sm:grid-cols-[1fr_1.1fr] sm:p-8";
@@ -56,90 +44,6 @@ const FinalDesign = () => (
     </div>
 );
 
-// The finished design sits on top of the wireframe behind a radial mask. The mask center and radius are
-// CSS variables written straight to the element, so pointer moves never re-render React.
-const SpotlightReveal = () => {
-    const areaRef = useRef<HTMLDivElement>(null);
-    const revealRef = useRef<HTMLDivElement>(null);
-    const reduceMotion = useReducedMotion();
-    const [showAll, setShowAll] = useState(false);
-    const radius = useMotionValue(0);
-    const smoothRadius = useSpring(radius, {stiffness: 170, damping: 24});
+const SpotlightRevealExample = () => <SpotlightReveal base={<Wireframe/>} reveal={<FinalDesign/>}/>;
 
-    const writeRadius = (value: number) => revealRef.current?.style.setProperty("--r", `${Math.max(0, value)}px`);
-    useMotionValueEvent(smoothRadius, "change", (value) => {
-        if (!reduceMotion) writeRadius(value);
-    });
-    useMotionValueEvent(radius, "change", (value) => {
-        if (reduceMotion) writeRadius(value);
-    });
-
-    const moveTo = (event: PointerEvent<HTMLDivElement>) => {
-        const reveal = revealRef.current;
-        if (!reveal) return;
-        const rect = event.currentTarget.getBoundingClientRect();
-        reveal.style.setProperty("--x", `${event.clientX - rect.left}px`);
-        reveal.style.setProperty("--y", `${event.clientY - rect.top}px`);
-    };
-
-    const toggle = () => {
-        const next = !showAll;
-        setShowAll(next);
-        const area = areaRef.current;
-        if (next && area) {
-            revealRef.current?.style.setProperty("--x", `${area.clientWidth / 2}px`);
-            revealRef.current?.style.setProperty("--y", `${area.clientHeight / 2}px`);
-        }
-        radius.set(next ? FULL : 0);
-    };
-
-    const mask = "radial-gradient(circle var(--r) at var(--x) var(--y), #000 55%, transparent 100%)";
-
-    return (
-        <div className="w-full max-w-3xl">
-            <div
-                ref={areaRef}
-                onPointerMove={(event) => {
-                    if (showAll) return;
-                    moveTo(event);
-                    if (radius.get() !== SPOT) radius.set(SPOT);
-                }}
-                onPointerDown={(event) => {
-                    if (showAll) return;
-                    moveTo(event);
-                    radius.set(SPOT);
-                }}
-                onPointerLeave={() => {
-                    if (!showAll) radius.set(0);
-                }}
-                className="relative h-[470px] overflow-hidden rounded-3xl border border-gray-200 bg-white sm:h-[340px] dark:border-slate-800 dark:bg-slate-950"
-            >
-                <div aria-hidden="true" className="h-full">
-                    <Wireframe/>
-                </div>
-                <div
-                    ref={revealRef}
-                    style={{maskImage: mask, WebkitMaskImage: mask}}
-                    className="absolute inset-0 [--r:0px] [--x:50%] [--y:50%]"
-                >
-                    <FinalDesign/>
-                </div>
-            </div>
-
-            <div className="mt-4 flex items-center justify-between gap-4">
-                <p className="text-sm text-gray-500 dark:text-slate-400">Move over the wireframe to see the finished design.</p>
-                <button
-                    type="button"
-                    aria-pressed={showAll}
-                    onClick={toggle}
-                    className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-gray-200 px-3 py-2 text-sm font-medium text-gray-700 transition hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500 focus-visible:ring-offset-2 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 dark:focus-visible:ring-offset-slate-950"
-                >
-                    <LuEye className="h-4 w-4" aria-hidden="true"/>
-                    {showAll ? "Show wireframe" : "Show design"}
-                </button>
-            </div>
-        </div>
-    );
-};
-
-export default SpotlightReveal;
+export default SpotlightRevealExample;

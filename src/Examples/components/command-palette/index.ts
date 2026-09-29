@@ -1,18 +1,25 @@
 import type {Example} from "../../types.ts";
 import CommandPalette from "./CommandPalette.example.tsx";
 import commandPaletteSource from "./CommandPalette.example.tsx?raw";
+import commandPaletteComponentSource from "./CommandPalette.tsx?raw";
 import CommandMenu from "./CommandMenu.example.tsx";
 import commandMenuSource from "./CommandMenu.example.tsx?raw";
+import commandMenuComponentSource from "./CommandMenu.tsx?raw";
 import PreviewPalette from "./PreviewPalette.example.tsx";
 import previewPaletteSource from "./PreviewPalette.example.tsx?raw";
+import previewPaletteComponentSource from "./PreviewPalette.tsx?raw";
 import SearchPopover from "./SearchPopover.example.tsx";
 import searchPopoverSource from "./SearchPopover.example.tsx?raw";
+import searchPopoverComponentSource from "./SearchPopover.tsx?raw";
 import SpotlightPalette from "./SpotlightPalette.example.tsx";
 import spotlightPaletteSource from "./SpotlightPalette.example.tsx?raw";
+import spotlightPaletteComponentSource from "./SpotlightPalette.tsx?raw";
 import SlashMenu from "./SlashMenu.example.tsx";
 import slashMenuSource from "./SlashMenu.example.tsx?raw";
+import slashMenuComponentSource from "./SlashMenu.tsx?raw";
 import SheetPalette from "./SheetPalette.example.tsx";
 import sheetPaletteSource from "./SheetPalette.example.tsx?raw";
+import sheetPaletteComponentSource from "./SheetPalette.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -21,6 +28,7 @@ const examples: Example[] = [
         description: "A searchable dialog that opens with a keyboard shortcut. Results are grouped, matches are highlighted and arrow keys move the selection.",
         component: CommandPalette,
         source: commandPaletteSource,
+        files: [{name: "CommandPalette.tsx", source: commandPaletteComponentSource}],
         minHeight: 540,
     },
     {
@@ -29,6 +37,7 @@ const examples: Example[] = [
         description: "An inline command list with sub-pages for picking an assignee, status or priority. Backspace on an empty search goes back a level.",
         component: CommandMenu,
         source: commandMenuSource,
+        files: [{name: "CommandMenu.tsx", source: commandMenuComponentSource}],
         minHeight: 460,
     },
     {
@@ -37,6 +46,7 @@ const examples: Example[] = [
         description: "Search across docs, people and channels with a preview pane that follows the highlighted result. The preview hides on small screens, where each row shows a subtitle instead.",
         component: PreviewPalette,
         source: previewPaletteSource,
+        files: [{name: "PreviewPalette.tsx", source: previewPaletteComponentSource}],
         minHeight: 520,
     },
     {
@@ -45,6 +55,7 @@ const examples: Example[] = [
         description: "An inline search field for an app header. Recent searches show on focus, and typing shows a loading state, category filters and highlighted matches.",
         component: SearchPopover,
         source: searchPopoverSource,
+        files: [{name: "SearchPopover.tsx", source: searchPopoverComponentSource}],
         minHeight: 560,
     },
     {
@@ -53,6 +64,7 @@ const examples: Example[] = [
         description: "A launcher on a frosted panel with quick action tiles. Type a sum or a percentage to get a result you can copy with Enter.",
         component: SpotlightPalette,
         source: spotlightPaletteSource,
+        files: [{name: "SpotlightPalette.tsx", source: spotlightPaletteComponentSource}],
         minHeight: 560,
     },
     {
@@ -61,6 +73,7 @@ const examples: Example[] = [
         description: "A block editor where typing / opens a filtered menu of block types. It is the same list-and-keyboard pattern as a palette, anchored to the text you are writing.",
         component: SlashMenu,
         source: slashMenuSource,
+        files: [{name: "SlashMenu.tsx", source: slashMenuComponentSource}],
         minHeight: 600,
     },
     {
@@ -69,6 +82,7 @@ const examples: Example[] = [
         description: "Opens as a draggable bottom sheet on phones and a centered dialog on larger screens. Pinned items and recent history fill the empty state.",
         component: SheetPalette,
         source: sheetPaletteSource,
+        files: [{name: "SheetPalette.tsx", source: sheetPaletteComponentSource}],
         minHeight: 480,
     },
 ];

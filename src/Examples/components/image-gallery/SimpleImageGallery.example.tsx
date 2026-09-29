@@ -1,0 +1,32 @@
+import {SimpleImageGallery, type GalleryImage} from "./SimpleImageGallery";
+
+const images: GalleryImage[] = [
+    {
+        src: "https://img.freepik.com/free-photo/cascade-boat-clean-china-natural-rural_1417-1356.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "A wooden boat on a river below a waterfall",
+    },
+    {
+        src: "https://img.freepik.com/free-photo/beautiful-scenery-rock-formations-by-sea-queens-bath-kauai-hawaii-sunset_181624-36857.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "Rock formations by the sea at sunset",
+    },
+    {
+        src: "https://img.freepik.com/free-photo/green-sprouts-dark-soil-against-blurred-background-symbolizing-concept-growth-potential_90220-1462.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "Green sprouts growing from dark soil",
+    },
+    {
+        src: "https://img.freepik.com/free-photo/wide-angle-shot-single-tree-growing-clouded-sky-during-sunset-surrounded-by-grass_181624-22807.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "A single tree in a grass field under a cloudy sunset sky",
+    },
+    {
+        src: "https://img.freepik.com/free-photo/group-elephants-big-green-tree-wilderness_181624-16897.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "A group of elephants under a large green tree",
+    },
+    {
+        src: "https://img.freepik.com/free-photo/beautiful-shot-tree-savanna-plains-with-blue-sky_181624-21992.jpg?size=626&ext=jpg&ga=GA1.1.71340048.1688965399&semt=sph",
+        alt: "A tree on the savanna plains under a blue sky",
+    },
+];
+
+const SimpleImageGalleryExample = () => <SimpleImageGallery images={images}/>;
+
+export default SimpleImageGalleryExample;

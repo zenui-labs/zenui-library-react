@@ -1,20 +1,28 @@
 import type {Example} from "../../types.ts";
 import DashboardShell from "./DashboardShell.example.tsx";
 import dashboardShellSource from "./DashboardShell.example.tsx?raw";
+import dashboardShellComponentSource from "./DashboardShell.tsx?raw";
 import SettingsPage from "./SettingsPage.example.tsx";
 import settingsPageSource from "./SettingsPage.example.tsx?raw";
+import settingsPageComponentSource from "./SettingsPage.tsx?raw";
 import TopNavTabs from "./TopNavTabs.example.tsx";
 import topNavTabsSource from "./TopNavTabs.example.tsx?raw";
+import topNavTabsComponentSource from "./TopNavTabs.tsx?raw";
 import CommandShell from "./CommandShell.example.tsx";
 import commandShellSource from "./CommandShell.example.tsx?raw";
+import commandShellComponentSource from "./CommandShell.tsx?raw";
 import MailShell from "./MailShell.example.tsx";
 import mailShellSource from "./MailShell.example.tsx?raw";
+import mailShellComponentSource from "./MailShell.tsx?raw";
 import KanbanShell from "./KanbanShell.example.tsx";
 import kanbanShellSource from "./KanbanShell.example.tsx?raw";
+import kanbanShellComponentSource from "./KanbanShell.tsx?raw";
 import EmptyStateShell from "./EmptyStateShell.example.tsx";
 import emptyStateShellSource from "./EmptyStateShell.example.tsx?raw";
+import emptyStateShellComponentSource from "./EmptyStateShell.tsx?raw";
 import MobileBottomNav from "./MobileBottomNav.example.tsx";
 import mobileBottomNavSource from "./MobileBottomNav.example.tsx?raw";
+import mobileBottomNavComponentSource from "./MobileBottomNav.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -23,6 +31,7 @@ const examples: Example[] = [
         description: "An app layout with a sidebar, top bar, KPI cards, an interactive revenue chart and activity panels. The sidebar becomes a drawer on small screens.",
         component: DashboardShell,
         source: dashboardShellSource,
+        files: [{name: "DashboardShell.tsx", source: dashboardShellComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -32,6 +41,7 @@ const examples: Example[] = [
         description: "Account settings with section navigation, a profile form, notification switches, session management and a save bar that appears when something changes.",
         component: SettingsPage,
         source: settingsPageSource,
+        files: [{name: "SettingsPage.tsx", source: settingsPageComponentSource}],
         layout: "full",
         minHeight: 760,
     },
@@ -41,6 +51,7 @@ const examples: Example[] = [
         description: "A project layout with breadcrumb switchers in the top bar and keyboard navigable tabs for overview, deployments, logs and settings. Suits developer tools and hosting dashboards.",
         component: TopNavTabs,
         source: topNavTabsSource,
+        files: [{name: "TopNavTabs.tsx", source: topNavTabsComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -50,6 +61,7 @@ const examples: Example[] = [
         description: "A sidebar that collapses to an icon rail and a command menu opened with Ctrl K or Cmd K, with grouped results, arrow key navigation and actions that change the app.",
         component: CommandShell,
         source: commandShellSource,
+        files: [{name: "CommandShell.tsx", source: commandShellComponentSource}],
         layout: "full",
         minHeight: 680,
     },
@@ -59,6 +71,7 @@ const examples: Example[] = [
         description: "Folders, a searchable message list and a reading pane with star, archive, delete and reply. On small screens the list and the message become separate views.",
         component: MailShell,
         source: mailShellSource,
+        files: [{name: "MailShell.tsx", source: mailShellComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -68,6 +81,7 @@ const examples: Example[] = [
         description: "A sprint board with an icon rail, drag and drop between columns, move buttons for keyboard users, inline issue creation and a filter. Columns scroll sideways on small screens.",
         component: KanbanShell,
         source: kanbanShellSource,
+        files: [{name: "KanbanShell.tsx", source: kanbanShellComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -77,6 +91,7 @@ const examples: Example[] = [
         description: "A first run screen with a progress ring, expandable setup steps, a copyable install snippet and an empty live feed that fills in when you send a test event.",
         component: EmptyStateShell,
         source: emptyStateShellSource,
+        files: [{name: "EmptyStateShell.tsx", source: emptyStateShellComponentSource}],
         layout: "full",
         minHeight: 720,
     },
@@ -86,6 +101,7 @@ const examples: Example[] = [
         description: "A phone layout with a header that compacts on scroll, a bottom tab bar with a center action button and a bottom sheet you can drag down to close. Shows in a device frame on wider screens.",
         component: MobileBottomNav,
         source: mobileBottomNavSource,
+        files: [{name: "MobileBottomNav.tsx", source: mobileBottomNavComponentSource}],
         layout: "full",
         minHeight: 760,
     },

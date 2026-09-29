@@ -1,20 +1,28 @@
 import type {Example} from "../../types.ts";
 import ToggleSwitches from "./ToggleSwitches.example.tsx";
 import toggleSwitchesSource from "./ToggleSwitches.example.tsx?raw";
+import toggleSwitchesComponentSource from "./ToggleSwitches.tsx?raw";
 import ReactionButtons from "./ReactionButtons.example.tsx";
 import reactionButtonsSource from "./ReactionButtons.example.tsx?raw";
+import reactionButtonsComponentSource from "./ReactionButtons.tsx?raw";
 import DrawnChecklist from "./DrawnChecklist.example.tsx";
 import drawnChecklistSource from "./DrawnChecklist.example.tsx?raw";
+import drawnChecklistComponentSource from "./DrawnChecklist.tsx?raw";
 import MorphingIcons from "./MorphingIcons.example.tsx";
 import morphingIconsSource from "./MorphingIcons.example.tsx?raw";
+import morphingIconsComponentSource from "./MorphingIcons.tsx?raw";
 import CopyButtons from "./CopyButtons.example.tsx";
 import copyButtonsSource from "./CopyButtons.example.tsx?raw";
+import copyButtonsComponentSource from "./CopyButtons.tsx?raw";
 import FollowButton from "./FollowButton.example.tsx";
 import followButtonSource from "./FollowButton.example.tsx?raw";
+import followButtonComponentSource from "./FollowButton.tsx?raw";
 import StarRating from "./StarRating.example.tsx";
 import starRatingSource from "./StarRating.example.tsx?raw";
+import starRatingComponentSource from "./StarRating.tsx?raw";
 import PasswordStrength from "./PasswordStrength.example.tsx";
 import passwordStrengthSource from "./PasswordStrength.example.tsx?raw";
+import passwordStrengthComponentSource from "./PasswordStrength.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -23,6 +31,7 @@ const examples: Example[] = [
         description: "A day and night switch where the sun rolls over and becomes a moon, plus settings switches whose knob stretches while pressed.",
         component: ToggleSwitches,
         source: toggleSwitchesSource,
+        files: [{name: "ToggleSwitches.tsx", source: toggleSwitchesComponentSource}],
         minHeight: 420,
     },
     {
@@ -31,6 +40,7 @@ const examples: Example[] = [
         description: "Post actions with a heart that bursts, counts that roll to the new number, and a bookmark that fills from the bottom.",
         component: ReactionButtons,
         source: reactionButtonsSource,
+        files: [{name: "ReactionButtons.tsx", source: reactionButtonsComponentSource}],
     },
     {
         id: "drawn-checklist",
@@ -38,6 +48,7 @@ const examples: Example[] = [
         description: "Checking a task draws the tick, strikes through the label across wrapped lines and moves the progress ring.",
         component: DrawnChecklist,
         source: drawnChecklistSource,
+        files: [{name: "DrawnChecklist.tsx", source: drawnChecklistComponentSource}],
         minHeight: 420,
     },
     {
@@ -46,6 +57,7 @@ const examples: Example[] = [
         description: "Menu to close, play to pause, add to added and sound to muted. Each icon changes shape instead of swapping.",
         component: MorphingIcons,
         source: morphingIconsSource,
+        files: [{name: "MorphingIcons.tsx", source: morphingIconsComponentSource}],
     },
     {
         id: "copy-buttons",
@@ -53,6 +65,7 @@ const examples: Example[] = [
         description: "Three copy patterns for commands, API keys and invite links. Each confirms with a drawn tick and handles a blocked clipboard.",
         component: CopyButtons,
         source: copyButtonsSource,
+        files: [{name: "CopyButtons.tsx", source: copyButtonsComponentSource}],
         minHeight: 400,
     },
     {
@@ -61,6 +74,7 @@ const examples: Example[] = [
         description: "Follow shows a short loading state, settles on Following, and offers Unfollow on hover. A bell for notifications slides in once you follow.",
         component: FollowButton,
         source: followButtonSource,
+        files: [{name: "FollowButton.tsx", source: followButtonComponentSource}],
     },
     {
         id: "star-rating",
@@ -68,6 +82,7 @@ const examples: Example[] = [
         description: "Hover previews the score, choosing one pops the stars in sequence with a spark, and a comment box opens underneath.",
         component: StarRating,
         source: starRatingSource,
+        files: [{name: "StarRating.tsx", source: starRatingComponentSource}],
         minHeight: 460,
     },
     {
@@ -76,6 +91,7 @@ const examples: Example[] = [
         description: "A segmented meter and a rule checklist that ticks off as you type. Saving a weak password shakes the field and explains why.",
         component: PasswordStrength,
         source: passwordStrengthSource,
+        files: [{name: "PasswordStrength.tsx", source: passwordStrengthComponentSource}],
         minHeight: 480,
     },
 ];

@@ -1,16 +1,22 @@
 import type {Example} from "../../types.ts";
 import IntegrationHub from "./IntegrationHub.example.tsx";
 import integrationHubSource from "./IntegrationHub.example.tsx?raw";
+import integrationHubComponentSource from "./IntegrationHub.tsx?raw";
 import DataPipeline from "./DataPipeline.example.tsx";
 import dataPipelineSource from "./DataPipeline.example.tsx?raw";
+import dataPipelineComponentSource from "./DataPipeline.tsx?raw";
 import FanInInbox from "./FanInInbox.example.tsx";
 import fanInInboxSource from "./FanInInbox.example.tsx?raw";
+import fanInInboxComponentSource from "./FanInInbox.tsx?raw";
 import OrbitNetwork from "./OrbitNetwork.example.tsx";
 import orbitNetworkSource from "./OrbitNetwork.example.tsx?raw";
+import orbitNetworkComponentSource from "./OrbitNetwork.tsx?raw";
 import RequestTrace from "./RequestTrace.example.tsx";
 import requestTraceSource from "./RequestTrace.example.tsx?raw";
+import requestTraceComponentSource from "./RequestTrace.tsx?raw";
 import CircuitBoard from "./CircuitBoard.example.tsx";
 import circuitBoardSource from "./CircuitBoard.example.tsx?raw";
+import circuitBoardComponentSource from "./CircuitBoard.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -19,6 +25,7 @@ const examples: Example[] = [
         description: "Pulses of light travel along curved lines from connected tools into a hub and out to destinations. Use it to explain how data moves through a product.",
         component: IntegrationHub,
         source: integrationHubSource,
+        files: [{name: "IntegrationHub.tsx", source: integrationHubComponentSource}],
         minHeight: 420,
     },
     {
@@ -27,6 +34,7 @@ const examples: Example[] = [
         description: "An ETL run that works through four stages in order. Each stage spins while it works and a packet travels down the connector to the next one. It lays out vertically on small screens.",
         component: DataPipeline,
         source: dataPipelineSource,
+        files: [{name: "DataPipeline.tsx", source: dataPipelineComponentSource}],
         minHeight: 420,
     },
     {
@@ -35,6 +43,7 @@ const examples: Example[] = [
         description: "Conversations from five channels travel down curved beams into a shared inbox, which counts each arrival and shows the newest message.",
         component: FanInInbox,
         source: fanInInboxSource,
+        files: [{name: "FanInInbox.tsx", source: fanInInboxComponentSource}],
         minHeight: 460,
     },
     {
@@ -43,6 +52,7 @@ const examples: Example[] = [
         description: "Connected apps circle a hub on two rings that turn in opposite directions, with pulses flowing in and out along the spokes. The rings stop while off screen.",
         component: OrbitNetwork,
         source: orbitNetworkSource,
+        files: [{name: "OrbitNetwork.tsx", source: orbitNetworkComponentSource}],
         minHeight: 520,
     },
     {
@@ -51,6 +61,7 @@ const examples: Example[] = [
         description: "A distributed trace where a beam runs down the call tree as each span starts and waterfall bars grow for as long as the span takes. The slow query stands out in amber.",
         component: RequestTrace,
         source: requestTraceSource,
+        files: [{name: "RequestTrace.tsx", source: requestTraceComponentSource}],
         minHeight: 480,
     },
     {
@@ -59,6 +70,7 @@ const examples: Example[] = [
         description: "Signals pulse along right-angled traces into a controller chip and commands pulse back out. A power button starts and stops the board.",
         component: CircuitBoard,
         source: circuitBoardSource,
+        files: [{name: "CircuitBoard.tsx", source: circuitBoardComponentSource}],
         minHeight: 480,
     },
 ];

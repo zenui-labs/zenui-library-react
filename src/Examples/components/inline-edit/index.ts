@@ -1,18 +1,25 @@
 import type {Example} from "../../types.ts";
 import InlineEdit from "./InlineEdit.example.tsx";
 import inlineEditSource from "./InlineEdit.example.tsx?raw";
+import inlineEditComponentSource from "./InlineEdit.tsx?raw";
 import EditableHeading from "./EditableHeading.example.tsx";
 import editableHeadingSource from "./EditableHeading.example.tsx?raw";
+import editableHeadingComponentSource from "./EditableHeading.tsx?raw";
 import PropertyPanel from "./PropertyPanel.example.tsx";
 import propertyPanelSource from "./PropertyPanel.example.tsx?raw";
+import propertyPanelComponentSource from "./PropertyPanel.tsx?raw";
 import NoteWithUndo from "./NoteWithUndo.example.tsx";
 import noteWithUndoSource from "./NoteWithUndo.example.tsx?raw";
+import noteWithUndoComponentSource from "./NoteWithUndo.tsx?raw";
 import OptimisticRename from "./OptimisticRename.example.tsx";
 import optimisticRenameSource from "./OptimisticRename.example.tsx?raw";
+import optimisticRenameComponentSource from "./OptimisticRename.tsx?raw";
 import EditableTable from "./EditableTable.example.tsx";
 import editableTableSource from "./EditableTable.example.tsx?raw";
+import editableTableComponentSource from "./EditableTable.tsx?raw";
 import ScrubInput from "./ScrubInput.example.tsx";
 import scrubInputSource from "./ScrubInput.example.tsx?raw";
+import scrubInputComponentSource from "./ScrubInput.tsx?raw";
 
 const examples: Example[] = [
     {
@@ -21,6 +28,7 @@ const examples: Example[] = [
         description: "Settings values that turn into a field when clicked, with validation and a saving state. Enter saves and Escape cancels.",
         component: InlineEdit,
         source: inlineEditSource,
+        files: [{name: "InlineEdit.tsx", source: inlineEditComponentSource}],
         minHeight: 420,
     },
     {
@@ -29,6 +37,7 @@ const examples: Example[] = [
         description: "A title and summary that look like plain text and can be edited in place. Changes save when the field loses focus.",
         component: EditableHeading,
         source: editableHeadingSource,
+        files: [{name: "EditableHeading.tsx", source: editableHeadingComponentSource}],
     },
     {
         id: "property-panel",
@@ -36,6 +45,7 @@ const examples: Example[] = [
         description: "Project properties that each edit with the right control: a list for status and owner, a date field, and an amount with a currency picker.",
         component: PropertyPanel,
         source: propertyPanelSource,
+        files: [{name: "PropertyPanel.tsx", source: propertyPanelComponentSource}],
         minHeight: 440,
     },
     {
@@ -44,6 +54,7 @@ const examples: Example[] = [
         description: "A multi-line note that grows as you type and saves with Command or Control and Enter. After saving, an undo bar counts down before it closes.",
         component: NoteWithUndo,
         source: noteWithUndoSource,
+        files: [{name: "NoteWithUndo.tsx", source: noteWithUndoComponentSource}],
         minHeight: 420,
     },
     {
@@ -52,6 +63,7 @@ const examples: Example[] = [
         description: "Channel names update the moment you press Enter. If the server rejects the name, the row rolls back, shakes and explains why.",
         component: OptimisticRename,
         source: optimisticRenameSource,
+        files: [{name: "OptimisticRename.tsx", source: optimisticRenameComponentSource}],
         minHeight: 440,
     },
     {
@@ -60,6 +72,7 @@ const examples: Example[] = [
         description: "A spreadsheet style grid where arrow keys move between cells and Enter or typing starts an edit. Changed cells are marked until you save or discard.",
         component: EditableTable,
         source: editableTableSource,
+        files: [{name: "EditableTable.tsx", source: editableTableComponentSource}],
         minHeight: 460,
     },
     {
@@ -68,6 +81,7 @@ const examples: Example[] = [
         description: "Number fields from a design tool. Drag a label left or right to change the value, or type a number or a sum like 240/2.",
         component: ScrubInput,
         source: scrubInputSource,
+        files: [{name: "ScrubInput.tsx", source: scrubInputComponentSource}],
         minHeight: 460,
     },
 ];
