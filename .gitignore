@@ -30,3 +30,6 @@ CLAUDE.md
 
 # Local Netlify folder
 .netlify
+
+# Output of scripts/check-snippets.mjs
+.snippet-check/

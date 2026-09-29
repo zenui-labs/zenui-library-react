@@ -2,22 +2,31 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/favicon.io.png"/>
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon.png"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="theme-color" content="#FAFAFB" media="(prefers-color-scheme: light)"/>
+    <meta name="theme-color" content="#08090D" media="(prefers-color-scheme: dark)"/>
+    <script>
+        // Set the theme before first paint so there is no flash.
+        try {
+            var t = localStorage.getItem('zenuiTheme');
+            if (t !== 'light' && t !== 'dark') t = 'dark';
+            if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+    </script>
 
     <meta name="robots" content="index, follow"/>
     <meta name="keywords"
-          content="zenui, zenui library react, open-source, react open-source project, open-source ui component library, react library, react component library, the zenui, mordern ui library, free component library, asfak ahmed, asfak the founder of zenui, rahi ahmed, bangladesh first ui library, free website template, unique website template free, free template, zenui icons, zenui color picker, zenui color palette, color palette, icons, free icons, color picker application, website block, free advance components, react components, tailwind components, website section, free website sections, developer asfak, bangladesh ui library, ui library from bangladesh"/>
-    <meta property="description"
-          content="Elevate your project with free UI components, customizable icons, and a color palette. No dependencies required"/>
-    <link rel="icon" type="image/svg+xml" href="/logo.png"/>
+          content="zenui, zenui library react, open-source, react open-source project, open-source ui component library, react library, react component library, the zenui, modern ui library, free component library, asfak ahmed, asfak the founder of zenui, rahi ahmed, bangladesh first ui library, free website template, unique website template free, free template, zenui icons, zenui color picker, zenui color palette, color palette, icons, free icons, color picker application, website block, free advance components, react components, tailwind components, website section, free website sections, developer asfak, bangladesh ui library, ui library from bangladesh"/>
+    <meta name="description"
+          content="Free, open-source React and Tailwind CSS components, blocks, animations and templates. Copy the code into your project. Nothing to install."/>
 
-    <meta property="og:url" content="https://zenui.net/"/>
+    <meta property="og:url" content="https://reactui.zenui.net/"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title"
-          content="ZENUI LIBRARY REACT - Open-Source Free Templates & Components Library For React Applications"/>
+          content="ZenUI Library: free React and Tailwind CSS components"/>
     <meta property="og:description"
-          content="Elevate your project with free UI components, customizable icons, and a color palette. No dependencies required"/>
+          content="Free, open-source React and Tailwind CSS components, blocks, animations and templates. Copy the code into your project. Nothing to install."/>
     <meta property="og:image"
           content="https://i.ibb.co.com/j9ph2hnM/zenui-library-react-og-image-1.png"/>
     <meta property="og:image:width" content="805"/>
@@ -26,15 +35,15 @@
     <meta name="twitter:site" content="zenuilibrary">
     <meta name="google-adsense-account" content="ca-pub-1598509834815662">
     <meta name="twitter:title"
-          content="ZENUI LIBRARY REACT - Open-Source Free Templates & Components Library For React Applications">
+          content="ZenUI Library: free React and Tailwind CSS components">
     <meta name="twitter:description"
-          content="Elevate your project with free UI components, customizable icons, and a color palette. No dependencies required">
+          content="Free, open-source React and Tailwind CSS components, blocks, animations and templates. Copy the code into your project. Nothing to install.">
 
-    <title>ZENUI LIBRARY REACT - Open-Source Free Templates & Components Library For React Applications</title>
+    <title>ZenUI Library: free React and Tailwind CSS components</title>
 </head>
-<body class="light">
+<body>
 <div id="root"></div>
 
-<script type="module" src="/src/main.jsx"></script>
+<script type="module" src="/src/main.tsx"></script>
 </body>
 </html>

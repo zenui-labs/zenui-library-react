@@ -1,52 +1,266 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@200..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300..800&family=Geist+Mono:wght@400..600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-    scroll-behavior: smooth;
+/* ---------------------------------------------------------------------------
+   Design tokens
+   RGB triplets so Tailwind can apply alpha: bg-surface/80, border-hairline/60.
+   `.light` and `.dark` can be set on any element to scope a theme, which is how
+   preview frames force a theme that differs from the site.
+--------------------------------------------------------------------------- */
+@layer base {
+    :root,
+    .light {
+        --canvas: 250 250 251;
+        --surface: 255 255 255;
+        --raised: 243 244 247;
+        --hairline: 229 231 236;
+        --hairline-strong: 208 212 220;
+        --ink: 11 13 18;
+        --ink-muted: 84 90 104;
+        --ink-subtle: 132 138 152;
+        --accent: 15 171 202;
+        --accent-strong: 6 124 150;
+        --accent-soft: 229 246 250;
+        --shadow: 16 18 27;
+        --stage: 255 255 255;
+        --stage-pattern: 11 13 18;
+        color-scheme: light;
+    }
+
+    .dark {
+        --canvas: 8 9 13;
+        --surface: 14 16 22;
+        --raised: 22 25 33;
+        --hairline: 33 37 48;
+        --hairline-strong: 51 57 72;
+        --ink: 237 240 245;
+        --ink-muted: 153 161 178;
+        --ink-subtle: 104 112 130;
+        --accent: 34 195 224;
+        --accent-strong: 110 220 240;
+        --accent-soft: 8 44 54;
+        --shadow: 0 0 0;
+        --stage: 2 6 23;
+        --stage-pattern: 237 240 245;
+        color-scheme: dark;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-rendering: optimizeLegibility;
+        scrollbar-color: rgb(var(--hairline-strong)) transparent;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            scroll-behavior: smooth;
+        }
+    }
+
+    body {
+        background-color: rgb(var(--canvas));
+        color: rgb(var(--ink));
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    ::selection {
+        background-color: rgb(var(--accent) / 0.22);
+    }
+
+    :where(a, button, input, textarea, select, [tabindex]):focus-visible {
+        outline: 2px solid rgb(var(--accent));
+        outline-offset: 2px;
+    }
+
+    kbd {
+        font-family: theme('fontFamily.mono');
+    }
 }
 
+@layer components {
+    /* Page container used by the site shell and the landing page. */
+    .shell {
+        @apply mx-auto w-full max-w-[1240px] px-5 640px:px-8;
+    }
+
+    .eyebrow {
+        @apply text-[0.8rem] font-medium tracking-[-0.005em] text-ink-subtle;
+    }
+
+    .btn {
+        @apply inline-flex h-10 select-none items-center justify-center gap-2 whitespace-nowrap rounded-[10px] px-4 text-[0.9rem] font-medium transition-[background-color,border-color,color,box-shadow,transform] duration-200 active:scale-[0.98] disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .btn-primary {
+        @apply btn bg-ink text-canvas hover:bg-ink/85;
+    }
+
+    .btn-accent {
+        @apply btn bg-accent text-white shadow-[inset_0_1px_0_rgb(255_255_255/0.25)] hover:bg-accent/90 dark:text-[#04151a];
+    }
+
+    .btn-ghost {
+        @apply btn border border-hairline-strong bg-surface text-ink hover:bg-raised;
+    }
+
+    .icon-btn {
+        @apply inline-flex size-9 items-center justify-center rounded-[10px] border border-hairline bg-surface text-ink-muted transition-colors duration-200 hover:bg-raised hover:text-ink;
+    }
+
+    .kbd {
+        @apply inline-flex h-5 min-w-5 items-center justify-center rounded-[5px] border border-hairline bg-raised px-1 font-mono text-[0.68rem] font-medium text-ink-muted;
+    }
+
+    .panel {
+        @apply rounded-panel border border-hairline bg-surface;
+    }
+
+    .hairline-grid {
+        background-image: linear-gradient(to right, rgb(var(--hairline) / 0.7) 1px, transparent 1px),
+        linear-gradient(to bottom, rgb(var(--hairline) / 0.7) 1px, transparent 1px);
+        background-size: 64px 64px;
+    }
+
+    .scroll-thin {
+        scrollbar-width: thin;
+        scrollbar-color: rgb(var(--hairline-strong)) transparent;
+    }
+
+    .scroll-none {
+        scrollbar-width: none;
+    }
+
+    .scroll-none::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Theme transitions (View Transitions API). The JS side animates a circle
+   from the toggle; these rules turn off the default cross-fade.
+--------------------------------------------------------------------------- */
+::view-transition-old(root),
+::view-transition-new(root),
+::view-transition-old(zenui-preview),
+::view-transition-new(zenui-preview) {
+    animation: none;
+    mix-blend-mode: normal;
+}
+
+::view-transition-group(zenui-preview) {
+    animation-duration: 0s;
+}
+
+/* ---------------------------------------------------------------------------
+   Component preview frame
+--------------------------------------------------------------------------- */
+.zp-stage {
+    background-color: rgb(var(--stage));
+    color: rgb(var(--ink));
+}
+
+.zp-stage[data-bg="dots"] {
+    background-image: radial-gradient(rgb(var(--stage-pattern) / 0.13) 1px, transparent 1.2px);
+    background-size: 18px 18px;
+}
+
+.zp-stage[data-bg="grid"] {
+    background-image: linear-gradient(rgb(var(--stage-pattern) / 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--stage-pattern) / 0.06) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+
+/* Embedded preview (responsive preview iframe): the page itself stays hidden and the requested
+   frame renders its example straight into <body>. See Helpers/embed.ts. */
+html[data-embed] #root {
+    display: none;
+}
+
+html[data-embed] body {
+    background-color: rgb(var(--stage));
+}
+
+/* Code view lives inside the same frame; hide the stage chrome while it is shown. */
+.zp-frame:has(.code-block-wrapper) .zp-toolbar {
+    display: none;
+}
+
+.zp-frame:has(.code-block-wrapper) {
+    overflow: hidden;
+}
+
+.zp-frame:has(.code-block-wrapper) .zp-stage {
+    background: none;
+}
+
+.zp-frame .code-block-wrapper {
+    border: 0;
+    border-radius: 0;
+}
+
+/* ---------------------------------------------------------------------------
+   Docs content. Example pages render `<aside><div>…</div><ContentNavbar/></aside>`;
+   these rules give that structure a fluid main column and a fixed TOC column.
+--------------------------------------------------------------------------- */
+.docs-page > aside,
+.docs-page > section > aside {
+    display: flex;
+    align-items: flex-start;
+    gap: 3rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.docs-page > aside > div:first-child,
+.docs-page > section > aside > div:first-child {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.docs-page [id] {
+    scroll-margin-top: 96px;
+}
+
+/* Page loader (FallbackLoader) */
+@keyframes loader-fill {
+    0% { transform: translateY(100%); }
+    55%, 75% { transform: translateY(0); }
+    100% { transform: translateY(-110%); }
+}
+
+@keyframes loader-wave {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes loader-ring {
+    from { transform: scale(0.6); opacity: 0.9; }
+    to { transform: scale(1.35); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .animate-marquee-x,
+    .animate-marquee-y {
+        animation-play-state: paused;
+    }
+}
+
+/* ---------------------------------------------------------------------------
+   Helpers used by component examples. Their copyable code references these
+   class names, so they stay as they are.
+--------------------------------------------------------------------------- */
 .codeSnippet {
-    font-family: "Inconsolata", monospace;
+    font-family: "Geist Mono", ui-monospace, monospace;
 }
 
-*::selection {
-    background-color: #0FABCA;
-    color: #fff;
-}
-
-*::-webkit-scrollbar {
-    background-color: rgba(15, 171, 202, 0.13);
-    width: 8px
-}
-
-html.dark ::-webkit-scrollbar {
-    background-color: rgb(32, 32, 32);
-}
-
-html.dark ::-webkit-scrollbar-track {
-    background-color: rgb(32, 32, 32);
-}
-
-*::-webkit-scrollbar-track {
-    background-color: rgba(15, 171, 202, 0.13);
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #0FABCA;
-    border-radius: 30px;
-}
 
 .heroText {
-    font-family: "Unbounded", sans-serif;
+    font-family: "Geist", sans-serif;
+    letter-spacing: -0.03em;
 }
 
 /* button sliding animation */
@@ -96,41 +310,6 @@ html.dark ::-webkit-scrollbar-track {
     height: 3px;
 }
 
-/* navbar hover effect */
-.navUl li {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.navUl li p {
-    transform: translateY(0px);
-    opacity: 1;
-    transition: all 0.4s ease-in-out;
-}
-
-.navUl li span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.4s ease-in-out;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.navUl li:hover p {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-.navUl li:hover span {
-    opacity: 1;
-    transform: translateY(0px);
-    color: #0FABCA;
-}
-
 /* button hover effect */
 .buttonSecondary::after {
     content: "";
@@ -151,74 +330,6 @@ html.dark ::-webkit-scrollbar-track {
 
 .buttonSecondary:hover {
     color: #fff;
-}
-
-/* footer p hover effect */
-.footer li {
-    position: relative;
-    overflow: hidden;
-    cursor: pointer;
-}
-
-.footer li p {
-    transform: translateY(0px);
-    opacity: 1;
-    transition: all 0.4s ease-in-out;
-}
-
-.footer li span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: all 0.4s ease-in-out;
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.footer li:hover p {
-    opacity: 0;
-    transform: translateY(-20px);
-}
-
-.footer li:hover span {
-    opacity: 1;
-    transform: translateY(0px);
-    color: #0FABCA;
-}
-
-/* sidebar hover effect */
-aside ul a:not(.getStarted a) {
-    padding: 0.5rem 1rem;
-    cursor: pointer;
-    font-weight: 400;
-    transition: all 0.3s ease-in-out;
-    font-size: 0.9rem;
-    text-transform: capitalize;
-}
-
-aside ul a:not(.getStarted a, .sectionHeader):hover {
-    background-color: rgba(229, 234, 242, 0.75);
-    border-left: 1px solid #9caebc;
-}
-
-
-/* sidebar component section header  */
-.sectionHeader {
-    color: #0FABCA;
-}
-
-.sectionHeader::after {
-    content: "";
-    background-color: #0FABCA;
-    top: 31%;
-    left: -5px;
-    position: absolute;
-    width: 10px;
-    border-radius: 50%;
-    height: 10px;
-    transition: all 0.3s ease-in-out;
 }
 
 /* home */
@@ -521,26 +632,6 @@ input[type="number"] {
 
 .scale-animate {
     animation: scale 1.5s ease-in-out infinite;
-}
-
-#coffee_badge {
-    position: fixed;
-    bottom: 20px;
-    right: 15px;
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #0FABCA;
-    color: #fff;
-    font-weight: 500;
-    gap: 5px;
-    padding: 10px 15px;
-    border-radius: 30px;
-}
-
-#coffee_badge img {
-    width: 30px;
 }
 
 @keyframes wave-reveal {

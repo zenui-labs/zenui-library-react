@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "useDefineForClassFields": true,
+    "types": ["vite/client"],
+
+    "strict": false,
+    "noFallthroughCasesInSwitch": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@components/*": ["src/Components/Overview/SidebarContent/Content/*"],
+      "@blocks/*": ["src/Components/Overview/SidebarContent/Blocks/*"],
+      "@animations/*": ["src/Components/Overview/SidebarContent/Animations/*"],
+      "@pages/*": ["src/Pages/*"],
+      "@utils": ["src/Utils/index.tsx"],
+      "@utils/*": ["src/Utils/*"],
+      "@store": ["src/Store/Index.ts"],
+      "@store/*": ["src/Store/*"],
+      "@shared/*": ["src/Shared/*"],
+      "@helpers/*": ["src/Helpers/*"]
+    }
+  },
+  "include": ["src", "vite.config.ts"]
+}

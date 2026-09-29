@@ -1,14 +1,15 @@
 {
-  "name": "zenui-library-vue",
+  "name": "zenui-library-react",
   "private": true,
-  "version": "3.0",
+  "version": "4.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "lint": "eslint . --ext js,jsx,ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@ant-design/colors": "^8.0.0",
@@ -30,6 +31,7 @@
     "react-parallax-tilt": "^1.7.228",
     "react-router-dom": "^6.21.1",
     "react-syntax-highlighter": "^15.5.0",
+    "sucrase": "^3.35.1",
     "swiper": "^11.2.10",
     "tailwind-merge": "^2.6.0",
     "tinycolor2": "^1.6.0",
@@ -39,8 +41,16 @@
     "zustand": "^5.0.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.8",
+    "@types/node": "^26.6.3",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
+    "@types/react-helmet": "^6.1.11",
+    "@types/react-syntax-highlighter": "^15.5.13",
+    "@types/tinycolor2": "^1.4.6",
+    "@types/uuid": "^10.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.16",
     "eslint": "^8.57.1",
@@ -50,6 +60,7 @@
     "eslint-plugin-unused-imports": "^4.1.4",
     "postcss": "^8.4.32",
     "tailwindcss": "^3.4.0",
+    "typescript": "^5.9.3",
     "vite": "^5.0.8"
   }
 }

@@ -19,6 +19,16 @@ Elevate your projects with ZenUI, a free, lightweight, customizable UI component
 
 ![cover](https://i.ibb.co.com/JWX1Bv4W/zenui-library-banner.png)
 
+## What's new in v4
+
+- Every example is written in TypeScript, with a TS/JS switch on each code block that generates plain JavaScript from the same source.
+- New component, animation and block pages, each with several variants.
+- A full-screen responsive preview: drag the frame edges or pick phone, tablet and desktop widths.
+- Per-preview light, dark and auto themes, background patterns and animation replay.
+- A redesigned site, docs and tools, with dark as the default theme.
+
+Components copied from v3 keep working; there is nothing to migrate. Full notes: [reactui.zenui.net/docs/whats-new](https://reactui.zenui.net/docs/whats-new).
+
 ## Features
 
 > Components
@@ -80,6 +90,25 @@ Run the project:
 npm run dev
 ```
 
+### Working on the site
+
+The site is written in TypeScript (Vite, React 18, Tailwind CSS v3).
+
+| Command | What it does |
+| --- | --- |
+| `npm run dev` | Start the dev server. |
+| `npm run build` | Production build. |
+| `npm run typecheck` | Type-check the whole project with `tsc`. |
+| `node scripts/typecheck-dir.mjs <folder>` | Type-check one folder and what it imports. Faster while you work. |
+| `node scripts/check-snippets.mjs [folder]` | Compile every copyable code example in strict TypeScript, as if pasted into a new project. |
+
+Code examples are written in TypeScript. The site generates the JavaScript version from the same source (types are
+stripped with Sucrase), so there is only one version to maintain.
+
+New component pages go in `src/Examples/<components|animations|blocks>/<slug>/`: one `*.example.tsx` file per example
+and an `index.ts` listing them. Register the page in that section's `pages.ts` and it appears in the routes, sidebar,
+search and pager. The preview and the copyable code come from the same file.
+
 <br/>
 
 ## Documentation
@@ -91,7 +120,7 @@ into your project, no installation or configuration needed!
 
 ZenUI components are designed for quick and easy use. To get started, simply:
 
-1. Find the component you want in the [ZenUI library](https://react-ui.zenui.net).
+1. Find the component you want in the [ZenUI library](https://reactui.zenui.net).
 2. Copy the code snippet.
 3. Paste it into your project, anywhere HTML is supported.
 
