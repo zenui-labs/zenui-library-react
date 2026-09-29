@@ -21,14 +21,17 @@ const points = [
     },
 ];
 
+// The classes on every card in the preview: one set of markup, both themes.
+const classes = ["rounded-xl", "border", "border-zinc-200", "bg-white", "text-zinc-900", "dark:border-white/10", "dark:bg-zinc-900", "dark:text-zinc-50"];
+
 const DarkModeSupport = () => {
     return (
-        <Band innerClassName="grid gap-14 px-5 py-16 640px:px-8 1024px:grid-cols-[0.9fr_1.1fr] 1024px:items-center 1024px:px-12 1024px:py-24">
+        <Band innerClassName="grid gap-14 px-5 py-16 640px:px-8 1024px:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] 1024px:items-center 1024px:px-12 1024px:py-24">
             <div>
                 <SectionIntro
                     label="Dark mode"
                     title="Every example works in both themes."
-                    description="Components and templates ship with dark mode classes. Drag the handle to compare."
+                    description="Every example is written once with Tailwind's dark: classes. The preview is one piece of markup shown in both themes."
                 />
                 <ul className="mt-10 flex flex-col">
                     {points.map((point, index) => (
@@ -45,14 +48,25 @@ const DarkModeSupport = () => {
                 </ul>
             </div>
 
-            <Reveal delay={0.1}>
-                <div className="overflow-hidden rounded-shell border border-hairline bg-surface p-2 shadow-float">
-                    <div className="overflow-hidden rounded-[14px]">
-                        <ComparisonCard/>
+            <Reveal delay={0.1} className="relative min-w-0">
+                {/* closest-side keeps the glow fully transparent at its box edges, so it never ends in a hard line. */}
+                <div aria-hidden="true" className="pointer-events-none absolute -inset-x-16 -inset-y-12 -z-10 bg-[radial-gradient(closest-side,rgb(var(--accent)/0.16),rgb(var(--accent)/0.05)_55%,transparent)]"/>
+                <div className="overflow-hidden rounded-shell border border-hairline bg-surface shadow-float">
+                    <div className="flex h-10 items-center gap-3 border-b border-hairline px-4">
+                        <span className="flex gap-1.5" aria-hidden="true">
+                            <span className="size-2.5 rounded-full bg-hairline-strong"/>
+                            <span className="size-2.5 rounded-full bg-hairline-strong"/>
+                            <span className="size-2.5 rounded-full bg-hairline-strong"/>
+                        </span>
+                        <span className="text-[0.75rem] text-ink-subtle">Drag the handle or use the arrow keys</span>
                     </div>
-                    <div className="flex items-center justify-between px-3 pb-1 pt-3 text-[0.78rem] font-medium text-ink-subtle">
-                        <span>Dark</span>
-                        <span>Light</span>
+                    <ComparisonCard/>
+                    <div className="scroll-none overflow-x-auto border-t border-hairline bg-[#0b0d12] px-4 py-3 font-mono text-[0.75rem]">
+                        <code className="whitespace-nowrap">
+                            {classes.map((token) => (
+                                <span key={token} className={token.startsWith("dark:") ? "text-accent" : "text-white/75"}>{token} </span>
+                            ))}
+                        </code>
                     </div>
                 </div>
             </Reveal>
