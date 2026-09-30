@@ -17,7 +17,7 @@ const columns = [
         links: [
             {title: "Components", url: "/components/all-components"},
             {title: "Blocks", url: "/blocks/all-blocks"},
-            {title: "Animations", url: "/animations/installation"},
+            {title: "Animations", url: "/animations/all-animations"},
             {title: "Templates", url: "/templates"},
             {title: "Installation", url: "/docs/installation"},
         ],

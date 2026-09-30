@@ -41,7 +41,7 @@ const AnimationsBentoGrid = () => {
                 title="Motion that is ready to ship."
                 description="Live examples from the library. Hover, click and drag them here, then open the page for the reusable component and its usage."
                 action={
-                    <Link to="/animations/installation" className="btn-ghost group h-10">
+                    <Link to="/animations/all-animations" className="btn-ghost group h-10">
                         All animations
                         <LuArrowRight className="size-4 transition-transform group-hover:translate-x-0.5"/>
                     </Link>

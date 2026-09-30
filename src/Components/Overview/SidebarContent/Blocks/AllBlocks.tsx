@@ -1,16 +1,8 @@
 import {Helmet} from "react-helmet";
 
-import {AllBlocksData} from "@utils/AllBlocks.ts";
 import CatalogGrid from "@shared/CatalogGrid.tsx";
 import OverviewFooter from "@shared/OverviewFooter.tsx";
 import {DocsTitle} from "@shared/DocsProse.tsx";
-
-const groups = [
-    {id: "section", label: "Sections"},
-    {id: "form", label: "Forms"},
-    {id: "empty_page", label: "Empty states"},
-    {id: "random", label: "Other"},
-];
 
 const AllBlocks = () => {
     return (
@@ -20,7 +12,7 @@ const AllBlocks = () => {
                 lead="Larger pieces of a page, such as navbars, hero sections, pricing tables and forms. Each block is responsive and supports dark mode."
             />
 
-            <CatalogGrid items={AllBlocksData} groups={groups} noun="blocks"/>
+            <CatalogGrid section="Blocks" noun="blocks"/>
 
             <OverviewFooter/>
 

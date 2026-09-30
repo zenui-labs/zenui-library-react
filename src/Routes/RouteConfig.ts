@@ -33,6 +33,10 @@ const SectionRoutes = [
     component: lazy(() => import("@pages/Blocks/AllBlocksPage")),
   },
   {
+    path: "/animations/all-animations",
+    component: lazy(() => import("@pages/Animations/AllAnimationsPage")),
+  },
+  {
     path: "/animations/installation",
     component: lazy(() => import("@pages/Animations/InstallationPage")),
   },

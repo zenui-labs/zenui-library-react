@@ -38,6 +38,11 @@ module.exports = {
     },
     overrides: [
         {
+            // Catalog thumbnails are exported as a map keyed by page slug; editing one just reloads the page.
+            files: ['src/Shared/Catalog/art/**'],
+            rules: {'react-refresh/only-export-components': 'off'},
+        },
+        {
             // Node scripts
             files: ['scripts/**/*.mjs', 'vite.config.ts'],
             env: {node: true, browser: false},

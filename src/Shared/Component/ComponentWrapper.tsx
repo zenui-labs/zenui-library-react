@@ -21,9 +21,9 @@ const themeOptions: SegmentedOption<PreviewMode>[] = [
 ];
 
 const patternOptions: SegmentedOption<PreviewPattern>[] = [
+    {id: "plain", icon: LuSquare, label: "Plain background"},
     {id: "dots", icon: RxDotsHorizontal, label: "Dot background"},
     {id: "grid", icon: LuGrid, label: "Grid background"},
-    {id: "plain", icon: LuSquare, label: "Plain background"},
 ];
 
 interface SegmentedOption<T extends string> {

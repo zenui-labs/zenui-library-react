@@ -137,7 +137,10 @@ export const docsNavigation: NavSection[] = [
     },
     {
         title: "Animations",
-        items: [{title: "Installation", url: "/animations/installation"}],
+        items: [
+            {title: "All animations", url: "/animations/all-animations"},
+            {title: "Installation", url: "/animations/installation"},
+        ],
         groups: [
             {
                 label: "Cards",

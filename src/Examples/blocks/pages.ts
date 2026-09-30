@@ -3,6 +3,24 @@ import type {ExamplePageMeta} from "../types.ts";
 // Pages in this section. Each entry loads its examples from ./<slug>/index.ts on demand.
 export const blocksPages: ExamplePageMeta[] = [
     {
+        slug: "story-sections",
+        section: "Blocks",
+        group: "Marketing",
+        title: "Story sections",
+        description: "Sections that tell a product story through a metaphor: a subway map, a git graph, a periodic table, a receipt and a corkboard.",
+        status: "new",
+        load: () => import("./story-sections/index.ts"),
+    },
+    {
+        slug: "interactive-heroes",
+        section: "Blocks",
+        group: "Sections",
+        title: "Interactive heroes",
+        description: "Heroes built around one memorable interaction: kinetic type, a pull-cord lamp, a dot globe, a desktop OS and an eclipse.",
+        status: "new",
+        load: () => import("./interactive-heroes/index.ts"),
+    },
+    {
         slug: "feature-sections",
         section: "Blocks",
         group: "Marketing",

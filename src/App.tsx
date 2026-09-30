@@ -4,6 +4,7 @@ import {AnimatePresence, MotionConfig} from "framer-motion";
 import {routes} from "./Routes/RouteConfig.ts";
 import {MenuProvider} from "./Context/MenuContext.tsx";
 import usePageTracking from "./CustomHooks/usePageTracking.ts";
+import useScrollToTop from "./CustomHooks/useScrollToTop.ts";
 import FallbackLoader from "@shared/FallbackLoader.tsx";
 import ShortcutCheatsheetModal from "@shared/ShortcutCheatsheetModal.tsx";
 import {useZenUIShortcuts} from "@/CustomHooks/useZenUIShortcut.ts";
@@ -23,6 +24,7 @@ const App = () => {
     const {shortcutsOpen, setShortcutsOpen} = useZenuiStore();
 
     usePageTracking();
+    useScrollToTop();
     useZenUIShortcuts();
 
     // Shift + Space opens the shortcut sheet.

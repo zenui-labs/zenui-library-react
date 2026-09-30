@@ -58,7 +58,7 @@ const useZenuiStore = create<ZenuiState>()((set, get) => ({
     setShortcutsOpen: (shortcutsOpen) => set({shortcutsOpen}),
 
     // Background pattern behind component previews, shared by every preview frame.
-    previewPattern: embedPattern ?? readStorage<PreviewPattern>('zenuiPreviewPattern', ['dots', 'grid', 'plain'], 'dots'),
+    previewPattern: embedPattern ?? readStorage<PreviewPattern>('zenuiPreviewPattern', ['dots', 'grid', 'plain'], 'plain'),
     setPreviewPattern: (previewPattern) => {
         writeStorage('zenuiPreviewPattern', previewPattern);
         set({previewPattern});

@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import type {ReactNode} from "react";
 import {Link, useLocation} from "react-router-dom";
 import {LuChevronRight} from "react-icons/lu";
@@ -35,17 +35,13 @@ const Breadcrumb = ({pathname}: {pathname: string}) => {
 const ContentPageLayout = ({children}: {children: ReactNode}) => {
     const {pathname} = useLocation();
 
-    useEffect(() => {
-        window.scrollTo({top: 0, behavior: "instant"});
-    }, [pathname]);
-
     // Embedded preview: only the page content is needed to find the requested frame (see ComponentWrapper).
     if (isEmbed) return <div className="docs-page">{children}</div>;
 
     return (
         <>
             <Navbar/>
-            <div className="mx-auto flex w-full max-w-[1480px]">
+            <div className="mx-auto flex w-full max-w-[1600px]">
                 <Sidebar/>
                 <main className="min-w-0 flex-1 px-5 pb-10 pt-6 640px:px-8 1260px:pl-12 1260px:pr-10">
                     <div className="mb-8 flex items-center justify-between gap-4">

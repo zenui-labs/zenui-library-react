@@ -3,6 +3,33 @@ import type {ExamplePageMeta} from "../types.ts";
 // Pages in this section. Each entry loads its examples from ./<slug>/index.ts on demand.
 export const animationsPages: ExamplePageMeta[] = [
     {
+        slug: "paper-effects",
+        section: "Animations",
+        group: "Cards",
+        title: "Paper effects",
+        description: "A peelable sticker, an opening envelope, a scratch card, a tear-off ticket stub and a developing instant photo.",
+        status: "new",
+        load: () => import("./paper-effects/index.ts"),
+    },
+    {
+        slug: "physics-playground",
+        section: "Animations",
+        group: "Visuals",
+        title: "Physics playground",
+        description: "Hand-written physics: swinging tags on strings, falling letters, sloshing liquid, pluckable strings and bubble wrap.",
+        status: "new",
+        load: () => import("./physics-playground/index.ts"),
+    },
+    {
+        slug: "retro-displays",
+        section: "Animations",
+        group: "Text",
+        title: "Retro displays",
+        description: "A split-flap board, a Nixie tube clock, an LED dot-matrix sign, a CRT terminal and a phosphor oscilloscope.",
+        status: "new",
+        load: () => import("./retro-displays/index.ts"),
+    },
+    {
         slug: "number-ticker",
         section: "Animations",
         group: "Text",

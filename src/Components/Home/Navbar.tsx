@@ -24,7 +24,7 @@ const primaryLinks = [
     {title: "Docs", url: "/docs/overview", match: "/docs"},
     {title: "Components", url: "/components/all-components", match: "/components"},
     {title: "Blocks", url: "/blocks/all-blocks", match: "/blocks"},
-    {title: "Animations", url: "/animations/installation", match: "/animations"},
+    {title: "Animations", url: "/animations/all-animations", match: "/animations"},
     {title: "Templates", url: "/templates", match: "/templates"},
 ];
 
@@ -303,12 +303,15 @@ const Navbar = ({className}: {className?: string}) => {
 
     useEffect(() => setMenuOpen(false), [location.pathname]);
 
+    // Docs pages keep the bottom border from the first paint; elsewhere it appears once the page scrolls.
+    const docsLayout = /^\/(docs|components|blocks|animations)(\/|$)/.test(location.pathname);
+
     return (
         <>
             <header
                 className={cn(
                     "sticky top-0 z-[800] w-full border-b transition-[background-color,border-color] duration-300",
-                    scrolled ? "border-hairline bg-canvas/80 backdrop-blur-xl backdrop-saturate-150" : "border-transparent bg-transparent",
+                    scrolled ? "border-hairline bg-canvas/80 backdrop-blur-xl backdrop-saturate-150" : cn("bg-transparent", docsLayout ? "border-hairline" : "border-transparent"),
                     className
                 )}
             >
