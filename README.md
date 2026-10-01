@@ -1,7 +1,7 @@
 <br />
 <p align="center">
   <a href="https://reactui.zenui.net">
-    <img src="https://i.ibb.co.com/0BZfPq6/darklogo.png" alt="ZenUI Library React" width="150" />
+    <img src="public/darklogo.png" alt="ZenUI Library React" width="130" />
   </a>
 </p>
 
@@ -27,7 +27,7 @@ Copy a component into your project, pass it your data, and ship.
 <a href="https://reactui.zenui.net/docs/whats-new">What's new in v4</a>
 </p>
 
-![cover](https://i.ibb.co.com/JWX1Bv4W/zenui-library-banner.png)
+[![ZenUI Library React v4: React components you copy, not install.](public/readme-banner.png)](https://reactui.zenui.net)
 
 ## ZenUI v4
 
@@ -37,7 +37,7 @@ v4 rebuilds the library around reusable, typed components.
   short usage file that shows which props to pass. Paste the component once and give it your own data.
 - **TypeScript first, JavaScript on request.** Every example is written in TypeScript. Switch any code block to JS to get
   the same component with the types removed.
-- **600+ examples on 120+ pages** of components, animations and blocks, from inputs and tables to pricing sections,
+- **691 examples across 134 pages** of components, animations and blocks, from inputs and tables to pricing sections,
   dashboards and animated charts.
 - **Responsive testing.** Open any preview full screen and drag its edges, or jump to phone, tablet and desktop widths.
 - **Light and dark in every preview.** Switch one preview between auto, light and dark, change its background, or
@@ -99,13 +99,15 @@ Everything else is plain Tailwind CSS, so you can change any class after you pas
 
 ## What's in the library
 
-**Components.** Inputs, buttons, navigation, overlays, feedback, data display, charts, cards, e-commerce and more.
+**Components.** 363 examples on 73 pages: inputs, buttons, navigation, overlays, feedback, data display, charts, cards,
+e-commerce and more.
 
-**Animations.** Text effects, scroll animations, cursor effects, tilt and flip cards, docks, animated beams, charts,
-number tickers and micro-interactions, built with Framer Motion. They respect reduced motion settings.
+**Animations.** 182 examples on 35 pages: text effects, scroll animations, cursor effects, tilt and flip cards, docks,
+animated beams, charts, number tickers and micro-interactions, built with Framer Motion. They respect reduced motion
+settings.
 
-**Blocks.** Hero, feature, pricing, FAQ, testimonial, team, blog, CTA and footer sections, sign in and sign up screens,
-dashboards, checkout pages and more.
+**Blocks.** 146 examples on 26 pages: hero, feature, pricing, FAQ, testimonial, team, blog, CTA and footer sections,
+sign in and sign up screens, dashboards, checkout pages and more.
 
 **Tools.** ShortKey (keyboard shortcut handlers), color palette and opacity steps, color from image, 400+ SVG icons,
 Config AI (a Tailwind CSS theme from a description) and Semantic TagMaster.
