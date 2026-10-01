@@ -1,37 +1,25 @@
 import {Link} from "react-router-dom";
 import {LuArrowRight, LuArrowUpRight} from "react-icons/lu";
 
-import {allComponents} from "@utils/AllComponents.ts";
 import {docsNavigation} from "@utils/DocsNavigation.ts";
+import type {NavItem} from "@utils/DocsNavigation.ts";
+import CatalogCard from "@shared/Catalog/CatalogCard.tsx";
 import {Band, Reveal, SectionIntro} from "@/Components/Home/LandingKit.tsx";
 
+// Same source as the docs sidebar and the catalog grid, so a new component page shows up here on its own.
 const categories = docsNavigation.find((section) => section.title === "Components").groups;
-const half = Math.ceil(allComponents.length / 2);
-const rows = [allComponents.slice(0, half), allComponents.slice(half)];
+const components: NavItem[] = categories.flatMap((group) => group.items);
+const half = Math.ceil(components.length / 2);
+const rows = [components.slice(0, half), components.slice(half)];
 
-const Thumbnail = ({item}) => (
-    <Link
-        to={item.url}
-        className="group relative block w-[260px] shrink-0 overflow-hidden rounded-2xl border border-hairline bg-surface transition-[border-color,transform] duration-300 hover:-translate-y-1 hover:border-hairline-strong"
-    >
-        <div className="flex h-[150px] items-center justify-center bg-white p-3 dark:bg-[#020617]">
-            <img src={item.image} alt="" loading="lazy" className="max-h-full w-full object-contain"/>
-        </div>
-        <div className="flex items-center justify-between border-t border-hairline px-4 py-3">
-            <span className="text-[0.85rem] font-medium capitalize text-ink">{item.title}</span>
-            <LuArrowUpRight className="size-4 text-ink-subtle transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-ink"/>
-        </div>
-    </Link>
-);
-
-const MarqueeRow = ({items, reverse = false, duration}: {items: typeof allComponents; reverse?: boolean; duration: number}) => (
-    <div className="group flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+const MarqueeRow = ({items, reverse = false, duration}: {items: NavItem[]; reverse?: boolean; duration: number}) => (
+    <div className="group/row flex overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
         <div
-            className="flex w-max animate-marquee-x gap-4 pr-4 group-hover:[animation-play-state:paused]"
+            className="flex w-max animate-marquee-x gap-4 pr-4 group-hover/row:[animation-play-state:paused]"
             style={{"--marquee-duration": `${duration}s`, animationDirection: reverse ? "reverse" : "normal"}}
         >
             {[...items, ...items].map((item, index) => (
-                <Thumbnail key={`${item.url}-${index}`} item={item}/>
+                <CatalogCard key={`${item.url}-${index}`} item={item} className="w-[260px] shrink-0"/>
             ))}
         </div>
     </div>
@@ -61,8 +49,8 @@ const ComponentsSlider = () => {
             </div>
 
             <div className="mt-10 flex flex-col gap-4">
-                <MarqueeRow items={rows[0]} duration={70}/>
-                <MarqueeRow items={rows[1]} duration={80} reverse/>
+                <MarqueeRow items={rows[0]} duration={120}/>
+                <MarqueeRow items={rows[1]} duration={135} reverse/>
             </div>
 
             <div className="mt-12 flex justify-center">
